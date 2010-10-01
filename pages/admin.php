@@ -24,7 +24,7 @@ switch ($mode) {
     $r=scan_registrations();
     gen_badges_pdf($r);
     echo '<div style="height:1em;">&nbsp;</div>';
-    echo 'Download: <a href="download.php?secret='.$_REQUEST['secret'].'&amp;file=lac2010badges.pdf">lac2010badges.pdf</a>';
+    echo 'Download: <a href="download.php?secret='.$_REQUEST['secret'].'&amp;file=lac2011badges.pdf">lac2011badges.pdf</a>';
     break;
   case 'badgestex':
     $r=scan_registrations();
@@ -208,14 +208,14 @@ function export_sv($sep="\t") {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function gen_badges_pdf($f) {
-  $handle = fopen(TMPDIR.'/lac2010badges.tex', "w");
+  $handle = fopen(TMPDIR.'/lac2011badges.tex', "w");
   fwrite($handle, gen_badges_source($f));
   fclose($handle);
-  @copy (TMPDIR.'../img/badge_hku.png', TMPDIR.'/badge_hku.png');
+  @copy (TMPDIR.'../img/badge_nuim.png', TMPDIR.'/badge_nuim.png');
   @copy (TMPDIR.'../img/badgelogo.png', TMPDIR.'/badgelogo.png'); # XXX FIX img path
-  @unlink (TMPDIR.'/lac2010badges.pdf');
+  @unlink (TMPDIR.'/lac2011badges.pdf');
   echo '<pre style="font-size:70%; line-height:1.2em;">';
-  system('cd '.TMPDIR.'; pdflatex lac2010badges.tex');
+  system('cd '.TMPDIR.'; pdflatex lac2011badges.tex');
   echo '</pre>';
 }
 
@@ -258,7 +258,7 @@ function gen_badges_source($f) {
 \cuts
 ';
   foreach ($f as $fn) {
-    if (true) { // skip already printed registrations XXX
+    if (false) { // skip already printed registrations XXX
       $regtime=preg_replace('@-.*$@', '', $fn);
       if (strcasecmp($regtime, '20100426_193156') <= 0) continue;
     }
@@ -365,7 +365,7 @@ function badge_tex_header() {
         \parbox[c][4.5cm]{8.8cm}{
         \vspace*{1.8cm}
         \hspace*{1.5cm}
-	\image{height=2.62cm,width=6.0cm}{badge_hku}
+	\image{height=2.62cm,width=6.0cm}{badge_nuim}
         }
         \hspace*{-8.8cm}
         \begin{tabular}{c}
@@ -373,7 +373,7 @@ function badge_tex_header() {
 	\rule[0.80ex]{0.70in}{.5pt}\\\\%
 	\small%
 	\begin{tabular}[b]{lcr}%
-	\hspace*{.25in}\small LAC 2010 & \hspace*{1.15in} & \hspace*{0.15in}\\\\%
+	\hspace*{.25in}\small LAC 2011 & \hspace*{1.15in} & \hspace*{0.15in}\\\\%
 	\end{tabular}\\\\%
 	\vspace{0.05in}\\\\%
 	\hspace*{.25in}{\Huge #1}\\\\%
