@@ -42,9 +42,8 @@ Step 3+)
 --- Notes ---
 
 The 'admin' interface is very rudimentary and can be reached at
-  http://base-url/index.php?page=admin&secret=yourpassword
-or with HTTP auth just:
   http://base-url/index.php?page=admin
+after setting up HTTP auth
 
 to add/edit 'tabs':
   create the corresponding page in  pages/

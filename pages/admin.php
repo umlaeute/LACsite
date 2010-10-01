@@ -11,7 +11,7 @@ switch ($mode) {
     $handle = fopen(TMPDIR.'/registrations.csv', "w");
     fwrite($handle, export_sv(","));
     fclose($handle);
-    echo 'Download: <a href="download.php?secret='.$_REQUEST['secret'].'&amp;file=registrations.csv">registrations.csv</a>';
+    echo 'Download: <a href="download.php?file=registrations.csv">registrations.csv</a>';
     break;
   case 'email':
     $r=scan_registrations();
@@ -24,7 +24,7 @@ switch ($mode) {
     $r=scan_registrations();
     gen_badges_pdf($r);
     echo '<div style="height:1em;">&nbsp;</div>';
-    echo 'Download: <a href="download.php?secret='.$_REQUEST['secret'].'&amp;file=lac2011badges.pdf">lac2011badges.pdf</a>';
+    echo 'Download: <a href="download.php?file=lac2011badges.pdf">lac2011badges.pdf</a>';
     break;
   case 'badgestex':
     $r=scan_registrations();
@@ -70,7 +70,6 @@ function adminpage() {
     <input name="page" type="hidden" value="admin" id="page"/>
     <input name="mode" type="hidden" value="" id="mode"/>
     <input name="param" type="hidden" value="" id="param"/>
-    <input name="secret" type="hidden" value="'.$_REQUEST['secret'].'"/>
     <legend>Registration Admin:</legend>
     <input class="button" type="button" title="List all registrations" value="List Participants" onclick="document.getElementById(\'mode\').value=\'list\';document.myform.submit();"/>
     <input class="button" type="button" title="Show non empty food requests" value="List Food Requests" onclick="document.getElementById(\'mode\').value=\'food\';document.myform.submit();"/>

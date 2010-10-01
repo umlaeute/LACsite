@@ -704,7 +704,6 @@
     <input name="mode" type="hidden" value="" id="mode"/>
     <input name="sort" type="hidden" value="" id="sort"/>
     <input name="param" type="hidden" value="<?php echo $_REQUEST['param'];?>" id="param"/>
-    <input name="secret" type="hidden" value="<?php echo $_REQUEST['secret'];?>"/>
 <?php
   }
 
