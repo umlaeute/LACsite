@@ -13,7 +13,7 @@
 </head>
 <body id="content">
 <h1 class="center">LAC 2011 Timetable</h1>
-<div class="center">May 1-4; Hogeschool voor de Kunsten Utrecht, Lange Viestraat 2, Utrecht, NL</div>
+<div class="center">May 6-8; Music Department, National University of Ireland, Maynooth</div>
 <?php
   require_once('config.php');
   require_once('lib.php');

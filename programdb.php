@@ -118,7 +118,7 @@
 
   function fetch_selectlist($db, $table='user', $order='ORDER BY id') {
     if ($table=='days')
-      return array('1' => '1 - Saturday', '2' => '2 - Sunday', '3' => '3 - Monday', '4' => '4 - Tuesday');
+      return array('1' => '1 - Friday', '2' => '1 - Saturday', '3' => '3 - Sunday');
     if ($table=='types')
       return array('p' => 'Paper Presentation', 'w' => 'Workshop', 'c' => 'Concert', 'i' => 'Installation', 'o' => 'Other');
     if ($table=='durations')
@@ -1087,6 +1087,8 @@ if (1) {
   function hardcoded_concert_and_installation_info($db) {
 ?>
 <h2 class="ptitle pb">Concerts & Installations</h2>
+XXXXXXXXXXXXXXXXXX TODO XXXXXXXXXXXXXXXXXXXXXXX
+<?php /*
 During LAC 2011 there are two concerts, a clubnight and various fixed installations.<br/>
 
 <h3>Concerts</h3>
@@ -1117,17 +1119,18 @@ There are fixed art installations in the upstairs installations rooms (3.17, 3.1
 <?php
   $q='SELECT activity.* FROM activity WHERE type='.$db->quote('i');
   $q.=' ORDER BY day, strftime(\'%H:%M\',starttime), typesort(type), location_id;';
-  query_out($db, $q, false, false,  true, true);
+	query_out($db, $q, false, false,  true, true);
+ */
+
   echo '</div>'."\n";
 
   }
 
 
   function list_program($db,$details) {
-    print_day($db, 1,'Saturday',$details);
-    print_day($db, 2,'Sunday',$details);
-    print_day($db, 3,'Monday',$details);
-    print_day($db, 4,'Tuesday',$details);
+    print_day($db, 1,'Friday',$details);
+    print_day($db, 2,'Saturday',$details);
+    print_day($db, 3,'Sunday',$details);
   }
 
   function table_program($db, $day, $print=false) {
@@ -1148,7 +1151,7 @@ There are fixed art installations in the upstairs installations rooms (3.17, 3.1
 
     if (!$print) {
       echo '<div style="float:right;">';
-      for ($i=1; $i<5; $i++) {
+      for ($i=1; $i<4; $i++) {
 	if ($i == $day) { echo 'Day '.$i.'&nbsp;&nbsp;'; continue;}
 	echo '<a href="?page=program&amp;mode=table&amp;day='.$i.'">Day '.$i.'</a>&nbsp;&nbsp;';
       }
