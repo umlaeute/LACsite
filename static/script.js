@@ -8,13 +8,13 @@ function externalLinks() {
       anchor.target = "_blank";
     if (anchor.getAttribute("href") &&
         anchor.getAttribute("rel") == "wiki")
-      anchor.target = "lac2010-wiki";
+      anchor.target = "lac2011-wiki";
     if (anchor.getAttribute("href") &&
         anchor.getAttribute("rel") == "sponsor")
-      anchor.target = "lac2010-sponsor";
+      anchor.target = "lac2011-sponsor";
     if (anchor.getAttribute("href") &&
         anchor.getAttribute("rel") == "registration")
-      anchor.target = "lac2010-registration";
+      anchor.target = "lac2011-registration";
   }
 }
 window.onload = externalLinks;

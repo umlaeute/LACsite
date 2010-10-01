@@ -77,7 +77,7 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-  <title>LAC2010: The Linux Audio Conference</title>
+  <title>LAC2011: The Linux Audio Conference</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" href="static/style.css" type="text/css"/>
   <meta name="Author" content="Robin Gareus" />

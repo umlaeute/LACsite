@@ -6,9 +6,9 @@
 
   $fn='';
   switch ($req) {
-    case 'lac2010badges.pdf':
+    case 'lac2011badges.pdf':
       $ctype='application/pdf';
-      $fn = TMPDIR.'/lac2010badges.pdf';
+      $fn = TMPDIR.'/lac2011badges.pdf';
       break;
     case 'registrations.csv':
       $ctype='text/csv';

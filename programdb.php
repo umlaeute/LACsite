@@ -1,6 +1,6 @@
 <?php
   try {
-    $db=new PDO("sqlite:tmp/lac2010.db"); // XXX -> config.php
+    $db=new PDO("sqlite:tmp/lac2011.db"); // XXX -> config.php
   } catch (PDOException $exception) {
     die ('Database Failure: '.$exception->getMessage());
   }
@@ -710,7 +710,7 @@
 
   function dbadmin_unixtime($e, $start=true) {
     date_default_timezone_set('UTC');
-    $time= strtotime((0+intval($e['day'])).' May 2010 '.$e['starttime'].':00 CEST');
+    $time= strtotime((5+intval($e['day'])).' May 2011 '.$e['starttime'].':00 CEST');
     if (!$start && !strstr($e['duration'], ':'))
       $time = strtotime('+'.$e['duration'].'minutes', $time);
     return $time;
@@ -1088,7 +1088,7 @@ if (1) {
   function hardcoded_concert_and_installation_info($db) {
 ?>
 <h2 class="ptitle pb">Concerts & Installations</h2>
-During LAC 2010 there are two concerts, a clubnight and various fixed installations.<br/>
+During LAC 2011 there are two concerts, a clubnight and various fixed installations.<br/>
 
 <h3>Concerts</h3>
 <p>
@@ -1247,7 +1247,7 @@ There are fixed art installations in the upstairs installations rooms (3.17, 3.1
       ##header('Content-Type:text/calendar');
       header('Content-type: text/calendar; charset=utf-8');
       #header("Content-Type: text/x-vCalendar");
-      header("Content-Disposition: inline; filename=lac2010.ics");
+      header("Content-Disposition: inline; filename=lac2011.ics");
     }
 
     date_default_timezone_set('UTC');
@@ -1261,7 +1261,7 @@ There are fixed art installations in the upstairs installations rooms (3.17, 3.1
     $result=$res->fetchAll();
     echo 'BEGIN:VCALENDAR'."\r\n";
     echo 'VERSION:'.$version."\r\n"; 
-    echo 'PRODID:-//linuxaudio.org/LAC2010//NONSGML v1.0//EN'."\r\n";
+    echo 'PRODID:-//linuxaudio.org/LAC2011//NONSGML v1.0//EN'."\r\n";
 
 # XXX hardcoded concerts
     $result[] = array('id'=> 1000, 'day' => '1', 'starttime' => '20:30', 'duration' => '180',  'type' => 'c', 'title' => 'Opening Concert', 'abstract' => '', 'location_id' => 12, 'status' => '1');
@@ -1274,9 +1274,9 @@ There are fixed art installations in the upstairs installations rooms (3.17, 3.1
       if ($r['status']==0) continue; // XXX cancelled
 
       echo 'BEGIN:VEVENT'."\r\n";
-      echo 'UID:lac2010-'.$r['id'].'@linuxaudio.org'."\r\n";
+      echo 'UID:lac2011-'.$r['id'].'@linuxaudio.org'."\r\n";
 
-      $dtstamp=filemtime('tmp/lac2010.db'); // XXX -> config.php
+      $dtstamp=filemtime('tmp/lac2011.db'); // XXX -> config.php
       echo 'DTSTAMP:'.date("Ymd\THis\Z", $dtstamp)."\r\n";  // optional
 
       foreach (fetch_authorids($db, $r['id']) as $user_id) {
@@ -1285,10 +1285,10 @@ There are fixed art installations in the upstairs installations rooms (3.17, 3.1
       echo 'DTSTART:'.iso8601($r)."\r\n";
       echo 'DTEND:'.iso8601($r,false)."\r\n";
       if ($version=='2.0') {
-        echo 'SUMMARY:LAC2010 - '.str_replace(',','\,',trim($r['title']))."\r\n";
+        echo 'SUMMARY:LAC2011 - '.str_replace(',','\,',trim($r['title']))."\r\n";
         echo 'DESCRIPTION:'.str_replace(';','\;',str_replace(',','\,',str_replace("\n",'\n',trim($r['abstract']))))."\r\n";
       } else {
-        echo 'SUMMARY;ENCODING=QUOTED-PRINTABLE:LAC2010 - '.quoted_printable_encode(trim($r['title']))."\r\n";
+        echo 'SUMMARY;ENCODING=QUOTED-PRINTABLE:LAC2011 - '.quoted_printable_encode(trim($r['title']))."\r\n";
         echo 'DESCRIPTION;ENCODING=QUOTED-PRINTABLE:'.quoted_printable_encode(str_replace("\n",'\n',trim($r['abstract'])))."\r\n";
       }
       if (!empty($r['location_id']) && $r['location_id'] > 0)
