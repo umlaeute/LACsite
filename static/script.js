@@ -10,7 +10,7 @@ function externalLinks() {
         anchor.getAttribute("rel") == "wiki")
       anchor.target = "lac2011-wiki";
     if (anchor.getAttribute("href") &&
-        anchor.getAttribute("rel") == "sponsor")
+        anchor.getAttribute("rel") == "supporter")
       anchor.target = "lac2011-sponsor";
     if (anchor.getAttribute("href") &&
         anchor.getAttribute("rel") == "registration")

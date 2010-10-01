@@ -12,7 +12,7 @@ conference organisation: lac -at- linuxaudio -dot- org
 As admittance to the conference was free, several things required sponsoring which was made possible by the following partners:<br/> <br/>
 </p>
 
-<table border="0" width="100%" id="sponsor">
+<table border="0" width="100%" id="supporter">
 <tr>
 <?php
   $cnt=0;
@@ -22,7 +22,7 @@ As admittance to the conference was free, several things required sponsoring whi
     }
     echo "  <td>\n";
     echo '    <a href="'.$sl.'"'."\n";
-    echo '     rel="sponsors"><img src="'.$si['img'].'" title="'.$si['title'].'" alt="'.$si['title'].'"/><br/>';
+    echo '     rel="supporter"><img src="'.$si['img'].'" title="'.$si['title'].'" alt="'.$si['title'].'"/><br/>';
     echo $si['title']."</a>\n  </td>\n";
     $cnt++;
   }

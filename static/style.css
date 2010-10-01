@@ -111,7 +111,7 @@ div.footer	{float:left;font-size:75%; margin:1em;}
 			border-right: 1px solid black;
 			border-bottom: 1px solid black;
 			}
-#sponsorbar		{
+#supporterbar		{
 			float:right;
 			width:150px;
 			padding:0px 0px 0px 1em;
@@ -120,7 +120,7 @@ div.footer	{float:left;font-size:75%; margin:1em;}
 			border-left:1px solid black;
 			overflow:hidden;
 			} 
-#sponsorbar div		{
+#supporterbar div		{
 			margin-bottom:1em;
 			font-size:75%;
 			}
@@ -138,11 +138,11 @@ div.footer	{float:left;font-size:75%; margin:1em;}
 #content input, 
 #content textarea 	{border: 1px solid black;}
 #content ul 		{margin-left:2em;}
-#sponsor a,
-#sponsorbar a		{text-decoration:none;}
-#sponsor th,
-#sponsor td		{text-align: center;}
-#sponsor td		{width:33%;overflow:hidden;padding-bottom:1em;}
+#supporter a,
+#supporterbar a		{text-decoration:none;}
+#supporter th,
+#supporter td		{text-align: center;}
+#supporter td		{width:33%;overflow:hidden;padding-bottom:1em;}
 
 #frank th,
 #frank td		{text-align: justify; vertical-align:top;}
