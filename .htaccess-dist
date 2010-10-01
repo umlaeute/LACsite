@@ -1,4 +1,4 @@
-AuthName "LAC 2010"
+AuthName "LAC 2011"
 
 #AuthType Basic
 #AuthUserFile /var/cache/www/lac-basic.htpasswd
