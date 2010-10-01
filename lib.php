@@ -5,14 +5,6 @@
 
   function authenticate($group='') {
 
-    #SIMPLE AUTH
-    global $adminpass;
-    if (  !empty($adminpass)
-        && isset($_REQUEST['secret'])
-	&& rawurldecode($_REQUEST['secret'])==$adminpass) {
-       return true;
-    }
-
     #HTTP DIGEST AUTH
     $user=$_SERVER['PHP_AUTH_DIGEST'];
     if (!empty($user)) {
