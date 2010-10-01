@@ -1,0 +1,79 @@
+-----  LAC 2011 website ----
+
+--- Setup ---
+
+Step 1) create './config.php' with the following:
+
+<?php 
+  define('REGLOGDIR',dirname($_SERVER['SCRIPT_FILENAME']).'/regs/');  
+  define('TMPDIR',dirname($_SERVER['SCRIPT_FILENAME']).'/tmp/');
+  $mailto='robin@linuxaudio.org, marcg@dinkum.nl';
+  $mailto=''; # if empty no email will be sent.
+  # BASIC AUTH:
+  $adminpass='YourPlainTextPassword';
+  # HTTP AUTH: copy .htaccess-dist to .htaccess and edit it.
+  $adminpass='';
+
+
+Step 2+)
+  mkdir regs/  # or whatever you spefied as REGLOGDIR
+               # this directory will be used to store registration information
+
+  chmod 1777 regs  # or `sudo chown www-data tmp/`
+  echo "Deny from all" > regs/.htaccess
+                   # ensure that your webserver honors .htaccess AllowOverrides
+                   # by visiting the URL
+
+  mkdir tmp/
+  chmod 1777 tmp/  # or `sudo chown www-data tmp/`
+                   # tmp folder is used to create PDF for the badges
+                   # you need to have 'pdflatex' installed 
+                   #
+                   # it's also used to store aggregated information
+                   # eg. pages/concerts.php
+  echo "Deny from all" > tmp/.htaccess
+
+Step 3+)
+  create sqlite database in tmp/lac2011.db and make it writable for
+  the HTTP-user..
+    sqlite3 tmp/lac2010.db < schema.sql
+    sudo chown www-data.www-data tmp/lac2011.db
+
+--- Notes ---
+
+The 'admin' interface is very rudimentary and can be reached at
+  http://base-url/index.php?page=admin&secret=yourpassword
+or with HTTP auth just:
+  http://base-url/index.php?page=admin
+
+to add/edit 'tabs':
+  create the corresponding page in  pages/
+  edit the $pages array near to the top in index.php.
+  the current style.css allows for up to 9 tabs.
+
+--- Sourcecode ---
+
+Is available at
+
+  * git://rg42.org/lac2011
+  * http://rg42.org/gitweb/?p=lac2011.git;a=snapshot;sf=tgz
+
+--- Copyright ---
+
+   Copyright (C) 2009, 2010 Robin Gareus <robin@gareus.org>
+   Copyright (C) 2009 Marc Groenewegen <marcg@dinkum.nl>
+
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2, or (at your option)
+   any later version.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software Foundation,
+   Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  
+

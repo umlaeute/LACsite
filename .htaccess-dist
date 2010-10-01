@@ -1,0 +1,21 @@
+AuthName "LAC 2010"
+
+#AuthType Basic
+#AuthUserFile /var/cache/www/lac-basic.htpasswd
+
+AuthType Digest
+AuthUserFile /var/cache/www/lac-digest.htpasswd
+AuthDigestProvider file
+
+<Files "logon.php">
+  Require valid-user
+# Require user admin
+</Files>
+
+<Files "schema.sql">
+  deny from all
+</Files>
+
+<Files "README">
+  deny from all
+</Files>
