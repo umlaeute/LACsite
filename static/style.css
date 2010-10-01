@@ -10,10 +10,10 @@ body		{
 a		{outline: none; color:black;}
 img		{border: 0px;}
 div.main	{
-		background:#FFFFFF url(img/corner_tl.jpg) no-repeat scroll left top;
+		background:#FFFFFF url(../img/corner_tl.jpg) no-repeat scroll left top;
 		}
 #header         {
-		background:transparent url(img/corner_tr.jpg) no-repeat scroll right top;
+		background:transparent url(../img/corner_tr.jpg) no-repeat scroll right top;
 		height:20px;
                 }
 div.envelope	{
@@ -21,7 +21,7 @@ div.envelope	{
 		width:60em;
 		}
 #titlebar	{
-		background: url('img/domeslit.jpg');
+		background: url('../img/lac2011head.jpg');
 		color: #ffffff;
 		width: 54em;
 		margin: 5px auto;
@@ -54,7 +54,7 @@ div.menuitem 	{
                 top: 0px;
     		width: 100px; height: 19px;
 		text-align: center;
-		background: url('img/tab.png') no-repeat;
+		background: url('../img/tab.png') no-repeat;
 		padding: 1px 0 0 0;
 		}
 span.menuitem 	{
@@ -65,7 +65,7 @@ span.menuitem 	{
 		border-bottom: 1px solid black;
 		}	
 .tabactive	{
-		background: url('img/tab_active.png') no-repeat !important;
+		background: url('../img/tab_active.png') no-repeat !important;
 		border-bottom: 1px solid white !important;
 		}
 .disclaimer	{
@@ -74,7 +74,7 @@ span.menuitem 	{
 		margin:1em 0em 0em 0em;
 		}
 #createdby	{
-		background:#FFFFFF url(img/corner_br.jpg) no-repeat scroll right bottom;
+		background:#FFFFFF url(../img/corner_br.jpg) no-repeat scroll right bottom;
 		color: #808080; 
 		text-align:right;
 		padding-right:3.75em;
@@ -129,8 +129,8 @@ div.footer	{float:left;font-size:75%; margin:1em;}
 #content h3 		{
 /*			font-family: Verdana,sans-serif; */
 			font-style:italic;
-			margin-top:0.5em;
-			margin-bottom:1em;
+			margin-top:1.0em;
+			margin-bottom:0.5em;
 			}
 #content h1 		{ font-size: 160%; }
 #content h2 		{ font-size: 140%; }
@@ -221,12 +221,18 @@ div.flright		{margin:0px 0px .25em .5em; float:right;}
 
 p.pix {font-size:90%;margin:.5em 0em; text-align:justify;}
 
-#infoframe, #ieframe	{
+ul.multicolumn { width:100%;}
+ul.multicolumn li{
+	float:left;
+	width:45%;
+}
+
+#infoframe, #ieframe {
 			width:100%;
 			height:94%;
 			border:0px;
-			}
-#infobox		{
+}
+#infobox {
 			position:fixed;
 			width:70%;
 			min-width:600px;
@@ -237,13 +243,13 @@ p.pix {font-size:90%;margin:.5em 0em; text-align:justify;}
 			color: #001100;
 			overflow:hidden;
 			z-index:300;
-			}
-#dimmer			{
+}
+#dimmer	{
 			position:fixed;
 			width: 100%;
 			height: 100%;
 			left:0px;
 			top:0px;
-			background:transparent url(img/dim.png) repeat scroll 0 0;
+			background:transparent url(../img/dim.png) repeat scroll 0 0;
 			z-index:100;
-                        }
+}

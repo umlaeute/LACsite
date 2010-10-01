@@ -4,19 +4,6 @@ Open Source Software for music, sound and other media with Linux as the main
 platform.
 </p>
 
-<div style="text-align:center;">
-<br/>
-<span style='font: 18pt sans-serif; color:blue'>Read more in our magazine:</span><br/>
-<ul>
-<li>
-<a href="LAC_Times_2010_02_16.pdf">The LAC Times Edition #1 (Feb 16 2010)</a>
-</li>
-<li>
-<a href="LAC_Times_2010_04_02.pdf">The LAC Times Edition #2 (Apr 2 2010)</a>
-</li>
-</ul>
-</div>
-
 <h1>Goals</h1>
 <ul>
   <li> To bring developers, musicians, composers and other users together </li>
@@ -46,12 +33,12 @@ serious interest in Open Source Software for Music and Sound.
 
 <h1>Where</h1>
 See
-<a href="http://lac.linuxaudio.org/2010/?page=contact">Contact</a>
+<a href="http://lac.linuxaudio.org/2011/?page=contact">Contact</a>
 
 <h1>We need you ! </h1>
 Please visit the
   <a rel="wiki"
-    href="http://wiki.linuxaudio.org/lac2010/start">LAC 2010 wiki</a>
+    href="http://wiki.linuxaudio.org/lac2011/start">LAC 2011 wiki</a>
 to read about developments going on behind
 the scenes. Your contributions and ideas are highly appreciated, so
 please <a href="?page=registration">register</a> and join the club. See the

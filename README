@@ -36,7 +36,7 @@ Step 2+)
 Step 3+)
   create sqlite database in tmp/lac2011.db and make it writable for
   the HTTP-user..
-    sqlite3 tmp/lac2010.db < schema.sql
+    sqlite3 tmp/lac2011.db < schema.sql
     sudo chown www-data.www-data tmp/lac2011.db
 
 --- Notes ---

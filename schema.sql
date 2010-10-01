@@ -7,7 +7,8 @@ CREATE TABLE activity (
    duration time default NULL,
    location_id int unsigned DEFAULT NULL,
    day tinyint unsigned DEFAULT NULL,
-   notes text, starttime time DEFAULT NULL, 
+   notes text, 
+	 starttime time DEFAULT NULL, 
    url_slides TEXT DEFAULT NULL, 
    url_paper TEXT DEFAULT NULL, 
    url_stream TEXT DEFAULT NULL, 
@@ -17,11 +18,13 @@ CREATE TABLE activity (
    editlock datetime default 0,
    UNIQUE (title)
 );
+
 CREATE TABLE location (
    id INTEGER PRIMARY KEY AUTOINCREMENT,
-   name varchar(50) NOT NULL
-   editlock datetime default 0,
+   name varchar(50) NOT NULL,
+   editlock datetime default 0
 );
+
 CREATE TABLE user (
    id INTEGER PRIMARY KEY AUTOINCREMENT,
    name varchar(50) NOT NULL,

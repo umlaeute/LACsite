@@ -2,24 +2,19 @@
   require_once('lib.php');
 
   $pages = array(
-    'repercussions' => 'About',
-    'program' => 'Program',
-    'download' => 'Download',
+    'about' => 'About',
+    'participation' => 'Participation',
+    'registration' => 'Registration',
+    'travel' => 'Travel &amp; Stay',
     'sponsors' => 'Sponsors',
-    'frank' => 'Impressions',
     'contact' => 'Contact'
   );
 
   $hidden = array(
-    'about' => 'About',
+    'program' => 'Program',
+    'download' => 'Download',
     'concerts' => 'Concerts',
-    'participation' => 'Participation',
-    'kikker' => 'Kikker Concert',
-    'registration' => 'Registration',
     'news' => 'News',
-    'mailorder' => 'T-Shirts',
-    'travel' => 'Travel &amp; Stay',
-    'lacnoise' => 'LAC Noises',
   );
 
   $nosponsors = array(
@@ -35,21 +30,17 @@
   );
 
   $sponsors = array(
-    'http://www.hku.nl/web/English.htm' => array('img'=>'logos/HKU.png', 'title' => 'Hogeschool voor de Kunsten Utrecht'),
-    'http://www.loohuis-consulting.nl' => array('img'=>'logos/loco.png', 'title' => 'Loohuis Consulting'),
-    'http://lwn.net/' => array('img' => 'logos/lwn.png', 'title' => 'LWN.NET'), 
-    'http://linuxaudio.org/' => array('img' => 'logos/lao.png', 'title' => 'linuxaudio.org'),
-    'http://elastique.nl/' => array('img' => 'logos/elastique.png', 'title' => 'Elastique'),
-    'http://www.tonehammer.com/' => array('img' => 'logos/tonehammer.png', 'title' => 'tonehammer'),
-    'http://www.citu.info/' => array('img' => 'logos/citu.png', 'title' => 'CiTu'),
-    'http://www.mimm.nl/' => array('img' => 'logos/mimm.png', 'title' => 'MIMM'),
+		'http://music.nuim.ie' => array('img' => 'img/logos/nuim.png', 'title' => 'NUIM'),
+    'http://lwn.net/' => array('img' => 'img/logos/lwn.png', 'title' => 'LWN.NET'), 
+    'http://linuxaudio.org/' => array('img' => 'img/logos/lao.png', 'title' => 'linuxaudio.org'),
+    'http://www.citu.info/' => array('img' => 'img/logos/citu.png', 'title' => 'CiTu'),
   );
 
 //////////////////////////////////////////////////////////////////////////////
 
   $page='about';
-  $page='repercussions';
-  $preq='';
+	$preq='';
+
   if (isset($_REQUEST['page']))
     $preq=rawurldecode($_REQUEST['page']);
 
@@ -88,21 +79,21 @@
 <head>
   <title>LAC2010: The Linux Audio Conference</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <link rel="stylesheet" href="style.css" type="text/css"/>
+  <link rel="stylesheet" href="static/style.css" type="text/css"/>
   <meta name="Author" content="Robin Gareus" />
-  <meta name="description" content="Linux Audio Conference 2010" />
-  <meta name="keywords" content="LAC2010, LAC, Linux Audio Conference 2010, Hogeschool voor de Kunsten, Linux, Music, Developer Meeting, Utrecht" />
+  <meta name="description" content="Linux Audio Conference 2011" />
+  <meta name="keywords" content="LAC2011, LAC, Linux Audio Conference 2011,Linux, Music, Developer Meeting, Music Department, National University of Ireland, Maynooth" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="static/script.js"></script>
 </head>
 <body>
 <div class="envelope main">
   <div id="header">&nbsp;</div>
   <div id="titlebar">
-    <div id="maintitle"> Linux Audio Conference 2010 </div>
+    <div id="maintitle"> Linux Audio Conference 2011 </div>
     <div id="subtitle"> The conference about Open Source Software for music and sound</div>
-    <div id="wherewhen"> May 1-4 2010, Utrecht, the Netherlands</div>
+		<div id="wherewhen"> May 6-8 2011, Maynooth, Ireland</div>
     <div>LECTURES / WORKSHOPS / EXHIBITION / CONCERTS / CLUBNIGHT</div>
   </div>
   <div id="mainmenu">
@@ -121,7 +112,7 @@
     <div id="content">
 <?php
   if (!in_array($page, $nosponsors)) {
-    echo '    <div id="sponsorbar">LAC 2010 is supported by<br/><br/>'."\n";
+    echo '    <div id="sponsorbar">LAC 2011 is supported by<br/><br/>'."\n";
     foreach ($sponsors as $sl => $si) {
       echo '<div><a href="'.$sl.'"'."\n";
       echo '     rel="sponsors"><img src="'.$si['img'].'" title="'.$si['title'].'" alt="'.$si['title'].'"/>';
@@ -138,19 +129,19 @@
       <div style="clear:both;">&nbsp;</div>
     </div>
   </div>
-  <div id="createdby"> June 07 2010, Marc Groenewegen &amp; Robin Gareus</div>
+  <div id="createdby"> Oct 04 2011, Victor Lazzarini &amp; Robin Gareus</div>
 </div>
 
 <div class="envelope" id="footerwrap">
   <div class="footer">
-<a href="http://www3.clustrmaps.com/counter/maps.php?url=http://lac.linuxaudio.org/2010/" id="clustrMapsLink" rel="external"><img src="http://www3.clustrmaps.com/counter/index2.php?url=http://lac.linuxaudio.org/2010/" style="border:0px;" alt="Locations of visitors to this page" title="Locations of visitors to this page" id="clustrMapsImg" />
+<a href="http://www2.clustrmaps.com/counter/maps.php?url=http://lac.linuxaudio.org/2011/" id="clustrMapsLink" rel="external"><img src="http://www2.clustrmaps.com/counter/index2.php?url=http://lac.linuxaudio.org/2011/" style="border:0px;" alt="Locations of visitors to this page" title="Locations of visitors to this page" id="clustrMapsImg" />
 </a>
 <script type="text/javascript">
 function cantload() {
 img = document.getElementById("clustrMapsImg");
 img.onerror = null;
-img.src = "http://www2.clustrmaps.com/images/clustrmaps-back-soon.jpg";
-document.getElementById("clustrMapsLink").href = "http://www2.clustrmaps.com";
+img.src = "http://www.clustrmaps.com/images/clustrmaps-back-soon.jpg";
+document.getElementById("clustrMapsLink").href = "http://clustrmaps.com";
 }
 img = document.getElementById("clustrMapsImg");
 img.onerror = cantload;

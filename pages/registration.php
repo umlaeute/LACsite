@@ -5,9 +5,7 @@ Registration and admittance is free but if you want to attend
 <br/><br/> This is for a number of reasons:
 <ul>
 <li> Estimate - We need an estimate of the number of attendees </li>
-<li> ID - We need your name to print on your badge </li>
-<li> Security - Only registered are allowed in the premises due to 
-  security and fire regulations </li>
+<li> ID - We'd like a name to print on your badge </li>
 <li> We want to be able to contact you (see under Privacy) </li>
 </ul>
 
