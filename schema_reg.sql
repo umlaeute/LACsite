@@ -1,11 +1,12 @@
 CREATE TABLE iplog (
   ip_addr TEXT,
-  ac_time datetime
+	regname TEXT,
+  ac_time DATETIME DEFAULT (datetime('now'))
 );
 
 CREATE TABLE pubrg (
-  name text,
-  prename text,
-  tagline text,
-  unique (name, prename, tagline)
-}
+  name TEXT,
+  prename TEXT,
+  tagline TEXT,
+  UNIQUE(name, prename, tagline)
+);

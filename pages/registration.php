@@ -1,6 +1,6 @@
 <h1>Registration policy</h1>
 Registration and admittance is free but if you want to attend 
- <span class="standout">you need to register</span>.
+ <span class="standout">you need to register</span> (scroll down).
 
 <br/><br/> This is for a number of reasons:
 <ul>
@@ -392,7 +392,8 @@ Personal data provided by you in the registration form will be kept confidential
   <div class="ra">
     <label><input type="radio" name="reg_proceedings" value="0"<?php _ck('reg_proceedings',0);?>/>No</label> &nbsp; &nbsp;
     <label><input type="radio" name="reg_proceedings" value="1"<?php _ck('reg_proceedings',1);?>/>Yes</label>
-  </div>
+	</div>
+	<br/>
   <label>Allow public listing of your name and affiliation in the "Who else is coming" list.</label><br/>
   <div class="la"><label class="la"><span class="error">*</span>Include me?</label></div>
   <div class="ra">

@@ -5,6 +5,7 @@
     'about' => 'About',
     'participation' => 'Participation',
     'registration' => 'Registration',
+    'participants' => 'Attendees',
     'travel' => 'Travel &amp; Stay',
     'sponsors' => 'Sponsors',
     'contact' => 'Contact'
