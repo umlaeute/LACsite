@@ -15,6 +15,7 @@ platform.
   <li> To collaborate and exchange information </li>
   <li> To improve the software </li>
   <li> To understand the needs of the users </li>
+  <li> To enjoy music and art performances at the conference</li>
 </ul>
 
 <h1>Target audience</h1>
@@ -46,7 +47,7 @@ please <a href="?page=registration">register</a> and join the club. See the
 <a href="?page=participation">participation page</a> for information on how
 to answer to the call for paper-presentations, workshops and music.
 
-<h2>Links to prior conferences</h2>
+<h2>Links to prior Linux Audio Conferences</h2>
 <ul>
   <li><a href="http://lac.linuxaudio.org/2010/?page=download">Proceedings &amp; Recordings 2010</a></li>
   <li><a href="http://lac.linuxaudio.org/2009/cdm/">Proceedings &amp; Recordings 2009</a></li>
