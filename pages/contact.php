@@ -11,9 +11,9 @@ lac -at- linuxaudio -dot- org
 <h1>Map</h1>
 
 <object id="map" type="text/html" style="width:480px;height:400px;"
-data="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=National+University+of+Ireland,+Maynooth,+Ireland&amp;sll=37.0625,-95.677068&amp;sspn=36.231745,56.513672&amp;ie=UTF8&amp;hq=&amp;hnear=National+University+of+Ireland,+Maynooth,+County+Kildare,+Ireland&amp;ll=53.3835,-6.5996&amp;spn=0.026674,0.087891&amp;t=h&amp;z=14&amp;output=embed">
+data="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=National+University+of+Ireland,+Maynooth,+Ireland&amp;sll=37.0625,-95.677068&amp;sspn=36.231745,56.513672&amp;ie=UTF8&amp;hq=&amp;hnear=National+University+of+Ireland,+Maynooth,+County+Kildare,+Ireland&amp;ll=53.3835,-6.5996&amp;spn=0.026674,0.087891&amp;z=14&amp;output=embed">
 </object>
-<br /><small><a href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=National+University+of+Ireland,+Maynooth,+Ireland&amp;sll=37.0625,-95.677068&amp;sspn=36.231745,56.513672&amp;ie=UTF8&amp;hq=&amp;hnear=National+University+of+Ireland,+Maynooth,+County+Kildare,+Ireland&amp;ll=53.380461,-6.611881&amp;spn=0.026674,0.087891&amp;t=h&amp;z=14" style="color:#0000FF;text-align:left;" rel="external">View Larger Map</a></small>
+<br /><small><a href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=National+University+of+Ireland,+Maynooth,+Ireland&amp;sll=37.0625,-95.677068&amp;sspn=36.231745,56.513672&amp;ie=UTF8&amp;hq=&amp;hnear=National+University+of+Ireland,+Maynooth,+County+Kildare,+Ireland&amp;ll=53.380461,-6.611881&amp;spn=0.026674,0.087891&amp;z=14" style="color:#0000FF;text-align:left;" rel="external">View Larger Map</a></small>
 
 <!--[if lte IE 8]><script type="text/javascript">(function(){var o=document.
 getElementById('map');var i=document.createElement('iframe');i.setAttribute
