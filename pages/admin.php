@@ -72,12 +72,10 @@ function adminpage() {
     <input name="param" type="hidden" value="" id="param"/>
     <legend>Registration Admin:</legend>
     <input class="button" type="button" title="List all registrations" value="List Participants" onclick="document.getElementById(\'mode\').value=\'list\';document.myform.submit();"/>
-    <input class="button" type="button" title="Show non empty food requests" value="List Food Requests" onclick="document.getElementById(\'mode\').value=\'food\';document.myform.submit();"/>
     <input class="button" type="button" title="Show non empty remarks" value="List Remarks" onclick="document.getElementById(\'mode\').value=\'remarks\';document.myform.submit();"/>
-    <br/>
     <input class="button" type="button" title="Generate list of email addresses" value="Dump Email Contacts" onclick="document.getElementById(\'mode\').value=\'email\';document.myform.submit();"/>
-    <input class="button" type="button" title="Count Ordered Proceedings" value="Count Ordered Proceedings" onclick="document.getElementById(\'mode\').value=\'proceedings\';document.myform.submit();"/>
     <br/>
+    <input class="button" type="button" title="Count Ordered Proceedings" value="Count Ordered Proceedings" onclick="document.getElementById(\'mode\').value=\'proceedings\';document.myform.submit();"/>
 <!-- <input class="button" type="button" title="Show Badges TeX" value="Show Badges TeX" onclick="document.getElementById(\'mode\').value=\'badgestex\';document.myform.submit();"/> !-->
     <input class="button" type="button" title="Generate badges PDF" value="Generate Badges PDF" onclick="document.getElementById(\'mode\').value=\'badgespdf\';document.myform.submit();"/>
     <input class="button" type="button" title="Export comma separated value table" value="Export CSV" onclick="document.getElementById(\'mode\').value=\'csv\';document.myform.submit();"/>
