@@ -22,6 +22,7 @@ registration on a later date. We will not use your email address for any
 other purpose than to inform you of conference details,
 last minute changes or to confirm unsubscription requests and
 will keep mail traffic to an absolute minimum.
+Personal data provided by you in the registration form will be kept confidential and is not shared with any 3rd party.
 </p>
 
 <h1>Registration</h1>
@@ -362,7 +363,7 @@ will keep mail traffic to an absolute minimum.
   <label class="la" for="reg_prename"><span class="error">*</span>Given Name(s):</label>
   <input id="reg_prename" name="reg_prename" type="text" size="50" maxlength="100" value="<?php echo $_POST['reg_prename'];?>"/>
   <br />
-  <label class="la" for="reg_tagline">Tagline <small>(Company, Pseudonym,&hellip;)</small>:</label>
+  <label class="la" for="reg_tagline">Tagline <small>(Affiliation, Company, Pseudonym,&hellip;)</small>:</label>
   <input id="reg_tagline" name="reg_tagline" type="text" size="50" maxlength="100" value="<?php echo $_POST['reg_tagline'];?>"/>
   <br/>
   <label class="ls">Note: The tagline will appear with your name on the badge.</label>
@@ -371,8 +372,6 @@ will keep mail traffic to an absolute minimum.
   <input id="reg_email" name="reg_email" type="text" size="50" maxlength="100" value="<?php echo $_POST['reg_email'];?>"/>
   <br/>
   <label class="la" for="reg_city"><span class="error">*</span>City:</label>
-  <input id="reg_city" name="reg_city" type="text" size="50" maxlength="100" value="<?php echo $_POST['reg_city'];?>"/>
-  <br/>
   <label class="la" for="reg_country"><span class="error">*</span>Country:</label>
   <select name="reg_country" id="reg_country" size="1">
 <?php gen_options($ctry, 'reg_country'); ?>
@@ -389,11 +388,17 @@ will keep mail traffic to an absolute minimum.
 <fieldset class="fa">
 <legend>Conference specific:</legend>
   <label>There will be conference proceedings
-  available for a nominal fee of about 20 Euro.</label><br/>
+  available for a nominal fee of about 15 Euro.</label><br/>
   <div class="la"><label class="la"><span class="error">*</span>Are you interested in buying a copy?</label></div>
   <div class="ra">
     <label><input type="radio" name="reg_proceedings" value="0"<?php _ck('reg_proceedings',0);?>/>No</label> &nbsp; &nbsp;
     <label><input type="radio" name="reg_proceedings" value="1"<?php _ck('reg_proceedings',1);?>/>Yes</label>
+  </div>
+  <label>Allow public listing of your name and affiliation in the "Who else is coming" list.</label><br/>
+  <div class="la"><label class="la"><span class="error">*</span>Include me?</label></div>
+  <div class="ra">
+    <label><input type="radio" name="reg_whoelselist" value="0"<?php _ck('reg_whoelselist',0);?>/>No</label> &nbsp; &nbsp;
+    <label><input type="radio" name="reg_whoelselist" value="1"<?php _ck('reg_whoelselist',1);?>/>Yes</label>
   </div>
 </fieldset>
 
@@ -433,8 +438,6 @@ will keep mail traffic to an absolute minimum.
 
 <fieldset class="fs">
 <legend>Miscellaneous:</legend>
-  <label class="la" for="reg_food">Food Preferences:</label>
-  <textarea id="reg_food" name="reg_food" rows="3" cols="60"><?php echo $_POST['reg_food'];?></textarea><br/>
   <label class="la" for="reg_notes">Remarks:</label>
   <textarea id="reg_notes" name="reg_notes" rows="3" cols="60"><?php echo $_POST['reg_notes'];?></textarea><br/>
 </fieldset>

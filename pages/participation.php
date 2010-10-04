@@ -2,7 +2,7 @@
 <p>
 Papers can be submitted for review via the
 <a href="http://lac.linuxaudio.org/2011/openconf/" rel="external">openconf</a> system.
-Templates for paper submission are available for LaTeX and OpenOffice from <a href="http://wiki.linuxaudio.org/_media/lac2011/lac2011-templates.tar.bz2">here</a>.<br/>
+Templates for paper submission are available for LaTeX and OpenOffice/LibreOffice from <a href="http://wiki.linuxaudio.org/_media/lac2011/lac2011-templates.tar.bz2">here</a>.<br/>
 <br/>
 <ul>
 <li>Deadline for paper submissions: January 15th, 2011</li>

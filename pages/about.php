@@ -24,16 +24,17 @@ serious interest in Open Source Software for Music and Sound.
 
 <h1>What to expect</h1>
 <ul>
- <li>Presentations (preferably about a paper) </li>
+ <li>Presentations</li>
  <li>Poster sessions</li>
  <li>Workshops</li>
  <li>Concerts</li>
  <li>Live coding sessions</li>
 </ul>
 
-<h1>Where</h1>
+<h1>Where &amp; When</h1>
+May 6-8 2011, Maynooth, Ireland<br/>
 See
-<a href="http://lac.linuxaudio.org/2011/?page=contact">Contact</a>
+<a href="http://lac.linuxaudio.org/2011/?page=contact">Contact Page</a> for details.
 
 <h1>We need you ! </h1>
 Please visit the
@@ -44,3 +45,15 @@ the scenes. Your contributions and ideas are highly appreciated, so
 please <a href="?page=registration">register</a> and join the club. See the
 <a href="?page=participation">participation page</a> for information on how
 to answer to the call for paper-presentations, workshops and music.
+
+<h2>Links to prior conferences</h2>
+<ul>
+  <li><a href="http://lac.linuxaudio.org/2010/?page=download">Proceedings &amp; Recordings 2010</a></li>
+  <li><a href="http://lac.linuxaudio.org/2009/cdm/">Proceedings &amp; Recordings 2009</a></li>
+  <li><a href="http://lac.linuxaudio.org/2008/download/papers/">Proceedings 2008</a></li>
+  <li><a href="http://lac.linuxaudio.org/2007/download/lac07_proceedings.pdf">Proceedings 2007</a></li>
+  <li><a href="http://lac.linuxaudio.org/2006/lac2006_proceedings.pdf">Proceedings 2006</a></li>
+  <li><a href="http://lac.linuxaudio.org/2005/lac2005_proceedings.pdf">Proceedings 2005</a></li>
+  <li><a href="http://lac.linuxaudio.org/2004/lac2004_proceedings.pdf">Proceedings 2004</a></li>
+</ul>
+

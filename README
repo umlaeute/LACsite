@@ -7,13 +7,9 @@ Step 1) create './config.php' with the following:
 <?php 
   define('REGLOGDIR',dirname($_SERVER['SCRIPT_FILENAME']).'/regs/');  
   define('TMPDIR',dirname($_SERVER['SCRIPT_FILENAME']).'/tmp/');
-  $mailto='robin@linuxaudio.org, marcg@dinkum.nl';
-  $mailto=''; # if empty no email will be sent.
-  # BASIC AUTH:
-  $adminpass='YourPlainTextPassword';
-  # HTTP AUTH: copy .htaccess-dist to .htaccess and edit it.
-  $adminpass='';
-
+  $regmail=true; # if set users will receive a confirmation email
+  $mailto='robin@linuxaudio.org, marcg@dinkum.nl'; # admin email
+  $mailto=''; # if empty no email will be sent to admins.
 
 Step 2+)
   mkdir regs/  # or whatever you spefied as REGLOGDIR
@@ -33,11 +29,20 @@ Step 2+)
                    # eg. pages/concerts.php
   echo "Deny from all" > tmp/.htaccess
 
-Step 3+)
+Step 3) 
+  set up HTTP AUTH: copy .htaccess-dist to .htaccess and edit it.
+  use 'htdigest' to create the password file
+
+Step 4+)
   create sqlite database in tmp/lac2011.db and make it writable for
   the HTTP-user..
     sqlite3 tmp/lac2011.db < schema.sql
     sudo chown www-data.www-data tmp/lac2011.db
+
+  create sqlite database in tmp/reg2011.db and make it writable for
+  the HTTP-user..
+    sqlite3 tmp/reg2011.db < schema_reg.sql
+    sudo chown www-data.www-data tmp/reg2011.db
 
 --- Notes ---
 
