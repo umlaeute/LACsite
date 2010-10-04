@@ -371,7 +371,6 @@ Personal data provided by you in the registration form will be kept confidential
   <label class="la" for="reg_email"><span class="error">*</span>E-Mail address:</label>
   <input id="reg_email" name="reg_email" type="text" size="50" maxlength="100" value="<?php echo $_POST['reg_email'];?>"/>
   <br/>
-  <label class="la" for="reg_city"><span class="error">*</span>City:</label>
   <label class="la" for="reg_country"><span class="error">*</span>Country:</label>
   <select name="reg_country" id="reg_country" size="1">
 <?php gen_options($ctry, 'reg_country'); ?>
