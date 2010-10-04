@@ -8,6 +8,7 @@
 
   // returns -1 if lock was aquired; return time until lock expires
   function lock($db, $id, $table='activity') {
+    if ($id<0) return -1; # ignore 'new' entries.
     $q='UPDATE '.$table.' set editlock=datetime(\'now\',\'+5 minutes\') WHERE editlock < datetime(\'now\') AND id='.$id.';';
     if ($db->exec($q) == 1) return -1;
 
