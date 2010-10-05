@@ -39,7 +39,7 @@ function checkreg() {
 
 	if (check_max_submit_per_ip() !== true) {
 		# TODO: save IP-address; allow max 5 req per IP / day.
-    $errmsg.='<p class="error">We have already accepted 3 submissions from your IP addres in the last 24 hours. Please try again tomorrow or contact us by email for group-registrations.</p>'."\n";
+    $errmsg.='<p class="error">We have already accepted 3 submissions from your IP address in the last 24 hours. Please try again tomorrow or contact us by email for group-registrations.</p>'."\n";
 		$err|=1;
 	}
 
