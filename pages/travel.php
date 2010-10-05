@@ -1,6 +1,6 @@
 <h1>Travelling to Maynooth</h1>
 
-</p>
+<p>
 NUI Maynooth is accessible by public transport. The university is located 15 miles from Dublin city centre.
 </p>
 <br/><br/>

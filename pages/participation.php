@@ -1,12 +1,10 @@
 <h1>Call for papers, music and workshops</h1>
-<p>
 <ul>
 <li>Deadline for submissions: January 15th, 2011</li>
 <li>Notification of acceptance: March 7th, 2011</li>
 <li>Deadline for camera-ready paper: April 1th, 2011</li>
 </ul>
 <br/>
-</p>
 
 <h1>Call for papers</h1>
 <p>
