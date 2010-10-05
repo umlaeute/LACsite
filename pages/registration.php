@@ -1,8 +1,10 @@
 <h1>Registration policy</h1>
-Registration and admittance is free but if you want to attend 
+<p>
+Registration and admittance to LAC 2011 is free but if you want to attend 
  <span class="standout">you need to register</span> (scroll down).
+</p>
 
-<br/><br/> This is for a number of reasons:
+This is for a number of reasons:
 <ul>
 <li> Estimate - We need an estimate of the number of attendees </li>
 <li> ID - We'd like a name to print on your badge </li>

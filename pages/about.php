@@ -19,9 +19,11 @@ platform.
 </ul>
 
 <h1>Target audience</h1>
+<p>
 The Linux Audio Conference audience consists of software designers,
 programmers, musicians, composers, engineers and others with a
 serious interest in Open Source Software for Music and Sound.
+</p>
 
 <h1>What to expect</h1>
 <ul>
@@ -33,11 +35,12 @@ serious interest in Open Source Software for Music and Sound.
 </ul>
 
 <h1>Where &amp; When</h1>
-May 6-8 2011, Maynooth, Ireland<br/>
-See
-<a href="http://lac.linuxaudio.org/2011/?page=contact">Contact Page</a> for details.
+<p>
+May 6-8 2011, Maynooth, Ireland
+</p>
 
 <h1>We need you ! </h1>
+<p>
 Please visit the
   <a rel="wiki"
     href="http://wiki.linuxaudio.org/lac2011/start">LAC 2011 wiki</a>
@@ -46,6 +49,7 @@ the scenes. Your contributions and ideas are highly appreciated, so
 please <a href="?page=registration">register</a> and join the club. See the
 <a href="?page=participation">participation page</a> for information on how
 to answer to the call for paper-presentations, workshops and music.
+</p>
 
 <h2>Links to prior Linux Audio Conferences</h2>
 <ul>

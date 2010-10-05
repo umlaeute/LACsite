@@ -1,4 +1,4 @@
-<h1>Sponsoring</h1>
+<h1>Sponsors</h1>
 <p>
 As admittance to the conference is free, several things need sponsoring.
 If you want to contribute to the conference and want to know what you
@@ -8,7 +8,7 @@ conference organisation: lac -at- linuxaudio -dot- org
 <?php /* OLD POST-CONFERENCE
 <h1>Sponsors</h1>
 <p>
-As admittance to the conference was free, several things required sponsoring which was made possible by the following partners:<br/> <br/>
+As admittance to the conference was free, several things required sponsoring which was made possible by the following partners:
 </p>
 */?>
 

@@ -4,18 +4,16 @@
 <li>Notification of acceptance: March 7th, 2011</li>
 <li>Deadline for camera-ready paper: April 1th, 2011</li>
 </ul>
-<br/>
 
 <h1>Call for papers</h1>
 <p>
 Papers can be submitted for review via the
 <a href="http://lac.linuxaudio.org/2011/openconf/" rel="external">openconf</a> system.
-Templates for paper submission are available for LaTeX and OpenOffice/LibreOffice from <a href="http://wiki.linuxaudio.org/_media/lac2011/lac2011-templates.tar.bz2">here</a>.<br/>
-<br/>
+Templates for paper submission are available for LaTeX and OpenOffice/LibreOffice from <a href="http://wiki.linuxaudio.org/_media/lac2011/lac2011-templates.tar.bz2">here</a>.
+</p>
+<p>
 Papers must be written and presented in English, 4&mdash;8 pages, with abstract (50&mdash;100 words) and up to 5 keywords. 
 In general a presentation should take 20&mdash;30 minutes followed by 5 minutes discussion.
-<br/>
-<br/>
 </p>
 <p>
 The copyright of the paper remains with the author, but we reserve the right to create printed proceedings from all submitted (and accepted) paper.
@@ -24,7 +22,6 @@ The copyright of the paper remains with the author, but we reserve the right to 
 Below is a list of possible subjects for papers and presentations. This list is
 meant as a starting point, not to restrict you.
 </p>
-<br/>
 
 <ul class="multicolumn">
 	<li>Ambisonics</li>
@@ -56,8 +53,6 @@ We very much welcome practical papers resp. software demos ("how I use Linux Aud
 <p>
 Not all papers need to address Linux Audio. Subjects from related fields like open source music applications, open source software for music or sound research and open content are also very welcome.
 </p>
-
-<br/>
 
 <h1>Call for music</h1>
 Guidelines for submitting your music and associated work
