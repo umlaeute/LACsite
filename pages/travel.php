@@ -15,6 +15,6 @@ NUI Maynooth is accessible by public transport. The university is located 15 mil
 </ul>
 
 <h1>Staying in Maynooth</h1>
-<p> Dedicated information about accomodation for LAC2011 will be made available shortly.
+<p> Dedicated information about accommodation for LAC2011 will be made available shortly.
 Meanwhile check out the excellent <a href="http://www.nuim.ie/about/accommodation.shtml" rel="external">Visitor Accommodation</a> information page of NUIM.
 </p>

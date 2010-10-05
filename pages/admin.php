@@ -39,7 +39,7 @@ switch ($mode) {
   case 'proceedings':
     $r=scan_registrations();
     $v=count_fields($r,'reg_proceedings');
-    echo '<p>Got '.$v.' requests for proceesings out of '.count($r).' total registrations.</p>';
+    echo '<p>Got '.$v.' requests for proceedings out of '.count($r).' total registrations.</p>';
     show_fields($r,'reg_proceedings');
     break;
   case 'food':

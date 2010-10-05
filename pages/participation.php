@@ -66,7 +66,7 @@ Guidelines for submitting your music and associated work
 <!--
 are described in <a href="#" style="text-decoration: line-through;">callformusic.pdf</a>.
 !-->
-will be made availabe soon.
+will be made available soon.
 
 <h1>Call for workshops</h1>
 If you want to organise a training, workshop or other activity please
