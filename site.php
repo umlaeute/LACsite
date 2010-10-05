@@ -15,8 +15,8 @@
   $hidden = array(
     'program' => 'Program',
     'download' => 'Download',
-    'concerts' => 'Concerts',
-    'news' => 'News',
+//  'concerts' => 'Concerts',
+//  'news' => 'News',
   );
 
 # don't list sponsors on these pages
@@ -38,4 +38,3 @@
     'http://linuxaudio.org/' => array('img' => 'img/logos/lao.png', 'title' => 'linuxaudio.org'),
     'http://www.citu.info/' => array('img' => 'img/logos/citu.png', 'title' => 'CiTu'),
   );
-
