@@ -227,7 +227,7 @@ function log_ip_address() {
 	} catch (PDOException $exception) {return;}
 
 	$q='INSERT into iplog (ip_addr, regname) VALUES ('
-	  .' '.$db->quote($_SERVER['REMOTE_IP'])
+	  .' '.$db->quote($_SERVER['REMOTE_ADDR'])
 	  .','.$db->quote(rawurldecode($_POST['reg_prename']).' '.rawurldecode($_POST['pdb_name']))
 	  .');';
 	$db->exec($q);
@@ -239,7 +239,7 @@ function check_max_submit_per_ip() {
 	} catch (PDOException $exception) {return true;}
 
 	$q='SELECT COUNT(*) from iplog WHERE'
-    .' ip_addr='.$db->quote($_SERVER['REMOTE_IP'])
+    .' ip_addr='.$db->quote($_SERVER['REMOTE_ADDR'])
 		.' AND datetime(ac_time,\'+'.(3600*24).' seconds\') > datetime(\'now\')'
 	  .';';
 
