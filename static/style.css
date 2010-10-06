@@ -84,6 +84,7 @@ span.menuitem 	{
 		}
 #footerwrap	{text-align:center; border:0px; margin:2em auto;}
 div.footer	{float:left;font-size:75%; margin:1em;}
+div.footer p	{text-align:center;}
 #wrapper	{
 		position:relative;
 		margin: 0px auto 2px auto;
