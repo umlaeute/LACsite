@@ -209,8 +209,8 @@ function write_public_listing() {
 }
 
 function proc_public_listing($data) {
-	$tfn=TMPDIR.'/lac2011.lock';
-	$pfn=TMPDIR.'/lac2011.list';
+	$tfn=TMPDIR.'/lac2011-reg.lock';
+	$pfn=TMPDIR.'/lac2011-reg.list';
 	$timeout = 100;
 	$fp = fopen($tfn, "a");
 	while ($timeout-- > 0) {
