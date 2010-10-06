@@ -39,7 +39,7 @@ function checkreg() {
 
 	if (check_max_submit_per_ip() !== true) {
 		# TODO: save IP-address; allow max 5 req per IP / day.
-    $errmsg.='<p class="error">We have already accepted 3 submissions from your IP address in the last 24 hours. Please try again tomorrow or contact us by email for group-registrations.</p>'."\n";
+    $errmsg.='<p class="error">* We have already accepted 3 submissions from your IP address in the last 24 hours. Please try again tomorrow or contact us by email for group-registrations.</p>'."\n";
 		$err|=1;
 	}
 
@@ -83,6 +83,12 @@ function format_registration($a) {
 .'
   Notes       : '.rawurldecode($a['reg_notes']).'
 ';
+}
+
+function sanevalue($txt) {
+  $l = 150;
+  if (strlen($s)<=$l) return ($s);
+  return (substr($s,0,$l).'..');
 }
 
 function savereg() {
@@ -173,9 +179,9 @@ function add_public_listing() {
 	} catch (PDOException $exception) {return;}
 
 	$q='INSERT into pubrg (name, prename, tagline) VALUES ('
-	  .' '.$db->quote(rawurldecode($_POST['reg_name']))
-	  .','.$db->quote(rawurldecode($_POST['reg_prename']))
-	  .','.$db->quote(rawurldecode($_POST['reg_tagline']))
+	  .' '.$db->quote(sanevalue(rawurldecode($_POST['reg_name'])))
+	  .','.$db->quote(sanevalue(rawurldecode($_POST['reg_prename'])))
+	  .','.$db->quote(sanevalue(rawurldecode($_POST['reg_tagline'])))
 	  .');';
 	$db->exec($q);
 	write_public_listing();
@@ -228,7 +234,7 @@ function log_ip_address() {
 
 	$q='INSERT into iplog (ip_addr, regname) VALUES ('
 	  .' '.$db->quote($_SERVER['REMOTE_ADDR'])
-	  .','.$db->quote(rawurldecode($_POST['reg_prename']).' '.rawurldecode($_POST['pdb_name']))
+	  .','.$db->quote(sanevalue(rawurldecode($_POST['reg_prename'])).' '.sanevalue(rawurldecode($_POST['pdb_name'])))
 	  .');';
 	$db->exec($q);
 }
