@@ -93,7 +93,7 @@
       <div style="clear:both;">&nbsp;</div>
     </div>
   </div>
-  <div id="createdby"> Oct 04 2011, Victor Lazzarini &amp; Robin Gareus</div>
+  <div id="createdby"> Oct 06 2011, Victor Lazzarini , John Lato &amp; Robin Gareus</div>
 </div>
 
 <div class="envelope" id="footerwrap">
