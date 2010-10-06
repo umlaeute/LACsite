@@ -16,6 +16,10 @@ AuthDigestProvider file
   deny from all
 </Files>
 
+<Files "schema_reg.sql">
+  deny from all
+</Files>
+
 <Files "README">
   deny from all
 </Files>
