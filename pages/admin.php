@@ -150,15 +150,14 @@ function export_sv($sep="\t") {
   $rv.= '"Tagline"'.$sep;
   $rv.= '"Email"'.$sep;
   $rv.= '"Age"'.$sep;
-  $rv.= '"City"'.$sep;
   $rv.= '"County"'.$sep;
   $rv.= '"Using Linux"'.$sep;
   $rv.= '"Profi"'.$sep;
   $rv.= '"Interests"'.$sep;
   $rv.= '"Profession"'.$sep;
   $rv.= '"Proceedings"'.$sep;
+  $rv.= '"Public reg."'.$sep;
   $rv.= '"VIP"'.$sep;
-  $rv.= '"Food"'.$sep;
   $rv.= '"Notes"'."\n";
 
   $r=scan_registrations();
@@ -172,7 +171,6 @@ function export_sv($sep="\t") {
     $rv.= '"'.$v['reg_tagline'].'"'.$sep;
     $rv.= '"'.$v['reg_email'].'"'.$sep;
     $rv.= '"'.preg_replace('/A(\d{2})(.{2})/','${1}-${2}',$v['reg_agegroup']).'"'.$sep;
-    $rv.= '"'.$v['reg_city'].'"'.$sep;
     $rv.= '"'.$v['reg_country'].'"'.$sep;
     $rv.= '"'.($v['reg_useathome']?'at home, ':'').($v['reg_useatwork']?'at work':'').'"'.$sep;
     $rv.= '"'
@@ -196,8 +194,8 @@ function export_sv($sep="\t") {
     $rv.= '"'.$sep;
     $rv.= '"'.$v['reg_profession'].'"'.$sep;
     $rv.= '"'.($v['reg_proceedings']?'yes':'no').'"'.$sep;
+    $rv.= '"'.($v['reg_whoelselist']?'yes':'no').'"'.$sep;
     $rv.= '"'.$v['reg_vip'].'"'.$sep;
-    $rv.= '"'.$v['reg_food'].'"'.$sep;
     $rv.= '"'.$v['reg_notes'].'"'."\n";
   }
   return $rv;
