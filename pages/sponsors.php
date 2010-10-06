@@ -22,8 +22,8 @@ conference organisation: lac -at- linuxaudio -dot- org
 </p>
 <p>
   Along the years, many important technologies were demonstrated at the conference, such as systems
-	for spatial audio (Wave Field Synthesis, Ambisonics), networked audio and realtime processing.
-	LAC featured presentations by key persons involved with Sound Sythesis 
+	for spatial audio (Wave Field Synthesis, Ambisonics), networked audio and real-time processing.
+	LAC featured presentations by key persons involved with Sound Synthesis 
   (<a rel="external" href="http://www.csounds.com/">Csound</a>, 
    <a rel="external" href="http://puredata.info/">Pure Data</a>, 
 	 <a rel="external" href="http://www.audiosynth.com/">SuperCollider</a>, etc.),
