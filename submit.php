@@ -85,7 +85,7 @@ function format_registration($a) {
 ';
 }
 
-function sanevalue($txt) {
+function sanevalue($s) {
   $l = 150;
   if (strlen($s)<=$l) return ($s);
   return (substr($s,0,$l).'..');
