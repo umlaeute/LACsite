@@ -200,8 +200,11 @@ function write_public_listing() {
 	foreach ($result as $c) {
 		$newlist.='<li>';
 		$newlist.=xhtmlify($c['name']).', ';
-		$newlist.=xhtmlify($c['prename']).' &mdash; ';
-		$newlist.=xhtmlify($c['tagline']);
+		$newlist.=xhtmlify($c['prename']);
+		if (!empty($c['tagline'])) {
+			$newlist.=' &mdash; ';
+			$newlist.=xhtmlify($c['tagline']);
+		}
 		$newlist.="</li>\n";
 	}
 	$newlist.='</ul>';
