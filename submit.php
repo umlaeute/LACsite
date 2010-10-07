@@ -124,7 +124,7 @@ function savereg() {
   $subject='LAC2011 registration: '.preg_replace('/[^a-zA-Z0-9 ,]/','', $_POST['reg_prename'].' '.$_POST['reg_name']);
   $message='Dear LAC2011 Organizers,
 
-A new participan has registered. Here are the details:
+A new participant has registered. Here are the details:
 '.format_registration($_POST).'
 
   Browser used: '.$_SERVER['HTTP_USER_AGENT'].'
