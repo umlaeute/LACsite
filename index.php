@@ -57,7 +57,7 @@
   <div id="header">&nbsp;</div>
   <div id="titlebar">
     <div id="maintitle"> Linux Audio Conference 2011 </div>
-    <div id="subtitle"> The conference about Open Source Software for music and sound</div>
+    <div id="subtitle">The Open Source Music and Sound Conference</div>
 		<div id="wherewhen"> May 6-8 2011, Maynooth, Ireland</div>
     <div>LECTURES / WORKSHOPS / EXHIBITION / CONCERTS / CLUBNIGHT</div>
   </div>
