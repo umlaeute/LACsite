@@ -23,17 +23,17 @@ conference organisation: lac -at- linuxaudio -dot- org
 <p>
   Along the years, many important technologies were demonstrated at the conference, such as systems
 	for spatial audio (Wave Field Synthesis, Ambisonics), networked audio and real-time processing.
-	LAC featured presentations by key persons involved with Sound Synthesis 
+	LAC also featured presentations by key people involved in Sound Synthesis research
   (<a rel="external" href="http://www.csounds.com/">Csound</a>, 
    <a rel="external" href="http://puredata.info/">Pure Data</a>, 
-	 <a rel="external" href="http://www.audiosynth.com/">SuperCollider</a>, etc.),
-	commercial products
+	 <a rel="external" href="http://www.audiosynth.com/">SuperCollider</a>, etc.) and
+	development of commercial products
 	(<a rel="external" href="http://mixbus.harrisonconsoles.com/">Harrison Consoles</a>,
 	 <a rel="external" href="http://indamixx.com/">Indamixx</a>, 
    <a rel="external" href="http://64studio.com/">64studio</a>, 
    <a rel="external" href="http://www.lionstracs.com/">Lionstracs</a>, 
-   <a rel="external" href="http://www.trinityaudiogroup.com/">Trinity</a>, ...), 
-  developer discussions and - of course - concerts.
+   <a rel="external" href="http://www.trinityaudiogroup.com/">Trinity</a>, ...). It provides plenty of space 
+  for developer discussions and - of course - concerts and music (of various electronic flavours and genres).
   Recently, the conference has also been a host to the Open Video community
   (<a rel="external" href="http://lumiera.org/">lumiera</a>, 
    <a rel="external" href="http://openmovieeditor.org/">openmovieeditor</a>,
