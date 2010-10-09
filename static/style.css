@@ -107,7 +107,7 @@ div.footer p	{text-align:center;}
 			font-family: Georgia,Times,serif;
 			font-size: 12pt;
 			line-height: 16pt;
-			padding:1em;
+			padding:1.5em;
 			border-top: 0;
 			border-left: 1px solid black;
 			border-right: 1px solid black;
@@ -117,7 +117,7 @@ div.footer p	{text-align:center;}
 			float:right;
 			width:150px;
 			padding:0px 0px 0px 1em;
-			margin: .5em .5em 2em .5em;
+			margin: .5em .5em 2em 1.5em;
 			text-align:center;
 			border-left:1px solid black;
 			overflow:hidden;
