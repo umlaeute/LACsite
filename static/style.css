@@ -117,7 +117,7 @@ div.footer p	{text-align:center;}
 			float:right;
 			width:150px;
 			padding:0px 0px 0px 1em;
-			margin: .5em .5em 2em 1.5em;
+			margin: .5em .5em 5em 1.5em;
 			text-align:center;
 			border-left:1px solid black;
 			overflow:hidden;
@@ -139,7 +139,7 @@ div.footer p	{text-align:center;}
 #content h3 		{ font-size: 120%; }
 #content input, 
 #content textarea 	{border: 1px solid black;}
-#content ul 		{margin-left:2em;}
+#content ul 		{margin-left:1em; text-align:justify;}
 #supporter a,
 #supporterbar a		{text-decoration:none;}
 #supporter th,
@@ -226,7 +226,7 @@ p.pix {font-size:90%;margin:.5em 0em; text-align:justify;}
 ul.multicolumn { width:100%;}
 ul.multicolumn li{
 	float:left;
-	width:34%;
+	width:33%;
 }
 
 #infoframe, #ieframe {
