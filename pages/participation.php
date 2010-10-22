@@ -3,7 +3,7 @@
 <li>Deadline for paper-submissions: <b>January 15th, 2011</b></li>
 <li>Music/sound-installation submissions: <b>February 18th, 2011</b></li>
 <li>Notification of acceptance: <b>March 7th, 2011</b></li>
-<li>Deadline for camera-ready paper: <b>April 1th, 2011</b></li>
+<li>Deadline for camera-ready paper: <b>April 1st, 2011</b></li>
 </ul>
 
 <h1>Call for papers</h1>
