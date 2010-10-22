@@ -1,8 +1,9 @@
 <h1>Call for papers, music and workshops</h1>
 <ul>
-<li>Deadline for submissions: January 15th, 2011</li>
-<li>Notification of acceptance: March 7th, 2011</li>
-<li>Deadline for camera-ready paper: April 1th, 2011</li>
+<li>Deadline for paper-submissions: <b>January 15th, 2011</b></li>
+<li>Music/sound-installation submissions: <b>February 18th, 2011</b></li>
+<li>Notification of acceptance: <b>March 7th, 2011</b></li>
+<li>Deadline for camera-ready paper: <b>April 1th, 2011</b></li>
 </ul>
 
 <h1>Call for papers</h1>
@@ -55,11 +56,18 @@ Not all papers need to address Linux Audio. Subjects from related fields like op
 </p>
 
 <h1>Call for music</h1>
+<p>
+The Linux Audio Conference 2011 will include several concerts. We are looking for music that has been produced or composed entirely or mostly using GNU/Linux or other Open Source music software for:
+</p>
+<ul>
+  <li>The Electroacoustic Music Concerts</li>
+  <li>The Linux Sound Night</li>
+  <li>Sound installations</li>
+</ul>
+<p>
 Guidelines for submitting your music and associated work
-<!--
-are described in <a href="#" style="text-decoration: line-through;">callformusic.pdf</a>.
-!-->
-will be made available soon.
+are described in <a href="download/callformusic-LAC2011.pdf">callformusic.pdf</a>.
+</p>
 
 <h1>Call for workshops</h1>
 If you want to organise a training, workshop or other activity please
