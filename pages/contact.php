@@ -25,5 +25,5 @@ height;o.parentNode.replaceChild(i,o);})();</script><![endif]-->
 <img src="img/aerial.jpg" alt="Aerial Picture of the Campus"/> 
 </p>
 <p>
-The Conference will take place in the "Logic House", located at the right in this Aerial photograph.
+The Conference will take place in the "Logic House", located at the right in this aerial photograph.
 </p>
