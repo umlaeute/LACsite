@@ -36,8 +36,12 @@ serious interest in Open Source Software for Music and Sound.
 
 <h1>Where &amp; When</h1>
 <p>
-May 6-8 2011, Maynooth, Ireland
+May 6-8 2011, Maynooth, Ireland. See the <a href="?page=contact">Contact</a> and <a href="?page=travel">Travel</a> pages for details.
 </p>
+<div class="ptitle">
+<img src="img/nui_maynooth_6.jpg" alt="campus impressions (1)"/> 
+<img src="img/nui_maynooth_3.jpg" alt="campus impressions (2)"/> 
+</div>
 
 <h1>We need you ! </h1>
 <p>
