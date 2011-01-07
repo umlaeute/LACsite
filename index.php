@@ -48,6 +48,7 @@
   <meta name="Author" content="Robin Gareus" />
   <meta name="description" content="Linux Audio Conference 2011" />
   <meta name="keywords" content="LAC2011, LAC, Linux Audio Conference 2011,Linux, Music, Developer Meeting, Music Department, National University of Ireland, Maynooth" />
+  <meta name="google-site-verification" content="MN3y5vmxMxuQpTQhQPoecYv4NXe4Jj8i1zH7hUoIme0" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <script type="text/javascript" src="static/script.js"></script>
