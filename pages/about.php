@@ -32,7 +32,7 @@ serious interest in Open Source Software for Music and Sound.
  <li>Workshops</li>
  <li>Concerts</li>
  <li>Live coding sessions</li>
- <li>Keynote by Fons Andriaensen</li>
+ <li>Keynote by Fons Adriaensen</li>
  <li>Invited session: Yann Orlarey (FAUST), Iohannes M. Zmoelnig (Pd), Vesa Norilo (PWGL), John Ffitch (Csound), Nick Collins (SuperCollider), Tim Blechmann (SuperNova)</li> 
 </ul>
 
