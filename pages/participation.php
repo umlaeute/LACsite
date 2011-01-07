@@ -3,7 +3,7 @@
 <li>Deadline for paper-submissions: <b>January 15th, 2011</b></li>
 <li>Music/sound-installation submissions: <b>February 18th, 2011</b></li>
 <li>Notification of acceptance: <b>March 7th, 2011</b></li>
-<li>Deadline for camera-ready paper: <b>April 1st, 2011</b></li>
+<!-- <li>Deadline for camera-ready paper: <b>April 1st, 2011</b></li> !-->
 </ul>
 
 <h1>Call for papers</h1>
@@ -53,6 +53,9 @@ We very much welcome practical papers resp. software demos ("how I use Linux Aud
 </p>
 <p>
 Not all papers need to address Linux Audio. Subjects from related fields like open source music applications, open source software for music or sound research and open content are also very welcome.
+</p>
+
+<p>NB. Papers should be as complete as possible on submission. Until submission closes it is possible to replace/update files in the <a href="http://lac.linuxaudio.org/2011/openconf/" rel="external">openconf</a> system. Submissions will be peer-reviewed and after the notification of acceptance (March 7) there is time for updates and last-minute changes. Camera-ready papers need to be submitted by April 1st, 2011.
 </p>
 
 <h1>Call for music</h1>
