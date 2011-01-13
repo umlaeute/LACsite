@@ -1,8 +1,8 @@
 <h1>Call for papers, music and workshops</h1>
 <ul>
-<li>Deadline for paper-submissions: <b>January 15th, 2011</b></li>
-<li>Music/sound-installation submissions: <b>February 18th, 2011</b></li>
-<li>Notification of acceptance: <b>March 7th, 2011</b></li>
+<li>Deadline for paper-submissions: <b>February 20th, 2011</b></li>
+<li>Music/sound-installation submissions: <b>February 20th, 2011</b></li>
+<li>Notification of acceptance: <b>March 15th, 2011</b></li>
 <!-- <li>Deadline for camera-ready paper: <b>April 1st, 2011</b></li> !-->
 </ul>
 
@@ -17,7 +17,7 @@ Papers must be written and presented in English, 4&mdash;8 pages, with abstract 
 In general a presentation should take 20&mdash;30 minutes followed by 5 minutes discussion.
 </p>
 <p>
-The copyright of the paper remains with the author, but we reserve the right to create printed proceedings from all submitted (and accepted) paper.
+The copyright of the paper remains with the author, but we reserve the right to create printed proceedings from all submitted (and accepted) papers.
 </p>
 <p>
 Below is a list of possible subjects for papers and presentations. This list is
@@ -55,7 +55,7 @@ We very much welcome practical papers resp. software demos ("how I use Linux Aud
 Not all papers need to address Linux Audio. Subjects from related fields like open source music applications, open source software for music or sound research and open content are also very welcome.
 </p>
 
-<p>NB. Papers should be as complete as possible on submission. Until submission closes it is possible to replace/update files in the <a href="http://lac.linuxaudio.org/2011/openconf/" rel="external">openconf</a> system. Submissions will be peer-reviewed and after the notification of acceptance (March 7) there is time for updates and last-minute changes. Camera-ready papers need to be submitted by April 1st, 2011.
+<p>NB. Papers should be as complete as possible on submission. Until submission closes it is possible to replace/update files in the <a href="http://lac.linuxaudio.org/2011/openconf/" rel="external">openconf</a> system. Submissions will be peer-reviewed and after the notification of acceptance (March 15) there is time for updates and last-minute changes. Camera-ready papers need to be submitted by April 1st, 2011.
 </p>
 
 <h1>Call for music</h1>
