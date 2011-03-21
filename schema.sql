@@ -14,6 +14,7 @@ CREATE TABLE activity (
    url_stream TEXT DEFAULT NULL, 
    url_audio TEXT DEFAULT NULL, 
    url_misc TEXT DEFAULT NULL, 
+   url_image TEXT DEFAULT NULL, 
    status INTEGER DEFAULT 1,
    editlock datetime default 0,
    UNIQUE (title)
