@@ -75,7 +75,7 @@ switch ($mode) {
     echo '<table class="adminlist" cellspacing="0">'."\n";
     foreach ($r as $f) {
       echo '<tr><td style="border-bottom: dotted 1px;">';
-			echo substr($f, 16,-1);
+			echo substr($f, 16);
 			echo '</td><td>';
       echo '<span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'detail\';document.myform.submit();">Show Details</span>';
 			echo '</td><td>';
