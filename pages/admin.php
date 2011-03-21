@@ -5,6 +5,23 @@ if (!defined('REGLOGDIR')) die();
 $mode='';
 if (isset($_POST['mode'])) $mode=rawurldecode($_POST['mode']);
 
+switch ($mode) {
+  case 'vip_author':
+		$mode='vip';
+		$vip='author';
+		break;
+  case 'vip_organizer':
+		$mode='vip';
+		$vip='organizer';
+		break;
+	case 'vip_none':
+		$mode='vip';
+		$vip='';
+		break;
+	default:
+		break;
+}
+
 adminpage();
 switch ($mode) {
   case 'csv':
@@ -49,15 +66,44 @@ switch ($mode) {
   case 'detail':
     show_registration($_POST['param']);
     break;
+	case 'vip':
+		if (isset($vip))
+			set_vip($_POST['param'], $vip);
   case 'list':
     $r=scan_registrations();
     echo '<p>We have '.count($r).' registered participants:</p>';
-    echo '<ul>';
+    echo '<table class="adminlist" cellspacing="0">'."\n";
     foreach ($r as $f) {
-      echo '<li style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'detail\';document.myform.submit();">';
-      echo $f.'</li>'."\n";
+      echo '<tr><td style="border-bottom: dotted 1px;">';
+			echo substr($f, 16,-1);
+			echo '</td><td>';
+      echo '<span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'detail\';document.myform.submit();">Show Details</span>';
+			echo '</td><td>';
+
+			$filename=$name = preg_replace('/[^a-zA-Z0-9_-]/','_', $f).'.ini';
+			$v=parse_ini_file(REGLOGDIR.$filename);
+
+			if (!isset($v['reg_vip'])) { $v['reg_vip']=''; }
+      switch(strtolower($v['reg_vip'])) {
+        case 'author':
+					echo '<td><span style="font-weight:bold;">[Author]</span></td>';
+					echo '<td><span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'vip_organizer\';document.myform.submit();">Organizer</span></td>';
+					echo '<td><span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'vip_none\';document.myform.submit();">No-VIP</span></td>';
+          break;
+        case 'organizer':
+					echo '<td><span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'vip_author\';document.myform.submit();">Author</span></td>';
+					echo '<td><span style="font-weight:bold;">[Organizer]</span></td>';
+					echo '<td><span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'vip_none\';document.myform.submit();">No-VIP</span></td>';
+          break;
+        default:
+					echo '<td><span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'vip_author\';document.myform.submit();">Author</span></td>';
+					echo '<td><span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'vip_organizer\';document.myform.submit();">Organizer</span></td>';
+					echo '<td><span>[No-VIP]</span></td>';
+          break;
+			}
+			echo '</td></tr>'."\n";
     }
-    echo '</ul>';
+    echo '</table>';
     break;
   default:
     break;
@@ -93,6 +139,37 @@ function show_registration($fn) {
   echo '<pre style="font-size:9px;">';
   echo wordwrap(format_registration(parse_ini_file(REGLOGDIR.$filename)), 100);
   echo '</pre>';
+}
+
+function set_vip($fn, $vip='author') {
+	$filename=$name = REGLOGDIR.preg_replace('/[^a-zA-Z0-9_-]/','_', $fn).'.ini';
+	# TODO flock file  ?
+
+	#remove previous reg_vip (if any)
+	$sh=fopen($filename, 'r');
+	if (!$sh) {
+		return false;
+	}
+	$th=fopen($filename.'.tmp', 'w');
+	if (!$th) {
+    fclose($sh);
+		return false;
+	}
+	while (!feof($sh)) {
+    $line=fgets($sh);
+    if (strpos($line, 'reg_vip')===false) {
+			fwrite($th, $line);
+    }
+  }
+  fclose($sh);
+	if (!empty($vip)) {
+		fwrite($th, 'reg_vip="'.preg_replace('/[";]/','.',$vip)."\"\n");
+	}
+  fclose($th);
+  #delete old source file
+  unlink($filename);
+  #rename target file to source file
+  rename($filename.'.tmp', $filename);
 }
 
 function count_fields($f, $k) {

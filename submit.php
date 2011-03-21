@@ -82,7 +82,8 @@ function format_registration($a) {
 .($a['reg_vother']?'Other ':'')
 .'
   Notes       : '.rawurldecode($a['reg_notes']).'
-';
+'
+.(isset($a['reg_vip'])?'  VIP         : '.$a['reg_vip']:'');
 }
 
 function sanevalue($s) {
