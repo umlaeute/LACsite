@@ -678,26 +678,6 @@
     }
   }
 
-  function admin_fieldset() {
-?>
-  <fieldset class="pdb">
-    <legend>LAC Admin Menu:</legend>
-    <input class="button" type="button" title="Registration Admin" value="Registration Admin" onclick="document.getElementById('page').value='admin';document.myform.submit();"/>
-  </fieldset>
-  <fieldset class="pdb">
-    <legend>Program Schedule Admin Menu:</legend>
-    <input class="button" type="button" title="List Program Entries" value="List Program Entries" onclick="document.getElementById('param').value='';document.getElementById('mode').value='';document.myform.submit();"/>&nbsp;
-    <input class="button" type="button" title="Add Program Entry" value="Add Program Entry" onclick="document.getElementById('param').value='-1';document.getElementById('mode').value='edit';document.myform.submit();"/><br/>
-    <input class="button" type="button" title="List Authors" value="List Authors" onclick="document.getElementById('mode').value='listuser';document.myform.submit();"/>&nbsp;
-    <input class="button" type="button" title="Add Author" value="Add Author" onclick="document.getElementById('param').value='-1';document.getElementById('mode').value='edituser';document.myform.submit();"/><br/>
-    <input class="button" type="button" title="List Locations" value="List Locations" onclick="document.getElementById('mode').value='listlocation';document.myform.submit();"/>&nbsp;
-    <input class="button" type="button" title="Add Location" value="Add Location" onclick="document.getElementById('param').value='-1';document.getElementById('mode').value='editlocation';document.myform.submit();"/><br/>
-    <input class="button" type="button" title="List orphaned entries" value="List orphaned entries" onclick="document.getElementById('mode').value='orphans';document.myform.submit();"/>&nbsp;
-    <input class="button" type="button" title="Check Timetable for conflicts" value="Check Timetable for conflicts" onclick="document.getElementById('mode').value='conflicts';document.myform.submit();"/><br/>
-  </fieldset>
-<?php
-  }
-
   function program_fieldset() {
 ?>
   <fieldset class="pdb">

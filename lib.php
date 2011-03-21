@@ -70,4 +70,50 @@
     }
     echo '</table>';
     echo '</div>';
+	}
+
+
+	# libadmin
+
+  function admin_fieldset() {
+?>
+<fieldset class="fm">
+    <legend>Registration Admin:</legend>
+    <input class="button" type="button" title="List all registrations" value="List Participants" onclick="admingo('admin','list','');"/>
+		&nbsp;
+    <input class="button" type="button" title="Show non empty remarks" value="List Remarks" onclick="admingo('admin','remarks','');"/>
+		&nbsp;
+    <input class="button" type="button" title="Generate list of email addresses" value="Dump Email Contacts" onclick="admingo('admin','email','');"/>
+    <br/>
+    <input class="button" type="button" title="Count Ordered Proceedings" value="Count Ordered Proceedings" onclick="admingo('admin','proceedings','');"/>
+<!-- <input class="button" type="button" title="Show Badges TeX" value="Show Badges TeX" onclick="admingo('admin','badgestex','');"/> !-->
+		&nbsp;
+    <input class="button" type="button" title="Generate badges PDF" value="Generate Badges PDF" onclick="admingo('admin','badgespdf','');"/>
+		&nbsp;
+    <input class="button" type="button" title="Export comma separated value table" value="Export registrations (CSV)" onclick="admingo('admin','csv','');"/>
+    <br/>
+  </fieldset>
+
+  <fieldset class="fm">
+    <legend>Program Schedule Admin Menu:</legend>
+		<input class="button" type="button" title="List Program Entries" value="List Program Entries" onclick="admingo('adminschedule','','');"/>
+		&nbsp;
+		<input class="button" type="button" title="List Authors" value="List Authors" onclick="admingo('adminschedule','listuser','');"/>
+		&nbsp;
+    <input class="button" type="button" title="List Locations" value="List Locations" onclick="admingo('adminschedule','listlocation','');"/>
+		<br/>
+    <input class="button" type="button" title="Add Program Entry" value="Add Program Entry" onclick="admingo('adminschedule','edit','-1');"/>
+		&nbsp;
+		<input class="button" type="button" title="Add Author" value="Add Author" onclick="admingo('adminschedule','edituser','-1');"/>
+		&nbsp;
+		<input class="button" type="button" title="Add Location" value="Add Location" onclick="admingo('adminschedule','editlocation','-1');"/>
+		<br/>
+		<input class="button" type="button" title="Check Timetable for conflicts" value="Check Timetable for conflicts" onclick="admingo('adminschedule','conflicts','');"/>
+		&nbsp;
+		<input class="button" type="button" title="List orphaned entries" value="List orphaned entries" onclick="admingo('adminschedule','orphans','');"/>
+		&nbsp;
+		<input class="button" type="button" title="Export Program (CSV)" value="Export Program (CSV)" onclick="admingo('adminschedule','export','');"/>
+		<br/>
+  </fieldset>
+<?php
   }

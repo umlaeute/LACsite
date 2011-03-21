@@ -51,3 +51,10 @@ function hideInfoBox() {
   document.getElementById('infobox').style.display = "none";
   document.getElementById('dimmer').style.display = "none";
 }
+
+function admingo(page,mode,param) {
+	document.getElementById('page').value=page;
+	document.getElementById('mode').value=mode;
+	document.getElementById('param').value=param;
+	document.myform.submit();
+}

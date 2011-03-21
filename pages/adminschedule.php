@@ -62,10 +62,14 @@ if (!defined('REGLOGDIR')) die();
       }
       break;
     case 'export':
+      admin_fieldset();
+      program_fieldset();
 			$handle = fopen(TMPDIR.'/schedule.csv', "w");
 			fwrite($handle, export_progam_sv($db, ","));
 			fclose($handle);
+      echo '<legend>Conference Program - Export to spreadsheet:</legend>'."\n";
 			echo 'Download: <a href="download.php?file=schedule.csv">schedule.csv</a>';
+      echo '</fieldset>';
       break;
     case 'orphans':
       admin_fieldset();

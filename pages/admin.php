@@ -66,27 +66,12 @@ switch ($mode) {
 function adminpage() {
   echo '
 <form action="index.php" method="post" name="myform">
-  <fieldset class="fm">
+';
+  admin_fieldset();
+  echo '
     <input name="page" type="hidden" value="admin" id="page"/>
     <input name="mode" type="hidden" value="" id="mode"/>
-    <input name="param" type="hidden" value="" id="param"/>
-    <legend>Registration Admin:</legend>
-    <input class="button" type="button" title="List all registrations" value="List Participants" onclick="document.getElementById(\'mode\').value=\'list\';document.myform.submit();"/>
-    <input class="button" type="button" title="Show non empty remarks" value="List Remarks" onclick="document.getElementById(\'mode\').value=\'remarks\';document.myform.submit();"/>
-    <input class="button" type="button" title="Generate list of email addresses" value="Dump Email Contacts" onclick="document.getElementById(\'mode\').value=\'email\';document.myform.submit();"/>
-    <br/>
-    <input class="button" type="button" title="Count Ordered Proceedings" value="Count Ordered Proceedings" onclick="document.getElementById(\'mode\').value=\'proceedings\';document.myform.submit();"/>
-<!-- <input class="button" type="button" title="Show Badges TeX" value="Show Badges TeX" onclick="document.getElementById(\'mode\').value=\'badgestex\';document.myform.submit();"/> !-->
-    <input class="button" type="button" title="Generate badges PDF" value="Generate Badges PDF" onclick="document.getElementById(\'mode\').value=\'badgespdf\';document.myform.submit();"/>
-    <input class="button" type="button" title="Export comma separated value table" value="Export CSV" onclick="document.getElementById(\'mode\').value=\'csv\';document.myform.submit();"/>
-    <br/>
-  </fieldset>
-  <fieldset class="fm">
-    <legend>Program Admin:</legend>
-    <input class="button" type="button" title="List Program Entries" value="List Program Entries" onclick="document.getElementById(\'page\').value=\'adminschedule\';document.myform.submit();"/>
-    <input class="button" type="button" title="List Authors" value="List Authors" onclick="document.getElementById(\'mode\').value=\'listuser\';document.getElementById(\'page\').value=\'adminschedule\';document.myform.submit();"/>&nbsp;
-    <input class="button" type="button" title="List Locations" value="List Locations" onclick="document.getElementById(\'mode\').value=\'listlocation\';document.getElementById(\'page\').value=\'adminschedule\';document.myform.submit();"/>&nbsp;
-  </fieldset>
+		<input name="param" type="hidden" value="" id="param"/>
 </form>
 <div style="height:1em;">&nbsp;</div>
 ';
@@ -194,8 +179,12 @@ function export_sv($sep="\t") {
     $rv.= '"'.$sep;
     $rv.= '"'.$v['reg_profession'].'"'.$sep;
     $rv.= '"'.($v['reg_proceedings']?'yes':'no').'"'.$sep;
-    $rv.= '"'.($v['reg_whoelselist']?'yes':'no').'"'.$sep;
-    $rv.= '"'.$v['reg_vip'].'"'.$sep;
+		$rv.= '"'.($v['reg_whoelselist']?'yes':'no').'"'.$sep;
+    if (isset($v['reg_vip'])) {
+			$rv.= '"'.$v['reg_vip'].'"'.$sep;
+		} else {
+			$rv.= '""'.$sep;
+		}
     $rv.= '"'.$v['reg_notes'].'"'."\n";
   }
   return $rv;
