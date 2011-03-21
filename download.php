@@ -10,6 +10,10 @@
       $ctype='application/pdf';
       $fn = TMPDIR.'/lac2011badges.pdf';
       break;
+    case 'schedule.csv':
+      $ctype='text/csv';
+      $fn = TMPDIR.'/schedule.csv';
+      break;
     case 'registrations.csv':
       $ctype='text/csv';
       $fn = TMPDIR.'/registrations.csv';

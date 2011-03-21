@@ -1238,6 +1238,75 @@ There are fixed art installations in the upstairs installations rooms (3.17, 3.1
   }
 
 
+	function export_progam_sv($db, $sep="\t") {
+		# Table Header
+		$rv='';
+		$rv.= '"Start time"'.$sep;
+		$rv.= '"End time"'.$sep;
+		$rv.= '"Type"'.$sep;
+		$rv.= '"Status"'.$sep;
+		$rv.= '"Location"'.$sep;
+		$rv.= '"Title"'.$sep;
+		$rv.= '"Abstract"'.$sep;
+		$rv.= '"Notes"'.$sep;
+		$rv.= '"Author(s)"'.$sep;
+
+		$rv.= "\n";
+
+		# Table Body
+		$a_locations = fetch_selectlist($db, 'location');
+    $a_types = fetch_selectlist(0, 'types');
+
+    $q='SELECT * FROM activity ORDER BY day, location_id, strftime(\'%H:%M\',starttime, typesort(type))';
+    $res=$db->query($q);
+    if (!$res) return; // TODO: print error msg
+		$result=$res->fetchAll();
+
+    foreach ($result as $r) {
+      $rv.= '"'.iso8601($r).'"'.$sep;
+      $rv.= '"'.iso8601($r,false).'"'.$sep;
+			$rv.= '"'.($a_types[$r['type']]).'"'.$sep;
+			$rv.= '"'.($r['status']&1?'confirmed':'cancelled').'"'.$sep;
+			$rv.= '"'.($a_locations[$r['location_id']]).'"'.$sep;
+			$rv.= '"'.trim($r['title']).'"'.$sep;
+			$rv.= '"'.
+				 str_replace("\r",'',
+         str_replace("\n",'\n',
+         str_replace('"','\"',
+					trim($r['abstract'])
+         ))).'"'.$sep;
+			$rv.= '"'.
+				 str_replace("\r",'',
+         str_replace("\n",'\n',
+         str_replace('"','\"',
+					trim($r['notes'])
+         ))).'"'.$sep;
+
+			$rv.='"'; $authorcnt=0;
+
+
+      foreach (fetch_authorids($db, $r['id']) as $user_id) {
+				$ur=$db->query('SELECT * FROM user WHERE id ='.$user_id.';');
+				if (!$ur) continue; ## TODO report error ?
+				$ud=$ur->fetch(PDO::FETCH_ASSOC);
+
+				if ($authorcnt++) $rv.=', ';
+				$rv.=trim($ud['name']);
+        if (!empty($ud['email']))
+					$rv.=' ('.trim($ud['email']).')';
+        if (!empty($ud['bio']))
+					$rv.= ' ['.
+						 str_replace("\r",'',
+						 str_replace("\n",'\n',
+						 str_replace('"','\"',
+						  trim($ud['bio'])
+					   ))).']';
+			}
+			$rv.= '"'.$sep;
+			$rv.= "\n";
+		}
+		return $rv;
+	}
 
   function vcal_program($db,$version='2.0',$raw=true) {
     if (!function_exists('quoted_printable_encode')) 

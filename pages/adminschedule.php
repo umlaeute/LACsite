@@ -61,6 +61,12 @@ if (!defined('REGLOGDIR')) die();
         $showdefault=true;
       }
       break;
+    case 'export':
+			$handle = fopen(TMPDIR.'/schedule.csv', "w");
+			fwrite($handle, export_progam_sv($db, ","));
+			fclose($handle);
+			echo 'Download: <a href="download.php?file=schedule.csv">schedule.csv</a>';
+      break;
     case 'orphans':
       admin_fieldset();
       program_fieldset();
