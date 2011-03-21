@@ -35,6 +35,7 @@
   $sponsors = array(
     'http://music.nuim.ie' => array('img' => 'img/logos/nuim.jpg', 'title' => 'NUIM'),
     'http://lwn.net/' => array('img' => 'img/logos/lwn.jpg', 'title' => 'LWN.NET'), 
+    'http://www.sonokinetic.net/' => array('img' => 'img/logos/sonokinetic.jpg', 'title' => 'Sonokinetic'),
     'http://linuxaudio.org/' => array('img' => 'img/logos/lao.png', 'title' => 'linuxaudio.org'),
     'http://www.citu.info/' => array('img' => 'img/logos/citu.png', 'title' => 'CiTu'),
   );
