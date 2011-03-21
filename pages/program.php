@@ -17,7 +17,7 @@
     echo "</p>\n";
   }
 
-  $mode='list';
+  $mode='table';
   if (isset($_REQUEST['mode'])&&!empty($_REQUEST['mode'])) $mode=$_REQUEST['mode'];
   #$details=isset($_REQUEST['details'])?true:false;
   $details=isset($_REQUEST['details'])?($_REQUEST['details']?true:false):true;
@@ -32,11 +32,10 @@
       break;
     case 'table':
       $now=time();
-      if      ($now < 1272751200) $day=1;
-      else if ($now < 1272837600) $day=2;
-      else if ($now < 1272924000) $day=3;
-      else if ($now > 1273010400) $day=1;
-      else $day=4;
+      if      ($now < 1307311200) $day=1;
+      else if ($now < 1309903200) $day=2;
+      else if ($now > 1312581600) $day=1;
+      else $day=3;
 
       if (isset($_REQUEST['day'])) $day=intval($_REQUEST['day']);
       if ($day<1 || $day>4) {

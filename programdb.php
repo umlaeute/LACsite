@@ -119,7 +119,7 @@
 
   function fetch_selectlist($db, $table='user', $order='ORDER BY id') {
     if ($table=='days')
-      return array('1' => '1 - Friday', '2' => '1 - Saturday', '3' => '3 - Sunday');
+      return array('1' => '1 - Friday', '2' => '2 - Saturday', '3' => '3 - Sunday');
     if ($table=='types')
       return array('p' => 'Paper Presentation', 'w' => 'Workshop', 'c' => 'Concert', 'i' => 'Installation', 'o' => 'Other');
     if ($table=='durations')
@@ -432,7 +432,7 @@
     echo '<input id="pdb_url_slides" name="pdb_url_slides" length="80" value="'.$r['url_slides'].'" /><br/>';
     echo '<label for="pdb_url_audio">Audio URL:</label><br/>';
     echo '<input id="pdb_url_audio" name="pdb_url_audio" length="80" value="'.$r['url_audio'].'" /><br/>';
-    echo '<label for="pdb_url_misc">Misc URL:</label><br/>';
+    echo '<label for="pdb_url_misc">Site URL:</label><br/>';
     echo '<input id="pdb_url_misc" name="pdb_url_misc" length="80" value="'.$r['url_misc'].'" /><br/>';
     echo '<label for="pdb_url_image">Image URL:</label><br/>';
     echo '<input id="pdb_url_image" name="pdb_url_image" length="80" value="'.$r['url_image'].'" /><br/>';
@@ -650,7 +650,7 @@
       if (!empty($r['url_audio']))
         echo '<a href="'.$r['url_audio'].'">Audio</a>&nbsp;&nbsp;';
       if (!empty($r['url_misc']))
-        echo '<a href="'.$r['url_misc'].'">Misc.</a>&nbsp;&nbsp;';
+        echo '<a href="'.$r['url_misc'].'">Site</a>&nbsp;&nbsp;';
       if (!empty($r['url_audio']) || !empty($r['url_misc']) || !empty($r['url_paper']) || !empty($r['url_slides']) || !empty($r['url_stream']))
         echo '</div>';
 
@@ -1289,7 +1289,7 @@ There are fixed art installations in the upstairs installations rooms (3.17, 3.1
       echo 'DTEND:'.iso8601($r,false)."\r\n";
       if ($version=='2.0') {
         echo 'SUMMARY:LAC2011 - '.str_replace(',','\,',trim($r['title']))."\r\n";
-        echo 'DESCRIPTION:'.str_replace(';','\;',str_replace(',','\,',str_replace("\n",'\n',trim($r['abstract']))))."\r\n";
+        echo 'DESCRIPTION:'.str_replace("\r",'',str_replace(';','\;',str_replace(',','\,',str_replace("\n",'\n',trim($r['abstract'])))))."\r\n";
       } else {
         echo 'SUMMARY;ENCODING=QUOTED-PRINTABLE:LAC2011 - '.quoted_printable_encode(trim($r['title']))."\r\n";
         echo 'DESCRIPTION;ENCODING=QUOTED-PRINTABLE:'.quoted_printable_encode(str_replace("\n",'\n',trim($r['abstract'])))."\r\n";
