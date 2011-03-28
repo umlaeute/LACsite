@@ -44,7 +44,7 @@ May 6-8 2011, Maynooth, Ireland. See the <a href="?page=contact">Contact</a> and
 <img src="img/nui_maynooth_6.jpg" alt="campus impressions (1)"/> 
 <img src="img/nui_maynooth_3.jpg" alt="campus impressions (2)"/> 
 </div>
-
+<?php /*
 <h1>We need you ! </h1>
 <p>
 Please visit the
@@ -56,6 +56,27 @@ please <a href="?page=registration">register</a> and join the club. See the
 <a href="?page=participation">participation page</a> for information on how
 to answer to the call for paper-presentations, workshops and music.
 </p>
+ */?>
+<h1>Who?</h1>
+<p>See the <a href="?page=participants">list of participants</a> to see who else is coming.</p>
+<p>The LAC is a GNU/Linux free/libre software community organised event. 
+LAC2011 is under the auspices of <a href="http://nuim.ie">NUIM</a>, organised by <a href="http://music.nuim.ie/staff/drvictorlazzarini" rel="eexternal">Victor Lazzarini</a> with assistance of <a href="http://music.nuim.ie/staff/drjohnlato" rel="external">John Lato</a>, Frank Neumann and <a href="http://gareus.org" rel="external"> Robin Gareus</a>.</p>
+<p>Review committee: (in alphabetical order)<br/>
+&nbsp;&nbsp; Fons Adriaensen, <em>Kokkinizita.net, Italy</em><br/>
+&nbsp;&nbsp; Frank Barknecht, <em>Footils.org, Germany</em><br/>
+&nbsp;&nbsp; Ivica Bukvic, <em>Virginia Tech, USA</em><br/>
+&nbsp;&nbsp; Götz Dipper, <em>ZKM|Zentrum für Kunst und Medientechnologie, Germany</em><br/>
+&nbsp;&nbsp; Robin Gareus, <em>linuxaudio.org, France</em><br/>
+&nbsp;&nbsp; Jari Kleimola, <em>Aalto University, Finland</em><br/>
+&nbsp;&nbsp; John Lato, <em> National University of Ireland, Maynooth, Ireland</em><br/>
+&nbsp;&nbsp; Victor Lazzarini, <em>National University of Ireland, Maynooth, Ireland</em><br/>
+&nbsp;&nbsp; Jörn Nettingsmeier, <em>StackingDwarves.net, Germany</em><br/>
+&nbsp;&nbsp; Frank Neumann, <em>Harman International, Germany</em><br/>
+&nbsp;&nbsp; Marcelo Queiroz, <em>University of São Paulo, Brazil</em><br/>
+&nbsp;&nbsp; Martin Rumori, <em>Institute of Electronic Music and Acoustics, Graz, Austria</em><br/>
+&nbsp;&nbsp; Sampo Savolainen,<em> Finland</em><br/>
+</p>
+
 
 <h2>Links to prior Linux Audio Conferences</h2>
 <ul>
