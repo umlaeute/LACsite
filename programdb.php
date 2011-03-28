@@ -46,6 +46,57 @@
     return '<span style="color:'.$col.';">'.$t.'</span>';
   }
 
+	function track_legend() {
+		# XXX - hardcoded session/track XXX
+		$rv='<div style="width:100%; margin:.5em;">';
+		$rv.='<table cellspacing="0" class="trl">';
+		$rv.='<tr>';
+		$rv.='<td class="tr0" colspan="4">Color Legend</td>';
+		$rv.='</tr><tr>';
+		$rv.='<td class="tr1">Music Programming Languages</td>';
+		$rv.='<td class="tr2">Audio Infrastructure and Broadcast</td>';
+		$rv.='<td class="tr3">Interfaces for music instruments</td>';
+		$rv.='<td class="tr4">Sound synthesis</td>';
+		$rv.='</tr><tr>';
+		$rv.='<td class="tr5">Systems and Language</td>';
+		$rv.='<td class="tr6">Audio programming</td>';
+		$rv.='<td class="tr7">Environments and Composition</td>';
+		$rv.='<td class="tr0">0ther</td>';
+		$rv.='</tr>';
+		$rv.='</table></div>';
+		return $rv;
+	}
+
+	function track_name($tr) {
+		# XXX - hardcoded session/track XXX
+		switch ($tr) {
+			case 'tr1': return 'Music Programming Languages';
+			case 'tr2': return 'Audio Infrastructure and Broadcast';
+			case 'tr3': return 'Interfaces for music instruments';
+			case 'tr4': return 'Sound synthesis';
+			case 'tr5': return 'Systems and Language';
+			case 'tr6': return 'Audio programming';
+			case 'tr7': return 'Environments and Composition';
+			default: return '';
+		}
+	}
+	function track_color($d) {
+		# XXX - hardcoded session/track XXX
+		if ($d['day'] == 1 && $d['starttime'] < '13:00') return 'tr1';
+		if ($d['type'] != 'p') return 'tr0';
+
+		if ($d['day'] == 1 && $d['starttime'] < '16:00') return 'tr4';
+		if ($d['day'] == 1) return 'tr5';
+
+		if ($d['day'] == 2 && $d['starttime'] < '13:00') return 'tr2';
+		if ($d['day'] == 2 && $d['starttime'] < '16:00') return 'tr3';
+		if ($d['day'] == 2) return 'tr5';
+
+		if ($d['day'] == 3 && $d['starttime'] < '13:00') return 'tr6';
+		if ($d['day'] == 3 && $d['starttime'] > '13:00') return 'tr7';
+		return 'tr0';
+	}
+
   function translate_type($t) {
     switch ($t) {
       case 'p': return 'Paper Presentation';
@@ -623,12 +674,17 @@
     foreach ($result as $r) {
       if ($day)
         echo 'Day '.$a_days[$r['day']].'&nbsp;';
+			echo '<div class="righttr '.track_color($r).'">';
+			echo track_name(track_color($r));
+			echo '</div>';
       echo '<span class="tme">'.$r['starttime'].'</span>&nbsp;';
       if ($r['status']==0) echo '<span class="red">Cancelled: </span>';
       echo '<span'.(($r['status']==0)?' class="cancelled"':'').'><b>'.xhtmlify($r['title']).'</b></span>';
       if ($type)
         echo ' - <span>'.translate_type($r['type']).'</span>';
-      echo '<br/>';
+      #echo '<br/>';
+      echo '<br style="clear:right;"/>';
+      #echo '<div style="clear:right;"/></div>';
       #if (!empty($r['url_stream'])) $r['url_image']='img/authors/nando_jason.png'; # XXX
       if (!empty($r['url_image'])) {
         $thumb=$r['url_image'];
@@ -1165,7 +1221,7 @@ There are fixed art installations in the upstairs installations rooms (3.17, 3.1
         $table[$i][$r['starttime']]=$r;
       }
       $i++;
-    }
+		}
     
     echo '<table cellspacing="0" class="ptb"><tr><th class="ptb">Time</th>';
     foreach ($table as $c) {
@@ -1183,8 +1239,9 @@ There are fixed art installations in the upstairs installations rooms (3.17, 3.1
           if ($d['starttime'] == '9:00')
 	    $c['cskip']=1;
 	  else
-	    $c['cskip']=$d['duration']/15;
-          echo '<td class="ptb'.($print?'':' active').'" rowspan="'.$c['cskip'].'"';
+			$c['cskip']=$d['duration']/15;
+					$track=track_color($d); # tr0 - tr5
+          echo '<td class="ptb'.($print?'':' active').' '.$track.'" rowspan="'.$c['cskip'].'"';
           if (!$print) echo ' onclick="showInfoBox('.$d['id'].');"';
           echo '>';
           #if ($d['status']==0) echo '<span class="red">Cancelled: </span>';
@@ -1209,9 +1266,12 @@ There are fixed art installations in the upstairs installations rooms (3.17, 3.1
       echo '</tr>'."\n";
     }
 
-    echo '</table>';
+		echo '</table>';
+
+		echo track_legend();
+
     if (!$print) {
-      echo '<p>Concerts &amp; Installations are <b>not</b> included in this table.</p>';
+      echo '<div class="center">Concerts &amp; Installations are <b>not</b> included in this table.</div>';
       echo '<div id="dimmer" style="display:none;">&nbsp;</div>';
       echo '<div id="infobox" style="display:none;"><div class="center"><a class="active" onclick="hideInfoBox();">close</a></div><object id="infoframe" data="raw.php" type="application/xhtml+xml"><!--[if IE]><iframe id="ieframe" src="raw.php" allowtransparency="true" frameborder="0" ></iframe><![endif]--></object></div>';
     }

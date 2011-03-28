@@ -47,3 +47,42 @@ span.cancelled 		{text-decoration:line-through; color:red;}
 span.cancelled b,
 span.cancelled span	{text-decoration:line-through; color:#001100;}
 ul 			{margin-left:2em;}
+
+table.trl {
+	width:75%;
+	margin: .5em auto;
+	table-layout:fixed;
+	font-size:90%;
+	text-align:center;
+	border-bottom:1px solid black;
+	border-left:1px solid black
+}
+td.tr0, td.tr1, td.tr2, td.tr3, td.tr4, td.tr5, td.tr6, td.tr7 {
+	border-top:1px solid black;
+	border-right:1px solid black;
+}
+
+td.tr0	{
+	background:#ffffff;
+}
+td.tr1	{
+	background:#ffb0b0;
+}
+td.tr2	{
+	background:#ffffb0;
+}
+td.tr3	{
+	background:#b0ffb0;
+}
+td.tr4	{
+	background:#b0ffff;
+}
+td.tr5	{
+	background:#b0b0ff;
+}
+td.tr6	{
+	background:#ffb0ff;
+}
+td.tr7	{
+	background:#ccc;
+}
