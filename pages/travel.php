@@ -19,10 +19,10 @@ check the<a href="http://www.maynoothcampus.com" rel="external"> Maynooth campus
 <p> For participants wanting to stay in Dublin, where a larger range of options exist, Maynooth is well connected to the city centre  by a train service (station 5 mins from University) and busses (66 and 67). </p>
 
 <h1>Special Offers</h1>
-<p><b> Kilcar House B&B </b></p>
-<p> <a href="http://www.kilcarhouse.ie" rel="external"> Website</a>
+<p><b> Kilcar House B&amp;B </b></p>
+<p> <a href="http://www.kilcarhouse.ie" rel="external"> Website</a></p>
 <p>
-B&B 10 min walk from Campus. Eur31.00 per person per night for Twin and Double Rooms including breakfast. 
+B&amp;B 10 min walk from Campus. Eur31.00 per person per night for Twin and Double Rooms including breakfast. 
 Single rooms are Eur35.00. If any guests do not require breakfast the rates will be less.  All rooms are en-suite  with tv,wireless internet and  tea/coffee facilities.
 </p>
 
@@ -37,7 +37,7 @@ Located in Leixlip, which is the next village to Maynooth (10 mins on bus/train)
 <p><b>Glenroyal Hotel </b></p>
 <p><a href="http://www.glenroyalhotelkildare.ie" rel="external"> Website </a></p>
 <p>
-For LAC participants, 2 nights B&B + 1 dinner Eur89.00 per person sharing or
+For LAC participants, 2 nights B&amp;B + 1 dinner Eur89.00 per person sharing or
 139.00 (single person). Check with  hotel for other offers. The hotel
 is 5 mins walk from University. 
 </p>
@@ -48,6 +48,4 @@ is 5 mins walk from University.
 <p>
 For LAC participants, single: Eur 75.00/night, double: Eur89.00, with breakfast. The hotel is in Leixlip village centre,
 10-min journey from Maynooth.
-</p>
-
 </p>
