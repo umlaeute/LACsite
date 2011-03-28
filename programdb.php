@@ -55,11 +55,11 @@
 		$rv.='</tr><tr>';
 		$rv.='<td class="tr1">Music Programming Languages</td>';
 		$rv.='<td class="tr2">Audio Infrastructure and Broadcast</td>';
-		$rv.='<td class="tr3">Interfaces for music instruments</td>';
-		$rv.='<td class="tr4">Sound synthesis</td>';
+		$rv.='<td class="tr3">Interfaces for Music Instruments</td>';
+		$rv.='<td class="tr4">Sound Synthesis</td>';
 		$rv.='</tr><tr>';
 		$rv.='<td class="tr5">Systems and Language</td>';
-		$rv.='<td class="tr6">Audio programming</td>';
+		$rv.='<td class="tr6">Audio Programming</td>';
 		$rv.='<td class="tr7">Environments and Composition</td>';
 		$rv.='<td class="tr0">0ther</td>';
 		$rv.='</tr>';
