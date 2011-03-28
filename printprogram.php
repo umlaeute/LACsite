@@ -13,7 +13,7 @@
 </head>
 <body id="content">
 <h1 class="center">LAC 2011 Conference Programme - Clár na Comhdhála</h1>
-<div class="center">May 6-8; Music Department, National University of Ireland, Maynooth</div>
+<div class="center">May 6-8; Logic House - South Campus; Music Department, National University of Ireland, Maynooth</div>
 <?php
   require_once('config.php');
   require_once('lib.php');
