@@ -53,14 +53,14 @@
 		$rv.='<tr>';
 		$rv.='<td class="trX" colspan="4">Color Legend</td>';
 		$rv.='</tr><tr>';
-		$rv.='<td class="tr1">Music Programming Languages</td>';
-		$rv.='<td class="tr2">Audio Infrastructure and Broadcast</td>';
-		$rv.='<td class="tr3">Interfaces for Music Instruments</td>';
-		$rv.='<td class="tr4">Sound Synthesis</td>';
+		$rv.='<td class="tr7">'.track_name('tr7').'</td>';
+		$rv.='<td class="tr1">'.track_name('tr1').'</td>';
+		$rv.='<td class="tr3">'.track_name('tr3').'</td>';
+		$rv.='<td class="tr5">'.track_name('tr5').'</td>';
 		$rv.='</tr><tr>';
-		$rv.='<td class="tr5">Systems and Language</td>';
-		$rv.='<td class="tr6">Audio Programming</td>';
-		$rv.='<td class="tr7">Environments and Composition</td>';
+		$rv.='<td class="tr2">'.track_name('tr2').'</td>';
+		$rv.='<td class="tr4">'.track_name('tr4').'</td>';
+		$rv.='<td class="tr6">'.track_name('tr6').'</td>';
 		$rv.='<td class="tr0">0ther</td>';
 		$rv.='</tr>';
 		$rv.='</table></div>';
@@ -172,7 +172,8 @@
     if ($table=='days')
       return array('1' => '1 - Friday', '2' => '2 - Saturday', '3' => '3 - Sunday');
     if ($table=='types')
-      return array('p' => 'Paper Presentation', 'w' => 'Workshop', 'c' => 'Concert', 'i' => 'Installation', 'o' => 'Other');
+      #return array('p' => 'Paper Presentation', 'w' => 'Workshop', 'c' => 'Concert', 'i' => 'Installation', 'o' => 'Other');
+      return array('p' => 'Paper Presentation', 'w' => 'Workshop', 'c' => 'Concert', 'o' => 'Other');
     if ($table=='durations')
       return array('' => '-unset-', '15' => '15 mins', '30' => '30 mins', '45' => '45 mins', '60' => '1 hour', '90' => '90 mins', '120' => '2 hours', '150' => '2 1/2 hours', '180' => '3 hours');
     if ($table=='status')
