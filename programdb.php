@@ -51,7 +51,7 @@
 		$rv='<div style="width:100%; margin:.5em;">';
 		$rv.='<table cellspacing="0" class="trl">';
 		$rv.='<tr>';
-		$rv.='<td class="tr0" colspan="4">Color Legend</td>';
+		$rv.='<td class="trX" colspan="4">Color Legend</td>';
 		$rv.='</tr><tr>';
 		$rv.='<td class="tr1">Music Programming Languages</td>';
 		$rv.='<td class="tr2">Audio Infrastructure and Broadcast</td>';
@@ -1124,8 +1124,8 @@ if (1) {
   function hardcoded_concert_and_installation_info($db) {
 ?>
 <h2 class="ptitle pb">Concerts & Installations</h2>
-XXXXXXXXXXXXXXXXXX TODO XXXXXXXXXXXXXXXXXXXXXXX
-<?php /*
+The Concert lineup is not yet finalized (Mar 28, 2011).
+<?php /*  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 During LAC 2011 there are two concerts, a clubnight and various fixed installations.<br/>
 
 <h3>Concerts</h3>
