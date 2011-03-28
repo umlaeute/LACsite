@@ -220,6 +220,7 @@ div.right 		{text-align:right;}
 .green 			{color:#11EE11;}
 span.tme 		{color:#331111; border-bottom:1px dotted black;}
 div.flright		{margin:0px 0px .25em .5em; float:right;}
+div.righttr		{margin:.4em 0px 0em .5em; float:right; font-size:75%;line-height:110%; font-variant:small-caps;}
 
 p.pix {font-size:90%;margin:.5em 0em; text-align:justify;}
 
@@ -254,4 +255,44 @@ ul.multicolumn li{
 			top:0px;
 			background:transparent url(../img/dim.png) repeat scroll 0 0;
 			z-index:100;
+}
+
+table.trl {
+	width:80%;
+	margin: .5em auto;
+	table-layout:fixed;
+	font-size:75%;
+	line-height:110%;
+	text-align:center;
+	border-bottom:1px solid black;
+	border-left:1px solid black
+}
+td.trX, td.tr0, td.tr1, td.tr2, td.tr3, td.tr4, td.tr5, td.tr6, td.tr7 {
+	border-top:1px solid black;
+	border-right:1px solid black;
+}
+
+.trX	{
+	background:black; color:white; line-height:120%; font-weight:bold;
+}
+.tr1	{
+	background:transparent url(../img/trans0red.png) repeat scroll 0 0;
+}
+.tr2	{
+	background:transparent url(../img/trans1yel.png) repeat scroll 0 0;
+}
+.tr3	{
+	background:transparent url(../img/trans2grn.png) repeat scroll 0 0;
+}
+.tr4	{
+	background:transparent url(../img/trans3trq.png) repeat scroll 0 0;
+}
+.tr5	{
+	background:transparent url(../img/trans4blu.png) repeat scroll 0 0;
+}
+.tr6	{
+	background:transparent url(../img/trans5vio.png) repeat scroll 0 0;
+}
+.tr7	{
+	background:transparent url(../img/trans6gry.png) repeat scroll 0 0;
 }
