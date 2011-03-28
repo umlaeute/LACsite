@@ -51,7 +51,7 @@
 		$rv='<div style="width:100%; margin:.5em;">';
 		$rv.='<table cellspacing="0" class="trl">';
 		$rv.='<tr>';
-		$rv.='<td class="trX" colspan="4">Color Legend</td>';
+		$rv.='<td class="trX" colspan="4">Legend</td>';
 		$rv.='</tr><tr>';
 		$rv.='<td class="tr1">'.track_name('tr1').'</td>';
 		$rv.='<td class="tr3">'.track_name('tr3').'</td>';
