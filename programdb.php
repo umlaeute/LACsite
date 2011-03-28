@@ -61,7 +61,7 @@
 		$rv.='<td class="tr2">'.track_name('tr2').'</td>';
 		$rv.='<td class="tr4">'.track_name('tr4').'</td>';
 		$rv.='<td class="tr6">'.track_name('tr6').'</td>';
-		$rv.='<td class="tr0">0ther</td>';
+		$rv.='<td class="tr0">Ilghnéitheach</td>';
 		$rv.='</tr>';
 		$rv.='</table></div>';
 		return $rv;
@@ -72,10 +72,10 @@
 		switch ($tr) {
 			case 'tr1': return 'Music Programming Languages';
 			case 'tr2': return 'Audio Infrastructure and Broadcast';
-			case 'tr3': return 'Interfaces for music instruments';
-			case 'tr4': return 'Sound synthesis';
+			case 'tr3': return 'Interfaces for Music Instruments';
+			case 'tr4': return 'Sound Synthesis';
 			case 'tr5': return 'Systems and Language';
-			case 'tr6': return 'Audio programming';
+			case 'tr6': return 'Audio Programming';
 			case 'tr7': return 'Environments and Composition';
 			default: return '';
 		}
@@ -1011,7 +1011,7 @@
   function print_day($db, $num, $name, $details=true) {
     echo '<h2 class="ptitle">Day '.$num.' - '.$name.'</h2>';
     echo '<h3 class="ptitle">Main Track</h3>';
-    echo '<div class="ptitle">Location: 2.00 - Large Colloquium</div>';
+    echo '<div class="ptitle">Location: Bewerunge Room</div>'; ## XXX HARDCODED MAIN LOCATION
     query_out($db,
      'SELECT * FROM activity
       WHERE day='.$num.'
