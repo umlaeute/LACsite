@@ -2,7 +2,7 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-  <title>LAC2011: The Linux Audio Conference Programme - Clár na Comhdhála/title>
+  <title>LAC2011: The Linux Audio Conference Programme - Clár na Comhdhála</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" href="static/printstyle.css" type="text/css"/>
   <meta name="Author" content="Robin Gareus" />
