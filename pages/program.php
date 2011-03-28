@@ -1,7 +1,7 @@
 <?php
 
   function program_header($mode,$details) {
-    echo '<h1>Conference Program</h1>'."\n";
+    echo '<h1>Conference Programme - Clár na Comhdhála</h1>'."\n";
     #echo '<div class="center" style="margin-top:-.5em; margin-bottom:.5em;">Live A/V streams are available at <a href="http://streamer.stackingdwarves.net/">http://streamer.stackingdwarves.net/</a><br/>Backup server:<a href="http://www.marcochapeau.org:8000/">http://www.marcochapeau.org:8000/</a><p>Remote participants are invited to join #lac2011 on irc.freenode.net, to be able to take part in the discussions, ask questions, and get technical assistance in case of stream problems.</p><p>Conference Material can be found on the <a href="?page=download">Download Page</a>.</p><br/></div>';
     echo '<p class="ptitle">Timetable Format: ';
     if ($mode!='list' || $details)

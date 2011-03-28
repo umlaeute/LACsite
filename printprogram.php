@@ -2,7 +2,7 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-  <title>LAC2011 Program: The Linux Audio Conference Timetable </title>
+  <title>LAC2011: The Linux Audio Conference Programme - Clár na Comhdhála/title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" href="static/printstyle.css" type="text/css"/>
   <meta name="Author" content="Robin Gareus" />
@@ -12,7 +12,7 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
 </head>
 <body id="content">
-<h1 class="center">LAC 2011 Timetable</h1>
+<h1 class="center">LAC 2011 Conference Programme - Clár na Comhdhála</h1>
 <div class="center">May 6-8; Music Department, National University of Ireland, Maynooth</div>
 <?php
   require_once('config.php');

@@ -3,7 +3,7 @@
 #pages listed as 'tabs' on the site
   $pages = array(
     'about' => 'About',
-    'participation' => 'Participation',
+    'program' => 'Programme',
     'registration' => 'Registration',
     'participants' => 'Attendees',
     'travel' => 'Travel &amp; Stay',
@@ -13,8 +13,8 @@
 
 # other available pages - not shown as 'tabs'
   $hidden = array(
-    'program' => 'Program',
     'download' => 'Download',
+    'participation' => 'Participation',
 //  'concerts' => 'Concerts',
 //  'news' => 'News',
   );
