@@ -6,7 +6,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
 	        die('this script should be run locally only.');
 }
 
-require_once('config.php');
+chdir('..');
 require_once('lib.php');
 require_once('programdb.php');
 
