@@ -53,10 +53,10 @@
 		$rv.='<tr>';
 		$rv.='<td class="trX" colspan="4">Color Legend</td>';
 		$rv.='</tr><tr>';
-		$rv.='<td class="tr7">'.track_name('tr7').'</td>';
 		$rv.='<td class="tr1">'.track_name('tr1').'</td>';
 		$rv.='<td class="tr3">'.track_name('tr3').'</td>';
 		$rv.='<td class="tr5">'.track_name('tr5').'</td>';
+		$rv.='<td class="tr7">'.track_name('tr7').'</td>';
 		$rv.='</tr><tr>';
 		$rv.='<td class="tr2">'.track_name('tr2').'</td>';
 		$rv.='<td class="tr4">'.track_name('tr4').'</td>';
