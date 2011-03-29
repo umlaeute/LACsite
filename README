@@ -8,6 +8,7 @@ Step 1) create './config.php' with the following:
   define('REGLOGDIR',dirname($_SERVER['SCRIPT_FILENAME']).'/regs/');  
   define('TMPDIR',dirname($_SERVER['SCRIPT_FILENAME']).'/tmp/');
   $regmail=true; # if set users will receive a confirmation email
+  $hidepapers=false; # don't include links to papers (yet)
   $mailto='robin@linuxaudio.org, marcg@dinkum.nl'; # admin email
   $mailto=''; # if empty no email will be sent to admins.
 

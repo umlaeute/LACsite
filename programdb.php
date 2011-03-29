@@ -693,7 +693,9 @@
           $thumb='img/authors/small/'.basename($r['url_image']);
         }
         echo '<div class="aimg"><a href="'.$r['url_image'].'"><img src="'.$thumb.'" width="100" alt="author image"/></a></div>';
-      }
+			}
+			global $hidepapers;
+			if ($hidepapers) $r['url_paper'] = '';
 
       # TODO: abstraction for multiple links: key ('type/name') => value ('url')
       if (!empty($r['url_audio']) || !empty($r['url_misc']) || !empty($r['url_paper']) || !empty($r['url_slides']) || !empty($r['url_stream']))
