@@ -58,8 +58,8 @@ to answer to the call for paper-presentations, workshops and music.
 </p>
  */?>
 <h1>Who?</h1>
-<p>See the <a href="?page=participants">list of participants</a> to see who else is coming.</p>
-<p>The LAC is a GNU/Linux free/libre software community organised event. 
+<p>Check out the <a href="?page=participants">list of participants</a> to see who else is coming.</p>
+<p>The LAC is a GNU/Linux free/libre software community organised event by the <a href="http://lists.linuxaudio.org/">Linux-Audio-Users and -Developers</a>.
 LAC2011 is under the auspices of <a href="http://nuim.ie">NUIM</a>, organised by <a href="http://music.nuim.ie/staff/drvictorlazzarini" rel="eexternal">Victor Lazzarini</a> with assistance of <a href="http://music.nuim.ie/staff/drjohnlato" rel="external">John Lato</a>, Frank Neumann and <a href="http://gareus.org" rel="external"> Robin Gareus</a>.</p>
 <p>Review committee: (in alphabetical order)<br/>
 &nbsp;&nbsp; Fons Adriaensen, <em>Kokkinizita.net, Italy</em><br/>
