@@ -360,18 +360,18 @@ Personal data provided by you in the registration form will be kept confidential
   <input name="page" type="hidden" value="<?php echo $page;?>"/>
   <legend>Personalia:</legend>
   <label class="la" for="reg_name"><span class="error">*</span>Family Name:</label>
-  <input id="reg_name" name="reg_name" type="text" size="50" maxlength="100" value="<?php echo $_POST['reg_name'];?>"/>
+  <input id="reg_name" name="reg_name" type="text" size="50" maxlength="100" value="<?php if (isset($_POST['reg_name'])) echo $_POST['reg_name'];?>"/>
   <br />
   <label class="la" for="reg_prename"><span class="error">*</span>Given Name(s):</label>
-  <input id="reg_prename" name="reg_prename" type="text" size="50" maxlength="100" value="<?php echo $_POST['reg_prename'];?>"/>
+  <input id="reg_prename" name="reg_prename" type="text" size="50" maxlength="100" value="<?php if (isset($_POST['reg_prename'])) echo $_POST['reg_prename'];?>"/>
   <br />
   <label class="la" for="reg_tagline">Tagline <small>(Affiliation, Company, Pseudonym,&hellip;)</small>:</label>
-  <input id="reg_tagline" name="reg_tagline" type="text" size="50" maxlength="100" value="<?php echo $_POST['reg_tagline'];?>"/>
+  <input id="reg_tagline" name="reg_tagline" type="text" size="50" maxlength="100" value="<?php if (isset($_POST['reg_tagline'])) echo $_POST['reg_tagline'];?>"/>
   <br/>
   <label class="ls">Note: The tagline will appear with your name on the badge.</label>
   <br/>
   <label class="la" for="reg_email"><span class="error">*</span>E-Mail address:</label>
-  <input id="reg_email" name="reg_email" type="text" size="50" maxlength="100" value="<?php echo $_POST['reg_email'];?>"/>
+  <input id="reg_email" name="reg_email" type="text" size="50" maxlength="100" value="<?php if (isset($_POST['reg_email'])) echo $_POST['reg_email'];?>"/>
   <br/>
   <label class="la" for="reg_country"><span class="error">*</span>Country:</label>
   <select name="reg_country" id="reg_country" size="1">
@@ -441,7 +441,7 @@ Personal data provided by you in the registration form will be kept confidential
 <fieldset class="fs">
 <legend>Miscellaneous:</legend>
   <label class="la" for="reg_notes">Remarks:</label>
-  <textarea id="reg_notes" name="reg_notes" rows="3" cols="60"><?php echo $_POST['reg_notes'];?></textarea><br/>
+  <textarea id="reg_notes" name="reg_notes" rows="3" cols="60"><?php if (isset($_POST['reg_notes'])) echo $_POST['reg_notes'];?></textarea><br/>
 </fieldset>
 <div>
   <div style="float:right;"><input type="reset" value="Reset fields"/></div>

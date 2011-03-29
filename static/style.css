@@ -161,7 +161,7 @@ div.footer p	{text-align:center;}
 #content div.wikilink 	{font-size:80%; margin-top:1em; text-align:right;}
 
 fieldset legend 	{text-align:left;}
-.fs 			{text-align:right; padding-right:100px;}
+.fs 			{text-align:right; padding-right:75px;}
 .fs input, .fs select, 
 .fs textarea 		{width:280px;}
 .fs label.la 		{margin:0px .5em; vertical-align:top;}
