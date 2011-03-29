@@ -1,5 +1,14 @@
-<h1>Travelling to Maynooth</h1>
+<h1>Location</h1>
+<p>The conference will take place in the <b>Logic House</b> on the <b>South Campus</b>. Number 3 on the
+<a href="http://www.nuim.ie/location/maps/NUIM-Map-booklet-v3.pdf"  rel="external">map of the campus</a>.
+</p>
+<h1>Staying in Maynooth</h1>
+<p> Accommodation on Campus is limited, but still available for most nights around the conference dates, except for Saturday night. Please
+check the <a href="http://www.maynoothcampus.com" rel="external">Maynooth campus website </a></p>
+<p> Other possibilities in Maynooth can be found in the <a href="http://www.nuim.ie/about/accommodation.shtml" rel="external">Visitor Accommodation</a> information page of NUIM. </p>
+<p> For participants wanting to stay in Dublin, where a larger range of options exist, Maynooth is well connected to the city centre  by a train service (station 5 mins from University) and busses (66 and 67). </p>
 
+<h1>Travelling to Maynooth</h1>
 <p>
 NUI Maynooth is accessible by public transport. The university is located 15 miles from Dublin city centre.
 </p>
@@ -12,16 +21,6 @@ NUI Maynooth is accessible by public transport. The university is located 15 mil
 	<li><a href="http://www.nuim.ie/location/transport0910.pdf">NUIM Transport Guide (14MB PDF)</a></li>
 </ul>
 
-<h1>Location</h1>
-<p>The conference will take place in the <b>Logic House</b> on the <b>South Campus</b>. Number 3 on the
-<a href="http://www.nuim.ie/location/maps/NUIM-Map-booklet-v3.pdf"  rel="external">map of the campus</a>.
-</p>
-<h1>Staying in Maynooth</h1>
-<p> Accommodation on Campus is limited, but still available for most nights around the conference dates, except for Saturday night. Please
-check the <a href="http://www.maynoothcampus.com" rel="external">Maynooth campus website </a> </p>
-<p> Other possibilities in Maynooth can be found in the <a href="http://www.nuim.ie/about/accommodation.shtml" rel="external">Visitor Accommodation</a> information page of NUIM. </p>
-<p> For participants wanting to stay in Dublin, where a larger range of options exist, Maynooth is well connected to the city centre  by a train service (station 5 mins from University) and busses (66 and 67). </p>
-
 <h1>Special Offers</h1>
 <p><b> Kilcar House B&amp;B </b></p>
 <p><a href="http://www.kilcarhouse.ie" rel="external">Website</a></p>
@@ -30,7 +29,7 @@ B&amp;B 10 min walk from Campus. Eur31.00 per person per night for Twin and Doub
 Single rooms are Eur35.00. If any guests do not require breakfast the rates will be less.  All rooms are en-suite  with tv,wireless internet and  tea/coffee facilities.
 </p>
 
-<p> <b>Springfield Hotel</b> </p>
+<p><b>Springfield Hotel</b></p>
 <p><a href="http://www.springfieldhotel.ie" rel="external">Website</a></p>
 <p>
 For LAC participants, rates of Eur55.00 (single) and Eur85.00 (twin), with breakfast.
