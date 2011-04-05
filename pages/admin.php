@@ -424,19 +424,19 @@ function badge_tex_header() {
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% CARD MACRO [\card] %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\card#1#2#3{
-        \parbox[c][4.5cm]{9.8cm}{
-        %\vspace*{1.5cm}
-        %\hspace*{6.3cm}
-        %\image{height=2.57cm,width=2.54cm}{badge_nuim}
-        \vspace*{-1.79cm}
-        \hspace*{6.6cm}
-        \image{height=2.47cm,width=2.19cm}{badge_nuim}
-        }
-        \hspace*{-9.8cm}
+        %\parbox[c][4.5cm]{9.8cm}{
+        %%\vspace*{1.5cm}
+        %%\hspace*{6.3cm}
+        %%\image{height=2.57cm,width=2.54cm}{badge_nuim}
+        %\vspace*{-1.79cm}
+        %\hspace*{6.6cm}
+        %\image{height=2.47cm,width=2.19cm}{badge_nuim}
+        %}
+        %\hspace*{-9.8cm}
         \begin{tabular}{c}
 	\hspace*{.20in}\image{height=1.2cm,width=5.28cm}{badgelogo}
-	%\rule[0.80ex]{0.70in}{.5pt}\\\\%
-	\hspace*{0.70in}\\\\%
+	\rule[0.80ex]{0.70in}{.5pt}\\\\%
+	%\hspace*{0.70in}\\\\%
 	\small%
 	\begin{tabular}[b]{lcr}%
 	\hspace*{.25in}\small LAC 2011 & \hspace*{1.15in} & \hspace*{0.15in}NUI Maynooth\\\\%
