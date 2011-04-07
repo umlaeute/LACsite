@@ -430,7 +430,7 @@ function badge_tex_header() {
 \usepackage{fontenc}                                                            
 \font\GoudyStMTTtiny GoudyStMTT at 6pt
 \font\GoudyStMTTscriptsize GoudyStMTT at 7pt
-\font\GoudyStMTTfootnoteize GoudyStMTT at 8pt
+\font\GoudyStMTTfootnotesize GoudyStMTT at 8pt
 \font\GoudyStMTTsmall GoudyStMTT at 9pt
 \font\GoudyStMTT GoudyStMTT at 10pt
 \font\GoudyStMTTlarge GoudyStMTT at 14pt
