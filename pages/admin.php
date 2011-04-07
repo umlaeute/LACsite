@@ -274,6 +274,12 @@ function gen_badges_pdf($f) {
   fclose($handle);
   @copy (TMPDIR.'../img/badge_nuim.png', TMPDIR.'/badge_nuim.png');
   @copy (TMPDIR.'../img/badgelogo.png', TMPDIR.'/badgelogo.png'); # XXX FIX img path
+  @copy (TMPDIR.'../img/fonts/GoudyStMTT.afm', TMPDIR.'/GoudyStMTT.afm'); 
+  @copy (TMPDIR.'../img/fonts/GoudyStMTT.tfm', TMPDIR.'/GoudyStMTT.tfm'); 
+  @copy (TMPDIR.'../img/fonts/GoudyStMTT.ttf', TMPDIR.'/GoudyStMTT.ttf'); 
+  @copy (TMPDIR.'../img/fonts/ttfonts.map', TMPDIR.'/ttfonts.map'); 
+  @copy (TMPDIR.'../img/fonts/T1-WGL4x.enc', TMPDIR.'/T1-WGL4x.enc'); 
+
   @unlink (TMPDIR.'/lac2011badges.pdf');
   echo '<pre style="font-size:70%; line-height:1.2em;">';
   system('cd '.TMPDIR.'; pdflatex lac2011badges.tex');
@@ -356,14 +362,36 @@ function gen_badges_source($f) {
 #\LARGE 18 17.28
 #\huge 20 20.74
 #\Huge 24 24.88
-
+  if (0) {
+    # DEFAULT FONT:
     if (strlen($name) > 40) $name='\normalsize '.$name; # TODO verify size!
     elseif (strlen($name) > 26) $name='\large '.$name; 
     elseif (strlen($name) > 20) $name='\LARGE '.$name;
+    else  $name='\Huge '.$name;
 
     if (strlen($what) > 56) $what='\tiny '.$what; 
     elseif (strlen($what) > 49) $what='\scriptsize '.$what;
     elseif (strlen($what) > 40) $what='\footnotesize '.$what; 
+		else $what='\normalsize '.$what; 
+
+    if (!empty($badgebg)) $badgebg='\small '.$badgebg;
+
+  } else {
+
+    # Goudy FONT:
+    if (strlen($name) > 40) $name='\GoudyStMTT '.$name; # TODO verify size!
+    elseif (strlen($name) > 26) $name='\GoudyStMTTlarge '.$name; 
+    elseif (strlen($name) > 20) $name='\GoudyStMTTLARGE '.$name;
+    else  $name='\GoudyStMTTHuge '.$name;
+
+    if (strlen($what) > 56) $what='\GoudyStMTTtiny '.$what; 
+    elseif (strlen($what) > 49) $what='\GoudyStMTTscriptsize '.$what;
+    elseif (strlen($what) > 40) $what='\GoudyStMTTfootnotesize '.$what; 
+    else $what='\GoudyStMTT '.$what; 
+
+    if (!empty($badgebg)) $badgebg='\GoudyStMTTsmall '.$badgebg;
+
+  }
 
     #$x=($cnt%2)?"0.0":"3.4";
     #$y=8-(($cnt%5)*2);
@@ -397,6 +425,18 @@ function badge_tex_header() {
   return '
 \documentclass{article}
 \usepackage{a4}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FONTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fontenc}                                                            
+\font\GoudyStMTTtiny GoudyStMTT at 6pt
+\font\GoudyStMTTscriptsize GoudyStMTT at 7pt
+\font\GoudyStMTTfootnoteize GoudyStMTT at 8pt
+\font\GoudyStMTTsmall GoudyStMTT at 9pt
+\font\GoudyStMTT GoudyStMTT at 10pt
+\font\GoudyStMTTlarge GoudyStMTT at 14pt
+\font\GoudyStMTTLARGE GoudyStMTT at 18pt
+\font\GoudyStMTThuge GoudyStMTT at 20pt
+\font\GoudyStMTTHuge GoudyStMTT at 24pt
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MARGINS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \textwidth       7.50in
@@ -439,14 +479,14 @@ function badge_tex_header() {
 	%\hspace*{0.70in}\\\\%
 	\small%
 	\begin{tabular}[b]{lcr}%
-	\hspace*{.25in}\small LAC 2011 & \hspace*{1.15in} & \hspace*{0.15in}NUI Maynooth\\\\%
+	\hspace*{.25in}\GoudyStMTTsmall LAC 2011 & \hspace*{1.15in} & \hspace*{0.15in}NUI Maynooth\\\\%
 	\end{tabular}\\\\%
 	\vspace{0.05in}\\\\%
-	\hspace*{.25in}{\Huge #1}\\\\%
+	\hspace*{.25in}{#1}\\\\%
 	\vspace*{-0.12in}\\\\%
-	\hspace*{.25in}{\small #3}\\\\%
+	\hspace*{.25in}{#3}\\\\%
 	\vspace*{-0.12in}\\\\%
-        \hspace*{.25in}{\normalsize #2}\\\\%
+        \hspace*{.25in}{#2}\\\\%
 	\end{tabular}%
 }
 
