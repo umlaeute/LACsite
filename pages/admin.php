@@ -479,8 +479,8 @@ function badge_tex_header() {
 	%\hspace*{0.70in}\\\\%
 	\small%
 	\begin{tabular}[b]{lcr}%
-	%\hspace*{.25in}\small LAC 2011 & \hspace*{1.15in} & \hspace*{0.15in}NUI Maynooth\\%
-	\hspace*{.25in}\GoudyStMTT LAC 2011 & \hspace*{1.15in} & \hspace*{0.15in}\GoudyStMTT NUI Maynooth\\%
+	%\hspace*{.25in}\small LAC 2011 & \hspace*{1.15in} & \hspace*{0.15in}NUI Maynooth\\\\%
+	\hspace*{.25in}\GoudyStMTT LAC 2011 & \hspace*{1.15in} & \hspace*{0.15in}\GoudyStMTT NUI Maynooth\\\\%
 	\end{tabular}\\\\%
 	\vspace{0.05in}\\\\%
 	\hspace*{.25in}{#1}\\\\%
