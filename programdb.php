@@ -1129,7 +1129,7 @@ if (1) {
     echo '<div class="disclaimer center">The schedule is a major guideline. There is no guarantee events will take place at the announced timeslot.</div>';
   }
 
-  function hardcoded_concert_and_installation_info($db) {
+  function hardcoded_concert_and_installation_info($db, $details=true) {
 ?>
 <h2 class="ptitle pb">Concerts &amp; Installations</h2>
 <div>
@@ -1142,7 +1142,7 @@ Both take place in the Aula Maxima, start at 8pm and are gratis.
 <?php
   $q='SELECT activity.* FROM activity WHERE type='.$db->quote('c');
   $q.=' ORDER BY day, strftime(\'%H:%M\',starttime), typesort(type), location_id;';
-	query_out($db, $q, false, false,  true, true);
+	query_out($db, $q, $details, false,  true, true);
 
 		echo '</div>'."\n";
 		echo '</div>'."\n";

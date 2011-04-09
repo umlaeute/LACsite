@@ -22,7 +22,7 @@
   table_program($db,1,true);
   table_program($db,2,true);
   table_program($db,3,true);
-  hardcoded_concert_and_installation_info($db);
+  hardcoded_concert_and_installation_info($db, true);
   hardcoded_disclaimer();
 ?>
 </body>
