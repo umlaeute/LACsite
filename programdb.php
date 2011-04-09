@@ -715,11 +715,14 @@
 
 
 
-      echo '('.$r['duration'];
-      if (empty($r['duration'])) echo '??';
-      if (!strstr($r['duration'], ':')) echo ' min';
-      if ($r['type']=='i') echo ' - loop';
-      echo ')&nbsp;<em>'; $i=0;
+      if ($r['duration']!=-1) {
+        echo '('.$r['duration'];
+        if (empty($r['duration'])) echo '??';
+        if (!strstr($r['duration'], ':')) echo ' min';
+        if ($r['type']=='i') echo ' - loop';
+        echo ')';
+      }
+      echo '&nbsp;<em>'; $i=0;
       foreach (fetch_authorids($db, $r['id']) as $user_id) {
         if ($i++>0) echo ', ';
         #echo $user_id.': ';
@@ -727,8 +730,10 @@
       }
       echo '</em>';
 
-      if ($location && !empty($r['location_id']))
-      echo ' &raquo;&nbsp;Location: '.$a_locations[$r['location_id']];
+      if ($r['type']!='c') { ### LAC 2011 - all concerts same location
+        if ($location && !empty($r['location_id']))
+          echo ' &raquo;&nbsp;Location: '.$a_locations[$r['location_id']];
+      }
       echo '<br/>';
 
       if ($details)
@@ -1128,44 +1133,20 @@ if (1) {
 ?>
 <h2 class="ptitle pb">Concerts &amp; Installations</h2>
 <div>
-<p>The Concert lineup is not yet finalized (Mar 28, 2011).</p>
-<?php /*  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-During LAC 2011 there are two concerts, a clubnight and various fixed installations.<br/>
-
 <h3>Concerts</h3>
 <p>
-<ul>
- <li>Saturday's opening concert starting 20:30 is at SETUP (Medialab) - <a href="http://www.setuputrecht.nl/">http://www.setuputrecht.nl/</a> - SETUP is above the ABN bank (Neude square #4)</li>
- <li>The concert on Sunday evening 20:30 takes place at the Kikker Theater - <a href="http://www.theaterkikker.nl/">http://www.theaterkikker.nl/</a> on <em>Ganzenmarkt 14</em>.</li>
- <li>Last but not least, the sound-night is on Monday 21:00 at SJU Jazzpodium - <a href="http://www.sjujazz.nl/">http://www.sjujazz.nl/</a> - <em>Varkenmarkt 2</em>.</li>
-</ul>
-<br/>
-Furthermore LAC2010 features two Lunch-Concerts: both Sunday ("Live Demo of ChucK") &amp; Monday ("CSound Demo" and "Playing music lazily on the bank of a river while listening to the bells of a far away city") at 13:30 in SETUP (Medialab) - 3 mins walk from the conference venue.
-<br/>
-<br/>
-Entrance:<br/>
-SETUP (May 1) - free<br/>
-Kikker Theater (May 2) - &euro; 7,50<br/>
-SJU Jazzpodium (May 3) - &euro;7,50 Students: &euro; 5,- Tickets for SJU can be booked on-line.
-</p>
-<h3>Poster Session</h3>
-<p>
-Saturday and Sunday afternoon a poster-session will be hosted in Room 2.09.
-</p>
-<h3>Installations</h3>
-<p>
-There are fixed art installations in the upstairs installations rooms (3.17, 3.18, 3.19, 3.20) as well as in SETUP (Medialab):
+There are two concerts taking place at the LAC 2011, scheduled for Friday and Saturday evening. 
+Both take place in the Aula Maxima, start at 8pm and are gratis.
 </p>
 <div style="padding:.5em 1em; 0em 1em">
 <?php
-  $q='SELECT activity.* FROM activity WHERE type='.$db->quote('i');
+  $q='SELECT activity.* FROM activity WHERE type='.$db->quote('c');
   $q.=' ORDER BY day, strftime(\'%H:%M\',starttime), typesort(type), location_id;';
 	query_out($db, $q, false, false,  true, true);
- */
 
-  echo '</div>'."\n";
-
-  }
+		echo '</div>'."\n";
+		echo '</div>'."\n";
+  } ## END hardcoded_concert_and_installation_info ##
 
 
   function list_program($db,$details) {
