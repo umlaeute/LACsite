@@ -1169,8 +1169,10 @@ Both take place in the Aula Maxima, start at 8pm and are gratis.
                     , '15:00' , '15:15', '15:30', '15:45'
                     , '16:00' , '16:15', '16:30', '16:45'
                     , '17:00' , '17:15', '17:30', '17:45'
-                    , '18:00' 
-               );
+                  #  , '18:00' 
+									);
+		# XXX 2011: Friday
+		if ($day!=1) $a_times[]='18:00';
 
     if (!$print) {
       echo '<div style="float:right;">';
