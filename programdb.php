@@ -1268,25 +1268,56 @@ Both take place in the Aula Maxima, start at 8pm and are gratis.
 	function export_progam_tex($db) {
 		$sep="\n";
 		$rv= '';
-		$rv.= "\\documentclass{article}\n\\pagestyle{empty}\n\\begin{document}\n";
-		$rv.= "\\begin{itemize}\n";
+		$rv.= "\\documentclass{article}\n\\usepackage{a4}\n\\pagestyle{empty}\n\\begin{document}\n";
+		#$rv.= "\\begin{itemize}\n";
 
 		# Table Body
 		$a_locations = fetch_selectlist($db, 'location');
     $a_types = fetch_selectlist(0, 'types');
+    $a_days = fetch_selectlist(0, 'days');
 
-    $q='SELECT * FROM activity ORDER BY day, location_id, strftime(\'%H:%M\',starttime, typesort(type))';
+    $q='SELECT * FROM activity ORDER BY day, location_id, strftime(\'%H%M\',starttime), typesort(type)';
     $res=$db->query($q);
     if (!$res) return; // TODO: print error msg
 		$result=$res->fetchAll();
 
-    foreach ($result as $r) {
-      $rv.= '\item'."\n";
-      $rv.= plaindate($r).$sep;
-			$rv.= ($a_types[$r['type']]).$sep;
-			$rv.= ($a_locations[$r['location_id']]).$sep;
-			$rv.= texify_umlauts(trim($r['title'])).$sep;
+		$cday=0;
+		foreach ($result as $r) {
+			if ($cday < $r['day']) {
+				$lmark=false;
+				if ($cday!=0) {
+					$rv.= "\\end{itemize}\n";
+				}
+				$cday= $r['day'];
+				$rv.= "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n";
+				$rv.= "{\\Huge\n";
+				$rv.= "Day ".$a_days[$cday]."\n";
+				$rv.= "}\n";
+				$rv.= "\\begin{center}\n";
+				$rv.= "  \\LARGE Main-Track\\\\\n";
+				$rv.= "  \\Large Location: Bewerunge Room\n";
+				$rv.= "\\end{center}\n";
+				$rv.= "\\begin{itemize}\n";
+			}
+			if (!$lmark && $r['location_id'] != 1) {
+				$lmark=true;
+				$rv.= "\\end{itemize}\n";
+				$rv.= "%%%%%%%%%%%%%%\n";
+				$rv.= "\\begin{center}\n";
+				$rv.= "  \\LARGE Workshops \\& Events\n";
+				$rv.= "\\end{center}\n";
+				$rv.= "\\begin{itemize}\n";
+			}
+
+      $rv.= '\item'."\n  ";
+      $rv.= plaintime($r).' ';
+			$rv.= texify_umlauts(trim($r['title']))."\\\\\n";
+			if ($r['location_id'] != 1) {
+				$rv.= '  {\em '.($a_types[$r['type']]).'}'.$sep;
+				$rv.= '  {\small '.($a_locations[$r['location_id']]).'} -- '.$sep;
+			}
 			$authorcnt=0;
+			$rv.= "  {\em ";
 
       foreach (fetch_authorids($db, $r['id']) as $user_id) {
 				$ur=$db->query('SELECT * FROM user WHERE id ='.$user_id.';');
@@ -1294,10 +1325,10 @@ Both take place in the Aula Maxima, start at 8pm and are gratis.
 				$ud=$ur->fetch(PDO::FETCH_ASSOC);
 
 				if ($authorcnt++) $rv.=', ';
-				$rv.=trim($ud['name']);
+				$rv.=texify_umlauts(trim($ud['name']));
 			}
+			$rv.= '}';
 			$rv.= $sep;
-			$rv.= "%%\n";
 		}
 		$rv.= "\\end{itemize}\n\end{document}\n";
 		return $rv;
@@ -1322,7 +1353,7 @@ Both take place in the Aula Maxima, start at 8pm and are gratis.
 		$a_locations = fetch_selectlist($db, 'location');
     $a_types = fetch_selectlist(0, 'types');
 
-    $q='SELECT * FROM activity ORDER BY day, location_id, strftime(\'%H:%M\',starttime, typesort(type))';
+    $q='SELECT * FROM activity ORDER BY day, location_id, strftime(\'%H:%M\',starttime), typesort(type)';
     $res=$db->query($q);
     if (!$res) return; // TODO: print error msg
 		$result=$res->fetchAll();

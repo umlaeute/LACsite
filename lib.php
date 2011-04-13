@@ -24,6 +24,14 @@
     return date("d.M H:i", $time);
   }
 
+  function plaintime($e, $start=true) {
+    $time= dbadmin_unixtime($e, $start);
+		date_default_timezone_set('CET');
+    $rv=date("H:i", $time);
+		date_default_timezone_set('UTC');
+    return $rv;
+  }
+
   function iso8601($e, $start=true) {
     $time= dbadmin_unixtime($e, $start);
     return date("Ymd\THis\Z", $time);
