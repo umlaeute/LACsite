@@ -287,24 +287,6 @@ function gen_badges_pdf($f) {
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-function texify_umlauts($v) {
-  $v=str_replace("\xc3\x9f",'\\"{s}',$v);
-  $v=str_replace("\xc3\xa0",'\\`{a}',$v);
-  $v=str_replace("\xc3\xa1",'\\\'{a}',$v);
-  $v=str_replace("\xc3\xa2",'\\\^{a}',$v);
-  $v=str_replace("\xc3\xa4",'\\"{a}',$v);
-  $v=str_replace("\xc3\xa8",'\\`{e}',$v);
-  $v=str_replace("\xc3\xa9",'\\\'{e}',$v);
-  $v=str_replace("\xc3\xaa",'\\^{e}',$v);
-  $v=str_replace("\xc3\xb6",'\\"{o}',$v);
-  $v=str_replace("\xc3\xb9",'\\`{u}',$v);
-  $v=str_replace("\xc3\xba",'\\\'{u}',$v);
-  $v=str_replace("\xc3\xbc",'\\"{u}',$v);
-  $v=str_replace("\xc3\xbd",'\\\'{y}',$v);
-  $v=str_replace("\xc3\xbf",'\\"{y}',$v);
-  $v=str_replace("&",'\&',$v);
-  return $v;
-}
 
 function mynamesort($a,$b) {
   $a = preg_replace('@^[0-9_]*-@', '', $a);

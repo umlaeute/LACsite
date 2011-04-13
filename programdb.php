@@ -1265,6 +1265,43 @@ Both take place in the Aula Maxima, start at 8pm and are gratis.
     }
   }
 
+	function export_progam_tex($db) {
+		$sep="\n";
+		$rv= '';
+		$rv.= "\\documentclass{article}\n\\pagestyle{empty}\n\\begin{document}\n";
+		$rv.= "\\begin{itemize}\n";
+
+		# Table Body
+		$a_locations = fetch_selectlist($db, 'location');
+    $a_types = fetch_selectlist(0, 'types');
+
+    $q='SELECT * FROM activity ORDER BY day, location_id, strftime(\'%H:%M\',starttime, typesort(type))';
+    $res=$db->query($q);
+    if (!$res) return; // TODO: print error msg
+		$result=$res->fetchAll();
+
+    foreach ($result as $r) {
+      $rv.= '\item'."\n";
+      $rv.= plaindate($r).$sep;
+			$rv.= ($a_types[$r['type']]).$sep;
+			$rv.= ($a_locations[$r['location_id']]).$sep;
+			$rv.= texify_umlauts(trim($r['title'])).$sep;
+			$authorcnt=0;
+
+      foreach (fetch_authorids($db, $r['id']) as $user_id) {
+				$ur=$db->query('SELECT * FROM user WHERE id ='.$user_id.';');
+				if (!$ur) continue; ## TODO report error ?
+				$ud=$ur->fetch(PDO::FETCH_ASSOC);
+
+				if ($authorcnt++) $rv.=', ';
+				$rv.=trim($ud['name']);
+			}
+			$rv.= $sep;
+			$rv.= "%%\n";
+		}
+		$rv.= "\\end{itemize}\n\end{document}\n";
+		return $rv;
+	}
 
 	function export_progam_sv($db, $sep="\t") {
 		# Table Header

@@ -61,6 +61,17 @@ if (!defined('REGLOGDIR')) die();
         $showdefault=true;
       }
       break;
+    case 'texify':
+      admin_fieldset();
+      program_fieldset();
+			$handle = fopen(TMPDIR.'/schedule.tex', "w");
+			fwrite($handle, export_progam_tex($db));
+			fclose($handle);
+      echo '<legend>Conference Program - Export to tex:</legend>'."\n";
+			echo 'Download: <a href="download.php?file=schedule.tex">schedule.tex</a>';
+      echo '</fieldset>';
+      break;
+      break;
     case 'export':
       admin_fieldset();
       program_fieldset();
