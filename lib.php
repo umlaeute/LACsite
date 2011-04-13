@@ -19,6 +19,11 @@
     #return htmlentities(mb_convert_encoding($s,'utf-8,'utf-8'),ENT_COMPAT,'UTF-8');
   }
 
+  function plaindate($e, $start=true) {
+    $time= dbadmin_unixtime($e, $start);
+    return date("d.M H:i", $time);
+  }
+
   function iso8601($e, $start=true) {
     $time= dbadmin_unixtime($e, $start);
     return date("Ymd\THis\Z", $time);
@@ -116,4 +121,23 @@
 		<br/>
   </fieldset>
 <?php
-  }
+	}
+
+function texify_umlauts($v) {
+  $v=str_replace("\xc3\x9f",'\\"{s}',$v);
+  $v=str_replace("\xc3\xa0",'\\`{a}',$v);
+  $v=str_replace("\xc3\xa1",'\\\'{a}',$v);
+  $v=str_replace("\xc3\xa2",'\\\^{a}',$v);
+  $v=str_replace("\xc3\xa4",'\\"{a}',$v);
+  $v=str_replace("\xc3\xa8",'\\`{e}',$v);
+  $v=str_replace("\xc3\xa9",'\\\'{e}',$v);
+  $v=str_replace("\xc3\xaa",'\\^{e}',$v);
+  $v=str_replace("\xc3\xb6",'\\"{o}',$v);
+  $v=str_replace("\xc3\xb9",'\\`{u}',$v);
+  $v=str_replace("\xc3\xba",'\\\'{u}',$v);
+  $v=str_replace("\xc3\xbc",'\\"{u}',$v);
+  $v=str_replace("\xc3\xbd",'\\\'{y}',$v);
+  $v=str_replace("\xc3\xbf",'\\"{y}',$v);
+  $v=str_replace("&",'\&',$v);
+  return $v;
+}
