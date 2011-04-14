@@ -1423,7 +1423,7 @@ Both take place in the Aula Maxima, start at 8pm and are gratis.
     $a_users = fetch_selectlist($db);
     $a_locations = fetch_selectlist($db, 'location');
 
-    $q='SELECT * FROM activity ORDER BY day, typesort(type), location_id, strftime(\'%H:%M\',starttime)';
+    $q='SELECT * FROM activity WHERE type !=\'c\' ORDER BY day, typesort(type), location_id, strftime(\'%H:%M\',starttime)';
     $res=$db->query($q);
     if (!$res) return; // TODO: print error msg
     $result=$res->fetchAll();
