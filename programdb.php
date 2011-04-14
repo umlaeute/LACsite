@@ -1432,9 +1432,8 @@ Both take place in the Aula Maxima, start at 8pm and are gratis.
     echo 'PRODID:-//linuxaudio.org/LAC2011//NONSGML v1.0//EN'."\r\n";
 
 # XXX hardcoded concerts
-    $result[] = array('id'=> 1000, 'day' => '1', 'starttime' => '20:30', 'duration' => '180',  'type' => 'c', 'title' => 'Opening Concert', 'abstract' => '', 'location_id' => 12, 'status' => '1');
-    $result[] = array('id'=> 1001, 'day' => '2', 'starttime' => '20:30', 'duration' => '180',  'type' => 'c', 'title' => 'Concert', 'abstract' => '', 'location_id' => 13, 'status' => '1');
-    $result[] = array('id'=> 1002, 'day' => '3', 'starttime' => '21:00', 'duration' => '240',  'type' => 'c', 'title' => 'Clubnight', 'abstract' => '', 'location_id' => 14, 'status' => '1');
+    $result[] = array('id'=> 1000, 'day' => '1', 'starttime' => '20:00', 'duration' => '180',  'type' => 'c', 'title' => 'Opening Concert', 'abstract' => '', 'location_id' => 3, 'status' => '1');
+    $result[] = array('id'=> 1001, 'day' => '2', 'starttime' => '20:00', 'duration' => '180',  'type' => 'c', 'title' => 'Concert', 'abstract' => '', 'location_id' => 3, 'status' => '1');
 
     foreach ($result as $r) {
       if (empty($r['starttime'])) continue;
