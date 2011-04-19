@@ -1135,8 +1135,8 @@ if (1) {
 <div>
 <h3>Concerts</h3>
 <p>
-There are two concerts taking place at the LAC 2011, scheduled for Friday and Saturday evening. 
-Both take place in the Aula Maxima, start at 8pm and are gratis.
+There are two concerts - scheduled for Friday 19:30 and Saturday evening 20:00 - and a sound-night (Friday 21:30 - 23:30) at the LAC 2011.
+The concerts take place at the <b>Aula Maxima</b>, and the sound-night in the <b>The Venue, Student Union</b>. Entrace to all is gratis.
 </p>
 <div style="padding:.5em 1em; 0em 1em">
 <?php
@@ -1434,6 +1434,7 @@ Both take place in the Aula Maxima, start at 8pm and are gratis.
 # XXX hardcoded concerts
     $result[] = array('id'=> 1000, 'day' => '1', 'starttime' => '20:00', 'duration' => '180',  'type' => 'c', 'title' => 'Opening Concert', 'abstract' => '', 'location_id' => 3, 'status' => '1');
     $result[] = array('id'=> 1001, 'day' => '2', 'starttime' => '20:00', 'duration' => '180',  'type' => 'c', 'title' => 'Concert', 'abstract' => '', 'location_id' => 3, 'status' => '1');
+    $result[] = array('id'=> 1002, 'day' => '1', 'starttime' => '21:30', 'duration' => '180',  'type' => 'c', 'title' => 'Sound Night', 'abstract' => '', 'location_id' => 3, 'status' => '1');
 
     foreach ($result as $r) {
       if (empty($r['starttime'])) continue;
