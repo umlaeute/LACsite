@@ -753,7 +753,7 @@
   }
 
   function dbadmin_unixtime($e, $start=true) {
-    date_default_timezone_set('UTC');
+    date_default_timezone_set('Europe/London');
     $time= strtotime((5+intval($e['day'])).' May 2011 '.$e['starttime'].':00 CEST');
     if (!$start && !strstr($e['duration'], ':'))
       $time = strtotime('+'.$e['duration'].'minutes', $time);

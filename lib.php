@@ -19,16 +19,18 @@
     #return htmlentities(mb_convert_encoding($s,'utf-8,'utf-8'),ENT_COMPAT,'UTF-8');
   }
 
+  # unused ? fn
   function plaindate($e, $start=true) {
     $time= dbadmin_unixtime($e, $start);
     return date("d.M H:i", $time);
   }
 
+  # used in TEX
   function plaintime($e, $start=true) {
     $time= dbadmin_unixtime($e, $start);
-		date_default_timezone_set('CET');
+    date_default_timezone_set('Europe/London');
     $rv=date("H:i", $time);
-		date_default_timezone_set('UTC');
+    date_default_timezone_set('UTC');
     return $rv;
   }
 
