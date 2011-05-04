@@ -1133,6 +1133,23 @@ if (1) {
 ?>
 <h2 class="ptitle pb">Concerts &amp; Installations</h2>
 <div>
+<h3>Installations</h3>
+<div style="padding:.5em 1em; 0em 1em">
+<p>
+<b>Istn</b> 
+(installation, foyer of The Venue, SU, friday 21:30-23:30)
+<br/>
+<em>Michael Chinen</em>
+</p>
+<hr class="psep"/>
+<p>
+<b>Concerto para Lanhouse</b> 
+(Music Technology Lab, all day, Fri -Sat -Sun)
+<br/>
+<em>Giuliano Obici, Flavio Schiavoni</em>
+</p>
+<hr class="psep"/>
+</div>
 <h3>Concerts</h3>
 <p>
 There are two concerts - scheduled for Friday 19:30 and Saturday evening 20:00 - and a sound-night (Friday 21:30 - 23:30) at the LAC 2011.
