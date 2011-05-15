@@ -701,15 +701,15 @@
       if (!empty($r['url_audio']) || !empty($r['url_misc']) || !empty($r['url_paper']) || !empty($r['url_slides']) || !empty($r['url_stream']))
         echo '<div class="flright">';
       if (!empty($r['url_paper']))
-        echo '<a href="'.$r['url_paper'].'">Paper (PDF)</a>&nbsp;&nbsp;';
+        echo '<a href="'.$r['url_paper'].'" rel="_blank">Paper (PDF)</a>&nbsp;&nbsp;';
       if (!empty($r['url_slides']))
-        echo '<a href="'.$r['url_slides'].'">Slides</a>&nbsp;&nbsp;';
+        echo '<a href="'.$r['url_slides'].'" rel="_blank">Slides</a>&nbsp;&nbsp;';
       if (!empty($r['url_stream']))
         echo '<a href="'.$r['url_stream'].'">Video</a>&nbsp;&nbsp;';
       if (!empty($r['url_audio']))
         echo '<a href="'.$r['url_audio'].'">Audio</a>&nbsp;&nbsp;';
       if (!empty($r['url_misc']))
-        echo '<a href="'.$r['url_misc'].'">Site</a>&nbsp;&nbsp;';
+        echo '<a href="'.$r['url_misc'].'" rel="external">Site</a>&nbsp;&nbsp;';
       if (!empty($r['url_audio']) || !empty($r['url_misc']) || !empty($r['url_paper']) || !empty($r['url_slides']) || !empty($r['url_stream']))
         echo '</div>';
 

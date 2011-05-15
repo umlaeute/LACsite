@@ -70,7 +70,8 @@
 
     echo '<div><h2>Dir Listing</h2>';
     echo '<table cellspacing="2" cellpadding="2" border="0">'; 
-    echo '<tr><th align="center"><b>Filename</b></th><th align="center"><b>Size</b></th><th align="center"><b>Created</b></th></tr>'; 
+    echo '<tr><th align="center"><b>Filename</b></th><th align="center"><b>Size</b></th></tr>'; 
+    #echo '<tr><th align="center"><b>Filename</b></th><th align="center"><b>Size</b></th><th align="center"><b>Created</b></th></tr>'; 
 
     for($a = 0; $a < $dircount; $a++) {
       echo '<tr><td><a href="download/'.$dirarray[$a].'">'.$dirarray[$a].'</a></td><td>DIRECTORY</td><td></td></tr>'; 
@@ -81,7 +82,8 @@
        $currentfile = $listdir.'/'.$filearray[$b]; 
        $size = bytes_to_text((double) filesize($currentfile)); //Filesize UI 
        $time = strftime ("%b %d %Y %H:%M:%S", filectime($currentfile)); 
-       echo '<tr><td><a href="'.$listdir.'/'.$filearray[$b].'">'.$filearray[$b].'</a></td><td align="right">'.$size.'</td><td align="right">'.$time.'</td></tr>'; 
+       echo '<tr><td><a href="'.$listdir.'/'.$filearray[$b].'">'.$filearray[$b].'</a></td><td align="right">'.$size.'</td></tr>'; 
+       #echo '<tr><td><a href="'.$listdir.'/'.$filearray[$b].'">'.$filearray[$b].'</a></td><td align="right">'.$size.'</td><td align="right">'.$time.'</td></tr>'; 
     }
     echo '</table>';
     echo '</div>';

@@ -4,6 +4,9 @@ Open Source Software for music, sound and other media with Linux as the main
 platform.
 </p>
 
+<h1>LAC 2011 is over...</h1>
+<p>... but we are not done yet!</p>
+<p>Videos and Images are dropping in and it takes a bit to sort it all out. Conference material and the proceedings will be published in the following weeks. Stay tuned.</p>
 <h1>Goals</h1>
 <ul>
   <li> To bring developers, musicians, composers and other users together </li>

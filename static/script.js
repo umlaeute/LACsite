@@ -4,6 +4,9 @@ function externalLinks() {
   for (var i=0; i<anchors.length; i++) {
     var anchor = anchors[i];
     if (anchor.getAttribute("href") &&
+        anchor.getAttribute("rel") == "_blank")
+      anchor.target = "_blank";
+    if (anchor.getAttribute("href") &&
         anchor.getAttribute("rel") == "external")
       anchor.target = "_blank";
     if (anchor.getAttribute("href") &&
