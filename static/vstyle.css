@@ -1,27 +1,94 @@
-*		{
-		margin:0;
-		padding:0;
-		border:0;
-		}
-
-body		{
-		background: #000;
-		font-family: Verdana,sans-serif;
-		font-size:10pt;
-		color:#fff;
-		}
-p 	{text-align:justify; padding-bottom:.5em;}
-a		{outline: none; color:white;}
-
-div.header	{
-	font-size:20pt;
-	text-align:center;
+* {
+  margin:0;
+  padding:0;
+  border:0;
 }
 
-div.player	{
-	margin: 2em auto;
-	text-align:center;
+body {
+  background: #000;
+  font-family: Verdana,sans-serif;
+  font-size:10pt;
+  color:#fff;
 }
-div.links	{
-	color:green;
+
+div.container {
+  width:740px;
+  margin:0px auto;
+  text-align:center;
 }
+
+p {text-align:justify; padding-bottom:.5em;}
+a {outline: none; color:white;}
+
+div.header  {
+  font-size:20pt;
+}
+
+div.title  {
+  margin: .5em auto;
+  text-align:center;
+  font-size:120%;
+}
+div.player  {
+  margin: .5em auto;
+  text-align:center;
+}
+div.links  {
+	margin: .5em auto;
+  color:#AAA;
+  text-align:left;
+}
+div.abstract  {
+	margin: .5em auto;
+  color:#AAA;
+  text-align:justify;
+}
+div.links li {
+  margin-left:1em;
+}
+
+div.error  {
+  color:red;
+  font-size: 130%;
+}
+
+div.footer  {
+  margin-top:1em;
+  padding-top:1em;
+  border-top: 1px solid #888;
+}
+div.license  {
+	margin:1em auto;
+}
+
+#sociallinkbar {
+  margin:1em 0px 2px 0px;
+}
+
+#sociallinkbar a {
+  padding:1px 4px 1px 16px;
+}
+/* social network logos */
+#lnktwtr {
+ background: url('../img/sni/l_twitter.png') no-repeat 0 0;
+}
+#lnkfbok {
+ background: url('../img/sni/l_fbook.png') no-repeat 0 0;
+}
+#lnkgogl {
+ background: url('../img/sni/l_google.png') no-repeat 0 0;
+}
+#lnkturl {
+ background: url('../img/sni/l_tinyurl.png') no-repeat 0 0;
+}
+#lnkbtly {
+ background: url('../img/sni/l_bitly.png') no-repeat 0 0;
+}
+#lnksupn {
+ background: url('../img/sni/l_stumbleupon.png') no-repeat 0 0;
+}
+#lnkdlus {
+ background: url('../img/sni/l_delicious.png') no-repeat 0 0;
+}
+
+

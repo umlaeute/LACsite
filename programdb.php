@@ -705,7 +705,7 @@
       if (!empty($r['url_slides']))
         echo '<a href="'.$r['url_slides'].'" rel="_blank">Slides</a>&nbsp;&nbsp;';
       if (!empty($r['url_stream']))
-        echo '<a href="video.php?url='.rawurlencode($r['url_stream']).'">Video</a>&nbsp;&nbsp;';
+        echo '<a href="video.php?id='.rawurlencode($r['id']).'" rel="_blank">Video</a>&nbsp;&nbsp;';
       if (!empty($r['url_audio']))
         echo '<a href="'.$r['url_audio'].'">Audio</a>&nbsp;&nbsp;';
       if (!empty($r['url_misc']))
