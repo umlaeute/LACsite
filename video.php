@@ -51,8 +51,9 @@ $jar='static/cortado_url.jar';
 
 
 if (stripos($ua, 'firefox')!== false 
- || stripos($ua, 'chrome')!== false
- || stripos($ua, 'opera')!== false) {  /* Browser HTML-5 */
+/*|| stripos($ua, 'chrome')!== false*/
+/*|| stripos($ua, 'opera')!== false*/
+) {  /* Browser HTML-5 */
   $out='
   <video width="'.$w.'" height="'.$h.'" autoplay loop controls>
     <source src="'.$url.'"  type="video/ogg" />
@@ -68,8 +69,8 @@ else { /* JAVA - Cortado player */
     <param name="keepaspect" value="true"/>
     <param name="local" value="false"/>
     <param name="statusHeight" value="18"/>
-    <param name="live" value="true"/>
-    <param name="seekable" value="false"/>
+    <param name="live" value="false"/>
+    <param name="seekable" value="true"/>
     <param name="bufferSize" value="200"/>
     <param name="duration" value="0"/>
 ';
