@@ -6,6 +6,7 @@ platform.
 
 <h1>LAC 2011 is over...</h1>
 <p>... but we are not done yet!</p>
+<a href="img/LAC2011_group_picture.jpg"><img src="img/LAC2011_group_picture_small.jpg" alt="group picture"/></a>
 <p>Videos and Images are dropping in and it takes a bit to sort it all out. Conference material and the proceedings will be published in the following weeks. Stay tuned.</p>
 <h1>Goals</h1>
 <ul>
