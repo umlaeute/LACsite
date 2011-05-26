@@ -3,7 +3,7 @@
   require_once('site.php');
 //////////////////////////////////////////////////////////////////////////////
 
-  $page='about';
+  $page='repercussions';
 	$preq='';
 
   if (isset($_REQUEST['page']))

@@ -1,18 +1,17 @@
 <h1>Conference Material Download</h1>
+<? /* PRE CONFERENCE
 <p>Moving along with the conference schedule, we're collecting slides and workshop-material to be made available for remote participants and later archiving.</p>
 <p>Most slides are directly linked from the program-entry (click on the <a href="?page=program">table-entry</a> or use the <a href="?page=program&amp;mode=list">list-view</a>). However due to diversity of the content, last-minute hand-ins and logistics, some files are dumped at <a href="http://lac.linuxaudio.org/2011/download/">http://lac.linuxaudio.org/2011/download/</a> indexed below:</p>
 <?php
   dirlisttable('download');
+ */
 ?>
-<? /* POST CONFERENCE
 <h2>LAC 2011</h2>
-<p><em>Note</em> that all A/V is provided in Ogg/Theora/Vorbis. Should you have problems playing these, consult Wikipedia's <a href="http://en.wikipedia.org/wiki/Wikipedia:Media_help_%28Ogg%29">OGG media help</a>.<br/> <br/>
+<p><em>Note</em> that all A/V is provided in Ogg/Theora/Vorbis. Should you have problems playing these, consult Wikipedia's <a href="http://en.wikipedia.org/wiki/Wikipedia:Media_help_%28Ogg%29" rel="external">OGG media help</a>.<br/> <br/>
 </p>
 <ul>
- <li>Slides, Papers and Recordings of every talk are linked from the <a href="?page=program&mode=list">Program</a>.</li>
- <li><a href="http://lac.linuxaudio.org/2011/download/lac2011_proceedings.pdf">Proceedings 2011</a> (17MB PDF)</li>
- <li><a href="flyer_front.pdf">Flyer: front (PDF)</a></li>
- <li><a href="flyer_back.pdf">Flyer: back (PDF)</a></li>
+ <li>Slides, Papers and Videos of every presentation are linked from the <a href="?page=program&mode=list">Program</a> where available.</li>
+ <li><a href="http://lac.linuxaudio.org/2011/download/lac2011_proceedings.pdf">Proceedings 2011</a> (12MB PDF)</li>
 </ul>
 
 </ul>
@@ -28,4 +27,3 @@
   <li><a href="http://lac.zkm.de/2005/papers/lac2005_proceedings.pdf">Proceedings 2005</a></li>
   <li><a href="http://lac.zkm.de//2004/proceedings/lac2004_proceedings.pdf">Proceedings 2004</a></li>
 	</ul>
- */

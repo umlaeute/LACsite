@@ -2,20 +2,21 @@
 
 #pages listed as 'tabs' on the site
   $pages = array(
-    'about' => 'About',
+    'repercussions' => 'About',
     'program' => 'Programme',
     'download' => 'Download',
     'participants' => 'Attendees',
-    'travel' => 'Travel &amp; Stay',
     'sponsors' => 'Sponsors',
     'contact' => 'Contact'
   );
 
 # other available pages - not shown as 'tabs'
   $hidden = array(
+    'about' => 'About',
     'registration' => 'Registration',
     'download' => 'Download',
     'participation' => 'Participation',
+    'travel' => 'Travel &amp; Stay',
 //  'concerts' => 'Concerts',
 //  'news' => 'News',
   );
