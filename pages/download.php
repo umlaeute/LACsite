@@ -10,10 +10,8 @@
 <p><em>Note</em> that all A/V is provided in Ogg/Theora/Vorbis. Should you have problems playing these, consult Wikipedia's <a href="http://en.wikipedia.org/wiki/Wikipedia:Media_help_%28Ogg%29" rel="external">OGG media help</a>.<br/> <br/>
 </p>
 <ul>
- <li>Slides, Papers and Videos of every presentation are linked from the <a href="?page=program&mode=list">Program</a> where available.</li>
+ <li>Slides, Papers and Videos of every presentation are linked from the <a href="?page=program&amp;mode=list">Program</a> where available.</li>
  <li><a href="http://lac.linuxaudio.org/2011/download/lac2011_proceedings.pdf">Proceedings 2011</a> (12MB PDF)</li>
-</ul>
-
 </ul>
 </p>
 

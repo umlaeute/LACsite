@@ -7,7 +7,6 @@ platform.
 <h1>LAC 2011 is over...</h1>
 <a href="img/LAC2011_group_picture.jpg"><img src="img/LAC2011_group_picture_small.jpg" alt="group picture"/></a>
 <p>The Linux Audio Conference 2011 is over and <a href="?page=download">all material</a> (paper PDFs, slides, photos and more) has been made publically available. Enjoy reading/listening/watching.</p>
-</ul>
 
 <h1>Who?</h1>
 <p>Check out the <a href="?page=participants">list of participants</a> to see who was attending.</p>
