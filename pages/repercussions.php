@@ -8,6 +8,13 @@ platform.
 <a href="img/LAC2011_group_picture.jpg"><img src="img/LAC2011_group_picture_small.jpg" alt="group picture"/></a>
 <p>The Linux Audio Conference 2011 is over and <a href="?page=download">all material</a> (paper PDFs, slides, photos and more) has been made publically available. Enjoy reading/listening/watching.</p>
 
+<h1>Pictures &amp; Blogs</h1>
+<ul>
+	<li><a href="http://www.rncbc.org/drupal/node/283" rel="external">Rui's Blog</a></li>
+	<li><a href="http://www.flickr.com/photos/marcdinkum/sets" rel="external">Marc's Flickr Sets</a></li>
+	<li><a href="http://rg42.org/t/lac2011" rel="external">Robin's Image Gallery</a></li>
+</ul>
+
 <h1>Who?</h1>
 <p>Check out the <a href="?page=participants">list of participants</a> to see who was attending.</p>
 <p>The LAC is a GNU/Linux free/libre software community organised event by the <a href="http://lists.linuxaudio.org/">Linux-Audio-Users and -Developers</a>.
@@ -36,11 +43,3 @@ May 6-8 2011, Maynooth, Ireland.
 <img src="img/nui_maynooth_6.jpg" alt="campus impressions (1)"/> 
 <img src="img/nui_maynooth_3.jpg" alt="campus impressions (2)"/> 
 </div>
-
-
-<h2>Pictures &amp; Blogs</h2>
-<ul>
-	<li><a href="http://www.rncbc.org/drupal/node/283" rel="external">Rui's Blog</a></li>
-	<li><a href="http://www.flickr.com/photos/marcdinkum/sets" rel="external">Marc's Flickr Sets</a></li>
-	<li><a href="http://rg42.org/t/lac2011" rel="external">Robin's Image Gallery</a></li>
-</ul>
