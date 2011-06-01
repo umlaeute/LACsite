@@ -12,7 +12,7 @@
 <ul>
  <li>Slides, Papers and Videos of every presentation are linked from the <a href="?page=program&amp;mode=list">Program</a> where available.</li>
  <li><a href="http://lac.linuxaudio.org/2011/download/lac2011_proceedings.pdf">Proceedings 2011</a> (12MB PDF)</li>
- <li><a href="http://download.linuxaudio.org/torrents/lac2011_recordings.torrent">All Videos .torrent</a> (13.1GB)</li>
+ <li><a href="http://download.linuxaudio.org/torrents/lac2011_recordings.torrent">All Videos .torrent</a> (13.5GB)</li>
 </ul>
 
 <h2>Links to prior Linux Audio Conferences</h2>
