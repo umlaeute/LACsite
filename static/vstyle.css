@@ -25,12 +25,12 @@ div.header  {
 }
 
 div.title  {
-  margin: .5em auto;
+  margin: .25em auto;
   text-align:center;
   font-size:120%;
 }
 div.player  {
-  margin: .5em auto;
+  margin: .25em auto;
   text-align:center;
 }
 div.links  {
