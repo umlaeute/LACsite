@@ -50,6 +50,7 @@ div.links li {
 div.error  {
   color:red;
   font-size: 130%;
+  margin:2em auto;
 }
 
 div.footer  {

@@ -109,6 +109,7 @@ foreach (fetch_authorids($db, $id) as $user_id) {
 }
 echo '</em>';
 echo '</div>';
+if (!empty($url)) {
 echo '<div class="player">'.$out.'</div>';
 $tu=rawurldecode($url);
 $tt=rawurldecode('LAC 2011 - '.$v['title']);
@@ -123,9 +124,12 @@ echo '
     <a id="lnkdlus" rel="_blank" href="http://delicious.com/save?v=6&amp;jump=yes&amp;url='.$tu.'&amp;title='.$tt.'" title="Bookmark this on Del.icio.us"></a>
   </div>
 ';
-
+} else {
+echo '<div class="error"><br/>This presentations has not been recorded.</div>';
+}
 echo '<div class="links"><ul>';
-echo '<li>Video: <a href="'.$url.'">'.basename($url).'</a></li>';
+if (!empty($url))
+  echo '<li>Video: <a href="'.$url.'">'.basename($url).'</a></li>';
 if (!empty($v['url_slides']))
   echo '<li>Slides: <a href="'.$v['url_slides'].'" rel="_blank">'.$v['url_slides'].'</a></li>';
 if (!empty($v['url_paper']))
