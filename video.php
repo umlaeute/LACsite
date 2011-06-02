@@ -16,7 +16,8 @@
 require_once('lib.php');
 require_once('programdb.php');
 function printerror($msg) {
-  echo'<div class="error">ERROR: '.$msg.'</div></div></body></html>';
+  echo '<div class="error">ERROR: '.$msg.'</div></div></body></html>';
+  echo '<div class="footer">Back to <a href="index.php?page=program">conference site</a>.</div>';
   exit;
 }
 if (!isset($_REQUEST['id']))
