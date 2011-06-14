@@ -5,7 +5,6 @@
     'repercussions' => 'About',
     'program' => 'Programme',
     'download' => 'Download',
-    'participants' => 'Attendees',
     'sponsors' => 'Sponsors',
     'contact' => 'Contact'
   );
@@ -15,6 +14,7 @@
     'about' => 'About',
     'registration' => 'Registration',
     'download' => 'Download',
+    'participants' => 'Attendees',
     'participation' => 'Participation',
     'travel' => 'Travel &amp; Stay',
 //  'concerts' => 'Concerts',
