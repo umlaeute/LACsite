@@ -13,6 +13,7 @@ platform.
 	<li><a href="http://www.rncbc.org/drupal/node/283" rel="external">Rui's Blog</a></li>
 	<li><a href="http://www.flickr.com/photos/marcdinkum/sets" rel="external">Marc's Flickr Sets</a></li>
 	<li><a href="http://rg42.org/t/lac2011" rel="external">Robin's Image Gallery</a></li>
+	<li><a href="http://www.linuxjournal.com/content/linux-audio-conference-2011-report-maynooth" rel="external">Dave Phillips' Article in LinuxJournal</a></li>
 </ul>
 
 <h1>Who?</h1>
