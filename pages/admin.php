@@ -41,7 +41,7 @@ switch ($mode) {
     $r=scan_registrations();
     gen_badges_pdf($r);
     echo '<div style="height:1em;">&nbsp;</div>';
-    echo 'Download: <a href="download.php?file=lac2011badges.pdf">lac2011badges.pdf</a>';
+    echo 'Download: <a href="download.php?file=lac2012badges.pdf">lac2012badges.pdf</a>';
     break;
   case 'badgestex':
     $r=scan_registrations();
@@ -269,10 +269,10 @@ function export_sv($sep="\t") {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function gen_badges_pdf($f) {
-  $handle = fopen(TMPDIR.'/lac2011badges.tex', "w");
+  $handle = fopen(TMPDIR.'/lac2012badges.tex', "w");
   fwrite($handle, gen_badges_source($f));
   fclose($handle);
-  @copy (TMPDIR.'../img/badge_nuim.png', TMPDIR.'/badge_nuim.png');
+  @copy (TMPDIR.'../img/badge_ccrma.png', TMPDIR.'/badge_ccrma.png');
   @copy (TMPDIR.'../img/badgelogo.png', TMPDIR.'/badgelogo.png'); # XXX FIX img path
   @copy (TMPDIR.'../img/fonts/GoudyStMTT.afm', TMPDIR.'/GoudyStMTT.afm'); 
   @copy (TMPDIR.'../img/fonts/GoudyStMTT.tfm', TMPDIR.'/GoudyStMTT.tfm'); 
@@ -280,9 +280,9 @@ function gen_badges_pdf($f) {
   @copy (TMPDIR.'../img/fonts/ttfonts.map', TMPDIR.'/ttfonts.map'); 
   @copy (TMPDIR.'../img/fonts/T1-WGL4x.enc', TMPDIR.'/T1-WGL4x.enc'); 
 
-  @unlink (TMPDIR.'/lac2011badges.pdf');
+  @unlink (TMPDIR.'/lac2012badges.pdf');
   echo '<pre style="font-size:70%; line-height:1.2em;">';
-  system('cd '.TMPDIR.'; pdflatex lac2011badges.tex');
+  system('cd '.TMPDIR.'; pdflatex lac2012badges.tex');
   echo '</pre>';
 }
 
@@ -449,10 +449,10 @@ function badge_tex_header() {
         %\parbox[c][4.5cm]{9.8cm}{
         %%\vspace*{1.5cm}
         %%\hspace*{6.3cm}
-        %%\image{height=2.57cm,width=2.54cm}{badge_nuim}
+        %%\image{height=2.57cm,width=2.54cm}{badge_ccrma}
         %\vspace*{-1.79cm}
         %\hspace*{6.6cm}
-        %\image{height=2.47cm,width=2.19cm}{badge_nuim}
+        %\image{height=2.47cm,width=2.19cm}{badge_ccrma}
         %}
         %\hspace*{-9.8cm}
         \begin{tabular}{c}
@@ -461,8 +461,8 @@ function badge_tex_header() {
 	%\hspace*{0.70in}\\\\%
 	\small%
 	\begin{tabular}[b]{lcr}%
-	%\hspace*{.25in}\small LAC 2011 & \hspace*{1.15in} & \hspace*{0.15in}NUI Maynooth\\\\%
-	\hspace*{.25in}\GoudyStMTT LAC 2011 & \hspace*{1.15in} & \hspace*{0.15in}\GoudyStMTT NUI Maynooth\\\\%
+	%\hspace*{.25in}\small LAC 2012 & \hspace*{1.15in} & \hspace*{0.15in}CCRMA Stanford\\\\%
+	\hspace*{.25in}\GoudyStMTT LAC 2012 & \hspace*{1.15in} & \hspace*{0.15in}\GoudyStMTT CCRMA Stanford\\\\%
 	\end{tabular}\\\\%
 	\vspace{0.05in}\\\\%
 	\hspace*{.25in}{#1}\\\\%
