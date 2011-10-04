@@ -80,8 +80,12 @@
 <div id="leftcolumn">
 	<div id="lefthead"> </div>
 <?php
+  if (!in_array($page, $nosponsors)&& !$regclosed) {
+		echo '<div class="center huge"><a href="?page=registration">Register Now</a></div>'."\n";
+    echo '  <hr class="psep"/>'."\n";
+	}
   if (!in_array($page, $nosponsors)) {
-    echo '    <div id="supporterbar">LAC 2012 is supported by<br/><br/>'."\n";
+    echo '    <div id="supporterbar">The LAC 2012 is supported by<br/><br/>'."\n";
     foreach ($sponsors as $sl => $si) {
       echo '<div><a href="'.$sl.'"'."\n";
       echo '     rel="supporter"><img src="'.$si['img'].'" title="'.$si['title'].'" alt="'.$si['title'].'"/>';

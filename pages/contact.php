@@ -1,5 +1,5 @@
 <h1>Map</h1>
-<object id="map" type="text/html" style="width:600px;height:400px;"
+<object id="map" type="text/html" style="width:100%;height:400px;"
 data="http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=660+lomita,+stanford+ca&amp;sll=37.0625,-95.677068&amp;sspn=45.197878,82.265625&amp;ie=UTF8&amp;om=1&amp;hq=&amp;hnear=660+Lomita+Dr,+Stanford,+California+94305&amp;t=m&amp;vpsrc=6&amp;ll=37.427297,-122.171316&amp;spn=0.027264,0.038538&amp;z=14&amp;iwloc=A&amp;output=embed">
 </object>
 <p>
