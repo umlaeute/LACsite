@@ -40,15 +40,15 @@ img	{border: 0px;}
 		background:#FEFEF9 url(../img/corner_tr.png) no-repeat scroll right top;
 		}
 #toprow {
-	margin: 1em auto;
+	margin: 0em auto;
   min-width:74em;
 }
 #titlebar	{
 		color: #ffffff;
-		margin: .5em 1em;
+		margin:0em;
 		text-align: left;
-		background:#808080 url(../img/karma_logo.png) no-repeat scroll left top;
-		border-bottom: .5em solid #808080;
+		background:#606060 url(../img/karma_logo.png) no-repeat scroll left top;
+		border-bottom: .8em solid #606060;
 		}
 #titlebar div   {padding-left: 45px;}
 #maintitle	{
@@ -57,12 +57,17 @@ img	{border: 0px;}
 #subtitle	{
 		font-size: 12pt;
 		font-weight: bold;
-		margin-top: .75em;
+		margin-top: .8em;
     		}
 #wherewhen	{
 		font-weight: bold;
 		margin-top: 1em;
     		}
+#titleend {
+	height:12px;
+	width:100%;
+  background:url(../img/blend6080.png) repeat-x left bottom;
+ }
 #mainmenu	{
 		position:relative;
 		overflow:hidden;
@@ -98,15 +103,6 @@ div.menuitem 	{
 		font-size:80%;
 		}
 #footerwrap	{text-align:center; border:0px; margin:2em auto; font-size:75%;}
-#tab_0		{left: 0pt;}
-#tab_1		{left: 100px;}
-#tab_2		{left: 200px;}
-#tab_3		{left: 300px;}
-#tab_4		{left: 400px;}
-#tab_5		{left: 500px;}
-#tab_6		{left: 600px;}
-#tab_7		{left: 700px;}
-
 
 #content		{
 		  background:transparent url(../img/corner_tl.png) no-repeat scroll left top;

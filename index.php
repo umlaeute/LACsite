@@ -60,6 +60,7 @@
     <div id="wherewhen">April 12-15 2012, Stanford, Ca, USA</div>
     <div>LECTURES / WORKSHOPS / EXHIBITION / CONCERTS / CLUBNIGHT</div>
 	</div>
+	<div id="titleend"> </div>
 
   <div id="mainmenu">
 <?php
