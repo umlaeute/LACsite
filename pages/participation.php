@@ -52,7 +52,7 @@ meant as a starting point, not to restrict you.
 We very much welcome practical papers resp. software demos ("how I use Linux Audio applications to create my music/media art").
 </p>
 <p>
-Not all papers need to address Linux Audio. Subjects from related fields like open source music applications, open source software for music or sound research and open content are also very welcome.
+Not all papers need to directly address Linux Audio. There is no limitation for subjects from related fields like open source music applications, open source software for music or sound-research and open-content.
 </p>
 
 <p>NB. Papers should be as complete as possible on submission. Until submission closes it is possible to replace/update files in the <a href="http://lac.linuxaudio.org/2012/openconf/" rel="external">openconf</a> system. Submissions will be peer-reviewed and after the notification of acceptance there is a small time-window for updates and last-minute changes.
