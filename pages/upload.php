@@ -2,7 +2,7 @@
 <?php
 
   try {
-    $db=new PDO("sqlite:tmp/lac2011.db"); // XXX -> config.php
+    $db=new PDO("sqlite:tmp/lac2012.db"); // XXX -> config.php
   } catch (PDOException $exception) {
     die ('Database Failure: '.$exception->getMessage());
   }
@@ -51,7 +51,7 @@ if (    isset($_POST['postit'])
 
   $id =intval(rawurldecode($_POST['pdb_slides']));
   if ($ok && $err==0 && $id>0 ) {
-      $pdb_url_slides='http://lac.linuxaudio.org/2011/download/'.$userfile_name;
+      $pdb_url_slides='http://lac.linuxaudio.org/2012/download/'.$userfile_name;
       $q='UPDATE activity set'
 	.' url_slides='.$db->quote($pdb_url_slides)
 	.' WHERE id='.$id.';';

@@ -2,18 +2,18 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-  <title>LAC2011: The Linux Audio Conference Programme - Clár na Comhdhála</title>
+  <title>LAC2012: The Linux Audio Conference Programme</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" href="static/printstyle.css" type="text/css"/>
   <meta name="Author" content="Robin Gareus" />
-  <meta name="description" content="Linux Audio Conference 2011" />
-  <meta name="keywords" content="LAC2011, LAC, Linux Audio Conference 2011,Linux, Music, Developer Meeting, Music Department, National University of Ireland, Maynooth" />
+  <meta name="description" content="Linux Audio Conference 2012" />
+  <meta name="keywords" content="LAC2012, LAC, Linux Audio Conference 2012,Linux, Music, Developer Meeting, Music Department, National University of Ireland, Maynooth" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
 </head>
 <body id="content">
-<h1 class="center">LAC 2011 Conference Programme - Clár na Comhdhála</h1>
-<div class="center">May 6-8; Logic House - South Campus; Music Department, National University of Ireland, Maynooth</div>
+<h1 class="center">LAC 2012 Conference Programme</h1>
+<div class="center">April 12-15; CCRMA, Stanford University</div>
 <?php
   require_once('config.php');
   require_once('lib.php');

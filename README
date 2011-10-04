@@ -1,4 +1,4 @@
------  LAC 2011 website ----
+-----  LAC 2011/2012 website ----
 
 --- Setup ---
 
@@ -7,6 +7,7 @@ Step 1) create './config.php' with the following:
 <?php 
   define('REGLOGDIR',dirname($_SERVER['SCRIPT_FILENAME']).'/regs/');  
   define('TMPDIR',dirname($_SERVER['SCRIPT_FILENAME']).'/tmp/');
+  define('LACY','2012');  
   $regmail=true; # if set users will receive a confirmation email
   $hidepapers=false; # don't include links to papers (yet)
   $mailto='robin@linuxaudio.org, marcg@dinkum.nl'; # admin email
@@ -30,20 +31,23 @@ Step 2+)
                    # eg. pages/concerts.php
   echo "Deny from all" > tmp/.htaccess
 
+  #prepare upload folder.
+  chmod 1777 download/  # or `sudo chown www-data download`
+
 Step 3) 
   set up HTTP AUTH: copy .htaccess-dist to .htaccess and edit it.
   use 'htdigest' to create the password file
 
 Step 4+)
-  create sqlite database in tmp/lac2011.db and make it writable for
+  create sqlite database in tmp/lac2012.db and make it writable for
   the HTTP-user..
-    sqlite3 tmp/lac2011.db < schema.sql
-    sudo chown www-data.www-data tmp/lac2011.db
+    sqlite3 tmp/lac2012.db < schema.sql
+    sudo chown www-data.www-data tmp/lac2012.db
 
-  create sqlite database in tmp/reg2011.db and make it writable for
+  create sqlite database in tmp/reg2012.db and make it writable for
   the HTTP-user..
-    sqlite3 tmp/reg2011.db < schema_reg.sql
-    sudo chown www-data.www-data tmp/reg2011.db
+    sqlite3 tmp/reg2012.db < schema_reg.sql
+    sudo chown www-data.www-data tmp/reg2012.db
 
 --- Notes ---
 

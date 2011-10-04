@@ -2,12 +2,12 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-  <title>LAC2011 Program: The Linux Audio Conference Timetable </title>
+  <title>LAC2012 Program: The Linux Audio Conference Timetable </title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" href="static/style.css" type="text/css"/>
   <meta name="Author" content="Robin Gareus" />
-  <meta name="description" content="Linux Audio Conference 2011" />
-  <meta name="keywords" content="LAC2011, LAC, Linux Audio Conference 2011,Linux, Music, Developer Meeting, Music Department, National University of Ireland, Maynooth" />
+  <meta name="description" content="Linux Audio Conference 2012" />
+	<meta name="keywords" content="LAC2012, LAC, Linux Audio Conference 2012, Linux, Music, Audio, Developer Meeting, CCRMA, Computer Research in Music and Acoustics, Stanford, Stanford University" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <script type="text/javascript" src="static/script.js"></script>

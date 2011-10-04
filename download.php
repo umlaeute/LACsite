@@ -6,9 +6,9 @@
 
   $fn='';
   switch ($req) {
-    case 'lac2011badges.pdf':
+    case 'lac'.LACY.'badges.pdf':
       $ctype='application/pdf';
-      $fn = TMPDIR.'/lac2011badges.pdf';
+      $fn = TMPDIR.'/lac'.LACY.'badges.pdf';
       break;
     case 'schedule.tex':
       $ctype='text/plain';

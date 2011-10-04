@@ -27,7 +27,7 @@ $id=intval(rawurldecode($_REQUEST['id']));
 $q='SELECT * FROM activity WHERE id='.$id.';';
 
 try {
-  $db=new PDO("sqlite:tmp/lac2011.db"); // XXX -> config.php
+  $db=new PDO("sqlite:tmp/lac".LACY.".db"); // XXX -> config.php
 } catch (PDOException $exception) {
   die ('Database Failure: '.$exception->getMessage());
 }
@@ -98,7 +98,7 @@ else { /* JAVA - Cortado player */
   }
 }
 
-echo '<div class="header">Linux Audio Conference 2011</div>';
+echo '<div class="header">Linux Audio Conference '.LACY.'</div>';
 echo '<div class="title">';
 echo '<b>'.xhtmlify($v['title']).'</b><br/>';
 echo '<em>'; $i=0;
@@ -112,7 +112,7 @@ echo '</div>';
 if (!empty($url)) {
 echo '<div class="player">'.$out.'</div>';
 $tu=rawurldecode($url);
-$tt=rawurldecode('LAC 2011 - '.$v['title']);
+$tt=rawurldecode('LAC '.LACY.' - '.$v['title']);
 echo '
   <div id="sociallinkbar">
     <a id="lnktwtr" rel="_blank" href="http://twitter.com/share?url='.$tu.'" title="Tweet This!"></a>
@@ -147,7 +147,7 @@ if (!empty($v['abstract'])) {
 ?>
 <div class="license">
 
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />The video is licensed in terms of the <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>. Attribute to <a xmlns:cc="http://creativecommons.org/ns#" href="http://lac.linuxaudio.org/2011/" property="cc:attributionName" rel="cc:attributionURL">linuxaudio.org</a>. All copyright(s) remain with the author/speaker/presenter.
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />The video is licensed in terms of the <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>. Attribute to <a xmlns:cc="http://creativecommons.org/ns#" href="http://lac.linuxaudio.org/<?=LACY?>/" property="cc:attributionName" rel="cc:attributionURL">linuxaudio.org</a>. All copyright(s) remain with the author/speaker/presenter.
 </div>
 <div class="footer">Back to <a href="index.php?page=program">conference site</a>.</div>
 </body>

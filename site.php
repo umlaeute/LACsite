@@ -2,23 +2,20 @@
 
 #pages listed as 'tabs' on the site
   $pages = array(
-    'repercussions' => 'About',
-    'program' => 'Programme',
-    'download' => 'Download',
+    'about' => 'About',
+    'participation' => 'Participation',
     'sponsors' => 'Sponsors',
+    'travel' => 'Travel &amp; Stay',
     'contact' => 'Contact'
   );
 
 # other available pages - not shown as 'tabs'
   $hidden = array(
-    'about' => 'About',
+    'download' => 'Download',
+    'program' => 'Programme',
     'registration' => 'Registration',
     'download' => 'Download',
     'participants' => 'Attendees',
-    'participation' => 'Participation',
-    'travel' => 'Travel &amp; Stay',
-//  'concerts' => 'Concerts',
-//  'news' => 'News',
   );
 
 # don't list sponsors on these pages
@@ -35,9 +32,6 @@
 
 #define sponsors/supportes
   $sponsors = array(
-    'http://music.nuim.ie' => array('img' => 'img/logos/nuim.jpg', 'title' => 'NUIM'),
-    'http://lwn.net/' => array('img' => 'img/logos/lwn.jpg', 'title' => 'LWN.NET'), 
-    'http://www.sonokinetic.net/' => array('img' => 'img/logos/sonokinetic.jpg', 'title' => 'Sonokinetic'),
+    'http://stanford.edu/' => array('img' => 'img/logos/stanford.jpg', 'title' => 'Stanford.edu'),
     'http://linuxaudio.org/' => array('img' => 'img/logos/lao.png', 'title' => 'linuxaudio.org'),
-    'http://www.citu.info/' => array('img' => 'img/logos/citu.png', 'title' => 'CiTu'),
   );

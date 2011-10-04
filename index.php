@@ -42,13 +42,12 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-  <title>LAC2011: The Linux Audio Conference</title>
+  <title>LAC<?=LACY?>: The Linux Audio Conference</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" href="static/style.css" type="text/css"/>
   <meta name="Author" content="Robin Gareus" />
-  <meta name="description" content="Linux Audio Conference 2011" />
-  <meta name="keywords" content="LAC2011, LAC, Linux Audio Conference 2011,Linux, Music, Developer Meeting, Music Department, National University of Ireland, Maynooth" />
-  <meta name="google-site-verification" content="MN3y5vmxMxuQpTQhQPoecYv4NXe4Jj8i1zH7hUoIme0" />
+	<meta name="description" content="Linux Audio Conference <?=LACY?>" />
+	<meta name="keywords" content="LAC<?=LACY?>, LAC, Linux Audio Conference <?=LACY?>,Linux, Music, Audio, Developer Meeting, CCRMA, Computer Research in Music and Acoustics, Stanford, Stanford University" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <script type="text/javascript" src="static/script.js"></script>
@@ -57,9 +56,9 @@
 <div class="envelope main">
   <div id="header">&nbsp;</div>
   <div id="titlebar">
-    <div id="maintitle"> Linux Audio Conference 2011 </div>
+    <div id="maintitle"> Linux Audio Conference <?=LACY?> </div>
     <div id="subtitle">The Open Source Music and Sound Conference</div>
-		<div id="wherewhen"> May 6-8 2011, Maynooth, Ireland</div>
+    <div id="wherewhen">April 12-15 2012, Stanford, Ca, USA</div>
     <div>LECTURES / WORKSHOPS / EXHIBITION / CONCERTS / CLUBNIGHT</div>
   </div>
   <div id="mainmenu">
@@ -78,7 +77,7 @@
     <div id="content">
 <?php
 	if (!in_array($page, $nosponsors)) {
-    echo '    <div id="supporterbar">LAC 2011 is supported by<br/><br/>'."\n";
+    echo '    <div id="supporterbar">LAC 2012 is supported by<br/><br/>'."\n";
     foreach ($sponsors as $sl => $si) {
       echo '<div><a href="'.$sl.'"'."\n";
       echo '     rel="supporter"><img src="'.$si['img'].'" title="'.$si['title'].'" alt="'.$si['title'].'"/>';
@@ -94,12 +93,12 @@
       <div style="clear:both;">&nbsp;</div>
     </div>
   </div>
-  <div id="createdby"> Mar 28 2011, Victor Lazzarini, John Lato &amp; Robin Gareus</div>
+  <div id="createdby"> Oct 04 2011, Fernando Lopez-Lezcano, Bruno Ruviaro &amp; Robin Gareus</div>
 </div>
 
 <div class="envelope" id="footerwrap">
   <div class="footer">
-<a href="http://www2.clustrmaps.com/counter/maps.php?url=http://lac.linuxaudio.org/2011/" id="clustrMapsLink" rel="external"><img src="http://www2.clustrmaps.com/counter/index2.php?url=http://lac.linuxaudio.org/2011/" style="border:0px;" alt="Locations of visitors to this page" title="Locations of visitors to this page" id="clustrMapsImg" />
+<a href="http://www2.clustrmaps.com/counter/maps.php?url=http://lac.linuxaudio.org/2012/" id="clustrMapsLink" rel="external"><img src="http://www2.clustrmaps.com/counter/index2.php?url=http://lac.linuxaudio.org/2012/" style="border:0px;" alt="Locations of visitors to this page" title="Locations of visitors to this page" id="clustrMapsImg" />
 </a>
 <script type="text/javascript">
 function cantload() {

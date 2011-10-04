@@ -1,6 +1,6 @@
 <?php
   try {
-    $db=new PDO("sqlite:tmp/lac2011.db"); // XXX -> config.php
+    $db=new PDO("sqlite:tmp/lac".LACY.".db"); // XXX -> config.php
   } catch (PDOException $exception) {
     die ('Database Failure: '.$exception->getMessage());
   }
@@ -730,7 +730,7 @@
       }
       echo '</em>';
 
-      if ($r['type']!='c') { ### LAC 2011 - all concerts same location
+      if ($r['type']!='c') { ### all concerts same location
         if ($location && !empty($r['location_id']))
           echo ' &raquo;&nbsp;Location: '.$a_locations[$r['location_id']];
       }
@@ -754,7 +754,7 @@
 
   function dbadmin_unixtime($e, $start=true) {
     date_default_timezone_set('Europe/London');
-    $time= strtotime((5+intval($e['day'])).' May 2011 '.$e['starttime'].':00 CEST');
+    $time= strtotime((12+intval($e['day'])).' April 2012 '.$e['starttime'].':00 CEST');
     if (!$start && !strstr($e['duration'], ':'))
       $time = strtotime('+'.$e['duration'].'minutes', $time);
     return $time;
@@ -1132,28 +1132,8 @@ if (1) {
   function hardcoded_concert_and_installation_info($db, $details=true) {
 ?>
 <h2 class="ptitle pb">Concerts &amp; Installations</h2>
-<div>
-<h3>Installations</h3>
-<div style="padding:.5em 1em; 0em 1em">
-<p>
-<b>Istn</b> 
-(installation, foyer of The Venue, SU, friday 21:30-23:30)
-<br/>
-<em>Michael Chinen</em>
-</p>
-<hr class="psep"/>
-<p>
-<b>Concerto para Lanhouse</b> 
-(Music Technology Lab, all day, Fri -Sat -Sun)
-<br/>
-<em>Giuliano Obici, Flavio Schiavoni</em>
-</p>
-<hr class="psep"/>
-</div>
 <h3>Concerts</h3>
-<p>
-There are two concerts - scheduled for Friday 19:30 and Saturday evening 20:00 - and a sound-night (Friday 21:30 - 23:30) at the LAC 2011.
-The concerts take place at the <b>Aula Maxima</b>, and the sound-night in the <b>The Venue, Student Union</b>. Entrace to all is gratis.
+<p>...
 </p>
 <div style="padding:.5em 1em; 0em 1em">
 <?php
@@ -1189,7 +1169,7 @@ The concerts take place at the <b>Aula Maxima</b>, and the sound-night in the <b
                   #  , '18:00' 
 									);
 		# XXX 2011: Friday
-		if ($day!=1) $a_times[]='18:00';
+		#if ($day!=1) $a_times[]='18:00';
 
     if (!$print) {
       echo '<div style="float:right;">';
@@ -1432,7 +1412,7 @@ The concerts take place at the <b>Aula Maxima</b>, and the sound-night in the <b
       ##header('Content-Type:text/calendar');
       header('Content-type: text/calendar; charset=utf-8');
       #header("Content-Type: text/x-vCalendar");
-      header("Content-Disposition: inline; filename=lac2011.ics");
+      header("Content-Disposition: inline; filename=lac".LACY.".ics");
     }
 
     date_default_timezone_set('UTC');
@@ -1446,7 +1426,7 @@ The concerts take place at the <b>Aula Maxima</b>, and the sound-night in the <b
     $result=$res->fetchAll();
     echo 'BEGIN:VCALENDAR'."\r\n";
     echo 'VERSION:'.$version."\r\n"; 
-    echo 'PRODID:-//linuxaudio.org/LAC2011//NONSGML v1.0//EN'."\r\n";
+    echo 'PRODID:-//linuxaudio.org/LAC'.LACY.'//NONSGML v1.0//EN'."\r\n";
 
 # XXX hardcoded concerts
     $result[] = array('id'=> 1000, 'day' => '1', 'starttime' => '20:00', 'duration' => '180',  'type' => 'c', 'title' => 'Opening Concert', 'abstract' => '', 'location_id' => 3, 'status' => '1');
@@ -1459,9 +1439,9 @@ The concerts take place at the <b>Aula Maxima</b>, and the sound-night in the <b
       if ($r['status']==0) continue; // XXX cancelled
 
       echo 'BEGIN:VEVENT'."\r\n";
-      echo 'UID:lac2011-'.$r['id'].'@linuxaudio.org'."\r\n";
+      echo 'UID:lac'.LACY.'-'.$r['id'].'@linuxaudio.org'."\r\n";
 
-      $dtstamp=filemtime('tmp/lac2011.db'); // XXX -> config.php
+      $dtstamp=filemtime('tmp/lac'.LACY.'.db'); // XXX -> config.php
       echo 'DTSTAMP:'.date("Ymd\THis\Z", $dtstamp)."\r\n";  // optional
 
       foreach (fetch_authorids($db, $r['id']) as $user_id) {
@@ -1470,10 +1450,10 @@ The concerts take place at the <b>Aula Maxima</b>, and the sound-night in the <b
       echo 'DTSTART:'.iso8601($r)."\r\n";
       echo 'DTEND:'.iso8601($r,false)."\r\n";
       if ($version=='2.0') {
-        echo 'SUMMARY:LAC2011 - '.str_replace(',','\,',trim($r['title']))."\r\n";
+        echo 'SUMMARY:LAC'.LACY.' - '.str_replace(',','\,',trim($r['title']))."\r\n";
         echo 'DESCRIPTION:'.str_replace("\r",'',str_replace(';','\;',str_replace(',','\,',str_replace("\n",'\n',trim($r['abstract'])))))."\r\n";
       } else {
-        echo 'SUMMARY;ENCODING=QUOTED-PRINTABLE:LAC2011 - '.quoted_printable_encode(trim($r['title']))."\r\n";
+        echo 'SUMMARY;ENCODING=QUOTED-PRINTABLE:LAC'.LACY.' - '.quoted_printable_encode(trim($r['title']))."\r\n";
         echo 'DESCRIPTION;ENCODING=QUOTED-PRINTABLE:'.quoted_printable_encode(str_replace("\n",'\n',trim($r['abstract'])))."\r\n";
       }
       if (!empty($r['location_id']) && $r['location_id'] > 0)

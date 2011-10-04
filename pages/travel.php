@@ -1,54 +1,36 @@
 <h1>Location</h1>
-<p>The conference will take place in the <b>Logic House</b> on the <b>South Campus</b>. Number 3 on the
-<a href="http://www.nuim.ie/location/maps/NUIM-Map-booklet-v3.pdf"  rel="external">map of the campus</a>.
+<p>The conference will take place in...
 </p>
-<h1>Staying in Maynooth</h1>
-<p> Accommodation on Campus is limited, but still available for most nights around the conference dates, except for Saturday night. Please
-check the <a href="http://www.maynoothcampus.com" rel="external">Maynooth campus website </a></p>
-<p> Other possibilities in Maynooth can be found in the <a href="http://www.nuim.ie/about/accommodation.shtml" rel="external">Visitor Accommodation</a> information page of NUIM. </p>
-<p> For participants wanting to stay in Dublin, where a larger range of options exist, Maynooth is well connected to the city centre  by a train service (station 5 mins from University) and busses (66 and 67). </p>
 
-<h1>Travelling to Maynooth</h1>
+<h1>Staying in the Bay Area</h1>
+
 <p>
-NUI Maynooth is accessible by public transport. The university is located 15 miles from Dublin city centre.
+...
 </p>
-<p><a href="http://www.nuim.ie/location/index.shtml" rel="external">NUIM Travel Information Page</a> contains detailed information including timetables for train &amp; bus. For convenience some of it is summarized below:
-</p>
+
+<h1>Travelling to Stanford</h1>
+
+<p>CCRMA is housed in the Knoll</p>
 <ul>
-  <li>The nearest airport to Maynooth is Dublin Airport. Dublin airport has no rail link, so the best public transport option is to get a bus from the front of the terminal, or taxi to the city centre and continue on the bus or train to Maynooth from there. A direct taxi ride from the airport to Maynooth is approximately EUR50.</li>
-	<li> NUI Maynooth is served by two bus routes - the 66 and the 67a. Both of these buses depart from Pearse St. in Dublin city centre and run frequent services to Maynooth which cost EUR2.10 each way. There are also 66x and 67x express services to and from Maynooth.</li>
-	<li>Maynooth lies on the Western Suburban railway line which serves three city centre stations (Pearse Station, Tara St. and Connolly Station) as well as nine other suburban stations.</li>
-	<li><a href="http://www.nuim.ie/location/transport0910.pdf">NUIM Transport Guide (14MB PDF)</a></li>
+660 Lomita Dr.<br />
+Stanford, CA  94305<br />
 </ul>
+<p>Please use the following directions in conjunction with the Stanford <a href="http://campus-map.stanford.edu/index.cfm">campus map</a> or <a href="http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=660+lomita,+stanford+ca&amp;sll=37.0625,-95.677068&amp;sspn=45.197878,82.265625&amp;ie=UTF8&amp;om=1&amp;z=16&amp;layer=t">Google Map</a>.&nbsp;</p>
 
-<h1>Special Offers</h1>
-<p><b> Kilcar House B&amp;B </b></p>
-<p><a href="http://www.kilcarhouse.ie" rel="external">Website</a></p>
-<p>
-B&amp;B 10 min walk from Campus. Eur31.00 per person per night for Twin and Double Rooms including breakfast. 
-Single rooms are Eur35.00. If any guests do not require breakfast the rates will be less.  All rooms are en-suite  with tv,wireless internet and  tea/coffee facilities.
-</p>
+<p><strong>via Caltrain</strong></p>
+<p>Take Caltrain to the Palo Alto station. Take <a href="http://transportation.stanford.edu/marguerite/MargueriteShuttle.shtml">Marguerite</a> shuttle service (either B Line or Midnight Express, depending on time of day) onto the Stanford campus; shuttles meet each train. Get off the shuttle at Tressider Union. Walk away from the Union through the Tressider parking lot and cross Mayfield Avenue. A pathway to the left of Florence Moore Hall leads up a hill. At the top of the hill is Lomita Drive, with the Knoll on your left.</p>
 
-<p><b>Springfield Hotel</b></p>
-<p><a href="http://www.springfieldhotel.ie" rel="external">Website</a></p>
-<p>
-For LAC participants, rates of Eur55.00 (single) and Eur85.00 (twin), with breakfast.
-Located in Leixlip, which is the next village to Maynooth (10 mins on bus/train).
-</p>
+<p><strong>from 280</strong></p>
+<p>Exit at Alpine Road heading east. At the first traffic light, turn right onto Junipero Serra Boulevard. At the next traffic light, turn left onto Campus Drive West. At the stop sign, turn right onto Santa Teresa. Continue on Santa Teresa until the second stop sign, then turn right on Lomita Drive. Stay to the right on Lomita; the Knoll is at 660 Lomita.</p>
 
+<p><strong>from 101</strong></p>
+<p>Exit at Embarcadero Road heading west. As Embarcadero crosses El Camino Real it becomes Galvez Street. On Galvez, turn left at the first stop sign, onto Campus Drive. Follow Campus Drive to Mayfield Avenue; turn right on Mayfield (and follow it as it curves left). At the end of Mayfield turn left on Lomita Drive. The Knoll is at 660 Lomita.</p>
 
-<p><b>Glenroyal Hotel</b></p>
-<p><a href="http://www.glenroyalhotelkildare.ie" rel="external">Website</a></p>
-<p>
-For LAC participants, 2 nights B&amp;B + 1 dinner Eur89.00 per person sharing or
-139.00 (single person). Check with  hotel for other offers. The hotel
-is 5 mins walk from University. 
-</p>
+<p><strong>from El Camino Real</strong></p>
+<p>Turn onto the Stanford Campus at Galvez Street. On Galvez, turn left at the first stop sign, onto Campus Drive. Follow Campus Drive to Mayfield Avenue; turn right on Mayfield (and follow it as it curves left). At the end of Mayfield turn left on Lomita Drive. The Knoll is at 660 Lomita.</p>
 
+<p><strong>from Foothill Expressway</strong></p>
+<p>Follow Foothill across Page Mill, where it becomes Junipero Serra Boulevard. Turn right onto the Stanford Campus at Campus Drive East. At the first stop sign, turn left onto Mayfield Avenue. Follow Mayfield as it curves left. At the end of Mayfield, turn left on Lomita Drive. The Knoll is at 660 Lomita.</p>
 
-<p><b>Courtyard Hotel</b></p>
-<p><a href="http://www.courtyard.ie" rel="external">Website</a></p>
-<p>
-For LAC participants, single: Eur 75.00/night, double: Eur89.00, with breakfast. The hotel is in Leixlip village centre,
-10-min journey from Maynooth.
-</p>
+<p><strong>Parking</strong></p>
+<p>Parking in front of and behind CCRMA is zoned for Stanford 'C' permits, Mon-Fri 6am-4pm (i.e., parking is free around the building all other times). The nearest visitor pay parking lot is at Tressider Union (<a href="http://campus-map.stanford.edu/index.cfm?ID=02-300">campus map</a> and <a href="http://maps.google.com/maps?q=459+Lagunita+Dr,+Stanford,+CA%E2%80%8E&amp;oe=utf-8&amp;rls=org.mozilla:en-US:official&amp;client=firefox-a&amp;um=1&amp;ie=UTF-8&amp;hq=&amp;hnear=459+Lagunita+Dr,+Stanford,+CA+94305&amp;gl=us&amp;ei=Ow76SqbCM4aIsgOTx4XCDg&amp;sa=X&amp;oi=geocode_result&amp;ct=title&amp;resnum=1&amp;ved=0CAsQ8gEwAA">Google Map</a>), off Mayfield Avenue. For more information about visitor parking on the Stanford campus, please visit the Stanford <a href="http://transportation.stanford.edu/parking_info/VisitorParking.shtml">Parking and Transportation</a> website.</p>
