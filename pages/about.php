@@ -38,17 +38,18 @@ to answer to the call for paper-presentations, workshops and music.
 <h1>Who?</h1>
 <p>Check out the <a href="?page=participants">list of participants</a> to see who else is coming.</p>
 <p>The LAC is a GNU/Linux free/libre software community organised event by the <a href="http://lists.linuxaudio.org/">Linux-Audio-Users and -Developers</a>.
-LAC2012 is under the auspices of <a href="http://ccrma.stanford.edu">CCRMA</a>, organised by <a href="https://ccrma.stanford.edu/people/fernando-lopez-lezcano" rel="external">Fernando Lopez-Lezcano</a> with assistance from <a href="http://www.brunoruviaro.com/" rel="external">Bruno Ruviaro</a>, Frank Neumann and <a href="http://gareus.org" rel="external"> Robin Gareus</a>.</p>
+LAC2012 is under the auspices of <a href="http://ccrma.stanford.edu" rel="external">CCRMA</a>, organised by <a href="https://ccrma.stanford.edu/people/fernando-lopez-lezcano" rel="external">Fernando Lopez-Lezcano</a> with assistance from <a href="http://www.brunoruviaro.com/" rel="external">Bruno Ruviaro</a>, Frank Neumann and <a href="http://gareus.org" rel="external"> Robin Gareus</a>.</p>
 
 <h1>Links to prior Linux Audio Conferences</h1>
-<ul>
-  <li><a href="http://lac.linuxaudio.org/2011/?page=download">Proceedings &amp; Recordings 2011</a></li>
-  <li><a href="http://lac.linuxaudio.org/2010/?page=download">Proceedings &amp; Recordings 2010</a></li>
-  <li><a href="http://lac.linuxaudio.org/2009/cdm/">Proceedings &amp; Recordings 2009</a></li>
-  <li><a href="http://lac.linuxaudio.org/2008/download/papers/">Proceedings 2008</a></li>
-  <li><a href="http://lac.linuxaudio.org/2007/download/lac07_proceedings.pdf">Proceedings 2007</a></li>
-  <li><a href="http://lac.linuxaudio.org/2006/lac2006_proceedings.pdf">Proceedings 2006</a></li>
+<ul class="multicolumn">
+  <li><a href="http://lac.linuxaudio.org/2011/?page=download">Archive 2011</a></li>
+  <li><a href="http://lac.linuxaudio.org/2008/download/papers/">Papers 2008</a></li>
   <li><a href="http://lac.linuxaudio.org/2005/lac2005_proceedings.pdf">Proceedings 2005</a></li>
+  <li><a href="http://lac.linuxaudio.org/2010/?page=download">Archive 2010</a></li>
+  <li><a href="http://lac.linuxaudio.org/2007/download/lac07_proceedings.pdf">Proceedings 2007</a></li>
   <li><a href="http://lac.linuxaudio.org/2004/lac2004_proceedings.pdf">Proceedings 2004</a></li>
+  <li><a href="http://lac.linuxaudio.org/2009/cdm/">Slides &amp; Papers 2009</a></li>
+  <li><a href="http://lac.linuxaudio.org/2006/lac2006_proceedings.pdf">Proceedings 2006</a></li>
 </ul>
+<br style="clear:both;"/>
 

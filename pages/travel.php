@@ -1,11 +1,12 @@
 <h1>Location</h1>
-<p>The conference will take place in...
+<p>
+&hellip;<em>stay tuned for more information</em>&hellip;
 </p>
 
 <h1>Staying in the Bay Area</h1>
 
 <p>
-...
+&hellip;<em>stay tuned for more information</em>&hellip;
 </p>
 
 <h1>Travelling to Stanford</h1>

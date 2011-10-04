@@ -55,6 +55,7 @@
 <body>
 <div id="toprow">
   <div id="titlebar">
+    <div id="logoright"> </div>
     <div id="maintitle"> Linux Audio Conference <?=LACY?> </div>
     <div id="subtitle">The Open Source Music and Sound Conference</div>
     <div id="wherewhen">April 12-15 2012, Stanford, Ca, USA</div>

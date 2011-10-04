@@ -15,14 +15,15 @@
 </ul>
 
 <h2>Links to prior Linux Audio Conferences</h2>
-<ul>
-  <li><a href="http://lac.linuxaudio.org/2011/?page=download">Proceedings &amp; Recordings 2011</a></li>
-  <li><a href="http://lac.linuxaudio.org/2010/?page=download">Proceedings &amp; Recordings 2010</a></li>
-  <li><a href="http://lad.linuxaudio.org/events/2009_cdm/">Proceedings &amp; Recordings 2009</a></li>
-  <li><a href="http://lac.linuxaudio.org/2008/download/papers/">Proceedings 2008</a></li>
+<ul class="multicolumn">
+  <li><a href="http://lac.linuxaudio.org/2011/?page=download">Archive 2011</a></li>
+  <li><a href="http://lac.linuxaudio.org/2008/download/papers/">Papers 2008</a></li>
+  <li><a href="http://lac.linuxaudio.org/2005/lac2005_proceedings.pdf">Proceedings 2005</a></li>
+  <li><a href="http://lac.linuxaudio.org/2010/?page=download">Archive 2010</a></li>
   <li><a href="http://lac.linuxaudio.org/2007/download/lac07_proceedings.pdf">Proceedings 2007</a></li>
-  <li><a href="http://lac.zkm.de/2006/papers/lac2006_proceedings.pdf">Proceedings 2006</a></li>
-  <li><a href="http://lac.zkm.de/2005/papers/lac2005_proceedings.pdf">Proceedings 2005</a></li>
-  <li><a href="http://lac.zkm.de//2004/proceedings/lac2004_proceedings.pdf">Proceedings 2004</a></li>
-	</ul>
+  <li><a href="http://lac.linuxaudio.org/2004/lac2004_proceedings.pdf">Proceedings 2004</a></li>
+  <li><a href="http://lac.linuxaudio.org/2009/cdm/">Slides &amp; Papers 2009</a></li>
+  <li><a href="http://lac.linuxaudio.org/2006/lac2006_proceedings.pdf">Proceedings 2006</a></li>
+</ul>
+<br style="clear:both;"/>
 */ ?>
