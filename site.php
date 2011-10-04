@@ -4,6 +4,7 @@
   $pages = array(
     'about' => 'About',
     'participation' => 'Participation',
+    'registration' => 'Registration',
     'sponsors' => 'Sponsors',
     'travel' => 'Travel &amp; Stay',
     'contact' => 'Contact'
@@ -13,7 +14,6 @@
   $hidden = array(
     'download' => 'Download',
     'program' => 'Programme',
-    'registration' => 'Registration',
     'download' => 'Download',
     'participants' => 'Attendees',
   );
