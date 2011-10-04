@@ -38,7 +38,7 @@ to answer to the call for paper-presentations, workshops and music.
 <h1>Who?</h1>
 <p>Check out the <a href="?page=participants">list of participants</a> to see who else is coming.</p>
 <p>The LAC is a GNU/Linux free/libre software community organised event by the <a href="http://lists.linuxaudio.org/">Linux-Audio-Users and -Developers</a>.
-LAC2012 is under the auspices of <a href="http://ccrma.stanford.edu">CCRMA</a>, organised by <a href="https://ccrma.stanford.edu/people/fernando-lopez-lezcano" rel="external">Fernando Lopez-Lezcano</a> with assistance from Bruno Ruviaro</a>, Frank Neumann and <a href="http://gareus.org" rel="external"> Robin Gareus</a>.</p>
+LAC2012 is under the auspices of <a href="http://ccrma.stanford.edu">CCRMA</a>, organised by <a href="https://ccrma.stanford.edu/people/fernando-lopez-lezcano" rel="external">Fernando Lopez-Lezcano</a> with assistance from Bruno Ruviaro, Frank Neumann and <a href="http://gareus.org" rel="external"> Robin Gareus</a>.</p>
 
 <h2>Links to prior Linux Audio Conferences</h2>
 <ul>

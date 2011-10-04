@@ -53,28 +53,31 @@
   <script type="text/javascript" src="static/script.js"></script>
 </head>
 <body>
-<div class="envelope main">
-  <div id="header">&nbsp;</div>
+<div id="toprow">
   <div id="titlebar">
     <div id="maintitle"> Linux Audio Conference <?=LACY?> </div>
     <div id="subtitle">The Open Source Music and Sound Conference</div>
     <div id="wherewhen">April 12-15 2012, Stanford, Ca, USA</div>
     <div>LECTURES / WORKSHOPS / EXHIBITION / CONCERTS / CLUBNIGHT</div>
-  </div>
+	</div>
+
   <div id="mainmenu">
 <?php
   $i=0;
   foreach($pages as $p => $t) {
     echo '
-    <div class="menuitem'.(($page==$p)?' tabactive':'').'" id="tab_'.$i++.'">
+    <div class="menuitem'.(($page==$p)?' tabactive':'').'">
         <a href="?page='.$p.'">'.$t.'</a>
     </div>'."\n";
   }
-  echo '<span class="menuitem" id="tab_'.$i.'">&nbsp;</span>';
+  echo '<div style="clear:both; height:0px;">&nbsp;</div>'."\n";
 ?>
   </div>
-  <div id="wrapper">
-    <div id="content">
+</div>
+
+<div id="payload-layout">
+<div id="leftcolumn">
+	<div id="lefthead"> </div>
 <?php
   if (!in_array($page, $nosponsors)) {
     echo '    <div id="supporterbar">LAC 2012 is supported by<br/><br/>'."\n";
@@ -87,31 +90,37 @@
     echo '    </div>'."\n";
   }
 ?>
-<?php
-  require_once('pages/'.$page.'.php');
-?>
-      <div style="clear:both;">&nbsp;</div>
-    </div>
-  </div>
-  <div id="createdby"> Oct 04 2011, Fernando Lopez-Lezcano, Bruno Ruviaro &amp; Robin Gareus</div>
-</div>
-
-<div class="envelope" id="footerwrap">
-  <div class="footer">
-<a href="http://www2.clustrmaps.com/counter/maps.php?url=http://lac.linuxaudio.org/2012/" id="clustrMapsLink" rel="external"><img src="http://www2.clustrmaps.com/counter/index2.php?url=http://lac.linuxaudio.org/2012/" style="border:0px;" alt="Locations of visitors to this page" title="Locations of visitors to this page" id="clustrMapsImg" />
+  <hr class="psep"/>
+	<div class="center">
+<a href="http://www4.clustrmaps.com/counter/maps.php?url=http://lac.linuxaudio.org/2012/" id="clustrMapsLink" rel="external"><img src="http://www4.clustrmaps.com/counter/index2.php?url=http://lac.linuxaudio.org/2012/" style="border:0px;" alt="Locations of visitors to this page" title="Locations of visitors to this page" id="clustrMapsImg" />
 </a>
 <script type="text/javascript">
 function cantload() {
 img = document.getElementById("clustrMapsImg");
 img.onerror = null;
-img.src = "http://www.clustrmaps.com/images/clustrmaps-back-soon.jpg";
-document.getElementById("clustrMapsLink").href = "http://clustrmaps.com";
+img.src = "http://www2.clustrmaps.com/images/clustrmaps-back-soon.jpg";
+document.getElementById("clustrMapsLink").href = "http://www2.clustrmaps.com";
 }
 img = document.getElementById("clustrMapsImg");
 img.onerror = cantload;
 </script>
-  </div>
-  <div class="footer">
+	</div>
+
+	<div id="leftfoot"> </div>
+</div>
+
+<div id="main">
+	<div id="content">
+<?php
+require_once('pages/'.$page.'.php');
+?>
+	</div>
+  <div id="createdby"> Oct 04 2011, Fernando Lopez-Lezcano, Bruno Ruviaro &amp; Robin Gareus</div>
+</div>
+<div style="clear:both; height:0px;">&nbsp;</div>
+</div>
+
+<div id="footerwrap">
     <a href="http://validator.w3.org/check?uri=referer" rel="external"><img
         src="img/button-xhtml.png"
         alt="Valid XHTML 1.0 Strict"/></a>
@@ -122,7 +131,6 @@ img.onerror = cantload;
         src="img/button-firefox.png"
         alt="Get Firefox"/></a><br/>
     <p>LINUX&reg; is a <a href="http://www.linuxmark.org/" rel="external">registered trademark</a> of Linus Torvalds in the USA and other countries.<br />Hosting provided by the <a href="http://www.music.vt.edu" rel="external">Virginia Tech Department of Music</a> and <a href="http://disis.music.vt.edu" rel="external">DISIS</a>.<br/>Implementation by <a href="http://rg42.org/" rel="external">RSS</a>.</p>
-  </div>
 </div> 
 </body>
 </html>

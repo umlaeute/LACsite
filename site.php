@@ -3,9 +3,9 @@
 #pages listed as 'tabs' on the site
   $pages = array(
     'about' => 'About',
-    'participation' => 'Participation',
+    'participation' => 'Participate',
     'registration' => 'Registration',
-    'sponsors' => 'Sponsors',
+    'sponsors' => 'Sponsoring',
     'travel' => 'Travel &amp; Stay',
     'contact' => 'Contact'
   );
@@ -13,21 +13,15 @@
 # other available pages - not shown as 'tabs'
   $hidden = array(
     'download' => 'Download',
-    'program' => 'Programme',
+    'program' => 'Agenda',
     'download' => 'Download',
     'participants' => 'Attendees',
   );
 
 # don't list sponsors on these pages
   $nosponsors = array(
-    'sponsors',
-    'program',
-    'upload',
-  # 'download',
     'admin',
     'adminschedule',
-    'registration',
-    'regcomplete',
   );
 
 #define sponsors/supportes

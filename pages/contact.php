@@ -1,19 +1,18 @@
-<h1>Location</h1>
+<h1>Contact</h1>
 <p>Street address:</p>
-<ul>
+<p style="margin-left:2em;">
 Center for Computer Research in Music and Acoustics<br/>
 The Knoll,<br/>
 660 Lomita Court<br/>
 Stanford, California 94305-8180, USA<br/>
-<a href="http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=660+lomita,+stanford+ca&amp;sll=37.0625,-95.677068&amp;sspn=45.197878,82.265625&amp;ie=UTF8&amp;om=1&amp;z=16&amp;layer=t" target="_blank">Google Map</a>
-</ul><br/>
+</p>
 <p>Mailing address:</p>
-<ul>
+<p style="margin-left:2em;">
 Center for Computer Research in Music and Acoustics<br/>
 Department of Music,<br/>
 Stanford University<br/>
 Stanford, California 94305-8180, USA
-</ul>
+</p>
 
 <h1>Get in touch</h1>
 lac -at- linuxaudio -dot- org 
