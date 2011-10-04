@@ -5,6 +5,7 @@
     'about' => 'About',
     'participation' => 'Participate',
     'registration' => 'Registration',
+    'participants' => 'Attendees',
     'sponsors' => 'Sponsoring',
     'travel' => 'Travel &amp; Stay',
     'contact' => 'Contact'
@@ -15,7 +16,6 @@
     'download' => 'Download',
     'program' => 'Agenda',
     'download' => 'Download',
-    'participants' => 'Attendees',
   );
 
 # don't list sponsors on these pages
