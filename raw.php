@@ -12,7 +12,7 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <script type="text/javascript" src="static/script.js"></script>
 </head>
-<body id="content" style="border:0px;">
+<body id="content" style="border:0px; background:#ffffff;">
 <div>
 <?php
   require_once('config.php');

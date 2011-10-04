@@ -116,7 +116,7 @@ img.onerror = cantload;
 </div>
 
 <div id="main">
-	<div id="content">
+	<div id="content" class="mainheadl">
 <?php
 require_once('pages/'.$page.'.php');
 ?>

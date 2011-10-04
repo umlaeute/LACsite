@@ -104,6 +104,9 @@ div.menuitem 	{
 		font-size:80%;
 		margin:1em 0em 0em 0em;
 		}
+.mainheadl	{
+		background:transparent url(../img/corner_tl.png) no-repeat scroll left top;
+}
 #mainfootl	{
 	  position:absolute;
 		left:-2px;
@@ -123,7 +126,6 @@ div.menuitem 	{
 #footerwrap	{text-align:center; border:0px; margin:2em auto; font-size:75%;}
 
 #content		{
-		  background:transparent url(../img/corner_tl.png) no-repeat scroll left top;
 			color: #001100;
 			font-family: Georgia,Times,serif;
 			font-size: 12pt;

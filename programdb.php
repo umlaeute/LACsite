@@ -170,7 +170,7 @@
 
   function fetch_selectlist($db, $table='user', $order='ORDER BY id') {
     if ($table=='days')
-      return array('1' => '1 - Thursday', '2' => '2 - Friday', '3' => '3 - Saturday', '4' => '4 - Sunday');
+      return array('1' => '1 - Thursday, April/12', '2' => '2 - Friday the 13th', '3' => '3 - Saturday, April/14', '4' => '4 - Sunday, April/15');
     if ($table=='types')
       #return array('p' => 'Paper Presentation', 'w' => 'Workshop', 'c' => 'Concert', 'i' => 'Installation', 'o' => 'Other');
       return array('p' => 'Paper Presentation', 'w' => 'Workshop', 'c' => 'Concert', 'o' => 'Other');
@@ -676,7 +676,7 @@
       if ($day)
         echo 'Day '.$a_days[$r['day']].'&nbsp;';
 			echo '<div class="righttr '.track_color($r).'">';
-			echo track_name(track_color($r));
+			#echo track_name(track_color($r));
 			echo '</div>';
       echo '<span class="tme">'.$r['starttime'].'</span>&nbsp;';
       if ($r['status']==0) echo '<span class="red">Cancelled: </span>';
@@ -753,8 +753,8 @@
   }
 
   function dbadmin_unixtime($e, $start=true) {
-    date_default_timezone_set('USA/San Francisco');
-    $time= strtotime((12+intval($e['day'])).' April 2012 '.$e['starttime'].':00 CEST');
+    date_default_timezone_set('UTC');
+    $time= strtotime((11+intval($e['day'])).' April 2012 '.$e['starttime'].':00 PDT');
     if (!$start && !strstr($e['duration'], ':'))
       $time = strtotime('+'.$e['duration'].'minutes', $time);
     return $time;
@@ -1146,9 +1146,10 @@ if (1) {
 
 
   function list_program($db,$details) {
-    print_day($db, 1,'Friday',$details);
-    print_day($db, 2,'Saturday',$details);
-    print_day($db, 3,'Sunday',$details);
+    print_day($db, 1,'Thursday, April/12',$details);
+    print_day($db, 2,'Friday the 13th',$details);
+    print_day($db, 3,'Saturday, April/14',$details);
+    print_day($db, 4,'Sunday, April/15',$details);
   }
 
   function table_program($db, $day, $print=false) {
@@ -1172,7 +1173,7 @@ if (1) {
 
     if (!$print) {
       echo '<div style="float:right;">';
-      for ($i=1; $i<4; $i++) {
+      for ($i=1; $i<=4; $i++) {
 	if ($i == $day) { echo 'Day '.$i.'&nbsp;&nbsp;'; continue;}
 	echo '<a href="?page=program&amp;mode=table&amp;day='.$i.'">Day '.$i.'</a>&nbsp;&nbsp;';
       }
@@ -1252,7 +1253,7 @@ if (1) {
 
 		echo '</table>';
 
-		echo track_legend();
+		#echo track_legend();
 
     if (!$print) {
       echo '<div class="center">Concerts &amp; Installations are <b>not</b> included in this table.</div>';
@@ -1428,9 +1429,9 @@ if (1) {
     echo 'PRODID:-//linuxaudio.org/LAC'.LACY.'//NONSGML v1.0//EN'."\r\n";
 
 # XXX hardcoded concerts
-    $result[] = array('id'=> 1000, 'day' => '1', 'starttime' => '20:00', 'duration' => '180',  'type' => 'c', 'title' => 'Opening Concert', 'abstract' => '', 'location_id' => 3, 'status' => '1');
-    $result[] = array('id'=> 1001, 'day' => '2', 'starttime' => '20:00', 'duration' => '180',  'type' => 'c', 'title' => 'Concert', 'abstract' => '', 'location_id' => 3, 'status' => '1');
-    $result[] = array('id'=> 1002, 'day' => '1', 'starttime' => '21:30', 'duration' => '180',  'type' => 'c', 'title' => 'Sound Night', 'abstract' => '', 'location_id' => 3, 'status' => '1');
+#    $result[] = array('id'=> 1000, 'day' => '1', 'starttime' => '20:00', 'duration' => '180',  'type' => 'c', 'title' => 'Opening Concert', 'abstract' => '', 'location_id' => 3, 'status' => '1');
+#    $result[] = array('id'=> 1001, 'day' => '2', 'starttime' => '20:00', 'duration' => '180',  'type' => 'c', 'title' => 'Concert', 'abstract' => '', 'location_id' => 3, 'status' => '1');
+#    $result[] = array('id'=> 1002, 'day' => '1', 'starttime' => '21:30', 'duration' => '180',  'type' => 'c', 'title' => 'Sound Night', 'abstract' => '', 'location_id' => 3, 'status' => '1');
 
     foreach ($result as $r) {
       if (empty($r['starttime'])) continue;
