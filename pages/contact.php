@@ -15,7 +15,7 @@ Stanford, California 94305-8180, USA
 </p>
 
 <h1>Get in touch</h1>
-lac -at- linuxaudio -dot- org 
+Email to lac -at- linuxaudio -dot- org 
 
 <h1>Map</h1>
 
