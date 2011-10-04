@@ -47,7 +47,7 @@ img	{border: 0px;}
 		margin: .5em 1em;
 		text-align: left;
 		background:#446666 url(../img/karma_logo.png) no-repeat scroll left top;
-		border: 4px solid #406666;
+		border-bottom: .5em solid #406666;
 		}
 #titlebar div   {padding-left: 45px;}
 #maintitle	{
