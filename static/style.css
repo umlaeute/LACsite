@@ -9,11 +9,12 @@ body		{
 		}
 #content p 	{text-align:justify; padding-bottom:.5em;}
 a		{outline: none; color:black;}
-.tabactive a {color:#C00;}
-.menuitem a:hover {color:#C00;}
+.tabactive a {color:#202000;}
+.menuitem a:hover {color:#A02000;}
+.tabactive a:hover {color:#202000;}
 img	{border: 0px;}
 #payload-layout	{
-  min-width:74em;
+  min-width:74.5em;
 	margin: 1em auto;
 }
 #leftcolumn	{
@@ -76,12 +77,12 @@ div.menuitem 	{
 		float:left;
     width: 8em; height: 19px;
 		text-align: center;
-		padding: 1px 0 0 0;
-		margin: .75em .5em;
+		padding: .75em .5em;
+		margin:0;
 		}
 .tabactive	{
+		background-color:#446666;
 	  font-weight: bold;
-	  color:red;
 		}
 .disclaimer	{
 		color: #808080; 

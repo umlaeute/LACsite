@@ -88,9 +88,9 @@
       echo '</a></div>'."\n";
     }
     echo '    </div>'."\n";
+    echo '  <hr class="psep"/>'."\n";
   }
 ?>
-  <hr class="psep"/>
 	<div class="center">
 <a href="http://www4.clustrmaps.com/counter/maps.php?url=http://lac.linuxaudio.org/2012/" id="clustrMapsLink" rel="external"><img src="http://www4.clustrmaps.com/counter/index2.php?url=http://lac.linuxaudio.org/2012/" style="border:0px;" alt="Locations of visitors to this page" title="Locations of visitors to this page" id="clustrMapsImg" />
 </a>
