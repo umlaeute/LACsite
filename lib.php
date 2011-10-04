@@ -28,7 +28,7 @@
   # used in TEX
   function plaintime($e, $start=true) {
     $time= dbadmin_unixtime($e, $start);
-    date_default_timezone_set('Europe/London');
+    date_default_timezone_set('USA/San Francisco');
     $rv=date("H:i", $time);
     date_default_timezone_set('UTC');
     return $rv;

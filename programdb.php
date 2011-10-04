@@ -170,7 +170,7 @@
 
   function fetch_selectlist($db, $table='user', $order='ORDER BY id') {
     if ($table=='days')
-      return array('1' => '1 - Friday', '2' => '2 - Saturday', '3' => '3 - Sunday');
+      return array('1' => '1 - Thursday', '2' => '2 - Friday', '3' => '3 - Saturday', '4' => '4 - Sunday');
     if ($table=='types')
       #return array('p' => 'Paper Presentation', 'w' => 'Workshop', 'c' => 'Concert', 'i' => 'Installation', 'o' => 'Other');
       return array('p' => 'Paper Presentation', 'w' => 'Workshop', 'c' => 'Concert', 'o' => 'Other');
@@ -753,7 +753,7 @@
   }
 
   function dbadmin_unixtime($e, $start=true) {
-    date_default_timezone_set('Europe/London');
+    date_default_timezone_set('USA/San Francisco');
     $time= strtotime((12+intval($e['day'])).' April 2012 '.$e['starttime'].':00 CEST');
     if (!$start && !strstr($e['duration'], ':'))
       $time = strtotime('+'.$e['duration'].'minutes', $time);
@@ -1018,7 +1018,6 @@
   function print_day($db, $num, $name, $details=true) {
     echo '<h2 class="ptitle">Day '.$num.' - '.$name.'</h2>';
     echo '<h3 class="ptitle">Main Track</h3>';
-    echo '<div class="ptitle">Location: Bewerunge Room</div>'; ## XXX HARDCODED MAIN LOCATION
     query_out($db,
      'SELECT * FROM activity
       WHERE day='.$num.'
@@ -1292,7 +1291,7 @@ if (1) {
 				$rv.= "}\n";
 				$rv.= "\\begin{center}\n";
 				$rv.= "  \\LARGE Main-Track\\\\\n";
-				$rv.= "  \\Large Location: Bewerunge Room\n";
+				#$rv.= "  \\Large Location: Bewerunge Room\n"; # TODO 2011/2012
 				$rv.= "\\end{center}\n";
 				$rv.= "\\begin{itemize}\n";
 			}

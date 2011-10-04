@@ -3,8 +3,8 @@
   require_once('site.php');
 //////////////////////////////////////////////////////////////////////////////
 
-  $page='repercussions';
-	$preq='';
+  $page='about';
+  $preq='';
 
   if (isset($_REQUEST['page']))
     $preq=rawurldecode($_REQUEST['page']);
@@ -28,14 +28,14 @@
 
   if (  !empty($preq) && $preq=='registration' 
       && isset($regclosed) && $regclosed) {
-	$page='regclosed';
+  $page='regclosed';
   }
 
   if (!empty($preq) && $preq=='registration') {
     require_once('submit.php');
     if (checkreg()) 
       if (savereg())
-	$page='regcomplete';
+  $page='regcomplete';
   }
  
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -46,8 +46,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" href="static/style.css" type="text/css"/>
   <meta name="Author" content="Robin Gareus" />
-	<meta name="description" content="Linux Audio Conference <?=LACY?>" />
-	<meta name="keywords" content="LAC<?=LACY?>, LAC, Linux Audio Conference <?=LACY?>,Linux, Music, Audio, Developer Meeting, CCRMA, Computer Research in Music and Acoustics, Stanford, Stanford University" />
+  <meta name="description" content="Linux Audio Conference <?=LACY?>" />
+  <meta name="keywords" content="LAC<?=LACY?>, LAC, Linux Audio Conference <?=LACY?>,Linux, Music, Audio, Developer Meeting, CCRMA, Computer Research in Music and Acoustics, Stanford, Stanford University" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <script type="text/javascript" src="static/script.js"></script>
@@ -76,7 +76,7 @@
   <div id="wrapper">
     <div id="content">
 <?php
-	if (!in_array($page, $nosponsors)) {
+  if (!in_array($page, $nosponsors)) {
     echo '    <div id="supporterbar">LAC 2012 is supported by<br/><br/>'."\n";
     foreach ($sponsors as $sl => $si) {
       echo '<div><a href="'.$sl.'"'."\n";

@@ -15,6 +15,7 @@
     echo '<a href="vcal.php">iCal</a>&nbsp;|&nbsp;';
     echo '<a href="printprogram.php">Printable Version</a>';
     echo "</p>\n";
+    echo '<div class="center">All times are PDT - UTC-7</div>'."\n";
   }
 
   $mode='list';
