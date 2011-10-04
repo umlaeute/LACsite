@@ -16,13 +16,13 @@ Step 2+)
   mkdir regs/  # or whatever you spefied as REGLOGDIR
                # this directory will be used to store registration information
 
-  chmod 1777 regs  # or `sudo chown www-data tmp/`
+  chmod 1777 regs  # or `sudo chown www-data regs`
   echo "Deny from all" > regs/.htaccess
                    # ensure that your webserver honors .htaccess AllowOverrides
                    # by visiting the URL
 
   mkdir tmp/
-  chmod 1777 tmp/  # or `sudo chown www-data tmp/`
+  chmod 1777 tmp/  # or `sudo chown www-data tmp`
                    # tmp folder is used to create PDF for the badges
                    # you need to have 'pdflatex' installed 
                    #
@@ -65,6 +65,7 @@ Is available at
 
 --- Copyright ---
 
+   Copyright (C) 2011 Robin Gareus <robin@linuxaudio.org>
    Copyright (C) 2009, 2010 Robin Gareus <robin@gareus.org>
    Copyright (C) 2009 Marc Groenewegen <marcg@dinkum.nl>
 
