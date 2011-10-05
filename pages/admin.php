@@ -344,7 +344,7 @@ function gen_badges_source($f) {
 #\LARGE 18 17.28
 #\huge 20 20.74
 #\Huge 24 24.88
-  if (0) {
+  if (1) {
     # DEFAULT FONT:
     if (strlen($name) > 40) $name='\normalsize '.$name; # TODO verify size!
     elseif (strlen($name) > 26) $name='\large '.$name; 
@@ -458,8 +458,8 @@ function badge_tex_header() {
 	%\hspace*{0.70in}\\\\%
 	\small%
 	\begin{tabular}[b]{lcr}%
-	%\hspace*{.25in}\small LAC 2012 & \hspace*{1.15in} & \hspace*{0.15in}CCRMA Stanford\\\\%
-	\hspace*{.25in}\GoudyStMTT LAC 2012 & \hspace*{1.15in} & \hspace*{0.15in}\GoudyStMTT CCRMA Stanford\\\\%
+	\hspace*{.25in}\small LAC 2012 & \hspace*{1.15in} & \hspace*{0.15in}CCRMA Stanford\\\\%
+	%\hspace*{.25in}\GoudyStMTT LAC 2012 & \hspace*{1.15in} & \hspace*{0.15in}\GoudyStMTT CCRMA Stanford\\\\%
 	\end{tabular}\\\\%
 	\vspace{0.05in}\\\\%
 	\hspace*{.25in}{#1}\\\\%
