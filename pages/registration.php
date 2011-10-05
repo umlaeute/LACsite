@@ -6,7 +6,7 @@ Registration and admittance to LAC 2012 is free but if you want to attend
 
 This is for a number of reasons:
 <ul>
-<li> Estimate - We need the the number of attendees for insurance and fire-regulations.</li>
+<li> Estimate - We need the number of attendees for insurance and fire-regulations.</li>
 <li> ID - We'd like a name to print on your badge.</li>
 <li> We want to be able to contact you (see under Privacy).</li>
 </ul>
@@ -433,7 +433,7 @@ Personal data provided by you in the registration form will be kept confidential
     <label><input type="checkbox" name="reg_useatwork" value="1"<?php _ck('reg_useatwork',1);?>/>&hellip;at work.</label>
    </span>
   </div>
-  <div class="la"><label class="la">You are&hellip; (multiple checks are ok):</label></div>
+  <div class="la"><label class="la">You are&hellip; (multiple checks are OK):</label></div>
   <div style="clear:both; height:1px;"></div>
   <table border="0" cellspacing="0" cellpadding="0">
     <tr>

@@ -8,7 +8,7 @@
 <ul>
 <li>Deadline for paper-submissions: <b>January 15th, 2012</b></li>
 <li>Music/sound-installation submissions: <b>January 15th, 2012</b></li>
-<li>Notification of acceptance: <b>Februray 1st, 2012</b></li>
+<li>Notification of acceptance: <b>February 1st, 2012</b></li>
 <!-- <li>Deadline for camera-ready paper: <b>March 1st, 2012</b></li> !-->
 </ul>
 
