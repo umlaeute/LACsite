@@ -457,9 +457,9 @@ function badge_tex_header() {
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% CARD MACRO [\card] %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\card#1#2#3{
         \parbox[c][4.5cm]{9.8cm}{
-        \vspace*{1.9cm}
-        \hspace*{3.0cm}
-        \image{height=3.5cm,width=3.5cm}{badge_ccrma}
+        \vspace*{1.45cm}
+        \hspace*{3.2cm}
+        \image{height=3.05cm,width=3.05cm}{badge_ccrma}
         }
         \hspace*{-9.8cm}
         \begin{tabular}{c}
