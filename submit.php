@@ -67,19 +67,21 @@ function format_registration($a) {
   .((rawurldecode($a['reg_audiopro'])==2)?'yes':'')
   .((rawurldecode($a['reg_audiopro'])==0)?'??':'')
   .'
-  Interests   : '  # TODO use pages/registration.php -> $about array
-.($a['reg_vmusician']?'Musician or composer, ':'')
-.($a['reg_vdj']?'DJ, ':'')
-.($a['reg_vswdeveloper']?'Software Developer, ':'')
-.($a['reg_vhwdeveloper']?'Hardware Developer, ':'')
-.($a['reg_vswuser']?'Software User, ':'')
-.($a['reg_vmediapro']?'Media Professional, ':'')
-.($a['reg_vmproducer']?'Music Producer, ':'')
-.($a['reg_vvproducer']?'Video Producer, ':'')
-.($a['reg_vresearcher']?'Researcher, ':'')
-.($a['reg_vpress']?'Press, ':'')
-.($a['reg_vinterested']?'Just interested, ':'')
-.($a['reg_vother']?'Other ':'')
+  Interests   : '
+# TODO use pages/registration.php -> $about array
+#.($a['reg_vmusician']?'Musician or composer, ':'')
+#.($a['reg_vdj']?'DJ, ':'')
+#.($a['reg_vswdeveloper']?'Software Developer, ':'')
+#.($a['reg_vhwdeveloper']?'Hardware Developer, ':'')
+#.($a['reg_vswuser']?'Software User, ':'')
+#.($a['reg_vmediapro']?'Media Professional, ':'')
+#.($a['reg_vmproducer']?'Music Producer, ':'')
+#.($a['reg_vvproducer']?'Video Producer, ':'')
+#.($a['reg_vresearcher']?'Researcher, ':'')
+#.($a['reg_vpress']?'Press, ':'')
+#.($a['reg_vinterested']?'Just interested, ':'')
+#.($a['reg_vother']?'Other ':'')
+  .rawurldecode($a['reg_about'])
 .'
   Notes       : '.rawurldecode($a['reg_notes']).'
 '
@@ -105,10 +107,11 @@ function savereg() {
   $datafields=array(
     'reg_name', 'reg_prename', 'reg_tagline', 'reg_email', 'reg_agegroup', 
     'reg_country', 'reg_useathome', 'reg_useatwork', 
-    'reg_audiopro', 'reg_vmusician', 'reg_vdj', 'reg_vswdeveloper',
-    'reg_vhwdeveloper', 'reg_vswuser', 'reg_vpress',
-    'reg_vmediapro', 'reg_vmproducer', 'reg_vvproducer', 'reg_vresearcher',
-    'reg_vinterested', 'reg_vother', 'reg_profession',
+#    'reg_audiopro', 'reg_vmusician', 'reg_vdj', 'reg_vswdeveloper',
+#    'reg_vhwdeveloper', 'reg_vswuser', 'reg_vpress',
+#    'reg_vmediapro', 'reg_vmproducer', 'reg_vvproducer', 'reg_vresearcher',
+#    'reg_vinterested', 'reg_vother',
+     'reg_profession', 'reg_about', 
     'reg_proceedings', 'reg_whoelselist', 'reg_notes'
   );
 

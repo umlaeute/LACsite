@@ -337,7 +337,7 @@ Personal data provided by you in the registration form will be kept confidential
     'ZW' => 'ZW (Zimbabwe)',
     'OTHER' => "- other -"
   );
-
+/*
   $about=array (
     'reg_vmusician'     => 'Musician or composer',
     'reg_vdj'           => 'DJ',
@@ -351,7 +351,8 @@ Personal data provided by you in the registration form will be kept confidential
     'reg_vpress'        => 'Press',
     'reg_vinterested'   => 'Just interested',
     'reg_vother'        => 'Other'
-  );
+	);
+ */
 ?>
 
 
@@ -363,18 +364,18 @@ Personal data provided by you in the registration form will be kept confidential
   <input name="page" type="hidden" value="<?php echo $page;?>"/>
   <legend>Personalia:</legend>
   <label class="la" for="reg_name"><span class="error">*</span>Family Name:</label>
-  <input id="reg_name" name="reg_name" type="text" size="50" maxlength="100" value="<?php if (isset($_POST['reg_name'])) echo $_POST['reg_name'];?>"/>
+  <input id="reg_name" name="reg_name" type="text" size="50" maxlength="100" value="<?php if (isset($_POST['reg_name'])) echo rawurldecode($_POST['reg_name']);?>"/>
   <br />
   <label class="la" for="reg_prename"><span class="error">*</span>Given Name(s):</label>
-  <input id="reg_prename" name="reg_prename" type="text" size="50" maxlength="100" value="<?php if (isset($_POST['reg_prename'])) echo $_POST['reg_prename'];?>"/>
+  <input id="reg_prename" name="reg_prename" type="text" size="50" maxlength="100" value="<?php if (isset($_POST['reg_prename'])) echo rawurldecode($_POST['reg_prename']);?>"/>
   <br />
   <label class="la" for="reg_tagline">Tagline <small>(Affiliation, Company, Pseudonym,&hellip;)</small>:</label>
-  <input id="reg_tagline" name="reg_tagline" type="text" size="50" maxlength="100" value="<?php if (isset($_POST['reg_tagline'])) echo $_POST['reg_tagline'];?>"/>
+  <input id="reg_tagline" name="reg_tagline" type="text" size="50" maxlength="100" value="<?php if (isset($_POST['reg_tagline'])) echo rawurldecode($_POST['reg_tagline']);?>"/>
   <br/>
   <label class="ls">Note: The tagline will appear with your name on the badge.</label>
   <br/>
   <label class="la" for="reg_email"><span class="error">*</span>E-Mail address:</label>
-  <input id="reg_email" name="reg_email" type="text" size="50" maxlength="100" value="<?php if (isset($_POST['reg_email'])) echo $_POST['reg_email'];?>"/>
+  <input id="reg_email" name="reg_email" type="text" size="50" maxlength="100" value="<?php if (isset($_POST['reg_email'])) echo rawurldecode($_POST['reg_email']);?>"/>
   <br/>
   <label class="la" for="reg_country"><span class="error">*</span>Country:</label>
   <select name="reg_country" id="reg_country" size="1">
@@ -426,26 +427,24 @@ Personal data provided by you in the registration form will be kept confidential
   <label><input type="radio" name="reg_profession" value="Other"<?php _ck('reg_profession','Other');?>/>Other</label>
   </span>
   </div>
-  <div class="la"><label class="la">You are using Linux&hellip;</label></div>
+  <div class="la"><label class="la">You are using GNU/Linux&hellip;</label></div>
   <div class="ra">
    <span>
     <label><input type="checkbox" name="reg_useathome" value="1"<?php _ck('reg_useathome',1);?>/>&hellip;at home.</label> &nbsp; &nbsp;
     <label><input type="checkbox" name="reg_useatwork" value="1"<?php _ck('reg_useatwork',1);?>/>&hellip;at work.</label>
    </span>
   </div>
-  <div class="la"><label class="la">You are&hellip; (multiple checks are OK):</label></div>
-  <div style="clear:both; height:1px;"></div>
-  <table border="0" cellspacing="0" cellpadding="0">
-    <tr>
-<?php gen_checktd($about); ?>
-    </tr>
-  </table>
+  <label class="la" for="reg_about">What is your relation to music, sound, Linux and/or Open Source Software?</label><br/>
+  <div class="la"><label class="la">I am &hellip;</label></div>
+  <div class="ra">
+	  <input id="reg_about" name="reg_about" type="text" size="60" maxlength="255" value="<?php if (isset($_POST['reg_about'])) echo rawurldecode($_POST['reg_about']);?>"/>
+  </div>
 </fieldset>
 
 <fieldset class="fs">
 <legend>Miscellaneous:</legend>
   <label class="la" for="reg_notes" style="float:left;">Remarks:</label>
-  <textarea id="reg_notes" name="reg_notes" rows="3" cols="60"><?php if (isset($_POST['reg_notes'])) echo $_POST['reg_notes'];?></textarea><br/>
+  <textarea id="reg_notes" name="reg_notes" rows="3" cols="60"><?php if (isset($_POST['reg_notes'])) echo rawurldecode($_POST['reg_notes']);?></textarea><br/>
 </fieldset><br/>
 <div>
   <div style="float:right;">

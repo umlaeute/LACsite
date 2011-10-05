@@ -8,6 +8,7 @@ Step 1) create './config.php' with the following:
   define('REGLOGDIR',dirname($_SERVER['SCRIPT_FILENAME']).'/regs/');  
   define('TMPDIR',dirname($_SERVER['SCRIPT_FILENAME']).'/tmp/');
   define('LACY','2012');  
+  $userewrite=false; # set to true if RewriteEngine is enabled in .htaccess
   $regmail=true; # if set users will receive a confirmation email
 	$regclosed=false;
   $hidepapers=false; # don't include links to papers (yet)

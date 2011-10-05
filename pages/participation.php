@@ -80,5 +80,5 @@ are described in <a href="download/callformusic-LAC2012.pdf">callformusic.pdf</a
 
 <h1>Call for workshops</h1>
 If you want to organise a training, workshop or other activity please
-<a href="?page=contact">contact the LAC committee</a>.
+<a href="<?=local_url('contact')?>">contact the LAC committee</a>.
 

@@ -1,4 +1,6 @@
 <?php
+# TODO check if included by top-handler. 
+
   try {
     $db=new PDO("sqlite:tmp/lac".LACY.".db"); // XXX -> config.php
   } catch (PDOException $exception) {
@@ -1174,10 +1176,10 @@ if (1) {
     if (!$print) {
       echo '<div style="float:right;">';
       for ($i=1; $i<=4; $i++) {
-  if ($i == $day) { echo 'Day '.$i.'&nbsp;&nbsp;'; continue;}
-  echo '<a href="?page=program&amp;mode=table&amp;day='.$i.'">Day '.$i.'</a>&nbsp;&nbsp;';
+        if ($i == $day) { echo 'Day '.$i.'&nbsp;&nbsp;'; continue;}
+        echo '<a href="'.local_url('program', 'mode=table&amp;day='.$i).'">Day '.$i.'</a>&nbsp;&nbsp;';
       }
-      echo '<a href="?page=program&amp;mode=table&amp;day=0">Concerts&amp;Installations</a>&nbsp;&nbsp;';
+      echo '<a href="'.local_url('program', 'mode=table&amp;day=0').'">Concerts&amp;Installations</a>&nbsp;&nbsp;';
       echo '</div>';
     }
 

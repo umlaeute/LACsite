@@ -61,7 +61,7 @@ if (    isset($_POST['postit'])
     } else {
       echo 'Updating slides-URL in programdb.';
     }
-    echo '&nbsp;|&nbsp;<a href="?page=adminschedule&amp;mode=edit&amp;param='.$id.'">Edit ID:'.$id.'</a><br/>';
+    echo '&nbsp;|&nbsp;<a href="'.local_url('adminschedule', 'mode=edit&amp;param='.$id.').'">Edit ID:'.$id.'</a><br/>';
   }
 
   if (!$ok) {

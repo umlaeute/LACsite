@@ -205,6 +205,15 @@ function list_emails($f) {
   return $rv;
 }
 
+#export SV escape
+function exes($text, $sep="\t") {
+	# replace $sep with /space/; replace '"' with "''"
+	if ($sep != ' ') 
+		$text=str_replace($sep,' ',$text);
+	$text=str_replace('"',"''",$text);
+	return $text;
+}
+
 function export_sv($sep="\t") {
   $rv='';
   $rv.= '"Last Name"'.$sep;
@@ -228,41 +237,42 @@ function export_sv($sep="\t") {
     $filename=$name = preg_replace('/[^a-zA-Z0-9_-]/','_', $fn).'.ini';
     $v=parse_ini_file(REGLOGDIR.$filename);
 
-    $rv.= '"'.$v['reg_name'].'"'.$sep;
-    $rv.= '"'.$v['reg_prename'].'"'.$sep;
-    $rv.= '"'.$v['reg_tagline'].'"'.$sep;
-    $rv.= '"'.$v['reg_email'].'"'.$sep;
-    $rv.= '"'.preg_replace('/A(\d{2})(.{2})/','${1}-${2}',$v['reg_agegroup']).'"'.$sep;
-    $rv.= '"'.$v['reg_country'].'"'.$sep;
+    $rv.= '"'.exes($v['reg_name']).'"'.$sep;
+    $rv.= '"'.exes($v['reg_prename']).'"'.$sep;
+    $rv.= '"'.exes($v['reg_tagline']).'"'.$sep;
+    $rv.= '"'.exes($v['reg_email']).'"'.$sep;
+    $rv.= '"'.exes(preg_replace('/A(\d{2})(.{2})/','${1}-${2}',$v['reg_agegroup'])).'"'.$sep;
+    $rv.= '"'.exes($v['reg_country']).'"'.$sep;
     $rv.= '"'.($v['reg_useathome']?'at home, ':'').($v['reg_useatwork']?'at work':'').'"'.$sep;
     $rv.= '"'
       .(($v['reg_audiopro']==1)?'no':'')
       .(($v['reg_audiopro']==2)?'yes':'')
       .(($v['reg_audiopro']==0)?'??':'');
     $rv.= '"'.$sep;
-    $rv.= '"';
-    $rv.= ($v['reg_vmusician']?'Composer or musician, ':'');
-    $rv.= ($v['reg_vdj']?'DJ, ':'');
-    $rv.= ($v['reg_vswdeveloper']?'Software devel, ':'');
-    $rv.= ($v['reg_vhwdeveloper']?'Hardware devel, ':'');
-    $rv.= ($v['reg_vmediapro']?'Media Professional, ':'');
-    $rv.= ($v['reg_vmproducer']?'Music Producer, ':'');
-    $rv.= ($v['reg_vvproducer']?'Video Producer, ':'');
-    $rv.= ($v['reg_vresearcher']?'Researcher, ':'');
-    $rv.= ($v['reg_vswuser']?'User, ':'');
-    $rv.= ($v['reg_vpress']?'Press, ':'');
-    $rv.= ($v['reg_vinterested']?'Just Interested, ':'');
-    $rv.= ($v['reg_vother']?'Other':'');
+    $rv.= '"'.exes($v['reg_about']);
+#   $rv.= '"';
+#   $rv.= ($v['reg_vmusician']?'Composer or musician, ':'');
+#   $rv.= ($v['reg_vdj']?'DJ, ':'');
+#   $rv.= ($v['reg_vswdeveloper']?'Software devel, ':'');
+#   $rv.= ($v['reg_vhwdeveloper']?'Hardware devel, ':'');
+#   $rv.= ($v['reg_vmediapro']?'Media Professional, ':'');
+#   $rv.= ($v['reg_vmproducer']?'Music Producer, ':'');
+#   $rv.= ($v['reg_vvproducer']?'Video Producer, ':'');
+#   $rv.= ($v['reg_vresearcher']?'Researcher, ':'');
+#   $rv.= ($v['reg_vswuser']?'User, ':'');
+#   $rv.= ($v['reg_vpress']?'Press, ':'');
+#   $rv.= ($v['reg_vinterested']?'Just Interested, ':'');
+#   $rv.= ($v['reg_vother']?'Other':'');
     $rv.= '"'.$sep;
     $rv.= '"'.$v['reg_profession'].'"'.$sep;
     $rv.= '"'.($v['reg_proceedings']?'yes':'no').'"'.$sep;
     $rv.= '"'.($v['reg_whoelselist']?'yes':'no').'"'.$sep;
     if (isset($v['reg_vip'])) {
-      $rv.= '"'.$v['reg_vip'].'"'.$sep;
+      $rv.= '"'.exes($v['reg_vip']).'"'.$sep;
     } else {
       $rv.= '""'.$sep;
     }
-    $rv.= '"'.$v['reg_notes'].'"'."\n";
+    $rv.= '"'.exes($v['reg_notes']).'"'."\n";
   }
   return $rv;
 }

@@ -69,7 +69,7 @@
   foreach($pages as $p => $t) {
     echo '
     <div class="menuitem'.(($page==$p)?' tabactive':'').'">
-        <a href="?page='.$p.'">'.$t.'</a>
+        <a href="'.local_url($p).'">'.$t.'</a>
     </div>'."\n";
   }
   echo '<div style="clear:both; height:0px;">&nbsp;</div>'."\n";
@@ -82,7 +82,7 @@
   <div id="lefthead"> </div>
 <?php
   if (!in_array($page, $nosponsors)&& !$regclosed && $page != 'registration') {
-    echo '<div class="center huge"><a href="?page=registration">Register Now</a></div>'."\n";
+    echo '<div class="center huge"><a href="'.local_url('registration').'">Register Now</a></div>'."\n";
     echo '  <hr class="psep"/>'."\n";
   }
   if (!in_array($page, $nosponsors)) {

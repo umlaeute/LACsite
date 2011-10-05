@@ -17,7 +17,7 @@ require_once('lib.php');
 require_once('programdb.php');
 function printerror($msg) {
   echo '<div class="error">ERROR: '.$msg.'</div></div></body></html>';
-  echo '<div class="footer">Back to <a href="index.php?page=program">conference site</a>.</div>';
+  echo '<div class="footer">Back to <a href="'.local_url('program').'">conference site</a>.</div>';
   exit;
 }
 if (!isset($_REQUEST['id']))
@@ -149,6 +149,6 @@ if (!empty($v['abstract'])) {
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />The video is licensed in terms of the <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>. Attribute to <a xmlns:cc="http://creativecommons.org/ns#" href="http://lac.linuxaudio.org/<?=LACY?>/" property="cc:attributionName" rel="cc:attributionURL">linuxaudio.org</a>. All copyright(s) remain with the author/speaker/presenter.
 </div>
-<div class="footer">Back to <a href="index.php?page=program">conference site</a>.</div>
+<div class="footer">Back to <a href="<?=local_url('program')?>">conference site</a>.</div>
 </body>
 </html>

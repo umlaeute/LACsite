@@ -23,3 +23,20 @@ AuthDigestProvider file
 <Files "README">
   deny from all
 </Files>
+
+<Files ~ "^[\._]ht">
+    Order allow,deny
+    Deny from all
+    Satisfy All
+</Files>
+
+#RewriteEngine on
+#RewriteBase /2012/
+#
+## edit config.php - set $userewrite=true;
+## This allows to cache static pages.
+## php evauluate  pages/about.php -> ./about
+#
+#RewriteCond %{REQUEST_FILENAME}       !-f
+#RewriteCond %{REQUEST_FILENAME}       !-d
+#RewriteRule ^(.*)                    index.php?page=$1  [QSA,L]

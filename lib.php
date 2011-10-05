@@ -17,7 +17,15 @@
   function xhtmlify($s) {
     return htmlentities($s,ENT_COMPAT,'UTF-8');
     #return htmlentities(mb_convert_encoding($s,'utf-8,'utf-8'),ENT_COMPAT,'UTF-8');
-  }
+	}
+
+	function local_url($page, $args) {
+		global $userewrite;
+		if (isset($userewrite) && $userewrite) {
+			return rawurlencode($page).(isset($args)?'?'.$args:'');
+		}
+		return '?page='.rawurlencode($page).(isset($args)?'&amp;'.$args:'');
+	}
 
   # unused ? fn
   function plaindate($e, $start=true) {
