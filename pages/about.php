@@ -12,22 +12,24 @@ serious interest in Open Source Software for Music and Sound.
 </p>
 
 <h1>What to expect</h1>
-<ul>
+<ul class="multicolumn">
  <li>Presentations</li>
  <li>Poster sessions</li>
  <li>Workshops</li>
  <li>Concerts</li>
  <li>Live coding sessions</li>
 </ul>
+<p style="clear:both;"/>
 
 <h1>Where &amp; When</h1>
 <p>
-April 12-15 2012, CCRMA, Stanford, California. See the <a href="?page=contact">Contact</a> and <a href="?page=travel">Travel</a> pages for details.
+April 12-15 2012, CCRMA, Stanford, California. See the <a href="?page=contact">Contact</a> and <a href="?page=travel">Travel</a> pages for details.<br/>
+The conference will be streamed live and remote participation is possible via IRC.
 </p>
 <div class="ptitle">
 <!--<img src="img/nui_maynooth_6.jpg" alt="campus impressions (1)"/> !-->
 </div>
-<h1>We need you ! </h1>
+<h1>We need you! </h1>
 <p>
 Your contribution, ideas are required to get LAC going! So
 please <a href="?page=registration">register</a> to attend. See the
@@ -39,7 +41,7 @@ to answer to the call for paper-presentations, workshops and music.
 <p>Check out the <a href="?page=participants">list of participants</a> to see who else is coming.</p>
 <p>The LAC is a GNU/Linux free/libre software community organised event by the <a href="http://lists.linuxaudio.org/">Linux-Audio-Users and -Developers</a>.
 LAC2012 is under the auspices of <a href="http://ccrma.stanford.edu" rel="external">CCRMA</a>, organised by <a href="https://ccrma.stanford.edu/people/fernando-lopez-lezcano" rel="external">Fernando Lopez-Lezcano</a> with assistance from <a href="http://www.brunoruviaro.com/" rel="external">Bruno Ruviaro</a>, Frank Neumann, <a href="http://gareus.org" rel="external"> Robin Gareus</a> and <a href="https://ccrma.stanford.edu/people/julius-orion-smith-iii" rel="external">Julius O. Smith</a>.</p>
-<p>The list of peer-reviewers will be published here after the submission deadline.</p>
+<p>The list of peer-review committee will be published here after the submission deadline.</p>
 
 <h1>Links to prior Linux Audio Conferences</h1>
 <ul class="multicolumn">
