@@ -28,14 +28,14 @@
 
   if (  !empty($preq) && $preq=='registration' 
       && isset($regclosed) && $regclosed) {
-  $page='regclosed';
+    $page='regclosed';
   }
 
   if (!empty($preq) && $preq=='registration') {
     require_once('submit.php');
     if (checkreg()) 
       if (savereg())
-  $page='regcomplete';
+        $page='regcomplete';
   }
 
   if (!empty($preq) && $preq!=$page && $page=='about') {
@@ -83,8 +83,8 @@
 </div>
 
 <div id="payload-layout">
-<div id="leftcolumn">
-  <div id="lefthead"> </div>
+  <div id="leftcolumn">
+    <div id="lefthead"> </div>
 <?php
   if (!in_array($page, $nosponsors)&& !$regclosed && $page != 'registration') {
     echo '<div class="center huge"><a href="'.local_url('registration').'">Register Now</a></div>'."\n";
@@ -102,7 +102,7 @@
     echo '  <hr class="psep"/>'."\n";
   }
 ?>
-  <div class="center">
+    <div class="center">
 <a href="http://www4.clustrmaps.com/counter/maps.php?url=http://lac.linuxaudio.org/2012/" id="clustrMapsLink" rel="external"><img src="http://www4.clustrmaps.com/counter/index2.php?url=http://lac.linuxaudio.org/2012/" style="border:0px;" alt="Locations of visitors to this page" title="Locations of visitors to this page" id="clustrMapsImg" />
 </a>
 <script type="text/javascript">
@@ -115,35 +115,34 @@ document.getElementById("clustrMapsLink").href = "http://www2.clustrmaps.com";
 img = document.getElementById("clustrMapsImg");
 img.onerror = cantload;
 </script>
+    </div>
+    <div id="lbfootl"> </div>
+    <div id="lbfootr"> </div>
   </div>
 
-  <div id="lbfootl"> </div>
-  <div id="lbfootr"> </div>
-</div>
-
-<div id="main">
-  <div id="content" class="mainheadl">
+  <div id="main">
+    <div id="content" class="mainheadl">
 <?php
 require_once('pages/'.$page.'.php');
 ?>
+    </div>
+    <div id="mainfootl"> </div>
+    <div id="createdby"> Oct 04 2011, Fernando Lopez-Lezcano, Bruno Ruviaro &amp; Robin Gareus</div>
   </div>
-  <div id="mainfootl"> </div>
-  <div id="createdby"> Oct 04 2011, Fernando Lopez-Lezcano, Bruno Ruviaro &amp; Robin Gareus</div>
-</div>
-<div style="clear:both; height:0px;">&nbsp;</div>
+  <div style="clear:both; height:0px;">&nbsp;</div>
 </div>
 
 <div id="footerwrap">
-    <a href="http://validator.w3.org/check?uri=referer" rel="external"><img
-        src="img/button-xhtml.png"
-        alt="Valid XHTML 1.0 Strict"/></a>
-    <a href="http://jigsaw.w3.org/css-validator/check/referer" rel="external"><img
-        src="img/button-css.png"
-        alt="Valid XHTML 1.0 Strict"/></a>
-    <a href="http://www.mozilla.com/en-US/firefox/firefox.html" rel="external"><img
-        src="img/button-firefox.png"
-        alt="Get Firefox"/></a><br/>
-    <p>LINUX<sup>&reg;</sup> is a <a href="http://www.linuxmark.org/" rel="external">registered trademark</a> of Linus Torvalds in the USA and other countries.<br />Hosting provided by the <a href="http://www.music.vt.edu" rel="external">Virginia Tech Department of Music</a> and <a href="http://disis.music.vt.edu" rel="external">DISIS</a>.<br/>Design and implementation by <a href="http://rg42.org/" rel="external">RSS</a>.</p>
+  <a href="http://validator.w3.org/check?uri=referer" rel="external"><img
+      src="img/button-xhtml.png"
+      alt="Valid XHTML 1.0 Strict"/></a>
+  <a href="http://jigsaw.w3.org/css-validator/check/referer" rel="external"><img
+      src="img/button-css.png"
+      alt="Valid XHTML 1.0 Strict"/></a>
+  <a href="http://www.mozilla.com/en-US/firefox/firefox.html" rel="external"><img
+      src="img/button-firefox.png"
+      alt="Get Firefox"/></a><br/>
+  <p>LINUX<sup>&reg;</sup> is a <a href="http://www.linuxmark.org/" rel="external">registered trademark</a> of Linus Torvalds in the USA and other countries.<br />Hosting provided by the <a href="http://www.music.vt.edu" rel="external">Virginia Tech Department of Music</a> and <a href="http://disis.music.vt.edu" rel="external">DISIS</a>.<br/>Design and implementation by <a href="http://rg42.org/" rel="external">RSS</a>.</p>
 </div> 
 </body>
 </html>

@@ -97,8 +97,8 @@ a:hover      {color:#990000;}
   position:relative;
   z-index:50;
   overflow:hidden;
-  font-size: 14px;
-  margin:1em 164px 0px 45px;
+  font-size: 12px;
+  margin:1.2em 164px 0px 45px;
   border-top: 1px solid #202020;
   border-bottom: 1px solid #202020;
 }
