@@ -167,7 +167,7 @@ div.menuitem 	{
 #content h1 		{ font-size: 160%; }
 #content h2 		{ font-size: 140%; }
 #content h3 		{ font-size: 120%; }
-#content form   { width:45em; margin:0 auto;}
+#content form   { width:41em; margin:0 auto;}
 #content input.button {font-size:110%;}
 /*#content input,  */
 #content textarea 	{border: 1px solid black;}
@@ -193,15 +193,15 @@ div.menuitem 	{
 #content div.wikilink 	{font-size:80%; margin-top:1em; text-align:right;}
 
 fieldset legend 	{text-align:left;}
-.fs 			{text-align:right; padding-right:70px;}
+.fs 			{text-align:right; padding-right:1em;}
 .fs input, .fs select, 
 .fs label.la 		{margin:0px 0em 0em .5em; vertical-align:top;}
 .fs label.ls 		{font-style:italic; font-size:80%; margin:0px 23em 0em .5em;}
 
-.fa 			{text-align:right; padding-right:70px;}
-.fa div.la 		{float:left; margin-left:1em;}
+.fa 			{text-align:right; padding-right:1em;}
+.fa div.la 		{float:left; margin-left:.5em;}
 .fa div.ra 		{}
-.fa table 		{margin: 0px 0px 0px 184px;text-align:left;}
+.fa table 		{margin: 0px 0px 0px 120px;text-align:left;}
 .fa td 			{padding-left: 10px;}
 .fa td label input	{margin-right: 4px;}
 
