@@ -19,8 +19,8 @@ Papers can be submitted for review via the
 Templates for paper submission are available for LaTeX and OpenOffice/LibreOffice from <a href="download/lac2012-templates.tar.gz">here</a>.
 </p>
 <p>
-Papers must be written and presented in English, 4&mdash;8 pages, with abstract (50&mdash;100 words) and up to 5 keywords. 
-In general a presentation should take 20&mdash;30 minutes followed by 5 minutes discussion.
+Papers must be written and presented in English, 4&mdash;8 pages, with abstract (50&mdash;100 words, max. 500 words) and up to 5 keywords. 
+In general a presentation should take 25&mdash;30 minutes followed by 5 minutes discussion.
 </p>
 <p>
 The copyright of the paper remains with the author, but we reserve the right to create printed proceedings from all submitted (and accepted) papers.
@@ -71,7 +71,7 @@ The Linux Audio Conference 2012 will include several concerts. We are looking fo
 <ul>
   <li>The Electroacoustic Music Concerts</li>
   <li>The Linux Sound Night</li>
-  <li>Sound installations</li>
+  <li>Audio/visual installations</li>
 </ul>
 <p>
 Guidelines for submitting your music and associated work
@@ -79,6 +79,10 @@ are described in <a href="download/callformusic-LAC2012.pdf">callformusic.pdf</a
 </p>
 
 <h1>Call for workshops</h1>
+<p>
 If you want to organise a training, workshop or other activity please
-<a href="<?=local_url('contact')?>">contact the LAC committee</a>.
+<a href="<?=local_url('contact')?>">contact the LAC committee</a> by email.
+</p>
+<p>Include a Title, your name and contact information, a short description, outline or abstract (no more than 500 words) and any specific resources required.
+</p>
 
