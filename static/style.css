@@ -9,9 +9,9 @@ body		{
 		}
 #content p 	{text-align:justify; padding-bottom:.5em;}
 a		{outline: none; color:black;}
-.tabactive a {color:#202000;}
-.menuitem a:hover {color:#A02000;}
-.tabactive a:hover {color:#202000;}
+.tabactive a {color:#990000;}
+.menuitem a:hover {color:#990000;}
+.tabactive a:hover {color:#990000;}
 img	{border: 0px;}
 #payload-layout	{
   min-width:74.5em;
@@ -55,11 +55,14 @@ img	{border: 0px;}
 }
 #logoright {
 	position:absolute;
+	z-index:40;
+	/*top:82px;*/
+	/*top:7px; */
 	top:7px;
 	right:1em;
 	width:158px;
 	height:158px;
-	background:transparent url(../img/lac2012bw.png) no-repeat top right;
+	background:transparent url(../img/lac2012.png) no-repeat top right;
 }
 #titlebar	{
 	  position:relative;
@@ -89,12 +92,13 @@ img	{border: 0px;}
  }
 #mainmenu	{
 		position:relative;
+	  z-index:50;
 		overflow:hidden;
     width:63em;  /* 9em * 7entries */
 		font-size: 14px;
 		margin:1em auto 0px auto;
-		border-top: 1px solid black;
-		border-bottom: 1px solid black;
+		border-top: 1px solid #202020;
+		border-bottom: 1px solid #202020;
 		}
 #mainmenu a	{text-decoration:none;}
 div.menuitem 	{
@@ -103,10 +107,10 @@ div.menuitem 	{
 		text-align: center;
 		padding: .75em .5em;
 		margin:0;
+	  font-weight: bold;
 		}
 .tabactive	{
 		background:transparent url(../img/dim60.png) repeat scroll 0 0;
-	  font-weight: bold;
 		}
 .disclaimer	{
 		color: #808080; 
@@ -188,7 +192,7 @@ div.menuitem 	{
 #content legend 	{margin-left:1em;}
 #content fieldset 	{padding-left:.5em; font-size:11pt; padding-bottom:.5em;}
 #content label.la 	{font-style:italic;}
-#content .error 	{color:#ff3333;}
+#content .error 	{color:#990000;}
 #content .fx 		{display:none;}
 #content div.wikilink 	{font-size:80%; margin-top:1em; text-align:right;}
 
@@ -239,10 +243,10 @@ div.huge {
   width:180px;
 	height:40px;
   margin:0px auto;
-	padding-top:7px;
+	padding-top:5px;
 }
 div.huge a {text-decoration:none; color:#F0E0E0;}
-div.huge a:hover {color:#F02020;}
+div.huge a:hover {color:#003366;}
 
 table.ptb		{
 			border-bottom:1px solid #000000;

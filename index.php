@@ -81,7 +81,7 @@
 <div id="leftcolumn">
 	<div id="lefthead"> </div>
 <?php
-  if (!in_array($page, $nosponsors)&& !$regclosed) {
+  if (!in_array($page, $nosponsors)&& !$regclosed && $page != 'registration') {
 		echo '<div class="center huge"><a href="?page=registration">Register Now</a></div>'."\n";
     echo '  <hr class="psep"/>'."\n";
 	}
