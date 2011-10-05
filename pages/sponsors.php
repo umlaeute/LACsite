@@ -32,7 +32,7 @@ conference organisation: lac -at- linuxaudio -dot- org
    <a rel="external" href="http://64studio.com/">64studio</a>, 
    <a rel="external" href="http://www.lionstracs.com/">Lionstracs</a>, 
    <a rel="external" href="http://www.trinityaudiogroup.com/">Trinity</a>, ...). It provides plenty of space 
-  for developer discussions and - of course - concerts and music (of various electronic flavours and genres).
+  for developer discussions and - of course - concerts and music (of various flavours and genres).
   Recently, the conference has also been a host to the Open Video community
   (<a rel="external" href="http://lumiera.org/">lumiera</a>, 
    <a rel="external" href="http://openmovieeditor.org/">openmovieeditor</a>,
