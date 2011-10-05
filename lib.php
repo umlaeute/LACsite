@@ -22,9 +22,9 @@
   function local_url($page, $args='') {
     global $userewrite;
     if (isset($userewrite) && $userewrite) {
-      return BASEURL.rawurlencode($page).(isset($args)?'?'.$args:'');
+      return BASEURL.rawurlencode($page).(!empty($args)?'?'.$args:'');
     }
-    return BASEURL.'?page='.rawurlencode($page).(isset($args)?'&amp;'.$args:'');
+    return BASEURL.'?page='.rawurlencode($page).(!empty($args)?'&amp;'.$args:'');
   }
 
   # unused ? fn
