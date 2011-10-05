@@ -45,7 +45,7 @@ img	{border: 0px;}
 	  position:relative;
 		float:right;
     margin:1em 1em 1em .5em;
-	  width:76%;
+	  width:75%;
 		min-width:54em;
 		background:#FEFEF9 url(../img/corner_tr.png) no-repeat scroll right top;
 		}
@@ -189,7 +189,7 @@ div.menuitem 	{
 #content span.standout	{font-weight: bold;}
 
 #content legend 	{margin-left:1em;}
-#content fieldset 	{padding-left:.5em; font-size:11pt; padding-bottom:.5em;}
+#content fieldset 	{padding-left:.5em; font-size:11pt; padding-bottom:.5em; clear:both;}
 #content label.la 	{font-style:italic;}
 #content .error 	{color:#990000;}
 #content .fx 		{display:none;}
@@ -197,14 +197,16 @@ div.menuitem 	{
 
 fieldset legend 	{text-align:left;}
 .fs 			{text-align:right; padding-right:1em;}
+.fs input { width:25em; }
+.fs select { width:25.3em; }
 .fs input, .fs select, 
-.fs label.la 		{margin:0px 0em 0em .5em; vertical-align:top;}
+.fs label.la 		{margin:4px 0em 4px .5em; vertical-align:middle;}
 .fs label.ls 		{font-style:italic; font-size:80%; margin:0px 23em 0em .5em;}
 
 .fa 			{text-align:right; padding-right:1em;}
-.fa div.la 		{float:left; margin-left:.5em;}
-.fa div.ra 		{}
-.fa table 		{margin: 0px 0px 0px 120px;text-align:left;}
+.fa div.la 		{float:left; padding-left:.5em; padding-right:.25em; clear:left; border-bottom: 1px solid #FEFEF9;}
+.fa div.ra 		{border-bottom: 1px dotted gray; margin-bottom:1em;}
+.fa table 		{float:right;margin: 0px 0px 1em 120px;text-align:left;border-bottom: 1px dotted gray;}
 .fa td 			{padding-left: 10px;}
 .fa td label input	{margin-right: 4px;}
 
