@@ -85,8 +85,8 @@ Personal data provided by you in the registration form will be kept confidential
    'A71XX' => '71 and older'
   );
 
-	# vi-macro uppercase first letter, lowercase word.
-	# :map <F5> :.s/\([A-Z]\)\([A-Za-z][A-Za-z][A-Za-z]*\)/\1\L\2/g<CR>:.s/\sOR\s\\|\sAND\s\\|\sOF[, )]\\|\sTHE[, \)]/\L&/gi<CR>
+  # vi-macro uppercase first letter, lowercase word.
+  # :map <F5> :.s/\([A-Z]\)\([A-Za-z][A-Za-z][A-Za-z]*\)/\1\L\2/g<CR>:.s/\sOR\s\\|\sAND\s\\|\sOF[, )]\\|\sTHE[, \)]/\L&/gi<CR>
   $ctry=array (
       '' => 'Please select your country..',
     'AF' => 'AF (Afghanistan)',
@@ -397,8 +397,8 @@ Personal data provided by you in the registration form will be kept confidential
   <div class="ra">
     <label><input type="radio" name="reg_proceedings" value="0"<?php _ck('reg_proceedings',0);?>/>No</label> &nbsp; &nbsp;
     <label><input type="radio" name="reg_proceedings" value="1"<?php _ck('reg_proceedings',1);?>/>Yes</label>
-	</div>
-	<br/>
+  </div>
+  <br/>
   <label>Allow public listing of your name and affiliation in the "Who else is coming" list.</label><br/>
   <div class="la"><label class="la"><span class="error">*</span>Include me?</label></div>
   <div class="ra">
@@ -408,7 +408,7 @@ Personal data provided by you in the registration form will be kept confidential
 </fieldset>
 
 <fieldset class="fa">
-	<legend>About yourself:</legend>
+  <legend>About yourself:</legend>
   <div class="la"><label class="la">Do you work for a professional audio company?</label></div>
   <div class="ra">
   <span>
@@ -433,13 +433,13 @@ Personal data provided by you in the registration form will be kept confidential
     <label><input type="checkbox" name="reg_useatwork" value="1"<?php _ck('reg_useatwork',1);?>/>&hellip;at work.</label>
    </span>
   </div>
-	<div class="la"><label class="la">You are&hellip; (multiple checks are ok):</label></div>
+  <div class="la"><label class="la">You are&hellip; (multiple checks are ok):</label></div>
   <div style="clear:both; height:1px;"></div>
   <table border="0" cellspacing="0" cellpadding="0">
     <tr>
 <?php gen_checktd($about); ?>
     </tr>
-	</table>
+  </table>
 </fieldset>
 
 <fieldset class="fs">
@@ -448,9 +448,9 @@ Personal data provided by you in the registration form will be kept confidential
   <textarea id="reg_notes" name="reg_notes" rows="3" cols="60"><?php if (isset($_POST['reg_notes'])) echo $_POST['reg_notes'];?></textarea><br/>
 </fieldset><br/>
 <div>
-	<div style="float:right;">
+  <div style="float:right;">
 <input type="submit" class="button" value="Submit registration"/></div>
-	<div>
+  <div>
 <input type="reset" class="button" value="Reset form"/></div>
 </div>
 

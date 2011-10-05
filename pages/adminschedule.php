@@ -64,22 +64,22 @@ if (!defined('REGLOGDIR')) die();
     case 'texify':
       admin_fieldset();
       program_fieldset();
-			$handle = fopen(TMPDIR.'/schedule.tex', "w");
-			fwrite($handle, export_progam_tex($db));
-			fclose($handle);
+      $handle = fopen(TMPDIR.'/schedule.tex', "w");
+      fwrite($handle, export_progam_tex($db));
+      fclose($handle);
       echo '<legend>Conference Program - Export to tex:</legend>'."\n";
-			echo 'Download: <a href="download.php?file=schedule.tex">schedule.tex</a>';
+      echo 'Download: <a href="download.php?file=schedule.tex">schedule.tex</a>';
       echo '</fieldset>';
       break;
       break;
     case 'export':
       admin_fieldset();
       program_fieldset();
-			$handle = fopen(TMPDIR.'/schedule.csv', "w");
-			fwrite($handle, export_progam_sv($db, ","));
-			fclose($handle);
+      $handle = fopen(TMPDIR.'/schedule.csv', "w");
+      fwrite($handle, export_progam_sv($db, ","));
+      fclose($handle);
       echo '<legend>Conference Program - Export to spreadsheet:</legend>'."\n";
-			echo 'Download: <a href="download.php?file=schedule.csv">schedule.csv</a>';
+      echo 'Download: <a href="download.php?file=schedule.csv">schedule.csv</a>';
       echo '</fieldset>';
       break;
     case 'orphans':

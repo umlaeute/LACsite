@@ -46,56 +46,56 @@
     return '<span style="color:'.$col.';">'.$t.'</span>';
   }
 
-	function track_legend() {
-		# XXX - hardcoded session/track XXX
-		$rv='<div style="width:100%; margin:.5em;">';
-		$rv.='<table cellspacing="0" class="trl">';
-		$rv.='<tr>';
-		$rv.='<td class="trX" colspan="4">Legend</td>';
-		$rv.='</tr><tr>';
-		$rv.='<td class="tr1">'.track_name('tr1').'</td>';
-		$rv.='<td class="tr3">'.track_name('tr3').'</td>';
-		$rv.='<td class="tr5">'.track_name('tr5').'</td>';
-		$rv.='<td class="tr7">'.track_name('tr7').'</td>';
-		$rv.='</tr><tr>';
-		$rv.='<td class="tr2">'.track_name('tr2').'</td>';
-		$rv.='<td class="tr4">'.track_name('tr4').'</td>';
-		$rv.='<td class="tr6">'.track_name('tr6').'</td>';
-		$rv.='<td class="tr0">Ilghnéitheach</td>';
-		$rv.='</tr>';
-		$rv.='</table></div>';
-		return $rv;
-	}
+  function track_legend() {
+    # XXX - hardcoded session/track XXX
+    $rv='<div style="width:100%; margin:.5em;">';
+    $rv.='<table cellspacing="0" class="trl">';
+    $rv.='<tr>';
+    $rv.='<td class="trX" colspan="4">Legend</td>';
+    $rv.='</tr><tr>';
+    $rv.='<td class="tr1">'.track_name('tr1').'</td>';
+    $rv.='<td class="tr3">'.track_name('tr3').'</td>';
+    $rv.='<td class="tr5">'.track_name('tr5').'</td>';
+    $rv.='<td class="tr7">'.track_name('tr7').'</td>';
+    $rv.='</tr><tr>';
+    $rv.='<td class="tr2">'.track_name('tr2').'</td>';
+    $rv.='<td class="tr4">'.track_name('tr4').'</td>';
+    $rv.='<td class="tr6">'.track_name('tr6').'</td>';
+    $rv.='<td class="tr0">Ilghnéitheach</td>';
+    $rv.='</tr>';
+    $rv.='</table></div>';
+    return $rv;
+  }
 
-	function track_name($tr) {
-		# XXX - hardcoded session/track XXX
-		switch ($tr) {
-			case 'tr1': return 'Music Programming Languages';
-			case 'tr2': return 'Audio Infrastructure and Broadcast';
-			case 'tr3': return 'Interfaces for Music Instruments';
-			case 'tr4': return 'Sound Synthesis';
-			case 'tr5': return 'Systems and Language';
-			case 'tr6': return 'Audio Programming';
-			case 'tr7': return 'Environments and Composition';
-			default: return '';
-		}
-	}
-	function track_color($d) {
-		# XXX - hardcoded session/track XXX
-		if ($d['day'] == 1 && $d['starttime'] < '13:00') return 'tr1';
-		if ($d['type'] != 'p') return 'tr0';
+  function track_name($tr) {
+    # XXX - hardcoded session/track XXX
+    switch ($tr) {
+      case 'tr1': return 'Music Programming Languages';
+      case 'tr2': return 'Audio Infrastructure and Broadcast';
+      case 'tr3': return 'Interfaces for Music Instruments';
+      case 'tr4': return 'Sound Synthesis';
+      case 'tr5': return 'Systems and Language';
+      case 'tr6': return 'Audio Programming';
+      case 'tr7': return 'Environments and Composition';
+      default: return '';
+    }
+  }
+  function track_color($d) {
+    # XXX - hardcoded session/track XXX
+    if ($d['day'] == 1 && $d['starttime'] < '13:00') return 'tr1';
+    if ($d['type'] != 'p') return 'tr0';
 
-		if ($d['day'] == 1 && $d['starttime'] < '16:00') return 'tr4';
-		if ($d['day'] == 1) return 'tr5';
+    if ($d['day'] == 1 && $d['starttime'] < '16:00') return 'tr4';
+    if ($d['day'] == 1) return 'tr5';
 
-		if ($d['day'] == 2 && $d['starttime'] < '13:00') return 'tr2';
-		if ($d['day'] == 2 && $d['starttime'] < '16:00') return 'tr3';
-		if ($d['day'] == 2) return 'tr5';
+    if ($d['day'] == 2 && $d['starttime'] < '13:00') return 'tr2';
+    if ($d['day'] == 2 && $d['starttime'] < '16:00') return 'tr3';
+    if ($d['day'] == 2) return 'tr5';
 
-		if ($d['day'] == 3 && $d['starttime'] < '13:00') return 'tr6';
-		if ($d['day'] == 3 && $d['starttime'] > '13:00') return 'tr7';
-		return 'tr0';
-	}
+    if ($d['day'] == 3 && $d['starttime'] < '13:00') return 'tr6';
+    if ($d['day'] == 3 && $d['starttime'] > '13:00') return 'tr7';
+    return 'tr0';
+  }
 
   function translate_type($t) {
     switch ($t) {
@@ -280,9 +280,9 @@
 
     if ($filter['user'] != '0') 
       $q = 'SELECT DISTINCT activity.*
-	    FROM activity,user,usermap
-	    WHERE activity.id=usermap.activity_id AND user.id=usermap.user_id
-	      AND user.id='.$filter['user'];
+      FROM activity,user,usermap
+      WHERE activity.id=usermap.activity_id AND user.id=usermap.user_id
+        AND user.id='.$filter['user'];
     else 
       $q='SELECT activity.* FROM activity WHERE 1=1';
 
@@ -322,7 +322,7 @@
       foreach (fetch_authorids($db, $r['id']) as $user_id) {
         if ($i++>0) echo ', ';
         #echo $user_id.': ';
-	#echo xhtmlify($a_users[$user_id]);
+  #echo xhtmlify($a_users[$user_id]);
         echo '<a class="active" onclick="document.getElementById(\'param\').value='.$user_id.';document.getElementById(\'mode\').value=\'edituser\';document.myform.submit();">'.xhtmlify($a_users[$user_id]).'</a>';
       }
       echo '</em></td>';
@@ -557,13 +557,13 @@
     $id=intval(rawurldecode($_REQUEST['param']));
     if ($id < 0) {
       $q='INSERT into location (name) VALUES ('
-	.' '.$db->quote(rawurldecode($_REQUEST['pdb_name']))
-	.');';
+  .' '.$db->quote(rawurldecode($_REQUEST['pdb_name']))
+  .');';
     } else {
       unlock($db, $id, 'location');
       $q='UPDATE location set '
-	.' name='.$db->quote(rawurldecode($_REQUEST['pdb_name']))
-	.' WHERE id='.$id.';';
+  .' name='.$db->quote(rawurldecode($_REQUEST['pdb_name']))
+  .' WHERE id='.$id.';';
     }
     #print_r($q);
     $err|=($db->exec($q) !== 1)?1:0;
@@ -577,17 +577,17 @@
     $id=intval(rawurldecode($_REQUEST['param']));
     if ($id < 0) {
       $q='INSERT into user (name, email, bio) VALUES ('
-	.' '.$db->quote(rawurldecode($_REQUEST['pdb_name']))
-	.','.$db->quote(rawurldecode($_REQUEST['pdb_email']))
-	.','.$db->quote(rawurldecode($_REQUEST['pdb_bio']))
-	.');';
+  .' '.$db->quote(rawurldecode($_REQUEST['pdb_name']))
+  .','.$db->quote(rawurldecode($_REQUEST['pdb_email']))
+  .','.$db->quote(rawurldecode($_REQUEST['pdb_bio']))
+  .');';
     } else {
       unlock($db, $id, 'user');
       $q='UPDATE user set '
-	.' name='.$db->quote(rawurldecode($_REQUEST['pdb_name']))
-	.',email='.$db->quote(rawurldecode($_REQUEST['pdb_email']))
-	.',bio='.$db->quote(rawurldecode($_REQUEST['pdb_bio']))
-	.' WHERE id='.$id.';';
+  .' name='.$db->quote(rawurldecode($_REQUEST['pdb_name']))
+  .',email='.$db->quote(rawurldecode($_REQUEST['pdb_email']))
+  .',bio='.$db->quote(rawurldecode($_REQUEST['pdb_bio']))
+  .' WHERE id='.$id.';';
     }
     #print_r($q);
     $err|=($db->exec($q) !== 1)?1:0;
@@ -601,41 +601,41 @@
     $id=intval(rawurldecode($_REQUEST['param']));
     if ($id < 0) {
       $q='INSERT INTO activity (title, abstract, notes, duration, starttime, location_id, day, type, url_stream, url_paper, url_slides, url_audio, url_misc, url_image, status) VALUES ('
-	.' '.$db->quote(rawurldecode($_REQUEST['pdb_title']))
-	.','.$db->quote(rawurldecode($_REQUEST['pdb_abstract']))
-	.','.$db->quote(rawurldecode($_REQUEST['pdb_notes']))
-	.','.$db->quote(rawurldecode($_REQUEST['pdb_duration']))
-	.','.$db->quote(rawurldecode($_REQUEST['pdb_time']))
-	.','.$db->quote(rawurldecode($_REQUEST['pdb_location']))
-	.','.$db->quote(rawurldecode($_REQUEST['pdb_day']))
-	.','.$db->quote(rawurldecode($_REQUEST['pdb_type']))
-	.','.$db->quote(rawurldecode($_REQUEST['pdb_url_stream']))
-	.','.$db->quote(rawurldecode($_REQUEST['pdb_url_paper']))
-	.','.$db->quote(rawurldecode($_REQUEST['pdb_url_slides']))
-	.','.$db->quote(rawurldecode($_REQUEST['pdb_url_audio']))
-	.','.$db->quote(rawurldecode($_REQUEST['pdb_url_misc']))
-	.','.$db->quote(rawurldecode($_REQUEST['pdb_url_image']))
-	.','.$db->quote(rawurldecode($_REQUEST['pdb_status']))
-	.');';
+  .' '.$db->quote(rawurldecode($_REQUEST['pdb_title']))
+  .','.$db->quote(rawurldecode($_REQUEST['pdb_abstract']))
+  .','.$db->quote(rawurldecode($_REQUEST['pdb_notes']))
+  .','.$db->quote(rawurldecode($_REQUEST['pdb_duration']))
+  .','.$db->quote(rawurldecode($_REQUEST['pdb_time']))
+  .','.$db->quote(rawurldecode($_REQUEST['pdb_location']))
+  .','.$db->quote(rawurldecode($_REQUEST['pdb_day']))
+  .','.$db->quote(rawurldecode($_REQUEST['pdb_type']))
+  .','.$db->quote(rawurldecode($_REQUEST['pdb_url_stream']))
+  .','.$db->quote(rawurldecode($_REQUEST['pdb_url_paper']))
+  .','.$db->quote(rawurldecode($_REQUEST['pdb_url_slides']))
+  .','.$db->quote(rawurldecode($_REQUEST['pdb_url_audio']))
+  .','.$db->quote(rawurldecode($_REQUEST['pdb_url_misc']))
+  .','.$db->quote(rawurldecode($_REQUEST['pdb_url_image']))
+  .','.$db->quote(rawurldecode($_REQUEST['pdb_status']))
+  .');';
     } else {
       unlock($db, $id, 'activity');
       $q='UPDATE activity set'
-	.' title='.$db->quote(rawurldecode($_REQUEST['pdb_title']))
-	.',abstract='.$db->quote(rawurldecode($_REQUEST['pdb_abstract']))
-	.',notes='.$db->quote(rawurldecode($_REQUEST['pdb_notes']))
-	.',duration='.$db->quote(rawurldecode($_REQUEST['pdb_duration']))
-	.',starttime='.$db->quote(rawurldecode($_REQUEST['pdb_time']))
-	.',location_id='.$db->quote(rawurldecode($_REQUEST['pdb_location']))
-	.',day='.$db->quote(rawurldecode($_REQUEST['pdb_day']))
-	.',type='.$db->quote(rawurldecode($_REQUEST['pdb_type']))
-	.',url_stream='.$db->quote(rawurldecode($_REQUEST['pdb_url_stream']))
-	.',url_paper='.$db->quote(rawurldecode($_REQUEST['pdb_url_paper']))
-	.',url_slides='.$db->quote(rawurldecode($_REQUEST['pdb_url_slides']))
-	.',url_audio='.$db->quote(rawurldecode($_REQUEST['pdb_url_audio']))
-	.',url_misc='.$db->quote(rawurldecode($_REQUEST['pdb_url_misc']))
-	.',url_image='.$db->quote(rawurldecode($_REQUEST['pdb_url_image']))
-	.',status='.$db->quote(rawurldecode($_REQUEST['pdb_status']))
-	.' WHERE id='.$id.';';
+  .' title='.$db->quote(rawurldecode($_REQUEST['pdb_title']))
+  .',abstract='.$db->quote(rawurldecode($_REQUEST['pdb_abstract']))
+  .',notes='.$db->quote(rawurldecode($_REQUEST['pdb_notes']))
+  .',duration='.$db->quote(rawurldecode($_REQUEST['pdb_duration']))
+  .',starttime='.$db->quote(rawurldecode($_REQUEST['pdb_time']))
+  .',location_id='.$db->quote(rawurldecode($_REQUEST['pdb_location']))
+  .',day='.$db->quote(rawurldecode($_REQUEST['pdb_day']))
+  .',type='.$db->quote(rawurldecode($_REQUEST['pdb_type']))
+  .',url_stream='.$db->quote(rawurldecode($_REQUEST['pdb_url_stream']))
+  .',url_paper='.$db->quote(rawurldecode($_REQUEST['pdb_url_paper']))
+  .',url_slides='.$db->quote(rawurldecode($_REQUEST['pdb_url_slides']))
+  .',url_audio='.$db->quote(rawurldecode($_REQUEST['pdb_url_audio']))
+  .',url_misc='.$db->quote(rawurldecode($_REQUEST['pdb_url_misc']))
+  .',url_image='.$db->quote(rawurldecode($_REQUEST['pdb_url_image']))
+  .',status='.$db->quote(rawurldecode($_REQUEST['pdb_status']))
+  .' WHERE id='.$id.';';
     }
     #print_r($q);
     $err|=($db->exec($q) !== 1)?1:0;
@@ -675,9 +675,9 @@
     foreach ($result as $r) {
       if ($day)
         echo 'Day '.$a_days[$r['day']].'&nbsp;';
-			echo '<div class="righttr '.track_color($r).'">';
-			#echo track_name(track_color($r));
-			echo '</div>';
+      echo '<div class="righttr '.track_color($r).'">';
+      #echo track_name(track_color($r));
+      echo '</div>';
       echo '<span class="tme">'.$r['starttime'].'</span>&nbsp;';
       if ($r['status']==0) echo '<span class="red">Cancelled: </span>';
       echo '<span'.(($r['status']==0)?' class="cancelled"':'').'><b>'.xhtmlify($r['title']).'</b></span>';
@@ -693,9 +693,9 @@
           $thumb='img/authors/small/'.basename($r['url_image']);
         }
         echo '<div class="aimg"><a href="'.$r['url_image'].'"><img src="'.$thumb.'" width="100" alt="author image"/></a></div>';
-			}
-			global $hidepapers;
-			if ($hidepapers) $r['url_paper'] = '';
+      }
+      global $hidepapers;
+      if ($hidepapers) $r['url_paper'] = '';
 
       # TODO: abstraction for multiple links: key ('type/name') => value ('url')
       if (!empty($r['url_audio']) || !empty($r['url_misc']) || !empty($r['url_paper']) || !empty($r['url_slides']) || !empty($r['url_stream']))
@@ -726,7 +726,7 @@
       foreach (fetch_authorids($db, $r['id']) as $user_id) {
         if ($i++>0) echo ', ';
         #echo $user_id.': ';
-	echo xhtmlify($a_users[$user_id]);
+  echo xhtmlify($a_users[$user_id]);
       }
       echo '</em>';
 
@@ -779,7 +779,7 @@
         }
 
         if ($err) {
-	  echo ' - ('.$r['id'].') <em>day</em>:'.$r['day'].', <em>start</em>:'.$r['starttime'].', <em>duration</em>:'.$r['duration'].', <em>type</em>:'.translate_type($r['type']).' <em>title</em>:'.limit_text($r['title']).'&nbsp;|&nbsp;';
+    echo ' - ('.$r['id'].') <em>day</em>:'.$r['day'].', <em>start</em>:'.$r['starttime'].', <em>duration</em>:'.$r['duration'].', <em>type</em>:'.translate_type($r['type']).' <em>title</em>:'.limit_text($r['title']).'&nbsp;|&nbsp;';
           echo '<td><a class="active" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'edit\';document.myform.submit();">Edit</a>';
           if ($err==2) 
             echo '&nbsp;|&nbsp;<a class="active" onclick="if (confirm(\'Really delete Entry no. '.$r['id'].'?\')) {document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'delentry\';document.myform.submit();i}">Delete</a>';
@@ -843,9 +843,9 @@
           $cnt['ok']++;
           continue;
         }
-  	echo '<li>'.$r['name'].' is not yet registered';
+    echo '<li>'.$r['name'].' is not yet registered';
         if (empty($r['email']))
-  	  echo '<span style="color:red"> and we have no email address</span>';
+      echo '<span style="color:red"> and we have no email address</span>';
         else 
           $emailmissing.=$r['name'].' &lt;'.$r['email'].'&gt;, ';
         echo '.';
@@ -861,7 +861,7 @@
           }
         }
         if ($pm) $cnt['part']++;
-  	echo '</li>';
+    echo '</li>';
       }
       echo '</ul>'."\n";
     }
@@ -916,22 +916,22 @@
     if ($res) {
       $result=$res->fetchAll();
       foreach ($result as $r) {
-	$err=0;
+  $err=0;
         if (empty($r['day']) || $r['day'] < 1) {
           echo 'Event ('.$r['id'].') has no day set.<br/>'; 
-	  $err++;
+    $err++;
         }
         if (empty($r['starttime'])) {
           echo 'Event ('.$r['id'].') has no start-time set.<br/>'; 
-	  $err++;
+    $err++;
         }
         if (empty($r['duration']) && $r['type'] != 'c') {
           echo 'Event ('.$r['id'].') has no duration set.<br/>'; 
-	  $err++;
+    $err++;
         }
         if ($err) {
           $grrr++;
-	  echo ' - ('.$r['id'].') <em>day</em>:'.$r['day'].', <em>start</em>:'.$r['starttime'].', <em>duration</em>:'.$r['duration'].', <em>type</em>:'.translate_type($r['type']).' <em>title</em>:'.limit_text($r['title']).'&nbsp;|&nbsp;';
+    echo ' - ('.$r['id'].') <em>day</em>:'.$r['day'].', <em>start</em>:'.$r['starttime'].', <em>duration</em>:'.$r['duration'].', <em>type</em>:'.translate_type($r['type']).' <em>title</em>:'.limit_text($r['title']).'&nbsp;|&nbsp;';
           echo '<td><a class="active" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'edit\';document.myform.submit();">Edit</a>';
           echo '<br/>'."\n";
         }
@@ -962,9 +962,9 @@
             $err++;
             echo '<span class="red">Conflict: ('.$a['id'].') ends in same location AFTER ('.$b['id'].') starts there.</span><br/>';
             echo ' - ('.$a['id'].') <em>day</em>:'.$a['day'].', <em>start</em>:'.$a['starttime'].', <em>duration</em>:'.$a['duration'].', <em>type</em>:'.translate_type($a['type']).' <em>title</em>:'.limit_text($a['title']).'&nbsp;|&nbsp;';
-	    echo '<td><a class="active" onclick="document.getElementById(\'param\').value='.$a['id'].';document.getElementById(\'mode\').value=\'edit\';document.myform.submit();">Edit</a><br/>';
+      echo '<td><a class="active" onclick="document.getElementById(\'param\').value='.$a['id'].';document.getElementById(\'mode\').value=\'edit\';document.myform.submit();">Edit</a><br/>';
             echo ' - ('.$b['id'].') <em>day</em>:'.$b['day'].', <em>start</em>:'.$b['starttime'].', <em>duration</em>:'.$b['duration'].', <em>type</em>:'.translate_type($b['type']).' <em>title</em>:'.limit_text($b['title']).'&nbsp;|&nbsp;';
-	    echo '<td><a class="active" onclick="document.getElementById(\'param\').value='.$b['id'].';document.getElementById(\'mode\').value=\'edit\';document.myform.submit();">Edit</a><br/>';
+      echo '<td><a class="active" onclick="document.getElementById(\'param\').value='.$b['id'].';document.getElementById(\'mode\').value=\'edit\';document.myform.submit();">Edit</a><br/>';
             echo "\n";
           }
         }
@@ -985,27 +985,27 @@
         $aids=fetch_activity_by_author($db,$u['id']);
         if (count($aids)<2) continue;
         foreach ($aids as $a) {
-	  foreach ($aids as $b) {
-	    if ($a['id'] == $b['id']) continue;
-	    if ($a['day'] != $b['day']) continue;
-	    $starta = dbadmin_unixtime($a);
-	    $enda   = dbadmin_unixtime($a, false);
-	    $startb = dbadmin_unixtime($b);
-	    if ($starta > $startb) continue;
+    foreach ($aids as $b) {
+      if ($a['id'] == $b['id']) continue;
+      if ($a['day'] != $b['day']) continue;
+      $starta = dbadmin_unixtime($a);
+      $enda   = dbadmin_unixtime($a, false);
+      $startb = dbadmin_unixtime($b);
+      if ($starta > $startb) continue;
             echo '<span class="yellow">Notice: '.$u['name'].' has more than one presentation on day '.$a['day'].'.</span><br/>';
-	      echo ' - ('.$a['id'].') <em>day</em>:'.$a['day'].', <em>start</em>:'.$a['starttime'].', <em>duration</em>:'.$a['duration'].', <em>type</em>:'.translate_type($a['type']).' <em>title</em>:'.limit_text($a['title']).'&nbsp;|&nbsp;';
-	      echo '<td><a class="active" onclick="document.getElementById(\'param\').value='.$a['id'].';document.getElementById(\'mode\').value=\'edit\';document.myform.submit();">Edit</a><br/>';
-	      echo ' - ('.$b['id'].') <em>day</em>:'.$b['day'].', <em>start</em>:'.$b['starttime'].', <em>duration</em>:'.$b['duration'].', <em>type</em>:'.translate_type($b['type']).' <em>title</em>:'.limit_text($b['title']).'&nbsp;|&nbsp;';
-	      echo '<td><a class="active" onclick="document.getElementById(\'param\').value='.$b['id'].';document.getElementById(\'mode\').value=\'edit\';document.myform.submit();">Edit</a><br/>';
-	    if ($enda > $startb) {
+        echo ' - ('.$a['id'].') <em>day</em>:'.$a['day'].', <em>start</em>:'.$a['starttime'].', <em>duration</em>:'.$a['duration'].', <em>type</em>:'.translate_type($a['type']).' <em>title</em>:'.limit_text($a['title']).'&nbsp;|&nbsp;';
+        echo '<td><a class="active" onclick="document.getElementById(\'param\').value='.$a['id'].';document.getElementById(\'mode\').value=\'edit\';document.myform.submit();">Edit</a><br/>';
+        echo ' - ('.$b['id'].') <em>day</em>:'.$b['day'].', <em>start</em>:'.$b['starttime'].', <em>duration</em>:'.$b['duration'].', <em>type</em>:'.translate_type($b['type']).' <em>title</em>:'.limit_text($b['title']).'&nbsp;|&nbsp;';
+        echo '<td><a class="active" onclick="document.getElementById(\'param\').value='.$b['id'].';document.getElementById(\'mode\').value=\'edit\';document.myform.submit();">Edit</a><br/>';
+      if ($enda > $startb) {
               $err++;;
               echo '<span class="red">Conflict: '.$u['name'].' has overlapping presentations on day '.$a['day'].'!</span><br/>';
-	      echo ' - ('.$a['id'].') <em>day</em>:'.$a['day'].', <em>start</em>:'.$a['starttime'].', <em>duration</em>:'.$a['duration'].', <em>type</em>:'.translate_type($a['type']).' <em>title</em>:'.limit_text($a['title']).'&nbsp;|&nbsp;';
-	      echo '<td><a class="active" onclick="document.getElementById(\'param\').value='.$a['id'].';document.getElementById(\'mode\').value=\'edit\';document.myform.submit();">Edit</a><br/>';
-	      echo ' - ('.$b['id'].') <em>day</em>:'.$b['day'].', <em>start</em>:'.$b['starttime'].', <em>duration</em>:'.$b['duration'].', <em>type</em>:'.translate_type($b['type']).' <em>title</em>:'.limit_text($b['title']).'&nbsp;|&nbsp;';
-	      echo '<td><a class="active" onclick="document.getElementById(\'param\').value='.$b['id'].';document.getElementById(\'mode\').value=\'edit\';document.myform.submit();">Edit</a><br/>';
+        echo ' - ('.$a['id'].') <em>day</em>:'.$a['day'].', <em>start</em>:'.$a['starttime'].', <em>duration</em>:'.$a['duration'].', <em>type</em>:'.translate_type($a['type']).' <em>title</em>:'.limit_text($a['title']).'&nbsp;|&nbsp;';
+        echo '<td><a class="active" onclick="document.getElementById(\'param\').value='.$a['id'].';document.getElementById(\'mode\').value=\'edit\';document.myform.submit();">Edit</a><br/>';
+        echo ' - ('.$b['id'].') <em>day</em>:'.$b['day'].', <em>start</em>:'.$b['starttime'].', <em>duration</em>:'.$b['duration'].', <em>type</em>:'.translate_type($b['type']).' <em>title</em>:'.limit_text($b['title']).'&nbsp;|&nbsp;';
+        echo '<td><a class="active" onclick="document.getElementById(\'param\').value='.$b['id'].';document.getElementById(\'mode\').value=\'edit\';document.myform.submit();">Edit</a><br/>';
             }
-	  }
+    }
         }
       }
     } else {
@@ -1104,9 +1104,9 @@ if (1) {
   function list_filtered_program($db,$filter,$details) {
     if ($filter['user'] != '0') 
       $q = 'SELECT DISTINCT activity.*
-	    FROM activity,user,usermap
-	    WHERE activity.id=usermap.activity_id AND user.id=usermap.user_id
-	      AND user.id='.$filter['user'];
+      FROM activity,user,usermap
+      WHERE activity.id=usermap.activity_id AND user.id=usermap.user_id
+        AND user.id='.$filter['user'];
     else 
       $q='SELECT activity.* FROM activity WHERE 1=1';
 
@@ -1138,10 +1138,10 @@ if (1) {
 <?php
   $q='SELECT activity.* FROM activity WHERE type='.$db->quote('c');
   $q.=' ORDER BY day, strftime(\'%H:%M\',starttime), typesort(type), location_id;';
-	query_out($db, $q, $details, false,  true, true);
+  query_out($db, $q, $details, false,  true, true);
 
-		echo '</div>'."\n";
-		echo '</div>'."\n";
+    echo '</div>'."\n";
+    echo '</div>'."\n";
   } ## END hardcoded_concert_and_installation_info ##
 
 
@@ -1167,15 +1167,15 @@ if (1) {
                     , '16:00' , '16:15', '16:30', '16:45'
                     , '17:00' , '17:15', '17:30', '17:45'
                   #  , '18:00' 
-									);
-		# XXX 2011: Friday
-		#if ($day!=1) $a_times[]='18:00';
+                  );
+    # XXX 2011: Friday
+    #if ($day!=1) $a_times[]='18:00';
 
     if (!$print) {
       echo '<div style="float:right;">';
       for ($i=1; $i<=4; $i++) {
-	if ($i == $day) { echo 'Day '.$i.'&nbsp;&nbsp;'; continue;}
-	echo '<a href="?page=program&amp;mode=table&amp;day='.$i.'">Day '.$i.'</a>&nbsp;&nbsp;';
+  if ($i == $day) { echo 'Day '.$i.'&nbsp;&nbsp;'; continue;}
+  echo '<a href="?page=program&amp;mode=table&amp;day='.$i.'">Day '.$i.'</a>&nbsp;&nbsp;';
       }
       echo '<a href="?page=program&amp;mode=table&amp;day=0">Concerts&amp;Installations</a>&nbsp;&nbsp;';
       echo '</div>';
@@ -1206,7 +1206,7 @@ if (1) {
         $table[$i][$r['starttime']]=$r;
       }
       $i++;
-		}
+    }
     
     echo '<table cellspacing="0" class="ptb"><tr><th class="ptb">Time</th>';
     foreach ($table as $c) {
@@ -1222,10 +1222,10 @@ if (1) {
           $d=$c[$t];
           #if ($c['cskip'] > 0) echo 'TIME CONFLICT!! '.$t.' @'.$c['loc'].'<br/>'; // XXX really list that here in plain view for users?
           if ($d['starttime'] == '9:00')
-	    $c['cskip']=1;
-	  else
-			$c['cskip']=$d['duration']/15;
-					$track=track_color($d); # tr0 - tr5
+      $c['cskip']=1;
+    else
+      $c['cskip']=$d['duration']/15;
+          $track=track_color($d); # tr0 - tr5
           echo '<td class="ptb'.($print?'':' active').' '.$track.'" rowspan="'.$c['cskip'].'"';
           if (!$print) echo ' onclick="showInfoBox('.$d['id'].');"';
           echo '>';
@@ -1251,9 +1251,9 @@ if (1) {
       echo '</tr>'."\n";
     }
 
-		echo '</table>';
+    echo '</table>';
 
-		#echo track_legend();
+    #echo track_legend();
 
     if (!$print) {
       echo '<div class="center">Concerts &amp; Installations are <b>not</b> included in this table.</div>';
@@ -1262,144 +1262,144 @@ if (1) {
     }
   }
 
-	function export_progam_tex($db) {
-		$sep="\n";
-		$rv= '';
-		$rv.= "\\documentclass{article}\n\\usepackage{a4}\n\\pagestyle{empty}\n\\begin{document}\n";
-		#$rv.= "\\begin{itemize}\n";
+  function export_progam_tex($db) {
+    $sep="\n";
+    $rv= '';
+    $rv.= "\\documentclass{article}\n\\usepackage{a4}\n\\pagestyle{empty}\n\\begin{document}\n";
+    #$rv.= "\\begin{itemize}\n";
 
-		# Table Body
-		$a_locations = fetch_selectlist($db, 'location');
+    # Table Body
+    $a_locations = fetch_selectlist($db, 'location');
     $a_types = fetch_selectlist(0, 'types');
     $a_days = fetch_selectlist(0, 'days');
 
     $q='SELECT * FROM activity ORDER BY day, location_id, strftime(\'%H%M\',starttime), typesort(type)';
     $res=$db->query($q);
     if (!$res) return; // TODO: print error msg
-		$result=$res->fetchAll();
+    $result=$res->fetchAll();
 
-		$cday=0;
-		foreach ($result as $r) {
-			if ($cday < $r['day']) {
-				$lmark=false;
-				if ($cday!=0) {
-					$rv.= "\\end{itemize}\n";
-				}
-				$cday= $r['day'];
-				$rv.= "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n";
-				$rv.= "{\\Huge\n";
-				$rv.= "Day ".$a_days[$cday]."\n";
-				$rv.= "}\n";
-				$rv.= "\\begin{center}\n";
-				$rv.= "  \\LARGE Main-Track\\\\\n";
-				#$rv.= "  \\Large Location: Bewerunge Room\n"; # TODO 2011/2012
-				$rv.= "\\end{center}\n";
-				$rv.= "\\begin{itemize}\n";
-			}
-			if (!$lmark && $r['location_id'] != 1) {
-				$lmark=true;
-				$rv.= "\\end{itemize}\n";
-				$rv.= "%%%%%%%%%%%%%%\n";
-				$rv.= "\\begin{center}\n";
-				$rv.= "  \\LARGE Workshops \\& Events\n";
-				$rv.= "\\end{center}\n";
-				$rv.= "\\begin{itemize}\n";
-			}
+    $cday=0;
+    foreach ($result as $r) {
+      if ($cday < $r['day']) {
+        $lmark=false;
+        if ($cday!=0) {
+          $rv.= "\\end{itemize}\n";
+        }
+        $cday= $r['day'];
+        $rv.= "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n";
+        $rv.= "{\\Huge\n";
+        $rv.= "Day ".$a_days[$cday]."\n";
+        $rv.= "}\n";
+        $rv.= "\\begin{center}\n";
+        $rv.= "  \\LARGE Main-Track\\\\\n";
+        #$rv.= "  \\Large Location: Bewerunge Room\n"; # TODO 2011/2012
+        $rv.= "\\end{center}\n";
+        $rv.= "\\begin{itemize}\n";
+      }
+      if (!$lmark && $r['location_id'] != 1) {
+        $lmark=true;
+        $rv.= "\\end{itemize}\n";
+        $rv.= "%%%%%%%%%%%%%%\n";
+        $rv.= "\\begin{center}\n";
+        $rv.= "  \\LARGE Workshops \\& Events\n";
+        $rv.= "\\end{center}\n";
+        $rv.= "\\begin{itemize}\n";
+      }
 
       $rv.= '\item'."\n  ";
       $rv.= plaintime($r).' ';
-			$rv.= texify_umlauts(trim($r['title']))."\\\\\n";
-			if ($r['location_id'] != 1) {
-				$rv.= '  {\em '.($a_types[$r['type']]).'}'.$sep;
-				$rv.= '  {\small '.($a_locations[$r['location_id']]).'} -- '.$sep;
-			}
-			$authorcnt=0;
-			$rv.= "  {\em ";
+      $rv.= texify_umlauts(trim($r['title']))."\\\\\n";
+      if ($r['location_id'] != 1) {
+        $rv.= '  {\em '.($a_types[$r['type']]).'}'.$sep;
+        $rv.= '  {\small '.($a_locations[$r['location_id']]).'} -- '.$sep;
+      }
+      $authorcnt=0;
+      $rv.= "  {\em ";
 
       foreach (fetch_authorids($db, $r['id']) as $user_id) {
-				$ur=$db->query('SELECT * FROM user WHERE id ='.$user_id.';');
-				if (!$ur) continue; ## TODO report error ?
-				$ud=$ur->fetch(PDO::FETCH_ASSOC);
+        $ur=$db->query('SELECT * FROM user WHERE id ='.$user_id.';');
+        if (!$ur) continue; ## TODO report error ?
+        $ud=$ur->fetch(PDO::FETCH_ASSOC);
 
-				if ($authorcnt++) $rv.=', ';
-				$rv.=texify_umlauts(trim($ud['name']));
-			}
-			$rv.= '}';
-			$rv.= $sep;
-		}
-		$rv.= "\\end{itemize}\n\end{document}\n";
-		return $rv;
-	}
+        if ($authorcnt++) $rv.=', ';
+        $rv.=texify_umlauts(trim($ud['name']));
+      }
+      $rv.= '}';
+      $rv.= $sep;
+    }
+    $rv.= "\\end{itemize}\n\end{document}\n";
+    return $rv;
+  }
 
-	function export_progam_sv($db, $sep="\t") {
-		# Table Header
-		$rv='';
-		$rv.= '"Start time"'.$sep;
-		$rv.= '"End time"'.$sep;
-		$rv.= '"Type"'.$sep;
-		$rv.= '"Status"'.$sep;
-		$rv.= '"Location"'.$sep;
-		$rv.= '"Title"'.$sep;
-		$rv.= '"Abstract"'.$sep;
-		$rv.= '"Notes"'.$sep;
-		$rv.= '"Author(s)"'.$sep;
+  function export_progam_sv($db, $sep="\t") {
+    # Table Header
+    $rv='';
+    $rv.= '"Start time"'.$sep;
+    $rv.= '"End time"'.$sep;
+    $rv.= '"Type"'.$sep;
+    $rv.= '"Status"'.$sep;
+    $rv.= '"Location"'.$sep;
+    $rv.= '"Title"'.$sep;
+    $rv.= '"Abstract"'.$sep;
+    $rv.= '"Notes"'.$sep;
+    $rv.= '"Author(s)"'.$sep;
 
-		$rv.= "\n";
+    $rv.= "\n";
 
-		# Table Body
-		$a_locations = fetch_selectlist($db, 'location');
+    # Table Body
+    $a_locations = fetch_selectlist($db, 'location');
     $a_types = fetch_selectlist(0, 'types');
 
     $q='SELECT * FROM activity ORDER BY day, location_id, strftime(\'%H:%M\',starttime), typesort(type)';
     $res=$db->query($q);
     if (!$res) return; // TODO: print error msg
-		$result=$res->fetchAll();
+    $result=$res->fetchAll();
 
     foreach ($result as $r) {
       $rv.= '"'.iso8601($r).'"'.$sep;
       $rv.= '"'.iso8601($r,false).'"'.$sep;
-			$rv.= '"'.($a_types[$r['type']]).'"'.$sep;
-			$rv.= '"'.($r['status']&1?'confirmed':'cancelled').'"'.$sep;
-			$rv.= '"'.($a_locations[$r['location_id']]).'"'.$sep;
-			$rv.= '"'.trim($r['title']).'"'.$sep;
-			$rv.= '"'.
-				 str_replace("\r",'',
+      $rv.= '"'.($a_types[$r['type']]).'"'.$sep;
+      $rv.= '"'.($r['status']&1?'confirmed':'cancelled').'"'.$sep;
+      $rv.= '"'.($a_locations[$r['location_id']]).'"'.$sep;
+      $rv.= '"'.trim($r['title']).'"'.$sep;
+      $rv.= '"'.
+         str_replace("\r",'',
          str_replace("\n",'\n',
          str_replace('"','\"',
-					trim($r['abstract'])
+          trim($r['abstract'])
          ))).'"'.$sep;
-			$rv.= '"'.
-				 str_replace("\r",'',
+      $rv.= '"'.
+         str_replace("\r",'',
          str_replace("\n",'\n',
          str_replace('"','\"',
-					trim($r['notes'])
+          trim($r['notes'])
          ))).'"'.$sep;
 
-			$rv.='"'; $authorcnt=0;
+      $rv.='"'; $authorcnt=0;
 
 
       foreach (fetch_authorids($db, $r['id']) as $user_id) {
-				$ur=$db->query('SELECT * FROM user WHERE id ='.$user_id.';');
-				if (!$ur) continue; ## TODO report error ?
-				$ud=$ur->fetch(PDO::FETCH_ASSOC);
+        $ur=$db->query('SELECT * FROM user WHERE id ='.$user_id.';');
+        if (!$ur) continue; ## TODO report error ?
+        $ud=$ur->fetch(PDO::FETCH_ASSOC);
 
-				if ($authorcnt++) $rv.=', ';
-				$rv.=trim($ud['name']);
+        if ($authorcnt++) $rv.=', ';
+        $rv.=trim($ud['name']);
         if (!empty($ud['email']))
-					$rv.=' ('.trim($ud['email']).')';
+          $rv.=' ('.trim($ud['email']).')';
         if (!empty($ud['bio']))
-					$rv.= ' ['.
-						 str_replace("\r",'',
-						 str_replace("\n",'\n',
-						 str_replace('"','\"',
-						  trim($ud['bio'])
-					   ))).']';
-			}
-			$rv.= '"'.$sep;
-			$rv.= "\n";
-		}
-		return $rv;
-	}
+          $rv.= ' ['.
+             str_replace("\r",'',
+             str_replace("\n",'\n',
+             str_replace('"','\"',
+              trim($ud['bio'])
+             ))).']';
+      }
+      $rv.= '"'.$sep;
+      $rv.= "\n";
+    }
+    return $rv;
+  }
 
   function vcal_program($db,$version='2.0',$raw=true) {
     if (!function_exists('quoted_printable_encode')) 

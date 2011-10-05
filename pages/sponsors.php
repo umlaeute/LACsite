@@ -8,10 +8,10 @@ conference organisation: lac -at- linuxaudio -dot- org
 <p>
   The Linux Audio Conference is an annual free-of-charge event that is reaching its
   eighth year now. This international conference has been a meeting place for many of the world leaders
-	in development of non-proprietary professional Audio Visual software.
+  in development of non-proprietary professional Audio Visual software.
 </p>
 <p>
-	The LAC was the incubating event
+  The LAC was the incubating event
   for many of the well-established Free and Open Source packages that have made a significant impact
   on the area, including the 
 <a rel="external" href="http://jackaudio.org/">Jack Connection Kit</a>, 
@@ -21,14 +21,14 @@ conference organisation: lac -at- linuxaudio -dot- org
 </p>
 <p>
   Along the years, many important technologies were demonstrated at the conference, such as systems
-	for spatial audio (Wave Field Synthesis, Ambisonics), networked audio and real-time processing.
-	LAC also featured presentations by key people involved in Sound Synthesis research
+  for spatial audio (Wave Field Synthesis, Ambisonics), networked audio and real-time processing.
+  LAC also featured presentations by key people involved in Sound Synthesis research
   (<a rel="external" href="http://www.csounds.com/">Csound</a>, 
    <a rel="external" href="http://puredata.info/">Pure Data</a>, 
-	 <a rel="external" href="http://www.audiosynth.com/">SuperCollider</a>, etc.) and
-	development of commercial products
-	(<a rel="external" href="http://mixbus.harrisonconsoles.com/">Harrison Consoles</a>,
-	 <a rel="external" href="http://indamixx.com/">Indamixx</a>, 
+   <a rel="external" href="http://www.audiosynth.com/">SuperCollider</a>, etc.) and
+  development of commercial products
+  (<a rel="external" href="http://mixbus.harrisonconsoles.com/">Harrison Consoles</a>,
+   <a rel="external" href="http://indamixx.com/">Indamixx</a>, 
    <a rel="external" href="http://64studio.com/">64studio</a>, 
    <a rel="external" href="http://www.lionstracs.com/">Lionstracs</a>, 
    <a rel="external" href="http://www.trinityaudiogroup.com/">Trinity</a>, ...). It provides plenty of space 
@@ -38,7 +38,7 @@ conference organisation: lac -at- linuxaudio -dot- org
    <a rel="external" href="http://openmovieeditor.org/">openmovieeditor</a>,
    <a rel="external" href="http://www.kdenlive.org/">kdenlive</a>,
    <a rel="external" href="http://www.kinodv.org/">kino</a>),
-	expanding its range to incorporate visual technologies.
+  expanding its range to incorporate visual technologies.
 </p>
 <p>
   In summary: the LAC is the place for companies looking to interface with the non-proprietary pro-AV community,

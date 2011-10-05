@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="static/printstyle.css" type="text/css"/>
   <meta name="Author" content="Robin Gareus" />
   <meta name="description" content="Linux Audio Conference 2012" />
-	<meta name="keywords" content="LAC2012, LAC, Linux Audio Conference 2012,Linux, Music, Audio, Developer Meeting, CCRMA, Computer Research in Music and Acoustics, Stanford, Stanford University" />
+  <meta name="keywords" content="LAC2012, LAC, Linux Audio Conference 2012,Linux, Music, Audio, Developer Meeting, CCRMA, Computer Research in Music and Acoustics, Stanford, Stanford University" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
 </head>

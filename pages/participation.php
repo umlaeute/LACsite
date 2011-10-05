@@ -30,26 +30,26 @@ meant as a starting point, not to restrict you.
 </p>
 
 <ul class="multicolumn">
-	<li>Ambisonics</li>
-	<li>Education</li>
-	<li>Live performance</li>
-	<li>Audio Hardware Support</li>
-	<li>Signal Processing</li>
-	<li>Music Composition</li>
-	<li>Audio Languages</li>
-	<li>Sound Synthesis</li>
-	<li>Audio Plugins</li>
-	<li>MIDI</li>
-	<li>Music Production</li>
-	<li>Linux Kernel</li>
-	<li>Physical Computing</li>
-	<li>Interface Design</li>
-	<li>Linux Distributions</li>
-	<li>Networked Audio</li>
-	<li>Video</li>
-	<li>Games</li>
-	<li>Media Art</li>
-	<li>Licensing</li>
+  <li>Ambisonics</li>
+  <li>Education</li>
+  <li>Live performance</li>
+  <li>Audio Hardware Support</li>
+  <li>Signal Processing</li>
+  <li>Music Composition</li>
+  <li>Audio Languages</li>
+  <li>Sound Synthesis</li>
+  <li>Audio Plugins</li>
+  <li>MIDI</li>
+  <li>Music Production</li>
+  <li>Linux Kernel</li>
+  <li>Physical Computing</li>
+  <li>Interface Design</li>
+  <li>Linux Distributions</li>
+  <li>Networked Audio</li>
+  <li>Video</li>
+  <li>Games</li>
+  <li>Media Art</li>
+  <li>Licensing</li>
 </ul>
 <br style="clear:both;"/>
 <br/>

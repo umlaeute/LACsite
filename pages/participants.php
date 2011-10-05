@@ -3,9 +3,9 @@
 <?php
 $pfn=TMPDIR.'/lac2012-reg.list';
 if (file_exists($pfn)) {
-	readfile($pfn);
+  readfile($pfn);
 } else { 
-	echo 'No registered participants, yet.'; 
+  echo 'No registered participants, yet.'; 
 }
 
 

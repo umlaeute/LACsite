@@ -53,8 +53,8 @@ if (    isset($_POST['postit'])
   if ($ok && $err==0 && $id>0 ) {
       $pdb_url_slides='http://lac.linuxaudio.org/2012/download/'.$userfile_name;
       $q='UPDATE activity set'
-	.' url_slides='.$db->quote($pdb_url_slides)
-	.' WHERE id='.$id.';';
+  .' url_slides='.$db->quote($pdb_url_slides)
+  .' WHERE id='.$id.';';
     if ($db->exec($q) !== 1) {
       echo 'Error updating slides URL in programdb.';
       $err|=2;

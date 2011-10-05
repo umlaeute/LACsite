@@ -7,19 +7,19 @@ if (isset($_POST['mode'])) $mode=rawurldecode($_POST['mode']);
 
 switch ($mode) {
   case 'vip_author':
-		$mode='vip';
-		$vip='author';
-		break;
+    $mode='vip';
+    $vip='author';
+    break;
   case 'vip_organizer':
-		$mode='vip';
-		$vip='organizer';
-		break;
-	case 'vip_none':
-		$mode='vip';
-		$vip='';
-		break;
-	default:
-		break;
+    $mode='vip';
+    $vip='organizer';
+    break;
+  case 'vip_none':
+    $mode='vip';
+    $vip='';
+    break;
+  default:
+    break;
 }
 
 adminpage();
@@ -66,42 +66,42 @@ switch ($mode) {
   case 'detail':
     show_registration($_POST['param']);
     break;
-	case 'vip':
-		if (isset($vip))
-			set_vip($_POST['param'], $vip);
+  case 'vip':
+    if (isset($vip))
+      set_vip($_POST['param'], $vip);
   case 'list':
     $r=scan_registrations();
     echo '<p>We have '.count($r).' registered participants:</p>';
     echo '<table class="adminlist" cellspacing="0">'."\n";
     foreach ($r as $f) {
       echo '<tr><td style="border-bottom: dotted 1px;">';
-			echo substr($f, 16);
-			echo '</td><td>';
+      echo substr($f, 16);
+      echo '</td><td>';
       echo '<span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'detail\';document.myform.submit();">Show Details</span>';
-			echo '</td><td>';
+      echo '</td><td>';
 
-			$filename=$name = preg_replace('/[^a-zA-Z0-9_-]/','_', $f).'.ini';
-			$v=parse_ini_file(REGLOGDIR.$filename);
+      $filename=$name = preg_replace('/[^a-zA-Z0-9_-]/','_', $f).'.ini';
+      $v=parse_ini_file(REGLOGDIR.$filename);
 
-			if (!isset($v['reg_vip'])) { $v['reg_vip']=''; }
+      if (!isset($v['reg_vip'])) { $v['reg_vip']=''; }
       switch(strtolower($v['reg_vip'])) {
         case 'author':
-					echo '<td><span style="font-weight:bold;">[Author]</span></td>';
-					echo '<td><span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'vip_organizer\';document.myform.submit();">Organizer</span></td>';
-					echo '<td><span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'vip_none\';document.myform.submit();">No-VIP</span></td>';
+          echo '<td><span style="font-weight:bold;">[Author]</span></td>';
+          echo '<td><span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'vip_organizer\';document.myform.submit();">Organizer</span></td>';
+          echo '<td><span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'vip_none\';document.myform.submit();">No-VIP</span></td>';
           break;
         case 'organizer':
-					echo '<td><span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'vip_author\';document.myform.submit();">Author</span></td>';
-					echo '<td><span style="font-weight:bold;">[Organizer]</span></td>';
-					echo '<td><span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'vip_none\';document.myform.submit();">No-VIP</span></td>';
+          echo '<td><span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'vip_author\';document.myform.submit();">Author</span></td>';
+          echo '<td><span style="font-weight:bold;">[Organizer]</span></td>';
+          echo '<td><span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'vip_none\';document.myform.submit();">No-VIP</span></td>';
           break;
         default:
-					echo '<td><span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'vip_author\';document.myform.submit();">Author</span></td>';
-					echo '<td><span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'vip_organizer\';document.myform.submit();">Organizer</span></td>';
-					echo '<td><span>[No-VIP]</span></td>';
+          echo '<td><span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'vip_author\';document.myform.submit();">Author</span></td>';
+          echo '<td><span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'vip_organizer\';document.myform.submit();">Organizer</span></td>';
+          echo '<td><span>[No-VIP]</span></td>';
           break;
-			}
-			echo '</td></tr>'."\n";
+      }
+      echo '</td></tr>'."\n";
     }
     echo '</table>';
     break;
@@ -117,7 +117,7 @@ function adminpage() {
   echo '
     <input name="page" type="hidden" value="admin" id="page"/>
     <input name="mode" type="hidden" value="" id="mode"/>
-		<input name="param" type="hidden" value="" id="param"/>
+    <input name="param" type="hidden" value="" id="param"/>
 </form>
 <div style="height:1em;">&nbsp;</div>
 ';
@@ -142,29 +142,29 @@ function show_registration($fn) {
 }
 
 function set_vip($fn, $vip='author') {
-	$filename=$name = REGLOGDIR.preg_replace('/[^a-zA-Z0-9_-]/','_', $fn).'.ini';
-	# TODO flock file  ?
+  $filename=$name = REGLOGDIR.preg_replace('/[^a-zA-Z0-9_-]/','_', $fn).'.ini';
+  # TODO flock file  ?
 
-	#remove previous reg_vip (if any)
-	$sh=fopen($filename, 'r');
-	if (!$sh) {
-		return false;
-	}
-	$th=fopen($filename.'.tmp', 'w');
-	if (!$th) {
+  #remove previous reg_vip (if any)
+  $sh=fopen($filename, 'r');
+  if (!$sh) {
+    return false;
+  }
+  $th=fopen($filename.'.tmp', 'w');
+  if (!$th) {
     fclose($sh);
-		return false;
-	}
-	while (!feof($sh)) {
+    return false;
+  }
+  while (!feof($sh)) {
     $line=fgets($sh);
     if (strpos($line, 'reg_vip')===false) {
-			fwrite($th, $line);
+      fwrite($th, $line);
     }
   }
   fclose($sh);
-	if (!empty($vip)) {
-		fwrite($th, 'reg_vip="'.preg_replace('/[";]/','.',$vip)."\"\n");
-	}
+  if (!empty($vip)) {
+    fwrite($th, 'reg_vip="'.preg_replace('/[";]/','.',$vip)."\"\n");
+  }
   fclose($th);
   #delete old source file
   unlink($filename);
@@ -236,9 +236,9 @@ function export_sv($sep="\t") {
     $rv.= '"'.$v['reg_country'].'"'.$sep;
     $rv.= '"'.($v['reg_useathome']?'at home, ':'').($v['reg_useatwork']?'at work':'').'"'.$sep;
     $rv.= '"'
-	    .(($v['reg_audiopro']==1)?'no':'')
-	    .(($v['reg_audiopro']==2)?'yes':'')
-	    .(($v['reg_audiopro']==0)?'??':'');
+      .(($v['reg_audiopro']==1)?'no':'')
+      .(($v['reg_audiopro']==2)?'yes':'')
+      .(($v['reg_audiopro']==0)?'??':'');
     $rv.= '"'.$sep;
     $rv.= '"';
     $rv.= ($v['reg_vmusician']?'Composer or musician, ':'');
@@ -256,12 +256,12 @@ function export_sv($sep="\t") {
     $rv.= '"'.$sep;
     $rv.= '"'.$v['reg_profession'].'"'.$sep;
     $rv.= '"'.($v['reg_proceedings']?'yes':'no').'"'.$sep;
-		$rv.= '"'.($v['reg_whoelselist']?'yes':'no').'"'.$sep;
+    $rv.= '"'.($v['reg_whoelselist']?'yes':'no').'"'.$sep;
     if (isset($v['reg_vip'])) {
-			$rv.= '"'.$v['reg_vip'].'"'.$sep;
-		} else {
-			$rv.= '""'.$sep;
-		}
+      $rv.= '"'.$v['reg_vip'].'"'.$sep;
+    } else {
+      $rv.= '""'.$sep;
+    }
     $rv.= '"'.$v['reg_notes'].'"'."\n";
   }
   return $rv;
@@ -354,7 +354,7 @@ function gen_badges_source($f) {
     if (strlen($what) > 56) $what='\tiny '.$what; 
     elseif (strlen($what) > 49) $what='\scriptsize '.$what;
     elseif (strlen($what) > 40) $what='\footnotesize '.$what; 
-		else $what='\normalsize '.$what; 
+    else $what='\normalsize '.$what; 
 
     if (!empty($badgebg)) $badgebg='\small '.$badgebg;
 
@@ -453,44 +453,44 @@ function badge_tex_header() {
         }
         \hspace*{-9.8cm}
         \begin{tabular}{c}
-	\hspace*{.20in}\image{height=1.2cm,width=5.28cm}{badgelogo}
-	\rule[0.80ex]{0.70in}{.5pt}\\\\%
-	%\hspace*{0.70in}\\\\%
-	\small%
-	\begin{tabular}[b]{lcr}%
-	\hspace*{.25in}\small LAC 2012 & \hspace*{1.15in} & \hspace*{-0.15in}CCRMA Stanford\\\\%
-	%\hspace*{.25in}\GoudyStMTT LAC 2012 & \hspace*{1.15in} & \hspace*{-0.15in}\GoudyStMTT CCRMA Stanford\\\\%
-	\end{tabular}\\\\%
-	\vspace{0.05in}\\\\%
-	\hspace*{.25in}{#1}\\\\%
-	\vspace*{-0.12in}\\\\%
-	\hspace*{.25in}{#3}\\\\%
-	\vspace*{-0.12in}\\\\%
+  \hspace*{.20in}\image{height=1.2cm,width=5.28cm}{badgelogo}
+  \rule[0.80ex]{0.70in}{.5pt}\\\\%
+  %\hspace*{0.70in}\\\\%
+  \small%
+  \begin{tabular}[b]{lcr}%
+  \hspace*{.25in}\small LAC 2012 & \hspace*{1.15in} & \hspace*{-0.15in}CCRMA Stanford\\\\%
+  %\hspace*{.25in}\GoudyStMTT LAC 2012 & \hspace*{1.15in} & \hspace*{-0.15in}\GoudyStMTT CCRMA Stanford\\\\%
+  \end{tabular}\\\\%
+  \vspace{0.05in}\\\\%
+  \hspace*{.25in}{#1}\\\\%
+  \vspace*{-0.12in}\\\\%
+  \hspace*{.25in}{#3}\\\\%
+  \vspace*{-0.12in}\\\\%
         \hspace*{.25in}{#2}\\\\%
-	\end{tabular}%
+  \end{tabular}%
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% CUT MARKS [\cuts] %%% %%%%%%%%%%%%%%%%%%%%%%%%%
 \def\cuts{
-	\put(-0.1,10.0){\rule{0.2cm}{0.5pt}}\\\\%
-	\put(-0.1,8.0){\rule{0.2cm}{0.5pt}}\\\\%
-	\put(-0.1,6.0){\rule{0.2cm}{0.5pt}}\\\\%
-	\put(-0.1,4.0){\rule{0.2cm}{0.5pt}}\\\\%
-	\put(-0.1,2.0){\rule{0.2cm}{0.5pt}}\\\\%
-	\put(-0.1,0.0){\rule{0.2cm}{0.5pt}}\\\\%
-	\put(7.1,10.0){\rule{0.2cm}{0.5pt}}\\\\%
-	\put(07.1,8.0){\rule{0.2cm}{0.5pt}}\\\\%
-	\put(07.1,6.0){\rule{0.2cm}{0.5pt}}\\\\%
-	\put(07.1,4.0){\rule{0.2cm}{0.5pt}}\\\\%
-	\put(07.1,2.0){\rule{0.2cm}{0.5pt}}\\\\%
-	\put(07.1,0.0){\rule{0.2cm}{0.5pt}}\\\\%
+  \put(-0.1,10.0){\rule{0.2cm}{0.5pt}}\\\\%
+  \put(-0.1,8.0){\rule{0.2cm}{0.5pt}}\\\\%
+  \put(-0.1,6.0){\rule{0.2cm}{0.5pt}}\\\\%
+  \put(-0.1,4.0){\rule{0.2cm}{0.5pt}}\\\\%
+  \put(-0.1,2.0){\rule{0.2cm}{0.5pt}}\\\\%
+  \put(-0.1,0.0){\rule{0.2cm}{0.5pt}}\\\\%
+  \put(7.1,10.0){\rule{0.2cm}{0.5pt}}\\\\%
+  \put(07.1,8.0){\rule{0.2cm}{0.5pt}}\\\\%
+  \put(07.1,6.0){\rule{0.2cm}{0.5pt}}\\\\%
+  \put(07.1,4.0){\rule{0.2cm}{0.5pt}}\\\\%
+  \put(07.1,2.0){\rule{0.2cm}{0.5pt}}\\\\%
+  \put(07.1,0.0){\rule{0.2cm}{0.5pt}}\\\\%
 %
-	\put(0.2,-0.2){\line(0,1){0.1}}%
-	\put(3.6,-0.2){\line(0,1){0.1}}%
-	\put(7.0,-0.2){\line(0,1){0.1}}%
-	\put(0.2,10.1){\line(0,1){0.1}}%
-	\put(3.6,10.1){\line(0,1){0.1}}%
-	\put(7.0,10.1){\line(0,1){0.1}}%
+  \put(0.2,-0.2){\line(0,1){0.1}}%
+  \put(3.6,-0.2){\line(0,1){0.1}}%
+  \put(7.0,-0.2){\line(0,1){0.1}}%
+  \put(0.2,10.1){\line(0,1){0.1}}%
+  \put(3.6,10.1){\line(0,1){0.1}}%
+  \put(7.0,10.1){\line(0,1){0.1}}%
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% BEGIN DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
