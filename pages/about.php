@@ -31,10 +31,11 @@ The conference will be streamed live and remote participation is possible via IR
 </div>
 <h1>We need you! </h1>
 <p>
-Your contribution, ideas are required to get LAC going! So
-please <a href="?page=registration">register</a> to attend. See the
+Your contribution and ideas are required to get the LAC going!<br/>
+See the
 <a href="?page=participation">participation page</a> for information on how
 to answer to the call for paper-presentations, workshops and music.
+Please <a href="?page=registration">register</a> to attend. 
 </p>
 
 <h1>Who?</h1>

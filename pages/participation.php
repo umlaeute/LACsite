@@ -1,7 +1,8 @@
 <div class="center error">
 <h1>WEBSITE WORK IN PROGRESS</h1>
 <h1>This information is tenative - submission is closed until the "Call For Projects" is launched mid October 2011.</h1>
-</div>
+</div> 
+<p/>
 
 <h1>Call for papers, music and workshops</h1>
 <ul>
