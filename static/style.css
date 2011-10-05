@@ -54,13 +54,15 @@ img	{border: 0px;}
   min-width:74em;
 }
 #logoright {
-	float:right;
-	margin:7px 1em;
+	position:absolute;
+	top:7px;
+	right:1em;
 	width:158px;
 	height:158px;
 	background:transparent url(../img/lac2012bw.png) no-repeat top right;
 }
 #titlebar	{
+	  position:relative;
 		color: #ffffff;
 		margin:0em;
 		text-align: left;
@@ -103,7 +105,7 @@ div.menuitem 	{
 		margin:0;
 		}
 .tabactive	{
-		background-color:#666666;
+		background:transparent url(../img/dim60.png) repeat scroll 0 0;
 	  font-weight: bold;
 		}
 .disclaimer	{
