@@ -1,6 +1,6 @@
 <h1>Registration policy</h1>
 <p>
-Registration and admittance to LAC 2012 is free but if you want to attend 
+Registration and admittance to the LAC 2012 is <span class="standout">free</span> (gratis) but if you want to attend 
  <span class="standout">you need to register</span> (scroll down).
 </p>
 
@@ -16,6 +16,8 @@ If you have registered and for whatever reason will not come to the
 conference, please let us know as soon as you can by sending an email to
 lac -AT- linuxaudio -DOT- org.
 </p>
+
+<p>This registration covers the attendance to the main conference venue only. Concerts in clubs and similar evening-sessions may require reservation or purchase of an entrance ticket at the venue.</p>
 
 <h1>Privacy</h1>
 <p>

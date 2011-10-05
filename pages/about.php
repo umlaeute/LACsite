@@ -1,3 +1,4 @@
+<h1>About</h1>
 <p>
 The Linux Audio Conference is an international conference about
 Open Source Software for music, sound and other media with Linux as the main
@@ -6,9 +7,15 @@ platform.
 
 <h1>Target audience</h1>
 <p>
-The Linux Audio Conference audience consists of software designers,
+The Linux Audio Conference crowd features software designers,
 programmers, musicians, composers, engineers and others with a
-serious interest in Open Source Software for Music and Sound.
+serious interest in Open Source Technology for Music and Sound.
+</p>
+<p>
+This is the first time LAC will take place in the United States.
+In fact it is the first LAC outside Europe!
+Empirically around a third of the LAC attendees - more for concerts and workshops - is made up of the unique local-crowd.
+We know you've been waiting for this.
 </p>
 
 <h1>What to expect</h1>
@@ -17,18 +24,11 @@ serious interest in Open Source Software for Music and Sound.
  <li>Poster sessions</li>
  <li>Workshops</li>
  <li>Concerts</li>
+ <li>Exhibitions</li>
  <li>Live coding sessions</li>
 </ul>
 <p style="clear:both;"/>
 
-<h1>Where &amp; When</h1>
-<p>
-April 12-15 2012, CCRMA, Stanford, California. See the <a href="<?=local_url('contact')?>">Contact</a> and <a href="<?=local_url('travel')?>">Travel</a> pages for details.<br/>
-The conference will be streamed live and remote participation is possible via IRC.
-</p>
-<div class="ptitle">
-<!--<img src="img/nui_maynooth_6.jpg" alt="campus impressions (1)"/> !-->
-</div>
 <h1>We need you! </h1>
 <p>
 Your contribution and ideas are required to get the LAC going!<br/>
@@ -36,6 +36,23 @@ See the
 <a href="<?=local_url('participation')?>">participation page</a> for information on how
 to answer to the call for paper-presentations, workshops and music.
 Please <a href="<?=local_url('registration')?>">register</a> to attend. 
+</p>
+
+<h1>Where &amp; When</h1>
+<p>
+April 12-15 2012, CCRMA, Stanford, California. See the <a href="<?=local_url('contact')?>">Contact</a> and <a href="<?=local_url('travel')?>">Travel</a> pages for details.<br/>
+The conference main tracks will be streamed live and archived. Remote participation is possible via IRC.
+</p>
+<div class="ptitle">
+<img src="img/ccrma_at_dusk.jpg" alt="CCRMA builting 'The Knoll'"/><br/>
+CCRMA is located on the Stanford University campus in <a href="https://ccrma.stanford.edu/about/knoll" rel="external">The Knoll</a>
+</div>
+<p>
+The Center for Computer Research in Music and Acoustics (CCRMA) at
+Stanford University is a multi-disciplinary facility where composers and
+researchers work together using computer-based technology both as an
+artistic medium and as a research tool. CCRMA has been using and
+developing Linux as an audio platform since 1997.
 </p>
 
 <h1>Who?</h1>
