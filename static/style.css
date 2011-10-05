@@ -10,6 +10,7 @@ body {
 img {border: 0px;}
 #content p   {text-align:justify; padding-bottom:.5em;}
 a            {outline: none; color:black;}
+a:hover      {color:#990000;}
 .tabactive a {color:#ffffff;}
 .menuitem a:hover  {color:#990000; background:#808080;}
 .tabactive a:hover {color:#ffffff; background:transparent;}
