@@ -448,7 +448,7 @@ function badge_tex_header() {
 \def\card#1#2#3{
         \parbox[c][4.5cm]{9.8cm}{
         \vspace*{1.9cm}
-        \hspace*{3.5cm}
+        \hspace*{3.0cm}
         \image{height=3.5cm,width=3.5cm}{badge_ccrma}
         }
         \hspace*{-9.8cm}
@@ -458,8 +458,8 @@ function badge_tex_header() {
 	%\hspace*{0.70in}\\\\%
 	\small%
 	\begin{tabular}[b]{lcr}%
-	\hspace*{.25in}\small LAC 2012 & \hspace*{1.15in} & \hspace*{0.15in}CCRMA Stanford\\\\%
-	%\hspace*{.25in}\GoudyStMTT LAC 2012 & \hspace*{1.15in} & \hspace*{0.15in}\GoudyStMTT CCRMA Stanford\\\\%
+	\hspace*{.25in}\small LAC 2012 & \hspace*{1.15in} & \hspace*{-0.15in}CCRMA Stanford\\\\%
+	%\hspace*{.25in}\GoudyStMTT LAC 2012 & \hspace*{1.15in} & \hspace*{-0.15in}\GoudyStMTT CCRMA Stanford\\\\%
 	\end{tabular}\\\\%
 	\vspace{0.05in}\\\\%
 	\hspace*{.25in}{#1}\\\\%
