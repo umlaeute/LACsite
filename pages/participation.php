@@ -1,6 +1,6 @@
 <div class="center error">
 <h1>WEBSITE WORK IN PROGRESS</h1>
-<h1>This information is tenative - submission is closed until the "Call For Projects" is launched mid October 2011.</h1>
+<h1>This information is tentative - submission is closed until the "Call For Projects" is launched mid October 2011.</h1>
 </div> 
 <p/>
 
@@ -55,10 +55,10 @@ meant as a starting point, not to restrict you.
 <br style="clear:both;"/>
 <br/>
 <p>
-We very much welcome practical papers resp. software demos ("how I use Linux Audio applications to create my music/media art").
+We very much welcome practical papers resp software demos ("how I use Linux Audio applications to create my music/media art").
 </p>
 <p>
-Not all papers need to directly address Linux Audio. There is no limitation for subjects from related fields like open source music applications, open source software for music or sound-research and open-content.
+Not all papers need to directly address Linux Audio. There is no limitation for subjects from related fields like open source music applications, free/libre software for music or audio/visual research and open-content.
 </p>
 
 <p>NB. Papers should be as complete as possible on submission. Until submission closes it is possible to replace/update files in the <a href="http://lac.linuxaudio.org/2012/openconf/" rel="external">openconf</a> system. Submissions will be peer-reviewed and after the notification of acceptance there is a small time-window for updates and last-minute changes.
