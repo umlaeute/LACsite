@@ -6,9 +6,9 @@ Registration and admittance to LAC 2012 is free but if you want to attend
 
 This is for a number of reasons:
 <ul>
-<li> Estimate - We need an estimate of the number of attendees </li>
-<li> ID - We'd like a name to print on your badge </li>
-<li> We want to be able to contact you (see under Privacy) </li>
+<li> Estimate - We need the the number of attendees for insurance and fire-regulation.</li>
+<li> ID - We'd like a name to print on your badge. The badge may be required to access locations on-site.</li>
+<li> We want to be able to contact you (see under Privacy).</li>
 </ul>
 
 <p>
@@ -70,7 +70,8 @@ Personal data provided by you in the registration form will be kept confidential
 
   $ages=array (
    '' => 'Please select your age group..',
-   'A1520' => '15-20 years',
+   'A0015' => '15 years or younger',
+   'A1620' => '16-20 years',
    'A2125' => '21-25 years',
    'A2530' => '25-30 years',
    'A3135' => '31-35 years',
@@ -406,27 +407,28 @@ Personal data provided by you in the registration form will be kept confidential
 
 <fieldset class="fa">
   <legend>About yourself:</legend>
-  <div class="la"><label class="la">You are... (multiple checks are ok):</label></div>
+	<div class="la"><label class="la">You are... (multiple checks are ok):</label></div>
+  <div style="clear:both; height:1px;"></div>
   <table border="0" cellspacing="0" cellpadding="0">
     <tr>
 <?php gen_checktd($about); ?>
     </tr>
   </table>
-  <div class="la"><label class="la">Profession:</label></div>
-  <div>
-  <span>
-  <label><input type="radio" name="reg_profession" value="Pupil"<?php _ck('reg_profession','Pupil');?>/>Pupil</label>
-  <label><input type="radio" name="reg_profession" value="Student"<?php _ck('reg_profession','Student');?>/>Student</label>
-  <label><input type="radio" name="reg_profession" value="Employed"<?php _ck('reg_profession','Employed');?>/>Employed</label>
-  <label><input type="radio" name="reg_profession" value="Freelance"<?php _ck('reg_profession','Freelance');?>/>Freelance</label>
-  <label><input type="radio" name="reg_profession" value="Other"<?php _ck('reg_profession','Other');?>/>Other</label>
-  </span>
-  </div>
   <div class="la"><label class="la">Do you work for a professional audio company?</label></div>
-  <div class="rb">
+  <div class="ra">
   <span>
     <label><input type="radio" name="reg_audiopro" value="1"<?php _ck('reg_audiopro',1);?>/>No</label> &nbsp; &nbsp;
     <label><input type="radio" name="reg_audiopro" value="2"<?php _ck('reg_audiopro',2);?>/>Yes</label>
+  </span>
+  </div>
+  <div class="la"><label class="la">Profession:</label></div>
+  <div class="ra">
+  <span>
+  <label><input type="radio" name="reg_profession" value="Pupil"<?php _ck('reg_profession','Pupil');?>/>Pupil</label> &nbsp;
+  <label><input type="radio" name="reg_profession" value="Student"<?php _ck('reg_profession','Student');?>/>Student</label> &nbsp;
+  <label><input type="radio" name="reg_profession" value="Employed"<?php _ck('reg_profession','Employed');?>/>Employed</label> &nbsp;
+  <label><input type="radio" name="reg_profession" value="Freelance"<?php _ck('reg_profession','Freelance');?>/>Freelance</label> &nbsp;
+  <label><input type="radio" name="reg_profession" value="Other"<?php _ck('reg_profession','Other');?>/>Other</label>
   </span>
   </div>
   <div class="la"><label class="la">You are using Linux..</label></div>
@@ -442,10 +444,12 @@ Personal data provided by you in the registration form will be kept confidential
 <legend>Miscellaneous:</legend>
   <label class="la" for="reg_notes">Remarks:</label>
   <textarea id="reg_notes" name="reg_notes" rows="3" cols="60"><?php if (isset($_POST['reg_notes'])) echo $_POST['reg_notes'];?></textarea><br/>
-</fieldset>
+</fieldset><br/>
 <div>
-  <div style="float:right;"><input type="reset" value="Reset fields"/></div>
-  <div><input type="submit" value="Register Now!"/></div>
+	<div style="float:right;">
+<input type="submit" class="button" value="Submit registration"/></div>
+	<div>
+<input type="reset" class="button" value="Reset form"/></div>
 </div>
 
 </form>

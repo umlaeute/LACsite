@@ -1,5 +1,5 @@
 <h1>Registered Participants</h1>
-<p>At registration attendees were given the option to announce their presence:</p>
+<p>At registration attendees are given the option to announce their presence:</p>
 <?php
 $pfn=TMPDIR.'/lac2012-reg.list';
 if (file_exists($pfn)) {
