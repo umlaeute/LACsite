@@ -213,7 +213,7 @@ fieldset legend {text-align:left;}
 .fa        {text-align:right; padding-right:1em;}
 .fa div.la {float:left; padding-left:.5em; padding-right:.25em; clear:left; border-bottom: 1px solid #FEFEF9;}
 .fa div.ra {border-bottom: 1px dotted gray; margin-bottom:1em;}
-.fa table  {float:right;margin: 0px 0px 1em 120px;text-align:left;border-bottom: 1px dotted gray;}
+.fa table  {float:right;margin: 0px 0px 1em 120px;text-align:left;}
 .fa td     {padding-left: 10px;}
 .fa td label input
            {margin-right: 4px;}
