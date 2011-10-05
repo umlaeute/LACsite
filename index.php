@@ -37,6 +37,11 @@
       if (savereg())
   $page='regcomplete';
   }
+
+  if (!empty($preq) && $preq!=$page && $page=='about') {
+    header(404, "File not found");
+    $page='404';
+  }
  
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -44,13 +49,13 @@
 <head>
   <title>LAC<?=LACY?>: The Linux Audio Conference</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <link rel="stylesheet" href="static/style.css" type="text/css"/>
+  <link rel="stylesheet" href="<?=BASEURL?>static/style.css" type="text/css"/>
   <meta name="Author" content="Robin Gareus" />
   <meta name="description" content="Linux Audio Conference <?=LACY?>" />
   <meta name="keywords" content="LAC<?=LACY?>, LAC, Linux Audio Conference <?=LACY?>,Linux, Music, Audio, Developer Meeting, CCRMA, Computer Research in Music and Acoustics, Stanford, Stanford University" />
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <script type="text/javascript" src="static/script.js"></script>
+  <link rel="shortcut icon" href="<?=BASEURL?>favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="<?=BASEURL?>favicon.ico" type="image/x-icon" />
+  <script type="text/javascript" src="<?=BASEURL?>static/script.js"></script>
 </head>
 <body>
 <div id="toprow">
