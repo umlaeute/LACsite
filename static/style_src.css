@@ -79,11 +79,13 @@ a:hover      {color:#990000;}
 #maintitle {
 	padding-top:1px;
   font-size: 20pt;
+	text-shadow: #FEFEF9 1px 1px 8px;
 }
 #subtitle {
   font-size: 12pt;
   font-weight: bold;
   margin-top: .8em;
+	text-shadow: #FEFEF9 1px 1px 8px;
 }
 #wherewhen {
   font-weight: bold;
@@ -260,6 +262,7 @@ div.huge {
   height:40px;
   margin:0px auto;
   padding-top:5px;
+	text-shadow: #990040 0px 0px 5px;
 }
 div.huge a       {text-decoration:none; color:#F0E0E0;}
 div.huge a:hover {color:#000000;}
