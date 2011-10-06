@@ -107,9 +107,13 @@ a:hover      {color:#990000;}
 }
 div.menuitem {
   float:left;
-  width: 7.5em; height: 1.3em;
-  text-align: center;
+	/*
+  width: 7.5em;
   padding: .75em .25em;
+	*/
+  padding: .75em 1.25em;
+	height: 1.3em;
+  text-align: center;
   margin:0;
   font-weight: bold;
 }

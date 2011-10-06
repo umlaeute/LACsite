@@ -127,7 +127,7 @@ require_once('pages/'.$page.'.php');
 ?>
     </div>
     <div id="mainfootl"> </div>
-    <div id="createdby"> Oct 04 2011, Fernando Lopez-Lezcano, Bruno Ruviaro &amp; Robin Gareus</div>
+    <div id="createdby"> Oct 06 2011, Fernando Lopez-Lezcano, Bruno Ruviaro &amp; Robin Gareus</div>
   </div>
   <div style="clear:both; height:0px;">&nbsp;</div>
 </div>
