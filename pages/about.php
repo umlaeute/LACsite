@@ -11,12 +11,6 @@ The Linux Audio Conference crowd features software designers,
 programmers, musicians, composers, engineers and others with a
 serious interest in Open Source Technology for Music and Sound.
 </p>
-<p>
-This is the first time LAC will take place in the United States.
-In fact it is the first LAC outside Europe!
-Empirically around a third of the LAC attendees - more for concerts and workshops - is made up of the unique local-crowd.
-We know you've been waiting for this.
-</p>
 
 <h1>What to expect</h1>
 <ul class="multicolumn">
