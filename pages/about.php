@@ -1,13 +1,14 @@
 <h1>About</h1>
 <p>
-The Linux Audio Conference is an international conference about
+The Linux Audio Conference is the international conference about
 Open Source Software for music, sound and other media with Linux as the main
 platform.
+2012 marks the 10th anniversary of the event and it is the first time the LAC takes place outside Europe.
 </p>
 
 <h1>Target audience</h1>
 <p>
-The Linux Audio Conference crowd features software designers,
+The Linux Audio Conference brings together software designers,
 programmers, musicians, composers, engineers and others with a
 serious interest in Open Source Technology for Music and Sound.
 </p>
@@ -65,6 +66,7 @@ LAC2012 is under the auspices of <a href="http://ccrma.stanford.edu" rel="extern
   <li><a href="http://lac.linuxaudio.org/2004/lac2004_proceedings.pdf">Proceedings 2004</a></li>
   <li><a href="http://lac.linuxaudio.org/2009/cdm/">Slides &amp; Papers 2009</a></li>
   <li><a href="http://lac.linuxaudio.org/2006/lac2006_proceedings.pdf">Proceedings 2006</a></li>
+  <li><a href="http://lac.linuxaudio.org/2003/zkm/">Conference Material 2003</a></li>
 </ul>
 <br style="clear:both;"/>
 

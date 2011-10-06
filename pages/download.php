@@ -24,6 +24,7 @@
   <li><a href="http://lac.linuxaudio.org/2004/lac2004_proceedings.pdf">Proceedings 2004</a></li>
   <li><a href="http://lac.linuxaudio.org/2009/cdm/">Slides &amp; Papers 2009</a></li>
   <li><a href="http://lac.linuxaudio.org/2006/lac2006_proceedings.pdf">Proceedings 2006</a></li>
+  <li><a href="http://lac.linuxaudio.org/2003/zkm/">Conference Material 2003</a></li>
 </ul>
 <br style="clear:both;"/>
 */ ?>

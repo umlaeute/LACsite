@@ -15,7 +15,7 @@
 <h1>Call for papers</h1>
 <p>
 Papers can be submitted for review via the
-<a href="http://lac.linuxaudio.org/2012/openconf/" rel="external">openconf</a> system.
+<strong><a href="http://lac.linuxaudio.org/2012/openconf/" rel="external">openconf</a></strong> system.
 Templates for paper submission are available for LaTeX and OpenOffice/LibreOffice from <a href="download/lac2012-templates.tar.gz">here</a>.
 </p>
 <p>

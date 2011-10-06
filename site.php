@@ -6,7 +6,7 @@
     'participation' => 'Participate',
     'registration' => 'Registration',
     'participants' => 'Attendees',
-    'sponsors' => 'Sponsoring',
+    'sponsors' => 'Supporters',
     'travel' => 'Travel &amp; Stay',
     'contact' => 'Contact'
   );
