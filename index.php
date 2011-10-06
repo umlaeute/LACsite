@@ -1,5 +1,5 @@
 <?php
-  require_once('lib.php');
+  require_once('lib/lib.php');
   require_once('site.php');
 //////////////////////////////////////////////////////////////////////////////
 
@@ -14,7 +14,7 @@
 
   if (!empty($preq) && ($preq=='admin' || $preq=='adminschedule' || $preq=='upload')) {
     if (authenticate()) {
-      require_once('submit.php');
+      require_once('lib/submit.php');
       $page=$preq;
     } else {
       header('Location: logon.php');
@@ -23,7 +23,7 @@
   }
 
   if ($page=='program' || $page=='adminschedule') {
-    require_once('programdb.php');
+    require_once('lib/programdb.php');
   }
 
   if (  !empty($preq) && $preq=='registration' 
@@ -32,7 +32,7 @@
   }
 
   if (!empty($preq) && $preq=='registration') {
-    require_once('submit.php');
+    require_once('lib/submit.php');
     if (checkreg()) 
       if (savereg())
         $page='regcomplete';

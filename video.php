@@ -1,23 +1,24 @@
-<!DOCTYPE html>
+<?php
+require_once('lib/lib.php');
+require_once('lib/programdb.php');
+?><!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
   <title>LAC Video Player</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <link rel="stylesheet" href="static/vstyle.css" type="text/css"/>
+	<link rel="stylesheet" href="<?=BASEURL?>static/vstyle.css" type="text/css"/>
   <meta name="Author" content="Robin Gareus" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <script type="text/javascript" src="static/script.js"></script>
+  <script type="text/javascript" src="<?=BASEURL?>static/script.js"></script>
 </head>
 <body>
 <div class="container">
 <?php
-#require_once('config.php');
-require_once('lib.php');
-require_once('programdb.php');
 function printerror($msg) {
   echo '<div class="error">ERROR: '.$msg.'</div></div></body></html>';
   echo '<div class="footer">Back to <a href="'.local_url('program').'">conference site</a>.</div>';
+  echo '</body></html>';
   exit;
 }
 if (!isset($_REQUEST['id']))
@@ -46,7 +47,7 @@ if ($hidepapers) $v['url_paper'] = '';
 $url=$v['url_stream'];
 $w=720;$h=576;
 $ua=$_SERVER['HTTP_USER_AGENT'];
-$jar='static/cortado_url.jar';
+$jar=BASEURL.'static/cortado_url.jar';
 #print_r($url);
 #print_r($ua);
 
@@ -110,10 +111,10 @@ foreach (fetch_authorids($db, $id) as $user_id) {
 echo '</em>';
 echo '</div>';
 if (!empty($url)) {
-echo '<div class="player">'.$out.'</div>';
-$tu=rawurldecode($url);
-$tt=rawurldecode('LAC '.LACY.' - '.$v['title']);
-echo '
+	echo '<div class="player">'.$out.'</div>';
+	$tu=rawurldecode($url);
+	$tt=rawurldecode('LAC '.LACY.' - '.$v['title']);
+	echo '
   <div id="sociallinkbar">
     <a id="lnktwtr" rel="_blank" href="http://twitter.com/share?url='.$tu.'" title="Tweet This!"></a>
     <a id="lnkturl" rel="_blank" href="http://tinyurl.com/create.php?url='.$tu.'" title="Create TinyURL"></a>
@@ -125,9 +126,11 @@ echo '
   </div>
 ';
 } else {
-echo '<div class="error"><br/>This presentations has not been recorded.</div>';
+  echo '<div class="error"><br/>This presentations has not been recorded.</div>';
 }
+
 echo '<div class="links"><ul>';
+
 if (!empty($url))
   echo '<li>Video: <a href="'.$url.'">'.basename($url).'</a></li>';
 if (!empty($v['url_slides']))

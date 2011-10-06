@@ -1063,7 +1063,10 @@
     echo '<form action="index.php" method="post" name="myform">';
     echo '<fieldset class="pdb">';
     echo '<input name="page" type="hidden" value="program"/>';
-    echo '<input name="mode" type="hidden" value="'.$_REQUEST['mode'].'"/>';
+    if (isset($_REQUEST['mode']))
+			echo '<input name="mode" type="hidden" value="'.$_REQUEST['mode'].'"/>';
+		else
+			echo '<input name="mode" type="hidden" value=""/>';
     if (isset($_REQUEST['details']))
       echo '<input name="details" type="hidden" value="'.$_REQUEST['details'].'"/>';
     echo '<legend>Filter:</legend>';
@@ -1405,7 +1408,7 @@ if (1) {
 
   function vcal_program($db,$version='2.0',$raw=true) {
     if (!function_exists('quoted_printable_encode')) 
-      require_once('quoted_printable.php');
+      require_once('lib/quoted_printable.php');
 
     if ($version!='1.0' && $version!='2.0')
       $version='2.0';

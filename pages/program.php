@@ -13,9 +13,9 @@
     #echo 'vCal (<a href="vcal.php?v=1.0">v1.0-iCal</a>)&nbsp;';
     #echo '(<a href="vcal.php">v2.0</a>)&nbsp;|&nbsp;';
     echo '<a href="vcal.php">iCal</a>&nbsp;|&nbsp;';
-    echo '<a href="printprogram.php">Printable Version</a>';
+    echo '<a href="printprogram.php">Printable Version</a>'."\n";
+    echo '<br/>All times are <a href="http://en.wikipedia.org/wiki/Pacific_Daylight_Time">PDT</a> = UTC-7'."\n";
     echo "</p>\n";
-    echo '<div class="center">All times are PDT - UTC-7</div>'."\n";
   }
 
   $mode='list';

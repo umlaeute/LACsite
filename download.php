@@ -1,7 +1,7 @@
 <?php
   $req=rawurldecode($_REQUEST['file']);
 
-  require_once('lib.php');
+  require_once('lib/lib.php');
   if (!authenticate()) die();
 
   $fn='';
@@ -21,10 +21,6 @@
     case 'registrations.csv':
       $ctype='text/csv';
       $fn = TMPDIR.'/registrations.csv';
-      break;
-    case 'kikkerPreReservations.csv':
-      $ctype='text/csv';
-      $fn = TMPDIR.'/kikkerPreReservations.csv';
       break;
     default:
       die();

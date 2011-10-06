@@ -13,13 +13,13 @@
 
 # other available pages - not shown as 'tabs'
   $hidden = array(
-    'download' => 'Download',
-    'program' => 'Agenda',
-    'download' => 'Download',
+    'files' => 'Download',
+    'program'  => 'Agenda',
   );
 
 # don't list sponsors on these pages
   $nosponsors = array(
+    'upload',
     'admin',
     'adminschedule',
   );

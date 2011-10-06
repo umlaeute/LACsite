@@ -1,26 +1,30 @@
 -----  LAC 2011/2012 website ----
 
 --- Setup ---
+Step 0)
+  go to top-level directory of website this website 
 
-Step 1) create './config.php' with the following:
+Step 1) create 'config.php' with the following:
 
+---------8<---------
 <?php 
   define('REGLOGDIR',dirname($_SERVER['SCRIPT_FILENAME']).'/regs/');  
   define('TMPDIR',dirname($_SERVER['SCRIPT_FILENAME']).'/tmp/');
   define('LACY','2012');  
 
-  define('BASEURL',''); # '/2012/' - same as RewriteBase incl. trailing '/'
   $userewrite=false; # set to true if RewriteEngine is enabled in .htaccess
+  define('BASEURL',''); # '/2012/' - same as RewriteBase incl. trailing '/'
 
   $regmail=true; # if set users will receive a confirmation email
 	$regclosed=false;
   $hidepapers=false; # don't include links to papers (yet)
   $mailto='robin@linuxaudio.org, marcg@dinkum.nl'; # admin email
   $mailto=''; # if empty no email will be sent to admins.
+---------8<---------
 
 Step 2+)
-  mkdir regs/  # or whatever you spefied as REGLOGDIR
-               # this directory will be used to store registration information
+  mkdir regs/      # or whatever you spefied as REGLOGDIR
+                   # this dir will be used to store registration information
 
   chmod 1777 regs  # or `sudo chown www-data regs`
   echo "Deny from all" > regs/.htaccess
@@ -39,31 +43,38 @@ Step 2+)
   #prepare upload folder.
   chmod 1777 download/  # or `sudo chown www-data download`
 
-Step 3) 
-  set up HTTP AUTH: copy .htaccess-dist to .htaccess and edit it.
-  use 'htdigest' to create the password file
+Step 3) OPTIONAL
+  set up HTTP AUTH and apcahe URL rewriting
+	copy .htaccess-dist to .htaccess and edit it. edit apache config
+	to permit .htaccess Rewrite and allow auth overrides
+  use `htdigest [-c] <file> <realm> <username>` to create the password file.
 
 Step 4+)
   create sqlite database in tmp/lac2012.db and make it writable for
   the HTTP-user..
-    sqlite3 tmp/lac2012.db < schema.sql
+
+    sqlite3 tmp/lac2012.db < doc/schema_pdb.sql
     sudo chown www-data.www-data tmp/lac2012.db
 
   create sqlite database in tmp/reg2012.db and make it writable for
   the HTTP-user..
-    sqlite3 tmp/reg2012.db < schema_reg.sql
+
+    sqlite3 tmp/reg2012.db < doc/schema_reg.sql
     sudo chown www-data.www-data tmp/reg2012.db
 
 --- Notes ---
 
 The 'admin' interface is very rudimentary and can be reached at
   http://base-url/index.php?page=admin
-after setting up HTTP auth
+after setting up HTTP auth. 
+
+Note: It won't work with Safari Browser (which use HTDigest auth
+      not to for a whole namespace but only per file). Use Firefox or Chrome
+      to access the admin interface
 
 to add/edit 'tabs':
-  create the corresponding page in  pages/
-  edit the $pages array near to the top in index.php.
-  the current style.css allows for up to 9 tabs.
+  create the corresponding page in pages/
+  edit the $pages array in site.php
 
 --- Sourcecode ---
 

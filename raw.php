@@ -2,7 +2,7 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-  <title>LAC2012 Program: The Linux Audio Conference Timetable </title>
+  <title>LAC2012 Program: The Linux Audio Conference Timetable</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" href="static/style.css" type="text/css"/>
   <meta name="Author" content="Robin Gareus" />
@@ -15,9 +15,8 @@
 <body id="content" style="border:0px; background:#ffffff;">
 <div>
 <?php
-  require_once('config.php');
-  require_once('lib.php');
-  require_once('programdb.php');
+  require_once('lib/lib.php');
+  require_once('lib/programdb.php');
   $filter=array('user' => '0', 'day' => '0', 'type' => '0', 'location' => '0', 'id' => '0');
   if (isset($_REQUEST['pdb_filterid'])) {
     $filter['id'] = intval(rawurldecode($_REQUEST['pdb_filterid']));
