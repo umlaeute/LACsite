@@ -1,7 +1,8 @@
 <h1>Registration policy</h1>
 <p>
 Registration and admittance to the LAC 2012 is <span class="standout">free</span> (gratis) but if you want to attend 
- <span class="standout">you need to register</span> (scroll down).
+<span class="standout">you need to register</span> (scroll down).
+Note: Presenters and workshop-leaders are no exception to this rule. Please register.
 </p>
 
 This is for a number of reasons:

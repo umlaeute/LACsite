@@ -73,6 +73,7 @@ switch ($mode) {
     $r=scan_registrations();
     echo '<p>We have '.count($r).' registered participants:</p>';
     echo '<table class="adminlist" cellspacing="0">'."\n";
+    echo '<tr><th>Name</th><th></th><th colspan="3">Change Attribution</th></tr>';
     foreach ($r as $f) {
       echo '<tr><td style="border-bottom: dotted 1px;">';
       echo substr($f, 16);
@@ -207,11 +208,11 @@ function list_emails($f) {
 
 #export SV escape
 function exes($text, $sep="\t") {
-	# replace $sep with /space/; replace '"' with "''"
-	if ($sep != ' ') 
-		$text=str_replace($sep,' ',$text);
-	$text=str_replace('"',"''",$text);
-	return $text;
+  # replace $sep with /space/; replace '"' with "''"
+  if ($sep != ' ') 
+    $text=str_replace($sep,' ',$text);
+  $text=str_replace('"',"''",$text);
+  return $text;
 }
 
 function export_sv($sep="\t") {
