@@ -53,7 +53,7 @@ developing Linux as an audio platform since 1997.
 <h1>Who?</h1>
 <p>Check out the <a href="<?=local_url('participants')?>">list of participants</a> to see who else is coming.</p>
 <p>The LAC is a GNU/Linux free/libre software community organised event by the <a href="http://lists.linuxaudio.org/">Linux-Audio-Users and -Developers</a>.
-LAC2012 is under the auspices of <a href="http://ccrma.stanford.edu" rel="external">CCRMA</a>, organised by <a href="https://ccrma.stanford.edu/people/fernando-lopez-lezcano" rel="external">Fernando Lopez-Lezcano</a> with assistance from <a href="http://www.brunoruviaro.com/" rel="external">Bruno Ruviaro</a>, Frank Neumann, <a href="http://gareus.org" rel="external"> Robin Gareus</a> and <a href="https://ccrma.stanford.edu/people/julius-orion-smith-iii" rel="external">Julius O. Smith</a>.</p>
+LAC2012 is under the auspices of <a href="http://ccrma.stanford.edu" rel="external">CCRMA</a>, organised by <a href="https://ccrma.stanford.edu/people/fernando-lopez-lezcano" rel="external">Fernando Lopez-Lezcano</a> with assistance from <a href="http://www.brunoruviaro.com/" rel="external">Bruno Ruviaro</a>, Frank Neumann, <a href="http://gareus.org" rel="external"> Robin Gareus</a> and <a href="https://ccrma.stanford.edu/people/julius-orion-smith-iii" rel="external">Julius O. Smith III</a>.</p>
 <p>The list of peer-review committee members will be published here after the submission deadline.</p>
 
 <h1>Links to prior Linux Audio Conferences</h1>
