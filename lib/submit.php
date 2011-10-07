@@ -54,19 +54,23 @@ function format_registration($a) {
   Email       : '.rawurldecode($a['reg_email']).'
   Age         : '.preg_replace('/A(\d{2})(.{2})/','${1}-${2}',rawurldecode($a['reg_agegroup'])).'
   Country     : '.rawurldecode($a['reg_country']).'
-  Profession  : '.rawurldecode($a['reg_profession']).'
+	Profession  : '
+  .(!isset($a['reg_profession'])?'??':(
+		rawurldecode($a['reg_profession'])
+	)).'
   Proceedings : '
   .(rawurldecode($a['reg_proceedings'])?'yes':'no')     .'
   Public List : '
   .(rawurldecode($a['reg_whoelselist'])?'yes':'no')     .'
   Uses Linux  : '
-  .(rawurldecode($a['reg_useathome'])?'at home, ':'_not_ at home, ')
-  .(rawurldecode($a['reg_useatwork'])?'at work' :'_not_ at work' )  .'
-  Pro Audio   : '
-  .((rawurldecode($a['reg_audiopro'])==1)?'no':'')
-  .((rawurldecode($a['reg_audiopro'])==2)?'yes':'')
-  .((rawurldecode($a['reg_audiopro'])==0)?'??':'')
+  .((isset($a['reg_useathome']) && rawurldecode($a['reg_useathome']))?'at home ':'_not_ at home ')
+  .((isset($a['reg_useatwork']) && rawurldecode($a['reg_useatwork']))?'at home ':'_not_ at work ')
   .'
+  Pro Audio   : '
+  .(!isset($a['reg_audiopro'])?'??':(
+     ((rawurldecode($a['reg_audiopro'])==1)?'no':'')
+    .((rawurldecode($a['reg_audiopro'])==2)?'yes':'')
+	)).'
   Interests   : '
 # TODO use pages/registration.php -> $about array
 #.($a['reg_vmusician']?'Musician or composer, ':'')
@@ -118,8 +122,10 @@ function savereg() {
   #store in .ini file format -> human readable and 
   #parseable with PHP's parse_ini_file()
   fwrite($handle, '; Registration for user: '.$name."\n");
-  foreach ($datafields as $k) {
-    fwrite($handle, $k.'="'.preg_replace('/[";]/','.',rawurldecode($_POST[$k]))."\"\n");
+	foreach ($datafields as $k) {
+		if (!isset($_POST[$k])) $val='';
+		else $val=rawurldecode($_POST[$k]);
+    fwrite($handle, $k.'="'.preg_replace('/[";]/','.',$val)."\"\n");
   }
   fwrite($handle, "\n");
   fclose($handle);
@@ -241,7 +247,7 @@ function log_ip_address() {
 
   $q='INSERT into iplog (ip_addr, regname) VALUES ('
     .' '.$db->quote($_SERVER['REMOTE_ADDR'])
-    .','.$db->quote(sanevalue(rawurldecode($_POST['reg_prename'])).' '.sanevalue(rawurldecode($_POST['pdb_name'])))
+    .','.$db->quote(sanevalue(rawurldecode($_POST['reg_prename'])).' '.sanevalue(rawurldecode(isset($_POST['pdb_name'])?$_POST['pdb_name']:'')))
     .');';
   $db->exec($q);
 }

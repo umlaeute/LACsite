@@ -45,6 +45,7 @@ Personal data provided by you in the registration form will be kept confidential
 <?php 
   function _ck($k, $c) {
     if (isset($_POST[$k]) && $_POST[$k] == $c) echo ' checked="checked"';
+    if (!isset($_POST[$k]) && $c=='0') echo ' checked="checked"';
   }
 
   function _cl($k, $c) {

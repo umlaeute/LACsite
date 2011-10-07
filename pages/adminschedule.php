@@ -1,7 +1,7 @@
 <?php
 if (!defined('REGLOGDIR')) die();
 ?>
-<form action="index.php" method="post" name="myform">
+<form action="index.php" method="post" id="myform">
 <?php
   $mode='';
   if (isset($_REQUEST['mode']))
@@ -13,20 +13,30 @@ if (!defined('REGLOGDIR')) die();
     case 'unlocklocation':
       $id=intval(rawurldecode($_REQUEST['param'])); 
       unlock($db, $id, 'location');
+    case 'savelocation':
+      if ($mode==='savelocation') dbadmin_savelocation($db);
+    case 'dellocation': # TODO :check if locked before deleting..
+      if ($mode==='dellocation') dbadmin_dellocation($db);
     case 'listlocation':
       admin_fieldset();
       program_fieldset();
       echo '<legend>Location List:</legend>'."\n";
-      dbadmin_listlocations($db);
+			dbadmin_listlocations($db);
+			dbadmin_jumpselected();
       break;
     case 'unlockuser':
       $id=intval(rawurldecode($_REQUEST['param'])); 
       unlock($db, $id, 'user');
+    case 'saveuser':
+      if ($mode==='saveuser') dbadmin_saveuser($db);
+    case 'deluser': # TODO :check if locked before deleting..
+      if ($mode==='deluser') dbadmin_deluser($db);
     case 'listuser':
       admin_fieldset();
       program_fieldset();
       echo '<legend>Author List:</legend>'."\n";
       dbadmin_listusers($db);
+			dbadmin_jumpselected();
       break;
     case 'editlocation':
       $id=intval(rawurldecode($_REQUEST['param'])); 
@@ -101,14 +111,6 @@ if (!defined('REGLOGDIR')) die();
       unlock($db, $id);
     case 'delentry': # TODO :check if locked before deleting..
       if ($mode==='delentry') dbadmin_delentry($db);
-    case 'deluser': # TODO :check if locked before deleting..
-      if ($mode==='deluser') dbadmin_deluser($db);
-    case 'dellocation': # TODO :check if locked before deleting..
-      if ($mode==='dellocation') dbadmin_dellocation($db);
-    case 'savelocation':
-      if ($mode==='savelocation') dbadmin_savelocation($db);
-    case 'saveuser':
-      if ($mode==='saveuser') dbadmin_saveuser($db);
     case 'saveedit':
       if ($mode==='saveedit') dbadmin_saveedit($db);
     default:
@@ -121,8 +123,18 @@ if (!defined('REGLOGDIR')) die();
     program_fieldset();
     echo '<legend>Conference Program:</legend>'."\n";
     $sort=''; if (isset($_REQUEST['sort'])) $sort=rawurldecode($_REQUEST['sort']);
-    dbadmin_listall($db, $sort);
-  }
+    dbadmin_listall($db, $sort); # does print_filterfields()
+		dbadmin_jumpselected();
+	} else {
+		# hidden filterfields - remember
+    $filter=array('user' => '0', 'day' => '0', 'type' => '0');
+		if (isset($_REQUEST['pdb_filterday'])) $filter['day'] = intval(rawurldecode($_REQUEST['pdb_filterday']));
+		if (isset($_REQUEST['pdb_filtertype'])) $filter['type'] = substr(rawurldecode($_REQUEST['pdb_filtertype']),0,1);
+		if (isset($_REQUEST['pdb_filterauthor'])) $filter['user'] = intval(rawurldecode($_REQUEST['pdb_filterauthor']));
+    echo '<input name="pdb_filterday" type="hidden" value="'.rawurldecode($filter['day']).'"/>'."\n";
+    echo '<input name="pdb_filtertype" type="hidden" value="'.rawurldecode($filter['type']).'"/>'."\n";
+		echo '<input name="pdb_filterauthor" type="hidden" value="'.rawurldecode($filter['user']).'"/>'."\n";
+	}
 
 ?>
   </fieldset>

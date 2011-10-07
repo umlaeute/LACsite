@@ -1,17 +1,8 @@
 <?php
 require_once('lib/lib.php');
 require_once('lib/programdb.php');
-?><!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-<head>
-  <title>LAC Video Player</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link rel="stylesheet" href="<?=BASEURL?>static/vstyle.css" type="text/css"/>
-  <meta name="Author" content="Robin Gareus" />
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <script type="text/javascript" src="<?=BASEURL?>static/script.js"></script>
-</head>
+html5head('Video Player', 'vstyle.css');
+?>
 <body>
 <div class="container">
 <?php

@@ -192,6 +192,14 @@
     return $rv;
   }
 
+  function dbadmin_jumpselected() {
+    if (isset($_REQUEST['param'])) {
+      $id=intval(rawurldecode($_REQUEST['param'])); 
+      if ($id>0)
+        echo '<script type="text/javascript">'."\nadminjump('jan-$id');\n".'</script>'."\n";
+    }
+  }
+
   function dbadmin_listlocations($db) {
     $q='SELECT id, name from location ORDER BY id;'; 
     $res=$db->query($q);
@@ -203,11 +211,12 @@
     foreach ($result as $r) {
       $aids=fetch_activity_by_location($db,$r['id']);
       echo '<tr'.(($alt++%2==1)?' class="alt"':'').'>';
-      echo '<td>('.$r['id'].')&nbsp;</td><td>'.xhtmlify($r['name']).'</td>';
+      echo '<td>('.$r['id'].')<a id="jan-'.$r['id'].'" name="jan-'.$r['id'].'"/>&nbsp;</td>';
+      echo '<td>'.xhtmlify($r['name']).'</td>';
       echo '<td class="center'.((count($aids)==0)?' red':'').'">'.count($aids).'</td><td>';
-      echo '<a class="active" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'editlocation\';document.myform.submit();">Edit</a>';
+      echo '<a class="active" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'editlocation\';formsubmit(\'myform\');">Edit</a>';
       echo '&nbsp;|&nbsp;';
-      echo '<a class="active" onclick="if (confirm(\'Really delete Location no. '.$r['id'].'?\')) {document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'dellocation\';document.myform.submit();i}">Delete</a>';
+      echo '<a class="active" onclick="if (confirm(\'Really delete Location no. '.$r['id'].'?\')) {document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'dellocation\';formsubmit(\'myform\');}">Delete</a>';
       echo '</td></tr>'."\n";
     }
     echo '</table>'."\n";
@@ -226,18 +235,18 @@
     foreach ($result as $r) {
       $aids=fetch_activity_by_author($db,$r['id']);
       echo '<tr'.(($alt++%2==1)?' class="alt"':'').'>';
-      echo '<td>('.$r['id'].')&nbsp;</td><td>'.xhtmlify($r['name']).'</td>';
+      echo '<td>('.$r['id'].')<a id="jan-'.$r['id'].'" name="jan-'.$r['id'].'"/>&nbsp;</td><td>'.xhtmlify($r['name']).'</td>';
       if (count($aids)==0)
         echo '<td class="center red">0</td>';
       else 
-        echo '<td class="center"><a class="active" onclick="document.getElementById(\'pdb_filterauthor\').value=\''.$r['id'].'\';document.getElementById(\'param\').value=\'-1\';document.getElementById(\'mode\').value=\'\';document.myform.submit();">'.count($aids).'</a></td>';
+        echo '<td class="center"><a class="active" onclick="document.getElementById(\'pdb_filterauthor\').value=\''.$r['id'].'\';document.getElementById(\'param\').value=\'-1\';document.getElementById(\'mode\').value=\'\';formsubmit(\'myform\');">'.count($aids).'</a></td>';
       echo '<td>'.xhtmlify($r['email']).'</td>';
       if (!empty($r['email']))
         $emaillist.=$r['email'].', ';
       echo '<td>'.limit_text($r['bio'],300).'</td><td>';
-      echo '<a class="active" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'edituser\';document.myform.submit();">Edit</a>';
+      echo '<a class="active" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'edituser\';formsubmit(\'myform\');">Edit</a>';
       echo '&nbsp;|&nbsp;';
-      echo '<a class="active" onclick="if (confirm(\'Really delete User no. '.$r['id'].'?\')) {document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'deluser\';document.myform.submit();i}">Delete</a>';
+      echo '<a class="active" onclick="if (confirm(\'Really delete User no. '.$r['id'].'?\')) {document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'deluser\';formsubmit(\'myform\');i}">Delete</a>';
       echo '</td></tr>'."\n";
     }
     echo '</table>'."\n";
@@ -250,34 +259,16 @@
   function dbadmin_listall($db, $order='time') {
     $a_users = fetch_selectlist($db, 'user', 'ORDER BY name');
     $a_locations = fetch_selectlist($db, 'location');
-    $a_days = fetch_selectlist(0, 'days');
-    $a_types = fetch_selectlist(0, 'types');
 
     $filter=array('user' => '0', 'day' => '0', 'type' => '0');
 
-    if ($_REQUEST['param'] == -1) { // filter enable
+    if (1 || $_REQUEST['param'] == -1) { // filter enable
       if (isset($_REQUEST['pdb_filterday'])) $filter['day'] = intval(rawurldecode($_REQUEST['pdb_filterday']));
       if (isset($_REQUEST['pdb_filtertype'])) $filter['type'] = substr(rawurldecode($_REQUEST['pdb_filtertype']),0,1);
       if (isset($_REQUEST['pdb_filterauthor'])) $filter['user'] = intval(rawurldecode($_REQUEST['pdb_filterauthor']));
     }
-
     echo '<fieldset>';
-    echo '<legend>Filter:</legend>';
-    echo '<label for="pdb_filterday">Day:</label>';
-    echo '<select id="pdb_filterday" name="pdb_filterday" size="1">';
-    gen_options(array_merge(array('0' => '-all-'), $a_days) , $filter['day']);
-    echo '</select>&nbsp;'."\n";
-
-    echo '<label for="pdb_filtertype">Type:</label>';
-    echo '<select id="pdb_filtertype" name="pdb_filtertype" size="1">';
-    gen_options(array_merge(array('0' => '-all-'), $a_types), $filter['type']);
-    echo '</select>&nbsp;'."\n";
-
-    echo '<label for="pdb_filterauthor">Author:</label>';
-    echo '<select id="pdb_filterauthor" name="pdb_filterauthor" size="1">';
-    gen_options($a_users , $filter['user']);
-    echo '</select>&nbsp;'."\n";
-    echo '<input class="smbutton" type="button" title="Filter" value="Filter" onclick="document.getElementById(\'param\').value=-1;document.getElementById(\'mode\').value=\'\';document.myform.submit();"/>&nbsp;';
+    print_filterfields($a_users, $a_locations, $filter);
     echo '</fieldset>';
 
     if ($filter['user'] != '0') 
@@ -309,15 +300,15 @@
     echo '<table class="adminlist" cellspacing="0">'."\n";
     echo '<tr><th>';
     if ($order=='type')
-      echo '<span class="underline">Type</span>-Day-<a class="active" onclick="document.getElementById(\'sort\').value=\'time\';document.getElementById(\'mode\').value=\'\';document.myform.submit();">Tm</a>';
+      echo '<span class="underline">Type</span>-Day-<a class="active" onclick="document.getElementById(\'sort\').value=\'time\';document.getElementById(\'mode\').value=\'\';formsubmit(\'myform\');">Tm</a>';
     else
-      echo '<a class="active" onclick="document.getElementById(\'sort\').value=\'type\';document.getElementById(\'mode\').value=\'\';document.myform.submit();">Type</a>-Day-<span class="underline">Tm</span>';
+      echo '<a class="active" onclick="document.getElementById(\'sort\').value=\'type\';document.getElementById(\'mode\').value=\'\';formsubmit(\'myform\');">Type</a>-Day-<span class="underline">Tm</span>';
     echo '</th><th>Title - <em>Author</em></th><th style="width:9em;">Location</th><th>&nbsp;</th></tr>'."\n";
 
     $alt=0;
     foreach ($result as $r) {
       echo '<tr'.(($alt++%2==1)?' class="alt"':'').'>';
-      echo '<td><tt>'.color_type($r['type']).'-'.$r['day'].'-'.$r['starttime'].'</tt></td>';
+      echo '<td><a id="jan-'.$r['id'].'" name="jan-'.$r['id'].'"/><tt>'.color_type($r['type']).'-'.$r['day'].'-'.$r['starttime'].'</tt></td>';
       echo '<td'.(($r['status']==0)?' class="cancelled"':'').'><b>'.limit_text($r['title']).'</b>&nbsp;';
 
       echo '<em>'; $i=0;
@@ -325,7 +316,7 @@
         if ($i++>0) echo ', ';
         #echo $user_id.': ';
   #echo xhtmlify($a_users[$user_id]);
-        echo '<a class="active" onclick="document.getElementById(\'param\').value='.$user_id.';document.getElementById(\'mode\').value=\'edituser\';document.myform.submit();">'.xhtmlify($a_users[$user_id]).'</a>';
+        echo '<a class="active" onclick="document.getElementById(\'param\').value='.$user_id.';document.getElementById(\'mode\').value=\'edituser\';formsubmit(\'myform\');">'.xhtmlify($a_users[$user_id]).'</a>';
       }
       echo '</em></td>';
 
@@ -334,9 +325,9 @@
       else
         echo '<td>??</td>';
 
-      echo '<td><a class="active" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'edit\';document.myform.submit();">Edit</a>';
-    echo '&nbsp;|&nbsp;';
-    echo '<a class="active" onclick="if (confirm(\'Really delete Entry no. '.$r['id'].'?\')) {document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'delentry\';document.myform.submit();i}">Delete</a>';
+      echo '<td><a class="active" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'edit\';formsubmit(\'myform\');">Edit</a>';
+      echo '&nbsp;|&nbsp;';
+      echo '<a class="active" onclick="if (confirm(\'Really delete Entry no. '.$r['id'].'?\')) {document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'delentry\';formsubmit(\'myform\');}">Delete</a>';
       echo '</td></tr>'."\n";
     }
     echo '</table>'."\n";
@@ -355,8 +346,8 @@
     }
     echo '<label for="pdb_name">Name:</label><br/>';
     echo '<input id="pdb_name" name="pdb_name" length="80" value="'.$r['name'].'" /><br/>';
-    echo '<input class="button" type="button" title="Save" value="Save" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'savelocation\';document.myform.submit();"/>'."\n";
-    echo '<input class="button" type="button" title="Cancel" value="Cancel" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'unlocklocation\';document.myform.submit();"/>'."<br/>&nbsp;\n";
+    echo '<input class="button" type="button" title="Save" value="Save" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'savelocation\';formsubmit(\'myform\');"/>'."\n";
+    echo '<input class="button" type="button" title="Cancel" value="Cancel" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'unlocklocation\';formsubmit(\'myform\');"/>'."<br/>&nbsp;\n";
   }
 
 
@@ -378,8 +369,8 @@
     echo '<label for="pdb_bio">Bio:</label><br/>';
     echo '<textarea id="pdb_bio" name="pdb_bio" rows="8" cols="70">'.$r['bio'].'</textarea><br/><br/>';
 
-    echo '<input class="button" type="button" title="Save" value="Save" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'saveuser\';document.myform.submit();"/>'."\n";
-    echo '<input class="button" type="button" title="Cancel" value="Cancel" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'unlockuser\';document.myform.submit();"/>'."<br/>&nbsp;\n";
+    echo '<input class="button" type="button" title="Save" value="Save" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'saveuser\';formsubmit(\'myform\');"/>'."\n";
+    echo '<input class="button" type="button" title="Cancel" value="Cancel" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'unlockuser\';formsubmit(\'myform\');"/>'."<br/>&nbsp;\n";
   }
 
   function dbadmin_editform($db, $id) {
@@ -493,8 +484,8 @@
     echo '<label for="pdb_url_stream">Stream URL:</label><br/>';
     echo '<input id="pdb_url_stream" name="pdb_url_stream" length="80" value="'.$r['url_stream'].'" /><br/><br/>';
 
-    echo '<input class="button" type="button" title="Save" value="Save" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'saveedit\';document.myform.submit();"/>'."\n";
-    echo '<input class="button" type="button" title="Cancel" value="Cancel" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'unlockactivity\';document.myform.submit();"/>'."<br/>&nbsp;\n";
+    echo '<input class="button" type="button" title="Save" value="Save" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'saveedit\';formsubmit(\'myform\');"/>'."\n";
+    echo '<input class="button" type="button" title="Cancel" value="Cancel" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'unlockactivity\';formsubmit(\'myform\');"/>'."<br/>&nbsp;\n";
   }
 
   function dbadmin_dellocation($db) {
@@ -782,9 +773,9 @@
 
         if ($err) {
     echo ' - ('.$r['id'].') <em>day</em>:'.$r['day'].', <em>start</em>:'.$r['starttime'].', <em>duration</em>:'.$r['duration'].', <em>type</em>:'.translate_type($r['type']).' <em>title</em>:'.limit_text($r['title']).'&nbsp;|&nbsp;';
-          echo '<td><a class="active" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'edit\';document.myform.submit();">Edit</a>';
+          echo '<td><a class="active" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'edit\';formsubmit(\'myform\');">Edit</a>';
           if ($err==2) 
-            echo '&nbsp;|&nbsp;<a class="active" onclick="if (confirm(\'Really delete Entry no. '.$r['id'].'?\')) {document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'delentry\';document.myform.submit();i}">Delete</a>';
+            echo '&nbsp;|&nbsp;<a class="active" onclick="if (confirm(\'Really delete Entry no. '.$r['id'].'?\')) {document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'delentry\';formsubmit(\'myform\');i}">Delete</a>';
           echo '<br/>';
           echo "\n";
         }
@@ -804,7 +795,7 @@
         $aids=fetch_activity_by_author($db,$r['id']);
         if (count($aids)!=0) continue;
         echo '('.$r['id'].') "'.$r['name'].'" has no assignment.&nbsp;';
-        echo '<a class="active" onclick="if (confirm(\'Really delete User no. '.$r['id'].'?\')) {document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'deluser\';document.myform.submit();i}">Delete</a>';
+        echo '<a class="active" onclick="if (confirm(\'Really delete User no. '.$r['id'].'?\')) {document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'deluser\';formsubmit(\'myform\');}">Delete</a>';
         echo '<br/>'."\n";
       }
     } else {
@@ -821,7 +812,7 @@
         $aids=fetch_activity_by_location($db,$r['id']);
         if (count($aids)!=0) continue;
         echo '('.$r['id'].') "'.$r['name'].'" has no event assigned to it.&nbsp;';
-        echo '<a class="active" onclick="if (confirm(\'Really delete Location no. '.$r['id'].'?\')) {document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'dellocation\';document.myform.submit();i}">Delete</a>';
+        echo '<a class="active" onclick="if (confirm(\'Really delete Location no. '.$r['id'].'?\')) {document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'dellocation\';formsubmit(\'myform\');}">Delete</a>';
         echo '<br/>'."\n";
       }
     } else {
@@ -934,7 +925,7 @@
         if ($err) {
           $grrr++;
     echo ' - ('.$r['id'].') <em>day</em>:'.$r['day'].', <em>start</em>:'.$r['starttime'].', <em>duration</em>:'.$r['duration'].', <em>type</em>:'.translate_type($r['type']).' <em>title</em>:'.limit_text($r['title']).'&nbsp;|&nbsp;';
-          echo '<td><a class="active" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'edit\';document.myform.submit();">Edit</a>';
+          echo '<td><a class="active" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'edit\';formsubmit(\'myform\');">Edit</a>';
           echo '<br/>'."\n";
         }
       }
@@ -964,9 +955,9 @@
             $err++;
             echo '<span class="red">Conflict: ('.$a['id'].') ends in same location AFTER ('.$b['id'].') starts there.</span><br/>';
             echo ' - ('.$a['id'].') <em>day</em>:'.$a['day'].', <em>start</em>:'.$a['starttime'].', <em>duration</em>:'.$a['duration'].', <em>type</em>:'.translate_type($a['type']).' <em>title</em>:'.limit_text($a['title']).'&nbsp;|&nbsp;';
-      echo '<td><a class="active" onclick="document.getElementById(\'param\').value='.$a['id'].';document.getElementById(\'mode\').value=\'edit\';document.myform.submit();">Edit</a><br/>';
+      echo '<td><a class="active" onclick="document.getElementById(\'param\').value='.$a['id'].';document.getElementById(\'mode\').value=\'edit\';formsubmit(\'myform\');">Edit</a><br/>';
             echo ' - ('.$b['id'].') <em>day</em>:'.$b['day'].', <em>start</em>:'.$b['starttime'].', <em>duration</em>:'.$b['duration'].', <em>type</em>:'.translate_type($b['type']).' <em>title</em>:'.limit_text($b['title']).'&nbsp;|&nbsp;';
-      echo '<td><a class="active" onclick="document.getElementById(\'param\').value='.$b['id'].';document.getElementById(\'mode\').value=\'edit\';document.myform.submit();">Edit</a><br/>';
+      echo '<td><a class="active" onclick="document.getElementById(\'param\').value='.$b['id'].';document.getElementById(\'mode\').value=\'edit\';formsubmit(\'myform\');">Edit</a><br/>';
             echo "\n";
           }
         }
@@ -996,16 +987,16 @@
       if ($starta > $startb) continue;
             echo '<span class="yellow">Notice: '.$u['name'].' has more than one presentation on day '.$a['day'].'.</span><br/>';
         echo ' - ('.$a['id'].') <em>day</em>:'.$a['day'].', <em>start</em>:'.$a['starttime'].', <em>duration</em>:'.$a['duration'].', <em>type</em>:'.translate_type($a['type']).' <em>title</em>:'.limit_text($a['title']).'&nbsp;|&nbsp;';
-        echo '<td><a class="active" onclick="document.getElementById(\'param\').value='.$a['id'].';document.getElementById(\'mode\').value=\'edit\';document.myform.submit();">Edit</a><br/>';
+        echo '<td><a class="active" onclick="document.getElementById(\'param\').value='.$a['id'].';document.getElementById(\'mode\').value=\'edit\';formsubmit(\'myform\');">Edit</a><br/>';
         echo ' - ('.$b['id'].') <em>day</em>:'.$b['day'].', <em>start</em>:'.$b['starttime'].', <em>duration</em>:'.$b['duration'].', <em>type</em>:'.translate_type($b['type']).' <em>title</em>:'.limit_text($b['title']).'&nbsp;|&nbsp;';
-        echo '<td><a class="active" onclick="document.getElementById(\'param\').value='.$b['id'].';document.getElementById(\'mode\').value=\'edit\';document.myform.submit();">Edit</a><br/>';
+        echo '<td><a class="active" onclick="document.getElementById(\'param\').value='.$b['id'].';document.getElementById(\'mode\').value=\'edit\';formsubmit(\'myform\');">Edit</a><br/>';
       if ($enda > $startb) {
               $err++;;
               echo '<span class="red">Conflict: '.$u['name'].' has overlapping presentations on day '.$a['day'].'!</span><br/>';
         echo ' - ('.$a['id'].') <em>day</em>:'.$a['day'].', <em>start</em>:'.$a['starttime'].', <em>duration</em>:'.$a['duration'].', <em>type</em>:'.translate_type($a['type']).' <em>title</em>:'.limit_text($a['title']).'&nbsp;|&nbsp;';
-        echo '<td><a class="active" onclick="document.getElementById(\'param\').value='.$a['id'].';document.getElementById(\'mode\').value=\'edit\';document.myform.submit();">Edit</a><br/>';
+        echo '<td><a class="active" onclick="document.getElementById(\'param\').value='.$a['id'].';document.getElementById(\'mode\').value=\'edit\';formsubmit(\'myform\');">Edit</a><br/>';
         echo ' - ('.$b['id'].') <em>day</em>:'.$b['day'].', <em>start</em>:'.$b['starttime'].', <em>duration</em>:'.$b['duration'].', <em>type</em>:'.translate_type($b['type']).' <em>title</em>:'.limit_text($b['title']).'&nbsp;|&nbsp;';
-        echo '<td><a class="active" onclick="document.getElementById(\'param\').value='.$b['id'].';document.getElementById(\'mode\').value=\'edit\';document.myform.submit();">Edit</a><br/>';
+        echo '<td><a class="active" onclick="document.getElementById(\'param\').value='.$b['id'].';document.getElementById(\'mode\').value=\'edit\';formsubmit(\'myform\');">Edit</a><br/>';
             }
     }
         }
@@ -1036,6 +1027,52 @@
     );
   }
 
+  function print_filterfields($a_users, $a_locations, $filter, $usejs=false) {
+    $a_days = fetch_selectlist(0, 'days');
+    $a_types = fetch_selectlist(0, 'types');
+    if ($usejs) 
+      $ocs=' onchange="submit();"';
+    else
+      $ocs='';
+
+    if ($filter['day']==0 && $filter['type']=='0' && $filter['user']==0)
+      echo '<legend>Filter:</legend>';
+    else
+      echo '<legend style="color:red">Filter:</legend>';
+    echo '<label for="pdb_filterday">Day:</label>';
+    echo '<select id="pdb_filterday" name="pdb_filterday" size="1"'.$ocs.'>';
+    gen_options(array_merge(array('0' => '-all-'), $a_days) , $filter['day']);
+    echo '</select>&nbsp;'."\n";
+
+    echo '<label for="pdb_filtertype">Type:</label>';
+    echo '<select id="pdb_filtertype" name="pdb_filtertype" size="1"'.$ocs.'>';
+    gen_options(array_merge(array('0' => '-all-'), $a_types), $filter['type']);
+    echo '</select>&nbsp;'."\n";
+
+if (0) {
+    echo '<label for="pdb_filterlocation">Location:</label>';
+    echo '<select id="pdb_filterlocation" name="pdb_filterlocation" size="1"'.$ocs.'>';
+    gen_options($a_locations, $filter['location']);
+    echo '</select>&nbsp;'."\n";
+    #echo '<input class="smbutton" type="submit" title="Apply" value="Apply"/>&nbsp;';
+}
+if (1) {
+    echo '<label for="pdb_filterauthor">Author:</label>';
+    echo '<select id="pdb_filterauthor" name="pdb_filterauthor" size="1"'.$ocs.'>';
+    gen_options($a_users , $filter['user']);
+    echo '</select>&nbsp;'."\n";
+}
+    if ($usejs) {
+      echo '<input class="smbutton" type="submit" title="Apply" value="Apply"/>&nbsp;';
+      if (!($filter['day']==0 && $filter['type']=='0' && $filter['user']==0))
+        echo '<input class="smbutton" type="button" title="Clear" value="Clear" onclick="document.getElementById(\'pdb_filterday\').value=0;document.getElementById(\'pdb_filtertype\').value=0;document.getElementById(\'pdb_filterauthor\').value=0;formsubmit(\'myform\');"/>&nbsp;';
+    } else {
+      echo '<input class="smbutton" type="button" title="Filter" value="Filter" onclick="document.getElementById(\'param\').value=-1;document.getElementById(\'mode\').value=\'\';formsubmit(\'myform\');"/>&nbsp;';
+      if (!($filter['day']==0 && $filter['type']=='0' && $filter['user']==0))
+        echo '<input class="smbutton" type="button" title="Clear" value="Clear" onclick="document.getElementById(\'pdb_filterday\').value=0;document.getElementById(\'pdb_filtertype\').value=0;document.getElementById(\'pdb_filterauthor\').value=0;formsubmit(\'myform\');"/>&nbsp;';
+    }
+  }
+
   function print_filter($db) {
     $a_users = fetch_selectlist($db, 'user', 'ORDER BY name');
     $a_days = fetch_selectlist(0, 'days');
@@ -1060,44 +1097,17 @@
       if (isset($_REQUEST['pdb_filterid'])) $filter['id'] = intval(rawurldecode($_REQUEST['pdb_filterid']));
     }
 
-    echo '<form action="index.php" method="post" name="myform">';
+    echo '<form action="index.php" method="post" id="myform">';
     echo '<fieldset class="pdb">';
     echo '<input name="page" type="hidden" value="program"/>';
     if (isset($_REQUEST['mode']))
-			echo '<input name="mode" type="hidden" value="'.$_REQUEST['mode'].'"/>';
-		else
-			echo '<input name="mode" type="hidden" value=""/>';
+      echo '<input name="mode" type="hidden" value="'.$_REQUEST['mode'].'"/>';
+    else
+      echo '<input name="mode" type="hidden" value=""/>';
     if (isset($_REQUEST['details']))
       echo '<input name="details" type="hidden" value="'.$_REQUEST['details'].'"/>';
-    echo '<legend>Filter:</legend>';
-    echo '<label for="pdb_filterday">Day:</label>';
-    echo '<select id="pdb_filterday" name="pdb_filterday" size="1" onchange="submit();">';
-    gen_options(array_merge(array('0' => '-all-'), $a_days) , $filter['day']);
-    echo '</select>&nbsp;'."\n";
 
-    echo '<label for="pdb_filtertype">Type:</label>';
-    echo '<select id="pdb_filtertype" name="pdb_filtertype" size="1" onchange="submit();">';
-    gen_options(array_merge(array('0' => '-all-'), $a_types), $filter['type']);
-    echo '</select>&nbsp;'."\n";
-
-if (0) {
-    echo '<label for="pdb_filterlocation">Location:</label>';
-    echo '<select id="pdb_filterlocation" name="pdb_filterlocation" size="1" onchange="submit();">';
-    gen_options($a_locations, $filter['location']);
-    echo '</select>&nbsp;'."\n";
-    #echo '<input class="smbutton" type="submit" title="Apply" value="Apply"/>&nbsp;';
-}
-if (1) {
-#   echo '<br/>';
-    echo '<label for="pdb_filterauthor">Author:</label>';
-    echo '<select id="pdb_filterauthor" name="pdb_filterauthor" size="1" onchange="submit();">';
-    gen_options($a_users , $filter['user']);
-    echo '</select>&nbsp;'."\n";
-    #echo '<span style="font-size:75%">Note: The \'filter by author\' will not be available in the final public version.</span>';
-}
-    echo '<input class="smbutton" type="submit" title="Apply" value="Apply"/>&nbsp;';
-
-
+    print_filterfields($a_users, $a_locations, $filter, true);
     echo '</fieldset>';
     echo '</form>';
     echo '<div style="margin-bottom:1em;">&nbsp;</div>';
@@ -1262,8 +1272,8 @@ if (1) {
 
     if (!$print) {
       echo '<div class="center">Concerts &amp; Installations are <b>not</b> included in this table.</div>';
-      echo '<div id="dimmer" style="display:none;">&nbsp;</div>';
-      echo '<div id="infobox" style="display:none;"><div class="center"><a class="active" onclick="hideInfoBox();">close</a></div><object id="infoframe" data="raw.php" type="application/xhtml+xml"><!--[if IE]><iframe id="ieframe" src="raw.php" allowtransparency="true" frameborder="0" ></iframe><![endif]--></object></div>';
+      echo '<div id="dimmer" style="display:none;"onclick="hideInfoBox();">&nbsp;</div>';
+      echo '<div id="infobox" style="display:none;"><div class="center trc"><div class="footbar" style="top:0px;"><a class="active" onclick="hideInfoBox();">close</a></div></div><div class="ibtoptr">&nbsp;</div><object id="infoframe" data="raw.php" type="application/xhtml+xml"><!--[if IE]><iframe id="ieframe" src="raw.php" allowtransparency="true" frameborder="0" ></iframe><![endif]--></object><div class="trc"><div class="footbar" style="bottom:5px;">&nbsp</div></div><div class="ibfootl">&nbsp</div><div class="ibfootr">&nbsp;</div></div>';
     }
   }
 

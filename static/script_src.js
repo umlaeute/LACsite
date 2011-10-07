@@ -55,9 +55,21 @@ function hideInfoBox() {
   document.getElementById('dimmer').style.display = "none";
 }
 
+function formsubmit(id) {
+  if (document.getElementById(id)) {
+    document.getElementById(id).submit();
+	}
+}
+
+function adminjump(hashtag) {
+  if (document.getElementById(hashtag)) {
+		window.location.hash=hashtag;
+	}
+}
+
 function admingo(page,mode,param) {
 	document.getElementById('page').value=page;
 	document.getElementById('mode').value=mode;
 	document.getElementById('param').value=param;
-	document.myform.submit();
+	formsubmit('myform');
 }

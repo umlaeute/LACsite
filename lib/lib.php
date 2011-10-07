@@ -14,6 +14,36 @@
     return false;
   }
 
+  function html5head($title='The Linux Audio Conference', $style='style.css', $add='') {
+?><!DOCTYPE html>
+<?php
+    htmlhead($title, $style, $add);
+  }
+
+  function xhtmlhead($title='The Linux Audio Conference', $style='style.css', $add='') {
+    ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?php
+    htmlhead($title, $style, $add);
+  }
+
+  function htmlhead($title, $style, $add) {
+?><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <title>LAC<?=LACY?>: <?=$title?></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" href="<?=BASEURL?>static/<?=$style?>" type="text/css"/>
+  <meta name="Author" content="Robin Gareus" />
+  <meta name="description" content="Linux Audio Conference <?=LACY?>" />
+  <meta name="keywords" content="LAC<?=LACY?>, LAC, Linux Audio Conference <?=LACY?>,Linux, Music, Audio, Developer Meeting, CCRMA, Computer Research in Music and Acoustics, Stanford, Stanford University" />
+  <link rel="shortcut icon" href="<?=BASEURL?>favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="<?=BASEURL?>favicon.ico" type="image/x-icon" />
+  <script type="text/javascript" src="<?=BASEURL?>static/script.js"></script>
+  <?=$add?>
+</head>
+<?php
+  }
+
   function xhtmlify($s) {
     return htmlentities($s,ENT_COMPAT,'UTF-8');
     #return htmlentities(mb_convert_encoding($s,'utf-8,'utf-8'),ENT_COMPAT,'UTF-8');
@@ -256,7 +286,7 @@ $adminfieldsetonce=false;
 
   function adminpage() {
     echo '
-  <form action="index.php" method="post" name="myform">
+  <form action="index.php" method="post" id="myform">
   ';
     admin_fieldset();
     echo '

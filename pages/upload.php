@@ -72,7 +72,7 @@ if (    isset($_POST['postit'])
 }
 
 if ($printform) {
-  echo '<form action="index.php" method="post" name="myform" enctype="multipart/form-data">';
+  echo '<form action="index.php" method="post" id="myform" enctype="multipart/form-data">';
   echo '<fieldset>';
   echo '<input name="page" type="hidden" value="upload"/>';
   echo '<input name="secret" type="hidden" value="'.$_REQUEST['secret'].'"/>';

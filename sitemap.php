@@ -1,13 +1,12 @@
 <?php
+require_once('config.php');
+require_once('site.php');
+
 define('NL', "\n");
-define('CANONICALURL', "http://lac.linuxaudio.org/2012/");
 header ("Content-Type:text/xml");
 
 echo '<?xml version="1.0" encoding="UTF-8"?>'.NL;
 echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'.NL;
-
-require_once('config.php');
-require_once('site.php');
 
 $sitemap = array();
 

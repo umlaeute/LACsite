@@ -31,10 +31,12 @@ switch ($mode) {
     echo 'Download: <a href="download.php?file=registrations.csv">registrations.csv</a>';
     break;
   case 'email':
-    $r=scan_registrations();
-    echo '<pre style="font-size:9px; background:#ccc; line-height:1.3em;">';
-    echo wordwrap(list_emails($r),100);
-    echo '</pre><br/>'; 
+		$r=scan_registrations();
+		echo 'Email copy/paste:<br/>';
+    echo '<pre style="font-size:9px; background:#ccc; line-height:1.3em;">'."\n";
+    echo wordwrap(list_emails($r),100)."\n";
+    echo '</pre><br/>'."\n"; 
+		echo 'List of Participants:<br/>';
     show_fields($r,'reg_email');
     break;
   case 'badgespdf':
@@ -78,7 +80,7 @@ switch ($mode) {
       echo '<tr><td style="border-bottom: dotted 1px;">';
       echo substr($f, 16);
       echo '</td><td>';
-      echo '<span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'detail\';document.myform.submit();">Show Details</span>';
+      echo '<span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'detail\';formsubmit(\'myform\');">Show Details</span>';
       echo '</td><td>';
 
       $filename=$name = preg_replace('/[^a-zA-Z0-9_-]/','_', $f).'.ini';
@@ -88,17 +90,17 @@ switch ($mode) {
       switch(strtolower($v['reg_vip'])) {
         case 'author':
           echo '<td><span style="font-weight:bold;">[Author]</span></td>';
-          echo '<td><span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'vip_organizer\';document.myform.submit();">Organizer</span></td>';
-          echo '<td><span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'vip_none\';document.myform.submit();">No-VIP</span></td>';
+          echo '<td><span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'vip_organizer\';formsubmit(\'myform\');">Organizer</span></td>';
+          echo '<td><span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'vip_none\';formsubmit(\'myform\');">No-VIP</span></td>';
           break;
         case 'organizer':
-          echo '<td><span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'vip_author\';document.myform.submit();">Author</span></td>';
+          echo '<td><span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'vip_author\';formsubmit(\'myform\');">Author</span></td>';
           echo '<td><span style="font-weight:bold;">[Organizer]</span></td>';
-          echo '<td><span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'vip_none\';document.myform.submit();">No-VIP</span></td>';
+          echo '<td><span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'vip_none\';formsubmit(\'myform\');">No-VIP</span></td>';
           break;
         default:
-          echo '<td><span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'vip_author\';document.myform.submit();">Author</span></td>';
-          echo '<td><span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'vip_organizer\';document.myform.submit();">Organizer</span></td>';
+          echo '<td><span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'vip_author\';formsubmit(\'myform\');">Author</span></td>';
+          echo '<td><span style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($f).'\';document.getElementById(\'mode\').value=\'vip_organizer\';formsubmit(\'myform\');">Organizer</span></td>';
           echo '<td><span>[No-VIP]</span></td>';
           break;
       }
@@ -177,7 +179,7 @@ function show_fields($f, $k) {
     $v=parse_ini_file(REGLOGDIR.$filename);
     if (!empty($v[$k])) {
       $found++;
-      echo '<li style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($fn).'\';document.getElementById(\'mode\').value=\'detail\';document.myform.submit();">';
+      echo '<li style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($fn).'\';document.getElementById(\'mode\').value=\'detail\';formsubmit(\'myform\');">';
       echo $v['reg_prename'].' '.$v['reg_name'].': '.$v[$k].'</li>'."\n";
     }
   }

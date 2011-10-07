@@ -42,21 +42,8 @@
     header(404, "File not found");
     $page='404';
   }
- 
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-<head>
-  <title>LAC<?=LACY?>: The Linux Audio Conference</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <link rel="stylesheet" href="<?=BASEURL?>static/style.css" type="text/css"/>
-  <meta name="Author" content="Robin Gareus" />
-  <meta name="description" content="Linux Audio Conference <?=LACY?>" />
-  <meta name="keywords" content="LAC<?=LACY?>, LAC, Linux Audio Conference <?=LACY?>,Linux, Music, Audio, Developer Meeting, CCRMA, Computer Research in Music and Acoustics, Stanford, Stanford University" />
-  <link rel="shortcut icon" href="<?=BASEURL?>favicon.ico" type="image/x-icon" />
-  <link rel="icon" href="<?=BASEURL?>favicon.ico" type="image/x-icon" />
-  <script type="text/javascript" src="<?=BASEURL?>static/script.js"></script>
-</head>
+  xhtmlhead();
+?>
 <body>
 <div id="toprow">
   <div id="topline"></div>
@@ -92,8 +79,9 @@
 		leftbar(); clustermap(); 
 	}
 ?>
-    <div id="lbfootl"> </div>
-    <div id="lbfootr"> </div>
+    <p>&nbsp;</p>
+    <div class="lbfootl">&nbsp;</div>
+    <div class="lbfootr">&nbsp;</div>
   </div>
 
   <div id="main">

@@ -32,17 +32,43 @@ a:hover      {color:#990000;}
   height:12px;
   background:transparent url(../img/corner_tl.png) no-repeat scroll left top;
 }
-#lbfootl {
-  background:transparent url(../img/corner_bl.png) no-repeat scroll right bottom;
-  bottom:0px;
+.footbar {
+  font-size:10px;
+  line-height:10px;
+  width:100%;
+  position:absolute;
+  height:10px;
+  background:#ffffff;
+  overflow:hidden;
+}
+.lbfootl {
+  background:transparent url(../img/corner_bl.png) no-repeat scroll left top;
+}
+.ibfootl {
+  background:transparent url(../img/cornera_bl.png) no-repeat scroll left top;
+}
+.lbfootl, .ibfootl {
+  bottom:-2px;
   height:12px;
-  left:-2px;
+  left:0px;
   position:absolute;
   width:12px;
+  overflow:hidden;
 }
-#lbfootr {
-  background:transparent url(../img/corner_br.png) no-repeat scroll right bottom;
+.lbfootr {
+  background:transparent url(../img/corner_br.png) no-repeat scroll left top;
+}
+.ibfootr {
+  background:transparent url(../img/cornera_br.png) no-repeat scroll left top;
+}
+
+.lbfootr, .ibfootr {
+  bottom:-2px;
   height:12px;
+  position:absolute;
+  right:-2px;
+  width:12px;
+  overflow:hidden;
 }
 #main {
   position:relative;
@@ -242,12 +268,12 @@ fieldset legend {text-align:left;}
 #leftcolumn .fm br  {
 	margin-bottom:1em;
 }
-#leftcolumn .fm input  {
+#leftcolumn .fm input {
 	width:155px;
 	font-size:10px;
 	margin:2px;
 }
-#leftcolumn fieldset   {
+#leftcolumn fieldset {
 	width:160px;
 	padding:.25em; 
   margin:.25em auto;
@@ -319,12 +345,12 @@ ul.multicolumn   {width:100%;}
 ul.multicolumn li{float:left; width:33%;}
 
 #infoframe, #ieframe {
-  border:0px;
-  height:94%;
+  border:1px solid white;
+  height:380px;
   width:100%;
 }
 #infobox {
-  background-color: #fefef9;
+  background:transparent url(../img/cornera_tl.png) no-repeat scroll left top;
   color: #001100;
   height:400px;
   left:15%;
@@ -335,6 +361,22 @@ ul.multicolumn li{float:left; width:33%;}
   width:70%;
   z-index:300;
 }
+
+.ibtoptr {
+  background:transparent url(../img/cornera_tr.png) no-repeat scroll right top;
+  top:0px;
+  height:12px;
+  position:absolute;
+  right:0px;
+  width:12px;
+  overflow:hidden;
+}
+#infobox .trc{
+  height:10px;
+  margin:0px 10px 0px 10px;
+  position:relative;
+}
+
 #dimmer {
   background:transparent url(../img/dim.png) repeat scroll 0 0;
   height: 100%;

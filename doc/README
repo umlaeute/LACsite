@@ -10,6 +10,7 @@ Step 1) create 'config.php' with the following:
 <?php 
   define('REGLOGDIR',dirname($_SERVER['SCRIPT_FILENAME']).'/regs/');  
   define('TMPDIR',dirname($_SERVER['SCRIPT_FILENAME']).'/tmp/');
+  define('CANONICALURL', "http://lac.linuxaudio.org/2012/"); # used in sitemap
   define('LACY','2012');  
 
   $userewrite=false; # set to true if RewriteEngine is enabled in .htaccess
