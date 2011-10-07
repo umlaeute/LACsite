@@ -30,7 +30,7 @@ will keep mail traffic to an absolute minimum.
 Personal data provided by you in the registration form will be kept confidential and is not shared with any 3rd party.
 </p>
 
-<h1>Registration</h1>
+<h1>Registration<a name="registration"></a></h1>
 
 <div id="registration">
 <p>Please enter your registration information; fields marked with a
@@ -362,7 +362,7 @@ Personal data provided by you in the registration form will be kept confidential
 
 
 
-<form action="index.php" method="post">
+<form action="index.php#registration" method="post">
 
 <fieldset class="fs">
   <input name="page" type="hidden" value="<?php echo $page;?>"/>
