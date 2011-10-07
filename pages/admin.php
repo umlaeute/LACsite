@@ -110,20 +110,6 @@ switch ($mode) {
     break;
 }
 
-function adminpage() {
-  echo '
-<form action="index.php" method="post" name="myform">
-';
-  admin_fieldset();
-  echo '
-    <input name="page" type="hidden" value="admin" id="page"/>
-    <input name="mode" type="hidden" value="" id="mode"/>
-    <input name="param" type="hidden" value="" id="param"/>
-</form>
-<div style="height:1em;">&nbsp;</div>
-';
-#  print_r($_POST); # XXX
-}
 
 function scan_registrations() {
   $dir = opendir(REGLOGDIR); 
@@ -184,16 +170,22 @@ function count_fields($f, $k) {
 }
 
 function show_fields($f, $k) {
+  $found=0;
   echo "<ul>\n";
   foreach ($f as $fn) {
     $filename=$name = preg_replace('/[^a-zA-Z0-9_-]/','_', $fn).'.ini';
     $v=parse_ini_file(REGLOGDIR.$filename);
     if (!empty($v[$k])) {
+      $found++;
       echo '<li style="cursor:pointer; color:blue;" onclick="document.getElementById(\'param\').value=\''.rawurlencode($fn).'\';document.getElementById(\'mode\').value=\'detail\';document.myform.submit();">';
       echo $v['reg_prename'].' '.$v['reg_name'].': '.$v[$k].'</li>'."\n";
     }
   }
   echo "</ul>\n";
+  if ($found==0 ) {
+    echo '<div class="error">No entries found.</div>';
+    return;
+  }
 }
 
 function list_emails($f) {

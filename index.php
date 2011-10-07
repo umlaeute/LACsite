@@ -59,15 +59,18 @@
 </head>
 <body>
 <div id="toprow">
+  <div id="topline"></div>
   <div id="titlebar">
-    <div id="logoright"> </div>
     <div id="maintitle"> Linux Audio Conference <?=LACY?> </div>
     <div id="subtitle">The Open Source Music and Sound Conference</div>
     <div id="wherewhen">April 12-15 2012, Stanford, Ca, USA</div>
     <div>LECTURES / WORKSHOPS / EXHIBITION / CONCERTS / CLUBNIGHT</div>
   </div>
   <div id="titleend"> </div>
+</div>
 
+<div id="payload-layout">
+	<div id="logoright"> </div>
   <div id="mainmenu">
 <?php
   $i=0;
@@ -80,42 +83,15 @@
   echo '<div style="clear:both; height:0px;">&nbsp;</div>'."\n";
 ?>
   </div>
-</div>
-
-<div id="payload-layout">
   <div id="leftcolumn">
     <div id="lefthead"> </div>
-<?php
-  if (!in_array($page, $nosponsors)&& !$regclosed && $page != 'registration') {
-    echo '<div class="center huge"><a href="'.local_url('registration').'">Register Now</a></div>'."\n";
-    echo '  <hr class="psep"/>'."\n";
-  }
-  if (!in_array($page, $nosponsors)) {
-    echo '    <div id="supporterbar">The LAC 2012 is<br/>supported by<br/><br/>'."\n";
-    foreach ($sponsors as $sl => $si) {
-      echo '<div><a href="'.$sl.'"'."\n";
-      echo '     rel="supporter"><img src="'.$si['img'].'" title="'.$si['title'].'" alt="'.$si['title'].'"/>';
-      echo '<br/><span>'.$si['title'].'</span>';
-      echo '</a></div>'."\n";
-    }
-    echo '    </div>'."\n";
-    echo '  <hr class="psep"/>'."\n";
-  }
+<?php 
+	if ($page=='admin' || $page=='adminschedule') {
+		admin_fieldset(-3);
+	} else {
+		leftbar(); clustermap(); 
+	}
 ?>
-    <div class="center">
-<a href="http://www4.clustrmaps.com/counter/maps.php?url=http://lac.linuxaudio.org/2012/" id="clustrMapsLink" rel="external"><img src="http://www4.clustrmaps.com/counter/index2.php?url=http://lac.linuxaudio.org/2012/" style="border:0px;" alt="Locations of visitors to this page" title="Locations of visitors to this page" id="clustrMapsImg" />
-</a>
-<script type="text/javascript">
-function cantload() {
-img = document.getElementById("clustrMapsImg");
-img.onerror = null;
-img.src = "http://www2.clustrmaps.com/images/clustrmaps-back-soon.jpg";
-document.getElementById("clustrMapsLink").href = "http://www2.clustrmaps.com";
-}
-img = document.getElementById("clustrMapsImg");
-img.onerror = cantload;
-</script>
-    </div>
     <div id="lbfootl"> </div>
     <div id="lbfootr"> </div>
   </div>

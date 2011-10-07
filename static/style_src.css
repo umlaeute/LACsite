@@ -15,7 +15,9 @@ a:hover      {color:#990000;}
 .menuitem a:hover  {color:#990000; background:#808080;}
 .tabactive a:hover {color:#ffffff; background:transparent;}
 #payload-layout {
+	position:relative;
   min-width:74.5em;
+  max-width:84.5em;
   margin: 1em auto;
 }
 #leftcolumn {
@@ -50,8 +52,17 @@ a:hover      {color:#990000;}
   min-width:54em;
   background:#FEFEF9 url(../img/corner_tr.png) no-repeat scroll right top;
 }
+#topline {
+	position:absolute;
+	top:32px;
+	height:8px;
+	width:25%;
+	z-index:0;
+  background:#606060 url(../img/karma_line.png) repeat scroll left top;
+}
 #toprow {
-  margin: 0em auto;
+	position:relative;
+  background:#606060;
   min-width:74em;
 }
 #logoright {
@@ -59,19 +70,21 @@ a:hover      {color:#990000;}
   z-index:40;
   /*top:82px;*/
   /*top:7px; */
-  top:85px;
+  top:-63px;
   right:1em;
   width:158px;
   height:158px;
   background:transparent url(../img/lac2012.png) no-repeat top right;
 }
 #titlebar {
-  position:relative;
+	position:relative;
+  max-width:84.5em;
   color: #ffffff;
-  margin:0em;
+  margin:0em auto;
   text-align: left;
   background:#606060 url(../img/karma_logo.png) no-repeat scroll left top;
   border-bottom: .8em solid #606060;
+	z-index:10;
 }
 #titlebar div {
   padding-left: 45px;
@@ -101,7 +114,7 @@ a:hover      {color:#990000;}
   z-index:50;
   overflow:hidden;
   font-size: 12px;
-  margin:1.2em 164px 0px 45px;
+  margin:1.2em 164px 1.2em 45px;
   border-top: 1px solid #202020;
   border-bottom: 1px solid #202020;
 }
@@ -225,6 +238,20 @@ fieldset legend {text-align:left;}
 .fa td     {padding-left: 10px;}
 .fa td label input
            {margin-right: 4px;}
+
+#leftcolumn .fm br  {
+	margin-bottom:1em;
+}
+#leftcolumn .fm input  {
+	width:155px;
+	font-size:10px;
+	margin:2px;
+}
+#leftcolumn fieldset   {
+	width:160px;
+	padding:.25em; 
+  margin:.25em auto;
+}
 
 .fm input  {width:202px;}
 

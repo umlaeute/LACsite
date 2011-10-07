@@ -63,7 +63,7 @@
     else return number_format($bytesize, 2, '.', '') . " " . $unit; 
   } 
 
-  function dirlisttable($listdir) { 
+  function dirlisttable($listdir) {
     $dir = opendir($listdir); 
     $dirarray = array(); 
     $filearray = array(); 
@@ -97,10 +97,120 @@
     echo '</div>';
   }
 
+  function leftbar() {
+    global $page, $nosponsors, $regclosed, $sponsors;
+    if (!in_array($page, $nosponsors)&& !$regclosed && $page != 'registration') {
+      echo '<div class="center huge"><a href="'.local_url('registration').'">Register Now</a></div>'."\n";
+      echo '  <hr class="psep"/>'."\n";
+    }
+    if (!in_array($page, $nosponsors)) {
+      echo '    <div id="supporterbar">The LAC 2012 is<br/>supported by<br/><br/>'."\n";
+      foreach ($sponsors as $sl => $si) {
+        echo '<div><a href="'.$sl.'"'."\n";
+        echo '     rel="supporter"><img src="'.$si['img'].'" title="'.$si['title'].'" alt="'.$si['title'].'"/>';
+        echo '<br/><span>'.$si['title'].'</span>';
+        echo '</a></div>'."\n";
+      }
+      echo '    </div>'."\n";
+      echo '  <hr class="psep"/>'."\n";
+    }
+  }
+
+  function clustermap() {
+?>
+    <div class="center">
+<a href="http://www4.clustrmaps.com/counter/maps.php?url=http://lac.linuxaudio.org/2012/" id="clustrMapsLink" rel="external"><img src="http://www4.clustrmaps.com/counter/index2.php?url=http://lac.linuxaudio.org/2012/" style="border:0px;" alt="Locations of visitors to this page" title="Locations of visitors to this page" id="clustrMapsImg" />
+</a>
+<script type="text/javascript">
+function cantload() {
+img = document.getElementById("clustrMapsImg");
+img.onerror = null;
+img.src = "http://www2.clustrmaps.com/images/clustrmaps-back-soon.jpg";
+document.getElementById("clustrMapsLink").href = "http://www2.clustrmaps.com";
+}
+img = document.getElementById("clustrMapsImg");
+img.onerror = cantload;
+</script>
+    </div>
+<?php
+  }
+
+$adminfs=array(
+  array( 'title' => 'List all registrations', 'value' => 'List Participants',
+         'page'  => 'admin', 'mode'  => 'list', 'param' => ''),
+  array( 'title' => 'Show non empty remarks', 'value' => 'List Remarks',
+         'page'  => 'admin', 'mode'  => 'remarks', 'param' => ''),
+  array( 'title' => 'Count Ordered Proceedings', 'value' => 'List Ordered Proceedings',
+         'page'  => 'admin', 'mode'  => 'proceedings', 'param' => ''),
+  array( 'title' => 'Generate list of email addresses', 'value' => 'Dump Email Contacts',
+         'page'  => 'admin', 'mode'  => 'email', 'param' => ''),
+  #array('title' => 'Show Badges TeX', 'value' => 'Show Badges TeX',
+  #      'page'  => 'admin', 'mode'  => 'badgestex', 'param' => ''),
+  array( 'title' => 'Generate badges PDF', 'value' => 'Generate Badges PDF',
+         'page'  => 'admin', 'mode'  => 'badgespdf', 'param' => ''),
+  array( 'title' => 'Export comma separated value table', 'value' => 'Export registrations (CSV)',
+         'page'  => 'admin', 'mode'  => 'csv', 'param' => ''),
+);
+       
+$agendafs=array(
+  array( 'title' => 'List Program Entries', 'value' => 'List Program Entries',
+         'page'  => 'adminschedule', 'mode'  => '', 'param' => ''),
+  array( 'title' => 'List Authors', 'value' => 'List Authors',
+         'page'  => 'adminschedule', 'mode'  => 'listuser', 'param' => ''),
+  array( 'title' => 'List Locations', 'value' => 'List Locations',
+         'page'  => 'adminschedule', 'mode'  => 'listlocation', 'param' => ''),
+  array( 'title' => 'Add Program Entry', 'value' => 'Add Program Entry',
+         'page'  => 'adminschedule', 'mode'  => 'edit', 'param' => '-1'),
+  array( 'title' => 'Add Author', 'value' => 'Add Author',
+         'page'  => 'adminschedule', 'mode'  => 'edituser', 'param' => '-1'),
+  array( 'title' => 'Add Location', 'value' => 'Add Location',
+         'page'  => 'adminschedule', 'mode'  => 'editlocation', 'param' => '-1'),
+  array( 'title' => 'Check Timetable for conflicts', 'value' => 'Check for conflicts',
+         'page'  => 'adminschedule', 'mode'  => 'conflicts', 'param' => ''),
+  array( 'title' => 'List orphaned entries', 'value' => 'List orphaned entries',
+         'page'  => 'adminschedule', 'mode'  => 'orphans', 'param' => ''),
+  array( 'title' => 'Export Program (CSV)', 'value' => 'Export Program (CSV)',
+         'page'  => 'adminschedule', 'mode'  => 'export', 'param' => ''),
+);
+$adminfieldsetonce=false;
+
+  function admin_buttonset($btns, $title, $group) {
+    echo '<fieldset class="fm">'."\n";
+    echo '  <legend>'.$title.'</legend>'."\n";
+    $i=0;
+    foreach ($btns as $btn) {
+      echo '  <input class="button" type="button" title="'.$btn['title']
+          .'" value="'.$btn['value'].'" onclick="admingo(\''
+          .$btn['page']."','" 
+          .$btn['mode']."','" 
+          .$btn['param']."');" 
+          .'"/>'."\n";
+      if ($group==0 ) continue;
+
+      $i++;
+      if (($i % abs($group)) > 0) {
+        if($group>0) echo "&nbsp;\n";
+      } else if ($i>0) {
+        echo "<br/>\n";
+      }
+    }
+    echo '</fieldset>'."\n";
+  }
+
+  function admin_fieldset($group=3) {
+    global $adminfieldsetonce;
+    if ($adminfieldsetonce) return;
+    $adminfieldsetonce=true;
+    global $adminfs,$agendafs;
+    admin_buttonset($adminfs, 'Registration Admin:', $group);
+    admin_buttonset($agendafs, 'Agenda Admin:', $group);
+  }
 
   # libadmin
-
-  function admin_fieldset() {
+  function admin_fieldset2() {
+    global $adminfieldsetonce;
+    if ($adminfieldsetonce) return;
+    $adminfieldsetonce=true;
 ?>
 <fieldset class="fm">
     <legend>Registration Admin:</legend>
@@ -120,7 +230,7 @@
   </fieldset>
 
   <fieldset class="fm">
-    <legend>Program Schedule Admin Menu:</legend>
+    <legend>Agenda Admin:</legend>
     <input class="button" type="button" title="List Program Entries" value="List Program Entries" onclick="admingo('adminschedule','','');"/>
     &nbsp;
     <input class="button" type="button" title="List Authors" value="List Authors" onclick="admingo('adminschedule','listuser','');"/>
@@ -133,7 +243,8 @@
     &nbsp;
     <input class="button" type="button" title="Add Location" value="Add Location" onclick="admingo('adminschedule','editlocation','-1');"/>
     <br/>
-    <input class="button" type="button" title="Check Timetable for conflicts" value="Check Timetable for conflicts" onclick="admingo('adminschedule','conflicts','');"/>
+    <div style="height:0.25em"> </div>
+    <input class="button" type="button" title="Check Timetable for conflicts" value="Check for conflicts" onclick="admingo('adminschedule','conflicts','');"/>
     &nbsp;
     <input class="button" type="button" title="List orphaned entries" value="List orphaned entries" onclick="admingo('adminschedule','orphans','');"/>
     &nbsp;
@@ -143,21 +254,36 @@
 <?php
   }
 
-function texify_umlauts($v) {
-  $v=str_replace("\xc3\x9f",'\\"{s}',$v);
-  $v=str_replace("\xc3\xa0",'\\`{a}',$v);
-  $v=str_replace("\xc3\xa1",'\\\'{a}',$v);
-  $v=str_replace("\xc3\xa2",'\\\^{a}',$v);
-  $v=str_replace("\xc3\xa4",'\\"{a}',$v);
-  $v=str_replace("\xc3\xa8",'\\`{e}',$v);
-  $v=str_replace("\xc3\xa9",'\\\'{e}',$v);
-  $v=str_replace("\xc3\xaa",'\\^{e}',$v);
-  $v=str_replace("\xc3\xb6",'\\"{o}',$v);
-  $v=str_replace("\xc3\xb9",'\\`{u}',$v);
-  $v=str_replace("\xc3\xba",'\\\'{u}',$v);
-  $v=str_replace("\xc3\xbc",'\\"{u}',$v);
-  $v=str_replace("\xc3\xbd",'\\\'{y}',$v);
-  $v=str_replace("\xc3\xbf",'\\"{y}',$v);
-  $v=str_replace("&",'\&',$v);
-  return $v;
-}
+  function adminpage() {
+    echo '
+  <form action="index.php" method="post" name="myform">
+  ';
+    admin_fieldset();
+    echo '
+      <input name="page" type="hidden" value="admin" id="page"/>
+      <input name="mode" type="hidden" value="" id="mode"/>
+      <input name="param" type="hidden" value="" id="param"/>
+  </form>
+  <div style="height:1em;">&nbsp;</div>
+  ';
+  #  print_r($_POST); # XXX
+  }
+
+  function texify_umlauts($v) {
+    $v=str_replace("\xc3\x9f",'\\"{s}',$v);
+    $v=str_replace("\xc3\xa0",'\\`{a}',$v);
+    $v=str_replace("\xc3\xa1",'\\\'{a}',$v);
+    $v=str_replace("\xc3\xa2",'\\\^{a}',$v);
+    $v=str_replace("\xc3\xa4",'\\"{a}',$v);
+    $v=str_replace("\xc3\xa8",'\\`{e}',$v);
+    $v=str_replace("\xc3\xa9",'\\\'{e}',$v);
+    $v=str_replace("\xc3\xaa",'\\^{e}',$v);
+    $v=str_replace("\xc3\xb6",'\\"{o}',$v);
+    $v=str_replace("\xc3\xb9",'\\`{u}',$v);
+    $v=str_replace("\xc3\xba",'\\\'{u}',$v);
+    $v=str_replace("\xc3\xbc",'\\"{u}',$v);
+    $v=str_replace("\xc3\xbd",'\\\'{y}',$v);
+    $v=str_replace("\xc3\xbf",'\\"{y}',$v);
+    $v=str_replace("&",'\&',$v);
+    return $v;
+  }

@@ -39,7 +39,7 @@ April 12-15 2012, CCRMA, Stanford, California. See the <a href="<?=local_url('co
 The conference main tracks will be streamed live and archived. Remote participation is possible via IRC.
 </p>
 <div class="ptitle">
-<img src="img/ccrma_at_dusk.jpg" alt="CCRMA builting 'The Knoll'"/><br/>
+<img src="img/ccrma_at_dusk.jpg" alt="CCRMA building 'The Knoll' at dusk"/><br/>
 CCRMA is located on the Stanford University campus in <a href="https://ccrma.stanford.edu/about/knoll" rel="external">The Knoll</a>
 </div>
 <p>
