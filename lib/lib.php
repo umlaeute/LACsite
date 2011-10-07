@@ -134,7 +134,7 @@
       echo '  <hr class="psep"/>'."\n";
     }
     if (!in_array($page, $nosponsors)) {
-      echo '    <div id="supporterbar">The '.SHORTTITLE.'is<br/>supported by<br/><br/>'."\n";
+      echo '    <div id="supporterbar">The '.SHORTTITLE.' is<br/>supported by<br/><br/>'."\n";
       foreach ($sponsors as $sl => $si) {
         echo '<div><a href="'.$sl.'"'."\n";
         echo '     rel="supporter"><img src="'.$si['img'].'" title="'.$si['title'].'" alt="'.$si['title'].'"/>';
