@@ -50,8 +50,8 @@
   }
 
   function local_url($page, $args='') {
-    global $userewrite;
-    if (isset($userewrite) && $userewrite) {
+    global $config;
+    if (isset($config['userewrite']) && $config['userewrite']) {
       return BASEURL.rawurlencode($page).(!empty($args)?'?'.$args:'');
     }
     return BASEURL.'?page='.rawurlencode($page).(!empty($args)?'&amp;'.$args:'');
@@ -128,8 +128,8 @@
   }
 
   function leftbar() {
-    global $page, $nosponsors, $regclosed, $sponsors;
-    if (!in_array($page, $nosponsors)&& !$regclosed && $page != 'registration') {
+    global $page, $nosponsors, $config, $sponsors;
+    if (!in_array($page, $nosponsors)&& !$config['regclosed'] && $page != 'registration') {
       echo '<div class="center huge"><a href="'.local_url('registration').'">Register Now</a></div>'."\n";
       echo '  <hr class="psep"/>'."\n";
     }
@@ -144,25 +144,6 @@
       echo '    </div>'."\n";
       echo '  <hr class="psep"/>'."\n";
     }
-  }
-
-  function clustermap() {
-?>
-    <div class="center">
-<a href="http://www4.clustrmaps.com/counter/maps.php?url=http://lac.linuxaudio.org/2012/" id="clustrMapsLink" rel="external"><img src="http://www4.clustrmaps.com/counter/index2.php?url=http://lac.linuxaudio.org/2012/" style="border:0px;" alt="Locations of visitors to this page" title="Locations of visitors to this page" id="clustrMapsImg" />
-</a>
-<script type="text/javascript">
-function cantload() {
-img = document.getElementById("clustrMapsImg");
-img.onerror = null;
-img.src = "http://www2.clustrmaps.com/images/clustrmaps-back-soon.jpg";
-document.getElementById("clustrMapsLink").href = "http://www2.clustrmaps.com";
-}
-img = document.getElementById("clustrMapsImg");
-img.onerror = cantload;
-</script>
-    </div>
-<?php
   }
 
 $adminfs=array(

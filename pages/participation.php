@@ -15,7 +15,7 @@
 <h1>Call for papers</h1>
 <p>
 Papers can be submitted for review via the
-<strong><a href="http://lac.linuxaudio.org/2012/openconf/" rel="external">openconf</a></strong> system.
+<strong><a href="<?=CANONICALURL?>openconf/" rel="external">openconf</a></strong> system.
 Templates for paper submission are available for LaTeX and OpenOffice/LibreOffice from <a href="download/lac2012-templates.tar.gz">here</a>.
 </p>
 <p>
@@ -61,7 +61,7 @@ We very much welcome practical papers resp software demos ("how I use Linux Audi
 Not all papers need to directly address Linux Audio. There is no limitation for subjects from related fields like open source music applications, free/libre software for music or audio/visual research and open-content.
 </p>
 
-<p>NB. Papers should be as complete as possible on submission. Until submission closes it is possible to replace/update files in the <a href="http://lac.linuxaudio.org/2012/openconf/" rel="external">openconf</a> system. Submissions will be peer-reviewed and after the notification of acceptance there is a small time-window for updates and last-minute changes.
+<p>NB. Papers should be as complete as possible on submission. Until submission closes it is possible to replace/update files in the <a href="<?=CANONICALURL?>openconf/" rel="external">openconf</a> system. Submissions will be peer-reviewed and after the notification of acceptance there is a small time-window for updates and last-minute changes.
 </p>
 
 <h1>Call for music</h1>

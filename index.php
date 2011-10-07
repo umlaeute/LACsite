@@ -27,7 +27,7 @@
   }
 
   if (  !empty($preq) && $preq=='registration' 
-      && isset($regclosed) && $regclosed) {
+      && isset($config['regclosed']) && $config['regclosed']) {
     $page='regclosed';
   }
 
@@ -76,7 +76,8 @@
 	if ($page=='admin' || $page=='adminschedule') {
 		admin_fieldset(-3);
 	} else {
-		leftbar(); clustermap(); 
+    leftbar(); 
+    if (function_exists('clustermap')) clustermap(); 
 	}
 ?>
     <p>&nbsp;</p>

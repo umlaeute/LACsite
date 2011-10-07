@@ -13,7 +13,7 @@ height;o.parentNode.replaceChild(i,o);})();</script><![endif]-->
 <h1>Contact</h1>
 <h3>Email</h3>
 <p style="margin-left:2em;">
-lac -at- linuxaudio -dot- org</p>
+<?=$config['txtemail']?></p>
 
 <h3>Street address:</h3>
 <p style="margin-left:2em;">

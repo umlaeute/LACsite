@@ -687,8 +687,8 @@
         }
         echo '<div class="aimg"><a href="'.$r['url_image'].'"><img src="'.$thumb.'" width="100" alt="author image"/></a></div>';
       }
-      global $hidepapers;
-      if ($hidepapers) $r['url_paper'] = '';
+      global $config;
+      if ($config['hidepapers']) $r['url_paper'] = '';
 
       # TODO: abstraction for multiple links: key ('type/name') => value ('url')
       if (!empty($r['url_audio']) || !empty($r['url_misc']) || !empty($r['url_paper']) || !empty($r['url_slides']) || !empty($r['url_stream']))
@@ -1417,6 +1417,7 @@ if (1) {
   }
 
   function vcal_program($db,$version='2.0',$raw=true) {
+    global $config;
     if (!function_exists('quoted_printable_encode')) 
       require_once('lib/quoted_printable.php');
 
@@ -1441,7 +1442,7 @@ if (1) {
     $result=$res->fetchAll();
     echo 'BEGIN:VCALENDAR'."\r\n";
     echo 'VERSION:'.$version."\r\n"; 
-    echo 'PRODID:-//linuxaudio.org/LAC'.LACY.'//NONSGML v1.0//EN'."\r\n";
+    echo 'PRODID:-//'.$config['organizaion'].'/LAC'.LACY.'//NONSGML v1.0//EN'."\r\n";
 
 # XXX hardcoded concerts
 #    $result[] = array('id'=> 1000, 'day' => '1', 'starttime' => '20:00', 'duration' => '180',  'type' => 'c', 'title' => 'Opening Concert', 'abstract' => '', 'location_id' => 3, 'status' => '1');
@@ -1454,13 +1455,13 @@ if (1) {
       if ($r['status']==0) continue; // XXX cancelled
 
       echo 'BEGIN:VEVENT'."\r\n";
-      echo 'UID:lac'.LACY.'-'.$r['id'].'@linuxaudio.org'."\r\n";
+      echo 'UID:lac'.LACY.'-'.$r['id'].'@'.$config['organizaion']."\r\n";
 
       $dtstamp=filemtime('tmp/lac'.LACY.'.db'); // XXX -> config.php
       echo 'DTSTAMP:'.date("Ymd\THis\Z", $dtstamp)."\r\n";  // optional
 
       foreach (fetch_authorids($db, $r['id']) as $user_id) {
-        echo 'ATTENDEE;ROLE=CHAIR;CN='.trim($a_users[$user_id]).':MAILTO:no-reply@linuxaudio.org'."\r\n";
+        echo 'ATTENDEE;ROLE=CHAIR;CN='.trim($a_users[$user_id]).':MAILTO:no-reply@'.$config['organizaion']."\r\n";
       }
       echo 'DTSTART:'.iso8601($r)."\r\n";
       echo 'DTEND:'.iso8601($r,false)."\r\n";

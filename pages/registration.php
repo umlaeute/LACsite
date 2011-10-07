@@ -15,7 +15,7 @@ This is for a number of reasons:
 <p>
 If you have registered and for whatever reason will not come to the
 conference, please let us know as soon as you can by sending an email to
-lac -AT- linuxaudio -DOT- org.
+<?=$config['txtemail']?>.
 </p>
 
 <p>This registration covers the attendance to the main conference venue only. Concerts in clubs and similar evening-sessions may require reservation or purchase of an entrance ticket at the venue.</p>

@@ -35,7 +35,7 @@ $sitemap['participants']['changefreq'] = 'always';
 
 foreach ($sitemap as $p => $k) {
 
-	if ($userewrite) {
+	if ($config['userewrite']) {
 		echo '  <url>'.NL.'    <loc>'.CANONICALURL.$p.'</loc>'.NL;
 		if (!empty($k['changefreq'])) 
 			echo '    <changefreq>'.$k['changefreq'].'</changefreq>'.NL;

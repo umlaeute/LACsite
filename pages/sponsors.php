@@ -2,7 +2,7 @@
 As admittance to the conference is free, several things need sponsoring.
 If you want to contribute to the conference and want to know what you
 can sponsor and what we offer in return, please contact the
-conference organisation: lac -at- linuxaudio -dot- org 
+conference organisation: <?=$config['txtemail']?> 
 </p>
 <h2>Why should I sponsor the LAC?</h2>
 <p>
