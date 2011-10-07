@@ -449,7 +449,7 @@ Personal data provided by you in the registration form will be kept confidential
 <legend>Miscellaneous:</legend>
   <label class="la" for="reg_notes" style="float:left;">Remarks:</label>
   <textarea id="reg_notes" name="reg_notes" rows="3" cols="60"><?php if (isset($_POST['reg_notes'])) echo rawurldecode($_POST['reg_notes']);?></textarea><br/>
-</fieldset><br/>
+</fieldset><p></p>
 <div>
   <div style="float:right;">
 <input type="submit" class="button" value="Submit registration"/></div>
