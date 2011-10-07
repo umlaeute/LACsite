@@ -81,7 +81,7 @@ are described in <a href="download/callformusic-LAC2012.pdf">callformusic.pdf</a
 <h1>Call for workshops</h1>
 <p>
 If you want to organise a training, workshop or other activity please
-<a href="<?=local_url('contact')?>">contact the LAC committee</a> by email.
+<a href="<?=local_url('contact')?>">contact the committee</a> by email.
 </p>
 <p>Include a Title, your name and contact information, a short description, outline or abstract (no more than 500 words) and any specific resources required.
 </p>

@@ -5,7 +5,7 @@
   dirlisttable('download');
  /* POST CONFERENCE
 
-<h2>LAC 2012</h2>
+<h2><?=SHORTTITLE?></h2>
 <p><em>Note</em> that all A/V is provided in Ogg/Theora/Vorbis. Should you have problems playing these, consult Wikipedia's <a href="http://en.wikipedia.org/wiki/Wikipedia:Media_help_%28Ogg%29" rel="external">OGG media help</a>.<br/> <br/>
 </p>
 <ul>

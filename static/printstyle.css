@@ -8,6 +8,17 @@ body		{
 		font-size: 10pt;
 		padding:1em;
 		}
+.menu {
+	position:fixed;
+	top:0px;
+	left:0px;
+	padding:2px 1em 2px 2px;
+	line-height:1.5em;
+  background:#808080;
+}
+.menu a:hover {
+	color:#990000;
+}
 #content h1,
 #content h2,
 #content h3 		{
@@ -48,6 +59,7 @@ span.cancelled b,
 span.cancelled span	{text-decoration:line-through; color:#001100;}
 ul 			{margin-left:2em;}
 
+/*
 table.trl {
 	width:75%;
 	margin: 1em auto;
@@ -61,7 +73,6 @@ td.trX, td.tr0, td.tr1, td.tr2, td.tr3, td.tr4, td.tr5, td.tr6, td.tr7 {
 	border-top:1px solid black;
 	border-right:1px solid black;
 }
-
 td.trX	{
 	background:black; color:white; line-height:120%; font-weight:bold;
 }
@@ -89,3 +100,4 @@ td.tr6	{
 td.tr7	{
 	background:#ff99e6;
 }
+*/

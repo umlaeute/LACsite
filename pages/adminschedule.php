@@ -21,8 +21,8 @@ if (!defined('REGLOGDIR')) die();
       admin_fieldset();
       program_fieldset();
       echo '<legend>Location List:</legend>'."\n";
-			dbadmin_listlocations($db);
-			dbadmin_jumpselected();
+      dbadmin_listlocations($db);
+      dbadmin_jumpselected();
       break;
     case 'unlockuser':
       $id=intval(rawurldecode($_REQUEST['param'])); 
@@ -36,7 +36,7 @@ if (!defined('REGLOGDIR')) die();
       program_fieldset();
       echo '<legend>Author List:</legend>'."\n";
       dbadmin_listusers($db);
-			dbadmin_jumpselected();
+      dbadmin_jumpselected();
       break;
     case 'editlocation':
       $id=intval(rawurldecode($_REQUEST['param'])); 
@@ -124,17 +124,17 @@ if (!defined('REGLOGDIR')) die();
     echo '<legend>Conference Program:</legend>'."\n";
     $sort=''; if (isset($_REQUEST['sort'])) $sort=rawurldecode($_REQUEST['sort']);
     dbadmin_listall($db, $sort); # does print_filterfields()
-		dbadmin_jumpselected();
-	} else {
-		# hidden filterfields - remember
+    dbadmin_jumpselected();
+  } else {
+    # hidden filterfields - remember
     $filter=array('user' => '0', 'day' => '0', 'type' => '0');
-		if (isset($_REQUEST['pdb_filterday'])) $filter['day'] = intval(rawurldecode($_REQUEST['pdb_filterday']));
-		if (isset($_REQUEST['pdb_filtertype'])) $filter['type'] = substr(rawurldecode($_REQUEST['pdb_filtertype']),0,1);
-		if (isset($_REQUEST['pdb_filterauthor'])) $filter['user'] = intval(rawurldecode($_REQUEST['pdb_filterauthor']));
+    if (isset($_REQUEST['pdb_filterday'])) $filter['day'] = intval(rawurldecode($_REQUEST['pdb_filterday']));
+    if (isset($_REQUEST['pdb_filtertype'])) $filter['type'] = substr(rawurldecode($_REQUEST['pdb_filtertype']),0,1);
+    if (isset($_REQUEST['pdb_filterauthor'])) $filter['user'] = intval(rawurldecode($_REQUEST['pdb_filterauthor']));
     echo '<input name="pdb_filterday" type="hidden" value="'.rawurldecode($filter['day']).'"/>'."\n";
     echo '<input name="pdb_filtertype" type="hidden" value="'.rawurldecode($filter['type']).'"/>'."\n";
-		echo '<input name="pdb_filterauthor" type="hidden" value="'.rawurldecode($filter['user']).'"/>'."\n";
-	}
+    echo '<input name="pdb_filterauthor" type="hidden" value="'.rawurldecode($filter['user']).'"/>'."\n";
+  }
 
 ?>
   </fieldset>

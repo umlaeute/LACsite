@@ -1147,15 +1147,12 @@ if (1) {
 ?>
 <h2 class="ptitle pb">Concerts &amp; Installations</h2>
 <h3>Concerts</h3>
-<p>...
-</p>
+<p>&hellip;stay tuned.</p>
 <div style="padding:.5em 1em; 0em 1em">
 <?php
-  $q='SELECT activity.* FROM activity WHERE type='.$db->quote('c');
-  $q.=' ORDER BY day, strftime(\'%H:%M\',starttime), typesort(type), location_id;';
-  query_out($db, $q, $details, false,  true, true);
-
-    echo '</div>'."\n";
+    $q='SELECT activity.* FROM activity WHERE type='.$db->quote('c');
+    $q.=' ORDER BY day, strftime(\'%H:%M\',starttime), typesort(type), location_id;';
+    query_out($db, $q, $details, false,  true, true);
     echo '</div>'."\n";
   } ## END hardcoded_concert_and_installation_info ##
 

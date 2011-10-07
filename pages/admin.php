@@ -31,12 +31,12 @@ switch ($mode) {
     echo 'Download: <a href="download.php?file=registrations.csv">registrations.csv</a>';
     break;
   case 'email':
-		$r=scan_registrations();
-		echo 'Email copy/paste:<br/>';
+    $r=scan_registrations();
+    echo 'Email copy/paste:<br/>';
     echo '<pre style="font-size:9px; background:#ccc; line-height:1.3em;">'."\n";
     echo wordwrap(list_emails($r),100)."\n";
     echo '</pre><br/>'."\n"; 
-		echo 'List of Participants:<br/>';
+    echo 'List of Participants:<br/>';
     show_fields($r,'reg_email');
     break;
   case 'badgespdf':
@@ -109,6 +109,7 @@ switch ($mode) {
     echo '</table>';
     break;
   default:
+    echo 'Choose an action from the menu.';
     break;
 }
 

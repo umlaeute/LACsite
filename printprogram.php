@@ -1,9 +1,10 @@
 <?php
   require_once('lib/lib.php');
   require_once('lib/programdb.php');
-	xhtmlhead('Conference Timetable', 'printstyle.css');
+	xhtmlhead('Conference Timetable', 'printstyle.css', '<link rel="stylesheet" type="text/css" media="print" href="'.BASEURL.'static/print.css" />');
 ?>
 <body id="content">
+<div class="menu">Back to <a href="<?=local_url('program')?>">conference site</a>.</div>
 <h1 class="center">LAC 2012 Conference Programme</h1>
 <div class="center">April 12-15; CCRMA, Stanford University</div>
 <div class="center">All times are PDT = UTC-7</div>

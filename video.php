@@ -102,8 +102,8 @@ echo '</em>';
 echo '</div>';
 if (!empty($url)) {
 	echo '<div class="player">'.$out.'</div>';
-	$tu=rawurldecode($url);
-	$tt=rawurldecode('LAC '.LACY.' - '.$v['title']);
+	$tu=rawurlencode($url);
+	$tt=rawurlencode(SHORTTITLE.' - '.$v['title']);
 	echo '
   <div id="sociallinkbar">
     <a id="lnktwtr" rel="_blank" href="http://twitter.com/share?url='.$tu.'" title="Tweet This!"></a>

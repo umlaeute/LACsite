@@ -57,7 +57,7 @@
 </div>
 
 <div id="payload-layout">
-	<div id="logoright"> </div>
+  <div id="logoright"> </div>
   <div id="mainmenu">
 <?php
   $i=0;
@@ -73,12 +73,12 @@
   <div id="leftcolumn">
     <div id="lefthead"> </div>
 <?php 
-	if ($page=='admin' || $page=='adminschedule') {
-		admin_fieldset(-3);
-	} else {
+  if ($page=='admin' || $page=='adminschedule') {
+    admin_fieldset(-3);
+  } else {
     leftbar(); 
     if (function_exists('clustermap')) clustermap(); 
-	}
+  }
 ?>
     <p>&nbsp;</p>
     <div class="lbfootl">&nbsp;</div>

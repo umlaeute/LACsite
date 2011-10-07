@@ -30,9 +30,9 @@
   function htmlhead($title, $style, $add) {
 ?><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-  <title>LAC<?=LACY?>: <?=$title?></title>
+  <title><?=SHORTTITLE?>: <?=$title?></title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <link rel="stylesheet" href="<?=BASEURL?>static/<?=$style?>" type="text/css"/>
+  <link rel="stylesheet" href="<?=BASEURL?>static/<?=$style?>" type="text/css" media="all"/>
   <meta name="Author" content="Robin Gareus" />
   <meta name="description" content="Linux Audio Conference <?=LACY?>" />
   <meta name="keywords" content="LAC<?=LACY?>, LAC, Linux Audio Conference <?=LACY?>,Linux, Music, Audio, Developer Meeting, CCRMA, Computer Research in Music and Acoustics, Stanford, Stanford University" />
@@ -134,7 +134,7 @@
       echo '  <hr class="psep"/>'."\n";
     }
     if (!in_array($page, $nosponsors)) {
-      echo '    <div id="supporterbar">The LAC 2012 is<br/>supported by<br/><br/>'."\n";
+      echo '    <div id="supporterbar">The '.SHORTTITLE.'is<br/>supported by<br/><br/>'."\n";
       foreach ($sponsors as $sl => $si) {
         echo '<div><a href="'.$sl.'"'."\n";
         echo '     rel="supporter"><img src="'.$si['img'].'" title="'.$si['title'].'" alt="'.$si['title'].'"/>';
