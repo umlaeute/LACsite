@@ -214,12 +214,11 @@ div.menuitem {
 #content h1,
 #content h2,
 #content h3     {
-                  font-style:italic;
                   margin-top:0em;
                   margin-bottom:0.5em;
 }
-#content h1     { font-size: 160%; }
-#content h2     { font-size: 140%; }
+#content h1     { font-size: 140%; }
+#content h2     { font-size: 130%; }
 #content h3     { font-size: 120%; }
 
 #content form     { width:41em; margin:0 auto;}
@@ -245,6 +244,7 @@ div.menuitem {
 #content fieldset   {padding-left:.5em; font-size:11pt; padding-bottom:.5em; clear:both;}
 #content label.la   {font-style:italic;}
 #content .error     {color:#990000;}
+#content p.error   {font-size:120%;}
 #content .fx        {display:none;}
 
 #content div.wikilink {font-size:80%; margin-top:1em; text-align:right;}
