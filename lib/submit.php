@@ -106,12 +106,12 @@ function savereg() {
   }
   $datafields=array(
     'reg_name', 'reg_prename', 'reg_tagline', 'reg_email', 'reg_agegroup', 
-    'reg_country', 'reg_useathome', 'reg_useatwork', 
-#    'reg_audiopro', 'reg_vmusician', 'reg_vdj', 'reg_vswdeveloper',
+    'reg_country', 'reg_useathome', 'reg_useatwork', 'reg_audiopro',
+#    'reg_vmusician', 'reg_vdj', 'reg_vswdeveloper',
 #    'reg_vhwdeveloper', 'reg_vswuser', 'reg_vpress',
 #    'reg_vmediapro', 'reg_vmproducer', 'reg_vvproducer', 'reg_vresearcher',
 #    'reg_vinterested', 'reg_vother',
-     'reg_profession', 'reg_about', 
+    'reg_profession', 'reg_about', 
     'reg_proceedings', 'reg_whoelselist', 'reg_notes'
   );
 
