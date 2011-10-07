@@ -1269,8 +1269,8 @@ if (1) {
 
     if (!$print) {
       echo '<div class="center">Concerts &amp; Installations are <b>not</b> included in this table.</div>';
-      echo '<div id="dimmer" style="display:none;"onclick="hideInfoBox();">&nbsp;</div>';
-      echo '<div id="infobox" style="display:none;"><div class="center trc"><div class="footbar" style="top:0px;"><a class="active" onclick="hideInfoBox();">close</a></div></div><div class="ibtoptr">&nbsp;</div><object id="infoframe" data="raw.php" type="application/xhtml+xml"><!--[if IE]><iframe id="ieframe" src="raw.php" allowtransparency="true" frameborder="0" ></iframe><![endif]--></object><div class="trc"><div class="footbar" style="bottom:5px;">&nbsp</div></div><div class="ibfootl">&nbsp</div><div class="ibfootr">&nbsp;</div></div>';
+      echo '<div id="dimmer" style="display:none;" onclick="hideInfoBox();">&nbsp;</div>';
+      echo '<div id="infobox" style="display:none;"><div class="center trc"><div class="footbar" style="top:0px;"><a class="active" onclick="hideInfoBox();">close</a></div></div><div class="ibtoptr">&nbsp;</div><object id="infoframe" data="raw.php" type="application/xhtml+xml"><!--[if IE]><iframe id="ieframe" src="raw.php" allowtransparency="true" frameborder="0" ></iframe><![endif]--></object><div class="trc"><div class="footbar" style="bottom:5px;">&nbsp;</div></div><div class="ibfootl">&nbsp;</div><div class="ibfootr">&nbsp;</div></div>';
     }
   }
 
