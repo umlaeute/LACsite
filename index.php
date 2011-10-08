@@ -88,11 +88,34 @@
   <div id="main">
     <div id="content" class="mainheadl">
 <?php
-require_once('pages/'.$page.'.php');
+	require_once('pages/'.$page.'.php');
+
+	#format page mod time
+	$mtime=filemtime('pages/'.$page.'.php');
+	$mtime_idx=0;
+	switch($page) {
+		case 'sponsors':
+			$mtime_idx=filemtime('site.php');
+			break;
+		case 'program':
+		case 'adminschedule':
+			$mtime_idx=filemtime('tmp/lac2012.db');
+			break;
+		case 'admin':
+		case 'participants':
+			$mtime_idx=filemtime('tmp/reg2012.db');
+			break;
+		case 'upload':
+		case 'files':
+		default:
+			$mtime_idx=filemtime('index.php');
+	}
+	$mtime=$mtime_page>$mtime_idx?$mtime_page:$mtime_idx;
+	$mdate=date("l, M j Y H:i e", $mtime);
 ?>
     </div>
     <div id="mainfootl"> </div>
-    <div id="createdby"> Oct 06 2011, Fernando Lopez-Lezcano, Bruno Ruviaro &amp; Robin Gareus</div>
+		<div id="createdby">Last modified: <?=$mdate?> - Fernando Lopez-Lezcano, Bruno Ruviaro &amp; Robin Gareus</div>
   </div>
   <div style="clear:both; height:0px;">&nbsp;</div>
 </div>
