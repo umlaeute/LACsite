@@ -1,9 +1,10 @@
 <?php
+# vim: ts=2 et
   require_once('lib/lib.php');
   require_once('site.php');
 //////////////////////////////////////////////////////////////////////////////
 
-  $page='about';
+  $page=$homepage;
   $preq='';
 
   if (isset($_REQUEST['page']))
@@ -12,7 +13,7 @@
   if (!empty($preq) && in_array($preq, array_merge(array_keys($pages), array_keys($hidden))))
     $page=$preq;
 
-  if (!empty($preq) && ($preq=='admin' || $preq=='adminschedule' || $preq=='upload')) {
+  if (!empty($preq) && in_array($preq, $adminpages)) { 
     if (authenticate()) {
       require_once('lib/submit.php');
       $page=$preq;
@@ -38,19 +39,21 @@
         $page='regcomplete';
   }
 
-  if (!empty($preq) && $preq!=$page && $page=='about') {
+  if (!empty($preq) && $preq!=$page && $page==$homepage) {
     header(404, "File not found");
     $page='404';
   }
+
+### BEGIN OUTPUT ###
   xhtmlhead();
 ?>
 <body>
 <div id="toprow">
   <div id="topline"></div>
   <div id="titlebar">
-    <div id="maintitle"> Linux Audio Conference <?=LACY?> </div>
+    <div id="maintitle">Linux Audio Conference <?=LACY?> </div>
     <div id="subtitle">The Open Source Music and Sound Conference</div>
-    <div id="wherewhen">April 12-15 2012, Stanford, Ca, USA</div>
+    <div id="wherewhen"><?=$config['headerlocation']?></div>
     <div>LECTURES / WORKSHOPS / EXHIBITION / CONCERTS / CLUBNIGHT</div>
   </div>
   <div id="titleend"> </div>
@@ -60,6 +63,7 @@
   <div id="logoright"> </div>
   <div id="mainmenu">
 <?php
+  ### populate menu bar ##
   $i=0;
   foreach($pages as $p => $t) {
     echo '
@@ -67,9 +71,10 @@
         <a href="'.local_url($p).'">'.$t.'</a>
     </div>'."\n";
   }
-  echo '<div style="clear:both; height:0px;">&nbsp;</div>'."\n";
+  echo '    <div style="clear:both; height:0px;">&nbsp;</div>'."\n";
 ?>
   </div>
+
   <div id="leftcolumn">
     <div id="lefthead"> </div>
 <?php 
@@ -87,35 +92,38 @@
 
   <div id="main">
     <div id="content" class="mainheadl">
-<?php
-	require_once('pages/'.$page.'.php');
 
-	#format page mod time
-	$mtime=filemtime('pages/'.$page.'.php');
-	$mtime_idx=0;
-	switch($page) {
-		case 'sponsors':
-			$mtime_idx=filemtime('site.php');
-			break;
-		case 'program':
-		case 'adminschedule':
-			$mtime_idx=filemtime('tmp/lac2012.db');
-			break;
-		case 'admin':
-		case 'participants':
-			$mtime_idx=filemtime('tmp/reg2012.db');
-			break;
-		case 'upload':
-		case 'files':
-		default:
-			$mtime_idx=filemtime('index.php');
-	}
-	$mtime=$mtime_page>$mtime_idx?$mtime_page:$mtime_idx;
-	$mdate=date("l, M j Y H:i e", $mtime);
+<?php
+  require_once('pages/'.$page.'.php');
+
+  ### content-footer
+  #format page mod time
+  $mtime_page=filemtime('pages/'.$page.'.php');
+  $mtime_idx=0;
+  switch($page) {
+    case 'sponsors':
+      $mtime_idx=filemtime('site.php');
+      break;
+    case 'program':
+    case 'adminschedule':
+      $mtime_idx=filemtime(preg_replace('@^[^:]*:@', '', PDOPRGDB));
+      break;
+    case 'admin':
+    case 'participants':
+      $mtime_idx=filemtime(preg_replace('@^[^:]*:@', '', PDOREGDB));
+      break;
+    case 'upload':
+    case 'files':
+    default:
+      $mtime_idx=filemtime('index.php');
+  }
+  $mtime=$mtime_page>$mtime_idx?$mtime_page:$mtime_idx;
+  $mdate=date("l, M j Y H:i e", $mtime);
 ?>
+
     </div>
     <div id="mainfootl"> </div>
-		<div id="createdby">Last modified: <?=$mdate?> - Fernando Lopez-Lezcano, Bruno Ruviaro &amp; Robin Gareus</div>
+    <div id="createdby">Last modified: <?=$mdate?> - Fernando Lopez-Lezcano, Bruno Ruviaro &amp; Robin Gareus</div>
   </div>
   <div style="clear:both; height:0px;">&nbsp;</div>
 </div>

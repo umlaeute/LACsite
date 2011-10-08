@@ -25,7 +25,7 @@ switch ($mode) {
 adminpage();
 switch ($mode) {
   case 'csv':
-    $handle = fopen(TMPDIR.'/registrations.csv', "w");
+    $handle = fopen(TMPDIR.'registrations.csv', "w");
     fwrite($handle, export_sv(","));
     fclose($handle);
     echo 'Download: <a href="download.php?file=registrations.csv">registrations.csv</a>';
@@ -275,18 +275,18 @@ function export_sv($sep="\t") {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function gen_badges_pdf($f) {
-  $handle = fopen(TMPDIR.'/lac2012badges.tex', "w");
+  $handle = fopen(TMPDIR.'lac2012badges.tex', "w");
   fwrite($handle, gen_badges_source($f));
   fclose($handle);
-  @copy (TMPDIR.'../img/badge_ccrma.png', TMPDIR.'/badge_ccrma.png');
-  @copy (TMPDIR.'../img/badgelogo.png', TMPDIR.'/badgelogo.png'); # XXX FIX img path
-  @copy (TMPDIR.'../img/fonts/GoudyStMTT.afm', TMPDIR.'/GoudyStMTT.afm'); 
-  @copy (TMPDIR.'../img/fonts/GoudyStMTT.tfm', TMPDIR.'/GoudyStMTT.tfm'); 
-  @copy (TMPDIR.'../img/fonts/GoudyStMTT.ttf', TMPDIR.'/GoudyStMTT.ttf'); 
-  @copy (TMPDIR.'../img/fonts/ttfonts.map', TMPDIR.'/ttfonts.map'); 
-  @copy (TMPDIR.'../img/fonts/T1-WGL4x.enc', TMPDIR.'/T1-WGL4x.enc'); 
+  @copy (DOCROOTDIR.'img/badge_ccrma.png', TMPDIR.'badge_ccrma.png');
+  @copy (DOCROOTDIR.'img/badgelogo.png', TMPDIR.'badgelogo.png');
+  @copy (DOCROOTDIR.'img/fonts/GoudyStMTT.afm', TMPDIR.'GoudyStMTT.afm'); 
+  @copy (DOCROOTDIR.'img/fonts/GoudyStMTT.tfm', TMPDIR.'GoudyStMTT.tfm'); 
+  @copy (DOCROOTDIR.'img/fonts/GoudyStMTT.ttf', TMPDIR.'GoudyStMTT.ttf'); 
+  @copy (DOCROOTDIR.'img/fonts/ttfonts.map', TMPDIR.'ttfonts.map'); 
+  @copy (DOCROOTDIR.'img/fonts/T1-WGL4x.enc', TMPDIR.'T1-WGL4x.enc'); 
 
-  @unlink (TMPDIR.'/lac2012badges.pdf');
+  @unlink (TMPDIR.'lac2012badges.pdf');
   echo '<pre style="font-size:70%; line-height:1.2em;">';
   system('cd '.TMPDIR.'; pdflatex lac2012badges.tex');
   echo '</pre>';

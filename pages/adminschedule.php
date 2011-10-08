@@ -74,7 +74,7 @@ if (!defined('REGLOGDIR')) die();
     case 'texify':
       admin_fieldset();
       program_fieldset();
-      $handle = fopen(TMPDIR.'/schedule.tex', "w");
+      $handle = fopen(TMPDIR.'schedule.tex', "w");
       fwrite($handle, export_progam_tex($db));
       fclose($handle);
       echo '<legend>Conference Program - Export to tex:</legend>'."\n";
@@ -85,7 +85,7 @@ if (!defined('REGLOGDIR')) die();
     case 'export':
       admin_fieldset();
       program_fieldset();
-      $handle = fopen(TMPDIR.'/schedule.csv', "w");
+      $handle = fopen(TMPDIR.'schedule.csv', "w");
       fwrite($handle, export_progam_sv($db, ","));
       fclose($handle);
       echo '<legend>Conference Program - Export to spreadsheet:</legend>'."\n";

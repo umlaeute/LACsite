@@ -85,3 +85,4 @@ function quoted_printable_encode($input, $line_max = 15000) {
   return trim($output);
 } // end quoted_printable_encode
 
+# vim: ts=2 et

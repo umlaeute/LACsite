@@ -32,9 +32,10 @@ AuthDigestProvider file
 ## This allows to cache static pages.
 ## php evauluate  pages/about.php -> ./about
 ##
-#RewriteRule ^video/(.*)               video.php?id=$1  [QSA,L]
+#RewriteRule ^vid/(.*)                 video.php?id=$1  [QSA,L]
+#RewriteRule ^nfo/(.*)                 raw.php?pdb_filterid=$1  [QSA,L]
 #RewriteRule ^$                        index.php
 #RewriteCond %{REQUEST_FILENAME}       !-f
 #RewriteCond %{REQUEST_FILENAME}       !-d
-#RewriteRule ^video/(.*)              video.php?id=$1  [QSA,L]
-#RewriteRule ^(.*)                    index.php?page=$1  [QSA,L]
+#RewriteRule ^video/(.*)               video.php?id=$1  [QSA,L]
+#RewriteRule ^(.*)                     index.php?page=$1  [QSA,L]

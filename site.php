@@ -1,4 +1,7 @@
 <?php
+# vim: ts=2 et
+#default page
+  $homepage='about';
 
 #pages listed as 'tabs' on the site
   $pages = array(
@@ -19,6 +22,13 @@
 
 # don't list sponsors on these pages
   $nosponsors = array(
+    'upload',
+    'admin',
+    'adminschedule',
+  );
+
+#pages that require authentication
+  $adminpages = array(
     'upload',
     'admin',
     'adminschedule',

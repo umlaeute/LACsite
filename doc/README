@@ -10,21 +10,30 @@ Step 1) create 'config.php' with the following:
 <?php 
   define('REGLOGDIR',dirname($_SERVER['SCRIPT_FILENAME']).'/regs/');  
   define('TMPDIR',dirname($_SERVER['SCRIPT_FILENAME']).'/tmp/');
+  define('DOCROOTDIR',dirname($_SERVER['SCRIPT_FILENAME']).'/');
+
   define('LACY','2012');  
   define('CANONICALURL', 'http://lac.linuxaudio.org/'.LACY.'/'); # used in sitemap
+  define('SHORTTITLE', 'LAC '.LACY);
+
+  define('PDOREGDB','sqlite:tmp/reg".LACY.".db');  
 
   define('BASEURL',''); # '/2012/' - same as RewriteBase incl. trailing '/'
   $config['userewrite']=false; # set to true if RewriteEngine is enabled
 
-  $config['organizaion'] = 'linuxaudio.org';
-	$config['txtemail'] = 'lac -AT- linuxaudio -DOT- org'; 
+  $config['organizaion'] = 'linuxaudio.org'; # used as URI for calendar and CC-license
+  $config['headerlocation'] = 'April 12-15 @ CCRMA, Stanford University, Ca, USA';
+  $config['txtemail'] = 'lac -AT- linuxaudio -DOT- org'; 
+
+  $config['regclosed']=false;
+  $config['hidepapers']=false; # don't include links to papers (yet)
 
   $config['regmail']=true; # if set users will receive a confirmation email
-	$config['regclosed']=false;
-  $config['hidepapers']=false; # don't include links to papers (yet)
-	$config['mailfrom']='lac@linuxaudio.org'; # emails from address
+  $config['mailfrom']='lac@linuxaudio.org'; # emails from address
   $config['mailto']='robin@linuxaudio.org, marcg@dinkum.nl'; # admin email
   $config['mailto']=''; # if empty no email will be sent to admins.
+  $config['mailfooter']=''; 
+
 ---------8<---------
 
 Step 2+)
@@ -50,8 +59,8 @@ Step 2+)
 
 Step 3) OPTIONAL
   set up HTTP AUTH and apcahe URL rewriting
-	copy .htaccess-dist to .htaccess and edit it. edit apache config
-	to permit .htaccess Rewrite and allow auth overrides
+  copy .htaccess-dist to .htaccess and edit it. edit apache config
+  to permit .htaccess Rewrite and allow auth overrides
   use `htdigest [-c] <file> <realm> <username>` to create the password file.
 
 Step 4+)

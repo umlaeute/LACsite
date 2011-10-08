@@ -1,7 +1,7 @@
 <?php
   require_once('lib/lib.php');
   require_once('lib/programdb.php');
-	xhtmlhead('Conference Timetable');
+	xhtmlhead(SHORTTITLE.' - Presentation Detail');
 ?>
 <body id="content" style="border:0px; background:#ffffff;">
 <div>

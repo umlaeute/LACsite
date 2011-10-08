@@ -1,4 +1,6 @@
 <?php
+## download protected files -- admin only ##
+
   $req=rawurldecode($_REQUEST['file']);
 
   require_once('lib/lib.php');
@@ -8,19 +10,19 @@
   switch ($req) {
     case 'lac'.LACY.'badges.pdf':
       $ctype='application/pdf';
-      $fn = TMPDIR.'/lac'.LACY.'badges.pdf';
+      $fn = TMPDIR.'lac'.LACY.'badges.pdf';
       break;
     case 'schedule.tex':
       $ctype='text/plain';
-      $fn = TMPDIR.'/schedule.tex';
+      $fn = TMPDIR.'schedule.tex';
       break;
     case 'schedule.csv':
       $ctype='text/csv';
-      $fn = TMPDIR.'/schedule.csv';
+      $fn = TMPDIR.'schedule.csv';
       break;
     case 'registrations.csv':
       $ctype='text/csv';
-      $fn = TMPDIR.'/registrations.csv';
+      $fn = TMPDIR.'registrations.csv';
       break;
     default:
       die();

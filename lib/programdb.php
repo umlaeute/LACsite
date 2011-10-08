@@ -1,8 +1,9 @@
 <?php
 # TODO check if included by top-handler. 
+# TODO: search hardcoded* in this file -> config, settings
 
   try {
-    $db=new PDO("sqlite:tmp/lac".LACY.".db"); // XXX -> config.php
+    $db=new PDO(PDOPRGDB);
   } catch (PDOException $exception) {
     die ('Database Failure: '.$exception->getMessage());
   }
@@ -170,9 +171,17 @@
     return $rv;
   }
 
+  function conference_dayend($day) {
+    return strtotime((4+intval($day)).' October 2011 15:00:00 CEST'); # TODO -> config start-date and dates
+    return strtotime((11+intval($day)).' April 2012 03:00:00 PDT'); # TODO -> config start-date and dates
+  }
+
   function fetch_selectlist($db, $table='user', $order='ORDER BY id') {
     if ($table=='days')
       return array('1' => '1 - Thursday, April/12', '2' => '2 - Friday the 13th', '3' => '3 - Saturday, April/14', '4' => '4 - Sunday, April/15');
+    if ($table=='daylist') # TODO derive from 'days' - note: start at '1'.
+      return array(1=> 'Thursday, April/12', 2=> 'Friday the 13th', 3=> 'Saturday, April/14', 4=> 'Sunday, April/15');
+
     if ($table=='types')
       #return array('p' => 'Paper Presentation', 'w' => 'Workshop', 'c' => 'Concert', 'i' => 'Installation', 'o' => 'Other');
       return array('p' => 'Paper Presentation', 'w' => 'Workshop', 'c' => 'Concert', 'o' => 'Other');
@@ -1158,10 +1167,9 @@ if (1) {
 
 
   function list_program($db,$details) {
-    print_day($db, 1,'Thursday, April/12',$details);
-    print_day($db, 2,'Friday the 13th',$details);
-    print_day($db, 3,'Saturday, April/14',$details);
-    print_day($db, 4,'Sunday, April/15',$details);
+    foreach (fetch_selectlist(0, 'daylist') as $day => $date) {
+      print_day($db, $day,$date,$details);
+    }
   }
 
   function table_program($db, $day, $print=false) {
@@ -1454,7 +1462,7 @@ if (1) {
       echo 'BEGIN:VEVENT'."\r\n";
       echo 'UID:lac'.LACY.'-'.$r['id'].'@'.$config['organizaion']."\r\n";
 
-      $dtstamp=filemtime('tmp/lac'.LACY.'.db'); // XXX -> config.php
+      $dtstamp=filemtime(preg_replace('@^[^:]*:@', '', PDOPRGDB));
       echo 'DTSTAMP:'.date("Ymd\THis\Z", $dtstamp)."\r\n";  // optional
 
       foreach (fetch_authorids($db, $r['id']) as $user_id) {
@@ -1478,3 +1486,4 @@ if (1) {
     }
     echo 'END:VCALENDAR'."\r\n";
   }
+# vim: ts=2 et
