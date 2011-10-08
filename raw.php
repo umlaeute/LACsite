@@ -1,7 +1,8 @@
 <?php
+# vim: ts=2 et
   require_once('lib/lib.php');
   require_once('lib/programdb.php');
-	xhtmlhead(SHORTTITLE.' - Presentation Detail');
+  xhtmlhead(SHORTTITLE.' - Presentation Detail');
 ?>
 <body id="content" style="border:0px; background:#ffffff;">
 <div>

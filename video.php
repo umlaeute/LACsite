@@ -1,4 +1,5 @@
 <?php
+# vim: ts=2 et
 require_once('lib/lib.php');
 require_once('lib/programdb.php');
 html5head('Video Player', 'vstyle.css');
@@ -101,10 +102,10 @@ foreach (fetch_authorids($db, $id) as $user_id) {
 echo '</em>';
 echo '</div>';
 if (!empty($url)) {
-	echo '<div class="player">'.$out.'</div>';
-	$tu=rawurlencode($url);
-	$tt=rawurlencode(SHORTTITLE.' - '.$v['title']);
-	echo '
+  echo '<div class="player">'.$out.'</div>';
+  $tu=rawurlencode($url);
+  $tt=rawurlencode(SHORTTITLE.' - '.$v['title']);
+  echo '
   <div id="sociallinkbar">
     <a id="lnktwtr" rel="_blank" href="http://twitter.com/share?url='.$tu.'" title="Tweet This!"></a>
     <a id="lnkturl" rel="_blank" href="http://tinyurl.com/create.php?url='.$tu.'" title="Create TinyURL"></a>

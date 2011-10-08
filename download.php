@@ -69,3 +69,4 @@
   }
   else die('error can not open file');
   exit();
+# vim: ts=2 et

@@ -6,3 +6,4 @@
     $version='1.0';
 
   vcal_program($db,$version);
+# vim: ts=2 et

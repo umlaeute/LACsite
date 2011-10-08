@@ -1,5 +1,5 @@
 <?php
-
+# vim: ts=2 et
 #print_r($_SERVER); exit;
 
 if (!empty($_SERVER['PHP_AUTH_DIGEST'])) {
