@@ -1,3 +1,4 @@
+#######################################
 # some handy scripts for live-streaming
 
 dvsink-icecast2.sh
@@ -37,3 +38,13 @@ program2ff.php:
 example ~/.dvswitchrc:
  MIXER_HOST=localhost
  MIXER_PORT=1234
+
+#####################
+# site administration
+update-sites.sh:
+  script to git push/pull to various mirrors. It compresses the javascript
+  and CSS and validates PHP before doing so.
+	Run from top-level folder of the site. Requires yui-compressor, git and php.
+
+oc2lac.php:
+  tool to import OpenConf database to LAC program-db
