@@ -6,9 +6,9 @@
 
 <h1>Call for papers, music and workshops</h1>
 <ul>
-<li>Deadline for paper-submissions: <b>January 15th, 2012</b></li>
-<li>Music/sound-installation submissions: <b>January 15th, 2012</b></li>
-<li>Notification of acceptance: <b>February 1st, 2012</b></li>
+<li>Deadline for paper-submissions: <b>January 11th, 2012</b></li>
+<li>Music/sound-installation submissions: <b>January 11th, 2012</b></li>
+<li>Notification of acceptance: <b>February 6th, 2012</b></li>
 <!-- <li>Deadline for camera-ready paper: <b>March 1st, 2012</b></li> !-->
 </ul>
 
@@ -31,7 +31,7 @@ meant as a starting point, not to restrict you.
 </p>
 
 <ul class="multicolumn">
-  <li>Ambisonics</li>
+  <li>Spatial Audio</li>
   <li>Education</li>
   <li>Live performance</li>
   <li>Audio Hardware Support</li>
@@ -51,11 +51,12 @@ meant as a starting point, not to restrict you.
   <li>Games</li>
   <li>Media Art</li>
   <li>Licensing</li>
+  <li>Android audio</li>
 </ul>
 <br style="clear:both;"/>
 <br/>
 <p>
-We very much welcome practical papers resp software demos ("how I use Linux Audio applications to create my music/media art").
+We very much welcome practical papers or software demos that outline artistic creative processes or workflows based on Linux audio applications or systems ("how I use Linux Audio applications to create my music/media art").
 </p>
 <p>
 Not all papers need to directly address Linux Audio. There is no limitation for subjects from related fields like open source music applications, free/libre software for music or audio/visual research and open-content.
@@ -70,6 +71,7 @@ The Linux Audio Conference 2012 will include several concerts. We are looking fo
 </p>
 <ul>
   <li>The Electroacoustic Music Concerts</li>
+  <li>Listening Room Lounge</li>
   <li>The Linux Sound Night</li>
   <li>Audio/visual installations</li>
 </ul>
@@ -80,7 +82,7 @@ are described in <a href="download/callformusic-LAC2012.pdf">callformusic.pdf</a
 
 <h1>Call for workshops</h1>
 <p>
-If you want to organise a training, workshop or other activity please
+If you want to organize a training, workshop or other activity please
 <a href="<?=local_url('contact')?>">contact the committee</a> by email.
 </p>
 <p>Include a Title, your name and contact information, a short description, outline or abstract (no more than 500 words) and any specific resources required.
