@@ -4,17 +4,16 @@ If you want to contribute to the conference and want to know what you
 can sponsor and what we offer in return, please contact the
 conference organisation: <?=$config['txtemail']?> 
 </p>
-<h2>Why should I sponsor the LAC?</h2>
+<h2>Why should I sponsor LAC?</h2>
 <p>
-  The Linux Audio Conference is an annual free-of-charge event that is reaching its
-  eighth year now. This international conference has been a meeting place for many of the world leaders
-  in development of non-proprietary professional Audio Visual software.
+  The Linux Audio Conference is an annual free-of-charge event that is in its 10th year now. This international conference has been a meeting place for many of the world leaders
+  in development and use of non-proprietary professional Audio Visual software.
 </p>
 <p>
-  The LAC was the incubating event
+  LAC has been the incubating event
   for many of the well-established Free and Open Source packages that have made a significant impact
   on the area, including the 
-<a rel="external" href="http://jackaudio.org/">Jack Connection Kit</a>, 
+<a rel="external" href="http://jackaudio.org/">Jack Audio Connection Kit</a>, 
 <a rel="external" href="http://ardour.org/">Ardour</a> and
 <a rel="external" href="http://qtractor.sourceforge.net/">Qtractor</a>, 
   just to mention a few.
@@ -41,7 +40,7 @@ conference organisation: <?=$config['txtemail']?>
   expanding its range to incorporate visual technologies.
 </p>
 <p>
-  In summary: the LAC is the place for companies looking to interface with the non-proprietary pro-AV community,
+  In summary: LAC is the place for companies looking to interface with the non-proprietary pro-AV community,
   researchers, developers, artists and users.
 </p>
 <?php /*

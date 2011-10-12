@@ -366,11 +366,11 @@ Personal data provided by you in the registration form will be kept confidential
 
 <fieldset class="fs">
   <input name="page" type="hidden" value="<?php echo $page;?>"/>
-  <legend>Personalia:</legend>
-  <label class="la" for="reg_name"><span class="error">*</span>Family Name:</label>
+  <legend>Personal Information:</legend>
+  <label class="la" for="reg_name"><span class="error">*</span>Last Name:</label>
   <input id="reg_name" name="reg_name" type="text" size="50" maxlength="100" value="<?php if (isset($_POST['reg_name'])) echo rawurldecode($_POST['reg_name']);?>"/>
   <br />
-  <label class="la" for="reg_prename"><span class="error">*</span>Given Name(s):</label>
+  <label class="la" for="reg_prename"><span class="error">*</span>First Name(s):</label>
   <input id="reg_prename" name="reg_prename" type="text" size="50" maxlength="100" value="<?php if (isset($_POST['reg_prename'])) echo rawurldecode($_POST['reg_prename']);?>"/>
   <br />
   <label class="la" for="reg_tagline">Tagline <small>(Affiliation, Company, Pseudonym,&hellip;)</small>:</label>
@@ -396,6 +396,7 @@ Personal data provided by you in the registration form will be kept confidential
 
 <fieldset class="fa">
 <legend>Conference specific:</legend>
+  <!--
   <label>There will be conference proceedings
   available for a nominal fee of about $20.</label><br/>
   <div class="la"><label class="la"><span class="error">*</span>Are you interested in buying a copy?</label></div>
@@ -404,6 +405,7 @@ Personal data provided by you in the registration form will be kept confidential
     <label><input type="radio" name="reg_proceedings" value="1"<?php _ck('reg_proceedings',1);?>/>Yes</label>
   </div>
   <br/>
+  -->
   <label>Allow public listing of your name and affiliation in the "Who else is coming" list.</label><br/>
   <div class="la"><label class="la"><span class="error">*</span>Include me?</label></div>
   <div class="ra">
@@ -424,7 +426,6 @@ Personal data provided by you in the registration form will be kept confidential
   <div class="la"><label class="la">Profession:</label></div>
   <div class="ra">
   <span>
-  <label><input type="radio" name="reg_profession" value="Pupil"<?php _ck('reg_profession','Pupil');?>/>Pupil</label> &nbsp;
   <label><input type="radio" name="reg_profession" value="Student"<?php _ck('reg_profession','Student');?>/>Student</label> &nbsp;
   <label><input type="radio" name="reg_profession" value="Employed"<?php _ck('reg_profession','Employed');?>/>Employed</label> &nbsp;
   <label><input type="radio" name="reg_profession" value="Freelance"<?php _ck('reg_profession','Freelance');?>/>Freelance</label> &nbsp;
@@ -438,7 +439,7 @@ Personal data provided by you in the registration form will be kept confidential
     <label><input type="checkbox" name="reg_useatwork" value="1"<?php _ck('reg_useatwork',1);?>/>&hellip;at work.</label>
    </span>
   </div>
-  <label class="la" for="reg_about">What is your relation to music, sound, Linux and/or Open Source Software?</label><br/>
+  <label class="la" for="reg_about">What is your relation to music, sound, Linux and/or Open Source Software? (composer, programmer, engineer, etc)</label><br/>
   <div class="la"><label class="la">I am &hellip;</label></div>
   <div class="ra">
 	  <input id="reg_about" name="reg_about" type="text" size="60" maxlength="255" value="<?php if (isset($_POST['reg_about'])) echo rawurldecode($_POST['reg_about']);?>"/>

@@ -1,15 +1,13 @@
 <h1>Location</h1>
-<p>
-&hellip;<em>stay tuned for more information</em>&hellip;
+<p>CCRMA is located on the Stanford University Campus (California, USA). Check the <a href="http://www.stanford.edu/dept/visitorinfo/plan/">Stanford Visitor page</a> if you are already starting to plan your visit. Don't forget to check right now the validity of your passport and any visa requirements you might have to enter the United States legally. We will provide more specific information later.  
 </p>
 
 <h1>Staying in the Bay Area</h1>
-
 <p>
-&hellip;<em>stay tuned for more information</em>&hellip;
+Here is <a href="http://www.stanford.edu/dept/visitorinfo/plan/stay.html">Stanford Logding guide</a>. 
 </p>
 
-<h1>Travelling to Stanford</h1>
+<h1>Traveling to Stanford</h1>
 
 <p>
 CCRMA is housed in the Knoll, 660 Lomita Dr. Stanford, CA  94305. Please use the following directions in conjunction with the Stanford <a href="http://campus-map.stanford.edu/" rel="external">campus map</a> or <a href="http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=660+lomita,+stanford+ca&amp;sll=37.0625,-95.677068&amp;sspn=45.197878,82.265625&amp;ie=UTF8&amp;om=1&amp;z=16&amp;layer=t" rel="external">Google Map</a>.&nbsp;</p>
