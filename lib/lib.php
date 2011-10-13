@@ -137,7 +137,7 @@
       echo '    <div id="supporterbar">The '.SHORTTITLE.' is<br/>supported by<br/><br/>'."\n";
       foreach ($sponsors as $sl => $si) {
         echo '    <div><a href="'.$sl.'"'."\n";
-        echo '     rel="supporter"><img src="'.$si['img'].'" title="'.$si['title'].'" alt="'.$si['title'].'"/>';
+        echo '     rel="supporter"><img src="'.BASEURL.$si['img'].'" title="'.$si['title'].'" alt="'.$si['title'].'"/>';
         echo '<br/><span>'.$si['title'].'</span>';
         echo '</a></div>'."\n";
       }
