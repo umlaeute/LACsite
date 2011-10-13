@@ -33,7 +33,7 @@ Please <a href="<?=local_url('registration')?>">register</a> to attend.
 
 <h1>Where &amp; When</h1>
 <p>
-April 12-15 2012, <a href="https://ccrma.stanford.edu/">CCRMA</a> (Center for Computer Research in Music and Acoustics), <a href="http://www.stanford.edu/">Stanford University</a>, California. See the <a href="<?=local_url('contact')?>">Contact</a> and <a href="<?=local_url('travel')?>">Travel</a> pages for details. The conference main tracks will be streamed live and archived. Remote participation will be possible via IRC.
+April 12-15 2012, <a href="https://ccrma.stanford.edu/" rel="external">CCRMA</a> (Center for Computer Research in Music and Acoustics), <a href="http://www.stanford.edu/" rel="external">Stanford University</a>, California. See the <a href="<?=local_url('contact')?>">Contact</a> and <a href="<?=local_url('travel')?>">Travel</a> pages for details. The conference main tracks will be streamed live and archived. Remote participation will be possible via IRC.
 </p>
 <div class="ptitle">
 <img src="img/ccrma_at_dusk.jpg" alt="CCRMA building 'The Knoll' at dusk"/><br/>
