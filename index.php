@@ -56,11 +56,11 @@
     <div id="wherewhen"><?=$config['headerlocation']?></div>
     <div>LECTURES / WORKSHOPS / EXHIBITION / CONCERTS / CLUBNIGHT</div>
   </div>
+  <div id="logoright"> </div>
   <div id="titleend"> </div>
 </div>
 
 <div id="payload-layout">
-  <div id="logoright"> </div>
   <div id="mainmenu">
 <?php
   ### populate menu bar ##

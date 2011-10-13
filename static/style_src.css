@@ -94,9 +94,7 @@ a:hover      {color:#990000;}
 #logoright {
   position:absolute;
   z-index:40;
-  /*top:82px;*/
-  /*top:7px; */
-  top:-63px;
+  top:85px;
   right:1em;
   width:160px;
   height:160px;
