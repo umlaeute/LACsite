@@ -36,7 +36,7 @@
 
 #define sponsors/supportes
   $sponsors = array(
-    'http://ccrma.stanford.edu/' => array('img' => 'img/logos/ccrma.png', 'title' => 'CCRMA'),
+    'http://ccrma.stanford.edu/' => array('img' => 'img/logos/ccrma.png', 'title' => 'Center for Computer Research in Music and Acoustics'),
     'http://stanford.edu/' => array('img' => 'img/logos/stanford.jpg', 'title' => 'Stanford.edu'),
     'http://linuxaudio.org/' => array('img' => 'img/logos/lao.png', 'title' => 'linuxaudio.org'),
   );
