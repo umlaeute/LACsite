@@ -15,7 +15,7 @@ a:hover      {color:#990000;}
 .menuitem a:hover  {color:#990000; background:#808080;}
 .tabactive a:hover {color:#ffffff; background:transparent;}
 #payload-layout {
-	position:relative;
+  position:relative;
   min-width:74.5em;
   max-width:84.5em;
   margin: 1em auto;
@@ -79,50 +79,50 @@ a:hover      {color:#990000;}
   background:#FEFEF9 url(../img/corner_tr.png) no-repeat scroll right top;
 }
 #topline {
-	position:absolute;
-	top:32px;
-	height:8px;
-	width:25%;
-	z-index:0;
+  position:absolute;
+  top:32px;
+  height:8px;
+  width:75%;
+  z-index:0;
   background:#606060 url(../img/karma_line.png) repeat scroll left top;
 }
 #toprow {
-	position:relative;
+  position:relative;
   background:#606060;
   min-width:74em;
 }
 #logoright {
   position:absolute;
   z-index:40;
-  top:85px;
+  top:-63px;
   right:1em;
   width:160px;
   height:160px;
   background:transparent url(../img/lac2012.png) no-repeat top right;
 }
 #titlebar {
-	position:relative;
+  position:relative;
   max-width:84.5em;
   color: #ffffff;
   margin:0em auto;
   text-align: left;
-  background:#606060 url(../img/karma_logo.png) no-repeat scroll left top;
+  background:transparent url(../img/karma_logo.png) no-repeat scroll right top;
   border-bottom: .8em solid #606060;
-	z-index:10;
+  z-index:10;
 }
 #titlebar div {
   padding-left: 45px;
 }
 #maintitle {
-	padding-top:1px;
+  padding-top:1px;
   font-size: 20pt;
-	text-shadow: #FEFEF9 1px 1px 8px;
+  text-shadow: #FEFEF9 1px 1px 8px;
 }
 #subtitle {
   font-size: 12pt;
   font-weight: bold;
   margin-top: .8em;
-	text-shadow: #FEFEF9 1px 1px 8px;
+  text-shadow: #FEFEF9 1px 1px 8px;
 }
 #wherewhen {
   font-weight: bold;
@@ -147,12 +147,12 @@ a:hover      {color:#990000;}
 }
 div.menuitem {
   float:left;
-	/*
+  /*
   width: 7.5em;
   padding: .75em .25em;
-	*/
+  */
   padding: .75em 1.25em;
-	height: 1.3em;
+  height: 1.3em;
   text-align: center;
   margin:0;
   font-weight: bold;
@@ -264,16 +264,16 @@ fieldset legend {text-align:left;}
            {margin-right: 4px;}
 
 #leftcolumn .fm br  {
-	margin-bottom:1em;
+  margin-bottom:1em;
 }
 #leftcolumn .fm input {
-	width:155px;
-	font-size:10px;
-	margin:2px;
+  width:155px;
+  font-size:10px;
+  margin:2px;
 }
 #leftcolumn fieldset {
-	width:160px;
-	padding:.25em; 
+  width:160px;
+  padding:.25em; 
   margin:.25em auto;
 }
 
@@ -313,7 +313,7 @@ div.huge {
   height:40px;
   margin:0px auto;
   padding-top:5px;
-	text-shadow: #990040 0px 0px 5px;
+  text-shadow: #990040 0px 0px 5px;
 }
 div.huge a       {text-decoration:none; color:#F0E0E0;}
 div.huge a:hover {color:#001100;}
