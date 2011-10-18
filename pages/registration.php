@@ -396,7 +396,6 @@ Personal data provided by you in the registration form will be kept confidential
 
 <fieldset class="fa">
 <legend>Conference specific:</legend>
-  <!--
   <label>There will be conference proceedings
   available for a nominal fee of about $20.</label><br/>
   <div class="la"><label class="la"><span class="error">*</span>Are you interested in buying a copy?</label></div>
@@ -405,7 +404,6 @@ Personal data provided by you in the registration form will be kept confidential
     <label><input type="radio" name="reg_proceedings" value="1"<?php _ck('reg_proceedings',1);?>/>Yes</label>
   </div>
   <br/>
-  -->
   <label>Allow public listing of your name and affiliation in the "Who else is coming" list.</label><br/>
   <div class="la"><label class="la"><span class="error">*</span>Include me?</label></div>
   <div class="ra">
