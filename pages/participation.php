@@ -4,19 +4,19 @@
 </div> 
 <p/>
 
-<h1>Call for papers, music and workshops</h1>
+<h1>Call for papers, music, installations and workshops</h1>
 <ul>
 <li>Deadline for paper-submissions: <b>January 11th, 2012</b></li>
-<li>Music/sound-installation submissions: <b>January 11th, 2012</b></li>
+<li>Deadline for Music/sound-installation submissions: <b>January 11th, 2012</b></li>
 <li>Notification of acceptance: <b>February 6th, 2012</b></li>
 <!-- <li>Deadline for camera-ready paper: <b>March 1st, 2012</b></li> !-->
 </ul>
 
-<h1>Call for papers</h1>
+<h1>Call for Papers</h1>
 <p>
 Papers can be submitted for review via the
-<strong><a href="<?=CANONICALURL?>openconf/" rel="external">openconf</a></strong> system.
-Templates for paper submission are available for LaTeX and OpenOffice/LibreOffice from <a href="download/lac2012-templates.tar.gz">here</a>.
+<strong><a href="<?=CANONICALURL?>openconf/" rel="external">online submission</a></strong> system.
+Templates for paper submission for LaTeX and OpenOffice/LibreOffice are available <strong><a href="download/lac2012-templates.tar.gz">here</a></strong>.
 </p>
 <p>
 Papers must be written and presented in English, 4&mdash;8 pages, with abstract (50&mdash;100 words, max. 500 words) and up to 5 keywords. 
@@ -65,26 +65,15 @@ Not all papers need to directly address Linux Audio. There is no limitation for 
 <p>NB. Papers should be as complete as possible on submission. Until submission closes it is possible to replace/update files in the <a href="<?=CANONICALURL?>openconf/" rel="external">openconf</a> system. Submissions will be peer-reviewed and after the notification of acceptance there is a small time-window for updates and last-minute changes.
 </p>
 
-<h1>Call for music</h1>
+<h1>Call for Music, Installations and Workshops</h1>
 <p>
-The Linux Audio Conference 2012 will include several concerts. We are looking for music that has been produced or composed entirely or mostly using GNU/Linux or other Open Source music software for:
+Music, Installations and Workshops can be submitted for review via the
+<strong><a href="<?=CANONICALURL?>proposals/" rel="external">online submission</a></strong> system. Please download the complete <strong><a href="download/lac2012-call-for-miw.pdf">Call for Music, Installations and Workshops</a></strong> document with all the details before trying to submit. In short, we are looking for music and sound art that has been produced or composed entirely or mostly using GNU/Linux or other Open Source music software for:
 </p>
 <ul>
-  <li>The Electroacoustic Music Concerts</li>
-  <li>Listening Room Lounge</li>
+  <li>The Electroacoustic Music Concerts (fixed media or live performance works)</li>
+  <li>The Listening Room Lounge (fixed media only)</li>
   <li>The Linux Sound Night</li>
   <li>Audio/visual installations</li>
+  <li>Workshops</li>
 </ul>
-<p>
-Guidelines for submitting your music and associated work
-are described in <a href="download/callformusic-LAC2012.pdf">callformusic.pdf</a>.
-</p>
-
-<h1>Call for workshops</h1>
-<p>
-If you want to organize a training, workshop or other activity please
-<a href="<?=local_url('contact')?>">contact the committee</a> by email.
-</p>
-<p>Include a Title, your name and contact information, a short description, outline or abstract (no more than 500 words) and any specific resources required.
-</p>
-

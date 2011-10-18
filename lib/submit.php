@@ -64,7 +64,7 @@ function format_registration($a) {
   .(rawurldecode($a['reg_whoelselist'])?'yes':'no')     .'
   Uses Linux  : '
   .((isset($a['reg_useathome']) && rawurldecode($a['reg_useathome']))?'at home ':'_not_ at home ')
-  .((isset($a['reg_useatwork']) && rawurldecode($a['reg_useatwork']))?'at home ':'_not_ at work ')
+  .((isset($a['reg_useatwork']) && rawurldecode($a['reg_useatwork']))?'at work ':'_not_ at work ')
   .'
   Pro Audio   : '
   .(!isset($a['reg_audiopro'])?'??':(
