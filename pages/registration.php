@@ -373,7 +373,7 @@ Personal data provided by you in the registration form will be kept confidential
   <label class="la" for="reg_prename"><span class="error">*</span>First Name(s):</label>
   <input id="reg_prename" name="reg_prename" type="text" size="50" maxlength="100" value="<?php if (isset($_POST['reg_prename'])) echo rawurldecode($_POST['reg_prename']);?>"/>
   <br />
-  <label class="la" for="reg_tagline">Tagline <small>(Affiliation, Company, Pseudonym,&hellip;)</small>:</label>
+  <label class="la" for="reg_tagline">Tagline<small>(Affiliation, Company, Pseudonym,&hellip;)</small>:</label>
   <input id="reg_tagline" name="reg_tagline" type="text" size="50" maxlength="100" value="<?php if (isset($_POST['reg_tagline'])) echo rawurldecode($_POST['reg_tagline']);?>"/>
   <br/>
   <label class="ls">Note: The tagline will appear with your name on the badge.</label>
@@ -397,7 +397,7 @@ Personal data provided by you in the registration form will be kept confidential
 <fieldset class="fa">
 <legend>Conference specific:</legend>
   <label>There will be conference proceedings
-  available for a nominal fee of about $20.</label><br/>
+  available for a fee of about $20.</label><br/>
   <div class="la"><label class="la"><span class="error">*</span>Are you interested in buying a copy?</label></div>
   <div class="ra">
     <label><input type="radio" name="reg_proceedings" value="0"<?php _ck('reg_proceedings',0);?>/>No</label> &nbsp; &nbsp;
