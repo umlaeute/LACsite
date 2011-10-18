@@ -15,7 +15,7 @@
 <h1>Call for Papers</h1>
 <p>
 Papers can be submitted for review via the
-<strong><a href="<?=CANONICALURL?>openconf/" rel="external">online submission</a></strong> system.
+<strong><a href="<?=CANONICALURL?>openconf/" rel="external">online paper submission</a></strong> system.
 Templates for paper submission for LaTeX and OpenOffice/LibreOffice are available <strong><a href="download/lac2012-templates.tar.gz">here</a></strong>.
 </p>
 <p>
@@ -68,10 +68,10 @@ Not all papers need to directly address Linux Audio. There is no limitation for 
 <h1>Call for Music, Installations and Workshops</h1>
 <p>
 Music, Installations and Workshops can be submitted for review via the
-<strong><a href="<?=CANONICALURL?>proposals/" rel="external">online submission</a></strong> system. Please download the complete <strong><a href="download/lac2012-call-for-miw.pdf">Call for Music, Installations and Workshops</a></strong> document with all the details before trying to submit. In short, we are looking for music and sound art that has been produced or composed entirely or mostly using GNU/Linux or other Open Source music software for:
+<strong><a href="<?=CANONICALURL?>proposals/" rel="external">online music/installations/workshops submission</a></strong> system. Please download the complete <strong><a href="download/lac2012-call-for-miw.pdf">Call for Music, Installations and Workshops</a></strong> document with all the details before trying to submit. In short, we are looking for music and sound art that has been produced or composed entirely or mostly using GNU/Linux or other Open Source music software for:
 </p>
 <ul>
-  <li>The Electroacoustic Music Concerts (fixed media or live performance works)</li>
+  <li>The Electronic Music Concerts (fixed media or live performance works)</li>
   <li>The Listening Room Lounge (fixed media only)</li>
   <li>The Linux Sound Night</li>
   <li>Audio/visual installations</li>
