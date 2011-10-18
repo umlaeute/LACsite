@@ -20,7 +20,7 @@
     htmlhead($title, $style, $add);
   }
 
-  function xhtmlhead($title='The Linux Audio Conference', $style='style.css', $add='') {
+  function xhtmlhead($title='Linux Audio Conference', $style='style.css', $add='') {
     ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <?php
@@ -134,7 +134,7 @@
       echo '    <hr class="psep"/>'."\n";
     }
     if (!in_array($page, $nosponsors)) {
-      echo '    <div id="supporterbar">The '.SHORTTITLE.' is<br/>supported by<br/><br/>'."\n";
+      echo '    <div id="supporterbar">'.SHORTTITLE.' is<br/>supported by<br/><br/>'."\n";
       foreach ($sponsors as $sl => $si) {
         echo '    <div><a href="'.$sl.'"'."\n";
         echo '     rel="supporter"><img src="'.BASEURL.$si['img'].'" title="'.$si['title'].'" alt="'.$si['title'].'"/>';
