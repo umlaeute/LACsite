@@ -6,7 +6,7 @@ platform.
 2012 marks the 10th anniversary of the event and it is the first time the LAC takes place in the United States.
 </p>
 
-<p>Deadline for <a href="<?=local_url('participation')?>">submissions</a>: <b>January 11th, 2012</b></p>
+<p>Deadline for <a href="<?=local_url('participation')?>">submissions</a>: <b>January 22nd, 2012</b></p>
 
 <h1>Target audience</h1>
 <p>
