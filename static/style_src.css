@@ -333,6 +333,7 @@ div.right   {text-align:right;}
 .red        {color:#FF0000;}
 .yellow     {color:#AAAA00;}
 .green      {color:#11EE11;}
+.oldbold    {text-decoration: line-through; font-weight:bold}
 span.tme    {color:#331111; border-bottom:1px dotted black;}
 div.flright {margin:0px 0px .25em .5em; float:right;}
 div.righttr {margin:.4em 0px 0em .5em; float:right; font-size:75%;line-height:110%; font-variant:small-caps;}

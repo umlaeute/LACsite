@@ -6,8 +6,6 @@ platform.
 2012 marks the 10th anniversary of the event and it is the first time the LAC takes place in the United States.
 </p>
 
-<p>Deadline for <a href="<?=local_url('participation')?>">submissions</a>: <b>January 22nd, 2012</b></p>
-
 <h1>Target audience</h1>
 <p>
 The Linux Audio Conference brings together musicians, composers, sound artists, software developers, researchers and engineers working with Linux as an open, stable, professional platform for audio and media research and music production. 
@@ -23,7 +21,7 @@ The Linux Audio Conference brings together musicians, composers, sound artists, 
  <li>Live coding sessions</li>
 </ul>
 <p style="clear:both;"/>
-
+<?php /*
 <h1>We need you! </h1>
 <p>
 Your contribution and ideas are needed to get the LAC going!<br/>
@@ -32,7 +30,7 @@ See the
 to answer to the call for paper-presentations, workshops and music.
 Please <a href="<?=local_url('registration')?>">register</a> to attend. 
 </p>
-
+ */?>
 <h1>Where &amp; When</h1>
 <p>
 April 12-15 2012, <a href="https://ccrma.stanford.edu/" rel="external">CCRMA</a> (Center for Computer Research in Music and Acoustics), <a href="http://www.stanford.edu/" rel="external">Stanford University</a>, California. See the <a href="<?=local_url('contact')?>">Contact</a> and <a href="<?=local_url('travel')?>">Travel</a> pages for details. The conference main tracks will be streamed live and archived. Remote participation will be possible via IRC.
