@@ -28,13 +28,34 @@ CREATE TABLE location (
 
 CREATE TABLE user (
    id INTEGER PRIMARY KEY AUTOINCREMENT,
-   name varchar(50) NOT NULL,
-   bio text, email TEXT DEFAULT NULL,
+   name text NOT NULL,
+   reghandle text DEFAULT NULL,
    editlock datetime default 0,
+   email TEXT DEFAULT NULL,
+   vip int DEFAULT 0, 
+   flags int DEFAULT 0, 
+   bio TEXT DEFAULT NULL,
+   tagline TEXT DEFAULT NULL,
+   url_image TEXT DEFAULT NULL, 
+   url_person TEXT DEFAULT NULL, 
+   url_institute TEXT DEFAULT NULL, 
+   url_project TEXT DEFAULT NULL, 
    UNIQUE (name)
 );
+
+CREATE TABLE auth (
+   user_id INTEGER NOT NULL,
+   passhash TEXT DEFAULT NULL,
+   provider TEXT DEFAULT NULL,
+   handle   TEXT DEFAULT NULL,
+   UNIQUE (user_id),
+	 FOREIGN KEY(user_id) REFERENCES user(id) ON DELETE CASCADE
+);
+
 CREATE TABLE usermap (
    activity_id INTEGER,
    user_id INTEGER,
-   UNIQUE (activity_id, user_id)
+   UNIQUE (activity_id, user_id),
+	 FOREIGN KEY(user_id) REFERENCES user(id) ON DELETE CASCADE,
+	 FOREIGN KEY(activity_id) REFERENCES activity(id) ON DELETE CASCADE
 );

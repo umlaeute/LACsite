@@ -12,6 +12,7 @@ img {border: 0px;}
 a            {outline: none; color:black;}
 a:hover      {color:#990000;}
 .tabactive a {color:#ffffff;}
+li.active:hover    {color:#990000;}
 .menuitem a:hover  {color:#990000; background:#808080;}
 .tabactive a:hover {color:#ffffff; background:transparent;}
 #payload-layout {
@@ -208,16 +209,18 @@ div.menuitem {
 #content ul + h1, #content p + h1 { margin-top:1.0em; }
 #content ul + h2, #content p + h2 { margin-top:1.0em; }
 #content ul + h3, #content p + h3 { margin-top:1.0em; }
+#content ul + h4, #content p + h4 { margin-top:0.5em; }
 
 #content h1,
 #content h2,
-#content h3     {
+#content h3 {
                   margin-top:0em;
                   margin-bottom:0.5em;
 }
 #content h1     { font-size: 140%; }
 #content h2     { font-size: 130%; }
 #content h3     { font-size: 120%; }
+#content h4     { font-size: 110%; font-style:italic; }
 
 #content form     { width:41em; margin:0 auto;}
 #content input.button 
@@ -234,6 +237,47 @@ div.menuitem {
 #frank th,
 #frank td {text-align: justify; vertical-align:top;}
 #frank td {width:25%;overflow:hidden;padding:.5em .5em;}
+
+#speakers th,
+#speakers td     {text-align: center;}
+#speakers td     {overflow:hidden;padding-bottom:1em;}
+
+#speakers a,
+div.user a {
+	text-decoration:none;
+}
+
+#speakers div.portrait {
+	width:128px;
+	height:128px;
+	overflow:hidden;
+	text-align:center;
+	display: table-cell; vertical-align: middle;
+}
+#speakers div.portrait img {
+	max-height:128px;
+	max-width:128px;
+}
+
+div.user div.portrait {
+	float:left;
+	width:200px;
+	height:200px;
+	overflow:hidden;
+	margin:0 1em 1em 0;
+	text-align:center;
+}
+div.portrait img {
+	max-height:200px;
+	max-width:200px;
+}
+div.user div.userinfo {
+	position:relative;
+	margin-left:220px;
+}
+div.user div.bio {
+	margin: 1em 0;
+}
 
 #content a.standout     {font-weight: bold;}
 #content span.standout  {font-weight: bold;}
@@ -290,7 +334,9 @@ hr.psep     {margin:.5em auto .5em auto; width:50%; color:#CCDDCC; background-co
 div.aimg    {margin:.25em .5em .25em 0px; float:left;}
 a.active    {cursor:pointer; color:blue;}
 #frank img  {cursor:pointer;}
-td.active   {cursor:pointer;}
+td.active, 
+li.active {cursor:pointer;}
+
 .pdb input,
 .pdb textarea        {width:98%;}
 .pdb input.duration  {width:8em;}

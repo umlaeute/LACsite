@@ -70,7 +70,7 @@ switch ($mode) {
     break;
   case 'vip':
     if (isset($vip))
-      set_vip($_POST['param'], $vip);
+      set_vip(rawurldecode($_POST['param']), $vip);
   case 'list':
     $r=scan_registrations();
     echo '<p>We have '.count($r).' registered participants:</p>';

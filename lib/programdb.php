@@ -359,6 +359,10 @@
     echo '<input class="button" type="button" title="Cancel" value="Cancel" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'unlocklocation\';formsubmit(\'myform\');"/>'."<br/>&nbsp;\n";
   }
 
+  function html_text_input($title, $param, $data) {
+    echo '<label for="pdb_'.$param.'">'.$title.':</label><br/>';
+    echo '<input id="pdb_'.$param.'" name="pdb_'.$param.'" length="80" value="'.$data[$param].'" /><br/>';
+  }
 
   function dbadmin_authorform($db, $id) {
     if ($id > 0) {
@@ -368,15 +372,25 @@
       $r=$res->fetch(PDO::FETCH_ASSOC);
       echo 'ID: '.$id.'<br/>';
     } else {
-      $r=array('name' =>'', 'bio' => '', 'email' => '', 'id' => -1);
+      $r=array('name' =>'', 'bio' => '', 'email' => '', 'id' => -1, 'tagline' => '', 
+        'flags' => 0, 'vip' => 0,
+        'url_image' => '', 'url_person' => '',
+        'url_institute' => '', 'url_project' => '',
+        'reghandle' => '', # XXX internal use only
+      );
       echo 'ID: new<br/>';
     }
-    echo '<label for="pdb_name">Name:</label><br/>';
-    echo '<input id="pdb_name" name="pdb_name" length="80" value="'.$r['name'].'" /><br/>';
-    echo '<label for="pdb_email">Email:</label><br/>';
-    echo '<input id="pdb_email" name="pdb_email" length="80" value="'.$r['email'].'" /><br/>';
+    html_text_input('Name', 'name', $r);
+    html_text_input('Email', 'email', $r);
+    html_text_input('Tagline/Affiliation', 'tagline', $r);
+    html_text_input('Image URL', 'url_image', $r);
+    # TODO radio buttons, checboxes for flags, vip.
+    html_text_input('URL 1 (Personal)', 'url_person', $r);
+    html_text_input('URL 2 (Institute)', 'url_institute', $r);
+    html_text_input('URL 3 (Project)', 'url_project', $r);
+
     echo '<label for="pdb_bio">Bio:</label><br/>';
-    echo '<textarea id="pdb_bio" name="pdb_bio" rows="8" cols="70">'.$r['bio'].'</textarea><br/><br/>';
+    echo '<textarea id="pdb_bio" name="pdb_bio" rows="8" cols="70">'.xhtmlify($r['bio']).'</textarea><br/><br/>';
 
     echo '<input class="button" type="button" title="Save" value="Save" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'saveuser\';formsubmit(\'myform\');"/>'."\n";
     echo '<input class="button" type="button" title="Cancel" value="Cancel" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'unlockuser\';formsubmit(\'myform\');"/>'."<br/>&nbsp;\n";
@@ -577,18 +591,33 @@
   function dbadmin_saveuser($db) {
     $err=0;
     $id=intval(rawurldecode($_REQUEST['param']));
+    # TODO parse vip, flags !!
     if ($id < 0) {
-      $q='INSERT into user (name, email, bio) VALUES ('
+      $q='INSERT into user (name, email, bio, vip, flags, tagline, url_image, url_person, url_institute, url_project) VALUES ('
   .' '.$db->quote(rawurldecode($_REQUEST['pdb_name']))
   .','.$db->quote(rawurldecode($_REQUEST['pdb_email']))
   .','.$db->quote(rawurldecode($_REQUEST['pdb_bio']))
-  .');';
+  .','.intval    (rawurldecode($_REQUEST['pdb_vip']))
+  .','.intval    (rawurldecode($_REQUEST['pdb_flags']))
+  .','.$db->quote(rawurldecode($_REQUEST['pdb_tagline']))
+  .','.$db->quote(rawurldecode($_REQUEST['pdb_url_image']))
+  .','.$db->quote(rawurldecode($_REQUEST['pdb_url_person']))
+  .','.$db->quote(rawurldecode($_REQUEST['pdb_url_institute']))
+  .','.$db->quote(rawurldecode($_REQUEST['pdb_url_project']))
+ .');';
     } else {
       unlock($db, $id, 'user');
       $q='UPDATE user set '
   .' name='.$db->quote(rawurldecode($_REQUEST['pdb_name']))
   .',email='.$db->quote(rawurldecode($_REQUEST['pdb_email']))
   .',bio='.$db->quote(rawurldecode($_REQUEST['pdb_bio']))
+  .',vip='.intval(rawurldecode($_REQUEST['pdb_vip']))
+  .',flags='.intval(rawurldecode($_REQUEST['pdb_flags']))
+  .',tagline='.$db->quote(rawurldecode($_REQUEST['pdb_tagline']))
+  .',url_image='.$db->quote(rawurldecode($_REQUEST['pdb_url_image']))
+  .',url_person='.$db->quote(rawurldecode($_REQUEST['pdb_url_person']))
+  .',url_institute='.$db->quote(rawurldecode($_REQUEST['pdb_url_institute']))
+  .',url_project='.$db->quote(rawurldecode($_REQUEST['pdb_url_project']))
   .' WHERE id='.$id.';';
     }
     #print_r($q);
@@ -727,8 +756,10 @@
       echo '&nbsp;<em>'; $i=0;
       foreach (fetch_authorids($db, $r['id']) as $user_id) {
         if ($i++>0) echo ', ';
-        #echo $user_id.': ';
-  echo xhtmlify($a_users[$user_id]);
+        if (0 /*user has no profile*/)
+          echo xhtmlify($a_users[$user_id]);
+        else
+          echo '<a href="'.local_url('speakers', 'uid='.$user_id).'">'.xhtmlify($a_users[$user_id]).'</a>';
       }
       echo '</em>';
 
@@ -1276,10 +1307,14 @@ if (1) {
     #echo track_legend();
 
     if (!$print) {
+      programlightbox();
       echo '<div class="center">Concerts &amp; Installations are <b>not</b> included in this table.</div>';
+    }
+  }
+
+  function programlightbox() {
       echo '<div id="dimmer" style="display:none;" onclick="hideInfoBox();">&nbsp;</div>';
       echo '<div id="infobox" style="display:none;"><div class="center trc"><div class="footbar" style="top:0px;"><a class="active" onclick="hideInfoBox();">close</a></div></div><div class="ibtoptr">&nbsp;</div><object id="infoframe" data="raw.php" type="application/xhtml+xml"><!--[if IE]><iframe id="ieframe" src="raw.php" allowtransparency="true" frameborder="0" ></iframe><![endif]--></object><div class="trc"><div class="footbar" style="bottom:5px;">&nbsp;</div></div><div class="ibfootl">&nbsp;</div><div class="ibfootr">&nbsp;</div></div>';
-    }
   }
 
   function export_progam_tex($db) {
@@ -1407,6 +1442,7 @@ if (1) {
         $rv.=trim($ud['name']);
         if (!empty($ud['email']))
           $rv.=' ('.trim($ud['email']).')';
+        # TODO : add new author fields (tagline, etc)
         if (!empty($ud['bio']))
           $rv.= ' ['.
              str_replace("\r",'',
