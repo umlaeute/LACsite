@@ -6,6 +6,9 @@
 <p>
 Here is <a href="http://www.stanford.edu/dept/visitorinfo/plan/stay.html" rel="external">Stanford Logding guide</a>. 
 </p>
+<p>
+<a href="http://www.hotelscombined.com/Conference_Support">Hotels combined</a> are supporting LAC2012 and offer a 10% discount on all hotels booked through their website.
+</p>
 
 <h1>Traveling to Stanford</h1>
 
