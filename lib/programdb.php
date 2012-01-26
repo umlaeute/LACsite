@@ -120,6 +120,15 @@
     echo 'DATABASE ERROR: "'.$msg.'" '.print_r($db->errorInfo(),true)."\n";
   }
 
+  function db_select_one($db, $query) {
+    $res=$db->query($query);
+    if (!$res) {
+      say_db_error('db_select_one');
+      return null;
+    }
+    return $res->fetch(PDO::FETCH_ASSOC);
+  }
+
   function _slv($k, $c) {
     if ($k == $c) return ' selected="selected"';
     return '';
@@ -364,7 +373,14 @@
     echo '<input id="pdb_'.$param.'" name="pdb_'.$param.'" length="80" value="'.$data[$param].'" /><br/>';
   }
 
+  function html_checkbox($title, $param, $onoff) {
+    echo '<label for="pdb_'.$param.'">'.$title.':&nbsp;';
+    echo '<input type="checkbox" id="pdb_'.$param.'" name="pdb_'.$param.'"'.($onoff?' checked="checked"':'').'/>';
+    echo '</label> &nbsp;';
+  }
+
   function dbadmin_authorform($db, $id) {
+    echo '<p>';
     if ($id > 0) {
       $q='SELECT * FROM user WHERE id ='.$id.';';
       $res=$db->query($q);
@@ -373,18 +389,29 @@
       echo 'ID: '.$id.'<br/>';
     } else {
       $r=array('name' =>'', 'bio' => '', 'email' => '', 'id' => -1, 'tagline' => '', 
-        'flags' => 0, 'vip' => 0,
+        'flags' => 1, 'vip' => 1,
         'url_image' => '', 'url_person' => '',
         'url_institute' => '', 'url_project' => '',
         'reghandle' => '', # XXX internal use only
       );
       echo 'ID: new<br/>';
     }
+    echo '</p>';
+
+    echo '<p>';
+    html_checkbox('Public Profile', 'flag_pub', $r['flags']&1);
+    #echo '</p>'; echo '<p>';
+    echo ' &nbsp; ';
+    html_checkbox('Speaker', 'vip_s', $r['vip']&1);
+    html_checkbox('Organizer', 'vip_o', $r['vip']&2);
+    html_checkbox('Committee', 'vip_c', $r['vip']&4);
+    echo '</p>';
+
     html_text_input('Name', 'name', $r);
     html_text_input('Email', 'email', $r);
     html_text_input('Tagline/Affiliation', 'tagline', $r);
+
     html_text_input('Image URL', 'url_image', $r);
-    # TODO radio buttons, checboxes for flags, vip.
     html_text_input('URL 1 (Personal)', 'url_person', $r);
     html_text_input('URL 2 (Institute)', 'url_institute', $r);
     html_text_input('URL 3 (Project)', 'url_project', $r);
@@ -592,13 +619,20 @@
     $err=0;
     $id=intval(rawurldecode($_REQUEST['param']));
     # TODO parse vip, flags !!
+    $vip=0; $flags=0;
+    $vip|=isset($_REQUEST['pdb_vip_s'])?1:0;
+    $vip|=isset($_REQUEST['pdb_vip_o'])?2:0;
+    $vip|=isset($_REQUEST['pdb_vip_c'])?4:0;
+
+    $flags|=isset($_REQUEST['pdb_flag_pub'])?1:0;
+
     if ($id < 0) {
       $q='INSERT into user (name, email, bio, vip, flags, tagline, url_image, url_person, url_institute, url_project) VALUES ('
   .' '.$db->quote(rawurldecode($_REQUEST['pdb_name']))
   .','.$db->quote(rawurldecode($_REQUEST['pdb_email']))
   .','.$db->quote(rawurldecode($_REQUEST['pdb_bio']))
-  .','.intval    (rawurldecode($_REQUEST['pdb_vip']))
-  .','.intval    (rawurldecode($_REQUEST['pdb_flags']))
+  .','.intval    ($vip)
+  .','.intval    ($flags)
   .','.$db->quote(rawurldecode($_REQUEST['pdb_tagline']))
   .','.$db->quote(rawurldecode($_REQUEST['pdb_url_image']))
   .','.$db->quote(rawurldecode($_REQUEST['pdb_url_person']))
@@ -611,8 +645,8 @@
   .' name='.$db->quote(rawurldecode($_REQUEST['pdb_name']))
   .',email='.$db->quote(rawurldecode($_REQUEST['pdb_email']))
   .',bio='.$db->quote(rawurldecode($_REQUEST['pdb_bio']))
-  .',vip='.intval(rawurldecode($_REQUEST['pdb_vip']))
-  .',flags='.intval(rawurldecode($_REQUEST['pdb_flags']))
+  .',vip='.intval($vip)
+  .',flags=(flags&~1)|('.intval($flags).')'
   .',tagline='.$db->quote(rawurldecode($_REQUEST['pdb_tagline']))
   .',url_image='.$db->quote(rawurldecode($_REQUEST['pdb_url_image']))
   .',url_person='.$db->quote(rawurldecode($_REQUEST['pdb_url_person']))

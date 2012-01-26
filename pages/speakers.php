@@ -5,7 +5,7 @@ if (!defined('NL')) define('NL', "\n");
 
 function usr_imgurl($u,$size=128) {
 	if (!empty($u['url_image'])) {
-		// TODO check for valid URL!
+		// TODO check for valid URL! prevent abuse.
 		return $u['url_image'];
 	}
 	if (!empty($u['email'])) {
@@ -17,8 +17,9 @@ function usr_imgurl($u,$size=128) {
 
 ########
 
-function render_list($speakers) {
-	echo '<h2>Speakers</h2>'.NL;
+function render_list($head, $speakers) {
+	if (count($speakers) <1 ) return;
+	echo $head;
 	echo '<table border="0" width="100%" id="speakers">'.NL.' <tr>';
   $cnt=0;
   foreach ($speakers as $s) {
@@ -37,7 +38,7 @@ function render_list($speakers) {
     $cnt++;
   }
   while ($cnt++%5 !=0) {
-    echo '  <td></td>';
+    echo '  <td><div class="portrait"></div></td>';
 	}
 	echo ' </tr>'.NL.'</table>'.NL;
 }
@@ -67,6 +68,7 @@ function render_profile($s, $acts) {
 		echo '</ul>';
 	}
 	if (is_array($acts) && count ($acts) >0) {
+		$a_locations = fetch_selectlist($db, 'location');
 		echo '<h4>Session(s)</h4>';
 		echo '<ul>'.NL;
 		echo '<li><a href="'.local_url('program','pdb_filterauthor='.$s['id'].'&amp;mode=list&amp;details=1').'">Show [all] in program.</a></li>';
@@ -80,8 +82,9 @@ function render_profile($s, $acts) {
 			echo ' - <span>day:'.$r['day'].' - '.$r['starttime'].'</span>';
 
       if ($r['type']!='c') { ### all concerts same location --- lib/programdb.php:768
-        if ($location && !empty($r['location_id']))
-          echo ' &raquo;&nbsp;Location: '.$a_locations[$r['location_id']];
+				if (!empty($r['location_id'])) {
+					echo ' &raquo;&nbsp;Location: '.$a_locations[$r['location_id']];
+				}
       }
 			echo '</li>'.NL;
 		}
@@ -105,5 +108,7 @@ if (isset($_REQUEST['uid']) && intval($_REQUEST['uid']) > 0 ) {
 	$uid=intval($_REQUEST['uid']);
 	render_profile(fetch_user($db, $uid), fetch_user_activities($db, $uid));
 } else {
-	render_list(fetch_users($db));
+	render_list('<h2>Speakers</h2>', fetch_users($db, array('vip'=>1)) );
+	render_list('<h2>Committee</h2>', fetch_users($db, array('vip'=>4)) );
+	render_list('<h2>Organizers</h2>', fetch_users($db, array('vip'=>2)) );
 }
