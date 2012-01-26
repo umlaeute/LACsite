@@ -40,7 +40,7 @@
   }
 
   if (!empty($preq) && $preq!=$page && $page==$homepage) {
-    header(404, "File not found");
+    header('HTTP/1.0 404 Not Found');
     $page='404';
   }
 
