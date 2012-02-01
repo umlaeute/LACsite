@@ -38,7 +38,7 @@
   $sponsors = array(
     'http://ccrma.stanford.edu/' => array('img' => 'img/logos/ccrma.png', 'title' => 'CCRMA'),
     'http://lwn.net/' => array('img' => 'img/logos/lwn.jpg', 'title' => 'LWN.NET'),
-    'http://ccrma.stanford.edu/' => array('img' => 'img/logos/ccrma.png', 'title' => 'CCRMA'),
+    'http://fedoraproject.org/' => array('img' => 'img/logos/fedora_infinity.png', 'title' => 'Fedora Project'),
     'http://arts.stanford.edu/sai.php?section=sica&amp;page=about' => array('img' => 'img/logos/sica.jpg', 'title' => 'SiCA, Stanford'),
     'http://www.stanford.edu/' => array('img' => 'img/logos/stanford.jpg', 'title' => 'Stanford University'),
     'http://linuxaudio.org/' => array('img' => 'img/logos/lao.png', 'title' => 'linuxaudio.org'),
