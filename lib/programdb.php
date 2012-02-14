@@ -372,6 +372,10 @@
     echo '<label for="pdb_'.$param.'">'.$title.':</label><br/>';
     echo '<input id="pdb_'.$param.'" name="pdb_'.$param.'" length="80" value="'.$data[$param].'" /><br/>';
   }
+  function html_text_readonly($title, $param, $data) {
+    echo '<label for="pdb_'.$param.'">'.$title.':</label>&nbsp;';
+    echo '<span>'.$data[$param].'</span><br/>';
+  }
 
   function html_checkbox($title, $param, $onoff) {
     echo '<label for="pdb_'.$param.'">'.$title.':&nbsp;';
@@ -1555,5 +1559,69 @@ if (1) {
       echo 'END:VEVENT'."\r\n";
     }
     echo 'END:VCALENDAR'."\r\n";
+  }
+
+  function hl_checkauth(&$req, &$res) {
+    $authok=false;
+
+    // check social auth
+    if (isset($_REQUEST['provider'])) {
+      $provider_name = rawurldecode($_REQUEST['provider']);
+      $param=null;
+      if (isset($_REQUEST['openid_identifier']) && $provider_name=='OpenID') {
+        $param=array(
+          'openid_identifier' => rawurldecode($_REQUEST['openid_identifier']),
+          'hauth_return_to'   => BASEURL.'?page=logon&provider=OpenID' # note NO &amp !
+        );
+      }
+      require_once('lib/Hybrid/Auth.php');
+      try{
+        $hybridauth = new Hybrid_Auth('cfg-auth.php');
+        $adapter = $hybridauth->authenticate( $provider_name, $param);
+        if( $hybridauth->isConnectedWith( $provider_name ) ){
+          $user_profile = $adapter->getUserProfile();
+        } else {
+          $res['errmsg'] = 'Log-on failed.';
+          $res['visfun']='act_logon_form';
+          return false;
+        }
+
+        if (get_user_by_provider_and_uid($provider_name, $user_profile->identifier)) {
+          $authok=true;
+        } else {
+          # TODO: check if logged in locally.. verify sign-up key.
+          if (create_new_federated_user( $provider_name, $user_profile->identifier, $user_profile)) {
+            $authok=true; #
+          } else {
+            $res['errmsg'] = 'Failed to create a local user for this remote ID.';
+            $res['visfun']='act_logon_form';
+            return false;
+          }
+        }
+
+      } catch( Exception $e ){
+        $res['errmsg'] = 'Log-on failed: '.$e->getMessage();
+        $res['visfun']='act_logon_form';
+        return false;
+      }
+    }
+    if (!$authok
+      && isset($_REQUEST['email'])
+      && isset($_REQUEST['pass']) ){
+        if (check_auth(
+          rawurldecode($_REQUEST['email']),
+          rawurldecode($_REQUEST['pass'])) > 0) {
+            $authok=true;
+          }
+    }
+
+    if (!$authok) {
+      $res['errmsg'] = 'Invalid Username or Password';
+      $res['visfun']='act_logon_form';
+      return false;
+    }
+    # all OK: logged in
+    $req['handlerfun'] = 'hl_default';
+    return true;
   }
 # vim: ts=2 et

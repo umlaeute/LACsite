@@ -3,18 +3,6 @@ require_once('lib/userdb.php');
 if (!defined('NL')) define('NL', "\n");
 
 
-function usr_imgurl($u,$size=128) {
-	if (!empty($u['url_image'])) {
-		// TODO check for valid URL! prevent abuse.
-		return $u['url_image'];
-	}
-	if (!empty($u['email'])) {
-		$grhash=md5(strtolower(trim($u['email'])));
-		return 'http://gravatar.com/avatar/'.$grhash.'?s='.$size.'&amp;d=mm';
-	}
-	return 'http://gravatar.com/avatar/0?f=y&amp;s='.$size.'&amp;d=mm'; ## TODO local mystery man image.
-}
-
 ########
 
 function render_list($head, $speakers) {

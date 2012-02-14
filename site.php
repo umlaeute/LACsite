@@ -17,6 +17,7 @@
 # other available pages - not shown as 'tabs'
   $hidden = array(
     'files' => 'Download',
+    'profile' => 'Profile',
     'program'  => 'Agenda',
   );
 

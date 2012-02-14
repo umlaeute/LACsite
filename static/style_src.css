@@ -247,6 +247,12 @@ div.user a {
 	text-decoration:none;
 }
 
+#profile div.portrait {
+	float:right;
+	margin:1em .5em .5em .5em;
+}
+
+#profile div.portrait,
 #speakers div.portrait {
 	width:128px;
 	height:128px;
@@ -254,6 +260,8 @@ div.user a {
 	text-align:center;
 	display: table-cell; vertical-align: middle;
 }
+
+#profile div.portrait,
 #speakers div.portrait img {
 	max-height:128px;
 	max-width:128px;

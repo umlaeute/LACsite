@@ -48,8 +48,11 @@ CREATE TABLE auth (
    passhash TEXT DEFAULT NULL,
    provider TEXT DEFAULT NULL,
    handle   TEXT DEFAULT NULL,
+   ukey     TEXT DEFAULT NULL,
+   udate    datetime DEFAULT 0,
    flags INT DEFAULT 0, 
    UNIQUE (user_id),
+   UNIQUE (ukey),
 	 FOREIGN KEY(user_id) REFERENCES user(id) ON DELETE CASCADE
 );
 
