@@ -50,7 +50,28 @@ developing Linux as an audio platform since 1997.
 <h1>Who?</h1>
 <p>Check out the <a href="<?=local_url('participants')?>">list of participants</a> to see who else is coming.</p>
 <p>LAC is organized by a community of GNU/Linux free/libre software users and developers that communicate through the <a href="http://lists.linuxaudio.org/">Linux-Audio-Users and Linux-Audio-Developers</a> mailing lists. LAC2012 is under the auspices of <a href="https://ccrma.stanford.edu" rel="external">CCRMA</a>, organized by <a href="https://ccrma.stanford.edu/~nando" rel="external">Fernando Lopez-Lezcano</a> and <a href="http://www.brunoruviaro.com/" rel="external">Bruno Ruviaro</a>, Frank Neumann, <a href="http://gareus.org" rel="external"> Robin Gareus</a> and <a href="https://ccrma.stanford.edu/~jos" rel="external">Julius O. Smith III</a>.</p>
-<p>The list of peer-review committee members will be published here after the submission deadline.</p>
+
+<p>Review committee: (in alphabetical order)<br/>
+&nbsp;&nbsp; Fons Adriaensen, <em>Casa della Musica, Parma, Italy</em><br/>
+&nbsp;&nbsp; Tim Blechmann, <em>Vienna, Austria</em><br/>
+&nbsp;&nbsp; Ivica Bukvic, <em>Virginia Tech, United States</em><br/>
+&nbsp;&nbsp; Götz Dipper, <em>ZKM | Institute for Music and Acoustics, Germany</em><br/>
+&nbsp;&nbsp; John ffitch, <em>retired/U of Bath, United Kingdom</em><br/>
+&nbsp;&nbsp; Robin Gareus, <em>linuxaudio.org, France</em><br/>
+&nbsp;&nbsp; Dr. Albert Gräf, <em>Johannes Gutenberg University Mainz, Germany</em><br/>
+&nbsp;&nbsp; Fernando Lopez-Lezcano, <em>CCRMA, United States</em><br/>
+&nbsp;&nbsp; Frank Neumann, <em>PenguinNoises, Germany</em><br/>
+&nbsp;&nbsp; Yann Orlarey, <em>Grame, France</em><br/>
+&nbsp;&nbsp; Jussi Pekonen, <em>Finland</em><br/>
+&nbsp;&nbsp; Dave Phillips, <em>linux-sound.org, United States</em><br/>
+&nbsp;&nbsp; Martin Rumori, <em>Institute of Electronic Music and Acoustics, Germany</em><br/>
+&nbsp;&nbsp; Bruno Ruviaro, <em>CCRMA, United States</em><br/>
+&nbsp;&nbsp; Julius Smith, <em>CCRMA, United States</em><br/>
+&nbsp;&nbsp; Michael Wilson, <em>CCRMA, United States</em><br/>
+&nbsp;&nbsp; IOhannes Zmölnig, <em>Institute of Electronic Music and Acoustics (IEM@KUG), Austria</em><br/>
+</p>
+
+
 
 <h1>Links to prior Linux Audio Conferences</h1>
 <ul class="multicolumn">
