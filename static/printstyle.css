@@ -36,6 +36,7 @@ h2.pb 			{page-break-before: always; margin-top:0px !important;}
 h3.ptitle		{margin:1.0em 0px 0em 0px !important; text-align:center;}
 td.center,div.center	{text-align:center;}
 table.ptb		{
+		  width:100%;
 			border-bottom:1px solid #000000;
 			border-left:1px solid #000000;
 			}

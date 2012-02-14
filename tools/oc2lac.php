@@ -13,8 +13,51 @@ define("OCC_DB_NAME", "openconf".YEAR);
 
 ### OUTPUT DATABASE (lac website)
 #define('PDOPRGDB','sqlite:'.BASEDIR.'/docroot/tmp/lac'.YEAR.'.db');
-define('PDOPRGDB','sqlite:/tmp/lac2011.db');
+define('PDOPRGDB','sqlite:/tmp/lac'.YEAR.'.db');
 
+function ch($s) {
+	$s=mb_convert_encoding($s,'utf8');
+  $sr = array(
+    '@\xe2\x80\x98@' => "`",    # UTF8 single-quote start
+    '@\xe2\x80\x99@' => "'",    # UTF8 single-quote end
+    '@\xe2\x80\x9c@' => '``',   # UTF8 double-quote start
+    '@\xe2\x80\x9d@' => "''",   # UTF8 double-quote end
+    '@\xe2\x80\x94@' => ' -- ', # UTF8 dash/minus/hyphen 
+    '@\xc2\x96@'     => ' -- ', # UTF8 dash/minus/hyphen 
+    '@\xc2\xa0@'     => ' ',    # non-standard whitespace
+    '@\xc2\x97@'     => ' -- ', # dash/minus/hyphen 
+    '@\xc2\x91@'     => "`",    # omission
+    '@\xc2\x92@'     => "'",    # apostrophe
+    '@\xc2\x93@'     => '``',   # single quote start
+    '@\xc2\x94@'     => "''",   # single quote end
+    '@\xc2\x85@'     => "...",  # tiple dots
+    '@\xe2\x80\xa6@' => "...",  # tiple dots
+  );
+	$s=preg_replace(array_keys($sr),array_values($sr), $s);
+
+  $qu = array(
+    '@``@' => '"',
+    "@''@" => '"',
+    "@  +@" => ' ',
+  );
+	$s=preg_replace(array_keys($qu),array_values($qu), $s);
+	return $s;
+}
+
+function cday($num) {
+	return 1+floor($num / 7);
+}
+function ctime($num) {
+	switch ($num%7) {
+		case 0: return '10:15';
+		case 1: return '11:00';
+		case 2: return '11:45';
+		case 3: return '14:00';
+		case 4: return '14:45';
+		case 5: return '16:00';
+		case 6: return '16:45';
+	}
+}
 
 ### All systems go
 $db=new PDO(PDOPRGDB);
@@ -62,10 +105,11 @@ $papers=$px; unset($px);
 
 foreach (oc_query('SELECT DISTINCT * from author join paper on paper.paperid=author.paperid where paper.accepted="Accept";') as $a) {
   #echo "inert user:". $a['name_first'].' '.$a['name_last']."\n";
-  $rv=lac_exec('insert into user (name, bio, email) VALUES('
-    .$db->quote($a['name_first'].' '.$a['name_last']).','
-    .$db->quote($a['organization']).','
-    .$db->quote($a['email'])
+  $rv=lac_exec('insert into user (name, bio, tagline, email) VALUES('
+    .$db->quote(ch($a['name_first'].' '.$a['name_last'])).','
+    .$db->quote(ch($a['city'].','.$a['country'])).','
+    .$db->quote(ch($a['organization'])).','
+    .$db->quote(ch($a['email']))
     .');');
   if ($rv===false) {
     echo "insert user:". $a['name_first'].' '.$a['name_last']."\n";
@@ -77,23 +121,30 @@ foreach (oc_query('SELECT DISTINCT * from author join paper on paper.paperid=aut
 #print_r(lac_query('SELECT * from user;', false));
 echo "-----\n";
 
+$num=1; # skip 1st.
 foreach ($papers as $p) {
   #echo "paper :".$p['title']."\n";
-  $actid=lac_exec('insert into activity (title, type, abstract, notes, url_paper, duration, location_id) VALUES('
-    .$db->quote($p['title']).','
+	$actid=lac_exec('insert into activity (title, type, abstract, notes, url_paper, duration, location_id'
+		.', day, starttime'
+		.') VALUES('
+    .$db->quote(ch($p['title'])).','
     .$db->quote('p').','
-    .$db->quote($p['abstract']).','
-    .$db->quote($p['pcnotes'].' -- '.$p['keywords'].' -- '.$p['contactemail'].' -- '.$p['contactphone'].' -- '.$p['lastupdate']).','
-    .$db->quote('http://lac.linuxaudio.org/2011/papers/'.$p['paperid'].'.'.$p['format'])
+    .$db->quote(ch($p['abstract'])).','
+    .$db->quote(ch($p['keywords']."\n".$p['pcnotes']."\n".$p['comments'])).','
+    .$db->quote('http://lac.linuxaudio.org/2012/papers/'.$p['paperid'].'.'.$p['format'])
     .',45,1' # duration, location
-    .');');
+    .','.cday($num).','.$db->quote(ctime($num))
+		.');');
+	$num++;
+	if ($num==14) $num++; # skip keynote on sat
   #echo "DEBUG: activity: $actid\n";
   if ($actid===false) {
     echo " !!! ERROR INSERTING activity: ".$p['title']."\n";
     print_r($db->errorInfo());
     continue;
   }
-  # loop over authors for this paper
+	# loop over authors for this paper
+	$pos=0;
   foreach ($p['myauthors'] as $a) {
     # loopup lac-authorid
     $lacaid = lac_query('SELECT id from user where email='.$db->quote($a['email']).';');
@@ -101,9 +152,10 @@ foreach ($papers as $p) {
       echo " !!! ERROR LOOKING UP user : ".$a['email']."\n";
       continue;
     }
-    $rv=lac_exec('insert into usermap (activity_id, user_id) VALUES('
+    $rv=lac_exec('insert into usermap (activity_id, user_id, position) VALUES('
       .intval($actid).','
-      .intval($lacaid['id'])
+      .intval($lacaid['id']).','
+      .(++$pos)
       .');');
     if ($rv===false) {
       echo "author: ".$a['email'].' ('.intval($lacaid['id']).') -> activity: '.$actid."\n";
@@ -112,4 +164,5 @@ foreach ($papers as $p) {
     } 
   }
 }
+	$actid=lac_exec('insert into location (name) VALUES ("Campbell Recital Hall");');
 echo "OK\n";

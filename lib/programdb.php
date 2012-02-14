@@ -318,7 +318,7 @@
     foreach ($result as $r) {
       echo '<tr'.(($alt++%2==1)?' class="alt"':'').'>';
       echo '<td><a id="jan-'.$r['id'].'" name="jan-'.$r['id'].'"/><tt>'.color_type($r['type']).'-'.$r['day'].'-'.$r['starttime'].'</tt></td>';
-      echo '<td'.(($r['status']==0)?' class="cancelled"':'').'><b>'.limit_text($r['title']).'</b>&nbsp;';
+      echo '<td'.(($r['status']==0)?' class="cancelled"':'').'><b>'.limit_text($r['title'],140).'</b>&nbsp;';
 
       echo '<em>'; $i=0;
       foreach (fetch_authorids($db, $r['id']) as $user_id) {
