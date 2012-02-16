@@ -278,14 +278,13 @@
       echo '<td><span style="color:'.$profilecolours[usr_has_profile($db, $r['id'])].'">('.$r['id'].')</span>';
       echo '<a id="jan-'.$r['id'].'" name="jan-'.$r['id'].'"/>&nbsp;</td><td>'.xhtmlify($r['name']).'</td>';
       if (count($aids)==0) {
-        if ($r['vip']&6) 
+        if (!($r['vip']&1)) 
           echo '<td>0';
         else
           echo '<td class="center red">0';
       } else 
         echo '<td class="center"><a class="active" onclick="document.getElementById(\'pdb_filterauthor\').value=\''.$r['id'].'\';document.getElementById(\'param\').value=\'-1\';document.getElementById(\'mode\').value=\'\';formsubmit(\'myform\');">'.count($aids).'</a>';
-      if (!($r['vip']&1))  echo ' -S';
-      else if ($r['vip']&6) echo ' ';
+      if (!($r['vip']&1))  echo '-S';
       if ($r['vip']&6) echo '+';
       if ($r['vip']&4)  echo 'C';
       if ($r['vip']&2)  echo 'O';
