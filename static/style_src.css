@@ -238,12 +238,12 @@ div.menuitem {
 #frank td {text-align: justify; vertical-align:top;}
 #frank td {width:25%;overflow:hidden;padding:.5em .5em;}
 
-#speakers th,
-#speakers td     {text-align: center; max-width:128px;}
-#speakers td     {overflow:hidden;}
-#speakers td.tag {vertical-align: top; padding-bottom:1em; line-height:1.1em;}
+.speakers th,
+.speakers td     {text-align: center; max-width:128px;}
+.speakers td     {overflow:hidden;}
+.speakers td.tag {vertical-align: top; padding-bottom:1em; line-height:1.1em;}
 
-#speakers a,
+.speakers a,
 div.user a {
 	text-decoration:none;
 }
@@ -254,7 +254,7 @@ div.user a {
 }
 
 #profile div.portrait,
-#speakers div.portrait {
+.speakers div.portrait {
 	width:128px;
 	height:128px;
 	overflow:hidden;
@@ -262,14 +262,14 @@ div.user a {
 	display: table-cell; vertical-align: middle;
 }
 
-#speakers div.tagline {
+.speakers div.tagline {
 	font-size:small;
 	font-style:italic;
 	line-height:1.0em;
 }
 
 #profile div.portrait,
-#speakers div.portrait img {
+.speakers div.portrait img {
 	max-height:128px;
 	max-width:128px;
 }

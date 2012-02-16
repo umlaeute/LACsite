@@ -161,7 +161,7 @@ function usr_msg_sendhash($db, $uid, $email='') {
 function render_list($head, $speakers) {
 	if (count($speakers) <1 ) return;
 	echo $head;
-	echo '<table border="0" width="100%" id="speakers">'.NL.' <tr>';
+	echo '<table border="0" width="100%" class="speakers">'.NL.' <tr>';
   $cnt=0;$posttds='';
   foreach ($speakers as $s) {
     if ($cnt>0 && ($cnt%5 ==0)) {
