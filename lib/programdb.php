@@ -912,7 +912,7 @@
 
 
     echo "<b>Pass 2: Persons</b><br/>";
-    $q='SELECT id, name from user ORDER BY name;'; 
+    $q='SELECT id, name, vip from user ORDER BY name;'; 
     $res=$db->query($q);
     if ($res) {
       $result=$res->fetchAll();
@@ -920,7 +920,9 @@
         $aids=fetch_activity_by_author($db,$r['id']);
         if (count($aids)!=0) continue;
         echo '('.$r['id'].') "'.$r['name'].'" has no assignment.&nbsp;';
-        echo '<a class="active" onclick="if (confirm(\'Really delete User no. '.$r['id'].'?\')) {document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'deluser\';formsubmit(\'myform\');}">Delete</a>';
+        if ($r['vip']&6)  echo '&hellip;but is marked as VIP ('.$r['vip'].').';
+        else
+          echo '<a class="active" onclick="if (confirm(\'Really delete User no. '.$r['id'].'?\')) {document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'deluser\';formsubmit(\'myform\');}">Delete</a>';
         echo '<br/>'."\n";
       }
     } else {
@@ -957,7 +959,7 @@
       $result=$res->fetchAll();
       foreach ($result as $r) {
         $cnt['tot']++;
-        if (in_array($r['name'], $list)) { 
+        if (in_array(strtolower($r['name']), $list)) { 
           $cnt['ok']++;
           continue;
         }
@@ -998,7 +1000,7 @@
     if ($res) {
       foreach ($result as $r) {
         foreach ($regs as $n) {
-          if ($r['name'] != $n['fullname']) continue;
+          if (strtolower(trim($r['name'])) != strtolower($n['fullname'])) continue;
           $checked++;
           if (empty($n['reg_vip'])) {
             echo 'Author: '.$r['name'].' is not yet marked as VIP in registration.<br/>';
@@ -1011,12 +1013,13 @@
     echo '<p style="color:red">Checked '.$checked.' of '.$cnt['tot'].' Authors: good entries: '.$good.'</p>';
     
     echo "<b>Pass 6: Check profile of Author Registration</b><br/>";
-    # TODO - DO with above?
-    # for each user - check if $r['vip'] has same bit as in reg-vip.
+    $checked=0;
+    $good=0;
     if ($res) {
       foreach ($result as $r) {
         foreach ($regs as $n) {
-          if ($r['name'] != $n['fullname']) continue;
+          if (strtolower(trim($r['name'])) != strtolower($n['fullname'])) continue;
+          $checked++;
           $ok=0;
           if (($r['vip'] & 1) && $n['reg_vip'] == 'author') $ok|=1;
           if (($r['vip'] & 2) ) $ok |=2;
@@ -1025,10 +1028,13 @@
           if (!($r['vip'] & 4) && $n['reg_vip'] == 'organizer') $ok=0;
           if ($ok==0) {
             echo 'Author: '.$r['name'].'('.$r['id'].') /registration/ and /profile/ are not consistent: '.$r['vip'].' vs "'.$n['reg_vip'].'"<br/>';
+          } else {
+            $good++;
           }
         }
       }
     }
+    echo '<p style="color:red">Checked '.$checked.' of '.$cnt['tot'].' Authors: good entries: '.$good.'</p>';
   }
 
   function get_registrations() {
@@ -1038,8 +1044,8 @@
     while ($file_name = readdir($dir)) 
       if($file_name[0] != '.' && is_file(REGLOGDIR.$file_name)) {
         $v=parse_ini_file(REGLOGDIR.$file_name);
-        $rva[]= array('first' => $v['reg_prename'], 'last' => $v['reg_name'], 'fullname' => $v['reg_prename'].' '.$v['reg_name'], 'reg_vip' => (isset($v['reg_vip'])?$v['reg_vip']:''));
-        $rvn[]= $v['reg_prename'].' '.$v['reg_name'];
+        $rva[]= array('first' => $v['reg_prename'], 'last' => $v['reg_name'], 'fullname' => trim($v['reg_prename'].' '.$v['reg_name']), 'reg_vip' => (isset($v['reg_vip'])?$v['reg_vip']:''));
+        $rvn[]= strtolower(trim($v['reg_prename'].' '.$v['reg_name']));
       }
     return array($rva, $rvn);
   }
