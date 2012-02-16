@@ -239,7 +239,7 @@ div.menuitem {
 #frank td {width:25%;overflow:hidden;padding:.5em .5em;}
 
 #speakers th,
-#speakers td     {text-align: center;}
+#speakers td     {text-align: center; max-width:128px;}
 #speakers td     {overflow:hidden;}
 #speakers td.tag {vertical-align: top; padding-bottom:1em; line-height:1.1em;}
 

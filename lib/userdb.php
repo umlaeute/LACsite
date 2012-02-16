@@ -226,7 +226,7 @@ function render_profile($s, $acts) {
 
       if ($r['type']!='c') { ### all concerts same location --- lib/programdb.php:768
 				if (!empty($r['location_id'])) {
-					echo ' &raquo;&nbsp;Location: '.$a_locations[$r['location_id']];
+					echo '<br/>&raquo;&nbsp;Location: '.$a_locations[$r['location_id']];
 				}
       }
 			echo '</li>'.NL;
