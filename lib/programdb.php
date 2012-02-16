@@ -864,7 +864,7 @@
   }
 
   function dbadmin_profilecheck($db, $notify=false) {
-    $q='SELECT id,email from user;'; 
+    $q='SELECT id,name,email from user;'; 
     $res=$db->query($q);
     if (!$res) { say_db_error(); return $rv;}
     $result=$res->fetchAll();
@@ -878,7 +878,7 @@
       }
       $cnt++;
       echo '<a class="active" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'profilenotfy\';formsubmit(\'myform\');">Notify</a> ';
-      echo $r['email'];
+      echo $r['name'].' - '.$r['email'];
       echo "<br/>\n";
     }
     if ($cnt == 0) echo '<div>All users have already been notified.</div>';
