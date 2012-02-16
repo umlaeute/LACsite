@@ -5,6 +5,7 @@ global $config;
 
 $uid=0;
 $ok=false;
+$silent=false;
 $ukey=''; # user key/handle , session
 $mode='';
 $lemail=''; $kemail='';
@@ -53,7 +54,6 @@ if (!$ok) {
 	$uid=0;
 }
 
-# check email + pass -> $uid, $ukey
 
 if ($uid<1) {
 	# Login form
@@ -76,7 +76,7 @@ if ($uid<1) {
 	echo '<input class="button" type="button" title="Login" value="Login" onclick="document.getElementById(\'mode\').value=\'login\';formsubmit(\'myform\');"/>'."\n";
 	echo "</fieldset>".NL;
 	echo "</form>".NL;
-	goto errorout;
+	$silent=true;
 }
 
 $suid=0; $r=NULL;
@@ -88,7 +88,7 @@ switch ($mode) {
 		unlock($db, $uid, 'user');
 		echo '<div><a href="'.local_url('profile', 'ukey='.$ukey).'" >Edit Profile</a></div><br/>';
 		render_profile(fetch_user($db, $uid, true), fetch_user_activities($db, $uid));
-		goto errorout;
+		$silent=true;
 		break;
 	case 'saveprofile':
 		unlock($db, $uid, 'user');
@@ -108,7 +108,7 @@ switch ($mode) {
 
 		echo '<div><a href="'.local_url('profile', 'ukey='.$ukey).'" >Edit Profile</a></div><br/>';
 		render_profile(fetch_user($db, $uid, true), fetch_user_activities($db, $uid));
-		goto errorout;
+		$silent=true;
 	default:
 		break;
 }
@@ -123,11 +123,15 @@ if ($uid>0) {
 
 if (!is_array($r)) {
 	echo "error - invalid profile or user-id: $uid\n";
+	$silent=true;
 } else {
 	if (lock($db, $uid, 'user') !== -1 ) {
 		echo '<div class="dbmsg">This profile is currently being edited. Please try again in a few minutes.</div>'."\n";
-		goto errorout;
+		$silent=true;
 	}
+}
+
+if (!$silent) {
 	#echo '<div><a href="'.local_url('speakers', 'uid='.$r['id']).'" rel="external">View Public Profile</a></div>';
 
 	echo '<div id="profile">';
@@ -167,15 +171,12 @@ if (!is_array($r)) {
 	echo '</div>';
 	echo '<div class="clearer"></div>';
 
-    echo '<label for="pdb_bio">Bio:</label><br/>';
-    echo '<textarea id="pdb_bio" name="pdb_bio" rows="8" cols="70">'.xhtmlify($r['bio']).'</textarea><br/><br/>';
+	echo '<label for="pdb_bio">Bio:</label><br/>';
+	echo '<textarea id="pdb_bio" name="pdb_bio" rows="8" cols="70">'.xhtmlify($r['bio']).'</textarea><br/><br/>';
 
-    echo '<input class="button" type="button" title="Save" value="Save" onclick="document.getElementById(\'mode\').value=\'saveprofile\';formsubmit(\'myform\');"/>'."\n";
-		echo '<input class="button" type="button" title="Cancel" value="Cancel" onclick="document.getElementById(\'mode\').value=\'unlockprofile\';formsubmit(\'myform\');"/>'."<br/>&nbsp;\n";
-		echo '</div>';
+	echo '<input class="button" type="button" title="Save" value="Save" onclick="document.getElementById(\'mode\').value=\'saveprofile\';formsubmit(\'myform\');"/>'."\n";
+	echo '<input class="button" type="button" title="Cancel" value="Cancel" onclick="document.getElementById(\'mode\').value=\'unlockprofile\';formsubmit(\'myform\');"/>'."<br/>&nbsp;\n";
+	echo '</div>';
+	echo "</fieldset>".NL;
+	echo "</form>".NL;
 }
-echo "</fieldset>".NL;
-echo "</form>".NL;
-
-errorout:
-
