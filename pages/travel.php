@@ -14,9 +14,9 @@
 
 <p>Try also:</p>
 <ul>
-<li><a href="http://www.stanford.edu/dept/visitorinfo/plan/stay.html">http://www.stanford.edu/dept/visitorinfo/plan/stay.html</a>
-<li><a href="http://www.hotels.com/">http://www.hotels.com/</a>
-<li><a href="http://www.airbnb.com/">http://www.airbnb.com/</a>
+<li><a href="http://www.stanford.edu/dept/visitorinfo/plan/stay.html">http://www.stanford.edu/dept/visitorinfo/plan/stay.html</a></li>
+<li><a href="http://www.hotels.com/">http://www.hotels.com/</a></li>
+<li><a href="http://www.airbnb.com/">http://www.airbnb.com/</a></li>
 </ul>
 
 <h1>Traveling to Stanford</h1>
