@@ -240,7 +240,8 @@ div.menuitem {
 
 #speakers th,
 #speakers td     {text-align: center;}
-#speakers td     {overflow:hidden;padding-bottom:1em;}
+#speakers td     {overflow:hidden;}
+#speakers td.tag {vertical-align: top; padding-bottom:1em; line-height:1.1em;}
 
 #speakers a,
 div.user a {
@@ -259,6 +260,12 @@ div.user a {
 	overflow:hidden;
 	text-align:center;
 	display: table-cell; vertical-align: middle;
+}
+
+#speakers div.tagline {
+	font-size:small;
+	font-style:italic;
+	line-height:1.0em;
 }
 
 #profile div.portrait,

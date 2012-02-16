@@ -9,25 +9,30 @@ function render_list($head, $speakers) {
 	if (count($speakers) <1 ) return;
 	echo $head;
 	echo '<table border="0" width="100%" id="speakers">'.NL.' <tr>';
-  $cnt=0;
+  $cnt=0;$posttds='';
   foreach ($speakers as $s) {
     if ($cnt>0 && ($cnt%5 ==0)) {
+      echo "</tr>\n <tr>\n";
+      echo $posttds; $posttds='';
       echo "</tr>\n <tr>\n";
     }
     echo "  <td>\n";
     echo '    <div class="portrait"><a href="'.local_url('speakers', 'uid='.$s['id']).'"';
-    echo '     rel="person"><img src="'.usr_imgurl($s).'" alt="'.$s['name'].'"/></div>';
-		echo $s['name'].'</a><br/>';
-		if (!empty($s['tagline']))
-			echo '<em>'.xhtmlify($s['tagline']).'</em>';
-		else 
-			echo '&nbsp;';
+    echo '     rel="person"><img src="'.usr_imgurl($s).'" alt="'.$s['name'].'"/></a></div>';
+    $posttds.='<td class="tag"><div><a href="'.local_url('speakers', 'uid='.$s['id']).'" rel="person">'.$s['name'].'</a></div>';
+    if (!empty($s['tagline']))
+      $posttds.='<div class="tagline">'.xhtmlify($s['tagline']).'</div>';
+    else 
+      $posttds.='&nbsp;';
+    $posttds.='&nbsp;</td>';
     echo "\n  </td>\n";
     $cnt++;
   }
   while ($cnt++%5 !=0) {
     echo '  <td><div class="portrait"></div></td>';
 	}
+	echo "</tr>\n <tr>\n";
+	echo $posttds;
 	echo ' </tr>'.NL.'</table>'.NL;
 }
 
