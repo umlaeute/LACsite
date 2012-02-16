@@ -972,11 +972,14 @@
           $cnt['ok']++;
           continue;
         }
-    echo '<li>'.$r['name'].' is not yet registered';
+        echo '<li>'.$r['name'].' is not yet registered';
         if (empty($r['email']))
-      echo '<span style="color:red"> and we have no email address</span>';
+          echo '<span style="color:red"> and we have no email address</span>';
         else 
           $emailmissing.=$r['name'].' &lt;'.$r['email'].'&gt;, ';
+
+        if (!($r['vip']&1))
+          echo '; but s/he is no speaker';
         echo '.';
         $pm=0;
         foreach (explode(' ',$r['name']) as $np) {

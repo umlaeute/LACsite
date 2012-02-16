@@ -301,10 +301,10 @@ div.user div.bio {
 #content span.standout  {font-weight: bold;}
 
 #content legend     {margin-left:1em;}
-#content fieldset   {padding-left:.5em; font-size:11pt; padding-bottom:.5em; clear:both;}
+fieldset            {padding: 0 .5em .5em .5em;font-size:11pt; clear:both;}
 #content label.la   {font-style:italic;}
 #content .error     {color:#990000;}
-#content p.error   {font-size:120%;}
+#content p.error    {font-size:120%;}
 #content .fx        {display:none;}
 
 #content div.wikilink {font-size:80%; margin-top:1em; text-align:right;}
