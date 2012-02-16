@@ -92,6 +92,19 @@ if (!defined('REGLOGDIR')) die();
       echo 'Download: <a href="download.php?file=schedule.csv">schedule.csv</a>';
       echo '</fieldset>';
       break;
+    case 'profilenotfy':
+			require_once('lib/userdb.php');
+      admin_fieldset();
+			$uid=intval(rawurldecode($_REQUEST['param'])); 
+			if ($uid>0) {
+				echo '<div class="dbmsg">inviting user '.$uid.'</div>';
+				usr_msg_sendhash($db, $uid);
+			}
+      program_fieldset();
+      echo '<legend>User Profiles</legend>'."\n";
+      dbadmin_profilecheck($db, $uid==-1);
+      echo '</fieldset>';
+      break;
     case 'orphans':
       admin_fieldset();
       program_fieldset();

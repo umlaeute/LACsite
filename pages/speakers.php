@@ -19,7 +19,7 @@ function render_list($head, $speakers) {
     echo '     rel="person"><img src="'.usr_imgurl($s).'" alt="'.$s['name'].'"/></div>';
 		echo $s['name'].'</a><br/>';
 		if (!empty($s['tagline']))
-			echo '<em>'.$s['tagline'].'</em>';
+			echo '<em>'.xhtmlify($s['tagline']).'</em>';
 		else 
 			echo '&nbsp;';
     echo "\n  </td>\n";
@@ -37,15 +37,12 @@ function render_profile($s, $acts) {
 	if (! (intval($s['id']) > 0)) return; ## ERROR
 	programlightbox();
 
-	# TODO : get talks of user (if applicable (flags)
-	# compare to dbadmin_listall
-	#fetch_user_activities($db, $speaker['id'])
 	echo '<div class="user">';
 
 	echo '<div class="portrait"><img src="'.usr_imgurl($s,200).'" alt="'.xhtmlify($s['name']).'"/></div>';
 
 	echo '<div class="userinfo">';
-	echo '<h3>'.$s['name'].'</h3>';
+	echo '<h3>'.xhtmlify($s['name']).'</h3>';
 	if (!empty($s['tagline']))
 		echo '<h4>Tagline/Affiliation</h4><p>'.xhtmlify($s['tagline']).'</p>';
 	if (!empty($s['url_person']) || !empty($s['url_institute']) || !empty($s['url_project'])  ) {

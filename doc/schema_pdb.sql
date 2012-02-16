@@ -33,7 +33,7 @@ CREATE TABLE user (
    editlock datetime default 0,
    email TEXT DEFAULT NULL,
    vip INT DEFAULT 1, 
-   flags INT DEFAULT 1, 
+   flags INT DEFAULT 0, 
    bio TEXT DEFAULT NULL,
    tagline TEXT DEFAULT NULL,
    url_image TEXT DEFAULT NULL, 
@@ -59,6 +59,7 @@ CREATE TABLE auth (
 CREATE TABLE usermap (
    activity_id INTEGER,
    user_id INTEGER,
+   position INTEGER,
    UNIQUE (activity_id, user_id),
 	 FOREIGN KEY(user_id) REFERENCES user(id) ON DELETE CASCADE,
 	 FOREIGN KEY(activity_id) REFERENCES activity(id) ON DELETE CASCADE

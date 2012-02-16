@@ -57,6 +57,14 @@
     return BASEURL.'?page='.rawurlencode($page).(!empty($args)?'&amp;'.$args:'');
   }
 
+  function canonical_url($page, $args='', $sep='&amp') {
+    global $config;
+    if (isset($config['userewrite']) && $config['userewrite']) {
+      return CANONICALURL.rawurlencode($page).(!empty($args)?'?'.$args:'');
+    }
+    return CANONICALURL.'?page='.rawurlencode($page).(!empty($args)?$sep.$args:'');
+  }
+
   # unused ? fn
   function plaindate($e, $start=true) {
     $time= dbadmin_unixtime($e, $start);
@@ -182,6 +190,8 @@ $agendafs=array(
          'page'  => 'adminschedule', 'mode'  => 'orphans', 'param' => ''),
   array( 'title' => 'Export Program (CSV)', 'value' => 'Export Program (CSV)',
          'page'  => 'adminschedule', 'mode'  => 'export', 'param' => ''),
+  array( 'title' => 'Profile Invites', 'value' => 'Profile Invites',
+         'page'  => 'adminschedule', 'mode'  => 'profilenotfy', 'param' => ''),
 );
 $adminfieldsetonce=false;
 

@@ -240,6 +240,27 @@
     echo '</table>'."\n";
   }
 
+  # 0: no ukey, no profile
+  # 1: ukey-sent
+  # 2: profile public
+  # 3: profile public & ukey-sent
+  function usr_has_profile($db, $uid) {
+    $rv=0;
+    $q='SELECT flags from user WHERE id='.intval($uid).';';
+    $res=$db->query($q);
+    if ($res) {
+      $d=$res->fetch(PDO::FETCH_ASSOC);
+      if ($d['flags'] & 1 ) $rv|=2;
+    }
+    $q='SELECT ukey from auth WHERE user_id='.intval($uid).';';
+    $res=$db->query($q);
+    if ($res) {
+      $d=$res->fetch(PDO::FETCH_ASSOC);
+      if (!empty($d['ukey'])) $rv|=1;
+    }
+    return $rv;
+  }
+
   function dbadmin_listusers($db) {
     $q='SELECT id, name, email, bio from user ORDER BY name;'; 
     $res=$db->query($q);
@@ -250,10 +271,12 @@
     echo '<tr><th></th><th>Username</th><th>#talks</td><th>Email</th><th>Short Bio</th><th>&nbsp;</th>';
     $alt=0;
     $emaillist='';
+    $profilecolours = array('#f00', '#0a0', '#a80', '#000');
     foreach ($result as $r) {
       $aids=fetch_activity_by_author($db,$r['id']);
       echo '<tr'.(($alt++%2==1)?' class="alt"':'').'>';
-      echo '<td>('.$r['id'].')<a id="jan-'.$r['id'].'" name="jan-'.$r['id'].'"/>&nbsp;</td><td>'.xhtmlify($r['name']).'</td>';
+      echo '<td><span style="color:'.$profilecolours[usr_has_profile($db, $r['id'])].'">('.$r['id'].')</span>';
+      echo '<a id="jan-'.$r['id'].'" name="jan-'.$r['id'].'"/>&nbsp;</td><td>'.xhtmlify($r['name']).'</td>';
       if (count($aids)==0)
         echo '<td class="center red">0</td>';
       else 
@@ -829,6 +852,30 @@
     if (!$start && !strstr($e['duration'], ':'))
       $time = strtotime('+'.$e['duration'].'minutes', $time);
     return $time;
+  }
+
+  function dbadmin_profilecheck($db, $notify=false) {
+    $q='SELECT id,email from user;'; 
+    $res=$db->query($q);
+    if (!$res) { say_db_error(); return $rv;}
+    $result=$res->fetchAll();
+    $cnt=0; $eml=0;
+    foreach ($result as $r) {
+      if (empty($r['email'])) continue;
+      if (usr_has_profile($db, $r['id']) & 1) continue;
+      if ($notify) {
+        $eml++;
+        if (usr_msg_sendhash($db, $r['id'], $r['email']) == 0) continue;
+      }
+      $cnt++;
+      echo '<a class="active" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'profilenotfy\';formsubmit(\'myform\');">Notify</a> ';
+      echo $r['email'];
+      echo "<br/>\n";
+    }
+    if ($cnt == 0) echo '<div>All users have already been notified.</div>';
+    else echo '<br/><div class="center"><a class="active" onclick="document.getElementById(\'param\').value=-1;document.getElementById(\'mode\').value=\'profilenotfy\';formsubmit(\'myform\');">Notify ALL</a></div>';
+
+    if ($eml != 0) echo '<div class="dbmsg">'.$eml.' email invitations sent.</div>';
   }
 
   function dbadmin_orphans($db) {
