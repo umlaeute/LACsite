@@ -864,7 +864,7 @@
   }
 
   function dbadmin_profilecheck($db, $notify=false) {
-    $q='SELECT id,name,email from user;'; 
+    $q='SELECT id,name,email from user ORDER BY name;'; 
     $res=$db->query($q);
     if (!$res) { say_db_error(); return $rv;}
     $result=$res->fetchAll();
