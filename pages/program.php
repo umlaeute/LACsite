@@ -20,7 +20,7 @@
     echo "</p>\n";
   }
 
-  $mode='list';
+  $mode='table';
   if (isset($_REQUEST['mode'])&&!empty($_REQUEST['mode'])) $mode=$_REQUEST['mode'];
   #$details=isset($_REQUEST['details'])?true:false;
   $details=isset($_REQUEST['details'])?($_REQUEST['details']?true:false):true;
