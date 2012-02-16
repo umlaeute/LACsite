@@ -96,7 +96,7 @@ function usr_sendhash($db, $uid) {
 	$d = $res->fetch(PDO::FETCH_ASSOC);
 
 	# create hash
-	$ukey=substr(sha1('SaLt'.$uid.SHORTTITLE.microtime().$d['email'].$d['tagline']),0, 8);
+	$ukey=preg_replace("/[ ]/e",'chr(array_search(mt_rand(0, 62) ,array_flip(array_merge(range(48, 57), range(65, 90), range(97, 122)))))', str_repeat(" ", 12));
 
 	# TODO: check for hash conflicts.
 
@@ -122,7 +122,7 @@ The conference website allows you to create a publicly visible personal profile 
 Providing this information is optional, yet we\'d like to encourage you to introduce yourself and help to give the conference a face.
 
 To edit or update your profile, please follow this direct link:
-';
+  ';
 	$msg.=canonical_url('profile', 'ukey='.rawurlencode($ukey),'&');
 	$msg.='
 or log-in manually using your email-address and the password 

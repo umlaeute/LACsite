@@ -176,7 +176,7 @@ if (!$silent) {
 	}
 	echo '<div class="portrait"><img src="'.usr_imgurl($r).'" alt="Image -- '.$r['name'].'"/></div>';
 	echo '<div style="margin-right:220px;">';
-	html_text_input('Image URL (if empty gravatar.com)', 'url_image', $r);
+	html_text_input('Image URL (if empty: use gravatar.com) [&le; 200x200px]', 'url_image', $r);
 	html_text_input('URL 1 (Personal)', 'url_person', $r);
 	html_text_input('URL 2 (Institute, Company)', 'url_institute', $r);
 	html_text_input('URL 3 (Project)', 'url_project', $r);
