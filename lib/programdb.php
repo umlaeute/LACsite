@@ -262,7 +262,7 @@
   }
 
   function dbadmin_listusers($db) {
-    $q='SELECT id, name, email, bio from user ORDER BY name;'; 
+    $q='SELECT id, name, email, bio, vip from user ORDER BY name;'; 
     $res=$db->query($q);
     if (!$res) { say_db_error(); return $rv;}
     $result=$res->fetchAll();
@@ -277,10 +277,20 @@
       echo '<tr'.(($alt++%2==1)?' class="alt"':'').'>';
       echo '<td><span style="color:'.$profilecolours[usr_has_profile($db, $r['id'])].'">('.$r['id'].')</span>';
       echo '<a id="jan-'.$r['id'].'" name="jan-'.$r['id'].'"/>&nbsp;</td><td>'.xhtmlify($r['name']).'</td>';
-      if (count($aids)==0)
-        echo '<td class="center red">0</td>';
-      else 
-        echo '<td class="center"><a class="active" onclick="document.getElementById(\'pdb_filterauthor\').value=\''.$r['id'].'\';document.getElementById(\'param\').value=\'-1\';document.getElementById(\'mode\').value=\'\';formsubmit(\'myform\');">'.count($aids).'</a></td>';
+      if (count($aids)==0) {
+        if ($r['vip']&6) 
+          echo '<td>0';
+        else
+          echo '<td class="center red">0';
+      } else 
+        echo '<td class="center"><a class="active" onclick="document.getElementById(\'pdb_filterauthor\').value=\''.$r['id'].'\';document.getElementById(\'param\').value=\'-1\';document.getElementById(\'mode\').value=\'\';formsubmit(\'myform\');">'.count($aids).'</a>';
+      if (!($r['vip']&1))  echo ' -S';
+      else if ($r['vip']&6) echo ' ';
+      if ($r['vip']&6) echo '+';
+      if ($r['vip']&4)  echo 'C';
+      if ($r['vip']&2)  echo 'O';
+      echo '</td>';
+
       echo '<td>'.xhtmlify($r['email']).'</td>';
       if (!empty($r['email']))
         $emaillist.=$r['email'].', ';
@@ -1022,12 +1032,12 @@
           $checked++;
           $ok=0;
           if (($r['vip'] & 1) && $n['reg_vip'] == 'author') $ok|=1;
-          if (($r['vip'] & 2) ) $ok |=2;
-          if (($r['vip'] & 4) && $n['reg_vip'] == 'organizer') $ok |=4;
+          if (($r['vip'] & 2) && $n['reg_vip'] == 'organizer') $ok |=2;
+          if (($r['vip'] & 4) ) $ok |=4;
           if (!($r['vip'] & 1) && $n['reg_vip'] == 'author') $ok=0;
-          if (!($r['vip'] & 4) && $n['reg_vip'] == 'organizer') $ok=0;
+          if (!($r['vip'] & 2) && $n['reg_vip'] == 'organizer') $ok=0;
           if ($ok==0) {
-            echo 'Author: '.$r['name'].'('.$r['id'].') /registration/ and /profile/ are not consistent: '.$r['vip'].' vs "'.$n['reg_vip'].'"<br/>';
+            echo 'Author: '.$r['name'].'('.$r['id'].') reg. and profile are inconsistent: '.$r['vip'].' vs "'.$n['reg_vip'].'"<br/>';
           } else {
             $good++;
           }
