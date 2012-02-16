@@ -19,6 +19,8 @@
     'files' => 'Download',
     'profile' => 'Profile',
     'program'  => 'Agenda',
+    'speakers'  => 'Speakers',
+    'profile' => 'Profile',
   );
 
 # don't list sponsors on these pages
