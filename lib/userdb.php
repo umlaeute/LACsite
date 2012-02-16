@@ -13,7 +13,8 @@ function fetch_users($db, $filter=array()) {
 }
 
 function fetch_user($db, $uid) {
-	$q='SELECT * from user WHERE id='.intval($uid).';'; 
+	$q='SELECT * from user WHERE id='.intval($uid); 
+	$q.=' AND (flags&1)=1;';
 	$res=$db->query($q);
 	if (!$res) { say_db_error('fetch_user'); return NULL;}
 	return $res->fetch(PDO::FETCH_ASSOC);
