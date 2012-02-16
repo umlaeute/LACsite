@@ -820,7 +820,7 @@
         if (0 /*user has no profile*/)
           echo xhtmlify($a_users[$user_id]);
         else
-          echo '<a href="'.local_url('speakers', 'uid='.$user_id).'">'.xhtmlify($a_users[$user_id]).'</a>';
+          echo '<a href="'.local_url('speakers', 'uid='.$user_id).'" rel="parent">'.xhtmlify($a_users[$user_id]).'</a>';
       }
       echo '</em>';
 
@@ -949,7 +949,7 @@
     $cnt=array('tot' => 0, 'ok' => '0', 'part' => 0);
     list($regs,$list) = get_registrations();
 
-    $q='SELECT id, name, email from user ORDER BY name;'; 
+    $q='SELECT id, name, email, vip from user ORDER BY name;'; 
     $res=$db->query($q);
     $emailmissing='';
     if ($res) {
@@ -1010,6 +1010,25 @@
     }
     echo '<p style="color:red">Checked '.$checked.' of '.$cnt['tot'].' Authors: good entries: '.$good.'</p>';
     
+    echo "<b>Pass 6: Check profile of Author Registration</b><br/>";
+    # TODO - DO with above?
+    # for each user - check if $r['vip'] has same bit as in reg-vip.
+    if ($res) {
+      foreach ($result as $r) {
+        foreach ($regs as $n) {
+          if ($r['name'] != $n['fullname']) continue;
+          $ok=0;
+          if (($r['vip'] & 1) && $n['reg_vip'] == 'author') $ok|=1;
+          if (($r['vip'] & 2) ) $ok |=2;
+          if (($r['vip'] & 4) && $n['reg_vip'] == 'organizer') $ok |=4;
+          if (!($r['vip'] & 1) && $n['reg_vip'] == 'author') $ok=0;
+          if (!($r['vip'] & 4) && $n['reg_vip'] == 'organizer') $ok=0;
+          if ($ok==0) {
+            echo 'Author: '.$r['name'].'('.$r['id'].') /registration/ and /profile/ are not consistent: '.$r['vip'].' vs "'.$n['reg_vip'].'"<br/>';
+          }
+        }
+      }
+    }
   }
 
   function get_registrations() {

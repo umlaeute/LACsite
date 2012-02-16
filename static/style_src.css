@@ -293,6 +293,9 @@ div.user div.userinfo {
 div.user div.bio {
 	margin: 1em 0;
 }
+#content div.user ul {
+	text-align:left;
+}
 
 #content a.standout     {font-weight: bold;}
 #content span.standout  {font-weight: bold;}
@@ -356,7 +359,7 @@ li.active {cursor:pointer;}
 .pdb textarea        {width:98%;}
 .pdb input.duration  {width:8em;}
 .pdb label           {font-style:italic; font-size:80%;}
-.pdb input.smbutton  {width:7em;}
+.pdb input.smbutton  {width:5em;}
 .pdb input.button    {width:49%;}
 .pdb tr.alt          {background-color:#C0C0C0;}
 td.cancelled         {text-decoration:line-through;}

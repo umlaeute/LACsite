@@ -87,7 +87,7 @@ switch ($mode) {
 	case 'unlockprofile':
 		unlock($db, $uid, 'user');
 		echo '<div><a href="'.local_url('profile', 'ukey='.$ukey).'" >Edit Profile</a></div><br/>';
-		require_once('pages/speakers.php');
+		render_profile(fetch_user($db, $uid, true), fetch_user_activities($db, $uid));
 		goto errorout;
 		break;
 	case 'saveprofile':
@@ -103,11 +103,11 @@ switch ($mode) {
 		.',url_institute='.$db->quote(usr_sanitize_imgurl(rawurldecode($_REQUEST['pdb_url_institute'])))
 		.',url_project='.$db->quote(usr_sanitize_imgurl(rawurldecode($_REQUEST['pdb_url_project'])))
 		.' WHERE id='.$uid.';';
-		$err|=($db->exec($q) !== 1)?1:0;
+		$err=($db->exec($q) !== 1)?1:0;
 		echo '<div class="dbmsg">Saved User-ID='.$uid.'.. '.($err==0?'OK':'Error:'.$err).'</div>'."\n";
 
 		echo '<div><a href="'.local_url('profile', 'ukey='.$ukey).'" >Edit Profile</a></div><br/>';
-		require_once('pages/speakers.php');
+		render_profile(fetch_user($db, $uid, true), fetch_user_activities($db, $uid));
 		goto errorout;
 	default:
 		break;

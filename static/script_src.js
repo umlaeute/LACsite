@@ -7,6 +7,9 @@ function externalLinks() {
         anchor.getAttribute("rel") == "_blank")
       anchor.target = "_blank";
     if (anchor.getAttribute("href") &&
+        anchor.getAttribute("rel") == "parent")
+      anchor.target = "_parent";
+    if (anchor.getAttribute("href") &&
         anchor.getAttribute("rel") == "external")
       anchor.target = "_blank";
     if (anchor.getAttribute("href") &&
