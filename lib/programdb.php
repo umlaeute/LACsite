@@ -1044,8 +1044,8 @@
     while ($file_name = readdir($dir)) 
       if($file_name[0] != '.' && is_file(REGLOGDIR.$file_name)) {
         $v=parse_ini_file(REGLOGDIR.$file_name);
-        $rva[]= array('first' => $v['reg_prename'], 'last' => $v['reg_name'], 'fullname' => trim($v['reg_prename'].' '.$v['reg_name']), 'reg_vip' => (isset($v['reg_vip'])?$v['reg_vip']:''));
-        $rvn[]= strtolower(trim($v['reg_prename'].' '.$v['reg_name']));
+        $rva[]= array('first' => $v['reg_prename'], 'last' => $v['reg_name'], 'fullname' => trim($v['reg_prename']).' '.trim($v['reg_name']), 'reg_vip' => (isset($v['reg_vip'])?$v['reg_vip']:''));
+        $rvn[]= strtolower(trim($v['reg_prename']).' '.trim($v['reg_name']));
       }
     return array($rva, $rvn);
   }
