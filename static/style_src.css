@@ -306,6 +306,7 @@ fieldset            {padding: 0 .5em .5em .5em;font-size:11pt; clear:both;}
 #content .error     {color:#990000;}
 #content p.error    {font-size:120%;}
 #content .fx        {display:none;}
+fieldset .small     {font-size:10px;}
 
 #content div.wikilink {font-size:80%; margin-top:1em; text-align:right;}
 

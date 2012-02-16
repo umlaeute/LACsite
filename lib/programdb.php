@@ -1197,9 +1197,9 @@
     $a_days = fetch_selectlist(0, 'days');
     $a_types = fetch_selectlist(0, 'types');
     if ($usejs) 
-      $ocs=' onchange="submit();"';
+      $ocs=' onchange="submit();" class="small"';
     else
-      $ocs='';
+      $ocs=' class="small"';
 
     if ($filter['day']==0 && $filter['type']=='0' && $filter['user']==0)
       echo '<legend>Filter:</legend>';
@@ -1220,7 +1220,7 @@ if (0) {
     echo '<select id="pdb_filterlocation" name="pdb_filterlocation" size="1"'.$ocs.'>';
     gen_options($a_locations, $filter['location']);
     echo '</select>&nbsp;'."\n";
-    #echo '<input class="smbutton" type="submit" title="Apply" value="Apply"/>&nbsp;';
+    #echo '<input class="smbutton small" type="submit" title="Apply" value="Apply"/>&nbsp;';
 }
 if (1) {
     echo '<label for="pdb_filterauthor">Author:</label>';
@@ -1229,13 +1229,13 @@ if (1) {
     echo '</select>&nbsp;'."\n";
 }
     if ($usejs) {
-      echo '<input class="smbutton" type="submit" title="Apply" value="Apply"/>&nbsp;';
+      echo '<input class="smbutton small" type="submit" title="Apply" value="Apply" />';
       if (!($filter['day']==0 && $filter['type']=='0' && $filter['user']==0))
-        echo '<input class="smbutton" type="button" title="Clear" value="Clear" onclick="document.getElementById(\'pdb_filterday\').value=0;document.getElementById(\'pdb_filtertype\').value=0;document.getElementById(\'pdb_filterauthor\').value=0;formsubmit(\'myform\');"/>&nbsp;';
+        echo '&nbsp;<input class="smbutton small" type="button" title="Clear" value="Clear" onclick="document.getElementById(\'pdb_filterday\').value=0;document.getElementById(\'pdb_filtertype\').value=0;document.getElementById(\'pdb_filterauthor\').value=0;formsubmit(\'myform\');"/>';
     } else {
-      echo '<input class="smbutton" type="button" title="Filter" value="Filter" onclick="document.getElementById(\'param\').value=-1;document.getElementById(\'mode\').value=\'\';formsubmit(\'myform\');"/>&nbsp;';
+      echo '<input class="smbutton small" type="button" title="Filter" value="Filter" onclick="document.getElementById(\'param\').value=-1;document.getElementById(\'mode\').value=\'\';formsubmit(\'myform\');"/>';
       if (!($filter['day']==0 && $filter['type']=='0' && $filter['user']==0))
-        echo '<input class="smbutton" type="button" title="Clear" value="Clear" onclick="document.getElementById(\'pdb_filterday\').value=0;document.getElementById(\'pdb_filtertype\').value=0;document.getElementById(\'pdb_filterauthor\').value=0;formsubmit(\'myform\');"/>&nbsp;';
+        echo '&nbsp;<input class="smbutton small" type="button" title="Clear" value="Clear" onclick="document.getElementById(\'pdb_filterday\').value=0;document.getElementById(\'pdb_filtertype\').value=0;document.getElementById(\'pdb_filterauthor\').value=0;formsubmit(\'myform\');"/>';
     }
   }
 
