@@ -222,7 +222,7 @@ div.menuitem {
 #content h3     { font-size: 120%; }
 #content h4     { font-size: 110%; font-style:italic; }
 
-#content form     { width:41em; margin:0 auto;}
+#content form     { width:43em; margin:0 auto;}
 #content input.button 
                   {font-size:110%;}
 /*#content input, */
@@ -359,7 +359,7 @@ li.active {cursor:pointer;}
 .pdb textarea        {width:98%;}
 .pdb input.duration  {width:8em;}
 .pdb label           {font-style:italic; font-size:80%;}
-.pdb input.smbutton  {width:5em;}
+.pdb input.smbutton  {width:4em;}
 .pdb input.button    {width:49%;}
 .pdb tr.alt          {background-color:#C0C0C0;}
 td.cancelled         {text-decoration:line-through;}
