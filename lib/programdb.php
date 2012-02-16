@@ -285,7 +285,8 @@
       } else 
         echo '<td class="center"><a class="active" onclick="document.getElementById(\'pdb_filterauthor\').value=\''.$r['id'].'\';document.getElementById(\'param\').value=\'-1\';document.getElementById(\'mode\').value=\'\';formsubmit(\'myform\');">'.count($aids).'</a>';
       if (!($r['vip']&1))  echo '-S';
-      if ($r['vip']&6) echo '+';
+      if ($r['vip']&14) echo '+';
+      if ($r['vip']&8)  echo 'A';
       if ($r['vip']&4)  echo 'C';
       if ($r['vip']&2)  echo 'O';
       echo '</td>';
@@ -441,6 +442,7 @@
     html_checkbox('Speaker', 'vip_s', $r['vip']&1);
     html_checkbox('Organizer', 'vip_o', $r['vip']&2);
     html_checkbox('Committee', 'vip_c', $r['vip']&4);
+    html_checkbox('Artist', 'vip_a', $r['vip']&8);
     echo '</p>';
 
     html_text_input('Name', 'name', $r);
@@ -659,6 +661,7 @@
     $vip|=isset($_REQUEST['pdb_vip_s'])?1:0;
     $vip|=isset($_REQUEST['pdb_vip_o'])?2:0;
     $vip|=isset($_REQUEST['pdb_vip_c'])?4:0;
+    $vip|=isset($_REQUEST['pdb_vip_a'])?8:0;
 
     $flags|=isset($_REQUEST['pdb_flag_pub'])?1:0;
 
@@ -1034,9 +1037,10 @@
           $checked++;
           $ok=0;
           if (($r['vip'] & 1) && $n['reg_vip'] == 'author') $ok|=1;
+          if (($r['vip'] & 8) && $n['reg_vip'] == 'author') $ok|=8;
           if (($r['vip'] & 2) && $n['reg_vip'] == 'organizer') $ok |=2;
           if (($r['vip'] & 4) ) $ok |=4;
-          if (!($r['vip'] & 1) && $n['reg_vip'] == 'author') $ok=0;
+          if (!($r['vip'] & 9) && $n['reg_vip'] == 'author') $ok=0;
           if (!($r['vip'] & 2) && $n['reg_vip'] == 'organizer') $ok=0;
           if ($ok==0) {
             echo 'Author: '.$r['name'].'('.$r['id'].') reg. and profile are inconsistent: '.$r['vip'].' vs "'.$n['reg_vip'].'"<br/>';

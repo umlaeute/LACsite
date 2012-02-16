@@ -160,6 +160,7 @@ if (!$silent) {
 	if ($r['vip']&1) echo 'Speaker ';
 	if ($r['vip']&2) echo 'Organizer ';
 	if ($r['vip']&4) echo 'Committee ';
+	if ($r['vip']&8) echo 'Artist ';
 	echo '<br/>';
 
 	echo '<div style="float:right; text-align:right; max-width:50%; font-size:small; line-height:1.0em;">Name and email-address are taken from the submission or registration-form.<br/>If they are wrong, please contact us, at '.$config['txtemail'].'. They\'re most likely wrong in the conference schedule and the paper, as well.</div>';
