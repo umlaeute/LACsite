@@ -86,4 +86,8 @@ developing Linux as an audio platform since 1997.
   <li><a href="http://lac.linuxaudio.org/2003/zkm/">Conference Material 2003</a></li>
 </ul>
 <br style="clear:both;"/>
+<p><br/></p>
 
+<p>
+The Linux Audio Conference is dedicated to providing an inclusive and harassment-free conference experience for everyone, regardless of gender, sexual orientation, disability, physical appearance, body size, race, or religion. We do not tolerate harassment of conference participants in any form. Sexist language and imagery is not appropriate for any conference venue, including talks. If a participant engages in harassing behavior, the conference organizers may take any action they deem appropriate to remedy the issue. 
+</p>
