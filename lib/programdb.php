@@ -123,6 +123,7 @@
                     , '16:00' => '4pm',  '16:15' => '4:15', '16:30' => '4:30', '16:45' =>  '4:45' 
                     , '17:00' => '5pm',  '17:15' => '5:15', '17:30' => '5:30', '17:45' =>  '5:45' 
                     , '18:00' => '6pm',  '18:15' => '6:15'
+                    , '20:00' => '8pm',  '22:00' => '10pm'
                   );
     if (isset($a_times[$t])) return $a_times[$t];
     return $t;
@@ -801,7 +802,7 @@
       if (substr($r['title'],0,12) == 'COFFEE BREAK') continue; # XXX
       if ($day) {
         if ($r['day'] == 5) ## every day
-          echo 'every day &nbsp;';
+          echo 'every day - all day &nbsp;';
         else
           echo 'Day '.$a_days[$r['day']].'&nbsp;';
       }
