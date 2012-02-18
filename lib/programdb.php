@@ -1011,6 +1011,8 @@
 
         if (!($r['vip']&1))
           echo '; but s/he is no speaker';
+        else 
+          echo '<span style="color:red">(!)</span>';
         echo '.';
         $pm=0;
         foreach (explode(' ',$r['name']) as $np) {
