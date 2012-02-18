@@ -106,7 +106,7 @@
       case 'w': return 'Workshop';
       case 'i': return 'Installation/Loop';
       case 'c': return 'Concert';
-      default: return 'other';
+      default: return '(misc event)';
     }
   }
 
@@ -783,7 +783,7 @@
     echo '<div class="dbmsg">Saving ID='.$id.'.. '.($err==0?'OK':'Error:'.$err).'</div>'."\n";
   }
 
-  function query_out($db, $q, $details=true, $type=true, $location=true, $day=false) {
+  function query_out($db, $q, $details=true, $type=true, $location=true, $day=false, $print=false) {
     $a_users = fetch_selectlist($db);
     $a_locations = fetch_selectlist($db, 'location');
     if ($day)
@@ -801,9 +801,9 @@
     foreach ($result as $r) {
       if (substr($r['title'],0,12) == 'COFFEE BREAK') continue; # XXX
       if ($day) {
-        if ($r['day'] == 5) ## every day
-          echo 'every day - all day &nbsp;';
-        else
+        if ($r['day'] == 5) { ## every day
+          if (!$print) {echo 'every day - all day &nbsp;';}
+        } else
           echo 'Day '.$a_days[$r['day']].'&nbsp;';
       }
       echo '<div class="righttr '.track_color($r).'">';
@@ -813,7 +813,7 @@
         echo '<span class="tme">'.translate_time($r['starttime']).'</span>&nbsp;';
       if ($r['status']==0) echo '<span class="red">Cancelled: </span>';
       echo '<span'.(($r['status']==0)?' class="cancelled"':'').'><b>'.xhtmlify($r['title']).'</b></span>';
-      if ($type)
+      if ($type && $r['type'] != 'i')
         echo ' - <span>'.translate_type($r['type']).'</span>';
       #echo '<br/>';
       echo '<br style="clear:right;"/>';
@@ -828,7 +828,7 @@
       }
       global $config;
       if ($config['hidepapers']) $r['url_paper'] = '';
-
+      if (!$print) {
       # TODO: abstraction for multiple links: key ('type/name') => value ('url')
       if (!empty($r['url_audio']) || !empty($r['url_misc']) || !empty($r['url_paper']) || !empty($r['url_slides']) || !empty($r['url_stream']))
         echo '<div class="flright">';
@@ -844,7 +844,7 @@
         echo '<a href="'.$r['url_misc'].'" rel="external">Site</a>&nbsp;&nbsp;';
       if (!empty($r['url_audio']) || !empty($r['url_misc']) || !empty($r['url_paper']) || !empty($r['url_slides']) || !empty($r['url_stream']))
         echo '</div>';
-
+      }
 
 
       if ($r['duration']!=-1) {
@@ -1226,8 +1226,10 @@
   }
 
   function print_daily_events($db, $num, $name, $details=true) {
-    echo '<h2 class="ptitle">Daily Events</h2>';
+    echo '<h2 class="ptitle">Daily Events / Exhibitions</h2>';
     echo '<h3 class="ptitle">Installations &amp; Listening sessions</h3>';
+    echo '<p>The following pieces are presented as installations or part of a loop-playlist in the listening room. ';
+    echo 'They are accessible on each day of the conference during opening hours; excpet for the "Listening Room" which will be closed Saturday afternoon 3.30pm to 6pm for a workshop.</p>';
     echo '<div class="ptitle"></div>';
     query_out($db,
      'SELECT * FROM activity
@@ -1357,13 +1359,20 @@ if (1) {
 ?>
 <h2 class="ptitle pb">Concerts &amp; Installations</h2>
 <h3>Concerts</h3>
-<p>There are concerts on the first three days of the conference, plus the Linux-sound night on Saturday 10pm &hellip;stay tuned for more information.</p>
+<p>There are evening concerts on the CCRMA stage the first three days of the conference starting 8pm.</p>
+<p>Saturday night also features the Linux-Sound-Night; 22h "CoHo" @ Tressider; a bar place near CCRMA, on campus.</p>
+<p>Last but not least there is music and art that can be enjoyed in the "Listening Room" at CCRMA, every day of the conference during opening hours; excpet for Saturday afternoon 3.30pm to 6pm when the "Listening Room" is closed for a workshop.</p>
 <div style="padding:.5em 1em; 0em 1em">
 <?php
     $q='SELECT activity.* FROM activity WHERE type='.$db->quote('c');
-    $q.=' OR type='.$db->quote('i');
     $q.=' ORDER BY day, strftime(\'%H:%M\',starttime), typesort(type), location_id;';
-    query_out($db, $q, $details, false,  true, true);
+    query_out($db, $q, $details, false,  true, true, true);
+?>
+<h3>Installation/Loops</h3>
+<?php
+    $q='SELECT activity.* FROM activity WHERE type='.$db->quote('i');
+    $q.=' ORDER BY day, strftime(\'%H:%M\',starttime), typesort(type), location_id;';
+    query_out($db, $q, $details, false,  true, true, true);
     echo '</div>'."\n";
   } ## END hardcoded_concert_and_installation_info ##
 
