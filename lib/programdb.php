@@ -1139,6 +1139,7 @@
           if ($a['id'] == $b['id']) continue;
           if ($a['day'] != $b['day']) continue;
           if ($a['type'] == 'c' || $b['type']=='c') continue;
+          if ($a['type'] == 'i' || $b['type']=='i') continue;
           if ($a['location_id'] != $b['location_id']) continue;
           if ($a['status'] == 0  || $b['status'] == 0) continue;
           $starta = dbadmin_unixtime($a);
