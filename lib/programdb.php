@@ -110,6 +110,24 @@
     }
   }
 
+  function translate_time($t) {
+    #TODO: unify w/ dbadmin_editform 
+    $a_times = array(
+                      '9:00'  => '9am' ,  '9:45' => '9:45'
+                    , '10:00' => '10am', '10:15' =>'10:15', '10:30' =>'10:30', '10:45' => '10:45' 
+                    , '11:00' => '11am', '11:15' =>'11:15', '11:30' =>'11:30', '11:45' => '11:45' 
+                    , '12:00' => '12pm', '12:15' =>'12:15', '12:30' =>'12:30', '12:45' => '12:45' 
+                    , '13:00' => '1pm',  '13:15' => '1:15', '13:30' => '1:30', '13:45' =>  '1:45' 
+                    , '14:00' => '2pm',  '14:15' => '2:15', '14:30' => '2:30', '14:45' =>  '2:45' 
+                    , '15:00' => '3pm',  '15:15' => '3:15', '15:30' => '3:30', '15:45' =>  '3:45' 
+                    , '16:00' => '4pm',  '16:15' => '4:15', '16:30' => '4:30', '16:45' =>  '4:45' 
+                    , '17:00' => '5pm',  '17:15' => '5:15', '17:30' => '5:30', '17:45' =>  '5:45' 
+                    , '18:00' => '6pm',  '18:15' => '6:15'
+                  );
+    if (isset($a_times[$t])) return $a_times[$t];
+    return $t;
+  }
+
   function say_db_message($msg='') {
     if ($msg)
       echo '<div class="dbmsg">'.$msg.'</div>'."\n";
@@ -294,7 +312,7 @@
       echo '<td>'.xhtmlify($r['email']).'</td>';
       if (!empty($r['email']))
         $emaillist.=$r['email'].', ';
-      echo '<td>'.limit_text($r['bio'],300).'</td><td>';
+      echo '<td>'.limit_text($r['bio'],90).'</td><td>';
       echo '<a class="active" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'edituser\';formsubmit(\'myform\');">Edit</a>';
       echo '&nbsp;|&nbsp;';
       echo '<a class="active" onclick="if (confirm(\'Really delete User no. '.$r['id'].'?\')) {document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'deluser\';formsubmit(\'myform\');i}">Delete</a>';
@@ -462,6 +480,7 @@
   }
 
   function dbadmin_editform($db, $id) {
+    # TODO unify w/ translate_time
     $a_times = array(
                     '' => '-unset-'
                     , '9:00' => '9:00' , '9:45' => '9:45'
@@ -777,12 +796,13 @@
     }
 
     foreach ($result as $r) {
+      if (substr($r['title'],0,12) == 'COFFEE BREAK') continue; # XXX
       if ($day)
         echo 'Day '.$a_days[$r['day']].'&nbsp;';
       echo '<div class="righttr '.track_color($r).'">';
       #echo track_name(track_color($r));
       echo '</div>';
-      echo '<span class="tme">'.$r['starttime'].'</span>&nbsp;';
+      echo '<span class="tme">'.translate_time($r['starttime']).'</span>&nbsp;';
       if ($r['status']==0) echo '<span class="red">Cancelled: </span>';
       echo '<span'.(($r['status']==0)?' class="cancelled"':'').'><b>'.xhtmlify($r['title']).'</b></span>';
       if ($type)
@@ -904,6 +924,7 @@
           $err++;
         }
         if (count(fetch_authorids($db, $r['id'])) == 0) {
+          if (substr($r['title'],0,12) == 'COFFEE BREAK') continue; # XXX
           echo 'Event ('.$r['id'].') has no assigned Author(s).<br/>'; 
           $err++;
         }
@@ -1313,7 +1334,7 @@ if (1) {
 ?>
 <h2 class="ptitle pb">Concerts &amp; Installations</h2>
 <h3>Concerts</h3>
-<p>&hellip;stay tuned.</p>
+<p>There are concerts on the first three days of the conference, plus the Linux-sound night on Saturday 10pm &hellip;stay tuned for more information.</p>
 <div style="padding:.5em 1em; 0em 1em">
 <?php
     $q='SELECT activity.* FROM activity WHERE type='.$db->quote('c');
@@ -1333,17 +1354,18 @@ if (1) {
     $a_days = fetch_selectlist(0, 'days');
     $a_locations = fetch_selectlist($db, 'location');
     $a_users = fetch_selectlist($db);
+    # TODO unify w/ translate_time - strip unused timeslots for table.
     $a_times = array(
-                      '9:00', '9:45' 
-                    , '10:00' , '10:15', '10:30', '10:45'
-                    , '11:00' , '11:15', '11:30', '11:45'
-                    , '12:00' , '12:15', '12:30', '12:45'
-                    , '13:00' , '13:15', '13:30', '13:45'
-                    , '14:00' , '14:15', '14:30', '14:45'
-                    , '15:00' , '15:15', '15:30', '15:45'
-                    , '16:00' , '16:15', '16:30', '16:45'
-                    , '17:00' , '17:15', '17:30', '17:45'
-                  #  , '18:00' 
+                      '9:00'  => '9am'
+                    , '10:00' => '10am', '10:15' =>'10:15', '10:30' =>'10:30', '10:45' => '10:45' 
+                    , '11:00' => '11am', '11:15' =>'11:15', '11:30' =>'11:30', '11:45' => '11:45' 
+                    , '12:00' => '12pm', '12:15' =>'12:15', '12:30' =>'12:30', '12:45' => '12:45' 
+                    , '13:00' => '1pm' 
+                    , '14:00' => '2pm', '14:15' =>'2:15', '14:30' =>'2:30', '14:45' => '2:45' 
+                    , '15:00' => '3pm', '15:15' =>'3:15', '15:30' =>'3:30', '15:45' => '3:45' 
+                    , '16:00' => '4pm', '16:15' =>'4:15', '16:30' =>'4:30', '16:45' => '4:45' 
+                    , '17:00' => '5pm', '17:15' =>'5:15', '17:30' =>'5:30', '17:45' => '5:45' 
+                    , '18:00' => '6pm',
                   );
     # XXX 2011: Friday
     #if ($day!=1) $a_times[]='18:00';
@@ -1391,9 +1413,9 @@ if (1) {
     }
     echo '</tr>'."\n";
 
-    foreach ($a_times as $t) {
+    foreach ($a_times as $t => $dpyt) {
       echo '<tr onmouseover="this.className=\'highlight\'" onmouseout="this.className=\'normal\'">';
-      echo '<th class="ptb">'.$t.'</th>';
+      echo '<th class="ptb">'.$dpyt.'</th>';
       foreach ($table as &$c) {
         if (isset($c[$t]) && is_array($c[$t])) {
           $d=$c[$t];
