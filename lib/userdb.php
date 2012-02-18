@@ -224,7 +224,7 @@ function render_profile($s, $acts) {
 			echo '</span>';
 			# link to id, 
 			echo '<br/>&raquo;&nbsp;<span>'.translate_type($r['type']).'</span>';
-			echo ' - <span>day:'.$r['day'].' - '.$r['starttime'].'</span>';
+			echo ' - <span>day:'.$r['day'].' - '.translate_time($r['starttime']).'</span>';
 
       if ($r['type']!='c') { ### all concerts same location --- lib/programdb.php:768
 				if (!empty($r['location_id'])) {
