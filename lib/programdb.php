@@ -313,7 +313,7 @@
       echo '</td>';
 
       echo '<td>'.xhtmlify($r['email']).'</td>';
-      if (!empty($r['email']))
+      if (!empty($r['email']) && count($aids)>0)
         $emaillist.=$r['email'].', ';
       echo '<td>'.limit_text($r['bio'],90).'</td><td>';
       echo '<a class="active" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'edituser\';formsubmit(\'myform\');">Edit</a>';
@@ -322,7 +322,7 @@
       echo '</td></tr>'."\n";
     }
     echo '</table>'."\n";
-    echo '<hr/>'."\n";
+    echo '<hr/>'."\n Speakers/Artists email:";
     echo '<pre style="font-size:9px; background:#ccc; line-height:1.3em;margin-top:2em;">';
     echo wordwrap($emaillist,100);
     echo '</pre><br/>'; 
