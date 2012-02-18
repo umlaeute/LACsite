@@ -104,7 +104,7 @@
     switch ($t) {
       case 'p': return 'Paper Presentation';
       case 'w': return 'Workshop';
-      case 'i': return 'Installation';
+      case 'i': return 'Installation/Loop';
       case 'c': return 'Concert';
       default: return 'other';
     }
@@ -206,12 +206,14 @@
   function fetch_selectlist($db, $table='user', $order='ORDER BY id') {
     if ($table=='days')
       return array('1' => '1 - Thursday, April/12', '2' => '2 - Friday the 13th', '3' => '3 - Saturday, April/14', '4' => '4 - Sunday, April/15');
+    if ($table=='daysx')
+      return array('1' => '1 - Thursday, April/12', '2' => '2 - Friday the 13th', '3' => '3 - Saturday, April/14', '4' => '4 - Sunday, April/15', '5' => '-every day-');
     if ($table=='daylist') # TODO derive from 'days' - note: start at '1'.
       return array(1=> 'Thursday, April/12', 2=> 'Friday the 13th', 3=> 'Saturday, April/14', 4=> 'Sunday, April/15');
 
     if ($table=='types')
-      #return array('p' => 'Paper Presentation', 'w' => 'Workshop', 'c' => 'Concert', 'i' => 'Installation', 'o' => 'Other');
-      return array('p' => 'Paper Presentation', 'w' => 'Workshop', 'c' => 'Concert', 'o' => 'Other');
+      return array('p' => 'Paper Presentation', 'w' => 'Workshop', 'c' => 'Concert', 'i' => 'Installation', 'o' => 'Other');
+      #return array('p' => 'Paper Presentation', 'w' => 'Workshop', 'c' => 'Concert', 'o' => 'Other');
     if ($table=='durations')
       return array('' => '-unset-', '15' => '15 mins', '30' => '30 mins', '45' => '45 mins', '60' => '1 hour', '90' => '90 mins', '120' => '2 hours', '150' => '2 1/2 hours', '180' => '3 hours');
     if ($table=='status')
@@ -501,7 +503,7 @@
                     , '24:00' => '0:00' 
                );
     $a_durations = fetch_selectlist(0, 'durations'); 
-    $a_days = fetch_selectlist(0, 'days');
+    $a_days = fetch_selectlist(0, 'daysx');
     $a_types = fetch_selectlist(0, 'types');
     $a_status = fetch_selectlist(0, 'status');
     $a_locations = fetch_selectlist($db, 'location');
@@ -797,12 +799,17 @@
 
     foreach ($result as $r) {
       if (substr($r['title'],0,12) == 'COFFEE BREAK') continue; # XXX
-      if ($day)
-        echo 'Day '.$a_days[$r['day']].'&nbsp;';
+      if ($day) {
+        if ($r['day'] == 5) ## every day
+          echo 'every day &nbsp;';
+        else
+          echo 'Day '.$a_days[$r['day']].'&nbsp;';
+      }
       echo '<div class="righttr '.track_color($r).'">';
       #echo track_name(track_color($r));
       echo '</div>';
-      echo '<span class="tme">'.translate_time($r['starttime']).'</span>&nbsp;';
+      if ($r['day'] != 5) ## every day
+        echo '<span class="tme">'.translate_time($r['starttime']).'</span>&nbsp;';
       if ($r['status']==0) echo '<span class="red">Cancelled: </span>';
       echo '<span'.(($r['status']==0)?' class="cancelled"':'').'><b>'.xhtmlify($r['title']).'</b></span>';
       if ($type)
@@ -856,7 +863,7 @@
       }
       echo '</em>';
 
-      if ($r['type']!='c') { ### all concerts same location
+      if (1 || $r['type']!='c') { ### all concerts same location
         if ($location && !empty($r['location_id']))
           echo ' &raquo;&nbsp;Location: '.$a_locations[$r['location_id']];
       }
@@ -1214,6 +1221,18 @@
     );
   }
 
+  function print_daily_events($db, $num, $name, $details=true) {
+    echo '<h2 class="ptitle">Daily Events</h2>';
+    echo '<h3 class="ptitle">Installations &amp; Listening sessions</h3>';
+    echo '<div class="ptitle"></div>';
+    query_out($db,
+     'SELECT * FROM activity
+      WHERE day = 5
+      AND NOT (type=\'p\' OR location_id=\'1\')
+      ORDER BY typesort(type), strftime(\'%H:%M\',starttime), location_id', $details, true, true
+    );
+  }
+
   function print_filterfields($a_users, $a_locations, $filter, $usejs=false) {
     $a_days = fetch_selectlist(0, 'days');
     $a_types = fetch_selectlist(0, 'types');
@@ -1338,6 +1357,7 @@ if (1) {
 <div style="padding:.5em 1em; 0em 1em">
 <?php
     $q='SELECT activity.* FROM activity WHERE type='.$db->quote('c');
+    $q.=' OR type='.$db->quote('i');
     $q.=' ORDER BY day, strftime(\'%H:%M\',starttime), typesort(type), location_id;';
     query_out($db, $q, $details, false,  true, true);
     echo '</div>'."\n";
@@ -1348,6 +1368,7 @@ if (1) {
     foreach (fetch_selectlist(0, 'daylist') as $day => $date) {
       print_day($db, $day,$date,$details);
     }
+    print_daily_events($db, $day,$date,$details);
   }
 
   function table_program($db, $day, $print=false) {
