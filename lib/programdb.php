@@ -1668,9 +1668,10 @@ if (1) {
     echo 'PRODID:-//'.$config['organizaion'].'/LAC'.LACY.'//NONSGML v1.0//EN'."\r\n";
 
 # XXX hardcoded concerts
-#    $result[] = array('id'=> 1000, 'day' => '1', 'starttime' => '20:00', 'duration' => '180',  'type' => 'c', 'title' => 'Opening Concert', 'abstract' => '', 'location_id' => 3, 'status' => '1');
-#    $result[] = array('id'=> 1001, 'day' => '2', 'starttime' => '20:00', 'duration' => '180',  'type' => 'c', 'title' => 'Concert', 'abstract' => '', 'location_id' => 3, 'status' => '1');
-#    $result[] = array('id'=> 1002, 'day' => '1', 'starttime' => '21:30', 'duration' => '180',  'type' => 'c', 'title' => 'Sound Night', 'abstract' => '', 'location_id' => 3, 'status' => '1');
+    $result[] = array('id'=> 1000, 'day' => '1', 'starttime' => '20:00', 'duration' => '90',  'type' => 'c', 'title' => 'Opening Concert', 'abstract' => '', 'location_id' => 3, 'status' => '1');
+    $result[] = array('id'=> 1001, 'day' => '2', 'starttime' => '20:00', 'duration' => '90',  'type' => 'c', 'title' => 'Concert', 'abstract' => '', 'location_id' => 3, 'status' => '1');
+    $result[] = array('id'=> 1002, 'day' => '3', 'starttime' => '20:00', 'duration' => '90',  'type' => 'c', 'title' => 'Concert', 'abstract' => '', 'location_id' => 3, 'status' => '1');
+    $result[] = array('id'=> 1003, 'day' => '3', 'starttime' => '22:00', 'duration' => '60',  'type' => 'c', 'title' => 'Sound Night', 'abstract' => '', 'location_id' => 7, 'status' => '1');
 
     foreach ($result as $r) {
       if (empty($r['starttime'])) continue;
