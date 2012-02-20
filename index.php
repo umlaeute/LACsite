@@ -100,6 +100,7 @@
   #format page mod time
   $mtime_page=filemtime('pages/'.$page.'.php');
   $mtime_idx=0;
+  $mtime_skip=false;
   switch($page) {
     case 'sponsors':
       $mtime_idx=filemtime('site.php');
@@ -107,6 +108,10 @@
     case 'program':
     case 'adminschedule':
       $mtime_idx=filemtime(preg_replace('@^[^:]*:@', '', PDOPRGDB));
+      break;
+    case 'profile':
+    case 'speakers':
+      $mtime_skip = true;
       break;
     case 'admin':
     case 'participants':
@@ -117,13 +122,18 @@
     default:
       $mtime_idx=filemtime('index.php');
   }
-  $mtime=$mtime_page>$mtime_idx?$mtime_page:$mtime_idx;
-  $mdate=date("l, M j Y H:i e", $mtime);
+  if (!$mtime_skip) {
+    $mtime=$mtime_page>$mtime_idx?$mtime_page:$mtime_idx;
+    $mdate=date("l, M j Y H:i e", $mtime);
+  }
 ?>
 
     </div>
     <div id="mainfootl"> </div>
-    <div id="createdby">Last modified: <?=$mdate?> - Fernando Lopez-Lezcano, Bruno Ruviaro &amp; Robin Gareus</div>
+<?php
+  if (!$mtime_skip)
+    echo '<div id="createdby">Last modified: '.$mdate.' - Fernando Lopez-Lezcano, Bruno Ruviaro &amp; Robin Gareus</div>';
+?>
   </div>
   <div style="clear:both; height:0px;">&nbsp;</div>
 </div>
