@@ -145,7 +145,7 @@
       foreach ($sponsors as $sl => $si) {
         echo '    <div><a href="'.$sl.'"'."\n";
         echo '     rel="supporter"><img src="'.BASEURL.$si['img'].'" title="'.$si['title'].'" alt="'.$si['title'].'"/>';
-        echo '<br/><span>'.$si['title'].'</span>';
+        #echo '<br/><span>'.$si['title'].'</span>';
         echo '</a></div>'."\n";
       }
       echo '    </div>'."\n";
