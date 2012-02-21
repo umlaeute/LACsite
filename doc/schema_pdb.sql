@@ -40,6 +40,7 @@ CREATE TABLE user (
    url_person TEXT DEFAULT NULL, 
    url_institute TEXT DEFAULT NULL, 
    url_project TEXT DEFAULT NULL, 
+   udate datetime DEFAULT 0,
    UNIQUE (name)
 );
 

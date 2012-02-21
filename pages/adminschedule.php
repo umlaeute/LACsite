@@ -11,7 +11,7 @@ if (!defined('REGLOGDIR')) die();
 
   switch ($mode) {
     case 'unlocklocation':
-      $id=intval(rawurldecode($_REQUEST['param'])); 
+      $id=intval(rawurldecode($_REQUEST['param']));
       unlock($db, $id, 'location');
     case 'savelocation':
       if ($mode==='savelocation') dbadmin_savelocation($db);
@@ -25,7 +25,7 @@ if (!defined('REGLOGDIR')) die();
       dbadmin_jumpselected();
       break;
     case 'unlockuser':
-      $id=intval(rawurldecode($_REQUEST['param'])); 
+      $id=intval(rawurldecode($_REQUEST['param']));
       unlock($db, $id, 'user');
     case 'saveuser':
       if ($mode==='saveuser') dbadmin_saveuser($db);
@@ -39,33 +39,33 @@ if (!defined('REGLOGDIR')) die();
       dbadmin_jumpselected();
       break;
     case 'editlocation':
-      $id=intval(rawurldecode($_REQUEST['param'])); 
+      $id=intval(rawurldecode($_REQUEST['param']));
       if (lock($db, $id, 'location') === -1 ) {
         program_fieldset();
         echo '<legend>Location Entry:</legend>'."\n";
-        dbadmin_locationform($db, $id); 
+        dbadmin_locationform($db, $id);
       } else {
         echo '<div class="dbmsg">Entry is currently being edited.</div>'."\n";
         $showdefault=true;
       }
       break;
     case 'edituser':
-      $id=intval(rawurldecode($_REQUEST['param'])); 
+      $id=intval(rawurldecode($_REQUEST['param']));
       if (lock($db, $id, 'user') === -1 ) {
         program_fieldset();
         echo '<legend>Author Entry:</legend>'."\n";
-        dbadmin_authorform($db, $id); 
+        dbadmin_authorform($db, $id);
       } else {
         echo '<div class="dbmsg">Entry is currently being edited.</div>'."\n";
         $showdefault=true;
       }
       break;
     case 'edit':
-      $id=intval(rawurldecode($_REQUEST['param'])); 
+      $id=intval(rawurldecode($_REQUEST['param']));
       if (lock($db, $id) === -1 ) {
         program_fieldset();
         echo '<legend>Program Entry:</legend>'."\n";
-        dbadmin_editform($db, $id); 
+        dbadmin_editform($db, $id);
       } else {
         echo '<div class="dbmsg">Entry is currently being edited.</div>'."\n";
         $showdefault=true;
@@ -92,17 +92,30 @@ if (!defined('REGLOGDIR')) die();
       echo 'Download: <a href="download.php?file=schedule.csv">schedule.csv</a>';
       echo '</fieldset>';
       break;
-    case 'profilenotfy':
-			require_once('lib/userdb.php');
+    case 'profilenotify':
+      require_once('lib/userdb.php');
       admin_fieldset();
-			$uid=intval(rawurldecode($_REQUEST['param'])); 
-			if ($uid>0) {
-				echo '<div class="dbmsg">inviting user '.$uid.'</div>';
-				usr_msg_sendhash($db, $uid);
-			}
+      $uid=intval(rawurldecode($_REQUEST['param']));
+      if ($uid>0) {
+        echo '<div class="dbmsg">inviting user '.$uid.'</div>';
+        usr_msg_sendhash($db, $uid);
+      }
+      program_fieldset();
+      echo '<legend>Send User Profile Invitations</legend>'."\n";
+      dbadmin_profilecheck($db, $uid==-1);
+      echo '</fieldset>';
+      break;
+    case 'profileinfo':
+      require_once('lib/userdb.php');
+      admin_fieldset();
+      $uid=intval(rawurldecode($_REQUEST['param']));
+      if ($uid>0) {
+        echo '<div class="dbmsg">re-inviting user '.$uid.'</div>';
+        usr_msg_sendhash($db, $uid);
+      }
       program_fieldset();
       echo '<legend>User Profiles</legend>'."\n";
-      dbadmin_profilecheck($db, $uid==-1);
+      dbadmin_profilelist($db);
       echo '</fieldset>';
       break;
     case 'orphans':
@@ -120,7 +133,7 @@ if (!defined('REGLOGDIR')) die();
       echo '</fieldset>';
       break;
     case 'unlockactivity':
-      $id=intval(rawurldecode($_REQUEST['param'])); 
+      $id=intval(rawurldecode($_REQUEST['param']));
       unlock($db, $id);
     case 'delentry': # TODO :check if locked before deleting..
       if ($mode==='delentry') dbadmin_delentry($db);

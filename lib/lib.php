@@ -191,7 +191,9 @@ $agendafs=array(
   array( 'title' => 'Export Program (CSV)', 'value' => 'Export Program (CSV)',
          'page'  => 'adminschedule', 'mode'  => 'export', 'param' => ''),
   array( 'title' => 'Profile Invites', 'value' => 'Profile Invites',
-         'page'  => 'adminschedule', 'mode'  => 'profilenotfy', 'param' => ''),
+         'page'  => 'adminschedule', 'mode'  => 'profilenotify', 'param' => ''),
+  array( 'title' => 'Profiles', 'value' => 'Profiles',
+         'page'  => 'adminschedule', 'mode'  => 'profileinfo', 'param' => ''),
 );
 $adminfieldsetonce=false;
 

@@ -102,6 +102,7 @@ switch ($mode) {
 		.',url_person='.$db->quote(usr_sanitize_imgurl(rawurldecode($_REQUEST['pdb_url_person'])))
 		.',url_institute='.$db->quote(usr_sanitize_imgurl(rawurldecode($_REQUEST['pdb_url_institute'])))
 		.',url_project='.$db->quote(usr_sanitize_imgurl(rawurldecode($_REQUEST['pdb_url_project'])))
+		.',udate=DATETIME()'
 		.' WHERE id='.$uid.';';
 		$err=($db->exec($q) !== 1)?1:0;
 		echo '<div class="dbmsg">Saved User-ID='.$uid.'.. '.($err==0?'OK':'Error:'.$err).'</div>'."\n";

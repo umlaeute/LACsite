@@ -894,28 +894,49 @@
     return $time;
   }
 
+  function dbadmin_profilelist($db) {
+    $q='SELECT id,name,email,udate,flags from user ORDER BY name;'; 
+    $res=$db->query($q);
+    if (!$res) { say_db_error(); return $rv;}
+    $result=$res->fetchAll();
+    $cnt=0; $miss=0;
+    foreach ($result as $r) {
+      $notified = (usr_has_profile($db, $r['id']) & 1)?true:false;
+      if (!$notified) $miss++;
+      echo '<span'.($notified?'':' class="red"').'>'.$r['name'];
+      echo '</span> - '.$r['email'].' - ';
+      echo ($r['flags'] & 1)?'<span>public':'<span class="red">hidden';
+      echo '</span> - '.$r['udate'].' ';
+      if (!empty($r['email']))
+        echo '<a class="active" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'profileinfo\';formsubmit(\'myform\');">'.($notified?'Re-':'').'Notify</a> ';
+      echo "<br/>\n";
+    }
+    if ($miss == 0) echo '<div>All users have already been notified.</div>';
+  }
+
   function dbadmin_profilecheck($db, $notify=false) {
     $q='SELECT id,name,email from user ORDER BY name;'; 
     $res=$db->query($q);
     if (!$res) { say_db_error(); return $rv;}
     $result=$res->fetchAll();
-    $cnt=0; $eml=0;
+    $cnt=0; $eml=0; $dne=0;
     foreach ($result as $r) {
       if (empty($r['email'])) continue;
-      if (usr_has_profile($db, $r['id']) & 1) continue;
+      if (usr_has_profile($db, $r['id']) & 1) { $dne++; continue; }
       if ($notify) {
         $eml++;
-        if (usr_msg_sendhash($db, $r['id'], $r['email']) == 0) continue;
+        if (usr_msg_sendhash($db, $r['id'], $r['email']) == 0) { $dne++; continue;}
       }
       $cnt++;
-      echo '<a class="active" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'profilenotfy\';formsubmit(\'myform\');">Notify</a> ';
+      echo '<a class="active" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'profilenotify\';formsubmit(\'myform\');">Notify</a> ';
       echo $r['name'].' - '.$r['email'];
       echo "<br/>\n";
     }
     if ($cnt == 0) echo '<div>All users have already been notified.</div>';
-    else echo '<br/><div class="center"><a class="active" onclick="document.getElementById(\'param\').value=-1;document.getElementById(\'mode\').value=\'profilenotfy\';formsubmit(\'myform\');">Notify ALL</a></div>';
+    else echo '<br/><div class="center"><a class="active" onclick="document.getElementById(\'param\').value=-1;document.getElementById(\'mode\').value=\'profilenotify\';formsubmit(\'myform\');">Notify ALL</a></div>';
 
     if ($eml != 0) echo '<div class="dbmsg">'.$eml.' email invitations sent.</div>';
+    if ($dne != 0) echo '<div>'.$dne.' users(s) have already received an invitation.</div>';
   }
 
   function dbadmin_orphans($db) {
