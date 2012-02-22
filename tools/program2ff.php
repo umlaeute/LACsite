@@ -1,14 +1,14 @@
 <?php
 
-# run e.g `php program2ff.php > /tmp/lac2011_db.sh`
+# run e.g `php program2ff.php > /tmp/lac2012_db.sh`
 
 if (isset($_SERVER['HTTP_HOST'])) {
 	        die('this script should be run locally only.');
 }
 
 chdir('..');
-require_once('lib.php');
-require_once('programdb.php');
+require_once('lib/lib.php');
+require_once('lib/programdb.php');
 
 
 function fetch_authors($db, $activity_id) {
@@ -33,7 +33,9 @@ function filetitle($s) {
 	return preg_replace("@__*@", '_', preg_replace("@[^A-Za-z0-9_-]*@", '', str_replace(' ', '_', trim($s))));
 }
 
-$q='SELECT id,title,day,starttime FROM activity ORDER BY day, strftime(\'%H:%M\',starttime), typesort(type), location_id;';
+$q='SELECT id,title,day,starttime FROM activity';
+$q.=' WHERE (title not like "COFFEE BREAK%") AND (type="p" OR type="o" OR type="w")';
+$q.=' ORDER BY day, strftime(\'%H:%M\',starttime), typesort(type), location_id;';
 $res=$db->query($q);
 if (!$res) { 
 	echo 'DATABASE ERROR: '.print_r($db->errorInfo(),true)."\n";
@@ -45,7 +47,7 @@ foreach ($result as $r) {
 	$i++;
 	$r['authors'] = join(fetch_authors($db, $r['id']),', ');
 	$tme=dbadmin_unixtime($r);
-	date_default_timezone_set('CET');
+	date_default_timezone_set('America/Los_Angeles');
 	$stm=date("Hi", $tme);
 	if (0) {
 		# HUMAN copy/paste

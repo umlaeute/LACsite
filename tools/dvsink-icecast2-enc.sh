@@ -1,6 +1,6 @@
 #!/bin/sh
 
-FFMPEG2THEORA=/home/rgareus/bin/ffmpeg2theora-0.27
+FFMPEG2THEORA=ffmpeg2theora
 
 #NOTE: most players won't ever show the meta-data
 # VLC can catch and display meta-data updates while the 
@@ -13,9 +13,9 @@ FFMPEG2THEORA=/home/rgareus/bin/ffmpeg2theora-0.27
 exec $FFMPEG2THEORA \
   -v 4 --speedlevel 2 \
   --aspect 4:3 \
-	--title "LAC 2011" \
-	--location "Bewerunge Room, NUIM, Ireland " \
-	--organization "Linux Audio Conference 2011" \
+	--title "LAC 2012" \
+	--location "Campbell Recital Hall, Stanford, CA, US" \
+	--organization "Linux Audio Conference 2012" \
 	--license "CC" \
 	-o - -
 
@@ -26,9 +26,9 @@ exec $FFMPEG2THEORA \
   -v 4 --speedlevel 2 \
   --aspect 4:3 \
 	--title "Keynote" \
-	--artist "Fons Adriaensen" \
-	--date "2011-05-07 10:00:00" \
-	--location "Bewerunge Room, NUIM, Ireland " \
-	--organization "Linux Audio Conference 2011" \
+	--artist "Dave Phillips" \
+	--date "2012-04-12 11:00:00" \
+	--location "Campbell Recital Hall, Stanford, CA, US" \
+	--organization "Linux Audio Conference 2012" \
 	--license "CC" \
 	-o - -

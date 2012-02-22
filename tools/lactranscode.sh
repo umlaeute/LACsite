@@ -8,14 +8,14 @@ INCOMING=/tmp/incoming
 DST=/tmp/lacvid
 
 # create DBFILE with `program2ff.php` from lac2011 website-docroot
-DBFILE=/tmp/lac2011_db.sh
+DBFILE=/tmp/lac2012_db.sh
 
 # ffmpeg2theora binary
-FFMPEG2THEORA=/home/rgareus/bin/ffmpeg2theora-0.27
+FFMPEG2THEORA=ffmpeg2theora
 
 # on lac@linuxaudio.org
-LACDOCROOT=/home/sites/lac.linuxaudio.org/2011/docroot
-LACURL=http://lac.linuxaudio.org/2011/
+LACDOCROOT=/home/sites/lac.linuxaudio.org/2012/docroot
+LACURL=http://lac.linuxaudio.org/2012/
 
 
 # don't rsync and add links to website
@@ -53,8 +53,8 @@ else
 		-v 6 --optimize \
 		--aspect 4:3 \
 		$META \
-		--location "Bewerunge Room, NUIM, Ireland " \
-		--organization "Linux Audio Conference 2011" \
+	  --location "Campbell Recital Hall, Stanford, CA, US" \
+	  --organization "Linux Audio Conference 2012" \
 		--license "CC" \
 		-o $DST/$OUTFILE \
 		$INCOMING/$INFILE
@@ -126,7 +126,7 @@ test -n "$NOSYNC" && echo -n "#" >> $ENCSCRIPT
 echo "rsync -rPu $DST/ lac@linuxaudio.org:$LACDOCROOT/recordings/" >> $ENCSCRIPT
 echo "########" >> $ENCSCRIPT
 test -n "$NOSYNC" && echo -n "#" >> $ENCSCRIPT
-echo "echo \"\$SQL\"  | ssh lac@linuxaudio.org sqlite3 $LACDOCROOT/tmp/lac2011.db" >> $ENCSCRIPT
+echo "echo \"\$SQL\"  | ssh lac@linuxaudio.org sqlite3 $LACDOCROOT/tmp/lac2012.db" >> $ENCSCRIPT
 
 if [ -n "$DRYRUN" ]; then
   cat $ENCSCRIPT ## DEBUG
