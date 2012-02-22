@@ -1230,10 +1230,11 @@
   function print_day($db, $num, $name, $details=true) {
     echo '<h2 class="ptitle">Day '.$num.' - '.$name.'</h2>';
     echo '<h3 class="ptitle">Main Track</h3>';
+    if ($num == 3) echo "<p>Note: Saturday's Main Track is at CEMEX - a room in the business school across campus.</p>";
     query_out($db,
      'SELECT * FROM activity
       WHERE day='.$num.'
-      AND ( type=\'p\' OR location_id=\'1\')
+      AND ( type=\'p\' OR location_id=\'1\' OR (day=\'3\' AND location_id=\'8\')) 
       ORDER BY strftime(\'%H:%M\',starttime)', $details, false, false
     );
     echo '<h3 class="ptitle">Workshops &amp; Events</h3>';
@@ -1242,6 +1243,7 @@
      'SELECT * FROM activity
       WHERE day='.$num.'
       AND NOT (type=\'p\' OR location_id=\'1\')
+      AND NOT (day=\'3\' AND location_id=\'8\')
       ORDER BY typesort(type), strftime(\'%H:%M\',starttime), location_id', $details, true, true
     );
   }
