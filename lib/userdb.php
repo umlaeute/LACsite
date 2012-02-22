@@ -115,7 +115,7 @@ function usr_sendhash($db, $uid) {
 	$msg='';
 	$msg.='Dear '.$d['name'].',
 
-You receive this email because you are either speaker or conference-committee member of the '.SHORTTITLE.'.
+You receive this email because you are either speaker, artist, conference-committee member or otherwise involved with the '.SHORTTITLE.'.
 
 The conference website allows you to create a publicly visible personal profile (biography, links to sites, mugshot, etc.).
 
