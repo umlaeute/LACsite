@@ -783,7 +783,7 @@
     echo '<div class="dbmsg">Saving ID='.$id.'.. '.($err==0?'OK':'Error:'.$err).'</div>'."\n";
   }
 
-  function query_out($db, $q, $details=true, $type=true, $location=true, $day=false, $print=false) {
+  function query_out($db, $q, $details=true, $type=true, $location=true, $day=false, $print=false, $xxx=false) {
     $a_users = fetch_selectlist($db);
     $a_locations = fetch_selectlist($db, 'location');
     if ($day)
@@ -800,7 +800,7 @@
 
     foreach ($result as $r) {
       if (substr($r['title'],0,12) == 'COFFEE BREAK') continue; # XXX
-      if ($day) {
+      if ($day && !($xxx && $r['type'] == 'c')) {
         if ($r['day'] == 5) { ## every day
           if (!$print) {echo 'every day - all day &nbsp;';}
         } else
@@ -810,6 +810,7 @@
       #echo track_name(track_color($r));
       echo '</div>';
       if ($r['day'] != 5) ## every day
+        if ($day && $r['type'] != 'c') ## XXX concert day/time override for now
         echo '<span class="tme">'.translate_time($r['starttime']).'</span>&nbsp;';
       if ($r['status']==0) echo '<span class="red">Cancelled: </span>';
       echo '<span'.(($r['status']==0)?' class="cancelled"':'').'><b>'.xhtmlify($r['title']).'</b></span>';
@@ -1244,6 +1245,7 @@
       WHERE day='.$num.'
       AND NOT (type=\'p\' OR location_id=\'1\')
       AND NOT (day=\'3\' AND location_id=\'8\')
+      AND NOT (type=\'c\' AND location_id=\'3\')
       ORDER BY typesort(type), strftime(\'%H:%M\',starttime), location_id', $details, true, true
     );
   }
@@ -1361,7 +1363,8 @@ if (1) {
       $q='SELECT activity.* FROM activity WHERE 1=1';
 
     if ($filter['type'] != '0') $q.=' AND type='.$db->quote($filter['type']);
-    if ($filter['day'] > 0) $q.=' AND day='.$db->quote($filter['day']);
+    //if ($filter['day'] > 0) $q.=' AND day='.$db->quote($filter['day']);
+    if ($filter['day'] > 0) $q.=' AND type != \'c\' AND day='.$db->quote($filter['day']);
     if ($filter['location'] > 0) $q.=' AND location_id='.$db->quote($filter['location']);
     if ($filter['id'] > 0) $q.=' AND id='.$db->quote($filter['id']);
 
@@ -1371,7 +1374,7 @@ if (1) {
     else
       $q.=' ORDER BY day, strftime(\'%H:%M\',starttime), typesort(type), location_id;';
 
-    query_out($db, $q, $details, $filter['type'] == '0',  $filter['location'] == '0', true);
+    query_out($db, $q, $details, $filter['type'] == '0',  $filter['location'] == '0', true, false, true);
   }
 
   function hardcoded_disclaimer() {
@@ -1388,13 +1391,14 @@ if (1) {
 <div style="padding:.5em 1em; 0em 1em">
 <?php
     $q='SELECT activity.* FROM activity WHERE type='.$db->quote('c');
-    $q.=' ORDER BY day, strftime(\'%H:%M\',starttime), typesort(type), location_id;';
-    query_out($db, $q, $details, false,  true, true, true);
+    #$q.=' ORDER BY day, strftime(\'%H:%M\',starttime), typesort(type), location_id;'; /// XXX
+    $q.=' ORDER BY title, location_id;';
+    query_out($db, $q, $details, false,  true, /* XXX true -- concert date */ false, true);
 ?>
 <h3>Installation/Loops</h3>
 <?php
     $q='SELECT activity.* FROM activity WHERE type='.$db->quote('i');
-    $q.=' ORDER BY day, strftime(\'%H:%M\',starttime), typesort(type), location_id;';
+    $q.=' ORDER BY typesort(type), location_id, title;';
     query_out($db, $q, $details, false,  true, true, true);
     echo '</div>'."\n";
   } ## END hardcoded_concert_and_installation_info ##
@@ -1405,6 +1409,18 @@ if (1) {
       print_day($db, $day,$date,$details);
     }
     print_daily_events($db, $day,$date,$details);
+    // XXX Concerts for now
+    if (1) {
+    echo '<h2 class="ptitle">Concerts on the CCMRA stage (line-up is not yet fixed)</h2>';
+    echo '<p>There are 3 concerts on the CCRMA stage (Thu, Fri, Sat) starting at 8pm. The line-up is not yet fixed but the following selection of sounds and music will be performed:</p>';
+    echo '<div class="ptitle"></div>';
+    query_out($db,
+     'SELECT * FROM activity
+      WHERE type = \'c\'
+      AND  location_id=\'3\'
+      ORDER BY title', $details, true, true
+    );
+    }
   }
 
   function table_program($db, $day, $print=false) {

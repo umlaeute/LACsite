@@ -224,13 +224,14 @@ function render_profile($s, $acts) {
 			echo '</span>';
 			# link to id, 
 			echo '<br/>&raquo;&nbsp;<span>'.translate_type($r['type']).'</span>';
+			if ($r['type'] != 'c' && $r['location_id'] != '3')
 			echo ' - <span>day:'.$r['day'].' - '.translate_time($r['starttime']).'</span>';
 
-      if ($r['type']!='c') { ### all concerts same location --- lib/programdb.php:768
+      //if ($r['type']!='c') { ### all concerts same location --- lib/programdb.php:768
 				if (!empty($r['location_id'])) {
 					echo '<br/>&raquo;&nbsp;Location: '.$a_locations[$r['location_id']];
 				}
-      }
+      //}
 			echo '</li>'.NL;
 		}
 		echo '</ul>'.NL;
