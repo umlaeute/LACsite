@@ -1,6 +1,7 @@
 <?php
 
   function program_header($mode,$details) {
+    echo '<div class="center" style="margin-top:.5em; margin-bottom:.-5em;">During the conference, live A/V live streams will available for the main track.<br/>Remote participants are invited to join <a href="http://webchat.freenode.net/?channels=lac2012" rel="external">#lac2012 on irc.freenode.net</a><br/><br/></div>';
     echo '<h1>Conference Programme</h1>'."\n";
 ### Note during conference about streaming and IRC ###
 #    echo '<div class="center" style="margin-top:.5em; margin-bottom:.-5em;">During the conference, live A/V streams are available at <a href="http://streamer.stackingdwarves.net/" rel="external">http://streamer.stackingdwarves.net/</a><br/>Backup server: <a href="http://radio.linuxaudio.org/" rel="external">http://radio.linuxaudio.org/</a><p>Remote participants are invited to join <a href="http://webchat.freenode.net/?channels=lac2012" rel="external">#lac2012 on irc.freenode.net</a>, to be able to take part in the discussions, ask questions, and get technical assistance in case of stream problems.</p><p>Conference Material can be found on the <a href="'.local_url('download').'">Download Page</a>.</p><br/></div>';
@@ -19,6 +20,7 @@
     echo '<br/>All times are <a href="http://en.wikipedia.org/wiki/Pacific_Daylight_Time" rel="external">PDT</a> = UTC-7'."\n";
     echo "</p>\n";
   }
+### Note before conference about streaming and IRC ###
 
   $mode='table';
   if (isset($_REQUEST['mode'])&&!empty($_REQUEST['mode'])) $mode=$_REQUEST['mode'];
