@@ -858,7 +858,7 @@
       echo '&nbsp;<em>'; $i=0;
       foreach (fetch_authorids($db, $r['id']) as $user_id) {
         if ($i++>0) echo ', ';
-        if (0 /*user has no profile*/)
+        if ((usr_has_profile($db, $user_id) & 2) ==0)
           echo xhtmlify($a_users[$user_id]);
         else
           echo '<a href="'.local_url('speakers', 'uid='.$user_id).'" rel="parent">'.xhtmlify($a_users[$user_id]).'</a>';
