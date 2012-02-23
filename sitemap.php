@@ -24,8 +24,10 @@ $sitemap['about']['changefreq'] = 'weekly';
 $sitemap['participation']['priority'] = .7;
 $sitemap['participation']['changefreq'] = 'weekly';
 
-$sitemap['program']['priority'] = .6;
-$sitemap['program']['changefreq'] = 'weekly';
+if (isset($sitemap['program'])) {
+  $sitemap['program']['priority'] = .6;
+  $sitemap['program']['changefreq'] = 'weekly';
+}
 $sitemap['contact']['priority'] = .6;
 $sitemap['contact']['changefreq'] = 'monthly';
 
