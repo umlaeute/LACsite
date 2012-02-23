@@ -184,12 +184,15 @@ if (!$silent) {
 	html_text_input('URL 3 (Project)', 'url_project', $r);
 	echo '</div>';
 	echo '<div class="clearer"></div>';
+	echo '<script type="text/javascript">
+setonclosewarn();
+</script>';
 
 	echo '<label for="pdb_bio">Bio:</label><br/>';
 	echo '<textarea id="pdb_bio" name="pdb_bio" rows="8" cols="70">'.xhtmlify($r['bio']).'</textarea><br/><br/>';
 
-	echo '<input class="button" type="button" title="Save" value="Save" onclick="document.getElementById(\'mode\').value=\'saveprofile\';formsubmit(\'myform\');"/>'."\n";
-	echo '<input class="button" type="button" title="Cancel" value="Cancel" onclick="document.getElementById(\'mode\').value=\'unlockprofile\';formsubmit(\'myform\');"/>'."<br/>&nbsp;\n";
+	echo '<input class="button" type="button" title="Save" value="Save" onclick="noonclosewarn();document.getElementById(\'mode\').value=\'saveprofile\';formsubmit(\'myform\');"/>'."\n";
+	echo '<input class="button" type="button" title="Cancel" value="Cancel" onclick="noonclosewarn();document.getElementById(\'mode\').value=\'unlockprofile\';formsubmit(\'myform\');"/>'."<br/>&nbsp;\n";
 	echo '</div>';
 	echo "</fieldset>".NL;
 	echo "</form>".NL;

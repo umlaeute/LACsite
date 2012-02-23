@@ -76,3 +76,19 @@ function admingo(page,mode,param) {
 	document.getElementById('param').value=param;
 	formsubmit('myform');
 }
+
+function onCloseWarn(e) {
+	e = e || window.event;
+	if (e) {
+		e.returnValue = 'You should navigate away using the SAVE or CANCEL button to release the edit-lock.\n\nData you have entered may not be saved.';
+	}
+	return 'You should navigate away using SAVE or CANCEL button to release the edit-lock.\n\nData you have entered may not be saved.';
+}
+
+function setonclosewarn() {
+  window.onbeforeunload = onCloseWarn;
+}
+
+function noonclosewarn() {
+  window.onbeforeunload = null;
+}

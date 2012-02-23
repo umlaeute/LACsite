@@ -433,7 +433,7 @@
 
   function html_checkbox($title, $param, $onoff) {
     echo '<label for="pdb_'.$param.'">'.$title.':&nbsp;';
-    echo '<input type="checkbox" id="pdb_'.$param.'" name="pdb_'.$param.'"'.($onoff?' checked="checked"':'').'/>';
+    echo '<input style="width:2em;" type="checkbox" id="pdb_'.$param.'" name="pdb_'.$param.'"'.($onoff?' checked="checked"':'').'/>';
     echo '</label> &nbsp;';
   }
 
