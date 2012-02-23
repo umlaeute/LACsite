@@ -895,23 +895,30 @@
     return $time;
   }
 
+  function shortmail($email) {
+    return limit_text(preg_replace('/^[^@]*@/', '@', $email),20);
+  }
+
   function dbadmin_profilelist($db) {
     $q='SELECT id,name,email,udate,flags from user ORDER BY name;'; 
     $res=$db->query($q);
     if (!$res) { say_db_error(); return $rv;}
     $result=$res->fetchAll();
     $cnt=0; $miss=0;
+    echo '<table style="font-size:90%;width:100%;line-height:1.1em;">';
     foreach ($result as $r) {
+      echo '<tr>';
       $notified = (usr_has_profile($db, $r['id']) & 1)?true:false;
       if (!$notified) $miss++;
-      echo '<span'.($notified?'':' class="red"').'>'.$r['name'];
-      echo '</span> - '.$r['email'].' - ';
-      echo ($r['flags'] & 1)?'<span>public':'<span class="red">hidden';
-      echo '</span> - '.$r['udate'].' ';
+      echo '<td'.($notified?'':' class="red"').'>'.$r['name'];
+      echo '</td><td>'.shortmail($r['email']).'</td><td>';
+      echo ($r['flags'] & 1)?'<span>pub':'<span class="red">priv';
+      echo '</td><td>'.$r['udate'].'</td><td>';
       if (!empty($r['email']))
         echo '<a class="active" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'profileinfo\';formsubmit(\'myform\');">'.($notified?'Re-':'').'Notify</a> ';
-      echo "<br/>\n";
+      echo "</td></tr>\n";
     }
+    echo '</table>';
     if ($miss == 0) echo '<div>All users have already been notified.</div>';
   }
 
