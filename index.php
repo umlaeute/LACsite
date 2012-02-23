@@ -133,6 +133,8 @@
 <?php
   if (!$mtime_skip)
     echo '<div id="createdby">Last modified: '.$mdate.' - Fernando Lopez-Lezcano, Bruno Ruviaro &amp; Robin Gareus</div>';
+  else 
+    echo '<div id="createdby"></div>';
 ?>
   </div>
   <div style="clear:both; height:0px;">&nbsp;</div>
