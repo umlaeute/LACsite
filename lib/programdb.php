@@ -1386,7 +1386,7 @@ if (1) {
 <h2 class="ptitle pb">Concerts &amp; Installations</h2>
 <h3>Concerts</h3>
 <p>There are evening concerts on the CCRMA stage the first three days of the conference starting 8pm.</p>
-<p>Saturday night also features the Linux-Sound-Night; 22h "CoHo" @ Tressider; a bar place near CCRMA, on campus.</p>
+<p>Saturday night also features the Linux-Sound-Night; 10pm "CoHo" @ Tressider; a bar place near CCRMA, on campus.</p>
 <p>Last but not least there is music and art that can be enjoyed in the "Listening Room" at CCRMA, every day of the conference during opening hours; except for Friday afternoon 3.45pm to 4:30pm when the "Listening Room" is closed for a workshop.</p>
 <div style="padding:.5em 1em; 0em 1em">
 <?php
