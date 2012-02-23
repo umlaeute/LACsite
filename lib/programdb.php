@@ -1254,7 +1254,7 @@
     echo '<h2 class="ptitle">Daily Events / Exhibitions</h2>';
     echo '<h3 class="ptitle">Installations &amp; Listening sessions</h3>';
     echo '<p>The following pieces are presented as installations or part of a loop-playlist in the listening room. ';
-    echo 'They are accessible on each day of the conference during opening hours; excpet for the "Listening Room" which will be closed Saturday afternoon 3.30pm to 6pm for a workshop.</p>';
+    echo 'They are accessible on each day of the conference during opening hours; except for the "Listening Room" which will be closed Friday afternoon 3.45pm to 4:30pm for a workshop.</p>';
     echo '<div class="ptitle"></div>';
     query_out($db,
      'SELECT * FROM activity
@@ -1387,7 +1387,7 @@ if (1) {
 <h3>Concerts</h3>
 <p>There are evening concerts on the CCRMA stage the first three days of the conference starting 8pm.</p>
 <p>Saturday night also features the Linux-Sound-Night; 22h "CoHo" @ Tressider; a bar place near CCRMA, on campus.</p>
-<p>Last but not least there is music and art that can be enjoyed in the "Listening Room" at CCRMA, every day of the conference during opening hours; excpet for Saturday afternoon 3.30pm to 6pm when the "Listening Room" is closed for a workshop.</p>
+<p>Last but not least there is music and art that can be enjoyed in the "Listening Room" at CCRMA, every day of the conference during opening hours; except for Friday afternoon 3.45pm to 4:30pm when the "Listening Room" is closed for a workshop.</p>
 <div style="padding:.5em 1em; 0em 1em">
 <?php
     $q='SELECT activity.* FROM activity WHERE type='.$db->quote('c');
