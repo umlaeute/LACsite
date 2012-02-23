@@ -204,7 +204,7 @@ function render_profile($s, $acts) {
 	echo '<div class="userinfo">';
 	echo '<h3>'.xhtmlify($s['name']).'</h3>';
 	if (!empty($s['tagline']))
-		echo '<h4>Tagline/Affiliation</h4><p>'.xhtmlify($s['tagline']).'</p>';
+		echo '<h4>Tagline/Affiliation</h4><p style="text-align:left;">'.xhtmlify($s['tagline']).'</p>';
 	if (!empty($s['url_person']) || !empty($s['url_institute']) || !empty($s['url_project'])  ) {
 		echo '<h4>Links</h4><ul>';
 		if (!empty($s['url_person'])) echo '<li><a href="'.$s['url_person'].'" rel="external">'.$s['url_person'].'</a></li>';
