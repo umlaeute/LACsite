@@ -1,5 +1,6 @@
 <h1>Location</h1>
-<p>CCRMA is located on the Stanford University Campus (California, USA). Check the <a href="http://www.stanford.edu/dept/visitorinfo/plan/" rel="external">Stanford Visitor page</a> if you are already starting to plan your visit. Don't forget to check right now the validity of your passport and any visa requirements you might have to enter the United States legally. We will provide more specific information later.  
+<p>CCRMA is located on the Stanford University Campus (California, USA). Check the <a href="http://www.stanford.edu/dept/visitorinfo/plan/" rel="external">Stanford Visitor page</a> if you are already starting to plan your visit. Don't forget to check right now the validity of your passport and any visa requirements you might have to enter the United States legally.
+To travel to the U.S. under the Visa Waiver Program you must apply at <a href="https://esta.cbp.dhs.gov/esta/">ESTA</a>.
 </p>
 
 <h1>Staying in the Bay Area</h1>
