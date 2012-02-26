@@ -443,7 +443,7 @@ function badge_tex_header() {
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% CARD MACRO [\card] %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\card#1#2#3{
   \parbox[c][4.5cm]{9.0cm}{
-  \vspace*{1.3cm}
+  \vspace*{1.35cm}
   \hspace*{0.90cm}
   \image{height=1.50cm,width=7.5cm}{badge_ccrma}
   }
