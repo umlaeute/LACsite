@@ -409,22 +409,12 @@ $rv.='%
  return $rv;
 }
 
+# The size of each card is 86 x 51 mm.
+# Standard badge-holder size: 90 x 56mm. -- 2.25 x 3.5 inch 
 function badge_tex_header() {
   return '
 \documentclass{article}
-\usepackage{a4}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FONTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{fontenc}                                                            
-\font\GoudyStMTTtiny GoudyStMTT at 6pt
-\font\GoudyStMTTscriptsize GoudyStMTT at 7pt
-\font\GoudyStMTTfootnotesize GoudyStMTT at 8pt
-\font\GoudyStMTTsmall GoudyStMTT at 9pt
-\font\GoudyStMTT GoudyStMTT at 10pt
-\font\GoudyStMTTlarge GoudyStMTT at 14pt
-\font\GoudyStMTTLARGE GoudyStMTT at 18pt
-\font\GoudyStMTThuge GoudyStMTT at 20pt
-\font\GoudyStMTTHuge GoudyStMTT at 24pt
+%\usepackage{a4}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MARGINS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \textwidth       7.50in
@@ -452,27 +442,21 @@ function badge_tex_header() {
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% CARD MACRO [\card] %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\card#1#2#3{
-        \parbox[c][4.5cm]{9.8cm}{
-        \vspace*{1.45cm}
-        \hspace*{3.2cm}
-        \image{height=3.05cm,width=3.05cm}{badge_ccrma}
-        }
-        \hspace*{-9.8cm}
-        \begin{tabular}{c}
-  \hspace*{.20in}\image{height=1.2cm,width=5.28cm}{badgelogo}
-  \rule[0.80ex]{0.70in}{.5pt}\\\\%
-  %\hspace*{0.70in}\\\\%
-  \small%
-  \begin{tabular}[b]{lcr}%
-  \hspace*{.25in}\small LAC 2012 & \hspace*{1.15in} & \hspace*{-0.15in}CCRMA Stanford\\\\%
-  %\hspace*{.25in}\GoudyStMTT LAC 2012 & \hspace*{1.15in} & \hspace*{-0.15in}\GoudyStMTT CCRMA Stanford\\\\%
-  \end{tabular}\\\\%
-  \vspace{0.05in}\\\\%
-  \hspace*{.25in}{#1}\\\\%
+  \parbox[c][4.5cm]{9.0cm}{
+  \vspace*{1.3cm}
+  \hspace*{0.90cm}
+  \image{height=1.50cm,width=7.5cm}{badge_ccrma}
+  }
+  \hspace*{-9.0cm}
+  \begin{tabular}{c}
+{ \hspace*{.20in}\image{height=1.2cm,width=5.28cm}{badgelogo}
+  \parbox[c]{.8in}{\vspace*{-0.30in}Conference\\\\2012}}\\\\%
+  \vspace{0.30in}\\\\%
+  \hspace*{.15in}{#1}\\\\%
   \vspace*{-0.12in}\\\\%
-  \hspace*{.25in}{#3}\\\\%
+  \hspace*{.15in}{#3}\\\\%
   \vspace*{-0.12in}\\\\%
-        \hspace*{.25in}{#2}\\\\%
+  \hspace*{.15in}{#2}\\\\%
   \end{tabular}%
 }
 
