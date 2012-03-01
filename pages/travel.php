@@ -9,15 +9,15 @@ To travel to the U.S. under the Visa Waiver Program you must apply at <a href="h
 
 <h1>Staying in Palo Alto</h1>
 
-<p>Unless you plan to have a car (and pay for parking at Stanford), you should definitely make sure you find a hotel that is close to the <a href="http://transportation.stanford.edu/marguerite">Marguerite shuttle</a>, the free bus service Stanford provides. If you look at the <a href="http://transportation.stanford.edu/pdf/marguerite-schedule-map.pdf">schedule (PDF)</a> you'll see not all lines run on weekends (check O and N for nightly services and SE for weekend services). You will most likely be taking the Marguerite everyday to get to campus (the Stanford Campus is BIG). Most Marguerite lines stop at the <a href="http://g.co/maps/nsgja">Palo Alto Transit Center</a>, so look for hotels that are walking distance to it. There is another Marguerite line that stops at the <a href="http://g.co/maps/3mxjq">California Avenue Caltrain station</a>, so hotels near California Avenue are also an option.</p>
+<p>Unless you plan to have a car (and pay for parking at Stanford), you should definitely make sure you find a hotel that is close to the <a href="http://transportation.stanford.edu/marguerite" rel="external">Marguerite shuttle</a>, the free bus service Stanford provides. If you look at the <a href="http://transportation.stanford.edu/pdf/marguerite-schedule-map.pdf" rel="external">schedule (PDF)</a> you'll see not all lines run on weekends (check O and N for nightly services and SE for weekend services). You will most likely be taking the Marguerite everyday to get to campus (the Stanford Campus is BIG). Most Marguerite lines stop at the <a href="http://g.co/maps/nsgja" rel="external">Palo Alto Transit Center</a>, so look for hotels that are walking distance to it. There is another Marguerite line that stops at the <a href="http://g.co/maps/3mxjq" rel="external">California Avenue Caltrain station</a>, so hotels near California Avenue are also an option.</p>
 
-<p><a href="http://www.hotelscombined.com/Conference_Support">Hotels Combined</a> is supporting LAC2012 and offer a 10% discount on all hotels booked through their website.</p>
+<p><a href="http://www.hotelscombined.com/Conference_Support" rel="external">Hotels Combined</a> is supporting LAC2012 and offer a 10% discount on all hotels booked through their website.</p>
 
 <p>Try also:</p>
 <ul>
-<li><a href="http://www.stanford.edu/dept/visitorinfo/plan/stay.html">http://www.stanford.edu/dept/visitorinfo/plan/stay.html</a></li>
-<li><a href="http://www.hotels.com/">http://www.hotels.com/</a></li>
-<li><a href="http://www.airbnb.com/">http://www.airbnb.com/</a></li>
+<li><a href="http://www.stanford.edu/dept/visitorinfo/plan/stay.html" rel="external">stanford.edu/dept/visitorinfo/plan/stay</a></li>
+<li><a href="http://www.hotels.com/" rel="external">hotels.com</a></li>
+<li><a href="http://www.airbnb.com/" rel="external">airbnb.com</a></li>
 </ul>
 
 <h1>Traveling to Stanford</h1>
