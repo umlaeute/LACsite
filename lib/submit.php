@@ -245,7 +245,7 @@ function log_ip_address() {
 
   $q='INSERT into iplog (ip_addr, regname) VALUES ('
     .' '.$db->quote($_SERVER['REMOTE_ADDR'])
-    .','.$db->quote(sanevalue(rawurldecode($_POST['reg_prename'])).' '.sanevalue(rawurldecode(isset($_POST['pdb_name'])?$_POST['pdb_name']:'')))
+    .','.$db->quote(sanevalue(rawurldecode($_POST['reg_prename'])).' '.sanevalue(rawurldecode(isset($_POST['reg_name'])?$_POST['reg_name']:'')))
     .');';
   $db->exec($q);
 }

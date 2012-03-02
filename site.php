@@ -45,6 +45,7 @@
     'http://arts.stanford.edu/sai.php?section=sica&amp;page=about' => array('img' => 'img/logos/sica.jpg', 'title' => 'SiCA, Stanford'),
     'http://www.stanford.edu/' => array('img' => 'img/logos/stanford.jpg', 'title' => 'Stanford University'),
     'http://linuxaudio.org/' => array('img' => 'img/logos/lao.png', 'title' => 'linuxaudio.org'),
+    'http://www.citu.info/' => array('img' => 'img/logos/citu.png', 'title' => 'CiTu'),
   );
 
   function clustermap() {
