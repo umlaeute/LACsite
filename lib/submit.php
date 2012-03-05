@@ -200,7 +200,7 @@ function write_public_listing() {
     $db=new PDO(PDOREGDB);
   } catch (PDOException $exception) {return;}
 
-  $q='SELECT * from pubrg ORDER BY name, prename';
+  $q='SELECT * from pubrg ORDER BY UPPER(name), UPPER(prename)';
   $res=$db->query($q);
   if (!$res) return;
   $newlist="<ul>\n";
