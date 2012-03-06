@@ -16,6 +16,7 @@ CREATE TABLE activity (
    url_misc TEXT DEFAULT NULL, 
    url_image TEXT DEFAULT NULL, 
    status INTEGER DEFAULT 1,
+   serial INTEGER DEFAULT 1,
    editlock datetime default 0,
    UNIQUE (title)
 );

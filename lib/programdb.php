@@ -355,9 +355,9 @@
     if ($filter['day'] > 0) $q.=' AND day='.$db->quote($filter['day']);
 
     if ($order=='type')
-      $q.=' ORDER BY day, typesort(type), strftime(\'%H:%M\',starttime), location_id;';
+      $q.=' ORDER BY day, typesort(type), strftime(\'%H:%M\',starttime), location_id, serial;';
     else
-      $q.=' ORDER BY day, strftime(\'%H:%M\',starttime), typesort(type), location_id;';
+      $q.=' ORDER BY day, strftime(\'%H:%M\',starttime), typesort(type), location_id, serial;';
 
     $res=$db->query($q);
     if (!$res) { say_db_error(); return;}
@@ -529,7 +529,15 @@
     echo '<label for="pdb_status">Status:</label>';
     echo '<select id="pdb_status" name="pdb_status" size="1">';
     gen_options($a_status, $r['status']);
-    echo '</select><br/>';
+    echo '</select>';
+
+    if ($r['type']== 'c' || $r['type']== 'i') {
+      echo '&nbsp;<label for="pdb_serial">Display-Order (larger=later):</label>';
+      echo '<input class="duration" id="pdb_serial" name="pdb_serial" length="10" value="'.$r['serial'].'" />';
+    } else {
+      echo '<input type="hidden" name="pdb_serial" length="10" value="'.$r['serial'].'" />';
+    }
+    echo '<br/>';
 
     echo '<label for="pdb_title">Title:</label><br/>';
     echo '<input id="pdb_title" name="pdb_title" length="80" value="'.$r['title'].'" /><br/>';
@@ -726,7 +734,7 @@
     $err=0;
     $id=intval(rawurldecode($_REQUEST['param']));
     if ($id < 0) {
-      $q='INSERT INTO activity (title, abstract, notes, duration, starttime, location_id, day, type, url_stream, url_paper, url_slides, url_audio, url_misc, url_image, status) VALUES ('
+      $q='INSERT INTO activity (title, abstract, notes, duration, starttime, location_id, day, type, url_stream, url_paper, url_slides, url_audio, url_misc, url_image, status, serial) VALUES ('
   .' '.$db->quote(rawurldecode($_REQUEST['pdb_title']))
   .','.$db->quote(rawurldecode($_REQUEST['pdb_abstract']))
   .','.$db->quote(rawurldecode($_REQUEST['pdb_notes']))
@@ -742,6 +750,7 @@
   .','.$db->quote(rawurldecode($_REQUEST['pdb_url_misc']))
   .','.$db->quote(rawurldecode($_REQUEST['pdb_url_image']))
   .','.$db->quote(rawurldecode($_REQUEST['pdb_status']))
+  .','.$db->quote(rawurldecode($_REQUEST['pdb_serial']))
   .');';
     } else {
       unlock($db, $id, 'activity');
@@ -761,6 +770,7 @@
   .',url_misc='.$db->quote(rawurldecode($_REQUEST['pdb_url_misc']))
   .',url_image='.$db->quote(rawurldecode($_REQUEST['pdb_url_image']))
   .',status='.$db->quote(rawurldecode($_REQUEST['pdb_status']))
+  .',serial='.$db->quote(rawurldecode($_REQUEST['pdb_serial']))
   .' WHERE id='.$id.';';
     }
     #print_r($q);
@@ -1242,7 +1252,7 @@
      'SELECT * FROM activity
       WHERE day='.$num.'
       AND ( type=\'p\' OR location_id=\'1\' OR (day=\'3\' AND location_id=\'8\')) 
-      ORDER BY strftime(\'%H:%M\',starttime)', $details, false, false
+      ORDER BY strftime(\'%H:%M\',starttime), serial', $details, false, false
     );
     echo '<h3 class="ptitle">Workshops &amp; Events</h3>';
     echo '<div class="ptitle"></div>';
@@ -1251,7 +1261,7 @@
       WHERE day='.$num.'
       AND NOT (type=\'p\' OR location_id=\'1\')
       AND NOT (day=\'3\' AND location_id=\'8\')
-      ORDER BY typesort(type), strftime(\'%H:%M\',starttime), location_id', $details, true, true
+      ORDER BY typesort(type), strftime(\'%H:%M\',starttime), location_id, serial', $details, true, true
     );
   }
 
@@ -1265,7 +1275,7 @@
      'SELECT * FROM activity
       WHERE day = 5
       AND NOT (type=\'p\' OR location_id=\'1\')
-      ORDER BY typesort(type), strftime(\'%H:%M\',starttime), location_id', $details, true, true
+      ORDER BY typesort(type), strftime(\'%H:%M\',starttime), location_id, serial', $details, true, true
     );
   }
 
@@ -1374,9 +1384,9 @@ if (1) {
 
     $order='';
     if ($order=='type')
-      $q.=' ORDER BY day, typesort(type), strftime(\'%H:%M\',starttime), location_id;';
+      $q.=' ORDER BY day, typesort(type), strftime(\'%H:%M\',starttime), location_id, serial;';
     else
-      $q.=' ORDER BY day, strftime(\'%H:%M\',starttime), typesort(type), location_id;';
+      $q.=' ORDER BY day, strftime(\'%H:%M\',starttime), typesort(type), location_id, serial;';
 
     query_out($db, $q, $details, $filter['type'] == '0',  $filter['location'] == '0', true);
   }
@@ -1395,13 +1405,13 @@ if (1) {
 <div style="padding:.5em 1em; 0em 1em">
 <?php
     $q='SELECT activity.* FROM activity WHERE type='.$db->quote('c');
-    $q.=' ORDER BY day, strftime(\'%H:%M\',starttime), typesort(type), location_id;';
+    $q.=' ORDER BY day, strftime(\'%H:%M\',starttime), typesort(type), location_id, serial;';
     query_out($db, $q, $details, false,  true, true, true);
 ?>
 <h3>Installation/Loops</h3>
 <?php
     $q='SELECT activity.* FROM activity WHERE type='.$db->quote('i');
-    $q.=' ORDER BY day, strftime(\'%H:%M\',starttime), typesort(type), location_id;';
+    $q.=' ORDER BY day, strftime(\'%H:%M\',starttime), typesort(type), location_id, serial;';
     query_out($db, $q, $details, false,  true, true, true);
     echo '</div>'."\n";
   } ## END hardcoded_concert_and_installation_info ##
@@ -1540,7 +1550,7 @@ if (1) {
     $a_types = fetch_selectlist(0, 'types');
     $a_days = fetch_selectlist(0, 'days');
 
-    $q='SELECT * FROM activity ORDER BY day, location_id, strftime(\'%H%M\',starttime), typesort(type)';
+    $q='SELECT * FROM activity ORDER BY day, location_id, strftime(\'%H%M\',starttime), typesort(type), serial';
     $res=$db->query($q);
     if (!$res) return; // TODO: print error msg
     $result=$res->fetchAll();
@@ -1617,7 +1627,7 @@ if (1) {
     $a_locations = fetch_selectlist($db, 'location');
     $a_types = fetch_selectlist(0, 'types');
 
-    $q='SELECT * FROM activity ORDER BY day, location_id, strftime(\'%H:%M\',starttime), typesort(type)';
+    $q='SELECT * FROM activity ORDER BY day, location_id, strftime(\'%H:%M\',starttime), typesort(type), serial';
     $res=$db->query($q);
     if (!$res) return; // TODO: print error msg
     $result=$res->fetchAll();
@@ -1689,7 +1699,7 @@ if (1) {
     $a_users = fetch_selectlist($db);
     $a_locations = fetch_selectlist($db, 'location');
 
-    $q='SELECT * FROM activity WHERE type !=\'c\' and type !=\'i\' ORDER BY day, typesort(type), location_id, strftime(\'%H:%M\',starttime)';
+    $q='SELECT * FROM activity WHERE type !=\'c\' and type !=\'i\' ORDER BY day, typesort(type), location_id, strftime(\'%H:%M\',starttime, serial)';
     $res=$db->query($q);
     if (!$res) return; // TODO: print error msg
     $result=$res->fetchAll();

@@ -358,7 +358,7 @@ li.active {cursor:pointer;}
 
 .pdb input,
 .pdb textarea        {width:98%;}
-.pdb input.duration  {width:8em;}
+.pdb input.duration  {width:4em;}
 .pdb label           {font-style:italic; font-size:80%;}
 .pdb input.smbutton  {width:4em;}
 .pdb input.button    {width:49%;}
