@@ -194,6 +194,8 @@ $agendafs=array(
          'page'  => 'adminschedule', 'mode'  => 'profilenotify', 'param' => ''),
   array( 'title' => 'Profiles', 'value' => 'Profiles',
          'page'  => 'adminschedule', 'mode'  => 'profileinfo', 'param' => ''),
+  array( 'title' => 'Texify Schedule', 'value' => 'Texify Schedule',
+         'page'  => 'adminschedule', 'mode'  => 'texify', 'param' => ''),
 );
 $adminfieldsetonce=false;
 
