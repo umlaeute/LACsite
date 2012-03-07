@@ -71,15 +71,6 @@
     return date("d.M H:i", $time);
   }
 
-  # used in TEX
-  function plaintime($e, $start=true) {
-    $time= dbadmin_unixtime($e, $start);
-    date_default_timezone_set('USA/San Francisco');
-    $rv=date("H:i", $time);
-    date_default_timezone_set('UTC');
-    return $rv;
-  }
-
   function iso8601($e, $start=true) {
     $time= dbadmin_unixtime($e, $start);
     return date("Ymd\THis\Z", $time);
@@ -310,6 +301,7 @@ $adminfieldsetonce=false;
     $v=str_replace("\xc3\xbd",'\\\'{y}',$v);
     $v=str_replace("\xc3\xbf",'\\"{y}',$v);
     $v=str_replace("&",'\&',$v);
+    $v=str_replace("#",'\#',$v);
     return $v;
   }
 # vim: ts=2 et

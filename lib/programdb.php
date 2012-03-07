@@ -809,7 +809,7 @@
     }
 
     foreach ($result as $r) {
-      if (substr($r['title'],0,12) == 'COFFEE BREAK') continue; # XXX
+      if (substr($r['title'],0,7) == 'COFFEE ') continue; # XXX
       if ($day) {
         if ($r['day'] == 5) { ## every day
           if (!$print) {echo 'every day - all day &nbsp;';}
@@ -1542,15 +1542,19 @@ if (1) {
   function export_progam_tex($db) {
     $sep="\n";
     $rv= '';
-    $rv.= "\\documentclass{article}\n\\usepackage{a4}\n\\pagestyle{empty}\n\\begin{document}\n";
-    #$rv.= "\\begin{itemize}\n";
+    $rv.= "\\documentclass{article}\n";
+    #$rv.= "\\usepackage{a4}\n";
+    $rv.= "\\usepackage[cm]{fullpage}\n";
+    $rv.= "\\pagestyle{empty}\n\\begin{document}\n";
+    #$rv.= "\\begin{itemize}$itemspace\n";
+    $itemspace="\\addtolength{\itemsep}{-0.5\\baselineskip}";
 
     # Table Body
     $a_locations = fetch_selectlist($db, 'location');
     $a_types = fetch_selectlist(0, 'types');
     $a_days = fetch_selectlist(0, 'days');
 
-    $q='SELECT * FROM activity ORDER BY day, location_id, strftime(\'%H%M\',starttime), typesort(type), serial';
+    $q='SELECT * FROM activity WHERE day < 5 ORDER BY day, (location_id%8), strftime(\'%H%M\',starttime), typesort(type), serial';
     $res=$db->query($q);
     if (!$res) return; // TODO: print error msg
     $result=$res->fetchAll();
@@ -1564,33 +1568,40 @@ if (1) {
         }
         $cday= $r['day'];
         $rv.= "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n";
+        $rv.= "\\begin{center}\n";
         $rv.= "{\\Huge\n";
         $rv.= "Day ".$a_days[$cday]."\n";
         $rv.= "}\n";
+        $rv.= "\\end{center}\n";
         $rv.= "\\begin{center}\n";
         $rv.= "  \\LARGE Main-Track\\\\\n";
         #$rv.= "  \\Large Location: Bewerunge Room\n"; # TODO 2011/2012
         $rv.= "\\end{center}\n";
-        $rv.= "\\begin{itemize}\n";
+        $rv.= "\\begin{itemize}$itemspace\n";
       }
-      if (!$lmark && $r['location_id'] != 1) {
+      if (!$lmark && ($r['location_id'] != 1 && $r['location_id'] != 8)) {
         $lmark=true;
         $rv.= "\\end{itemize}\n";
         $rv.= "%%%%%%%%%%%%%%\n";
         $rv.= "\\begin{center}\n";
         $rv.= "  \\LARGE Workshops \\& Events\n";
         $rv.= "\\end{center}\n";
-        $rv.= "\\begin{itemize}\n";
+        $rv.= "\\begin{itemize}$itemspace\n";
       }
 
       $rv.= '\item'."\n  ";
-      $rv.= plaintime($r).' ';
-      $rv.= texify_umlauts(trim($r['title']))."\\\\\n";
-      if ($r['location_id'] != 1) {
+      $rv.= translate_time($r['starttime']).' ';  ##
+      $rv.= texify_umlauts(trim($r['title']));
+      $donenl=false;
+      if ($r['location_id'] != 1 && $r['location_id'] != 8) {
+        if (!$donenl) {$rv.="\\\\\n"; $donenl=true;}
         $rv.= '  {\em '.($a_types[$r['type']]).'}'.$sep;
         $rv.= '  {\small '.($a_locations[$r['location_id']]).'} -- '.$sep;
       }
       $authorcnt=0;
+      $authors=fetch_authorids($db, $r['id']);
+
+      if (!$donenl && count($authors) >0) {$rv.="\\\\\n"; $donenl=true;}
       $rv.= "  {\em ";
 
       foreach (fetch_authorids($db, $r['id']) as $user_id) {
@@ -1604,7 +1615,51 @@ if (1) {
       $rv.= '}';
       $rv.= $sep;
     }
-    $rv.= "\\end{itemize}\n\end{document}\n";
+    $rv.= "\end{itemize}\n";
+    // installations -- day 5
+
+    $q='SELECT * FROM activity WHERE day=5 ORDER BY location_id, typesort(type), serial';
+    $res=$db->query($q);
+    if ($res) {
+        $result=$res->fetchAll();
+        $rv.= "\\begin{center}\n";
+        $rv.= "{\\Huge\n";
+        $rv.= "Every Day\n";
+        $rv.= "}\n";
+        $rv.= "\\end{center}\n";
+        $rv.= "\\begin{center}\n";
+        $rv.= "  \\LARGE Installations \\& Audio-Loops\n";
+        $rv.= "\\end{center}\n";
+        $rv.= "\\begin{itemize}$itemspace\n";
+        foreach ($result as $r) {
+          $rv.= '\item'."\n  ";
+          $rv.= texify_umlauts(trim($r['title']));
+          #$rv.="\\\\\n";
+          $rv.=" -- ";
+          #$rv.= '  {\em '.($a_types[$r['type']]).'}'.$sep;
+          $rv.= '  {\small '.($a_locations[$r['location_id']]).'} -- '.$sep;
+          $authorcnt=0;
+          $authors=fetch_authorids($db, $r['id']);
+
+          if (!$donenl && count($authors) >0) {$rv.="\\\\\n"; $donenl=true;}
+          $rv.= "  {\em ";
+
+          foreach (fetch_authorids($db, $r['id']) as $user_id) {
+            $ur=$db->query('SELECT * FROM user WHERE id ='.$user_id.';');
+            if (!$ur) continue; ## TODO report error ?
+            $ud=$ur->fetch(PDO::FETCH_ASSOC);
+
+            if ($authorcnt++) $rv.=', ';
+            $rv.=texify_umlauts(trim($ud['name']));
+          }
+          $rv.= '}';
+          $rv.= $sep;
+        }
+
+        $rv.= "\end{itemize}\n";
+    }
+
+    $rv.= "\end{document}\n";
     return $rv;
   }
 
