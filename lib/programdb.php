@@ -189,7 +189,7 @@
 
   function fetch_authorids($db, $activity_id) {
     $rv = array();
-    $q='SELECT user_id from usermap where activity_id='.$activity_id.';'; 
+    $q='SELECT user_id from usermap where activity_id='.$activity_id.' ORDER BY position;'; 
     $res=$db->query($q);
     if (!$res) { say_db_error('authorids'); return $rv;}
     $result=$res->fetchAll();
@@ -782,11 +782,12 @@
     $q='DELETE from usermap where activity_id ='.$id.';';
     $err|=($db->exec($q) >=0)?0:2;
 
+    $aid=0;
     foreach ($_REQUEST['pdb_author'] as $author) {
       if ($author == 0) continue;
-      $q='INSERT into usermap (\'activity_id\', \'user_id\') VALUES ('
+      $q='INSERT into usermap (\'activity_id\', \'user_id\', \'position\') VALUES ('
           .$id.',' 
-          .intval(rawurldecode($author)).');';
+          .intval(rawurldecode($author)).', '.$aid++.');';
       $err|=($db->exec($q) !== 1)?4:0;
     }
 
