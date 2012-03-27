@@ -20,6 +20,14 @@ To travel to the U.S. under the Visa Waiver Program you must apply at <a href="h
 <li><a href="http://www.airbnb.com/" rel="external">airbnb.com</a></li>
 </ul>
 
+<h3>How to get to campus from your hotel</h3>
+<ul>
+<li>Rent a bike: <a href="http://campusbikeshop.com/articles/rent-a-bike-pg88.htm">campusbikeshop.com</a>.</li>
+<li>Take the free <a href="http://transportation.stanford.edu/marguerite"/>Marguerite Shuttle</a>.</li>
+<li>Rent a car (and announce it on the <a href="http://wiki.linuxaudio.org/lac2012/travel">LAC car-pool Wiki</a>).</li>
+<li>... or take a cab :)</li>
+</ul>
+
 <h1>Traveling to Stanford</h1>
 
 <p>CCRMA is housed in the Knoll, 660 Lomita Dr. Stanford, CA  94305. Please use the following directions in conjunction with the Stanford <a href="http://campus-map.stanford.edu/" rel="external">campus map</a> or <a href="http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=660+lomita,+stanford+ca&amp;sll=37.0625,-95.677068&amp;sspn=45.197878,82.265625&amp;ie=UTF8&amp;om=1&amp;z=16&amp;layer=t" rel="external">Google Map</a>.&nbsp;</p>
