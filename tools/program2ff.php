@@ -14,7 +14,7 @@ require_once('lib/programdb.php');
 function fetch_authors($db, $activity_id) {
 	global $db;
 	$rv = array();
-	$q='SELECT name from user join usermap on user.id = usermap.user_id where usermap.activity_id='.$activity_id.';'; 
+	$q='SELECT name from user join usermap on user.id = usermap.user_id where usermap.activity_id='.$activity_id.' ORDER BY position LIMIT 1;'; 
     $res=$db->query($q);
 	if (!$res) return $rv;
 
@@ -24,9 +24,8 @@ function fetch_authors($db, $activity_id) {
 	}
 	return $rv;
 }
-
 function ffescape($s) {
-	return trim(str_replace('"', '\\"', $s));
+	return trim(str_replace("'", "'\"'\"'", str_replace(')', '\\)', str_replace('(', '\\(', str_replace('"', '\\"', $s)))));
 }
 
 function filetitle($s) {
@@ -34,7 +33,7 @@ function filetitle($s) {
 }
 
 $q='SELECT id,title,day,starttime FROM activity';
-$q.=' WHERE (title not like "COFFEE BREAK%") AND (type="p" OR type="o" OR type="w")';
+$q.=' WHERE (title not like "COFFEE BREAK%") AND (type="p" OR type="o")'; // OR type="w")';
 $q.=' ORDER BY day, strftime(\'%H:%M\',starttime), typesort(type), location_id;';
 $res=$db->query($q);
 if (!$res) { 
@@ -62,7 +61,7 @@ foreach ($result as $r) {
 		echo 'VAR'.$i.'=\'META="';
 		echo ' --title \\"'.ffescape($r['title']).'\\"';
 		echo ' --artist \\"'.ffescape($r['authors']).'\\"';
-		echo ' --date \\"'.date("Y-m-d H:i:s", $tme).'\\"';
+		echo ' --date \\"'.date("Y-m-d H:i", $tme).' PST\\"';
 		echo '"; ID='.$r['id'].'; OUTFILE="day'.$r['day'].'_'.$stm.'_'.filetitle($r['title']).'.ogv"\'';
 		echo "\n";
 	}
