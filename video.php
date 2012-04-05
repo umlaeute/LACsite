@@ -13,30 +13,64 @@ function printerror($msg) {
   echo '</body></html>';
   exit;
 }
-if (!isset($_REQUEST['id']))
-  printerror('invalid request - no id specified.');
 
-$id=intval(rawurldecode($_REQUEST['id']));
-$q='SELECT * FROM activity WHERE id='.$id.';';
+$allowlive=true; # $config['allowlivevideo'];
+$id=0;
 
-try {
-  $db=new PDO("sqlite:tmp/lac".LACY.".db"); // XXX -> config.php
-} catch (PDOException $exception) {
-  die ('Database Failure: '.$exception->getMessage());
+if (!isset($_REQUEST['id'])) {
+  if (!$allowlive) 
+    printerror('invalid request - no id specified.');
+  else {
+    $id = -1;
+  }
+} else {
+  $id=intval(rawurldecode($_REQUEST['id']));
 }
 
-$res=$db->query($q);
-if (!$res)
-  printerror('database query failed.');
-$result=$res->fetchAll();
-if (count($result) ==0)
-  printerror('No matching entries found');
-$v=$result[0];
+if ($id > 0) {
+  $q='SELECT * FROM activity WHERE id='.$id.';';
+
+  try {
+    $db=new PDO("sqlite:tmp/lac".LACY.".db"); // XXX -> config.php
+  } catch (PDOException $exception) {
+    die ('Database Failure: '.$exception->getMessage());
+  }
+
+  $res=$db->query($q);
+  if (!$res)
+    printerror('database query failed.');
+  $result=$res->fetchAll();
+  if (count($result) ==0)
+    printerror('No matching entries found.');
+  $v=$result[0];
+} elseif ($id == -1 && $allowlive) {
+  $v=array(
+    'title' => 'Live Stream - High Quality',
+    'url_stream' => 'http://streamer.stackingdwarves.net/lac2012.ogv',
+    'url_slides' => 'http://lac.linuxaudio.org/2012/files',
+    'url_paper' => '',
+    'url_misc' => '',
+    'url_abstract' => '',
+  );
+} elseif ($id == -2 && $allowlive) {
+  $v=array(
+    'title' => 'Live Stream - Low Quality',
+    'url_stream' => 'http://streamer.stackingdwarves.net/lac2012-low_bitrate.ogv',
+    'url_slides' => 'http://lac.linuxaudio.org/download',
+    'url_paper' => '',
+    'url_misc' => '',
+    'url_abstract' => '',
+  );
+} else {
+  printerror('No matching entries found.');
+}
 
 if ($config['hidepapers']) $v['url_paper'] = '';
 
 $url=$v['url_stream'];
 $w=720;$h=576;
+
+
 $ua=$_SERVER['HTTP_USER_AGENT'];
 $jar=BASEURL.'static/cortado_url.jar';
 #print_r($url);
@@ -44,6 +78,7 @@ $jar=BASEURL.'static/cortado_url.jar';
 
 
 if (stripos($ua, 'firefox')!== false 
+/*|| stripos($ua, 'chromium')!== false*/
 /*|| stripos($ua, 'chrome')!== false*/
 /*|| stripos($ua, 'opera')!== false*/
 ) {  /* Browser HTML-5 */
@@ -93,19 +128,22 @@ else { /* JAVA - Cortado player */
 echo '<div class="header">Linux Audio Conference '.LACY.'</div>';
 echo '<div class="title">';
 echo '<b>'.xhtmlify($v['title']).'</b><br/>';
-echo '<em>'; $i=0;
-$a_users = fetch_selectlist($db, 'user', 'ORDER BY name');
-foreach (fetch_authorids($db, $id) as $user_id) {                    
-  if ($i++>0) echo ', ';
-  echo xhtmlify($a_users[$user_id]);
+if ($id > 0) {
+  echo '<em>'; $i=0;
+  $a_users = fetch_selectlist($db, 'user', 'ORDER BY name');
+  foreach (fetch_authorids($db, $id) as $user_id) {                    
+    if ($i++>0) echo ', ';
+    echo xhtmlify($a_users[$user_id]);
+  }
+  echo '</em>';
 }
-echo '</em>';
 echo '</div>';
 if (!empty($url)) {
   echo '<div class="player">'.$out.'</div>';
-  $tu=rawurlencode($url);
-  $tt=rawurlencode(SHORTTITLE.' - '.$v['title']);
-  echo '
+  if ($id > 0) {
+    $tu=rawurlencode($url);
+    $tt=rawurlencode(SHORTTITLE.' - '.$v['title']);
+    echo '
   <div id="sociallinkbar">
     <a id="lnktwtr" rel="_blank" href="http://twitter.com/share?url='.$tu.'" title="Tweet This!"></a>
     <a id="lnkturl" rel="_blank" href="http://tinyurl.com/create.php?url='.$tu.'" title="Create TinyURL"></a>
@@ -116,6 +154,7 @@ if (!empty($url)) {
     <a id="lnkdlus" rel="_blank" href="http://delicious.com/save?v=6&amp;jump=yes&amp;url='.$tu.'&amp;title='.$tt.'" title="Bookmark this on Del.icio.us"></a>
   </div>
 ';
+  }
 } else {
   echo '<div class="error"><br/>This presentations has not been recorded.</div>';
 }
@@ -123,7 +162,7 @@ if (!empty($url)) {
 echo '<div class="links"><ul>';
 
 if (!empty($url))
-  echo '<li>Video: <a href="'.$url.'">'.basename($url).'</a></li>';
+  echo '<li>Video URL: <a href="'.$url.'">'.basename($url).'</a></li>';
 if (!empty($v['url_slides']))
   echo '<li>Slides: <a href="'.$v['url_slides'].'" rel="_blank">'.$v['url_slides'].'</a></li>';
 if (!empty($v['url_paper']))
