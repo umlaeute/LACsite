@@ -280,9 +280,9 @@ function gen_badges_pdf($f) {
   fclose($handle);
   @copy (DOCROOTDIR.'img/badge_ccrma.png', TMPDIR.'badge_ccrma.png');
   @copy (DOCROOTDIR.'img/badgelogo.png', TMPDIR.'badgelogo.png');
-  @copy (DOCROOTDIR.'img/fonts/GoudyStMTT.afm', TMPDIR.'GoudyStMTT.afm'); 
-  @copy (DOCROOTDIR.'img/fonts/GoudyStMTT.tfm', TMPDIR.'GoudyStMTT.tfm'); 
-  @copy (DOCROOTDIR.'img/fonts/GoudyStMTT.ttf', TMPDIR.'GoudyStMTT.ttf'); 
+  @copy (DOCROOTDIR.'img/fonts/VeraMoBd.afm', TMPDIR.'VeraMoBd.afm'); 
+  @copy (DOCROOTDIR.'img/fonts/VeraMoBd.tfm', TMPDIR.'VeraMoBd.tfm'); 
+  @copy (DOCROOTDIR.'img/fonts/VeraMoBd.ttf', TMPDIR.'VeraMoBd.ttf'); 
   @copy (DOCROOTDIR.'img/fonts/ttfonts.map', TMPDIR.'ttfonts.map'); 
   @copy (DOCROOTDIR.'img/fonts/T1-WGL4x.enc', TMPDIR.'T1-WGL4x.enc'); 
   @copy (DOCROOTDIR.'img/badgeback.pdf', TMPDIR.'badgeback.pdf');
@@ -311,7 +311,7 @@ function gen_badges_source($f) {
   $cnt=0;
   $rv=badge_tex_header();
   $rv.='%
-\begin{picture}(7.5,10.5)%
+\begin{picture}(7.5,10.6)%
 \cuts
 ';
   foreach ($f as $fn) {
@@ -322,7 +322,9 @@ function gen_badges_source($f) {
 
     $filename=$name = preg_replace('/[^a-zA-Z0-9_-]/','_', $fn).'.ini';
     $v=parse_ini_file(REGLOGDIR.$filename);
-    $name=str_replace(',','',$v['reg_prename'].' '.$v['reg_name']);
+    $firstname=str_replace(',','',$v['reg_prename']);
+    $name=str_replace(',','', $v['reg_name']);
+    $firstname=texify_umlauts($firstname);
     $name=texify_umlauts($name);
     $what=texify_umlauts($v['reg_tagline']);
     $badgebg='';
@@ -351,34 +353,39 @@ function gen_badges_source($f) {
 #\LARGE 18 17.28
 #\huge 20 20.74
 #\Huge 24 24.88
-  if (1) {
+  if (0) {
     # DEFAULT FONT:
-    if (strlen($name) > 40) $name='\normalsize '.$name; # TODO verify size!
-    elseif (strlen($name) > 26) $name='\large '.$name; 
-    elseif (strlen($name) > 20) $name='\LARGE '.$name;
-    else  $name='\Huge '.$name;
+    if (strlen($name) > 40)     $name='\large '.$name; # TODO verify size!
+    elseif (strlen($name) > 26) $name='\LARGE '.$name; 
+    elseif (strlen($name) > 20) $name='\huge '.$name;
+    else                        $name='\sffamily\fontsize{48}{56}\selectfont '.$name;
 
-    if (strlen($what) > 56) $what='\tiny '.$what; 
-    elseif (strlen($what) > 49) $what='\scriptsize '.$what;
-    elseif (strlen($what) > 40) $what='\footnotesize '.$what; 
-    else $what='\normalsize '.$what; 
+    if (strlen($what) > 56)     $what='\small '.$what; 
+    elseif (strlen($what) > 49) $what='\normalsize '.$what;
+    elseif (strlen($what) > 40) $what='\large '.$what; 
+    else                        $what='\Large '.$what; 
 
-    if (!empty($badgebg)) $badgebg='\small '.$badgebg;
+    if (!empty($badgebg)) $badgebg='\normalsize '.$badgebg;
 
   } else {
 
-    # Goudy FONT:
+    # Vera/Goudy FONT:
+    if (strlen($firstname) > 40) $firstname='\GoudyStMTT '.$firstname; # TODO verify size!
+    elseif (strlen($firstname) > 26) $firstname='\GoudyStMTTlarge '.$firstname; 
+    elseif (strlen($firstname) > 20) $firstname='\GoudyStMTTLARGE '.$firstname;
+		else  $firstname='\GoudyStMTTHuge '.$firstname;
+
     if (strlen($name) > 40) $name='\GoudyStMTT '.$name; # TODO verify size!
     elseif (strlen($name) > 26) $name='\GoudyStMTTlarge '.$name; 
     elseif (strlen($name) > 20) $name='\GoudyStMTTLARGE '.$name;
     else  $name='\GoudyStMTTHuge '.$name;
 
-    if (strlen($what) > 56) $what='\GoudyStMTTtiny '.$what; 
-    elseif (strlen($what) > 49) $what='\GoudyStMTTscriptsize '.$what;
-    elseif (strlen($what) > 40) $what='\GoudyStMTTfootnotesize '.$what; 
-    else $what='\GoudyStMTT '.$what; 
+    if (strlen($what) > 56)     $what='\normalsize '.$what; 
+    elseif (strlen($what) > 49) $what='\large '.$what;
+    elseif (strlen($what) > 40) $what='\Large '.$what; 
+    else                        $what='\huge '.$what; 
 
-    if (!empty($badgebg)) $badgebg='\GoudyStMTTsmall '.$badgebg;
+    if (!empty($badgebg)) $badgebg='\normalsize '.$badgebg;
 
   }
 
@@ -387,7 +394,7 @@ function gen_badges_source($f) {
 
     $y+=0.1; ## vertical offset
 
-    $rv.='\put('.$x.','.$y.'){\makebox(4.5,3.6){\card{'.$name.'}{'.$what.'}{'.$badgebg.'}}}'."\n";
+    $rv.='\put('.$x.','.$y.'){\makebox(4.5,3.6){\card{'.$firstname.'}{'.$name.'}{'.$what.'}{'.$badgebg.'}}}'."\n";
     $cnt++;
     if ($cnt%4 == 0) {
       $rv.='%
@@ -434,10 +441,19 @@ function badge_tex_header() {
   return '
 \documentclass{article}
 %\usepackage{a4}
+\usepackage[T1]{fontenc}
+\font\GoudyStMTTtiny fonts/VeraMoBd at8pt
+\font\GoudyStMTTscriptsize fonts/VeraMoBd at9pt
+\font\GoudyStMTTfootnotesize fonts/VeraMoBd at10pt
+\font\GoudyStMTTsmall fonts/VeraMoBd at12pt
+\font\GoudyStMTT fonts/VeraMoBd at14pt
+\font\GoudyStMTTlarge fonts/VeraMoBd at24pt
+\font\GoudyStMTTLARGE fonts/VeraMoBd at28pt
+\font\GoudyStMTTHuge fonts/VeraMoBd at34pt
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MARGINS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \textwidth       7.50in
-\textheight     10.50in
+\textheight     10.60in
 \oddsidemargin   -.35in
 \evensidemargin  -.35in
 \topmargin      -1.50in
@@ -460,36 +476,39 @@ function badge_tex_header() {
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% CARD MACRO [\card] %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\card#1#2#3{
+\def\card#1#2#3#4{
 	\rotatebox{-90}{
-	\parbox[c][4.5cm]{9.0cm}{
-  \vspace*{1.35cm}
-  \hspace*{0.90cm}
-  \image{height=1.50cm,width=7.5cm}{badge_ccrma}
+	\parbox[c][3.3in]{4.0in}{
+  \vspace*{3.5in}
+  \hspace*{-0.25in}
+  \image{height=1cm,width=4.84cm}{badge_ccrma}
   }
-  \hspace*{-9.0cm}
+  \hspace*{-4.4in}
   \begin{tabular}{c}
-{ \hspace*{.20in}\image{height=1.2cm,width=5.28cm}{badgelogo}
-  \parbox[c]{.8in}{\vspace*{-0.30in}Conference\\\\2012}}\\\\%
-  \vspace{0.30in}\\\\%
-  \hspace*{.15in}{#1}\\\\%
-  \vspace*{-0.12in}\\\\%
-  \hspace*{.15in}{#3}\\\\%
-  \vspace*{-0.12in}\\\\%
-  \hspace*{.15in}{#2}\\\\%
+{ 
+  \vspace*{1.0in}
+	\hspace*{-.60in}\image{height=1.25cm,width=5.5cm}{badgelogo}
+  \parbox[c]{1in}{\vspace*{-0.30in}Conference\\\\2012}}\\\\%
+  \vspace{-1.00in}\\\\%
+  \hspace*{-.95in}{#1}\\\\%
+  \hspace*{-.95in}{#2}\\\\%
+  \vspace*{0.12in}\\\\%
+  \hspace*{-.95in}{#4}\\\\%
+  %\vspace*{0.0in}\\\\%
+  \hspace*{-.95in}{#3}\\\\%
 		\end{tabular}%
 }
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% CUT MARKS [\cuts] %%% %%%%%%%%%%%%%%%%%%%%%%%%%
 \def\cuts{
-  \put(-0.2,9.6){\rule{0.2cm}{0.5pt}}\\\\%
+  \put(-0.2,9.55){\rule{0.2cm}{0.5pt}}\\\\%
   \put(-0.2,5.1){\rule{0.2cm}{0.5pt}}\\\\%
-	\put(-0.2,0.6){\rule{0.2cm}{0.5pt}}\\\\%
+	\put(-0.2,0.65){\rule{0.2cm}{0.5pt}}\\\\%
 
-  \put(7.3,9.6){\rule{0.2cm}{0.5pt}}\\\\%
+  \put(7.3,9.55){\rule{0.2cm}{0.5pt}}\\\\%
   \put(7.3,5.1){\rule{0.2cm}{0.5pt}}\\\\%
-	\put(7.3,0.6){\rule{0.2cm}{0.5pt}}\\\\%
+	\put(7.3,0.65){\rule{0.2cm}{0.5pt}}\\\\%
 
 	\put(0.0,0.4){\line(0,1){0.1}}%
 	\put(3.6,0.4){\line(0,1){0.1}}%
@@ -502,6 +521,7 @@ function badge_tex_header() {
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% BEGIN DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagestyle{empty}
+\RequirePackage{fix-cm}
 \begin{document}
 \setlength{\unitlength}{1in}%
 ';
