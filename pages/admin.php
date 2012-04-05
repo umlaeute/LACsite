@@ -285,6 +285,7 @@ function gen_badges_pdf($f) {
   @copy (DOCROOTDIR.'img/fonts/GoudyStMTT.ttf', TMPDIR.'GoudyStMTT.ttf'); 
   @copy (DOCROOTDIR.'img/fonts/ttfonts.map', TMPDIR.'ttfonts.map'); 
   @copy (DOCROOTDIR.'img/fonts/T1-WGL4x.enc', TMPDIR.'T1-WGL4x.enc'); 
+  @copy (DOCROOTDIR.'img/badgeback.pdf', TMPDIR.'badgeback.pdf');
 
   @unlink (TMPDIR.'lac2012badges.pdf');
   echo '<pre style="font-size:70%; line-height:1.2em;">';
@@ -381,17 +382,25 @@ function gen_badges_source($f) {
 
   }
 
-    #$x=($cnt%2)?"0.0":"3.4";
-    #$y=8-(($cnt%5)*2);
-    $x=($cnt%2)?"3.4":"0.0";
-    $y=8-2*floor(($cnt%10)/2);
+    $x=($cnt%2)?"3.6":"0.0";
+    $y=5-4.5*floor(($cnt%4)/2);
 
     $y+=0.1; ## vertical offset
 
-    $rv.='\put('.$x.','.$y.'){\makebox(3.5,2.0){\card{'.$name.'}{'.$what.'}{'.$badgebg.'}}}'."\n";
+    $rv.='\put('.$x.','.$y.'){\makebox(4.5,3.6){\card{'.$name.'}{'.$what.'}{'.$badgebg.'}}}'."\n";
     $cnt++;
-    if ($cnt%10 == 0) {
+    if ($cnt%4 == 0) {
       $rv.='%
+\end{picture}
+
+\pagebreak
+
+\begin{picture}(7.5,10.5)%
+\cuts
+\put(0.0,5.1){\rotatebox{0}{\includegraphics{badgeback.pdf}}}
+\put(3.6,5.1){\rotatebox{0}{\includegraphics{badgeback.pdf}}}
+\put(0.0,0.6){\rotatebox{0}{\includegraphics{badgeback.pdf}}}
+\put(3.6,0.6){\rotatebox{0}{\includegraphics{badgeback.pdf}}}
 \end{picture}
 
 \pagebreak
@@ -402,6 +411,16 @@ function gen_badges_source($f) {
     }
   }
 $rv.='%
+\end{picture}
+
+\pagebreak
+
+\begin{picture}(7.5,10.5)%
+\cuts
+\put(0.0,5.1){\rotatebox{0}{\includegraphics{badgeback.pdf}}}
+\put(3.6,5.1){\rotatebox{0}{\includegraphics{badgeback.pdf}}}
+\put(0.0,0.6){\rotatebox{0}{\includegraphics{badgeback.pdf}}}
+\put(3.6,0.6){\rotatebox{0}{\includegraphics{badgeback.pdf}}}
 \end{picture}
 
 \end{document}
@@ -419,8 +438,8 @@ function badge_tex_header() {
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MARGINS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \textwidth       7.50in
 \textheight     10.50in
-\oddsidemargin   -.25in
-\evensidemargin  -.25in
+\oddsidemargin   -.35in
+\evensidemargin  -.35in
 \topmargin      -1.50in
 \itemindent      0.00in
 \parindent       0.00in
@@ -442,7 +461,8 @@ function badge_tex_header() {
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% CARD MACRO [\card] %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\card#1#2#3{
-  \parbox[c][4.5cm]{9.0cm}{
+	\rotatebox{-90}{
+	\parbox[c][4.5cm]{9.0cm}{
   \vspace*{1.35cm}
   \hspace*{0.90cm}
   \image{height=1.50cm,width=7.5cm}{badge_ccrma}
@@ -457,30 +477,27 @@ function badge_tex_header() {
   \hspace*{.15in}{#3}\\\\%
   \vspace*{-0.12in}\\\\%
   \hspace*{.15in}{#2}\\\\%
-  \end{tabular}%
+		\end{tabular}%
+}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% CUT MARKS [\cuts] %%% %%%%%%%%%%%%%%%%%%%%%%%%%
 \def\cuts{
-  \put(-0.1,10.0){\rule{0.2cm}{0.5pt}}\\\\%
-  \put(-0.1,8.0){\rule{0.2cm}{0.5pt}}\\\\%
-  \put(-0.1,6.0){\rule{0.2cm}{0.5pt}}\\\\%
-  \put(-0.1,4.0){\rule{0.2cm}{0.5pt}}\\\\%
-  \put(-0.1,2.0){\rule{0.2cm}{0.5pt}}\\\\%
-  \put(-0.1,0.0){\rule{0.2cm}{0.5pt}}\\\\%
-  \put(7.1,10.0){\rule{0.2cm}{0.5pt}}\\\\%
-  \put(07.1,8.0){\rule{0.2cm}{0.5pt}}\\\\%
-  \put(07.1,6.0){\rule{0.2cm}{0.5pt}}\\\\%
-  \put(07.1,4.0){\rule{0.2cm}{0.5pt}}\\\\%
-  \put(07.1,2.0){\rule{0.2cm}{0.5pt}}\\\\%
-  \put(07.1,0.0){\rule{0.2cm}{0.5pt}}\\\\%
-%
-  \put(0.2,-0.2){\line(0,1){0.1}}%
-  \put(3.6,-0.2){\line(0,1){0.1}}%
-  \put(7.0,-0.2){\line(0,1){0.1}}%
-  \put(0.2,10.1){\line(0,1){0.1}}%
-  \put(3.6,10.1){\line(0,1){0.1}}%
-  \put(7.0,10.1){\line(0,1){0.1}}%
+  \put(-0.2,9.6){\rule{0.2cm}{0.5pt}}\\\\%
+  \put(-0.2,5.1){\rule{0.2cm}{0.5pt}}\\\\%
+	\put(-0.2,0.6){\rule{0.2cm}{0.5pt}}\\\\%
+
+  \put(7.3,9.6){\rule{0.2cm}{0.5pt}}\\\\%
+  \put(7.3,5.1){\rule{0.2cm}{0.5pt}}\\\\%
+	\put(7.3,0.6){\rule{0.2cm}{0.5pt}}\\\\%
+
+	\put(0.0,0.4){\line(0,1){0.1}}%
+	\put(3.6,0.4){\line(0,1){0.1}}%
+	\put(7.2,0.4){\line(0,1){0.1}}%
+
+	\put(0.0,9.7){\line(0,1){0.1}}%
+	\put(3.6,9.7){\line(0,1){0.1}}%
+	\put(7.2,9.7){\line(0,1){0.1}}%
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% BEGIN DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
