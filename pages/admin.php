@@ -324,9 +324,9 @@ function gen_badges_source($f) {
     $v=parse_ini_file(REGLOGDIR.$filename);
     $firstname=str_replace(',','',$v['reg_prename']);
     $name=str_replace(',','', $v['reg_name']);
-    $firstname=texify_umlauts($firstname);
-    $name=texify_umlauts($name);
-    $what=texify_umlauts($v['reg_tagline']);
+    $firstname=texify_umlauts(trim($firstname));
+    $name=texify_umlauts(trim($name));
+    $what=texify_umlauts(trim($v['reg_tagline']));
     $badgebg='';
     if (isset($v['reg_vip'])) {
       switch(strtolower($v['reg_vip'])) {
@@ -372,20 +372,22 @@ function gen_badges_source($f) {
     # Vera/Goudy FONT:
     if (strlen($firstname) > 40) $firstname='\GoudyStMTT '.$firstname; # TODO verify size!
     elseif (strlen($firstname) > 26) $firstname='\GoudyStMTTlarge '.$firstname; 
-    elseif (strlen($firstname) > 20) $firstname='\GoudyStMTTLARGE '.$firstname;
+    elseif (strlen($firstname) > 16) $firstname='\GoudyStMTTLARGE '.$firstname;
 		else  $firstname='\GoudyStMTTHuge '.$firstname;
 
     if (strlen($name) > 40) $name='\GoudyStMTT '.$name; # TODO verify size!
     elseif (strlen($name) > 26) $name='\GoudyStMTTlarge '.$name; 
-    elseif (strlen($name) > 20) $name='\GoudyStMTTLARGE '.$name;
+    elseif (strlen($name) > 16) $name='\GoudyStMTTLARGE '.$name;
     else  $name='\GoudyStMTTHuge '.$name;
 
-    if (strlen($what) > 56)     $what='\normalsize '.$what; 
+		if (empty($what))           $what='\large\vspace{1ex}';
+		else if (strlen($what) > 56)$what='\normalsize '.$what; 
     elseif (strlen($what) > 49) $what='\large '.$what;
     elseif (strlen($what) > 40) $what='\Large '.$what; 
-    else                        $what='\huge '.$what; 
+    else                        $what='\Large '.$what; 
 
-    if (!empty($badgebg)) $badgebg='\normalsize '.$badgebg;
+		if (!empty($badgebg)) $badgebg='\normalsize '.$badgebg;
+		else $badgebg='\normalsize\vspace{1ex}';
 
   }
 
@@ -412,7 +414,7 @@ function gen_badges_source($f) {
 
 \pagebreak
 
-\begin{picture}(7.5,10.5)%
+\begin{picture}(7.5,10.6)%
 \cuts
 ';
     }
@@ -447,8 +449,8 @@ function badge_tex_header() {
 \font\GoudyStMTTfootnotesize fonts/VeraMoBd at10pt
 \font\GoudyStMTTsmall fonts/VeraMoBd at12pt
 \font\GoudyStMTT fonts/VeraMoBd at14pt
-\font\GoudyStMTTlarge fonts/VeraMoBd at24pt
-\font\GoudyStMTTLARGE fonts/VeraMoBd at28pt
+\font\GoudyStMTTlarge fonts/VeraMoBd at20pt
+\font\GoudyStMTTLARGE fonts/VeraMoBd at26pt
 \font\GoudyStMTTHuge fonts/VeraMoBd at34pt
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MARGINS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -487,15 +489,15 @@ function badge_tex_header() {
   \begin{tabular}{c}
 { 
   \vspace*{1.0in}
-	\hspace*{-.60in}\image{height=1.25cm,width=5.5cm}{badgelogo}
+	\hspace*{-.70in}\image{height=1.25cm,width=5.5cm}{badgelogo}
   \parbox[c]{1in}{\vspace*{-0.30in}Conference\\\\2012}}\\\\%
   \vspace{-1.00in}\\\\%
-  \hspace*{-.95in}{#1}\\\\%
-  \hspace*{-.95in}{#2}\\\\%
-  \vspace*{0.12in}\\\\%
-  \hspace*{-.95in}{#4}\\\\%
-  %\vspace*{0.0in}\\\\%
-  \hspace*{-.95in}{#3}\\\\%
+  \hspace*{-.70in}{#1}\\\\%
+  \hspace*{-.70in}{#2}\\\\%
+  \vspace*{0.5ex}\\\\%
+  \hspace*{-.67in}{#4}\\\\%
+  \vspace*{-0.5ex}\\\\%
+  \hspace*{-.70in}{#3}\\\\%
 		\end{tabular}%
 }
 }
