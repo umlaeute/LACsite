@@ -17,8 +17,8 @@ function printstreamheader() {
 	echo '<th>Description</th>'."\n";
 	echo '<th>Geometry</th>'."\n";
 	echo '<th>FPS</th>'."\n";
-	echo '<th>V bit/s</th>'."\n";
 	echo '<th>A bit/s</th>'."\n";
+	echo '<th>V bit/s</th>'."\n";
 	echo '<th>Listeners</th>'."\n";
 	echo '<th>up since</th>'."\n";
 	echo '</tr>'."\n";
