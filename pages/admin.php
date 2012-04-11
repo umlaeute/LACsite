@@ -406,10 +406,10 @@ function gen_badges_source($f) {
 
 \begin{picture}(7.5,10.5)%
 \cuts
-\put(0.0,4.4){\rotatebox{0}{\includegraphics{badgeback.pdf}}}
-\put(3.6,4.4){\rotatebox{0}{\includegraphics{badgeback.pdf}}}
-\put(0.0,-0.1){\rotatebox{0}{\includegraphics{badgeback.pdf}}}
-\put(3.6,-0.1){\rotatebox{0}{\includegraphics{badgeback.pdf}}}
+\put(0.0,5.1){\rotatebox{0}{\includegraphics{badgeback.pdf}}}
+\put(3.6,5.1){\rotatebox{0}{\includegraphics{badgeback.pdf}}}
+\put(0.0,0.6){\rotatebox{0}{\includegraphics{badgeback.pdf}}}
+\put(3.6,0.6){\rotatebox{0}{\includegraphics{badgeback.pdf}}}
 \end{picture}
 
 \pagebreak
