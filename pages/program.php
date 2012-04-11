@@ -1,10 +1,15 @@
 <?php
 
   function program_header($mode,$details) {
-    echo '<div class="center" style="margin-top:.5em; margin-bottom:.-5em;">During the conference, A/V live streams will available for the main track.<br/>Live stream information will be made available here. Remote participants are invited to join <a href="http://webchat.freenode.net/?channels=lac2012" rel="external">#lac2012 on irc.freenode.net</a><br/><br/></div>';
     echo '<h1>Conference Schedule</h1>'."\n";
 ### Note during conference about streaming and IRC ###
-#    echo '<div class="center" style="margin-top:.5em; margin-bottom:.-5em;">During the conference, live A/V streams are available at <a href="http://streamer.stackingdwarves.net/" rel="external">http://streamer.stackingdwarves.net/</a><br/>Backup server: <a href="http://radio.linuxaudio.org/" rel="external">http://radio.linuxaudio.org/</a><p>Remote participants are invited to join <a href="http://webchat.freenode.net/?channels=lac2012" rel="external">#lac2012 on irc.freenode.net</a>, to be able to take part in the discussions, ask questions, and get technical assistance in case of stream problems.</p><p>Conference Material can be found on the <a href="'.local_url('download').'">Download Page</a>.</p><br/></div>';
+    echo '<div class="center" style="margin-top:.5em; margin-bottom:.-5em;"><p>During the conference, live A/V streams are available for the main track.</p><p>Remote participants are invited to join <a href="http://webchat.freenode.net/?channels=lac2012" rel="external">#lac2012 on irc.freenode.net</a>, to be able to take part in the discussions, ask questions, and get technical assistance in case of stream problems.</p><p>Conference Material can be found on the <a href="'.local_url('download').'">Download Page</a>.</p><br/></div>';
+    #echo '<iframe src="streamsrc.php" style="width:100%; height:12em; border:0px;"></iframe>';
+    echo '<div innerHTML="streamsrc.php" style="width:100%; border:0px;">';
+    require_once('streamsrc.php');
+    echo '</div>';
+
+    echo '<br/><hr/>'."\n";
 
     echo '<p class="ptitle">Timetable Format: ';
     if ($mode!='list' || $details)
