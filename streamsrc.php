@@ -32,6 +32,8 @@ function streamtable() {
 	echo stripstreamtable($src0);
 	echo stripstreamtable($src1);
 	echo '</table>'."\n";
+	echo '<p>Play live video in browser: <a href="video.php?id=-1">HQ/US</a>, <a href="video.php?id=-2">LQ/US</a>, <a href="video.php?id=-3">HQ/EU</a>, <a href="video.php?id=-4">LQ/EU</a>.';
+	echo '</p>'."\n";
 }
 
 streamtable();
