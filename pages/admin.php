@@ -315,9 +315,9 @@ function gen_badges_source($f) {
 \cuts
 ';
   foreach ($f as $fn) {
-    if (false) { // skip already printed registrations XXX
+    if (true) { // skip already printed registrations XXX
       $regtime=preg_replace('@-.*$@', '', $fn);
-      if (strcasecmp($regtime, '20100426_193156') <= 0) continue;
+      if (strcasecmp($regtime, '20120411_184843') <= 0) continue;
     }
 
     $filename=$name = preg_replace('/[^a-zA-Z0-9_-]/','_', $fn).'.ini';
