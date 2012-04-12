@@ -32,8 +32,23 @@ function streamtable() {
 	echo stripstreamtable($src0);
 	echo stripstreamtable($src1);
 	echo '</table>'."\n";
-	echo '<p>Play live video in browser: <a href="video.php?id=-1">HQ/US</a>, <a href="video.php?id=-2">LQ/US</a>, <a href="video.php?id=-3">HQ/EU</a>, <a href="video.php?id=-4">LQ/EU</a>.';
-	echo '</p>'."\n";
+	$enabled=0;
+	if (strstr($src0, 'http://ccrma.stanford.edu:8080/lac2012-hq.ogv')) $enabled|=1;
+	if (strstr($src0, 'http://ccrma.stanford.edu:8080/lac2012-lq.ogv')) $enabled|=2;
+	if (strstr($src1, 'http://streamer.stackingdwarves.net:8000/lac2012-hq.ogv')) $enabled|=4;
+	if (strstr($src1, 'http://streamer.stackingdwarves.net:8000/lac2012-lq.ogv')) $enabled|=8;
+	if ($enabled) {
+		echo '<p>Play live video in browser: ';
+		if ($enabled&1)
+			echo '<a href="video.php?id=-1">HQ/US</a>, ';
+		if ($enabled&2)
+			echo '<a href="video.php?id=-2">LQ/US</a>, ';
+		if ($enabled&4)
+			echo '<a href="video.php?id=-3">HQ/EU</a>, ';
+		if ($enabled&8)
+			echo '<a href="video.php?id=-4">LQ/EU</a>';
+		echo '.</p>'."\n";
+	}
 }
 
 streamtable();
