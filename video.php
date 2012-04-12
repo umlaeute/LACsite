@@ -56,7 +56,7 @@ if ($id > 0) {
   $v=array(
     'title' => 'Live Stream - Low Quality',
     'url_stream' => 'http://ccrma.stanford.edu:8080/lac2012-lq.ogv',
-    'url_slides' => 'http://lac.linuxaudio.org/download',
+    'url_slides' => 'http://lac.linuxaudio.org/2012/files',
     'url_paper' => '',
     'url_misc' => '',
     'url_abstract' => '',
@@ -65,7 +65,7 @@ if ($id > 0) {
   $v=array(
     'title' => 'Live Stream - High Quality',
     'url_stream' => 'http://streamer.stackingdwarves.net:8000/lac2012-hq.ogv',
-    'url_slides' => 'http://lac.linuxaudio.org/download',
+    'url_slides' => 'http://lac.linuxaudio.org/2012/files',
     'url_paper' => '',
     'url_misc' => '',
     'url_abstract' => '',
@@ -74,7 +74,7 @@ if ($id > 0) {
   $v=array(
     'title' => 'Live Stream - Low Quality',
     'url_stream' => 'http://streamer.stackingdwarves.net:8000/lac2012-lq.ogv',
-    'url_slides' => 'http://lac.linuxaudio.org/download',
+    'url_slides' => 'http://lac.linuxaudio.org/2012/files',
     'url_paper' => '',
     'url_misc' => '',
     'url_abstract' => '',
