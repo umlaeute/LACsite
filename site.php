@@ -7,20 +7,19 @@
   $pages = array(
     'about' => 'About',
     'program'  => 'Schedule',
-    'registration' => 'Registration',
+    'files' => 'Download',
     'speakers'  => 'Delegates',
-    'participants' => 'Attendees',
     'sponsors' => 'Supporters',
-    'travel' => 'Travel &amp; Stay',
     'contact' => 'Contact'
   );
 
 # other available pages - not shown as 'tabs'
   $hidden = array(
-    'files' => 'Download',
+    'registration' => 'Registration',
     'participation' => 'Participate',
     'profile' => 'Profile',
-    'profile' => 'Profile',
+    'travel' => 'Travel &amp; Stay',
+    'participants' => 'Attendees',
   );
 
 # don't list sponsors on these pages
