@@ -13,12 +13,17 @@
  <li><a href="<?=CANONICALURL?>download/lac2012_proceedings.pdf">Proceedings 2012</a> (16MB PDF)</li>
  <li>A printed version of the proceedings can be ordered from <a href="http://www.lulu.com/shop/various-authors/linux-audio-conference-2012-proceedings/paperback/product-20074237.html">lulu.com</a> - ISBN: 9781105625466</li>
  <li>A torrent of all videos will be made available once we have wrapped up all sessions.</li>
+ <li>Official program notes for the Concerts: 
+ <a href="http://lac.linuxaudio.org/2012/download/04-12-12_linuxconcert1_final.pdf">(1) Thursday</a>,
+ <a href="http://lac.linuxaudio.org/2012/download/04-13-12_linuxconcert2_final.pdf">(2) Friday</a>,
+ <a href="http://lac.linuxaudio.org/2012/download/04-14-12_linuxconcert3_final.pdf">(3) Saturday</a>.
+ </li>
 <!--
  <li><a href="http://download.linuxaudio.org/torrents/lac2012_recordings.torrent">All Videos .torrent</a> (13.5GB)</li>
 -->
 </ul>
 <p></p>
-<p>The soundtrack to the <a href="http://vimeo.com/album/1888676/video/39556888" rel="external">LAC trailer sequence</a> was composed by <a href="http://soundcloud.com/krzysztof-gawlas" rel="external">Krzysztof Gawlas</a>. It received 28% of all votes while the runner-up by Atte-André Jensen got 18%.<br/>The top-5 can submissions can be found at <a href="http://vimeo.com/album/1888676/format:detail" rel="external">Vimeo</a>.</p>
+<p>The soundtrack to the <a href="http://vimeo.com/album/1888676/video/39556888" rel="external">LAC trailer sequence</a> was composed by <a href="http://soundcloud.com/krzysztof-gawlas" rel="external">Krzysztof Gawlas</a>. It received 28% of all votes while the runner-up by Atte-André Jensen got 18%.<br/>The top-5 submissions can be found at <a href="http://vimeo.com/album/1888676/format:detail" rel="external">Vimeo</a>.</p>
 
 <p><em>Note</em> that all A/V is provided in Ogg/Theora/Vorbis. Should you have problems playing these, consult Wikipedia's <a href="http://en.wikipedia.org/wiki/Wikipedia:Media_help_%28Ogg%29" rel="external">OGG media help</a>.<br/> <br/>
 </p>
