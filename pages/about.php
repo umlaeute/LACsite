@@ -6,9 +6,9 @@ platform.
 2012 marks the 10th anniversary of the event and it is the first time the LAC takes place in the United States.
 </p>
 <h1>LAC 2012 is over</h1>
-<!--
+<div class="center">
 <a href="img/LAC2012_group_picture.jpg"><img src="img/LAC2012_group_picture_small.jpg" alt="group picture"/></a>
--->
+</div>
 <p>
 The Linux Audio Conference 2012 is over but we're <b>not quite done, yet</b>. Conference material (paper PDFs, slides, photos and more) is being been made publicly available. <b>Stay tuned for further updates.</b>
 See the <a href="<?=local_url('files')?>">Download</a> page for more information.<br/>
