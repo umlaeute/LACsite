@@ -1359,7 +1359,10 @@ if (1) {
     if (isset($_REQUEST['details']))
       echo '<input name="details" type="hidden" value="'.$_REQUEST['details'].'"/>';
 
-    print_filterfields($a_users, $a_locations, $filter, true);
+    if (isset($_REQUEST['pdb_filterid'])) {
+      echo '<input class="small" type="submit" title="Show all entries" value="Show All Entries"/>';
+    } else 
+      print_filterfields($a_users, $a_locations, $filter, true);
     echo '</fieldset>';
     echo '</form>';
     echo '<div style="margin-bottom:1em;">&nbsp;</div>';
