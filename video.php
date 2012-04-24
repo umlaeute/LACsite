@@ -85,9 +85,14 @@ if ($id > 0) {
 
 if ($config['hidepapers']) $v['url_paper'] = '';
 
-$url=$v['url_stream'];
 $w=720;$h=576;
+$url=$v['url_stream'];
 
+if (in_array($id, array(30,31,37,55,59,68,73,83,84,85))) { # 16:9 recordings
+  $w=854;$h=480;
+}
+if (isset($v['width']))  $w=$v['width'];
+if (isset($v['height'])) $h=$v['height'];
 
 $ua=$_SERVER['HTTP_USER_AGENT'];
 $jar=BASEURL.'static/cortado_url.jar';
