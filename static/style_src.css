@@ -410,6 +410,7 @@ p.pix {font-size:90%;margin:.5em 0em; text-align:justify;}
 #content ul {padding-left:.5em;}
 ul.multicolumn   {width:100%;}
 ul.multicolumn li{float:left; width:33%;}
+ul.nobullet li{list-style:none;}
 
 #infoframe, #ieframe {
   border:1px solid white;

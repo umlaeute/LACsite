@@ -65,10 +65,13 @@ $pt=array(
 	'Ping',
 );
 
-echo '<ul class="multicolumn">'."\n";
+echo '<ul class="multicolumn nobullet">'."\n";
 for ($i=0; $i<51; $i++) {
 	$n=($i%3)*17 + floor($i/3) +1;
-	echo '<li>'.$n.' '.$pt[$n].'</li>'."\n";
+	echo '<li>'.$n.'. '.$pt[$n].'</li>'."\n";
 }
+echo '<li>&nbsp;</li><li>&nbsp;</li><li>52. Ping</li>'."\n";
 echo "</ul>\n";
+echo '<div class="clearer"></div>'."\n";
+
 ?>
