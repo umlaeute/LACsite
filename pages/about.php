@@ -7,7 +7,9 @@ platform.
 </p>
 
 <h1>LAC 2012 is history</h1>
+<p>
 The Linux Audio Conference 2012 is over. We'd like to thank all contributors and participants to make LAC an enjoyable experience.
+</p>
 <div class="center">
 <a href="img/LAC2012_group_picture.jpg"><img src="img/LAC2012_group_picture_small.jpg" alt="group picture"/></a>
 </div>

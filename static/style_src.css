@@ -228,6 +228,7 @@ div.menuitem {
 /*#content input, */
 #content textarea {border: 1px solid black;}
 #content ul       {margin-left:1em; text-align:justify;}
+#content ol       {margin-left:1.5em; text-align:justify;}
 #supporter a,
 #supporterbar a   {text-decoration:none;}
 #supporter th,
