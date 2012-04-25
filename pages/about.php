@@ -8,7 +8,7 @@ platform.
 
 <h1>LAC 2012 is history</h1>
 <p>
-The Linux Audio Conference 2012 is over. We'd like to thank all contributors and participants to make LAC an enjoyable experience.
+The Linux Audio Conference 2012 is over. We'd like to thank all contributors and participants form making LAC an enjoyable experience.
 </p>
 <div class="center">
 <a href="img/LAC2012_group_picture.jpg"><img src="img/LAC2012_group_picture_small.jpg" alt="group picture"/></a>
@@ -21,7 +21,7 @@ Enjoy reading/listening/watching.<br/>
 -->
 </p>
 
-<h1>Blogs, Image Galleries, etc.</h1>
+<h1>Blogs, Image Galleries & Impressions.</h1>
 Many thanks to all who contributed to LAC and helped to document this extraordinary event:
 <ul>
 <li>Rui's <a href="http://www.rncbc.org/lac2012" rel="external">Image Gallery</a></li>

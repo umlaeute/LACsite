@@ -72,7 +72,7 @@ for ($i=0; $i<51; $i++) {
 	$n=($i%3)*17 + floor($i/3) +1;
 	echo '<li>'.$n.'. '.$pt[$n].'</li>'."\n";
 }
-echo '<li>&nbsp;</li><li>&nbsp;</li><li>52. Ping</li>'."\n";
+echo '<li>&nbsp;</li><li>&nbsp;</li><li>52. <a href="https://ccrma.stanford.edu/~nando/ping/" rel="external">Ping</a></li>'."\n";
 echo "</ul>\n";
 echo '<div class="clearer"></div>'."\n";
 echo '<p>If you are or know any of the unidentified persons, please <a href="'.local_url('contact').'">drop us a line</a>.</p>';
