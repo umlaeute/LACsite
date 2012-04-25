@@ -14,7 +14,7 @@ function printerror($msg) {
   exit;
 }
 
-$allowlive=true; # $config['allowlivevideo'];
+$allowlive=false; # $config['allowlivevideo'];
 $id=0;
 
 if (!isset($_REQUEST['id'])) {
@@ -207,5 +207,6 @@ if (!empty($v['abstract'])) {
 </div>
 <div class="footer">Back to <a href="<?=local_url('program')?>">conference site</a>.</div>
 </div>
+<br/>
 </body>
 </html>
