@@ -1,10 +1,12 @@
-<h1>Who is Who</h1>
-
-<a href="img/LAC2012_group_picture.jpg">High quality version of the group picture</a>.
+<h1>LAC2012 Group Picture</h1>
 
 <div class="center">
 <img src="img/LAC2012_group_picture_small.jpg" alt="group picture"/>
 </div>
+<div class="center">
+View <a href="img/LAC2012_group_picture.jpg">full-size</a> version of above group picture.
+</div>
+<h1>Who is..</h1>
 <div class="center">
 <img src="img/LAC2012_group_picture_ann.jpg" alt="annotated group picture"/>
 </div>
@@ -73,5 +75,4 @@ for ($i=0; $i<51; $i++) {
 echo '<li>&nbsp;</li><li>&nbsp;</li><li>52. Ping</li>'."\n";
 echo "</ul>\n";
 echo '<div class="clearer"></div>'."\n";
-
-?>
+echo '<p>If you are or know any of the unidentified persons, please <a href="'.local_url('contact').'">drop us a line</a>.</p>';
