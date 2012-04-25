@@ -62,6 +62,7 @@ $pt=array(
 	'',
 	'', # 50
 	'Phillips Olajide',
+	'Ping',
 );
 
 echo '<ul class="multicolumn">'."\n";
