@@ -28,7 +28,7 @@ $pt=array(
 	'Giso Grimm (?)', # 15
 	'Yann Orlarey',
 	'Romain Michon',
-	'',
+	'Nils Peters',
 	'Matthias Geier',
 	'', # 20
 	'',
@@ -38,7 +38,7 @@ $pt=array(
 	'Oscar Pablo Di Liscia', # 25
 	'José Rafael Subía Valdez (?)',
 	'Zachary Berkowitz',
-	'',
+	'Conor Curran',
 	'Joachim Heintz',
 	'', # 30
 	'Rui Nuno Capela',
@@ -47,7 +47,7 @@ $pt=array(
 	'',
 	'IOhannes m zmölnig',
 	'',
-	'',
+	'Oded Ben-Tal',
 	'',
 	'',
 	'Peter Plessas', # 40
@@ -58,7 +58,7 @@ $pt=array(
 	'Fernando Lopez-Lezcano', # 45
 	'Bruno Ruviaro',
 	'Harry van Haaren',
-	'',
+	'Jens Ahrens',
 	'',
 	'', # 50
 	'Phillips Olajide',
