@@ -5,12 +5,14 @@ Open Source Software for music, sound and other media with Linux as the main
 platform.
 2012 marks the 10th anniversary of the event and it is the first time the LAC takes place in the United States.
 </p>
-<h1>LAC 2012 is over</h1>
+
+<h1>LAC 2012 is history</h1>
+The Linux Audio Conference 2012 is over. We'd like to thank all contributors and participants to make LAC an enjoyable experience.
 <div class="center">
 <a href="img/LAC2012_group_picture.jpg"><img src="img/LAC2012_group_picture_small.jpg" alt="group picture"/></a>
 </div>
 <p>
-The Linux Audio Conference 2012 is over but we're <b>not quite done, yet</b>. Conference material (paper PDFs, slides, photos and more) is being been made publicly available. <b>Stay tuned for further updates.</b>
+All Conference material (paper PDFs, slides, photos and more) is being been made publicly available. <b>Stay tuned for further updates.</b>
 See the <a href="<?=local_url('files')?>">Download</a> page for more information.<br/>
 <!--
 Enjoy reading/listening/watching.<br/>
@@ -18,7 +20,7 @@ Enjoy reading/listening/watching.<br/>
 </p>
 
 <h1>Blogs, Image Galleries, etc.</h1>
-Many thanks to all who contributed to LAC and helped to document this extraordinary conference:
+Many thanks to all who contributed to LAC and helped to document this extraordinary event:
 <ul>
 <li>Rui's <a href="http://www.rncbc.org/lac2012" rel="external">Image Gallery</a></li>
 <li>Official (CCRMA) <a href="http://www.youtube.com/playlist?list=PL3E401B6717574D22" rel="external">Recording of the Sound-Night on YouTube</a> (thanks to Dave Kerr)</li>

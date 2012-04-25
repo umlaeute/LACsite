@@ -13,7 +13,7 @@
  <li><a href="<?=CANONICALURL?>download/lac2012_proceedings.pdf">Proceedings 2012</a> (16MB PDF)</li>
  <li>A printed version of the proceedings can be ordered from <a href="http://www.lulu.com/shop/various-authors/linux-audio-conference-2012-proceedings/paperback/product-20074237.html">lulu.com</a> - ISBN: 9781105625466</li>
  <li>A torrent of all videos will be made available once we have wrapped up all sessions.</li>
- <li>Official program notes for the Concerts: 
+ <li>Official program notes for the concerts: 
  <a href="http://lac.linuxaudio.org/2012/download/04-12-12_linuxconcert1_final.pdf">(1) Thursday</a>,
  <a href="http://lac.linuxaudio.org/2012/download/04-13-12_linuxconcert2_final.pdf">(2) Friday</a>,
  <a href="http://lac.linuxaudio.org/2012/download/04-14-12_linuxconcert3_final.pdf">(3) Saturday</a>.
@@ -22,8 +22,15 @@
  <li><a href="http://download.linuxaudio.org/torrents/lac2012_recordings.torrent">All Videos .torrent</a> (13.5GB)</li>
 -->
 </ul>
-<p></p>
-<p>The soundtrack to the <a href="http://vimeo.com/album/1888676/video/39556888" rel="external">LAC trailer sequence</a> was composed by <a href="http://soundcloud.com/krzysztof-gawlas" rel="external">Krzysztof Gawlas</a>. It received 28% of all votes while the runner-up by Atte-André Jensen got 18%.<br/>The top-5 submissions can be found at <a href="http://vimeo.com/album/1888676/format:detail" rel="external">Vimeo</a>.</p>
+<p><br/></p>
+<hr/>
+<p><br/></p>
+<p>The soundtrack to the <a href="http://vimeo.com/album/1888676/video/39556888" rel="external">LAC trailer sequence</a> was composed by <a href="http://soundcloud.com/krzysztof-gawlas" rel="external">Krzysztof Gawlas</a>. It received 28% of all votes while the runner-ups by <a href="http://atte.dk" rel="external">Atte-André Jensen</a> (used for <a href="<?=local_url('program','pdb_filterlocation=3&pdb_filterday=3')?>">CCRMA stage recordings</a>) and <a href="http://soundcloud.com/audiophobdubstep" rel="external">Max Riesenbeck</a> (used for <a href="<?=local_url('program','pdb_filterlocation=7&pdb_filterday=3')?>">Sound-night</a>) both got 18%. The top-5 submissions can be found at <a href="http://vimeo.com/album/1888676/format:detail" rel="external">Vimeo</a>.</p>
+
+<p>Conference live-streaming and video-archive was made possible by <a href="http://stackingdwarves.net" rel="external">Jörn Nettingsmeiner</a> and <a href="http://gareus.org" rel="external">Robin Gareus</a>. A/V equipment was operated by Jörn Nettingsmeier who also took care of audio-engineering, production, IRC communication and a lot of details that nobody else thought of. The concerts were recorded by Dave Kerr.</p>
+
+<p>All video recordings are licensed in terms of the <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>. Attribute to <a xmlns:cc="http://creativecommons.org/ns#" href="<?=CANONICALURL?>" property="cc:attributionName" rel="cc:attributionURL"><?=$config['organizaion']?></a>. The copyright(s) remain with the respective author/speaker/presenter.
+</p>
 
 <p><em>Note</em> that all A/V is provided in Ogg/Theora/Vorbis. Should you have problems playing these, consult Wikipedia's <a href="http://en.wikipedia.org/wiki/Wikipedia:Media_help_%28Ogg%29" rel="external">OGG media help</a>.<br/> <br/>
 </p>
