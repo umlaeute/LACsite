@@ -46,7 +46,7 @@ $pt=array(
 	'Rui Nuno Capela',
 	'',
 	'',
-	'',
+	'Juan Reyes (?)',
 	'IOhannes m zmölnig',
 	'',
 	'Oded Ben-Tal',
