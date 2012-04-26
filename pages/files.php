@@ -13,6 +13,7 @@
  <li><a href="<?=CANONICALURL?>download/lac2012_proceedings.pdf">Proceedings 2012</a> (16MB PDF)</li>
  <li>A printed version of the proceedings can be ordered from <a href="http://www.lulu.com/shop/various-authors/linux-audio-conference-2012-proceedings/paperback/product-20074237.html">lulu.com</a> - ISBN: 9781105625466</li>
  <li>A torrent of all videos will be made available once we have wrapped up all sessions.</li>
+ <li>Full-size and annotated version of the <a href="<?=local_url('whoiswho')?>">Group Picture</a>.</li>
  <li>Official program notes for the concerts: 
  <a href="http://lac.linuxaudio.org/2012/download/04-12-12_linuxconcert1_final.pdf">(1) Thursday</a>,
  <a href="http://lac.linuxaudio.org/2012/download/04-13-12_linuxconcert2_final.pdf">(2) Friday</a>,

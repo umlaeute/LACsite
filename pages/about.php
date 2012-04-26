@@ -11,10 +11,10 @@ platform.
 The Linux Audio Conference 2012 is over. We'd like to thank all contributors and participants form making LAC an enjoyable experience.
 </p>
 <div class="center">
-<a href="img/LAC2012_group_picture.jpg"><img src="img/LAC2012_group_picture_small.jpg" alt="group picture"/></a>
+<a href="<?=local_url('whoiswho')?>"><img src="img/LAC2012_group_picture_small.jpg" alt="group picture"/></a>
 </div>
 <p>
-All Conference material (paper PDFs, slides, photos and more) is being been made publicly available. <b>Stay tuned for further updates.</b>
+All Conference material (paper PDFs, slides, photos and more) is being made publicly available. <b>Stay tuned for further updates.</b>
 See the <a href="<?=local_url('files')?>">Download</a> page for more information.<br/>
 <!--
 Enjoy reading/listening/watching.<br/>

@@ -1,4 +1,4 @@
-<h1>LAC2012 Group Picture</h1>
+<h1>LAC 2012 Group Picture</h1>
 
 <div class="center">
 <img src="img/LAC2012_group_picture_small.jpg" alt="group picture"/>
@@ -36,7 +36,7 @@ $pt=array(
 	'',
 	'',
 	'',
-	'Michael ?',
+	'Michael ??',
 	'Oscar Pablo Di Liscia', # 25
 	'José Rafael Subía Valdez (?)',
 	'Zachary Berkowitz',
@@ -75,4 +75,4 @@ for ($i=0; $i<51; $i++) {
 echo '<li>&nbsp;</li><li>&nbsp;</li><li>52. <a href="https://ccrma.stanford.edu/~nando/ping/" rel="external">Ping</a></li>'."\n";
 echo "</ul>\n";
 echo '<div class="clearer"></div>'."\n";
-echo '<p>If you are or know any of the unidentified persons, please <a href="'.local_url('contact').'">drop us a line</a>.</p>';
+echo '<p>If you know - or are - any of the unidentified persons, please <a href="'.local_url('contact').'">drop us a line</a>.</p>';
