@@ -22,7 +22,7 @@ Enjoy reading/listening/watching.<br/>
 </p>
 
 <h1>Blogs, Image Galleries & Impressions.</h1>
-Many thanks to all who contributed to LAC and helped to document this extraordinary event:
+Many thanks to all who helped to document this extraordinary event:
 <ul>
 <li>Rui's <a href="http://www.rncbc.org/lac2012" rel="external">Image Gallery</a></li>
 <li>Official (CCRMA) <a href="http://www.youtube.com/playlist?list=PL3E401B6717574D22" rel="external">Recording of the Sound-Night on YouTube</a> (thanks to Dave Kerr)</li>
@@ -62,7 +62,7 @@ Please <a href="<?=local_url('registration')?>">register</a> to attend.
  */?>
 <h1>Where &amp; When</h1>
 <p>
-April 12-15 2012, <a href="https://ccrma.stanford.edu/" rel="external">CCRMA</a> (Center for Computer Research in Music and Acoustics), <a href="http://www.stanford.edu/" rel="external">Stanford University</a>, California. See the <a href="<?=local_url('contact')?>">Contact</a> and <a href="<?=local_url('travel')?>">Travel</a> pages for details. The conference main tracks was streamed live and the video recordings have been archived and are linked from the <a href="<?=local_url('program')?>">schedule</a>.
+April 12-15 2012, <a href="https://ccrma.stanford.edu/" rel="external">CCRMA</a> (Center for Computer Research in Music and Acoustics), <a href="http://www.stanford.edu/" rel="external">Stanford University</a>, California. See the <a href="<?=local_url('contact')?>">Contact</a> and <a href="<?=local_url('travel')?>">Travel</a> pages for details. The conference main track was streamed live and the video recordings have been archived and are linked from the <a href="<?=local_url('program')?>">schedule</a>.
 </p>
 <div class="ptitle">
 <img src="img/ccrma_at_dusk.jpg" alt="CCRMA building 'The Knoll' at dusk"/><br/>
