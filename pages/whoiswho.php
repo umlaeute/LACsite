@@ -20,14 +20,14 @@ $pt=array(
 	'Robin Gareus',
 	'Steven Yi',
 	'',
-	'',
+	'Michael Hoeldke',
 	'Aaron Heller',
 	'', # 10
-	'',
+	'Egor Sanin',
 	'Miller Puckette',
-	'',
+	'Tracy Hytry',
 	'Albert Gräf',
-	'Giso Grimm (?)', # 15
+	'Giso Grimm', # 15
 	'Yann Orlarey',
 	'Romain Michon',
 	'Nils Peters',
@@ -36,13 +36,13 @@ $pt=array(
 	'',
 	'',
 	'',
-	'',
+	'Michael ?',
 	'Oscar Pablo Di Liscia', # 25
 	'José Rafael Subía Valdez (?)',
 	'Zachary Berkowitz',
 	'Conor Curran',
 	'Joachim Heintz',
-	'', # 30
+	'Alexia Massalin', # 30
 	'Rui Nuno Capela',
 	'',
 	'',
@@ -50,7 +50,7 @@ $pt=array(
 	'IOhannes m zmölnig',
 	'',
 	'Oded Ben-Tal',
-	'',
+	'Steve Batte',
 	'',
 	'Peter Plessas', # 40
 	'Carr Wilkerson',

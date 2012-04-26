@@ -6,7 +6,7 @@
 #pages listed as 'tabs' on the site
   $pages = array(
     'about' => 'About',
-    'program'  => 'Schedule',
+    'program'  => 'Schedule/Archive',
     'files' => 'Download',
     'speakers'  => 'Delegates',
     'sponsors' => 'Supporters',
