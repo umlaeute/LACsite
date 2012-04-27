@@ -196,7 +196,7 @@ echo '</ul></div>';
 
 if (!empty($v['abstract'])) {
   echo '<div class="abstract">';
-  echo '<p>'.xhtmlify($v['abstract']).'</p>';
+  echo '<p>'.str_replace("\\n",'<br/>', xhtmlify($v['abstract'])).'</p>';
   echo '</div>';
 }
 
