@@ -15,7 +15,7 @@ $pt=array(
 	'XXX', # 0
 	'John Chowning', 
 	'Dave Phillips',
-	'',
+	'Stephen Pope',
 	'Frank Ekeberg',
 	'Robin Gareus',
 	'Steven Yi',
@@ -33,10 +33,10 @@ $pt=array(
 	'Nils Peters',
 	'Matthias Geier',
 	'', # 20
+	'Jeff Sandys',
+	'Mike McCrea',
 	'',
-	'',
-	'',
-	'Michael ??',
+	'Michael Wilson',
 	'Oscar Pablo Di Liscia', # 25
 	'José Rafael Subía Valdez (?)',
 	'Zachary Berkowitz',
@@ -46,9 +46,9 @@ $pt=array(
 	'Rui Nuno Capela',
 	'',
 	'',
-	'Juan Reyes (?)',
+	'Juan Reyes',
 	'IOhannes m zmölnig',
-	'',
+	'Juan Pampin',
 	'Oded Ben-Tal',
 	'Steve Batte',
 	'',
@@ -61,8 +61,8 @@ $pt=array(
 	'Bruno Ruviaro',
 	'Harry van Haaren',
 	'Jens Ahrens',
-	'',
-	'', # 50
+	'Anne Swanberg (?)',
+	'Marika Swanberg (?)', # 50
 	'Phillips Olajide',
 	'Ping',
 );
