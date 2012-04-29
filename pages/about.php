@@ -21,7 +21,7 @@ Enjoy reading/listening/watching.<br/>
 -->
 </p>
 
-<h1>Blogs, Image Galleries & Impressions.</h1>
+<h1>Blogs, Image Galleries &amp; Impressions.</h1>
 Many thanks to all who helped to document this extraordinary event:
 <ul>
 <li>Rui's <a href="http://www.rncbc.org/lac2012" rel="external">Image Gallery</a></li>
