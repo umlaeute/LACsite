@@ -168,13 +168,13 @@ if (!empty($url)) {
     $tt=rawurlencode(SHORTTITLE.' - '.$v['title']);
     echo '
   <div id="sociallinkbar">
-    <a id="lnktwtr" rel="_blank" href="http://twitter.com/share?url='.$tu.'" title="Tweet This!"></a>
-    <a id="lnkturl" rel="_blank" href="http://tinyurl.com/create.php?url='.$tu.'" title="Create TinyURL"></a>
-    <a id="lnkbtly" rel="_blank" href="http://bit.ly/?url='.$tu.'" title="Create bit.ly shortcut"></a>
-    <a id="lnkfbok" rel="_blank" href="http://www.facebook.com/sharer.php?u='.$tu.'&amp;t='.$tt.'" title="Send to Facebook"></a>
-    <a id="lnkgogl" rel="_blank" href="https://www.google.com/bookmarks/mark?op=add&amp;bkmk='.$tu.'&amp;title='.$tt.'&amp;annotation=&amp;nui=1&amp;service=bookmarks" title="Send to Google"></a>
-    <a id="lnksupn" rel="_blank" href="http://www.stumbleupon.com/submit?url='.$tu.'&amp;title='.$tt.'" title="Submit to Stumble Upon"></a>
-    <a id="lnkdlus" rel="_blank" href="http://delicious.com/save?v=6&amp;jump=yes&amp;url='.$tu.'&amp;title='.$tt.'" title="Bookmark this on Del.icio.us"></a>
+    <a id="lnktwtr" rel="external" href="http://twitter.com/share?url='.$tu.'" title="Tweet This!"></a>
+    <a id="lnkturl" rel="external" href="http://tinyurl.com/create.php?url='.$tu.'" title="Create TinyURL"></a>
+    <a id="lnkbtly" rel="external" href="http://bit.ly/?url='.$tu.'" title="Create bit.ly shortcut"></a>
+    <a id="lnkfbok" rel="external" href="http://www.facebook.com/sharer.php?u='.$tu.'&amp;t='.$tt.'" title="Send to Facebook"></a>
+    <a id="lnkgogl" rel="external" href="https://www.google.com/bookmarks/mark?op=add&amp;bkmk='.$tu.'&amp;title='.$tt.'&amp;annotation=&amp;nui=1&amp;service=bookmarks" title="Send to Google"></a>
+    <a id="lnksupn" rel="external" href="http://www.stumbleupon.com/submit?url='.$tu.'&amp;title='.$tt.'" title="Submit to Stumble Upon"></a>
+    <a id="lnkdlus" rel="external" href="http://delicious.com/save?v=6&amp;jump=yes&amp;url='.$tu.'&amp;title='.$tt.'" title="Bookmark this on Del.icio.us"></a>
   </div>
 ';
   }
@@ -187,11 +187,11 @@ echo '<div class="links"><ul>';
 if (!empty($url))
   echo '<li>Video URL: <a href="'.$url.'">'.basename($url).'</a></li>';
 if (!empty($v['url_slides']))
-  echo '<li>Slides: <a href="'.$v['url_slides'].'" rel="_blank">'.$v['url_slides'].'</a></li>';
+  echo '<li>Slides: <a href="'.$v['url_slides'].'" rel="external">'.$v['url_slides'].'</a></li>';
 if (!empty($v['url_paper']))
-  echo '<li>Paper: <a href="'.$v['url_paper'].'" rel="_blank">'.$v['url_paper'].'</a></li>';
+  echo '<li>Paper: <a href="'.$v['url_paper'].'" rel="external">'.$v['url_paper'].'</a></li>';
 if (!empty($v['url_misc']))
-  echo '<li>Site: <a href="'.$v['url_misc'].'" rel="_blank">'.$v['url_misc'].'</a></li>';
+  echo '<li>Site: <a href="'.$v['url_misc'].'" rel="external">'.$v['url_misc'].'</a></li>';
 echo '</ul></div>';
 
 if (!empty($v['abstract'])) {
