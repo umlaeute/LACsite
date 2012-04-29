@@ -27,7 +27,15 @@ Many thanks to all who helped to document this extraordinary event:
 <li>Rui's <a href="http://www.rncbc.org/lac2012" rel="external">Image Gallery</a></li>
 <li>Official (CCRMA) <a href="http://www.youtube.com/playlist?list=PL3E401B6717574D22" rel="external">Recording of the Sound-Night on YouTube</a> (thanks to Dave Kerr)</li>
 <li>RNCBC's <a href="http://www.youtube.com/user/rncbchannel" rel="external">YouTube Channel</a> - Linux Sound Night @ CoHo</li>
-<li>Jeff Sandys' <a href="http://alg0rhythm.livejournal.com/" rel="external">Blog</a></li>
+<li>Jeff Sandys' <a href="http://alg0rhythm.livejournal.com/" rel="external">Blog</a>
+<!--
+(
+<a href="http://alg0rhythm.livejournal.com/6385.html" rel="external">Thu</a>,
+<a href="http://alg0rhythm.livejournal.com/6420.html" rel="external">Fri</a>,
+<a href="http://alg0rhythm.livejournal.com/6666.html" rel="external">Sat</a>
+)
+-->
+</li>
 <li>Marc's <a href="http://www.dinkum.nl/music_and_sound/lac2012" rel="external">Image collection</a></li>
 <li>...</li>
 <!--
