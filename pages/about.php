@@ -14,11 +14,8 @@ The Linux Audio Conference 2012 is over. We'd like to thank all contributors and
 <a href="<?=local_url('whoiswho')?>"><img src="img/LAC2012_group_picture_small.jpg" alt="group picture"/></a>
 </div>
 <p>
-All Conference material (paper PDFs, slides, photos and more) is being made publicly available. <b>Stay tuned for further updates.</b>
-See the <a href="<?=local_url('files')?>">Download</a> page for more information.<br/>
-<!--
-Enjoy reading/listening/watching.<br/>
--->
+All Conference material (paper PDFs, slides, photos and more) has been made publicly available:
+See the <a href="<?=local_url('files')?>">Download</a> page for details. Enjoy reading/listening/watching.
 </p>
 
 <h1>Blogs, Image Galleries &amp; Impressions.</h1>
@@ -28,13 +25,11 @@ Many thanks to all who helped to document this extraordinary event:
 <li>Official (CCRMA) <a href="http://www.youtube.com/playlist?list=PL3E401B6717574D22" rel="external">Recording of the Sound-Night on YouTube</a> (thanks to Dave Kerr)</li>
 <li>RNCBC's <a href="http://www.youtube.com/user/rncbchannel" rel="external">YouTube Channel</a> - Linux Sound Night @ CoHo</li>
 <li>Jeff Sandys' <a href="http://alg0rhythm.livejournal.com/" rel="external">Blog</a>
-<!--
 (
 <a href="http://alg0rhythm.livejournal.com/6385.html" rel="external">Thu</a>,
 <a href="http://alg0rhythm.livejournal.com/6420.html" rel="external">Fri</a>,
 <a href="http://alg0rhythm.livejournal.com/6666.html" rel="external">Sat</a>
 )
--->
 </li>
 <li>Marc's <a href="http://www.dinkum.nl/music_and_sound/lac2012" rel="external">Image collection</a></li>
 <li>...</li>

@@ -6,13 +6,11 @@
   dirlisttable('download');
 */ ?>
 
-<p>We are still busy to edit/upload recordings of each talk. Please stay tuned.<br/></p>
-
 <ul>
  <li>Slides, Papers and Videos of every presentation are linked from the <a href="<?=local_url('program', 'mode=list')?>">schedule</a>.</li>
  <li><a href="<?=CANONICALURL?>download/lac2012_proceedings.pdf">Proceedings 2012</a> (16MB PDF)</li>
  <li>A printed version of the proceedings can be ordered from <a href="http://www.lulu.com/shop/various-authors/linux-audio-conference-2012-proceedings/paperback/product-20074237.html">lulu.com</a> - ISBN: 9781105625466</li>
- <li>A torrent of all videos will be made available once we have wrapped up all sessions.</li>
+ <li>A torrent of all videos (24GB) is available: <a href="http://download.linuxaudio.org/torrents/lac2012_recordings.torrent">lac2012_recordings.torrent</a>. Please seed.</li>
  <li>Full-size and annotated version of the <a href="<?=local_url('whoiswho')?>">Group Picture</a>.</li>
  <li>Official program notes for the concerts: 
  <a href="http://lac.linuxaudio.org/2012/download/04-12-12_linuxconcert1_final.pdf">(1) Thursday</a>,
