@@ -3,12 +3,12 @@
 The Linux Audio Conference is the international conference about
 Open Source Software for music, sound and other media with Linux as the main
 platform.
-2012 marks the 10th anniversary of the event and it is the first time the LAC takes place in the United States.
+2012 marked the 10th anniversary of the event and it is the first time the LAC took place in the United States.
 </p>
 
 <h1>LAC 2012 is history</h1>
 <p>
-The Linux Audio Conference 2012 is over. We'd like to thank all contributors and participants form making LAC an enjoyable experience.
+The Linux Audio Conference 2012 is over. We'd like to thank all contributors and participants for making LAC an enjoyable experience.
 </p>
 <div class="center">
 <a href="<?=local_url('whoiswho')?>"><img src="img/LAC2012_group_picture_small.jpg" alt="group picture"/></a>
