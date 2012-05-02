@@ -22,7 +22,7 @@ See the <a href="<?=local_url('files')?>">Download</a> page for details. Enjoy r
 Many thanks to all who helped to document this extraordinary event:
 <ul>
 <li>Rui's <a href="http://www.rncbc.org/lac2012" rel="external">Image Gallery</a></li>
-<li>Official (CCRMA) <a href="http://www.youtube.com/playlist?list=PL3E401B6717574D22" rel="external">Recording of the Sound-Night on YouTube</a> (thanks to Dave Kerr)</li>
+<li>Official (CCRMA) <a href="http://www.youtube.com/playlist?list=PL3E401B6717574D22" rel="external">Recording of the Sound-Night on YouTube</a></li>
 <li>RNCBC's <a href="http://www.youtube.com/user/rncbchannel" rel="external">YouTube Channel</a> - Linux Sound Night @ CoHo</li>
 <li>Jeff Sandys' <a href="http://alg0rhythm.livejournal.com/" rel="external">Blog</a>
 (
