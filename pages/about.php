@@ -32,6 +32,7 @@ Many thanks to all who helped to document this extraordinary event:
 )
 </li>
 <li>Marc's <a href="http://www.dinkum.nl/music_and_sound/lac2012" rel="external">Image collection</a></li>
+<li>Nando's <a href="http://ccrma.stanford.edu/~nando/albums/LAC2012/" rel="external">Photo Album</a></li>
 <li>...</li>
 <!--
 <li><a href="" rel="external"></a></li>
