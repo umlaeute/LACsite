@@ -33,7 +33,7 @@ Many thanks to all who helped to document this extraordinary event:
 </li>
 <li>Marc's <a href="http://www.dinkum.nl/music_and_sound/lac2012" rel="external">Image collection</a></li>
 <li>Nando's <a href="http://ccrma.stanford.edu/~nando/albums/LAC2012/" rel="external">Photo Album</a></li>
-<li>Dave's <a href="http://lwn.net/SubscriberLink/495612/7434608ed37498b8/" rel="external">article on LWN.net</a> (thanks to LWN to make this subscriber-link publically available.)</li>
+<li>Dave's <a href="http://lwn.net/Articles/495612/" rel="external">article on LWN.net</a> (thanks to LWN to make this subscriber-link publically available.)</li>
 <li>...</li>
 <!--
 <li><a href="" rel="external"></a></li>
