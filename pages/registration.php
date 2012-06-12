@@ -61,7 +61,7 @@ Personal data provided by you in the registration form will be kept confidential
     return '';
   }
 
-  function gen_options ($d,$k) {
+  function gen_reg_options ($d,$k) {
     foreach ($d as $v => $t) {
       echo '    <option value="'.$v.'"'._sl($k,$v).'>'.$t.'</option>'."\n";
     }
@@ -387,12 +387,12 @@ Personal data provided by you in the registration form will be kept confidential
   <br/>
   <label class="la" for="reg_country"><span class="error">*</span>Country:</label>
   <select name="reg_country" id="reg_country" size="1">
-<?php gen_options($ctry, 'reg_country'); ?>
+<?php gen_reg_options($ctry, 'reg_country'); ?>
   </select>
   <br/>
   <label class="la" for="reg_agegroup">Age:</label>
   <select name="reg_agegroup" id="reg_agegroup" size="1">
-<?php gen_options($ages, 'reg_agegroup'); ?>
+<?php gen_reg_options($ages, 'reg_agegroup'); ?>
   </select>
   <br/>
 </fieldset>
