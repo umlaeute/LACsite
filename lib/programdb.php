@@ -150,17 +150,6 @@
     return $res->fetch(PDO::FETCH_ASSOC);
   }
 
-  function _slv($k, $c) {
-    if ($k == $c) return ' selected="selected"';
-    return '';
-  }
-
-  function gen_options ($d,$k) {
-    foreach ($d as $v => $t) {
-      echo '    <option value="'.xhtmlify($v).'"'._slv($k,$v).'>'.xhtmlify($t).'</option>'."\n";
-    }
-  }
-
   function fetch_activity_by_location($db, $location_id) {
     $rv = array();
     $q='SELECT DISTINCT title, id from activity

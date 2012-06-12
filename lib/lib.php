@@ -90,6 +90,18 @@
     return (substr($s,0,$l).'..');
   }
 
+  function _slv($k, $c) {
+    if ($k == $c) return ' selected="selected"';
+    return '';
+  }
+
+  function gen_options ($d,$k) {
+    foreach ($d as $v => $t) {
+      echo '    <option value="'.xhtmlify($v).'"'._slv($k,$v).'>'.xhtmlify($t).'</option>'."\n";
+    }
+  }
+
+
   function bytes_to_text($bytesize) { 
     $sizearray = array('bytes', 'KiB', 'MiB', 'GiB'); 
     $d = 0; 
