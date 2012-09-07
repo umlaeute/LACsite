@@ -194,7 +194,7 @@ function render_list($head, $speakers) {
 }
 
 function render_profile($s, $acts) {
-	global $db;
+	global $db, $config;
 	if (!is_array($s)) return; ## ERROR
 	if (! (intval($s['id']) > 0)) return; ## ERROR
 	programlightbox();
@@ -218,21 +218,29 @@ function render_profile($s, $acts) {
 		$a_locations = fetch_selectlist($db, 'location');
 		echo '<h4>Session(s)</h4>';
 		echo '<ul>'.NL;
-		echo '<li><a href="'.local_url('program','pdb_filterauthor='.$s['id'].'&amp;mode=list&amp;details=1').'">Show [all] in program.</a></li>';
+		if ($config['profile_session_info'] === true) {
+			echo '<li><a href="'.local_url('program','pdb_filterauthor='.$s['id'].'&amp;mode=list&amp;details=1').'">Show [all] in program.</a></li>';
+		}
 		foreach ($acts as $r) {
-			echo '<li class="active" onclick="showInfoBox('.$r['id'].');">';
+			echo '<li';
+			if ($config['profile_session_info'] === true) {
+				echo ' class="active" onclick="showInfoBox('.$r['id'].');"';
+			}
+			echo '>';
 			echo '<span'.(($r['status']==0)?' class="cancelled"':'').'>';
 			echo xhtmlify($r['title']);
 			echo '</span>';
 			# link to id, 
 			echo '<br/>&raquo;&nbsp;<span>'.translate_type($r['type']).'</span>';
-			echo ' &raquo; <span>day:'.$r['day'].' &raquo; '.translate_time($r['starttime']).'</span>';
+			if ($config['profile_session_info'] === true) {
+				echo ' - <span>day:'.$r['day'].' - '.translate_time($r['starttime']).'</span>';
 
-      if ($r['type']!='c') { ### all concerts same location --- lib/programdb.php:768
-				if (!empty($r['location_id'])) {
-					echo '<br/>&raquo;&nbsp;Location: '.$a_locations[$r['location_id']];
+				if ($r['type']!='c') { ### all concerts same location --- lib/programdb.php:768
+					if (!empty($r['location_id'])) {
+						echo '<br/>&raquo;&nbsp;Location: '.$a_locations[$r['location_id']];
+					}
 				}
-      }
+			}
 			echo '</li>'.NL;
 		}
 		echo '</ul>'.NL;
