@@ -38,6 +38,7 @@
 
 #define sponsors/supportes
   $sponsors = array(
+    'http://iem.kug.ac.at/' => array('img' => 'img/logos/iemlogo.png', 'title' => 'IEM'),
     'http://linuxaudio.org/' => array('img' => 'img/logos/lao.png', 'title' => 'linuxaudio.org'),
   );
 
