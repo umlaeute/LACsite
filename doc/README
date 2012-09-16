@@ -1,4 +1,4 @@
------  LAC 2011/2012 website ----
+-----  LAC 2011/2012/2013 website ----
 
 --- Setup ---
 Step 0)
@@ -12,14 +12,14 @@ Step 1) create 'config.php' with the following:
   define('TMPDIR',dirname($_SERVER['SCRIPT_FILENAME']).'/tmp/');
   define('DOCROOTDIR',dirname($_SERVER['SCRIPT_FILENAME']).'/');
 
-  define('LACY','2012');  
+  define('LACY','2013');  
   define('CANONICALURL', 'http://lac.linuxaudio.org/'.LACY.'/'); # used in sitemap
   define('SHORTTITLE', 'LAC '.LACY);
 
   define('PDOREGDB','sqlite:tmp/reg".LACY.".db');  
   define('PDOPRGDB','sqlite:tmp/lac'.LACY.'.db');  
 
-  define('BASEURL',''); # '/2012/' - same as RewriteBase incl. trailing '/'
+  define('BASEURL',''); # '/2013/' - same as RewriteBase incl. trailing '/'
   $config['userewrite']=false; # set to true if RewriteEngine is enabled
 
   $config['organizaion'] = 'linuxaudio.org'; # used as URI for calendar and CC-license
@@ -100,6 +100,7 @@ Is available at
 
 --- Copyright ---
 
+   Copyright (C) 2012 Robin Gareus <robin@linuxaudio.org>
    Copyright (C) 2011 Robin Gareus <robin@linuxaudio.org>
    Copyright (C) 2009, 2010 Robin Gareus <robin@gareus.org>
    Copyright (C) 2009 Marc Groenewegen <marcg@dinkum.nl>
