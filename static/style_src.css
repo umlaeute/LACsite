@@ -24,9 +24,9 @@ li.active:hover    {color:#203080;}
 #leftcolumn {
   position:relative;
   width:20%;
-  float:left;
+  float:right;
   min-width:15em;
-  margin:1em .5em 1em 1em;
+  margin:3em .5em 1em 1em;
 }
 #lefthead {
   height:12px;
@@ -65,8 +65,8 @@ li.active:hover    {color:#203080;}
 }
 #main {
   position:relative;
-  float:right;
-  margin:1em 1em 1em .5em;
+  float:left;
+  margin:1em 0em 1em 1.5em;
   width:75%;
   min-width:54em;
 }

@@ -25,6 +25,7 @@
 # don't list sponsors on these pages
   $nosponsors = array(
     'upload',
+    'sponsors',
     'admin',
     'adminschedule',
   );
