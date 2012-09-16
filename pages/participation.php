@@ -1,7 +1,7 @@
 <h1>Call for papers, music, installations and workshops</h1>
 <ul>
-<li>Deadline for paper-submissions: February 4th, 2013</li>
-<li>Deadline for Music/sound-installation submissions: February 4th, 2015</li>
+<li>Deadline for paper-submissions: <b>February 4th, 2013</b></li>
+<li>Deadline for Music/sound-installation submissions: <b>February 4th, 2015</b></li>
 <li>Notification of acceptance: <b>March 6th, 2013</b></li>
 <li>Deadline for camera-ready paper: <b>March 25th, 2013</b></li>
 </ul>
