@@ -5,17 +5,15 @@
 
 <h3>Street address:</h3>
 <p style="margin-left:2em;">
-Center for Computer Research in Music and Acoustics<br/>
-The Knoll,<br/>
-660 Lomita Court<br/>
-Stanford, California 94305-8180, USA<br/>
+Universität für Musik und darstellende Kunst Graz<br/>
+Leonhardstraße 15<br/>
+8010 Graz, Austria<br/>
 </p>
 <h3>Mailing address:</h3>
 <p style="margin-left:2em;">
-Center for Computer Research in Music and Acoustics<br/>
-Department of Music,<br/>
-Stanford University<br/>
-Stanford, California 94305-8180, USA
+Universität für Musik und darstellende Kunst Graz<br/>
+Leonhardstraße 15<br/>
+8010 Graz, Austria<br/>
 </p>
 
 <h1>Map</h1>

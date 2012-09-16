@@ -132,7 +132,7 @@
     <div id="mainfootl"> </div>
 <?php
   if (!$mtime_skip)
-    echo '<div id="createdby">Last modified: '.$mdate.' - Fernando Lopez-Lezcano, Bruno Ruviaro &amp; Robin Gareus</div>';
+    echo '<div id="createdby">Last modified: '.$mdate.' - IOhannes Zm&ouml;nig &amp; Robin Gareus</div>';
   else 
     echo '<div id="createdby"></div>';
 ?>

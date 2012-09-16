@@ -13,5 +13,6 @@ echo -n "git push/pull ? [Enter|Ctrl-C]"
 read || exit
 git pull || exit
 git push
-ssh rg42.org 'cd /var/sites/lac2012; git pull'
-ssh lac@linuxaudio.org 'cd /home/sites/lac.linuxaudio.org/2012/docroot; git pull'
+#ssh rg42.org 'cd /var/sites/lac2013; git pull'
+#ssh lac@linuxaudio.org 'cd /home/sites/lac.linuxaudio.org/2013/docroot; git pull'
+ssh lac@linuxaudio.org 'cd /home/sites/lac.linuxaudio.org/2013/docroot/dev; git pull'

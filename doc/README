@@ -7,8 +7,8 @@ Step 0)
 Step 1) create 'config.php' with the following:
 
 ---------8<---------
-<?php 
-  define('REGLOGDIR',dirname($_SERVER['SCRIPT_FILENAME']).'/regs/');  
+<?php
+  define('REGLOGDIR',dirname($_SERVER['SCRIPT_FILENAME']).'/regs/');
   define('TMPDIR',dirname($_SERVER['SCRIPT_FILENAME']).'/tmp/');
   define('DOCROOTDIR',dirname($_SERVER['SCRIPT_FILENAME']).'/');
 
@@ -17,6 +17,7 @@ Step 1) create 'config.php' with the following:
   define('SHORTTITLE', 'LAC '.LACY);
 
   define('PDOREGDB','sqlite:tmp/reg".LACY.".db');  
+  define('PDOPRGDB','sqlite:tmp/lac'.LACY.'.db');  
 
   define('BASEURL',''); # '/2012/' - same as RewriteBase incl. trailing '/'
   $config['userewrite']=false; # set to true if RewriteEngine is enabled

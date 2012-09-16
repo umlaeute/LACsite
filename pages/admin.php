@@ -278,7 +278,7 @@ function gen_badges_pdf($f) {
   $handle = fopen(TMPDIR.'lac2012badges.tex', "w");
   fwrite($handle, gen_badges_source($f));
   fclose($handle);
-  @copy (DOCROOTDIR.'img/badge_ccrma.png', TMPDIR.'badge_ccrma.png');
+  @copy (DOCROOTDIR.'img/badge_iem.png', TMPDIR.'badge_iem.png');
   @copy (DOCROOTDIR.'img/badgelogo.png', TMPDIR.'badgelogo.png');
   @copy (DOCROOTDIR.'img/fonts/VeraMoBd.afm', TMPDIR.'VeraMoBd.afm'); 
   @copy (DOCROOTDIR.'img/fonts/VeraMoBd.tfm', TMPDIR.'VeraMoBd.tfm'); 
@@ -483,7 +483,7 @@ function badge_tex_header() {
 	\parbox[c][3.3in]{4.0in}{
   \vspace*{3.5in}
   \hspace*{-0.25in}
-  \image{height=1cm,width=4.84cm}{badge_ccrma}
+  \image{height=1cm,width=4.84cm}{badge_iem}
   }
   \hspace*{-4.4in}
   \begin{tabular}{c}

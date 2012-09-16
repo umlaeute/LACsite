@@ -3,44 +3,8 @@
 The Linux Audio Conference is the international conference about
 Open Source Software for music, sound and other media with Linux as the main
 platform.
-2012 marked the 10th anniversary of the event and it is the first time the LAC took place in the United States.
 </p>
 
-<h1>LAC 2012 is history</h1>
-<p>
-The Linux Audio Conference 2012 is over. We'd like to thank all contributors and participants for making LAC an enjoyable experience.
-</p>
-<div class="center">
-<a href="<?=local_url('whoiswho')?>"><img src="img/LAC2012_group_picture_small.jpg" alt="group picture"/></a>
-</div>
-<p>
-All Conference material (paper PDFs, slides, photos and more) has been made publicly available:
-See the <a href="<?=local_url('files')?>">Download</a> page for details. Enjoy reading/listening/watching.
-</p>
-
-<h1>Blogs, Image Galleries &amp; Impressions.</h1>
-Many thanks to all who helped to document this extraordinary event:
-<ul>
-<li>Rui's <a href="http://www.rncbc.org/lac2012" rel="external">Image Gallery</a></li>
-<li>Official (CCRMA) <a href="http://www.youtube.com/playlist?list=PL3E401B6717574D22" rel="external">Recording of the Sound-Night on YouTube</a></li>
-<li>RNCBC's <a href="http://www.youtube.com/user/rncbchannel" rel="external">YouTube Channel</a> - Linux Sound Night @ CoHo</li>
-<li>Jeff Sandys' <a href="http://alg0rhythm.livejournal.com/" rel="external">Blog</a>
-(
-<a href="http://alg0rhythm.livejournal.com/6385.html" rel="external">Thu</a>,
-<a href="http://alg0rhythm.livejournal.com/6420.html" rel="external">Fri</a>,
-<a href="http://alg0rhythm.livejournal.com/6666.html" rel="external">Sat</a>
-)
-</li>
-<li>Marc's <a href="http://www.dinkum.nl/music_and_sound/lac2012" rel="external">Image collection</a></li>
-<li>Nando's <a href="http://ccrma.stanford.edu/~nando/albums/LAC2012/" rel="external">Photo Album</a></li>
-<li>Dave's <a href="http://lwn.net/Articles/495612/" rel="external">article on LWN.net</a> (thanks to LWN to make this subscriber-link publically available.)</li>
-<li>...</li>
-<!--
-<li><a href="" rel="external"></a></li>
--->
-</ul>
-
-<?php /*
 <h1>Target audience</h1>
 <p>
 The Linux Audio Conference brings together musicians, composers, sound artists, software developers, researchers and engineers working with Linux as an open, stable, professional platform for audio and media research and music production. 
@@ -64,29 +28,29 @@ See the
 to answer to the call for paper-presentations, workshops and music.
 Please <a href="<?=local_url('registration')?>">register</a> to attend. 
 </p>
- */?>
+
 <h1>Where &amp; When</h1>
 <p>
-April 12-15 2012, <a href="https://ccrma.stanford.edu/" rel="external">CCRMA</a> (Center for Computer Research in Music and Acoustics), <a href="http://www.stanford.edu/" rel="external">Stanford University</a>, California. See the <a href="<?=local_url('contact')?>">Contact</a> and <a href="<?=local_url('travel')?>">Travel</a> pages for details. The conference main track was streamed live and the video recordings have been archived and are linked from the <a href="<?=local_url('program')?>">schedule</a>.
+May 9-12 2013, <a href="http://iem.kug.ac.at/" rel="external">IEM</a> (Institut f&uuml;r Elektronische Musik und Akustik), <a href="http://http://www.kug.ac.at/" rel="external">Graz University</a>, Austria. See the <a href="<?=local_url('contact')?>">Contact</a> and <a href="<?=local_url('travel')?>">Travel</a> pages for details. The conference main track will be streamed and interaction will be possible via IRC for participants who can not attend locally. Information will be made available before the conference.
+<?php 
+/*
+<a href="<?=local_url('program')?>">schedule</a>.
+ */
+?>
 </p>
 <div class="ptitle">
-<img src="img/ccrma_at_dusk.jpg" alt="CCRMA building 'The Knoll' at dusk"/><br/>
-CCRMA is located on the Stanford University campus in <a href="https://ccrma.stanford.edu/about/knoll" rel="external">The Knoll</a>
+<img src="img/iem_cube.jpg" alt="IEM cube"/><br/>
 </div>
 <p>
-The Center for Computer Research in Music and Acoustics (CCRMA) at
-Stanford University is a multi-disciplinary facility where composers and
-researchers work together using computer-based technology both as an
-artistic medium and as a research tool. CCRMA has been using and
-developing Linux as an audio platform since 1997.
+TODO: ABOUT IEM...
 </p>
 
 <h1>Who?</h1>
-<?php /*
 <p>Check out the <a href="<?=local_url('participants')?>">list of participants</a> to see who else is coming.</p>
- */?>
-<p>LAC is organized by a community of GNU/Linux free/libre software users and developers that communicate through the <a href="http://lists.linuxaudio.org/">Linux-Audio-Users and Linux-Audio-Developers</a> mailing lists. LAC2012 is under the auspices of <a href="https://ccrma.stanford.edu" rel="external">CCRMA</a>, organized by <a href="https://ccrma.stanford.edu/~nando" rel="external">Fernando Lopez-Lezcano</a> and <a href="http://www.brunoruviaro.com/" rel="external">Bruno Ruviaro</a>, Frank Neumann, <a href="http://gareus.org" rel="external"> Robin Gareus</a> and <a href="https://ccrma.stanford.edu/~jos" rel="external">Julius O. Smith III</a>.</p>
+<p>LAC is organized by a community of GNU/Linux free/libre software users and developers that communicate through the <a href="http://lists.linuxaudio.org/">Linux-Audio-Users and Linux-Audio-Developers</a> mailing lists. LAC2013 is under the auspices of <a href="http://iem.kug.ac.at/" rel="external">IEM</a>, organized by <a href="http://puredata.info/author/zmoelnig" rel="external">IOhannes m. zmoelnig</a> with assistance of Frank Neumann, <a href="http://gareus.org" rel="external"> Robin Gareus</a> and Florian Hollerweger.</p>
 
+<?php
+/*
 <p>Review committee: (in alphabetical order)<br/>
 &nbsp;&nbsp; Fons Adriaensen, <em>Casa della Musica, Parma, Italy</em><br/>
 &nbsp;&nbsp; Tim Blechmann, <em>Vienna, Austria</em><br/>
@@ -106,20 +70,21 @@ developing Linux as an audio platform since 1997.
 &nbsp;&nbsp; Michael Wilson, <em>CCRMA, United States</em><br/>
 &nbsp;&nbsp; IOhannes Zmölnig, <em>Institute of Electronic Music and Acoustics (IEM@KUG), Austria</em><br/>
 </p>
-
-
+ */
+?>
 
 <h1>Links to prior Linux Audio Conferences</h1>
 <ul class="multicolumn">
-  <li><a href="http://lac.linuxaudio.org/2011/?page=download">Archive 2011</a></li>
+	<li><a href="http://lac.linuxaudio.org/2012/download">Archive 2012</a></li>
   <li><a href="http://lac.linuxaudio.org/2008/download/papers/">Papers 2008</a></li>
   <li><a href="http://lac.linuxaudio.org/2005/lac2005_proceedings.pdf">Proceedings 2005</a></li>
-  <li><a href="http://lac.linuxaudio.org/2010/?page=download">Archive 2010</a></li>
+  <li><a href="http://lac.linuxaudio.org/2011/?page=download">Archive 2011</a></li>
   <li><a href="http://lac.linuxaudio.org/2007/download/lac07_proceedings.pdf">Proceedings 2007</a></li>
   <li><a href="http://lac.linuxaudio.org/2004/lac2004_proceedings.pdf">Proceedings 2004</a></li>
-  <li><a href="http://lac.linuxaudio.org/2009/cdm/">Slides &amp; Papers 2009</a></li>
+  <li><a href="http://lac.linuxaudio.org/2010/?page=download">Archive 2010</a></li>
   <li><a href="http://lac.linuxaudio.org/2006/lac2006_proceedings.pdf">Proceedings 2006</a></li>
   <li><a href="http://lac.linuxaudio.org/2003/zkm/">Conference Material 2003</a></li>
+  <li><a href="http://lac.linuxaudio.org/2009/cdm/">Slides &amp; Papers 2009</a></li>
 </ul>
 <br style="clear:both;"/>
 <p><br/></p>

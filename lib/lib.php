@@ -14,13 +14,13 @@
     return false;
   }
 
-  function html5head($title='The Linux Audio Conference', $style='style.css', $add='') {
+  function html5head($title='The Linux Audio Conference', $style='style_src.css', $add='') {
 ?><!DOCTYPE html>
 <?php
     htmlhead($title, $style, $add);
   }
 
-  function xhtmlhead($title='Linux Audio Conference', $style='style.css', $add='') {
+  function xhtmlhead($title='Linux Audio Conference', $style='style_src.css', $add='') {
     ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <?php

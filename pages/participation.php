@@ -1,16 +1,16 @@
 <h1>Call for papers, music, installations and workshops</h1>
 <ul>
-<li>Deadline for paper-submissions: <span class="oldbold">January 22nd, 2012</span></li>
-<li>Deadline for Music/sound-installation submissions: <span class="oldbold">January 22nd, 2012</span></li>
-<li>Notification of acceptance: <b>February 6th, 2012</b></li>
-<!-- <li>Deadline for camera-ready paper: <b>March 1st, 2012</b></li> !-->
+<li>Deadline for paper-submissions: February 4th, 2013</li>
+<li>Deadline for Music/sound-installation submissions: February 4th, 2015</li>
+<li>Notification of acceptance: <b>March 6th, 2013</b></li>
+<li>Deadline for camera-ready paper: <b>March 25th, 2013</b></li>
 </ul>
 
 <h1>Call for Papers</h1>
 <p>
 Papers can be submitted for review via the
 <strong><a href="<?=CANONICALURL?>openconf/" rel="external">online paper submission</a></strong> system.
-Templates for paper submission for LaTeX and OpenOffice/LibreOffice are available <strong><a href="download/lac2012-templates.tar.gz">here</a></strong>.
+Templates for paper submission for LaTeX and OpenOffice/LibreOffice are available <strong><a href="download/lac2013-templates.tar.gz">here</a></strong>.
 </p>
 <p>
 Papers must be written and presented in English, 4&mdash;8 pages, with abstract (50&mdash;100 words, max. 500 words) and up to 5 keywords. 
@@ -62,7 +62,7 @@ Not all papers need to directly address Linux Audio. There is no limitation for 
 <h1>Call for Music, Installations and Workshops</h1>
 <p>
 Music, Installations and Workshops can be submitted for review via the
-<strong><a href="<?=CANONICALURL?>proposals/" rel="external">online music/installations/workshops submission</a></strong> system. Please download the complete <strong><a href="download/lac2012-call-for-miw.pdf">Call for Music, Installations and Workshops</a></strong> document with all the details before trying to submit. In short, we are looking for music and sound art that has been produced or composed entirely or mostly using GNU/Linux or other Open Source music software for:
+<strong><a href="<?=CANONICALURL?>proposals/" rel="external">online music/installations/workshops submission</a></strong> system. Please download the complete <strong><a href="download/lac2013-call-for-miw.pdf">Call for Music, Installations and Workshops</a></strong> document with all the details before trying to submit. In short, we are looking for music and sound art that has been produced or composed entirely or mostly using GNU/Linux or other Open Source music software for:
 </p>
 <ul>
   <li>The Electronic Music Concerts (fixed media or live performance works)</li>

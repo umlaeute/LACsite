@@ -1,6 +1,6 @@
 <h1>Registration policy</h1>
 <p>
-Registration and admittance to the LAC 2012 is <span class="standout">free</span> (gratis) but if you want to attend 
+Registration and admittance to the LAC 2013 is <span class="standout">free</span> (gratis) but if you want to attend 
 <span class="standout">you need to register</span> (scroll down).
 Note: Presenters and workshop-leaders are no exception to this rule. Please register.
 </p>
@@ -397,7 +397,7 @@ Personal data provided by you in the registration form will be kept confidential
 <fieldset class="fa">
 <legend>Conference specific:</legend>
   <label>There will be conference proceedings
-  available for a fee of about $20.</label><br/>
+  available for a fee of about &euro;20.</label><br/>
   <div class="la"><label class="la"><span class="error">*</span>Are you interested in buying a copy?</label></div>
   <div class="ra">
     <label><input type="radio" name="reg_proceedings" value="0"<?php _ck('reg_proceedings',0);?>/>No</label> &nbsp; &nbsp;

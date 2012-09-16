@@ -1,4 +1,4 @@
-AuthName "LAC 2012"
+AuthName "LAC 2013"
 ## Either use Basic Auth
 #AuthType Basic
 #AuthUserFile /var/cache/www/lac-basic.htpasswd
@@ -7,7 +7,6 @@ AuthName "LAC 2012"
 AuthType Digest
 AuthUserFile /var/cache/www/lac-digest.htpasswd
 AuthDigestProvider file
-
 
 <Files "logon.php">
   Require valid-user
@@ -20,22 +19,14 @@ AuthDigestProvider file
     Satisfy All
 </Files>
 
-
-## clean URLS
-## edit config.php - set $userewrite=true;
-## and define BASEURL to mateh the RewriteBase
-##
 #RewriteEngine on
-#RewriteBase /2012/
-##
-## Note:
-## This allows to cache static pages.
-## php evauluate  pages/about.php -> ./about
-##
+#RewriteBase /2013/
+#
+#RewriteRule ^video/(.*)               video.php?id=$1  [QSA,L]
 #RewriteRule ^vid/(.*)                 video.php?id=$1  [QSA,L]
 #RewriteRule ^nfo/(.*)                 raw.php?pdb_filterid=$1  [QSA,L]
+#RewriteRule ^program/([0-9]+)         index.php?page=program&pdb_filterid=$1  [R=301,L]
 #RewriteRule ^$                        index.php
 #RewriteCond %{REQUEST_FILENAME}       !-f
 #RewriteCond %{REQUEST_FILENAME}       !-d
-#RewriteRule ^video/(.*)               video.php?id=$1  [QSA,L]
 #RewriteRule ^(.*)                     index.php?page=$1  [QSA,L]
