@@ -74,7 +74,7 @@ li.active:hover    {color:#203080;}
   top:32px;
   height:8px;
   width:200%;
-	right:150px;
+	right:164px;
   z-index:0;
   background:transparent url(../img/iem_line.png) repeat scroll right top;
 }
@@ -87,7 +87,7 @@ li.active:hover    {color:#203080;}
   position:absolute;
   z-index:80;
   top:-82px;
-  right:8px;
+  right:7px;
   width:200px;
   height:200px;
   background:transparent url(../img/lac2013.png) no-repeat top right;
