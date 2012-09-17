@@ -62,7 +62,7 @@ Not all papers need to directly address Linux Audio. There is no limitation for 
 <h1>Call for Music, Installations and Workshops</h1>
 <p>
 Music, Installations and Workshops can be submitted for review via the
-<strong><a href="<?=CANONICALURL?>proposals/" rel="external">online music/installations/workshops submission</a></strong> system. Please download the complete <strong><a href="download/lac2013-call-for-miw.pdf">Call for Music, Installations and Workshops</a></strong> document with all the details before trying to submit. In short, we are looking for music and sound art that has been produced or composed entirely or mostly using GNU/Linux or other Open Source music software for:
+<strong><a href="<?=CANONICALURL?>MusicSoundArtMisc/" rel="external">online music/installations/workshops submission</a></strong> system. Please download the complete <strong><a href="download/lac2013-call-for-miw.pdf">Call for Music, Installations and Workshops</a></strong> document with all the details before trying to submit. In short, we are looking for music and sound art that has been produced or composed entirely or mostly using GNU/Linux or other Open Source music software for:
 </p>
 <ul>
   <li>The Electronic Music Concerts (fixed media or live performance works)</li>

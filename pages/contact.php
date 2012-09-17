@@ -18,7 +18,7 @@ Leonhardstraße 15<br/>
 
 <h1>Map</h1>
 <object id="map" type="text/html" style="width:100%;height:400px;"
-data="http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=IEM,+Inffeldgasse+10,+Graz&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=40.545434,56.513672&amp;ie=UTF8&amp;ll=47.058636,15.459663&amp;spn=0.006295,0.006295&amp;t=m&amp;output=embed">
+data="http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=IEM,+Inffeldgasse+10,+Graz&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=40.545434,56.513672&amp;ie=UTF8&amp;ll=47.060183,15.460253&amp;spn=0.006295,0.006295&amp;t=m&amp;output=embed">
 </object>
 <p>
 <small><a href="http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=IEM,+Inffeldgasse+10,+Graz&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=40.545434,56.513672&amp;ie=UTF8&amp;ll=47.058636,15.459663&amp;spn=0.006295,0.006295&amp;t=m" style="color:#0000FF;text-align:left;" rel="external">View Larger Map</a></small>

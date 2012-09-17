@@ -47,7 +47,7 @@ TODO: ABOUT IEM...
 
 <h1>Who?</h1>
 <p>Check out the <a href="<?=local_url('participants')?>">list of participants</a> to see who else is coming.</p>
-<p>LAC is organized by a community of GNU/Linux free/libre software users and developers that communicate through the <a href="http://lists.linuxaudio.org/">Linux-Audio-Users and Linux-Audio-Developers</a> mailing lists. LAC2013 is under the auspices of <a href="http://iem.kug.ac.at/" rel="external">IEM</a>, organized by <a href="http://puredata.info/author/zmoelnig" rel="external">IOhannes m. zmoelnig</a> with assistance of Frank Neumann, <a href="http://gareus.org" rel="external"> Robin Gareus</a> and Florian Hollerweger.</p>
+<p>LAC is organized by a community of GNU/Linux free/libre software users and developers that communicate through the <a href="http://lists.linuxaudio.org/">Linux-Audio-Users and Linux-Audio-Developers</a> mailing lists. LAC2013 is under the auspices of <a href="http://iem.kug.ac.at/" rel="external">IEM</a>, organized by <a href="http://puredata.info/author/zmoelnig" rel="external">IOhannes m. Zm&ouml;lnig</a> with assistance of Frank Neumann, <a href="http://gareus.org" rel="external"> Robin Gareus</a> and Florian Hollerweger.</p>
 
 <?php
 /*

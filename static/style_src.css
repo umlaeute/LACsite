@@ -173,10 +173,10 @@ div.menuitem {
 }
 #createdby {
   color: #808080; 
-  font-size:80%;
+  font-size:75%;
   padding-bottom:.75em;
-  padding-left:2em;
-  text-align:left;
+  padding-right:2em;
+  text-align:right;
 }
 #footerwrap {
 	text-align:center;
