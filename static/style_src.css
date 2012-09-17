@@ -23,9 +23,8 @@ li.active:hover    {color:#203080;}
 }
 #leftcolumn {
   position:relative;
-  width:20%;
   float:right;
-  min-width:15em;
+  width:200px;
   margin:3.5em .5em 1em 1em;
 }
 #lefthead {
@@ -74,7 +73,8 @@ li.active:hover    {color:#203080;}
   position:absolute;
   top:32px;
   height:8px;
-  width:90%;
+  width:200%;
+	right:150px;
   z-index:0;
   background:transparent url(../img/iem_line.png) repeat scroll right top;
 }
@@ -86,8 +86,8 @@ li.active:hover    {color:#203080;}
 #logoright {
   position:absolute;
   z-index:80;
-  top:-80px;
-  right:1em;
+  top:-82px;
+  right:8px;
   width:200px;
   height:200px;
   background:transparent url(../img/lac2013.png) no-repeat top right;
@@ -119,6 +119,11 @@ li.active:hover    {color:#203080;}
 #wherewhen {
   font-weight: bold;
   margin-top: 1em;
+}
+#titlestart {
+  height:12px;
+  width:100%;
+  background:url(../img/blendMEI.png) repeat-x left bottom;
 }
 #titleend {
   height:12px;
@@ -170,10 +175,17 @@ div.menuitem {
   color: #808080; 
   font-size:80%;
   padding-bottom:.75em;
-  padding-right:2em;
-  text-align:right;
+  padding-left:2em;
+  text-align:left;
 }
-#footerwrap {text-align:center; border:0px; margin:2em auto; font-size:75%;}
+#footerwrap {
+	text-align:center;
+	border:0px;
+	margin:0em auto;
+  background:url(../img/blendIEM.png) repeat-x left top;
+	border-bottom: 1em #DEE3E8 solid;
+	font-size:75%;
+}
 
 #content {
   color: #001100;

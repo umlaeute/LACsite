@@ -49,8 +49,8 @@
 ?>
 <body>
 <div id="toprow">
-  <div id="topline"></div>
   <div id="titlebar">
+  <div id="topline"></div>
     <div id="maintitle">Linux Audio Conference <?=LACY?> </div>
     <div id="subtitle">The Open Source Music and Sound Conference</div>
     <div id="wherewhen"><?=$config['headerlocation']?></div>
@@ -141,6 +141,8 @@
 </div>
 
 <div id="footerwrap">
+  <div id="titlestart"> </div>
+  <div id="titleend"> </div>
   <a href="http://validator.w3.org/check?uri=referer" rel="external"><img
       src="img/button-xhtml.png"
       alt="Valid XHTML 1.0 Strict"/></a>
@@ -150,7 +152,8 @@
   <a href="http://www.mozilla.com/en-US/firefox/firefox.html" rel="external"><img
       src="img/button-firefox.png"
       alt="Get Firefox"/></a><br/>
-  <p>LINUX<sup>&reg;</sup> is a <a href="http://www.linuxmark.org/" rel="external">registered trademark</a> of Linus Torvalds in the USA and other countries.<br />This site is not affiliated with or endorsed by the Fedora Project.<br />Hosting provided by the <a href="http://www.music.vt.edu" rel="external">Virginia Tech Department of Music</a> and <a href="http://disis.music.vt.edu" rel="external">DISIS</a>.<br/>Design and implementation by <a href="http://rg42.org/" rel="external">RSS</a>.</p>
+  <p>LINUX<sup>&reg;</sup> is a <a href="http://www.linuxmark.org/" rel="external">registered trademark</a> of Linus Torvalds in the USA and other countries.<br />Hosting provided by the <a href="http://www.music.vt.edu" rel="external">Virginia Tech Department of Music</a> and <a href="http://disis.music.vt.edu" rel="external">DISIS</a>.<br/>Design and implementation by <a href="http://rg42.org/" rel="external">RSS</a>.</p>
+  <div id="titlestart"> </div>
 </div> 
 </body>
 </html>
