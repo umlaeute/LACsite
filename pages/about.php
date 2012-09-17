@@ -75,7 +75,7 @@ TODO: ABOUT IEM...
 
 <h1>Links to prior Linux Audio Conferences</h1>
 <ul class="multicolumn">
-	<li><a href="http://lac.linuxaudio.org/2012/download">Archive 2012</a></li>
+	<li><a href="http://lac.linuxaudio.org/2012/files">Archive 2012</a></li>
   <li><a href="http://lac.linuxaudio.org/2008/download/papers/">Papers 2008</a></li>
   <li><a href="http://lac.linuxaudio.org/2005/lac2005_proceedings.pdf">Proceedings 2005</a></li>
   <li><a href="http://lac.linuxaudio.org/2011/?page=download">Archive 2011</a></li>
