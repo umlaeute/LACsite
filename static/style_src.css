@@ -120,12 +120,12 @@ li.active:hover    {color:#203080;}
   font-weight: bold;
   margin-top: 1em;
 }
-#titlestart {
+div.blendup {
   height:12px;
   width:100%;
   background:url(../img/blendMEI.png) repeat-x left bottom;
 }
-#titleend {
+div.blenddown {
   height:12px;
   width:100%;
   background:url(../img/blendIEM.png) repeat-x left bottom;
