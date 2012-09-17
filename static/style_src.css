@@ -86,10 +86,10 @@ li.active:hover    {color:#203080;}
 #logoright {
   position:absolute;
   z-index:80;
-  top:-82px;
-  right:7px;
-  width:200px;
-  height:200px;
+  top:-57px;
+  right:32px;
+  width:150px;
+  height:150px;
   background:transparent url(../img/lac2013.png) no-repeat top right;
 }
 #titlebar {
