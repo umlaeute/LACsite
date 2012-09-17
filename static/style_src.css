@@ -164,19 +164,12 @@ div.menuitem {
 }
 .mainheadl {
 }
-#mainfootl {
-  bottom:0px;
-  height:12px;
-  left:-2px;
-  position:absolute;
-  width:12px;
-}
 #createdby {
   color: #808080; 
+  background:#DEE3E8;
   font-size:75%;
-  padding-bottom:.75em;
   padding-right:2em;
-  text-align:right;
+  text-align:center;
 }
 #footerwrap {
 	text-align:center;

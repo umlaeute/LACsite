@@ -129,20 +129,21 @@
 ?>
 
     </div>
-    <div id="mainfootl"> </div>
-<?php
-  if (!$mtime_skip)
-    echo '<div id="createdby">Last modified: '.$mdate.' - IOhannes Zm&ouml;lnig &amp; Robin Gareus</div>';
-  else 
-    echo '<div id="createdby"></div>';
-?>
   </div>
   <div style="clear:both; height:0px;">&nbsp;</div>
 </div>
 
 <div id="footerwrap">
   <div class="blendup"> </div>
+
+<?php
+  if (!$mtime_skip)
+    echo '<div id="createdby">Last modified: '.$mdate.' - IOhannes Zm&ouml;lnig &amp; Robin Gareus</div>';
+  else 
+    echo '<div id="createdby"></div>';
+?>
   <div class="blenddown"> </div>
+
   <a href="http://validator.w3.org/check?uri=referer" rel="external"><img
       src="img/button-xhtml.png"
       alt="Valid XHTML 1.0 Strict"/></a>
