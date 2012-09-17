@@ -9,12 +9,12 @@ body {
 }
 img {border: 0px;}
 #content p   {text-align:justify; padding-bottom:.5em;}
-a            {outline: none; color:black;}
-a:hover      {color:#990000;}
+a            {outline: none; color:#001100;}
+a:hover      {color:#203080;}
 .tabactive a {color:#203080;}
 li.active:hover    {color:#203080;}
 .menuitem a:hover  {color:#203080;}
-.tabactive a:hover {color:#000000; background-color:transparent;}
+.tabactive a:hover {color:#001100; background-color:transparent;}
 #payload-layout {
   position:relative;
   min-width:74.5em;
@@ -36,7 +36,7 @@ li.active:hover    {color:#203080;}
   width:100%;
   position:absolute;
   height:10px;
-  background:#ffffff;
+  background:#fffff9;
   overflow:hidden;
 }
 .ibfootl {
@@ -95,7 +95,7 @@ li.active:hover    {color:#203080;}
 #titlebar {
   position:relative;
   max-width:84.5em;
-  color: #000000;
+  color: #001100;
   margin:0em auto;
   text-align: left;
   background:transparent url(../img/iemlogo.png) no-repeat scroll right top;
@@ -108,13 +108,14 @@ li.active:hover    {color:#203080;}
 #maintitle {
   padding-top:1px;
   font-size: 20pt;
-  text-shadow: #FEFEF9 1px 1px 8px;
+  text-shadow: #fffff9 1px 1px 8px;
 }
 #subtitle {
+  color: #fffff9;
   font-size: 12pt;
   font-weight: bold;
   margin-top: .8em;
-  text-shadow: #FEFEF9 1px 1px 8px;
+  text-shadow: #001100 1px 1px 8px;
 }
 #wherewhen {
   font-weight: bold;
@@ -155,7 +156,7 @@ div.menuitem {
   font-weight: bold;
 }
 .tabactive {
-  background-color: #fff900;
+  background-color: #DEE3E8;
 }
 .disclaimer {
   color: #808080; 
@@ -372,9 +373,9 @@ div.huge {
   height:40px;
   margin:0px auto;
   padding-top:7px;
-  text-shadow: #DEE3E8 0px 0px 5px;
+  text-shadow: #fffff9 0px 0px 5px;
 }
-div.huge a       {text-decoration:none; color:#F0E0E0;}
+div.huge a       {text-decoration:none; color:#001100;}
 div.huge a:hover {color:#fff500;}
 
 table.ptb {
@@ -447,47 +448,3 @@ ul.nobullet li{list-style:none; margin-left:0; text-align:left; font-size:90%;}
   width: 100%;
   z-index:100;
 }
-
-/*
-table.trl {
-  border-bottom:1px solid black;
-  border-left:1px solid black;
-  font-size:75%;
-  line-height:120%;
-  margin: .5em auto;
-  table-layout:fixed;
-  text-align:center;
-  width:80%;
-}
-td.trX, td.tr0, td.tr1, td.tr2, td.tr3, td.tr4, td.tr5, td.tr6, td.tr7 {
-  border-right:1px solid black;
-  border-top:1px solid black;
-}
-.trX {
-  background:black; color:white; line-height:120%; font-weight:bold;
-}
-.tr0 {
-  background:transparent url(../img/trans0.png) repeat scroll 0 0;
-}
-.tr1 {
-  background:transparent url(../img/trans1.png) repeat scroll 0 0;
-}
-.tr2 {
-  background:transparent url(../img/trans2.png) repeat scroll 0 0;
-}
-.tr3 {
-  background:transparent url(../img/trans3.png) repeat scroll 0 0;
-}
-.tr4 {
-  background:transparent url(../img/trans4.png) repeat scroll 0 0;
-}
-.tr5 {
-  background:transparent url(../img/trans5.png) repeat scroll 0 0;
-}
-.tr6 {
-  background:transparent url(../img/trans6.png) repeat scroll 0 0;
-}
-.tr7 {
-  background:transparent url(../img/trans7.png) repeat scroll 0 0;
-}
-*/
