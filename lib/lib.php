@@ -33,6 +33,7 @@
   <title><?=SHORTTITLE?>: <?=$title?></title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" href="<?=BASEURL?>static/<?=$style?>" type="text/css" media="all"/>
+  <link rel="stylesheet" href="<?=BASEURL?>static/print.css" type="text/css" media="print"/>
   <meta name="Author" content="Robin Gareus" />
   <meta name="description" content="Linux Audio Conference <?=LACY?>" />
   <meta name="keywords" content="LAC<?=LACY?>, LAC, Linux Audio Conference <?=LACY?>,Linux, Music, Audio, Developer Meeting, CCRMA, Computer Research in Music and Acoustics, Stanford, Stanford University" />
