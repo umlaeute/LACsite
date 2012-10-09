@@ -22,7 +22,7 @@ The Linux Audio Conference brings together musicians, composers, sound artists, 
 <p style="clear:both;"/>
 <h1>We need you! </h1>
 <p>
-Your contribution and ideas are needed to get the LAC going!<br/>
+Your contribution and ideas are needed to get the LAC a success!<br/>
 See the
 <a href="<?=local_url('participation')?>">participation page</a> for information on how
 to answer to the call for paper-presentations, workshops and music.
