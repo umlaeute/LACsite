@@ -31,7 +31,8 @@ Please <a href="<?=local_url('registration')?>">register</a> to attend.
 
 <h1>Where &amp; When</h1>
 <p>
-May 9-12 2013, <a href="http://iem.kug.ac.at/" rel="external">IEM</a> (Institut f&uuml;r Elektronische Musik und Akustik), <a href="http://http://www.kug.ac.at/" rel="external">Graz University</a>, Austria. See the <a href="<?=local_url('contact')?>">Contact</a> and <a href="<?=local_url('travel')?>">Travel</a> pages for details. The conference main track will be streamed live and interaction will be possible via IRC for participants who can not attend locally. Information about live coverage will be made available before the conference.
+May 9-12 2013, <a href="http://iem.kug.ac.at/" rel="external">IEM</a> (Institute
+of Electronic Music and Acoustics), <a href="http://www.kug.ac.at/" rel="external">University of Music and Performing Arts Graz</a>, Austria. See the <a href="<?=local_url('contact')?>">Contact</a> and <a href="<?=local_url('travel')?>">Travel</a> pages for details. The conference main track will be streamed live and interaction will be possible via IRC for participants who can not attend locally. Information about live coverage will be made available before the conference.
 <?php 
 /*
 <a href="<?=local_url('program')?>">schedule</a>.
