@@ -34,7 +34,7 @@ meant as a starting point, not to restrict you.
   <li>Audio Languages</li>
   <li>Sound Synthesis</li>
   <li>Audio Plugins</li>
-  <li>MIDI</li>
+ <!-- <li>MIDI</li> -->
   <li>Music Production</li>
   <li>Linux Kernel</li>
   <li>Physical Computing</li>
