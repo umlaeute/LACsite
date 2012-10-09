@@ -43,6 +43,10 @@ See the <a href="http://maps.google.at/maps?f=d&source=s_d&saddr=S%C3%BCd+Autoba
 
 <h3>Parking</h3>
 <p>
-The premises of the university are limited by gates with an intercom. Visitors of the IEM are allowed to pass, but a previous registration is necessary. 
+The premises of the university are limited by gates with an intercom. 
+There is a short-term parking zone surrounding the campus,
+so we suggest to use public transport or walk the last mile.
+(Note that you can stay in the short-term parking zone on Thursday (which is a
+bank holiday in Austria) and during the weekend (Saturday/Sunday).)
 </p>
 
