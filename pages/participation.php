@@ -46,6 +46,7 @@ meant as a starting point, not to restrict you.
   <li>Media Art</li>
   <li>Licensing</li>
   <li>Android audio</li>
+  <li>Mobile audio</li>
 </ul>
 <br style="clear:both;"/>
 <br/>
@@ -53,7 +54,7 @@ meant as a starting point, not to restrict you.
 We very much welcome practical papers or software demos that outline artistic creative processes or workflows based on Linux audio applications or systems ("how I use Linux Audio applications to create my music/media art").
 </p>
 <p>
-Not all papers need to directly address Linux Audio. There is no limitation for subjects from related fields like open source music applications, free/libre software for music or audio/visual research and open-content.
+Not all papers need to directly address Linux Audio. There is no limitation for subjects from related fields like audio/visual research and open-content.
 </p>
 
 <p>NB. Papers should be as complete as possible on submission. Until submission closes it is possible to replace/update files in the <a href="<?=CANONICALURL?>openconf/" rel="external">openconf</a> system. Submissions will be peer-reviewed and after the notification of acceptance there is a small time-window for updates and last-minute changes.
