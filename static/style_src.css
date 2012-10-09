@@ -137,8 +137,8 @@ div.blenddown {
   overflow:hidden;
   font-size: 12px;
   margin:1.2em 164px 1.2em 45px;
-  border-top: 1px solid #202020;
-  border-bottom: 1px solid #202020;
+  border-top: 2px dashed #506090;
+  border-bottom: 2px dashed #506090;
 }
 #mainmenu a {
   text-decoration:none;
@@ -154,9 +154,14 @@ div.menuitem {
   text-align: center;
   margin:0;
   font-weight: bold;
+	min-width:70px;
 }
 .tabactive {
-  background-color: #DEE3E8;
+  background:transparent url(../img/lac2013_plain.png) no-repeat center center;
+}
+.tabactive a, .tabactive a:hover {
+	color:#fffff9;
+  text-shadow: #ffffff 0px 0px 5px;
 }
 .disclaimer {
   color: #808080; 
