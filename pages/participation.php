@@ -27,14 +27,15 @@ meant as a starting point, not to restrict you.
 <ul class="multicolumn">
   <li>Spatial Audio</li>
   <li>Education</li>
-  <li>Live performance</li>
+  <li>Live Performance</li>
   <li>Audio Hardware Support</li>
   <li>Signal Processing</li>
   <li>Music Composition</li>
   <li>Audio Languages</li>
   <li>Sound Synthesis</li>
   <li>Audio Plugins</li>
- <!-- <li>MIDI</li> -->
+  <li>MIDI</li>
+  <li>Live Coding</li>
   <li>Music Production</li>
   <li>Linux Kernel</li>
   <li>Physical Computing</li>
@@ -42,11 +43,11 @@ meant as a starting point, not to restrict you.
   <li>Linux Distributions</li>
   <li>Networked Audio</li>
   <li>Video</li>
-  <li>Mobile audio</li>
+  <li>Mobile Audio</li>
   <li>Games</li>
   <li>Media Art</li>
   <li>Licensing</li>
-  <li>Android audio</li>
+  <li>Android Audio</li>
 </ul>
 <br style="clear:both;"/>
 <br/>
