@@ -42,11 +42,11 @@ meant as a starting point, not to restrict you.
   <li>Linux Distributions</li>
   <li>Networked Audio</li>
   <li>Video</li>
+  <li>Mobile audio</li>
   <li>Games</li>
   <li>Media Art</li>
   <li>Licensing</li>
   <li>Android audio</li>
-  <li>Mobile audio</li>
 </ul>
 <br style="clear:both;"/>
 <br/>
@@ -63,12 +63,13 @@ Not all papers need to directly address Linux Audio. There is no limitation for 
 <h1>Call for Music, Installations and Workshops</h1>
 <p>
 Music, Installations and Workshops can be submitted for review via the
-<strong><a href="<?=CANONICALURL?>MusicSoundArtMisc/" rel="external">online music/installations/workshops submission</a></strong> system. Please download the complete <strong><a href="download/lac2013-call-for-miw.pdf">Call for Music, Installations and Workshops</a></strong> document with all the details before trying to submit. In short, we are looking for music and sound art that has been produced or composed entirely or mostly using GNU/Linux or other Open Source music software for:
+<strong><a href="<?=CANONICALURL?>MusicSoundArtMisc/" rel="external">online music/installations/workshops submission</a></strong> system. Please download the complete <strong><a href="download/lac2013-call-for-miw.pdf">Call for Music, Installations and Workshops</a></strong> document with all the details before trying to submit. In short, we are looking for music and sound art that has been produced or composed entirely or mostly using GNU/Linux music software for:
 </p>
 <ul>
-  <li>The Electronic Music Concerts (fixed media or live performance works)</li>
-  <li>The Listening Room Lounge (fixed media only)</li>
+  <li>The Electroacoustic Music Concerts (fixed media or live performance works)</li>
   <li>The Linux Sound Night</li>
+  <li>The Radio Listening Lounge (fixed media (stereo) only)</li>
+  <li>Radio Miniatures</li>
   <li>Audio/visual installations</li>
   <li>Workshops</li>
 </ul>
