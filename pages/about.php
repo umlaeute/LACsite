@@ -43,7 +43,24 @@ of Electronic Music and Acoustics), <a href="http://www.kug.ac.at/" rel="externa
 <img src="img/iem_cube.jpg" alt="IEM cube"/><br/>
 </div>
 <p>
-TODO: ABOUT IEM...
+Founded in 1965, IEM is currently considered Austria's leading research
+institution in acoustics and audio engineering and has gained international
+reputation during the last decade for its research on spatial audio processing,
+psychoacoustic evaluation experiments, computer music, and the assistance in
+opera productions with live electronics and spatial sound.
+Moreover, most scholars in Austria who are interested in computer music, musical
+acoustics, recording, live-electronics, spatial sound and psychoacoustics are
+aware of courses offered by IEM in different academic curricula.
+Clearly, coverage of all those aspects is inherently multidisciplinary, bringing together arts,
+technology, and science.
+<br>
+IEM has been embracing linux audio as a production and research environment since the
+mid-1990s, and has contributed to FLOSS/linux projects,
+amongst others by providing drivers for
+<a href="http://www.rme-audio.de/old/english/linux/alsa.htm" rel="external">multichannel soundcards</a>
+and hosting the
+<a href="http://puredata.info/" rel="external">Pure Data community portal</a> and
+<a href="http://lists.puredata.info/listinfo/" rel="external">Mailing lists</a>.
 </p>
 
 <h1>Who?</h1>
