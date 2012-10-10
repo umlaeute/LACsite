@@ -48,6 +48,7 @@ meant as a starting point, not to restrict you.
   <li>Media Art</li>
   <li>Licensing</li>
   <li>Android Audio</li>
+  <li>...</li>
 </ul>
 <br style="clear:both;"/>
 <br/>
