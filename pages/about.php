@@ -53,7 +53,7 @@ acoustics, recording, live-electronics, spatial sound and psychoacoustics are
 aware of courses offered by IEM in different academic curricula.
 Clearly, coverage of all those aspects is inherently multidisciplinary, bringing together arts,
 technology, and science.
-<br>
+<br/>
 IEM has been embracing linux audio as a production and research environment since the
 mid-1990s, and has contributed to FLOSS/linux projects,
 amongst others by providing drivers for

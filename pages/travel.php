@@ -1,6 +1,6 @@
 <h1>Location</h1>
 <p>
-The IEM on <a href="http://maps.google.at/maps?doflg=ptk&ie=UTF8&cid=2060496000385345580" rel="external">Google Maps</a>.
+The IEM on <a href="http://maps.google.at/maps?doflg=ptk&amp;ie=UTF8&amp;cid=2060496000385345580" rel="external">Google Maps</a>.
 See also <a href="<?=local_url('contact')?>">Contact</a> page.
 </p>
 
@@ -38,7 +38,7 @@ From the central railway station of Graz take tramline 6 towards St.Peter, exit 
 From North or South: follow A9 Phyrn-Autobahn until the interchange Graz-West, then on A2 Südautobahn towards Vienna.
 From East or West: Follow A2 Südautobahn until the interchange Graz-Ost, follow the feeder road until exit Graz-Liebenau, turn right and follow Müngrabenstraße about 2 km, turn right into Sandgasse and follow it till the end, turn right into Petersgasse and after app. 200m turn right into Inffeldgasse.
 
-See the <a href="http://maps.google.at/maps?f=d&source=s_d&saddr=S%C3%BCd+Autobahn&daddr=47.05924,15.45216+to:47.05949,15.46307+to:Inffeldgasse+10,+8010+Graz+(Universit%C3%A4t+f%C3%BCr+Musik+und+darstellende+Kunst+Institut+17+Elektronische+Musik)&geocode=FYnJzQIdFQXsAA%3BFSgRzgIdAMjrAClvMjWimkpuRzGGcI6AZFzgOg%3BFSISzgIdnvLrACmzMDqnjUpuRzH1EisH8emFJA%3BFZ4OzgIdROfrACEs6BQEMlqYHA&hl=en&mra=dpe&mrsp=2&sz=14&via=1,2&sll=47.050476,15.469351&sspn=0.044153,0.077162&ie=UTF8&z=14" rel="external">map</a>.
+See the <a href="http://maps.google.at/maps?f=d&amp;source=s_d&amp;saddr=S%C3%BCd+Autobahn&amp;daddr=47.05924,15.45216+to:47.05949,15.46307+to:Inffeldgasse+10,+8010+Graz+(Universit%C3%A4t+f%C3%BCr+Musik+und+darstellende+Kunst+Institut+17+Elektronische+Musik)&amp;geocode=FYnJzQIdFQXsAA%3BFSgRzgIdAMjrAClvMjWimkpuRzGGcI6AZFzgOg%3BFSISzgIdnvLrACmzMDqnjUpuRzH1EisH8emFJA%3BFZ4OzgIdROfrACEs6BQEMlqYHA&amp;hl=en&amp;mra=dpe&amp;mrsp=2&amp;sz=14&amp;via=1,2&amp;sll=47.050476,15.469351&amp;sspn=0.044153,0.077162&amp;ie=UTF8&amp;z=14" rel="external">map</a>.
 </p>
 
 <h3>Parking</h3>
