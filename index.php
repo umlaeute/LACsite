@@ -140,7 +140,7 @@
   if (!$mtime_skip)
     echo '<div id="createdby">Last modified: '.$mdate.' - IOhannes Zm&ouml;lnig &amp; Robin Gareus</div>';
   else 
-    echo '<div id="createdby"></div>';
+    echo '<div id="createdby"><br/></div>';
 ?>
   <div class="blenddown"> </div>
 
