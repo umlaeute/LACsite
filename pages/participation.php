@@ -1,3 +1,9 @@
+<div class="center red">
+<strong>The call is not out, yet !</strong><br/>
+Please stay tuned while we are preparing the submission process and and callsheets.<br/>
+ETA: end of October 2012
+</div>
+
 <h1>Call for papers, music, installations and workshops</h1>
 <ul>
 <li>Deadline for paper-submissions: <b>February 4th, 2013</b></li>
