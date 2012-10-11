@@ -54,7 +54,7 @@
     <div id="maintitle">Linux Audio Conference <?=LACY?> </div>
     <div id="subtitle">The Open Source Music and Sound Conference</div>
     <div id="wherewhen"><?=$config['headerlocation']?></div>
-    <div>LECTURES / WORKSHOPS / EXHIBITION / CONCERTS / CLUBNIGHT</div>
+    <div>LECTURES / WORKSHOPS / EXHIBITION / CONCERTS / CLUBNIGHTS / RADIO</div>
   </div>
   <div class="blenddown"> </div>
 </div>
