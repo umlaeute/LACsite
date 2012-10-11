@@ -26,6 +26,9 @@ li.active:hover    {color:#203080;}
   float:right;
   width:200px;
   margin:3.5em .5em 1em 1em;
+	border:1px solid #506090;
+	background:#DEE3E8;
+	border-radius:10px;
 }
 #lefthead {
   height:12px;
@@ -381,7 +384,7 @@ div.huge {
   text-shadow: #fffff9 0px 0px 5px;
 }
 div.huge a       {text-decoration:none; color:#001100;}
-div.huge a:hover {color:#fff500;}
+div.huge a:hover {color:#203080;}
 
 table.ptb {
   border-bottom:1px solid #000000;
