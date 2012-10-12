@@ -42,7 +42,7 @@
 @media all {
   div.braille {display:none;}
 }
-@media braille,embossed {
+@media braille,embossed,aural {
   div.braille {display:inline;}
 }
   </style>
