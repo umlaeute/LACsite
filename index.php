@@ -82,6 +82,9 @@
   if ($page=='admin' || $page=='adminschedule') {
     admin_fieldset(-3);
   } else {
+    echo '<div class="center"><a href="https://www.facebook.com/LinuxAudioConference" rel="external"><img src="img/logos/findUsOnFacebook.png" alt="find us on facebook" title="find us on facebook" /></a></div>';
+    echo '<div class="center"><a href="https://twitter.com/linuxaudioconf" rel="external"><img src="img/logos/followUsOnTwitter.png" alt="follow us on twitter" title="follow us on twitter" /></a></div>';
+    echo '<hr class="psep"/>'."\n";
     leftbar(); 
     if (function_exists('clustermap')) clustermap(); 
   }
