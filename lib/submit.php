@@ -60,6 +60,8 @@ function format_registration($a) {
   )).'
   Proceedings : '
   .(rawurldecode($a['reg_proceedings'])?'yes':'no')     .'
+  T-Shirt : '
+  .(rawurldecode($a['reg_teeshirt'])?'yes':'no')     .'
   Public List : '
   .(rawurldecode($a['reg_whoelselist'])?'yes':'no')     .'
   Uses Linux  : '
@@ -117,7 +119,7 @@ function savereg() {
 #    'reg_vmediapro', 'reg_vmproducer', 'reg_vvproducer', 'reg_vresearcher',
 #    'reg_vinterested', 'reg_vother',
     'reg_profession', 'reg_about', 
-    'reg_proceedings', 'reg_whoelselist', 'reg_notes'
+    'reg_proceedings', 'reg_whoelselist', 'reg_notes' , 'reg_teeshirt'
   );
 
   #store in .ini file format -> human readable and 

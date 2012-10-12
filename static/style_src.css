@@ -328,6 +328,7 @@ fieldset legend {text-align:left;}
 .fa td     {padding-left: 10px;}
 .fa td label input
            {margin-right: 4px;}
+.fa label.ls    {font-style:italic; font-size:80%; margin:0px 0em 0em .5em;}
 
 #leftcolumn .fm br  {
   margin-bottom:1em;
