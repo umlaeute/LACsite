@@ -38,6 +38,14 @@
   <meta name="keywords" content="LAC<?=LACY?>, LAC, Linux Audio Conference <?=LACY?>,Linux, Music, Audio, Developer Meeting, CCRMA, Computer Research in Music and Acoustics, Stanford, Stanford University" />
   <link rel="shortcut icon" href="<?=BASEURL?>favicon.ico" type="image/x-icon" />
   <link rel="icon" href="<?=BASEURL?>favicon.ico" type="image/x-icon" />
+  <style type="text/css">
+@media all {
+  div.braille {display:none;}
+}
+@media braille,embossed {
+  div.braille {display:inline;}
+}
+  </style>
   <script type="text/javascript" src="<?=BASEURL?>static/script.js"></script>
   <?=$add?>
 </head>

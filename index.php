@@ -48,6 +48,7 @@
   xhtmlhead();
 ?>
 <body>
+<div class="braille"><a href="#main-content">Skip to content</a></div>
 <div id="toprow">
   <div id="titlebar">
   <div id="topline"></div>
@@ -92,6 +93,7 @@
 
   <div id="main">
     <div id="content" class="mainheadl">
+    <a name="main-content"></a>
 
 <?php
   require_once('pages/'.$page.'.php');

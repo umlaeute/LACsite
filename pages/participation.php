@@ -16,7 +16,7 @@ ETA: end of October 2012
 <p>
 Papers can be submitted for review via the
 <strong><a href="<?=CANONICALURL?>openconf/">online paper submission</a></strong> system.
-Templates for paper submission for LaTeX and OpenOffice/LibreOffice are available <strong><a href="download/LAC2013-templates.tgz">here</a></strong>.
+Please use the available <strong><a href="download/LAC2013-templates.tgz">templates</a></strong> for papers. The zip includes templates for LaTeX and OpenOffice/LibreOffice as well as rendered PDFs with information about margins and layout.
 </p>
 <p>
 Papers must be written and presented in English, 4&mdash;8 pages, with abstract (50&mdash;100 words, max. 500 words) and up to 5 keywords. 

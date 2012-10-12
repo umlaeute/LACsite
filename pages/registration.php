@@ -381,7 +381,7 @@ Personal data provided by you in the registration form will be kept confidential
   <br/>
   <label class="la" for="reg_email"><span class="error">*</span>E-Mail address:</label>
   <input id="reg_email" name="reg_email" type="text" size="50" maxlength="100" value="<?php if (isset($_POST['reg_email'])) echo rawurldecode($_POST['reg_email']);?>"/>
-  <input name="reg_email_confirm" type="text" size="50" maxlength="100" class="fx" value=""/>
+  <div style="display:none;">Humans, leave this empty:</div><input name="reg_email_confirm" type="text" size="50" maxlength="100" class="fx" value=""/>
   <br/>
   <label class="la" for="reg_country"><span class="error">*</span>Country:</label>
   <select name="reg_country" id="reg_country" size="1">
