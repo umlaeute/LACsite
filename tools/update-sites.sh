@@ -13,5 +13,7 @@ echo -n "git push/pull ? [Enter|Ctrl-C]"
 read || exit
 git pull || exit
 git push
-#ssh rg42.org 'cd /var/sites/lac2013; git pull'
+if "$(hostname)" == "soyuz"; then
+  ssh rg42.org 'cd /var/sites/lac2013; git pull'
+fi
 ssh lac@linuxaudio.org 'cd /home/sites/lac.linuxaudio.org/2013/docroot; git pull'
