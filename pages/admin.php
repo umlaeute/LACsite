@@ -43,7 +43,7 @@ switch ($mode) {
     $r=scan_registrations();
     gen_badges_pdf($r);
     echo '<div style="height:1em;">&nbsp;</div>';
-    echo 'Download: <a href="download.php?file=lac2012badges.pdf">lac2012badges.pdf</a>';
+    echo 'Download: <a href="download.php?file=lac2013badges.pdf">lac2013badges.pdf</a>';
     break;
   case 'badgestex':
     $r=scan_registrations();
@@ -283,7 +283,7 @@ function export_sv($sep="\t") {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function gen_badges_pdf($f) {
-  $handle = fopen(TMPDIR.'lac2012badges.tex', "w");
+  $handle = fopen(TMPDIR.'lac2013badges.tex', "w");
   fwrite($handle, gen_badges_source($f));
   fclose($handle);
   @copy (DOCROOTDIR.'img/badge_iem.png', TMPDIR.'badge_iem.png');
@@ -295,9 +295,9 @@ function gen_badges_pdf($f) {
   @copy (DOCROOTDIR.'img/fonts/T1-WGL4x.enc', TMPDIR.'T1-WGL4x.enc'); 
   @copy (DOCROOTDIR.'img/badgeback.pdf', TMPDIR.'badgeback.pdf');
 
-  @unlink (TMPDIR.'lac2012badges.pdf');
+  @unlink (TMPDIR.'lac2013badges.pdf');
   echo '<pre style="font-size:70%; line-height:1.2em;">';
-  system('cd '.TMPDIR.'; pdflatex lac2012badges.tex');
+  system('cd '.TMPDIR.'; pdflatex lac2013badges.tex');
   echo '</pre>';
 }
 
@@ -323,7 +323,7 @@ function gen_badges_source($f) {
 \cuts
 ';
   foreach ($f as $fn) {
-    if (true) { // skip already printed registrations XXX
+    if (false) { // skip already printed registrations XXX
       $regtime=preg_replace('@-.*$@', '', $fn);
       if (strcasecmp($regtime, '20120411_184843') <= 0) continue;
     }
@@ -498,7 +498,7 @@ function badge_tex_header() {
 { 
   \vspace*{1.0in}
 	\hspace*{-.70in}\image{height=1.25cm,width=5.5cm}{badgelogo}
-  \parbox[c]{1in}{\vspace*{-0.30in}Conference\\\\2012}}\\\\%
+  \parbox[c]{1in}{\vspace*{-0.30in}Conference\\\\2013}}\\\\%
   \vspace{-1.00in}\\\\%
   \hspace*{-.70in}{#1}\\\\%
   \hspace*{-.70in}{#2}\\\\%

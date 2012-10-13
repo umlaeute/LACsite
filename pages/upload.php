@@ -2,7 +2,7 @@
 <?php
 
   try {
-    $db=new PDO("sqlite:tmp/lac2012.db"); // XXX -> config.php
+    $db=new PDO("sqlite:tmp/lac2013.db"); // XXX -> config.php
   } catch (PDOException $exception) {
     die ('Database Failure: '.$exception->getMessage());
   }
