@@ -42,6 +42,7 @@
     'http://iem.kug.ac.at/' => array('img' => 'img/logos/iemlogo.png', 'title' => 'IEM'),
     'http://linuxaudio.org/' => array('img' => 'img/logos/lao.png', 'title' => 'linuxaudio.org'),
     'http://esc.mur.at/' => array('img' => 'img/logos/esc.png', 'title' => 'ESC im LABOR'),
+    'http://auphonic.com/' => array('img' => 'img/logos/auphonic.png', 'title' => 'auphonic'),
   );
 
   function clustermap() {
