@@ -368,11 +368,11 @@ Personal data provided by you in the registration form will be kept confidential
 <fieldset class="fs">
   <input name="page" type="hidden" value="<?php echo $page;?>"/>
   <legend>Personal Information:</legend>
-  <label class="la" for="reg_name"><span class="error">*</span>Last Name:</label>
-  <input id="reg_name" name="reg_name" type="text" size="50" maxlength="100" value="<?php if (isset($_POST['reg_name'])) echo rawurldecode($_POST['reg_name']);?>"/>
-  <br />
-  <label class="la" for="reg_prename"><span class="error">*</span>First Name(s):</label>
+  <label class="la" for="reg_prename"><span class="error">*</span>Given Name(s):</label>
   <input id="reg_prename" name="reg_prename" type="text" size="50" maxlength="100" value="<?php if (isset($_POST['reg_prename'])) echo rawurldecode($_POST['reg_prename']);?>"/>
+  <br />
+  <label class="la" for="reg_name"><span class="error">*</span>Family Name:</label>
+  <input id="reg_name" name="reg_name" type="text" size="50" maxlength="100" value="<?php if (isset($_POST['reg_name'])) echo rawurldecode($_POST['reg_name']);?>"/>
   <br />
   <label class="la" for="reg_tagline">Tagline<small>(Affiliation, Company, Pseudonym,&hellip;)</small>:</label>
   <input id="reg_tagline" name="reg_tagline" type="text" size="50" maxlength="100" value="<?php if (isset($_POST['reg_tagline'])) echo rawurldecode($_POST['reg_tagline']);?>"/>
