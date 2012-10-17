@@ -8,6 +8,7 @@
     'about' => 'About',
     'participation' => 'Participate',
     'registration' => 'Registration',
+    'participants' => 'Attendees',
     'travel' => 'Travel &amp; Stay',
     'contact' => 'Contact',
     'sponsors' => 'Supporters',
@@ -19,7 +20,6 @@
     'files' => 'Download',
     'speakers'  => 'Delegates',
     'profile' => 'Profile',
-    'participants' => 'Attendees',
   );
 
 # don't list sponsors on these pages
