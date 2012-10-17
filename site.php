@@ -7,6 +7,7 @@
   $pages = array(
     'about' => 'About',
     'participation' => 'Participate',
+    'registration' => 'Registration',
     'travel' => 'Travel &amp; Stay',
     'contact' => 'Contact',
     'sponsors' => 'Supporters',
@@ -14,7 +15,6 @@
 
 # other available pages - not shown as 'tabs'
   $hidden = array(
-    'registration' => 'Registration',
     'program'  => 'Schedule/Archive',
     'files' => 'Download',
     'speakers'  => 'Delegates',
