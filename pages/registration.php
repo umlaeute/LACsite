@@ -406,13 +406,13 @@ Personal data provided by you in the registration form will be kept confidential
   </div>
   <br/>
   <label>There will be conference T-Shirts
-  available for a fee of about &euro;10.</label><br/>
+  available for a fee of about &euro;15 (various sizes and colours will be available).</label><br/>
   <div class="la"><label class="la"><span class="error">*</span>Are you interested in buying a one?</label></div>
   <div class="ra">
     <label><input type="radio" name="reg_teeshirt" value="0"<?php _ck('reg_teeshirt',0);?>/>No</label> &nbsp; &nbsp;
     <label><input type="radio" name="reg_teeshirt" value="1"<?php _ck('reg_teeshirt',1);?>/>Yes</label>
   </div>
-  <label class="ls">Note: Neither proceedings nor t-shirts are binding orders; we just like an estimated count..</label>
+  <label class="ls">Note: Neither proceedings nor t-shirts are binding orders; we just like an estimated count.</label>
   <br/>
   <br/>
   <label>Allow public listing of your name and affiliation in the "Who else is coming" list.</label><br/>
