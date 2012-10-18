@@ -61,7 +61,10 @@
 </div>
 
 <div id="payload-layout">
-  <div id="logoright"> </div>
+  <div id="logoright">
+    <a href="https://www.facebook.com/LinuxAudioConference" rel="external"><img src="img/logos/fb-button-16x16.png" alt="find us on facebook" title="find us on facebook" /></a>
+    <a href="https://twitter.com/linuxaudioconf" rel="external"><img src="img/logos/tw-button-16x16.png" alt="follow us on twitter" title="follow us on twitter" /></a>
+</div>
   <div id="mainmenu">
 <?php
   ### populate menu bar ##
@@ -82,9 +85,6 @@
   if ($page=='admin' || $page=='adminschedule') {
     admin_fieldset(-3);
   } else {
-    echo '<div class="center"><a href="https://www.facebook.com/LinuxAudioConference" rel="external"><img src="img/logos/findUsOnFacebook.png" alt="find us on facebook" title="find us on facebook" /></a></div>';
-    echo '<div class="center"><a href="https://twitter.com/linuxaudioconf" rel="external"><img src="img/logos/followUsOnTwitter.png" alt="follow us on twitter" title="follow us on twitter" /></a></div>';
-    echo '<hr class="psep"/>'."\n";
     leftbar(); 
     if (function_exists('clustermap')) clustermap(); 
   }
