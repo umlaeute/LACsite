@@ -213,6 +213,12 @@ div.menuitem {
 #content ul + h3, #content p + h3 { margin-top:1.0em; }
 #content ul + h4, #content p + h4 { margin-top:0.5em; }
 
+li {
+	list-style:none;
+	padding: 0 0 0 12px;
+	background: url(../img/lac13_slash.png) 0px 8px no-repeat;
+}
+
 #content h1,
 #content h2,
 #content h3 {
