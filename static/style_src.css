@@ -215,8 +215,8 @@ div.menuitem {
 
 li {
 	list-style:none;
-	padding: 0 0 0 12px;
-	background: url(../img/lac13_slash.png) 0px 8px no-repeat;
+	padding: 0 0 0 .8em;
+	background: url(../img/lac13_slash.png) 0px .6em no-repeat;
 }
 
 #content h1,
