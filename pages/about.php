@@ -55,7 +55,7 @@ Clearly, coverage of all those aspects is inherently multidisciplinary, bringing
 technology, and science.
 <br/>
 IEM has been embracing linux audio as a production and research environment since the
-mid-1990s, and has contributed to FLOSS/linux projects,
+mid-1990s, and has contributed to <acronym title="Free/Libre and Open Source Software">FLOSS</acronym>/Linux projects,
 amongst others by providing drivers for
 <a href="http://www.rme-audio.de/old/english/linux/alsa.htm" rel="external">multichannel soundcards</a>
 and hosting the
