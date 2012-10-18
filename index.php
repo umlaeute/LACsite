@@ -64,6 +64,7 @@
   <div id="logoright">
     <a href="https://www.facebook.com/LinuxAudioConference" rel="external"><img src="img/logos/fb-button-16x16.png" alt="find us on facebook" title="find us on facebook" /></a>
     <a href="https://twitter.com/linuxaudioconf" rel="external"><img src="img/logos/tw-button-16x16.png" alt="follow us on twitter" title="follow us on twitter" /></a>
+    <a href="https://plus.google.com/events/ct3msb2f88v80oas2u1lgi7479k" rel="external"><img src="img/logos/gp-button-16x16.png" alt="google-plus event" title="google-plus event" /></a>
 </div>
   <div id="mainmenu">
 <?php
