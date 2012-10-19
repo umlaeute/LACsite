@@ -418,7 +418,7 @@ p.pix {font-size:90%;margin:.5em 0em; text-align:justify;}
 
 #content ul {padding-left:.5em;}
 ul.multicolumn   {width:100%;}
-ul.multicolumn li{float:left; width:33%;}
+ul.multicolumn li{float:left; width:30%;}
 ul.nobullet li{list-style:none; margin-left:0; text-align:left; font-size:90%;}
 
 #infoframe, #ieframe {
