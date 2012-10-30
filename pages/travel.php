@@ -47,6 +47,6 @@ The premises of the university are limited by gates with an intercom.
 There is a short-term parking zone surrounding the campus,
 so we suggest to use public transport or walk the last mile.
 (Note that you can stay in the short-term parking zone on Thursday (which is a
-bank holiday in Austria) and during the weekend (Saturday/Sunday).)
+bank holiday in Austria) and during the weekend (Saturday afternoon/Sunday).)
 </p>
 
