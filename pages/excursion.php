@@ -4,12 +4,12 @@
 <em>Will you still be around Sunday afternoon?</em>
 <br/>
 The final event of the conference will be a trip to the beautiful south-eastern Styrian countryside,
-renowned for its vineyards and <a href="https://en.wikipedia.org/wiki/Pumpkin_seed_oil" rel="external">pumpkin seed oil</a>... 
+renowned for its vineyards and <a href="https://en.wikipedia.org/wiki/Pumpkin_seed_oil" rel="external">pumpkin seed oil</a>...
 </p>
 
 <p>
 More specifically we'll be heading to Pischelsdorf about two hours from Graz.
-We'll start of with a musical excursion to the 
+We'll start off with a musical excursion to the
 <a href="http://algo.mur.at/projects/klangdom" rel="external">Klangdom</a>
 - geodesic dome 3D soundsphere - and continue to
 "<a href="http://www.posch-weine.at/cms/buschenschank.php" rel="external">Buschenschank Posch"</a> - a <a href="https://en.wikipedia.org/wiki/Heuriger" rel="external">East-Austrian wine tavern</a> (aka Heuriger, aka Buschenschank).
@@ -31,6 +31,6 @@ is very reasonably priced, assume 10 &euro;.
 
 <h3>Where do I sign up?</h3>
 <p>
-There is an option on the registration form. If for any reason you change your mind, please inform us by 
+There is an option on the registration form. If for any reason you change your mind, please inform us by
 <a href="<?=local_url('contact')?>">Email</a> as soon as possible.
 </p>

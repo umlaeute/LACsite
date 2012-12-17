@@ -406,7 +406,7 @@ Personal data provided by you in the registration form will be kept confidential
     <label><input type="radio" name="reg_proceedings" value="1"<?php _ck('reg_proceedings',1);?>/>Yes</label>
   </div>
   <br/>
-	<label>There will be an <a href="<?=local_url('excursion')?>" rel="external">excursion on Sunday</a>. Are you interested in joining? </label><br/>
+	<label>There will be an <a href="<?=local_url('excursion')?>" rel="external">excursion on Sunday</a>.</label><br/>
   <div class="la"><label class="la"><span class="error">*</span>Are you interested in joining?</label></div>
   <div class="ra">
     <label><input type="radio" name="reg_burschenschank" value="0"<?php _ck('reg_burschenschank',0);?>/>No</label> &nbsp; &nbsp;
