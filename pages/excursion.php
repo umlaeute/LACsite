@@ -4,7 +4,7 @@
 <em>Will you still be around Sunday afternoon?</em>
 <br/>
 The final event of the conference will be a trip to the beautiful south-eastern Styrian countryside,
-renowned for its vineyards and pumpkin seed oil... 
+renowned for its vineyards and <a href="https://en.wikipedia.org/wiki/Pumpkin_seed_oil" rel="external">pumpkin seed oil</a>... 
 </p>
 
 <p>
@@ -20,7 +20,7 @@ We'll start of with a musical excursion to the
 <h3>When and how long?</h3>
 <p>
 We will leave in Graz after the last morning session and return back at around 16:00-18:00h.
-If there are enough people who need to catch an outbound flight or train on Sunday evening, one of the busses could return early.
+If there are enough people who need to catch an outbound flight or train on Sunday evening, one of the buses could return early.
 </p>
 
 <h3>How much is the trip?</h3>
