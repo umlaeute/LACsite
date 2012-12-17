@@ -20,6 +20,7 @@
     'files' => 'Download',
     'speakers'  => 'Delegates',
     'profile' => 'Profile',
+    'excursion' => 'Excursion',
   );
 
 # don't list sponsors on these pages
