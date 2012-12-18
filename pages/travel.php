@@ -41,7 +41,7 @@ The Youth Hostel is about 25min by public transport (bus + tram) from the campus
 </p>
 
 <p>
-Alternative link for booking the <a href="http://www.hostels.com/hostels/graz/jugend-&-familiengastehaus-graz/6382">Youth Hostel</a>.
+Alternative link for booking the <a href="http://www.hostels.com/hostels/graz/jugend-&amp;-familiengastehaus-graz/6382">Youth Hostel</a>.
 </p>
 <!--
 <h3>How to get to campus from your hotel</h3>

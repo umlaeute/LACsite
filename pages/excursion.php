@@ -15,7 +15,7 @@ We'll start off with a musical excursion to the
 "<a href="http://www.posch-weine.at/cms/buschenschank.php" rel="external">Buschenschank Posch"</a>(tbc) - a <a href="https://en.wikipedia.org/wiki/Heuriger" rel="external">East-Austrian wine tavern</a> (aka Heuriger, aka Buschenschank).
 </p>
 <div class="ptitle">
-<a href="http://algo.mur.at/projects/klangdom" rel="external"><img src="http://algo.mur.at/projects/klangdom/fotos_aufbau_aug/logo" alt="Winfried Ritsch's Klangdom" width="50%"/></a>
+<a href="http://algo.mur.at/projects/klangdom" rel="external"><img src="img/klangdom.jpg" alt="Winfried Ritsch's Klangdom"/></a>
 </div>
 
 <h2>Practical Information</h2>
