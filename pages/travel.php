@@ -5,12 +5,31 @@ See also <a href="<?=local_url('contact')?>">Contact</a> page.
 </p>
 
 <h1>Staying in Graz</h1>
-<div class="center">
-<b> Please stay tuned. We're collecting information.</b>
-</div>
-<p>
-...
-</p>
+
+<h2>Hotel Mercure Graz Messe</h2>
+The <a href="http://www.accorhotels.com/gb/hotel-2212-hotel-mercure-graz-messe/index.shtml">Hotel Mercure Graz Messe</a>
+is located in the immediate vicinity of the campus (about 5min walking time).
+The center is about 10min by public transport (tram) and 30min on foot.
+<br>
+We have pre-booked 20 rooms for a special fare of about 80,-€/ppn.
+   In order to get the discount, please use the the keyphrase <em>LAC2013</em>.
+
+<h2>Hotel Mercure Graz City</h2>
+
+The <a href="http://www.mercure.com/gb/hotel-5742-hotel-mercure-graz-city/index.shtml">Hotel Mercure Graz City</a> is located 
+near the center of Graz.
+It will take you about 20min by public transport (tram) to get to the campus.
+
+We have pre-booked 25 rooms for a special fare of about 90,-€ (single), 115,-€ (double).
+In order to get the discount, please use the the keyphrase <em>LAC2013</em>.
+
+<h2>Jugend- und Familiengästehaus Graz</h2>
+For those who prefer a cheap option, there is the <a href="http://www.jufa.eu/unterkuenfte/jufa-graz-city.html">Youth Hostel Graz</a>, 
+where you can get accomodation for up to 50,-€ (single; dorms are cheaper).
+
+The Youth Hostel is about 25min by public transport (bus + tram) from the campus.
+   
+<a href="http://www.hostels.com/hostels/graz/jugend-&-familiengastehaus-graz/6382">alternative link</a>
 
 <h3>How to get to campus from your hotel</h3>
 <p>
