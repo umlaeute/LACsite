@@ -1,3 +1,15 @@
+<h1>Good News</h1>
+<p>
+Due to popular demand, 
+the deadline for all Linux Audio Conference submissions
+has been extended! It is now <b>February 17th, 2013</b> (23:59 HAST).
+<br>
+So, if you were considering to submit a paper but couldn't make up your mind yet, here is your chance to become active! Never forget that this conference lives through the people participating in it.
+<br>
+FEBRUARY 17th is the new deadline for all submission types: papers, music, installations, workshop proposals.
+<br>
+</p>
+
 <h1>About</h1>
 <p>
 The Linux Audio Conference is the international conference about
