@@ -42,9 +42,10 @@
   $sponsors = array(
     'http://iem.kug.ac.at/' => array('img' => 'img/logos/iemlogo.png', 'title' => 'IEM'),
     'http://linuxaudio.org/' => array('img' => 'img/logos/lao.png', 'title' => 'linuxaudio.org'),
-    'http://tugraz.at/' => array('img' => 'img/logos/TUG.png', 'title' => 'TUGraz - Dept.  Social Learning'),
     'http://esc.mur.at/' => array('img' => 'img/logos/esc.png', 'title' => 'ESC im LABOR'),
+    'http://elearning.tugraz.at/' => array('img' => 'img/logos/TUG.png', 'title' => 'TU Graz Dept. Social Learning'),
     'http://auphonic.com/' => array('img' => 'img/logos/auphonic.png', 'title' => 'auphonic'),
+    'http://forum.mur.at' => array('img' => 'img/logos/forum_stadtpark.png', 'title' => 'Forum Stadtpark'),
   );
 
   function clustermap() {

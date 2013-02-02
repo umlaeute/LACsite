@@ -11,9 +11,12 @@ renowned for its vineyards and <a href="https://en.wikipedia.org/wiki/Pumpkin_se
 More specifically we'll be heading to Pischelsdorf about two hours from Graz.
 We'll start off with a musical excursion to the
 <a href="http://algo.mur.at/projects/klangdom" rel="external">Klangdom</a>
-- geodesic dome 3D soundsphere - and continue to
-"<a href="http://www.posch-weine.at/cms/buschenschank.php" rel="external">Buschenschank Posch"</a> - a <a href="https://en.wikipedia.org/wiki/Heuriger" rel="external">East-Austrian wine tavern</a> (aka Heuriger, aka Buschenschank).
+- geodesic dome 3D soundsphere / powered by solar power and linux - and continue to
+"<a href="http://www.posch-weine.at/cms/buschenschank.php" rel="external">Buschenschank Posch"</a>(tbc) - a <a href="https://en.wikipedia.org/wiki/Heuriger" rel="external">East-Austrian wine tavern</a> (aka Heuriger, aka Buschenschank).
 </p>
+<div class="ptitle">
+<a href="http://algo.mur.at/projects/klangdom" rel="external"><img src="img/klangdom.jpg" alt="Winfried Ritsch's Klangdom"/></a>
+</div>
 
 <h2>Practical Information</h2>
 
@@ -26,7 +29,7 @@ If there are enough people who need to catch an outbound flight or train on Sund
 <h3>How much is the trip?</h3>
 <p>
 The bus trip is sponsored by LAC, but the drinks are on you :) Typical Austrian style "Buschenschank" in the countryside
-is very reasonably priced, assume 10 &euro;.
+is very reasonably priced, assume a total of about 10 &euro; for loads to eat and good wine to drink.
 </p>
 
 <h3>Where do I sign up?</h3>

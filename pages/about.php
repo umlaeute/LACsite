@@ -18,6 +18,7 @@ The Linux Audio Conference brings together musicians, composers, sound artists, 
  <li>Concerts</li>
  <li>Sound Installations</li>
  <li>Live coding sessions</li>
+ <li><a href="<?=local_url('excursion')?>">Excursion on Sunday</a></li>
 </ul>
 <p style="clear:both;"/>
 <h1>We need you! </h1>

@@ -9,6 +9,7 @@ This is for a number of reasons:
 <ul>
 <li> Estimate - We need the number of attendees for insurance and fire-regulations.</li>
 <li> ID - We'd like a name to print on your badge.</li>
+<li> WiFi access - you will get a personalized guest account &rarr; No registration, no internet.</li>
 <li> Concerts - Some concert venues might want to charge for the concerts. We
 want to make sure that all registered attendees (those with a badge) get free entrance to the concerts.</li>
 <li> We want to be able to contact you (see under Privacy).</li>
