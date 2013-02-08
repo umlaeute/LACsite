@@ -84,6 +84,16 @@ bank holiday in Austria) and during the weekend (Saturday afternoon/Sunday).)
 </p>
 
 <h1>After the Conference</h1>
+What to do besides LAC?
+<h3>Excursion</h3>
+<p>
+The last day of the LAC2013 (Sunday, May 12) is dedicated to a social event
+rather than yet another round of technical papers:
+<em>We make a 
+<a href="excursion">trip to the beautiful Styrian countryside</a>
+(they make nice wine there...)!</em>
+</p>
+<h3>LiWoLi</h3>
 <p>
 We proudly announce, that the FLOSS/art festival
 <a href="http://liwoli.at">LiWoLi - Art Meets Radical Openness</a>
