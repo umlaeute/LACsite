@@ -469,6 +469,16 @@ Personal data provided by you in the registration form will be kept confidential
   <label class="la" for="reg_notes" style="float:left;">Remarks:</label>
   <textarea id="reg_notes" name="reg_notes" rows="3" cols="60"><?php if (isset($_POST['reg_notes'])) echo rawurldecode($_POST['reg_notes']);?></textarea><br/>
 </fieldset><p></p>
+<fieldset class="fs">
+<legend>A last word:</legend>
+  <label class="la" style="float:left;">A few days after the
+  LAC2013, there will be the
+  <a href="http://liwoli.at/">LiWoLi - Art Meets Radical Openness</a> Festival
+  in Linz/Austria.<br>
+  You might be interested to prolong your stay in Austria for some more days,
+  to get even more linux enthusiasm.
+  </label>
+</fieldset><p></p>
 <div>
   <div style="float:right;">
 <input type="submit" class="button" value="Submit registration"/></div>
