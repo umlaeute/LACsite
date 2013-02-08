@@ -83,3 +83,13 @@ so we suggest to use public transport or walk the last mile.
 bank holiday in Austria) and during the weekend (Saturday afternoon/Sunday).)
 </p>
 
+<h1>After the Conference</h1>
+<p>
+We proudly announce, that the FLOSS/art festival
+<a href="http://liwoli.at">LiWoLi - Art Meets Radical Openness</a>
+will take place in Linz/Austria (about 200km from Graz) immediately after the LAC2013.
+That's a good opportunity to get a full 10 days of Linux-in-the-Arts...
+<br>
+<a href="http://liwoli.at">http://liwoli.at</a>
+</p>
+
