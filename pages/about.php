@@ -1,5 +1,19 @@
 <h1>Good News</h1>
 <p>
+The submission for papers, music, installations, workshops,... has been closed
+at the end of a long February 17th 2013.
+The review committees are now busy working, reviewing and sorting the
+submissions, so we can notify all submitters of their acceptance by March 6th
+2013.
+</p>
+<p>
+We've had many paper submissions and many many music submissions.
+This is great, as it will make the LAC2013 even more exciting.
+The only drawback is, that there are so many submissions that we cannot possibly
+accept them all...
+</p>
+<hr>
+<p>
 Due to popular demand, 
 the deadline for all Linux Audio Conference submissions
 has been extended! It is now <b>February 17th, 2013</b> (23:59 HAST).
