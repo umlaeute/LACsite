@@ -16,6 +16,14 @@ The center is about 10min by public transport (tram) and 30min on foot.
 <p>
 We have pre-booked 20 rooms for a special fare of about 80,-€/ppn.
 In order to get the discount, please use the the keyphrase <em>LAC2013</em>.
+</p><p>
+<em>Booking:</em> In order to use the special-offer, we've been told that you
+must book via <a href="H2212@accor.com">email</a> (rather than using their
+webinterface).
+</p><p>
+<em>Attention:</em> Please note that the hotel might have cheaper offers
+available on their website (with different breakfast arrangements and
+cancellability) - choose the one that fits your needs.
 </p>
 
 <h3>Hotel Mercure Graz City</h3>
@@ -29,6 +37,14 @@ It will take you about 20min by public transport (tram) to get to the campus.
 <p>
 We have pre-booked 25 rooms for a special fare of about 90,-€ (single), 115,-€ (double).
 In order to get the discount, please use the the keyphrase <em>LAC2013</em>.
+</p><p>
+<em>Booking:</em> In order to use the special-offer, we've been told that you
+must book via <a href="H5742@accor.com">email</a> (rather than using their
+webinterface).
+</p><p>
+<em>Attention:</em> Please note that the hotel might have cheaper offers
+available on their website (with different breakfast arrangements and
+cancellability) - choose the one that fits your needs.
 </p>
 
 <h3>Jugend- und Familiengästehaus Graz</h3>
