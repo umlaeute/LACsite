@@ -22,7 +22,7 @@
     #echo '(<a href="vcal.php">v2.0</a>)&nbsp;|&nbsp;';
     echo '<a href="vcal.php">iCal</a>&nbsp;|&nbsp;';
     echo '<a href="printprogram.php">Printable Version</a>'."\n";
-    echo '<br/>All times are <a href="http://en.wikipedia.org/wiki/Pacific_Daylight_Time" rel="external">PDT</a> = UTC-7'."\n";
+    echo '<br/>All times are <a href="http://en.wikipedia.org/wiki/Central_European_Time" rel="external">CEST</a> = UTC+2'."\n";
     echo "</p>\n";
   }
 ### Note before conference about streaming and IRC ###

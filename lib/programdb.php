@@ -200,7 +200,7 @@
   }
 
   function conference_dayend($day) {
-    return strtotime((11+intval($day)).' April 2012 23:00:00 PDT'); # TODO -> config start-date and dates
+    return strtotime((11+intval($day)).' April 2012 23:00:00 CEST'); # TODO -> config start-date and dates
   }
 
   function fetch_selectlist($db, $table='user', $order='ORDER BY id') {
@@ -898,7 +898,7 @@
 
   function dbadmin_unixtime($e, $start=true) {
     date_default_timezone_set('UTC');
-    $time= strtotime((11+intval($e['day'])).' April 2012 '.$e['starttime'].':00 PDT');
+    $time= strtotime((11+intval($e['day'])).' April 2012 '.$e['starttime'].':00 CEST');
     if (!$start && !strstr($e['duration'], ':'))
       $time = strtotime('+'.$e['duration'].'minutes', $time);
     return $time;

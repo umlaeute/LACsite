@@ -8,7 +8,7 @@
 <div class="menu">Back to the <a href="<?=local_url('program')?>">conference site</a>.</div>
 <h1 class="center"><?=SHORTTITLE?> - Conference Schedule</h1>
 <div class="center"><?=$config['headerlocation']?></div>
-<div class="center">All times are PDT = UTC-7</div>
+<div class="center">All times are CEST = UTC+2</div>
 <?php
   require_once('lib/lib.php');
   require_once('lib/programdb.php');
