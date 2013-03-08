@@ -2,14 +2,13 @@
 <p>
 The submission for papers, music, installations, workshops, etc. has been closed
 at the end of a long February 17th 2013.
-The review committees are now busy working, reviewing and sorting the
-submissions, so we can notify all submitters of their acceptance by March 6th
-2013.
+The review committees have reviewed and the juries have judged:
+notifications of acceptance have been sent to all submitters on Marth 8th 2013
+(only two days late).
 </p>
 <p>
-We've had many paper submissions and many many music submissions.
-Somehow I feel sorry, because there are so many submissions that we cannot possibly accept them all.
-But of course this is also great, as it shows that the LAC2013 will definitely be an exciting thing...
+We are now waiting for the authors to polish the texts and deliver camera-ready papers,
+while artists remove the final (unwanted) glitches.
 </p>
 <!--
 <p>
