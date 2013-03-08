@@ -4,7 +4,7 @@
 <li>Extended deadline for music/sound-installation submissions: <b>February 17th, 2013</b> (23:59 HAST)<p></li>
 <li>Original deadline for paper-submissions: <del>February 4th, 2013</del></li>
 <li>Original deadline for Music/sound-installation submissions: <del>February 4th, 2013</del></li>
-<li>Notification of acceptance: <b>March 6th, 2013</b></li>
+<li>Notification of acceptance: <del>March 6th, 2013</del></li>
 <li>Deadline for camera-ready paper: <b>March 25th, 2013</b></li>
 </ul>
 
