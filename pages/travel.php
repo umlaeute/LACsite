@@ -109,13 +109,11 @@ rather than yet another round of technical papers:
 <a href="excursion">trip to the beautiful Styrian countryside</a>
 (they make nice wine there...)!</em>
 </p>
-<h3>LiWoLi</h3>
+<h3><del>LiWoLi</del></h3>
 <p>
-We proudly announce, that the FLOSS/art festival
+We are sorry that as a result of a 43% funding cut by the Austrian federal
+government, our sister festival
 <a href="http://liwoli.at">LiWoLi - Art Meets Radical Openness</a>
-will take place in Linz/Austria (about 200km from Graz) immediately after the LAC2013.
-That's a good opportunity to get a full 10 days of Linux-in-the-Arts...
-<br>
-<a href="http://liwoli.at">http://liwoli.at</a>
+has had to be canceled.
 </p>
 
