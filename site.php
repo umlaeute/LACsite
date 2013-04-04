@@ -42,10 +42,12 @@
   $sponsors = array(
     'http://iem.kug.ac.at/' => array('img' => 'img/logos/iemlogo.png', 'title' => 'IEM'),
     'http://linuxaudio.org/' => array('img' => 'img/logos/lao.png', 'title' => 'linuxaudio.org'),
+    'http://www.kug.ac.at/' => array('img' => 'img/logos/kug.png', 'title' =>
+'University of Music, Graz'),
     'http://esc.mur.at/' => array('img' => 'img/logos/esc.png', 'title' => 'ESC im LABOR'),
     'http://elearning.tugraz.at/' => array('img' => 'img/logos/TUG.png', 'title' => 'TU Graz Dept. Social Learning'),
-    'http://auphonic.com/' => array('img' => 'img/logos/auphonic.png', 'title' => 'auphonic'),
     'http://mur.at' => array('img' => 'img/logos/mur_at.png', 'title' => 'mur.at'),
+    'http://auphonic.com/' => array('img' => 'img/logos/auphonic.png', 'title' => 'auphonic'),
     'http://forum.mur.at' => array('img' => 'img/logos/forum_stadtpark.png', 'title' => 'Forum Stadtpark'),
   );
 
