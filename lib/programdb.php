@@ -112,6 +112,7 @@
 
   function translate_time($t) {
     #TODO: unify w/ dbadmin_editform 
+    /* US only :)
     $a_times = array(
                       '9:00'  => '9am' ,  '9:45' => '9:45'
                     , '10:00' => '10am', '10:15' =>'10:15', '10:30' =>'10:30', '10:45' => '10:45' 
@@ -126,6 +127,7 @@
                     , '20:00' => '8pm',  '22:00' => '10pm'
                   );
     if (isset($a_times[$t])) return $a_times[$t];
+     */
     return $t;
   }
 
@@ -205,11 +207,11 @@
 
   function fetch_selectlist($db, $table='user', $order='ORDER BY id') {
     if ($table=='days')
-      return array('1' => '1 - Thursday, April/12', '2' => '2 - Friday the 13th', '3' => '3 - Saturday, April/14', '4' => '4 - Sunday, April/15');
+      return array('1' => '1 - Thursday, May/9', '2' => '2 - Friday, May/10', '3' => '3 - Saturday, May/11', '4' => '4 - Sunday, May/12');
     if ($table=='daysx')
-      return array('1' => '1 - Thursday, April/12', '2' => '2 - Friday the 13th', '3' => '3 - Saturday, April/14', '4' => '4 - Sunday, April/15', '5' => '-every day-');
+      return array('1' => '1 - Thursday, May/9', '2' => '2 - Friday, May/10', '3' => '3 - Saturday, May/11', '4' => '4 - Sunday, May/12', '5' => '-every day-');
     if ($table=='daylist') # TODO derive from 'days' - note: start at '1'.
-      return array(1=> 'Thursday, April/12', 2=> 'Friday the 13th', 3=> 'Saturday, April/14', 4=> 'Sunday, April/15');
+      return array(1=> 'Thursday, May/9', 2=> 'Friday, May/10', 3=> 'Saturday, May/11', 4=> 'Sunday, May/12');
 
     if ($table=='types')
       return array('p' => 'Paper Presentation', 'w' => 'Workshop', 'c' => 'Concert', 'i' => 'Installation', 'o' => 'Other');
@@ -1247,11 +1249,10 @@
   function print_day($db, $num, $name, $details=true) {
     echo '<h2 class="ptitle">Day '.$num.' - '.$name.'</h2>';
     echo '<h3 class="ptitle">Main Track</h3>';
-    if ($num == 3) echo "<p>Note: Saturday's Main Track is at CEMEX - a room in the business school across campus.</p>";
     query_out($db,
      'SELECT * FROM activity
       WHERE day='.$num.'
-      AND ( type=\'p\' OR location_id=\'1\' OR (day=\'3\' AND location_id=\'8\')) 
+      AND ( type=\'p\' OR location_id=\'1\') 
       ORDER BY strftime(\'%H:%M\',starttime), serial', $details, false, false
     );
     echo '<h3 class="ptitle">Workshops &amp; Events</h3>';
@@ -1267,9 +1268,11 @@
 
   function print_daily_events($db, $num, $name, $details=true) {
     echo '<h2 class="ptitle">Daily Events / Exhibitions</h2>';
+    /*
     echo '<h3 class="ptitle">Installations &amp; Listening sessions</h3>';
     echo '<p>The following pieces are presented as installations or part of a loop-playlist in the listening room. ';
     echo 'They are accessible on each day of the conference during opening hours; except for the "Listening Room" which will be closed Friday afternoon 3.45pm to 4:30pm for a workshop.</p>';
+     */
     echo '<div class="ptitle"></div>';
     query_out($db,
      'SELECT * FROM activity
@@ -1402,9 +1405,8 @@ if (1) {
 ?>
 <h2 class="ptitle pb">Concerts &amp; Installations</h2>
 <h3>Concerts</h3>
-<p>There are evening concerts on the CCRMA stage the first three days of the conference starting 8pm.</p>
-<p>Saturday night also features the Linux-Sound-Night; 10pm "CoHo" @ Tressider; a bar place near CCRMA, on campus.</p>
-<p>Last but not least there is music and art that can be enjoyed in the "Listening Room" at CCRMA, every day of the conference during opening hours; except for Friday afternoon 3.45pm to 4:30pm when the "Listening Room" is closed for a workshop.</p>
+<p>There are evening concerts ....</p>
+<p>Saturday night also features the Linux-Sound-Night; 10pm....</p>
 <div style="padding:.5em 1em; 0em 1em">
 <?php
     $q='SELECT activity.* FROM activity WHERE type='.$db->quote('c');
@@ -1433,16 +1435,16 @@ if (1) {
     $a_users = fetch_selectlist($db);
     # TODO unify w/ translate_time - strip unused timeslots for table.
     $a_times = array(
-                      '9:00'  => '9am'
-                    , '10:00' => '10am', '10:15' =>'10:15', '10:30' =>'10:30', '10:45' => '10:45' 
-                    , '11:00' => '11am', '11:15' =>'11:15', '11:30' =>'11:30', '11:45' => '11:45' 
-                    , '12:00' => '12pm', '12:15' =>'12:15', '12:30' =>'12:30', '12:45' => '12:45' 
-                    , '13:00' => '1pm' 
-                    , '14:00' => '2pm', '14:15' =>'2:15', '14:30' =>'2:30', '14:45' => '2:45' 
-                    , '15:00' => '3pm', '15:15' =>'3:15', '15:30' =>'3:30', '15:45' => '3:45' 
-                    , '16:00' => '4pm', '16:15' =>'4:15', '16:30' =>'4:30', '16:45' => '4:45' 
-                    , '17:00' => '5pm', '17:15' =>'5:15', '17:30' =>'5:30', '17:45' => '5:45' 
-                    , '18:00' => '6pm',
+                      '9:00'  =>  '9:00'
+                    , '10:00' => '10:00', '10:15' =>'10:15', '10:30' =>'10:30', '10:45' => '10:45' 
+                    , '11:00' => '11:00', '11:15' =>'11:15', '11:30' =>'11:30', '11:45' => '11:45' 
+                    , '12:00' => '12;00', '12:15' =>'12:15', '12:30' =>'12:30', '12:45' => '12:45' 
+                    , '13:00' => '13:00' 
+                    , '14:00' => '14:00', '14:15' =>'13:15', '14:30' =>'13:30', '14:45' => '13:45' 
+                    , '15:00' => '15:00', '15:15' =>'15:15', '15:30' =>'15:30', '15:45' => '15:45' 
+                    , '16:00' => '16:00', '16:15' =>'16:15', '16:30' =>'16:30', '16:45' => '16:45' 
+                    , '17:00' => '17:00', '17:15' =>'17:15', '17:30' =>'17:30', '17:45' => '17:45' 
+                    , '18:00' => '18:00',
                   );
     # XXX 2011: Friday
     #if ($day!=1) $a_times[]='18:00';

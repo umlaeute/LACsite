@@ -1,7 +1,9 @@
 <?php
 
-define('YEAR','2012'); 
-define('BASEDIR','/home/sites/lac.linuxaudio.org/'.YEAR); 
+##mysqldump --opt --user lac2013 -p openconf2013
+
+define('YEAR','2013');
+define('BASEDIR','/home/sites/lac.linuxaudio.org/'.YEAR);
 
 ### INPUT DATABASE (openconf)
 # require(BASEDIR.'openconf/config.php'); # not readable:
@@ -10,6 +12,8 @@ define("OCC_DB_PASSWORD", "XXX");
 define("OCC_DB_HOST", "localhost");
 define("OCC_DB_NAME", "openconf".YEAR);
 #
+
+$DEBUG=false;
 
 ### OUTPUT DATABASE (lac website)
 #define('PDOPRGDB','sqlite:'.BASEDIR.'/docroot/tmp/lac'.YEAR.'.db');
@@ -45,17 +49,20 @@ function ch($s) {
 }
 
 function cday($num) {
-	return 1+floor($num / 7);
+	return 1+floor($num / 9);
 }
-function ctime($num) {
-	switch ($num%7) {
-		case 0: return '10:15';
-		case 1: return '11:00';
-		case 2: return '11:45';
+function ctime($num, $type) {
+	if ($type !='p') return '';
+	switch ($num%9) {
+		case 0: return '11:15';
+		case 1: return '11:45';
+		case 2: return '12:15';
 		case 3: return '14:00';
-		case 4: return '14:45';
-		case 5: return '16:00';
-		case 6: return '16:45';
+		case 4: return '14:30';
+		case 5: return '15:00';
+		case 6: return '16:00';
+		case 7: return '16:30';
+		case 8: return '17:00';
 	}
 }
 
@@ -104,46 +111,59 @@ $papers=$px; unset($px);
 #print_r(count($papers)); exit;
 
 foreach (oc_query('SELECT DISTINCT * from author join paper on paper.paperid=author.paperid where paper.accepted="Accept";') as $a) {
-  #echo "inert user:". $a['name_first'].' '.$a['name_last']."\n";
-  $rv=lac_exec('insert into user (name, bio, tagline, email) VALUES('
+	if ($DEBUG)
+		echo "inert user:". $a['name_first'].' '.$a['name_last']."\n";
+  $rv=lac_exec('insert into user (name, bio, tagline, email, flags) VALUES('
     .$db->quote(ch($a['name_first'].' '.$a['name_last'])).','
     .$db->quote(ch($a['city'].','.$a['country'])).','
     .$db->quote(ch($a['organization'])).','
-    .$db->quote(ch($a['email']))
+    .$db->quote(ch($a['email'])).', 1'
     .');');
   if ($rv===false) {
     echo "insert user:". $a['name_first'].' '.$a['name_last']."\n";
-    echo " !!! ERROR ADDING NEW user : ".$a['email']."\n";
-    print_r($db->errorInfo());
+    echo " !!! WARNING -- ADDING user failed : ".$a['email']."\n";
+		print_r($db->errorInfo());
+		$rv=lac_exec('update user set vip|=1 WHERE email='.$db->quote(ch($a['email'])).';');
   } 
 }
 
 #print_r(lac_query('SELECT * from user;', false));
 echo "-----\n";
 
-$num=1; # skip 1st.
+$num=1; # skip 1st slot on first day.
 foreach ($papers as $p) {
-  #echo "paper :".$p['title']."\n";
+	if ($DEBUG)
+		echo "paper :".$p['title']."\n";
+	$type='p';
+	$location=1;
+	$duration=30;
+
+	if (!empty($p['format'])) {
+		$paperurl='http://lac.linuxaudio.org/'.YEAR.'/papers/'.$p['paperid'].'.'.$p['format'];
+	} else {
+		$paperurl='';
+	}
 	$actid=lac_exec('insert into activity (title, type, abstract, notes, url_paper, duration, location_id'
 		.', day, starttime'
 		.') VALUES('
     .$db->quote(ch($p['title'])).','
-    .$db->quote('p').','
+    .$db->quote($type).','
     .$db->quote(ch($p['abstract'])).','
     .$db->quote(ch($p['keywords']."\n".$p['pcnotes']."\n".$p['comments'])).','
-    .$db->quote('http://lac.linuxaudio.org/2012/papers/'.$p['paperid'].'.'.$p['format'])
-    .',45,1' # duration, location
-    .','.cday($num).','.$db->quote(ctime($num))
+    .$db->quote($paperurl)
+    .','.$duration.','.$location # duration, location
+    .','.cday($num).','.$db->quote(ctime($num, $type))
 		.');');
-	$num++;
-	if ($num==14) $num++; # skip keynote on sat
+
+	if ($type=='p') $num++;
+	#if ($num==14) $num++; # skip keynote on sat
   #echo "DEBUG: activity: $actid\n";
   if ($actid===false) {
     echo " !!! ERROR INSERTING activity: ".$p['title']."\n";
     print_r($db->errorInfo());
     continue;
   }
-	# loop over authors for this paper
+  # loop over authors for this paper
 	$pos=0;
   foreach ($p['myauthors'] as $a) {
     # loopup lac-authorid
@@ -164,5 +184,30 @@ foreach ($papers as $p) {
     } 
   }
 }
-	$actid=lac_exec('insert into location (name) VALUES ("Campbell Recital Hall");');
+$actid=lac_exec('insert into location (name) VALUES ("Main venue");');
+
+# special
+lac_exec('insert into activity (title, type, abstract, notes, url_paper, duration, location_id'
+		.', day, starttime'
+		.') VALUES('
+    .$db->quote('Conference Welcome').','
+    .$db->quote('o').','
+    .$db->quote('').','  # abstract
+    .$db->quote('').','  # notes
+    .$db->quote('').','  # URL
+    .'30, 1' # duration, location
+    .',1,'.$db->quote('11:15') # day, time
+		.');');
+
+lac_exec('insert into activity (title, type, abstract, notes, url_paper, duration, location_id'
+		.', day, starttime'
+		.') VALUES('
+    .$db->quote('Excursion').','
+    .$db->quote('o').','
+    .$db->quote('The final event of the conference will be a trip to the beautiful south-eastern Styrian countryside, renowned for its vineyards and pumpkin seed oil... see http://lac.linuxaudio.org/2013/excursion').','  # abstract
+    .$db->quote('').','  # Notes
+    .$db->quote('').','  # URL
+    .'300, 1' # duration, location
+    .',4,'.$db->quote('11:15') # day, time
+		.');');
 echo "OK\n";
