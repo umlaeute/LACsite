@@ -396,6 +396,7 @@ div.huge a:hover {color:#203080;}
 table.ptb {
   border-bottom:1px solid #000000;
   border-left:1px solid #000000;
+	width:100%;
 }
 td.ptb, th.ptb {
   border-right:1px solid #000000;
@@ -434,7 +435,7 @@ ul.nobullet li{list-style:none; margin-left:0; text-align:left; font-size:90%;}
   min-width:600px;
   overflow:hidden;
   position:fixed;
-  top:120px;
+  top:140px;
   width:70%;
   z-index:300;
 }
