@@ -1,5 +1,5 @@
 <?php
-# TODO check if included by top-handler. 
+# TODO check if included by top-handler.
 # TODO: search hardcoded* in this file -> config, settings
 
   try {
@@ -111,18 +111,18 @@
   }
 
   function translate_time($t) {
-    #TODO: unify w/ dbadmin_editform 
+    #TODO: unify w/ dbadmin_editform
     /* US only :)
     $a_times = array(
                       '9:00'  => '9am' ,  '9:45' => '9:45'
-                    , '10:00' => '10am', '10:15' =>'10:15', '10:30' =>'10:30', '10:45' => '10:45' 
-                    , '11:00' => '11am', '11:15' =>'11:15', '11:30' =>'11:30', '11:45' => '11:45' 
-                    , '12:00' => '12pm', '12:15' =>'12:15', '12:30' =>'12:30', '12:45' => '12:45' 
-                    , '13:00' => '1pm',  '13:15' => '1:15', '13:30' => '1:30', '13:45' =>  '1:45' 
-                    , '14:00' => '2pm',  '14:15' => '2:15', '14:30' => '2:30', '14:45' =>  '2:45' 
-                    , '15:00' => '3pm',  '15:15' => '3:15', '15:30' => '3:30', '15:45' =>  '3:45' 
-                    , '16:00' => '4pm',  '16:15' => '4:15', '16:30' => '4:30', '16:45' =>  '4:45' 
-                    , '17:00' => '5pm',  '17:15' => '5:15', '17:30' => '5:30', '17:45' =>  '5:45' 
+                    , '10:00' => '10am', '10:15' =>'10:15', '10:30' =>'10:30', '10:45' => '10:45'
+                    , '11:00' => '11am', '11:15' =>'11:15', '11:30' =>'11:30', '11:45' => '11:45'
+                    , '12:00' => '12pm', '12:15' =>'12:15', '12:30' =>'12:30', '12:45' => '12:45'
+                    , '13:00' => '1pm',  '13:15' => '1:15', '13:30' => '1:30', '13:45' =>  '1:45'
+                    , '14:00' => '2pm',  '14:15' => '2:15', '14:30' => '2:30', '14:45' =>  '2:45'
+                    , '15:00' => '3pm',  '15:15' => '3:15', '15:30' => '3:30', '15:45' =>  '3:45'
+                    , '16:00' => '4pm',  '16:15' => '4:15', '16:30' => '4:30', '16:45' =>  '4:45'
+                    , '17:00' => '5pm',  '17:15' => '5:15', '17:30' => '5:30', '17:45' =>  '5:45'
                     , '18:00' => '6pm',  '18:15' => '6:15'
                     , '20:00' => '8pm',  '22:00' => '10pm'
                   );
@@ -164,7 +164,7 @@
   function fetch_activity_by_location($db, $location_id) {
     $rv = array();
     $q='SELECT DISTINCT title, id from activity
-       WHERE location_id ='.$location_id.';'; 
+       WHERE location_id ='.$location_id.';';
     $res=$db->query($q);
     if (!$res) { say_db_error('authorids'); return $rv;}
     $result=$res->fetchAll();
@@ -177,9 +177,9 @@
 
   function fetch_activity_by_author($db, $user_id) {
     $rv = array();
-    #$q='SELECT activity_id from usermap where user_id='.$user_id.';'; 
-    $q='SELECT DISTINCT activity.title AS title, activity.id AS id, activity.day AS day, activity.starttime AS starttime, activity.duration AS duration, activity.type AS type, usermap.activity_id from activity,usermap 
-       WHERE activity.id = usermap.activity_id AND usermap.user_id='.$user_id.';'; 
+    #$q='SELECT activity_id from usermap where user_id='.$user_id.';';
+    $q='SELECT DISTINCT activity.title AS title, activity.id AS id, activity.day AS day, activity.starttime AS starttime, activity.duration AS duration, activity.type AS type, usermap.activity_id from activity,usermap
+       WHERE activity.id = usermap.activity_id AND usermap.user_id='.$user_id.';';
     $res=$db->query($q);
     if (!$res) { say_db_error('authorids'); return $rv;}
     $result=$res->fetchAll();
@@ -191,7 +191,7 @@
 
   function fetch_authorids($db, $activity_id) {
     $rv = array();
-    $q='SELECT user_id from usermap where activity_id='.$activity_id.' ORDER BY position;'; 
+    $q='SELECT user_id from usermap where activity_id='.$activity_id.' ORDER BY position;';
     $res=$db->query($q);
     if (!$res) { say_db_error('authorids'); return $rv;}
     $result=$res->fetchAll();
@@ -222,7 +222,7 @@
       return array('1' => 'confirmed', '0' => 'cancelled');
 
     $rv = array('0' => '-unset-');
-    $q='SELECT id, name from '.$table.' '.$order.';'; 
+    $q='SELECT id, name from '.$table.' '.$order.';';
     $res=$db->query($q);
     if (!$res) { say_db_error(); return $rv;}
     $result=$res->fetchAll();
@@ -234,14 +234,14 @@
 
   function dbadmin_jumpselected() {
     if (isset($_REQUEST['param'])) {
-      $id=intval(rawurldecode($_REQUEST['param'])); 
+      $id=intval(rawurldecode($_REQUEST['param']));
       if ($id>0)
         echo '<script type="text/javascript">'."\nadminjump('jan-$id');\n".'</script>'."\n";
     }
   }
 
   function dbadmin_listlocations($db) {
-    $q='SELECT id, name from location ORDER BY id;'; 
+    $q='SELECT id, name from location ORDER BY id;';
     $res=$db->query($q);
     if (!$res) { say_db_error(); return $rv;}
     $result=$res->fetchAll();
@@ -284,7 +284,7 @@
   }
 
   function dbadmin_listusers($db) {
-    $q='SELECT id, name, email, bio, vip from user ORDER BY name;'; 
+    $q='SELECT id, name, email, bio, vip from user ORDER BY name;';
     $res=$db->query($q);
     if (!$res) { say_db_error(); return $rv;}
     $result=$res->fetchAll();
@@ -300,11 +300,11 @@
       echo '<td><span style="color:'.$profilecolours[usr_has_profile($db, $r['id'])].'">('.$r['id'].')</span>';
       echo '<a id="jan-'.$r['id'].'" name="jan-'.$r['id'].'"/>&nbsp;</td><td>'.xhtmlify($r['name']).'</td>';
       if (count($aids)==0) {
-        if (!($r['vip']&1)) 
+        if (!($r['vip']&1))
           echo '<td>0';
         else
           echo '<td class="center red">0';
-      } else 
+      } else
         echo '<td class="center"><a class="active" onclick="document.getElementById(\'pdb_filterauthor\').value=\''.$r['id'].'\';document.getElementById(\'param\').value=\'-1\';document.getElementById(\'mode\').value=\'\';formsubmit(\'myform\');">'.count($aids).'</a>';
       if (!($r['vip']&1))  echo '-S';
       if ($r['vip']&14) echo '+';
@@ -326,7 +326,7 @@
     echo '<hr/>'."\n Speakers/Artists email:";
     echo '<pre style="font-size:9px; background:#ccc; line-height:1.3em;margin-top:2em;">';
     echo wordwrap($emaillist,100);
-    echo '</pre><br/>'; 
+    echo '</pre><br/>';
   }
 
   function dbadmin_listall($db, $order='time') {
@@ -344,12 +344,12 @@
     print_filterfields($a_users, $a_locations, $filter);
     echo '</fieldset>';
 
-    if ($filter['user'] != '0') 
+    if ($filter['user'] != '0')
       $q = 'SELECT DISTINCT activity.*
       FROM activity,user,usermap
       WHERE activity.id=usermap.activity_id AND user.id=usermap.user_id
         AND user.id='.$filter['user'];
-    else 
+    else
       $q='SELECT activity.* FROM activity WHERE 1=1';
 
     if ($filter['type'] != '0') $q.=' AND type='.$db->quote($filter['type']);
@@ -447,7 +447,7 @@
       $r=$res->fetch(PDO::FETCH_ASSOC);
       echo 'ID: '.$id.'<br/>';
     } else {
-      $r=array('name' =>'', 'bio' => '', 'email' => '', 'id' => -1, 'tagline' => '', 
+      $r=array('name' =>'', 'bio' => '', 'email' => '', 'id' => -1, 'tagline' => '',
         'flags' => 1, 'vip' => 1,
         'url_image' => '', 'url_person' => '',
         'url_institute' => '', 'url_project' => '',
@@ -502,9 +502,9 @@
                     , '21:00' => '21:00' , '21:30' => '21:30'
                     , '22:00' => '22:00' , '22:30' => '22:30'
                     , '23:00' => '23:00' , '23:30' => '23:30'
-                    , '24:00' => '0:00' 
+                    , '24:00' => '0:00'
                );
-    $a_durations = fetch_selectlist(0, 'durations'); 
+    $a_durations = fetch_selectlist(0, 'durations');
     $a_days = fetch_selectlist(0, 'daysx');
     $a_types = fetch_selectlist(0, 'types');
     $a_status = fetch_selectlist(0, 'status');
@@ -563,7 +563,7 @@
     gen_options($a_locations , $r['location_id']);
     echo '</select><br/>';
     $i=1;
-    if ($id>0) 
+    if ($id>0)
     foreach (fetch_authorids($db, $r['id']) as $user_id) {
       if ($i%2==1 && $i>1) echo '<br/>'; else if ($i>1) echo '&nbsp;';
       echo '<label for="pdb_author['.$i.']">Author '.$i.':</label>';
@@ -575,7 +575,7 @@
     $maxusers=6;
     while ($i+2 > $maxusers) $maxusers+=2;
     while ($i<=$maxusers) {
-      if ($i%2 ==1) echo '<br/>'; else echo '&nbsp;'; 
+      if ($i%2 ==1) echo '<br/>'; else echo '&nbsp;';
       echo '<label for="pdb_author['.$i.']">Author '.$i.':</label>';
       echo '<select id="pdb_author['.$i.']" name="pdb_author['.$i.']" size="1">';
       gen_options($a_users , 0);
@@ -610,7 +610,7 @@
   function dbadmin_dellocation($db) {
     $err=0;
     $id=intval(rawurldecode($_REQUEST['param']));
-    if ($id < 0) { 
+    if ($id < 0) {
       say_db_message('Invalid Location ID given.');
       return;
     }
@@ -629,7 +629,7 @@
   function dbadmin_deluser($db) {
     $err=0;
     $id=intval(rawurldecode($_REQUEST['param']));
-    if ($id < 0) { 
+    if ($id < 0) {
       say_db_message('Invalid User ID given.');
       return;
     }
@@ -648,7 +648,7 @@
   function dbadmin_delentry($db) {
     $err=0;
     $id=intval(rawurldecode($_REQUEST['param']));
-    if ($id < 0) { 
+    if ($id < 0) {
       say_db_message('Invalid Enrty ID given.');
       return;
     }
@@ -787,7 +787,7 @@
     foreach ($_REQUEST['pdb_author'] as $author) {
       if ($author == 0) continue;
       $q='INSERT into usermap (\'activity_id\', \'user_id\', \'position\') VALUES ('
-          .$id.',' 
+          .$id.','
           .intval(rawurldecode($author)).', '.$aid++.');';
       $err|=($db->exec($q) !== 1)?4:0;
     }
@@ -911,7 +911,7 @@
   }
 
   function dbadmin_profilelist($db) {
-    $q='SELECT id,name,email,udate,flags from user ORDER BY name;'; 
+    $q='SELECT id,name,email,udate,flags from user ORDER BY name;';
     $res=$db->query($q);
     if (!$res) { say_db_error(); return $rv;}
     $result=$res->fetchAll();
@@ -934,7 +934,7 @@
   }
 
   function dbadmin_profilecheck($db, $notify=false) {
-    $q='SELECT id,name,email from user ORDER BY name;'; 
+    $q='SELECT id,name,email from user ORDER BY name;';
     $res=$db->query($q);
     if (!$res) { say_db_error(); return $rv;}
     $result=$res->fetchAll();
@@ -968,32 +968,32 @@
       foreach ($result as $r) {
         $err=0;
         if (!isset($a_locations[$r['location_id']]) || empty($a_locations[$r['location_id']])) {
-          echo 'Event ('.$r['id'].') has no assigned location.<br/>'; 
+          echo 'Event ('.$r['id'].') has no assigned location.<br/>';
           $err++;
         }
         if (count(fetch_authorids($db, $r['id'])) == 0) {
           if (substr($r['title'],0,12) == 'COFFEE BREAK') continue; # XXX
-          echo 'Event ('.$r['id'].') has no assigned Author(s).<br/>'; 
+          echo 'Event ('.$r['id'].') has no assigned Author(s).<br/>';
           $err++;
         }
 
         if ($err) {
     echo ' - ('.$r['id'].') <em>day</em>:'.$r['day'].', <em>start</em>:'.$r['starttime'].', <em>duration</em>:'.$r['duration'].', <em>type</em>:'.translate_type($r['type']).' <em>title</em>:'.limit_text($r['title']).'&nbsp;|&nbsp;';
           echo '<td><a class="active" onclick="document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'edit\';formsubmit(\'myform\');">Edit</a>';
-          if ($err==2) 
+          if ($err==2)
             echo '&nbsp;|&nbsp;<a class="active" onclick="if (confirm(\'Really delete Entry no. '.$r['id'].'?\')) {document.getElementById(\'param\').value='.$r['id'].';document.getElementById(\'mode\').value=\'delentry\';formsubmit(\'myform\');i}">Delete</a>';
           echo '<br/>';
           echo "\n";
         }
       }
-      
+
     } else {
       echo '&nbsp;*&nbsp;Database query failed<br/>'."\n";
     }
 
 
     echo "<b>Pass 2: Persons</b><br/>";
-    $q='SELECT id, name, vip from user ORDER BY name;'; 
+    $q='SELECT id, name, vip from user ORDER BY name;';
     $res=$db->query($q);
     if ($res) {
       $result=$res->fetchAll();
@@ -1012,7 +1012,7 @@
 
 
     echo "<b>Pass 3: Locations</b><br/>";
-    $q='SELECT id, name from location ORDER BY id;'; 
+    $q='SELECT id, name from location ORDER BY id;';
     $res=$db->query($q);
     if ($res) {
       $result=$res->fetchAll();
@@ -1032,7 +1032,7 @@
     $cnt=array('tot' => 0, 'ok' => '0', 'part' => 0);
     list($regs,$list) = get_registrations();
 
-    $q='SELECT id, name, email, vip from user ORDER BY name;'; 
+    $q='SELECT id, name, email, vip from user ORDER BY name;';
     $res=$db->query($q);
     $emailmissing='';
     if ($res) {
@@ -1040,19 +1040,19 @@
       $result=$res->fetchAll();
       foreach ($result as $r) {
         $cnt['tot']++;
-        if (in_array(strtolower($r['name']), $list)) { 
+        if (in_array(strtolower($r['name']), $list)) {
           $cnt['ok']++;
           continue;
         }
         echo '<li>'.$r['name'].' is not yet registered';
         if (empty($r['email']))
           echo '<span style="color:red"> and we have no email address</span>';
-        else 
+        else
           $emailmissing.=$r['name'].' &lt;'.$r['email'].'&gt;, ';
 
         if (!($r['vip']&1))
           echo '; but s/he is no speaker';
-        else 
+        else
           echo '<span style="color:red">(!)</span>';
         echo '.';
         $pm=0;
@@ -1078,7 +1078,7 @@
     echo '<p>Email of unregistered Authors:</p>'."\n";
     echo '<pre style="font-size:9px; background:#ccc; line-height:1.3em;margin-top:2em;">';
     echo wordwrap($emailmissing,100);
-    echo '</pre><br/>'; 
+    echo '</pre><br/>';
 
     echo "<b>Pass 5: Check tagging of Author Registration</b><br/>";
     $checked=0;
@@ -1097,7 +1097,7 @@
       }
     }
     echo '<p style="color:red">Checked '.$checked.' of '.$cnt['tot'].' Authors: good entries: '.$good.'</p>';
-    
+
     echo "<b>Pass 6: Check profile of Author Registration</b><br/>";
     $checked=0;
     $good=0;
@@ -1125,10 +1125,10 @@
   }
 
   function get_registrations() {
-    $dir = opendir(REGLOGDIR); 
-    $rva = array(); 
-    $rvn = array(); 
-    while ($file_name = readdir($dir)) 
+    $dir = opendir(REGLOGDIR);
+    $rva = array();
+    $rvn = array();
+    while ($file_name = readdir($dir))
       if($file_name[0] != '.' && is_file(REGLOGDIR.$file_name)) {
         $v=parse_ini_file(REGLOGDIR.$file_name);
         $rva[]= array('first' => $v['reg_prename'], 'last' => $v['reg_name'], 'fullname' => trim($v['reg_prename']).' '.trim($v['reg_name']), 'reg_vip' => (isset($v['reg_vip'])?$v['reg_vip']:''));
@@ -1148,15 +1148,15 @@
       foreach ($result as $r) {
   $err=0;
         if (empty($r['day']) || $r['day'] < 1) {
-          echo 'Event ('.$r['id'].') has no day set.<br/>'; 
+          echo 'Event ('.$r['id'].') has no day set.<br/>';
     $err++;
         }
         if (empty($r['starttime'])) {
-          echo 'Event ('.$r['id'].') has no start-time set.<br/>'; 
+          echo 'Event ('.$r['id'].') has no start-time set.<br/>';
     $err++;
         }
         if (empty($r['duration']) && $r['type'] != 'c') {
-          echo 'Event ('.$r['id'].') has no duration set.<br/>'; 
+          echo 'Event ('.$r['id'].') has no duration set.<br/>';
     $err++;
         }
         if ($err) {
@@ -1188,7 +1188,7 @@
           $starta = dbadmin_unixtime($a);
           $enda   = dbadmin_unixtime($a, false);
           $startb = dbadmin_unixtime($b);
-          if ( ($enda > $startb && $starta < $startb) 
+          if ( ($enda > $startb && $starta < $startb)
              ||($starta == $startb) ) {
             $err++;
             echo '<span class="red">Conflict: ('.$a['id'].') ends in same location AFTER ('.$b['id'].') starts there.</span><br/>';
@@ -1252,7 +1252,7 @@
     query_out($db,
      'SELECT * FROM activity
       WHERE day='.$num.'
-      AND ( type=\'p\' OR location_id=\'1\') 
+      AND ( type=\'p\' OR location_id=\'1\')
       ORDER BY strftime(\'%H:%M\',starttime), serial', $details, false, false
     );
     echo '<h3 class="ptitle">Workshops &amp; Events</h3>';
@@ -1285,7 +1285,7 @@
   function print_filterfields($a_users, $a_locations, $filter, $usejs=false) {
     $a_days = fetch_selectlist(0, 'days');
     $a_types = fetch_selectlist(0, 'types');
-    if ($usejs) 
+    if ($usejs)
       $ocs=' onchange="submit();" class="small"';
     else
       $ocs=' class="small"';
@@ -1338,7 +1338,7 @@ if (1) {
     $a_users[0]='-all-';
 /*
     foreach($a_users as $i => &$a) {
-      $a=limit_text($a,19); 
+      $a=limit_text($a,19);
     }
 */
 
@@ -1364,7 +1364,7 @@ if (1) {
 
     if (isset($_REQUEST['pdb_filterid'])) {
       echo '<input class="small" type="submit" title="Show all entries" value="Show All Entries"/>';
-    } else 
+    } else
       print_filterfields($a_users, $a_locations, $filter, true);
     echo '</fieldset>';
     echo '</form>';
@@ -1375,12 +1375,12 @@ if (1) {
   }
 
   function list_filtered_program($db,$filter,$details) {
-    if ($filter['user'] != '0') 
+    if ($filter['user'] != '0')
       $q = 'SELECT DISTINCT activity.*
       FROM activity,user,usermap
       WHERE activity.id=usermap.activity_id AND user.id=usermap.user_id
         AND user.id='.$filter['user'];
-    else 
+    else
       $q='SELECT activity.* FROM activity WHERE 1=1';
 
     if ($filter['type'] != '0') $q.=' AND type='.$db->quote($filter['type']);
@@ -1436,14 +1436,14 @@ if (1) {
     # TODO unify w/ translate_time - strip unused timeslots for table.
     $a_times = array(
                       '9:00'  =>  '9:00'
-                    , '10:00' => '10:00', '10:15' =>'10:15', '10:30' =>'10:30', '10:45' => '10:45' 
-                    , '11:00' => '11:00', '11:15' =>'11:15', '11:30' =>'11:30', '11:45' => '11:45' 
-                    , '12:00' => '12;00', '12:15' =>'12:15', '12:30' =>'12:30', '12:45' => '12:45' 
-                    , '13:00' => '13:00' 
-                    , '14:00' => '14:00', '14:15' =>'13:15', '14:30' =>'13:30', '14:45' => '13:45' 
-                    , '15:00' => '15:00', '15:15' =>'15:15', '15:30' =>'15:30', '15:45' => '15:45' 
-                    , '16:00' => '16:00', '16:15' =>'16:15', '16:30' =>'16:30', '16:45' => '16:45' 
-                    , '17:00' => '17:00', '17:15' =>'17:15', '17:30' =>'17:30', '17:45' => '17:45' 
+                    , '10:00' => '10:00', '10:15' =>'10:15', '10:30' =>'10:30', '10:45' => '10:45'
+                    , '11:00' => '11:00', '11:15' =>'11:15', '11:30' =>'11:30', '11:45' => '11:45'
+                    , '12:00' => '12;00', '12:15' =>'12:15', '12:30' =>'12:30', '12:45' => '12:45'
+                    , '13:00' => '13:00'
+                    , '14:00' => '14:00', '14:15' =>'13:15', '14:30' =>'13:30', '14:45' => '13:45'
+                    , '15:00' => '15:00', '15:15' =>'15:15', '15:30' =>'15:30', '15:45' => '15:45'
+                    , '16:00' => '16:00', '16:15' =>'16:15', '16:30' =>'16:30', '16:45' => '16:45'
+                    , '17:00' => '17:00', '17:15' =>'17:15', '17:30' =>'17:30', '17:45' => '17:45'
                     , '18:00' => '18:00',
                   );
     # XXX 2011: Friday
@@ -1479,13 +1479,13 @@ if (1) {
       if (!$res) return; // TODO: print error msg
       $stmt=$res->fetchAll();
       foreach ($stmt as $r) {
-        if (empty($r['starttime'])) continue; 
+        if (empty($r['starttime'])) continue;
         if ($r['status']==0) continue; # skip cancelled
         $table[$i][$r['starttime']]=$r;
       }
       $i++;
     }
-    
+
     echo '<table cellspacing="0" class="ptb"><tr><th class="ptb">Time</th>';
     foreach ($table as $c) {
       echo '<th class="ptb">'.$c['loc'].'</th>';
@@ -1510,7 +1510,7 @@ if (1) {
           #if ($d['status']==0) echo '<span class="red">Cancelled: </span>';
           #echo '<span'.(($d['status']==0)?' class="cancelled"':'').'><span>'.xhtmlify($d['title']).'</span></span>';
           echo '<span>'.xhtmlify($d['title']).'</span>';
-          echo ' ('.$d['duration'].'mins)'; 
+          echo ' ('.$d['duration'].'mins)';
           echo '<div class="right"><em>'; $i=0;
           foreach (fetch_authorids($db, $d['id']) as $user_id) {
             if ($i++>0) echo ', ';
@@ -1520,7 +1520,7 @@ if (1) {
           echo '</td>';
         } else if ($c['cskip'] == 0) {
           echo '<td class="ptb center">-</td>';
-        } 
+        }
 
         if ($c['cskip']>0) {
           $c['cskip']--;
@@ -1741,7 +1741,7 @@ if (1) {
 
   function vcal_program($db,$version='2.0',$raw=true) {
     global $config;
-    if (!function_exists('quoted_printable_encode')) 
+    if (!function_exists('quoted_printable_encode'))
       require_once('lib/quoted_printable.php');
 
     if ($version!='1.0' && $version!='2.0')
@@ -1764,7 +1764,7 @@ if (1) {
     if (!$res) return; // TODO: print error msg
     $result=$res->fetchAll();
     echo 'BEGIN:VCALENDAR'."\r\n";
-    echo 'VERSION:'.$version."\r\n"; 
+    echo 'VERSION:'.$version."\r\n";
     echo 'PRODID:-//'.$config['organizaion'].'/LAC'.LACY.'//NONSGML v1.0//EN'."\r\n";
 
 # XXX hardcoded concerts

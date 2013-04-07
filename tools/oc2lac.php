@@ -26,10 +26,10 @@ function ch($s) {
     '@\xe2\x80\x99@' => "'",    # UTF8 single-quote end
     '@\xe2\x80\x9c@' => '``',   # UTF8 double-quote start
     '@\xe2\x80\x9d@' => "''",   # UTF8 double-quote end
-    '@\xe2\x80\x94@' => ' -- ', # UTF8 dash/minus/hyphen 
-    '@\xc2\x96@'     => ' -- ', # UTF8 dash/minus/hyphen 
+    '@\xe2\x80\x94@' => ' -- ', # UTF8 dash/minus/hyphen
+    '@\xc2\x96@'     => ' -- ', # UTF8 dash/minus/hyphen
     '@\xc2\xa0@'     => ' ',    # non-standard whitespace
-    '@\xc2\x97@'     => ' -- ', # dash/minus/hyphen 
+    '@\xc2\x97@'     => ' -- ', # dash/minus/hyphen
     '@\xc2\x91@'     => "`",    # omission
     '@\xc2\x92@'     => "'",    # apostrophe
     '@\xc2\x93@'     => '``',   # single quote start
@@ -68,7 +68,7 @@ function ctime($num, $type) {
 
 ### All systems go
 $db=new PDO(PDOPRGDB);
-$ocdb=new PDO('mysql:host='.OCC_DB_HOST.';dbname='.OCC_DB_NAME, OCC_DB_USER, OCC_DB_PASSWORD); 
+$ocdb=new PDO('mysql:host='.OCC_DB_HOST.';dbname='.OCC_DB_NAME, OCC_DB_USER, OCC_DB_PASSWORD);
 
 function oc_query($q) {
   global $ocdb;
@@ -91,7 +91,7 @@ function lac_query($q, $mode='assoc') {
 function lac_exec($q) {
   global $db;
   #echo "DEBUG Q: $q\n";
-  if ($db->exec($q)) 
+  if ($db->exec($q))
     return $db->lastInsertId();
   return false;
 }
@@ -124,7 +124,7 @@ foreach (oc_query('SELECT DISTINCT * from author join paper on paper.paperid=aut
     echo " !!! WARNING -- ADDING user failed : ".$a['email']."\n";
 		print_r($db->errorInfo());
 		$rv=lac_exec('update user set vip|=1 WHERE email='.$db->quote(ch($a['email'])).';');
-  } 
+  }
 }
 
 #print_r(lac_query('SELECT * from user;', false));
@@ -181,7 +181,7 @@ foreach ($papers as $p) {
       echo "author: ".$a['email'].' ('.intval($lacaid['id']).') -> activity: '.$actid."\n";
       echo " !!! ERROR creating user-map.\n";
       print_r($db->errorInfo());
-    } 
+    }
   }
 }
 $actid=lac_exec('insert into location (name) VALUES ("Main venue");');
