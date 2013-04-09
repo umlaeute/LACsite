@@ -1250,7 +1250,6 @@
      'SELECT * FROM activity
       WHERE day='.$num.'
       AND NOT (type=\'p\' OR location_id=\'1\')
-      AND NOT (day=\'3\' AND location_id=\'8\')
       ORDER BY typesort(type), strftime(\'%H:%M\',starttime), location_id, serial', $details, true, true
     );
   }
