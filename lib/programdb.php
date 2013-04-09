@@ -1400,6 +1400,7 @@ if (1) {
 <div style="padding:.5em 1em; 0em 1em">
 <?php
     $q='SELECT activity.* FROM activity WHERE type='.$db->quote('c');
+    $q.=' AND NOT location_id=2'; ## XXX skip radio shows here
     $q.=' ORDER BY day, strftime(\'%H:%M\',starttime), typesort(type), location_id, serial;';
     query_out($db, $q, $details, false,  true, true, true);
 ?>
@@ -1409,6 +1410,7 @@ if (1) {
 <p>TODO when open..</p>
 <?php
     $q='SELECT activity.* FROM activity WHERE type='.$db->quote('i');
+    $q.=' OR location_id=2'; ## XXX add radio shows here
     $q.=' ORDER BY day, strftime(\'%H:%M\',starttime), typesort(type), location_id, serial;';
     query_out($db, $q, $details, false,  true, true, true);
     echo '</div>'."\n";
