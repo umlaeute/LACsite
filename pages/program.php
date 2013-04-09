@@ -50,6 +50,21 @@
       if ($day<1 || $day>$days) {
         program_header('',$details);
         hardcoded_concert_and_installation_info($db);
+      } else if ($day == 4) {
+        program_header($mode,$details);
+
+        echo '<div style="float:right;">';
+        for ($i=1; $i<=4; $i++) {
+          if ($i == $day) { echo 'Day '.$i.'&nbsp;&nbsp;'; continue;}
+          echo '<a href="'.local_url('program', 'mode=table&amp;day='.$i).'">Day '.$i.'</a>&nbsp;&nbsp;';
+        }
+        echo '<a href="'.local_url('program', 'mode=table&amp;day=0').'">Concerts&amp;Installations</a>&nbsp;&nbsp;';
+        echo '</div>';
+        $a_days = fetch_selectlist(0, 'days');
+        echo '<h2 class="ptitle pb">Day '.$a_days[$day].'</h2>';
+        echo '<br/><hr/><br/>';
+
+        require_once('pages/excursion.php');
       } else {
         program_header($mode,$details);
         table_program($db,$day);
