@@ -1140,7 +1140,7 @@
           echo 'Event ('.$r['id'].') has no day set.<br/>';
     $err++;
         }
-        if (empty($r['starttime'])) {
+        if (empty($r['starttime']) && $r['type'] != 'i' && $r['location_id'] != 2) { # XXX ignore radio shows and installations
           echo 'Event ('.$r['id'].') has no start-time set.<br/>';
     $err++;
         }
