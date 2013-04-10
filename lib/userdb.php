@@ -110,9 +110,8 @@ function usr_sendhash($db, $uid) {
 	# send email to user
   global $config;
   $headers = 'From: '.$config['mailfrom'];
-  $headers .= "\r\n".'Content-Type: text/plain; charset=UTF-8';
-  $headers .= "\r\n".'Content-Transfer-Encoding: 8bit';
-  $headers .= "\r\n";
+  $headers .= "\n".'Content-Type: text/plain; charset=UTF-8';
+  $headers .= "\n".'Content-Transfer-Encoding: 8bit';
   $subject=SHORTTITLE.' user-profile';
   $rcpt=$d['email'];
 	$msg='';
