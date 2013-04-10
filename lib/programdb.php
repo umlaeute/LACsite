@@ -1394,9 +1394,11 @@ if (1) {
 ?>
 <h2 class="ptitle pb">Concerts &amp; Installations</h2>
 <h3>Concerts</h3>
+<!--
 <p>There are concerts .... TODO </p>
 <p>Saturday night also features the Linux-Sound-Night; 10pm....</p>
 <p>TODO Links to locations, how to get there...</p>
+!-->
 <div style="padding:.5em 1em; 0em 1em">
 <?php
     $q='SELECT activity.* FROM activity WHERE type='.$db->quote('c');
@@ -1405,9 +1407,11 @@ if (1) {
     query_out($db, $q, $details, false,  true, true, true);
 ?>
 <h3>Installation/Loops</h3>
+<!--
 <p>Art installations are .... TODO</p>
 <p>TODO where..</p>
 <p>TODO when open..</p>
+!-->
 <?php
     $q='SELECT activity.* FROM activity WHERE type='.$db->quote('i');
     $q.=' OR location_id=2'; ## XXX add radio shows here
