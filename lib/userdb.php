@@ -29,7 +29,7 @@ function fetch_user_activities($db, $uid) {
 		AND user.id='.intval($uid);
 	$q.=' ORDER BY day, strftime(\'%H:%M\',starttime), typesort(type), location_id;'; 
 	$res=$db->query($q);
-	if (!$res) { say_db_error('fetch_users'); return array();}
+	if (!$res) {/*say_db_error('fetch_users');*/ return array();}
 	return $res->fetchAll(PDO::FETCH_ASSOC);
 }
 
@@ -112,6 +112,7 @@ function usr_sendhash($db, $uid) {
   $headers = 'From: '.$config['mailfrom'];
   $headers .= "\r\n".'Content-Type: text/plain; charset=UTF-8';
   $headers .= "\r\n".'Content-Transfer-Encoding: 8bit';
+  $headers .= "\r\n";
   $subject=SHORTTITLE.' user-profile';
   $rcpt=$d['email'];
 	$msg='';
