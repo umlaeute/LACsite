@@ -88,11 +88,11 @@ li.active:hover    {color:#203080;}
 }
 #logoright {
   position:absolute;
-  text-align: center;
+  text-align: left;
   z-index:80;
   top:1em;
   right:.5em;
-  width:200px;
+  width:129px;
   height:24px;
 }
 #titlebar {

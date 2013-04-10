@@ -15,10 +15,10 @@
 
 # other available pages - not shown as 'tabs'
   $hidden = array(
-    'participation' => 'Participate',
-    'program'  => 'Schedule/Archive',
-    'files' => 'Download',
+    'program'  => 'Schedule',
     'speakers'  => 'Delegates',
+    'participation' => 'Participate',
+    'files' => 'Download',
     'profile' => 'Profile',
     'excursion' => 'Excursion',
   );
