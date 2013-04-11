@@ -294,11 +294,8 @@ function gen_badges_pdf($f) {
   $handle = fopen(TMPDIR.'lac2013badges.tex', "w");
   fwrite($handle, gen_badges_source($f));
   fclose($handle);
-  @copy (DOCROOTDIR.'img/badge_iem.png', TMPDIR.'badge_iem.png');
+  @copy (DOCROOTDIR.'img/lac2013medium.png', TMPDIR.'badge_iem.png');
   @copy (DOCROOTDIR.'img/badgelogo.png', TMPDIR.'badgelogo.png');
-  @copy (DOCROOTDIR.'img/fonts/VeraMoBd.afm', TMPDIR.'VeraMoBd.afm'); 
-  @copy (DOCROOTDIR.'img/fonts/VeraMoBd.tfm', TMPDIR.'VeraMoBd.tfm'); 
-  @copy (DOCROOTDIR.'img/fonts/VeraMoBd.ttf', TMPDIR.'VeraMoBd.ttf'); 
   @copy (DOCROOTDIR.'img/fonts/ttfonts.map', TMPDIR.'ttfonts.map'); 
   @copy (DOCROOTDIR.'img/fonts/T1-WGL4x.enc', TMPDIR.'T1-WGL4x.enc'); 
   @copy (DOCROOTDIR.'img/badgeback.pdf', TMPDIR.'badgeback.pdf');
@@ -327,8 +324,7 @@ function gen_badges_source($f) {
   $cnt=0;
   $rv=badge_tex_header();
   $rv.='%
-\begin{picture}(7.5,10.6)%
-\cuts
+\begin{picture}(180,270)%
 ';
   foreach ($f as $fn) {
     if (false) { // skip already printed registrations XXX
@@ -338,11 +334,23 @@ function gen_badges_source($f) {
 
     $filename=$name = preg_replace('/[^a-zA-Z0-9_-]/','_', $fn).'.ini';
     $v=parse_ini_file(REGLOGDIR.$filename);
-    $firstname=str_replace(',','',$v['reg_prename']);
-    $name=str_replace(',','', $v['reg_name']);
-    $firstname=texify_umlauts(trim($firstname));
-    $name=texify_umlauts(trim($name));
-    $what=texify_umlauts(trim($v['reg_tagline']));
+		$name=str_replace(',','',$v['reg_prename'].' '.$v['reg_name']);
+
+		if (empty($v['reg_prename']) && empty($v['reg_email'])) {
+			$md5name='blank';
+		} else {
+			$md5name=md5($name.$email);
+			setlocale(LC_CTYPE, "en_US.UTF-8");
+			system('echo -ne "\xEF\xBB\xBFBEGIN:VCARD\nVERSION:3.0\r\n'
+			.'N:"'.escapeshellarg($v['reg_name']).'";"'.escapeshellarg($v['reg_prename']).'"\r\n'
+			.'EMAIL:"'.escapeshellarg($v['reg_email'])
+			.'"\r\nEND:VCARD\r\n"'
+			.' | qrencode -d 300 -o '.TMPDIR.'/qr/'.$md5name.'.png');
+		}
+
+    $prename=texify_umlauts(str_replace(',','',$v['reg_prename']));
+    $famname=texify_umlauts(str_replace(',','',$v['reg_name']));
+    $what=texify_umlauts($v['reg_tagline']);
     $badgebg='';
     if (isset($v['reg_vip'])) {
       switch(strtolower($v['reg_vip'])) {
@@ -369,69 +377,57 @@ function gen_badges_source($f) {
 #\LARGE 18 17.28
 #\huge 20 20.74
 #\Huge 24 24.88
-  if (0) {
-    # DEFAULT FONT:
-    if (strlen($name) > 40)     $name='\large '.$name; # TODO verify size!
-    elseif (strlen($name) > 26) $name='\LARGE '.$name; 
-    elseif (strlen($name) > 20) $name='\huge '.$name;
-    else                        $name='\sffamily\fontsize{48}{56}\selectfont '.$name;
+	$cmp=preg_replace('@[^a-zA-Z ]@','', $prename.' '.$famname);
+	if (strlen($cmp) > 25) {
+		$prename='\LARGE '.$prename;
+		$famname='\LARGE '.$famname;
+	}
+	else {
+		$prename='\Huge '.$prename;
+		$famname='\Huge '.$famname;
+	}
 
-    if (strlen($what) > 56)     $what='\small '.$what; 
-    elseif (strlen($what) > 49) $what='\normalsize '.$what;
-    elseif (strlen($what) > 40) $what='\large '.$what; 
-    else                        $what='\Large '.$what; 
+	if (strlen($what) > 56) $what='\scriptsize '.$what; 
+	elseif (strlen($what) > 40) $what='\footnotesize '.$what; 
+	elseif (strlen($what) > 0)  $what='\normalsize '.$what;
+	else $what='';
+	if (!empty($what)) $what.="\\\\";
 
-    if (!empty($badgebg)) $badgebg='\normalsize '.$badgebg;
+	if (!empty($badgebg)) $badgebg='\normalsize '.$badgebg."\\\\";
 
-  } else {
 
-    # Vera/Goudy FONT:
-    if (strlen($firstname) > 40) $firstname='\GoudyStMTT '.$firstname; # TODO verify size!
-    elseif (strlen($firstname) > 26) $firstname='\GoudyStMTTlarge '.$firstname; 
-    elseif (strlen($firstname) > 16) $firstname='\GoudyStMTTLARGE '.$firstname;
-		else  $firstname='\GoudyStMTTHuge '.$firstname;
-
-    if (strlen($name) > 40) $name='\GoudyStMTT '.$name; # TODO verify size!
-    elseif (strlen($name) > 26) $name='\GoudyStMTTlarge '.$name; 
-    elseif (strlen($name) > 16) $name='\GoudyStMTTLARGE '.$name;
-    else  $name='\GoudyStMTTHuge '.$name;
-
-		if (empty($what))           $what='\large\vspace{1ex}';
-		else if (strlen($what) > 56)$what='\normalsize '.$what; 
-    elseif (strlen($what) > 49) $what='\large '.$what;
-    elseif (strlen($what) > 40) $what='\Large '.$what; 
-    else                        $what='\Large '.$what; 
-
-		if (!empty($badgebg)) $badgebg='\normalsize '.$badgebg;
-		else $badgebg='\normalsize\vspace{1ex}';
-
-  }
-
-    $x=($cnt%2)?"3.6":"0.0";
-    $y=5-4.5*floor(($cnt%4)/2);
+    $x=($cnt%2)?"90":"0.0";
+    $y=280-54*floor(($cnt%10)/2);
 
     $y+=0.1; ## vertical offset
 
-    $rv.='\put('.$x.','.$y.'){\makebox(4.5,3.6){\card{'.$firstname.'}{'.$name.'}{'.$what.'}{'.$badgebg.'}}}'."\n";
+    $rv.='\put('.$x.','.$y.'){\makebox(3.5,2.0){\card{'.$prename.'}{'.$famname.'}{'.$what.'}{'.$badgebg.'}{'.$md5name.'}}}'."\n";
     $cnt++;
-    if ($cnt%4 == 0) {
+    if ($cnt%10 == 0) {
       $rv.='%
 \end{picture}
 
 \pagebreak
 
-\begin{picture}(7.5,10.5)%
-\cuts
-\put(0.0,5.1){\rotatebox{0}{\includegraphics{badgeback.pdf}}}
-\put(3.6,5.1){\rotatebox{0}{\includegraphics{badgeback.pdf}}}
-\put(0.0,0.6){\rotatebox{0}{\includegraphics{badgeback.pdf}}}
-\put(3.6,0.6){\rotatebox{0}{\includegraphics{badgeback.pdf}}}
+\begin{picture}(180,270)%
+
+%backside
+\put(0.0,280.1){\makebox(3.5,2.0){\bside}}
+\put(90,280.1){\makebox(3.5,2.0){\bside}}
+\put(0.0,226.1){\makebox(3.5,2.0){\bside}}
+\put(90,226.1){\makebox(3.5,2.0){\bside}}
+\put(0.0,172.1){\makebox(3.5,2.0){\bside}}
+\put(90,172.1){\makebox(3.5,2.0){\bside}}
+\put(0.0,118.1){\makebox(3.5,2.0){\bside}}
+\put(90,118.1){\makebox(3.5,2.0){\bside}}
+\put(0.0,64.1){\makebox(3.5,2.0){\bside}}
+\put(90,64.1){\makebox(3.5,2.0){\bside}}
+
 \end{picture}
 
 \pagebreak
 
-\begin{picture}(7.5,10.6)%
-\cuts
+\begin{picture}(180,270)%
 ';
     }
   }
@@ -440,12 +436,20 @@ $rv.='%
 
 \pagebreak
 
-\begin{picture}(7.5,10.5)%
-\cuts
-\put(0.0,4.4){\rotatebox{0}{\includegraphics{badgeback.pdf}}}
-\put(3.6,4.4){\rotatebox{0}{\includegraphics{badgeback.pdf}}}
-\put(0.0,-0.1){\rotatebox{0}{\includegraphics{badgeback.pdf}}}
-\put(3.6,-0.1){\rotatebox{0}{\includegraphics{badgeback.pdf}}}
+\begin{picture}(180,270)%
+
+%backside
+\put(0.0,280.1){\makebox(3.5,2.0){\bside}}
+\put(90,280.1){\makebox(3.5,2.0){\bside}}
+\put(0.0,226.1){\makebox(3.5,2.0){\bside}}
+\put(90,226.1){\makebox(3.5,2.0){\bside}}
+\put(0.0,172.1){\makebox(3.5,2.0){\bside}}
+\put(90,172.1){\makebox(3.5,2.0){\bside}}
+\put(0.0,118.1){\makebox(3.5,2.0){\bside}}
+\put(90,118.1){\makebox(3.5,2.0){\bside}}
+\put(0.0,64.1){\makebox(3.5,2.0){\bside}}
+\put(90,64.1){\makebox(3.5,2.0){\bside}}
+
 \end{picture}
 
 \end{document}
@@ -453,28 +457,17 @@ $rv.='%
  return $rv;
 }
 
-# The size of each card is 86 x 51 mm.
-# Standard badge-holder size: 90 x 56mm. -- 2.25 x 3.5 inch 
 function badge_tex_header() {
   return '
-\documentclass{article}
-%\usepackage{a4}
-\usepackage[T1]{fontenc}
-\font\GoudyStMTTtiny fonts/VeraMoBd at8pt
-\font\GoudyStMTTscriptsize fonts/VeraMoBd at9pt
-\font\GoudyStMTTfootnotesize fonts/VeraMoBd at10pt
-\font\GoudyStMTTsmall fonts/VeraMoBd at12pt
-\font\GoudyStMTT fonts/VeraMoBd at14pt
-\font\GoudyStMTTlarge fonts/VeraMoBd at20pt
-\font\GoudyStMTTLARGE fonts/VeraMoBd at26pt
-\font\GoudyStMTTHuge fonts/VeraMoBd at34pt
+\documentclass[a4paper]{article}
+\usepackage{array}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MARGINS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\textwidth       7.50in
-\textheight     10.60in
-\oddsidemargin   -.35in
-\evensidemargin  -.35in
-\topmargin      -1.50in
+\textwidth       180mm
+\textheight      270mm
+\oddsidemargin    30mm
+\evensidemargin   30mm
+\topmargin        9mm
 \itemindent      0.00in
 \parindent       0.00in
 
@@ -494,53 +487,65 @@ function badge_tex_header() {
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% CARD MACRO [\card] %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\card#1#2#3#4{
-	\rotatebox{-90}{
-	\parbox[c][3.3in]{4.0in}{
-  \vspace*{3.5in}
-  \hspace*{-0.25in}
-  \image{height=1cm,width=4.84cm}{badge_iem}
+\def\card#1#2#3#4#5{
+  \parbox[c][4.5cm]{8.2cm}{
+    \vspace*{-3.0cm}
+    \hspace*{2.40cm}\image{height=1.25cm,width=5.50cm}{badgelogo}
   }
-  \hspace*{-4.4in}
-  \begin{tabular}{c}
-{ 
-  \vspace*{1.0in}
-	\hspace*{-.70in}\image{height=1.25cm,width=5.5cm}{badgelogo}
-  \parbox[c]{1in}{\vspace*{-0.30in}Conference\\\\2013}}\\\\%
-  \vspace{-1.00in}\\\\%
-  \hspace*{-.70in}{#1}\\\\%
-  \hspace*{-.70in}{#2}\\\\%
-  \vspace*{0.5ex}\\\\%
-  \hspace*{-.67in}{#4}\\\\%
-  \vspace*{-0.5ex}\\\\%
-  \hspace*{-.70in}{#3}\\\\%
-		\end{tabular}%
+  \hspace*{-9.8cm}\\\\
+  \parbox[c][4.5cm]{8.8cm}{
+    \vspace*{-2.8cm}
+    \hspace*{0.8cm}\image{height=1.5cm,width=3.15cm}{badge_iem}
+  }
+  \hspace*{-8.8cm}\\\\
+  \parbox[c][4.5cm]{9.8cm}{
+    \vspace*{-1.5cm}
+    \hspace*{5.5cm}
+    \begin{tabular*}{5cm}{r}
+      \small May 2013, Graz, Austria
+    \end{tabular*}%
+  }
+  \hspace*{-9cm}\\\\
+  \parbox[4.5cm]{9cm}{
+    \begin{tabular}{>{\centering\hspace{0pt}}m{6.5cm}}
+      \small%
+      \vspace{2.4cm}\\\\%
+      {#1}
+      \vspace*{0.2cm}\\\\%
+      {#2}
+      \vspace*{0.4cm}\\\\%
+      #3
+      #4
+    \end{tabular}%
+  }
+  \hspace*{-9cm}\\\\
+  \parbox[4.5cm]{9cm}{
+    \vspace{3.5cm}
+    \hspace*{6.1cm}\image{height=2.2cm,width=2.2cm}{qr/#5}
+  }
 }
-}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CUT MARKS [\cuts] %%% %%%%%%%%%%%%%%%%%%%%%%%%%
-\def\cuts{
-  \put(-0.2,9.55){\rule{0.2cm}{0.5pt}}\\\\%
-  \put(-0.2,5.1){\rule{0.2cm}{0.5pt}}\\\\%
-	\put(-0.2,0.65){\rule{0.2cm}{0.5pt}}\\\\%
-
-  \put(7.3,9.55){\rule{0.2cm}{0.5pt}}\\\\%
-  \put(7.3,5.1){\rule{0.2cm}{0.5pt}}\\\\%
-	\put(7.3,0.65){\rule{0.2cm}{0.5pt}}\\\\%
-
-	\put(0.0,0.4){\line(0,1){0.1}}%
-	\put(3.6,0.4){\line(0,1){0.1}}%
-	\put(7.2,0.4){\line(0,1){0.1}}%
-
-	\put(0.0,9.7){\line(0,1){0.1}}%
-	\put(3.6,9.7){\line(0,1){0.1}}%
-	\put(7.2,9.7){\line(0,1){0.1}}%
+\def\bside{
+	\parbox[c][4.5cm]{9.8cm}{\small
+  \vspace*{1.3cm}
+  \hspace{.2cm}\begin{tabular*}{8cm}{rl}
+		Wifi ESSID:& LAC\\_2013\\\\
+		Username:& XXXX\\\\
+		Password:& XXXX\\\\
+		\\\\
+		Site \& Agenda:&http://lac.linuxaudio.org/2013/\\\\
+		Street Address:& Inffeldgasse 10/III\\\\
+		& 8010 Graz\\\\
+		\\\\
+		Emergency Contact:&IO Zm\"{o}lnig\\\\
+		Telephone:&+43(0)650~5662345\\\\
+  \end{tabular*}%
+ }
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% BEGIN DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagestyle{empty}
-\RequirePackage{fix-cm}
 \begin{document}
-\setlength{\unitlength}{1in}%
+\setlength{\unitlength}{1mm}%
 ';
 }
