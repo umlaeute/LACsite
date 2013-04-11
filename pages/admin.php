@@ -500,22 +500,22 @@ function badge_tex_header() {
   \hspace*{-8.8cm}\\\\
   \parbox[c][4.5cm]{9.8cm}{
     \vspace*{-1.5cm}
-    \hspace*{5.5cm}
-    \begin{tabular*}{5cm}{r}
-      \small May 2013, Graz, Austria
+    \hspace*{3.6cm}
+    \begin{tabular*}{7cm}{r}
+      \small Conference - May 2013, Graz, Austria
     \end{tabular*}%
   }
   \hspace*{-9cm}\\\\
   \parbox[4.5cm]{9cm}{
-    \begin{tabular}{>{\centering\hspace{0pt}}m{6.5cm}}
+    \begin{tabular}{>{\centering\hspace{0pt}}m{6.1cm}}
       \small%
       \vspace{2.4cm}\\\\%
       {#1}
       \vspace*{0.2cm}\\\\%
       {#2}
       \vspace*{0.4cm}\\\\%
-      #3
       #4
+      #3
     \end{tabular}%
   }
   \hspace*{-9cm}\\\\
