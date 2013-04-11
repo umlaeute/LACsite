@@ -17,7 +17,7 @@
   table_program($db,2,true);
   table_program($db,3,true);
 # table_program($db,4,true);
-  hardcoded_concert_and_installation_info($db, true);
+  hardcoded_concert_and_installation_info($db, false);
   hardcoded_disclaimer();
 ?>
 </body>
