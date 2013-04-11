@@ -96,7 +96,7 @@ function usr_sendhash($db, $uid) {
 	$d = $res->fetch(PDO::FETCH_ASSOC);
 
 	# create hash
-	$ukey=preg_replace("/[ ]/e",'chr(array_search(mt_rand(0, 62) ,array_flip(array_merge(range(48, 57), range(65, 90), range(97, 122)))))', str_repeat(" ", 12));
+	$ukey=preg_replace("/[ ]/e",'chr(array_search(mt_rand(0, 61) ,array_flip(array_merge(range(48, 57), range(65, 90), range(97, 122)))))', str_repeat(" ", 12));
 
 	# TODO: check for hash conflicts.
 
