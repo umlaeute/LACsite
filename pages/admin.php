@@ -498,12 +498,10 @@ function badge_tex_header() {
     \hspace*{0.8cm}\image{height=1.5cm,width=3.15cm}{badge_iem}
   }
   \hspace*{-8.8cm}\\\\
-  \parbox[c][4.5cm]{9.8cm}{
-    \vspace*{-1.5cm}
-    \hspace*{3.6cm}
-    \begin{tabular*}{7cm}{r}
-      \small Conference - May 2013, Graz, Austria
-    \end{tabular*}%
+  \parbox[c][1.5cm]{9.8cm}{
+    \vspace*{-1.6cm}
+    \hspace*{3.8cm}
+    \small Conference - May 2013, Graz, Austria
   }
   \hspace*{-9cm}\\\\
   \parbox[4.5cm]{9cm}{
@@ -526,19 +524,19 @@ function badge_tex_header() {
 }
 
 \def\bside{
-	\parbox[c][4.5cm]{9.8cm}{\small
+  \parbox[c][4.5cm]{9.8cm}{\small
   \vspace*{1.3cm}
-  \hspace{.2cm}\begin{tabular*}{8cm}{rl}
-		Wifi ESSID:& LAC\\_2013\\\\
-		Username:& XXXX\\\\
-		Password:& XXXX\\\\
-		\\\\
-		Site \& Agenda:&http://lac.linuxaudio.org/2013/\\\\
-		Street Address:& Inffeldgasse 10/III\\\\
-		& 8010 Graz\\\\
-		\\\\
-		Emergency Contact:&IO Zm\"{o}lnig\\\\
-		Telephone:&+43(0)650~5662345\\\\
+  \hspace{.2cm}\begin{tabular*}{9cm}{rl}
+   Wifi ESSID:& LAC\\_2013\\\\
+   Username:& XXXX\\\\
+   Password:& XXXX\\\\
+   \\\\
+   Site \& Agenda:&http://lac.linuxaudio.org/2013/\\\\
+   Street Address:& Inffeldgasse 10/III\\\\
+   & 8010 Graz\\\\
+   \\\\
+   Emergency Contact:&IO Zm\"{o}lnig\\\\
+   Telephone:&+43(0)650~5662345\\\\
   \end{tabular*}%
  }
 }
