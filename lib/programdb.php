@@ -196,11 +196,11 @@
 
   function fetch_selectlist($db, $table='user', $order='ORDER BY id') {
     if ($table=='days')
-      return array('1' => '1 - Thursday, May/9', '2' => '2 - Friday, May/10', '3' => '3 - Saturday, May/11', '4' => '4 - Sunday, May/12');
+      return array('0' => '0 - Wednesday, May/8', '1' => '1 - Thursday, May/9', '2' => '2 - Friday, May/10', '3' => '3 - Saturday, May/11', '4' => '4 - Sunday, May/12');
     if ($table=='daysx')
-      return array('1' => '1 - Thursday, May/9', '2' => '2 - Friday, May/10', '3' => '3 - Saturday, May/11', '4' => '4 - Sunday, May/12', '5' => '-every day-');
+      return array('0' => '0 - Wednesday, May/8', '1' => '1 - Thursday, May/9', '2' => '2 - Friday, May/10', '3' => '3 - Saturday, May/11', '4' => '4 - Sunday, May/12', '5' => '-every day-');
     if ($table=='daylist') # TODO derive from 'days' - note: start at '1'.
-      return array(1=> 'Thursday, May/9', 2=> 'Friday, May/10', 3=> 'Saturday, May/11', 4=> 'Sunday, May/12');
+      return array(0=> 'Wednesday, May/8', 1=> 'Thursday, May/9', 2=> 'Friday, May/10', 3=> 'Saturday, May/11', 4=> 'Sunday, May/12');
 
     if ($table=='types')
       return array('p' => 'Paper Presentation', 'w' => 'Workshop', 'c' => 'Concert', 'i' => 'Installation', 'o' => 'Other');
@@ -1373,7 +1373,7 @@ if (1) {
       $q='SELECT activity.* FROM activity WHERE 1=1';
 
     if ($filter['type'] != '0') $q.=' AND type='.$db->quote($filter['type']);
-    if ($filter['day'] > 0) $q.=' AND day='.$db->quote($filter['day']);
+    if ($filter['day'] > 0) $q.=' AND day='.$db->quote($filter['day']-1);
     if ($filter['location'] > 0) $q.=' AND location_id='.$db->quote($filter['location']);
     if ($filter['id'] > 0) $q.=' AND id='.$db->quote($filter['id']);
 
@@ -1382,7 +1382,6 @@ if (1) {
       $q.=' ORDER BY day, typesort(type), strftime(\'%H:%M\',starttime), location_id, serial;';
     else
       $q.=' ORDER BY day, strftime(\'%H:%M\',starttime), typesort(type), location_id, serial;';
-
     query_out($db, $q, $details, $filter['type'] == '0',  $filter['location'] == '0', true);
   }
 
