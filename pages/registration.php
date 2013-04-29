@@ -422,6 +422,7 @@ Personal data provided by you in the registration form will be kept confidential
     <label><input type="radio" name="reg_teeshirt" value="1"<?php _ck('reg_teeshirt',1);?>/>Yes</label>
   </div>
   <label class="ls">Note: Neither proceedings nor t-shirts and excussion-participation are binding orders; we just like an estimated count.</label>
+  <label class="ls">Another note: Selecting "Yes" does not guarantee you a T-shirt (in your favourite colour and size) nor a seat in the bus. Please check back at the registration desk.</label>
   <br/>
   <br/>
   <label>Allow public listing of your name and affiliation in the "Who else is coming" list.</label><br/>
