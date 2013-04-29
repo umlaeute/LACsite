@@ -354,7 +354,7 @@
     $result=$res->fetchAll();
 
     if (count($result) == 0) {
-      echo '<div class="center red">No matching entries found.</div>';
+      echo '<div class="center red">No matching entries found...</div>';
       return;
     }
     echo '<div class="right">'.count($result).' matching entrie(s) found.</div>';
@@ -785,6 +785,15 @@
     echo '<div class="dbmsg">Saving ID='.$id.'.. '.($err==0?'OK':'Error:'.$err).'</div>'."\n";
   }
 
+  function count_out($db, $q) {
+    $res=$db->query($q);
+    if (!$res) return 0; // TODO: print error msg
+
+    $result=$res->fetchAll();
+    $count = $result[0];
+
+    return $count[0];
+  }
   function query_out($db, $q, $details=true, $type=true, $location=true, $day=false, $print=false) {
     $a_users = fetch_selectlist($db);
     $a_locations = fetch_selectlist($db, 'location');
@@ -797,7 +806,7 @@
     $result=$res->fetchAll();
 
     if (count($result) ==0 ) {
-      echo '<div class="center red">No matching entries found.</div>';
+      echo '<div class="center red">No matching entries found!</div>';
     }
 
     foreach ($result as $r) {
@@ -1238,21 +1247,32 @@
 
   function print_day($db, $num, $name, $details=true) {
     echo '<h2 class="ptitle">Day '.$num.' - '.$name.'</h2>';
-    echo '<h3 class="ptitle">Main Track</h3>';
-    query_out($db,
-     'SELECT * FROM activity
-      WHERE day='.$num.'
-      AND ( type=\'p\' OR location_id=\'1\')
-      ORDER BY strftime(\'%H:%M\',starttime), serial', $details, false, false
-    );
-    echo '<h3 class="ptitle">Workshops &amp; Events</h3>';
-    echo '<div class="ptitle"></div>';
-    query_out($db,
-     'SELECT * FROM activity
-      WHERE day='.$num.'
-      AND NOT (type=\'p\' OR location_id=\'1\')
-      ORDER BY typesort(type), strftime(\'%H:%M\',starttime), location_id, serial', $details, true, true
-    );
+    if (count_out($db, 
+          'SELECT count(*) FROM activity
+           WHERE day='.$num.'
+           AND ( type=\'p\' OR location_id=\'1\')') > 0) {
+           
+        echo '<h3 class="ptitle">Main Track</h3>';
+        query_out($db,
+         'SELECT * FROM activity
+          WHERE day='.$num.'
+          AND ( type=\'p\' OR location_id=\'1\')
+          ORDER BY strftime(\'%H:%M\',starttime), serial', $details, false, false
+        );
+    }
+    if (count_out($db, 
+          'SELECT count(*) FROM activity
+           WHERE day='.$num.'
+           AND NOT ( type=\'p\' OR location_id=\'1\')') > 0) {
+        echo '<h3 class="ptitle">Workshops &amp; Events</h3>';
+        echo '<div class="ptitle"></div>';
+        query_out($db,
+         'SELECT * FROM activity
+          WHERE day='.$num.'
+          AND NOT (type=\'p\' OR location_id=\'1\')
+          ORDER BY typesort(type), strftime(\'%H:%M\',starttime), location_id, serial', $details, true, true
+        );
+    }
   }
 
   function print_daily_events($db, $num, $name, $details=true) {
