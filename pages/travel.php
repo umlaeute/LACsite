@@ -1,8 +1,18 @@
 <h1>Location</h1>
 <p>
-The IEM on <a href="http://maps.google.at/maps?doflg=ptk&amp;ie=UTF8&amp;cid=2060496000385345580" rel="external">Google Maps</a>.
-See also <a href="<?=local_url('contact')?>">Contact</a> page.
+<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps/ms?msa=0&amp;msid=209163945934931712388.0004db2ea8f9940756135&amp;ie=UTF8&amp;ll=47.065118,15.451693&amp;spn=0.019111,0.04629&amp;t=m&amp;output=embed"></iframe><br /><small><a href="https://maps.google.at/maps/ms?msa=0&amp;msid=209163945934931712388.0004db2ea8f9940756135&amp;ie=UTF8&amp;ll=47.065118,15.451693&amp;spn=0.019111,0.04629&amp;t=m&amp;source=embed" style="color:#0000FF;text-align:left">LAC2013</a> on a bigger map</small>
 </p>
+
+<h1>Getting around</h1>
+<p>
+The best way to get around in Graz is by bike, followed by <a href="http://gvb.at">public transport (tram, bus)</a> and walking.
+On foot, it will take no longer than 30 minutes from the city center to the main venue (Inffeldgasse).
+</p><p>
+Public transport is based on tramways and busses.
+The tramway station that is closest to the conference venue is <em>St.Peter - Schulzentrum</em> on the <b>Line 6</b> (heading for "St.Peter").
+Be warned though that at about 8:00pm public transport is reduced and the last busses/trams will be at midnight (so you might end up walking home after the concerts).
+</p>
+
 
 <h1>Staying in Graz</h1>
 
