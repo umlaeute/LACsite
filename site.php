@@ -47,8 +47,10 @@
     'http://esc.mur.at/' => array('img' => 'img/logos/esc.png', 'title' => 'ESC im LABOR'),
     'http://elearning.tugraz.at/' => array('img' => 'img/logos/TUG.png', 'title' => 'TU Graz Dept. Social Learning'),
     'http://mur.at' => array('img' => 'img/logos/mur_at.png', 'title' => 'mur.at'),
-    'http://auphonic.com/' => array('img' => 'img/logos/auphonic.png', 'title' => 'auphonic'),
+    'http://auphonic.com' => array('img' => 'img/logos/auphonic.png', 'title' => 'auphonic'),
     'http://forum.mur.at' => array('img' => 'img/logos/forum_stadtpark.png', 'title' => 'Forum Stadtpark'),
+    'http://vif.tugraz.at' => array('img' => 'img/logos/VirtualVehicle.jpg', 'title' => 'VIRTUAL VEHICLE Research Center'),
+    'http://www.dismarc.org' => array('img' => 'img/logos/dismarc.jpg', 'title' => 'DISMARC'),
   );
 
   function clustermap() {
