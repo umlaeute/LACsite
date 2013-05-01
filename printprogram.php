@@ -13,6 +13,9 @@
   require_once('lib/lib.php');
   require_once('lib/programdb.php');
 
+  print_day($db, 0, 'Wednesday, May/8', 1);
+
+
   table_program($db,1,true);
   table_program($db,2,true);
   table_program($db,3,true);
