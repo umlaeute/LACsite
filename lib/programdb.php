@@ -1276,13 +1276,14 @@
   }
 
   function print_daily_events($db, $num, $name, $details=true) {
-    echo '<h2 class="ptitle">Daily Events / Exhibitions</h2>';
-    /*
-    echo '<h3 class="ptitle">Installations &amp; Listening sessions</h3>';
-    echo '<p>The following pieces are presented as installations or part of a loop-playlist in the listening room. ';
-    echo 'They are accessible on each day of the conference during opening hours; except for the "Listening Room" which will be closed Friday afternoon 3.45pm to 4:30pm for a workshop.</p>';
-     */
-    echo '<div class="ptitle"></div>';
+?>
+<h2 class="ptitle">Daily Events / Exhibitions</h2>
+<h3 class="ptitle">Installations &amp; Listening sessions</h3>
+<p>The following pieces are presented as installations or part of a loop-playlist in the on-the-air listening room.
+They are accessible on each day of the conference during opening hours (14:00 - 19:00 or by prior appointment);
+except for the "On-the-air Listening Room" which will be broadcast by <a href="http://helsinki.at">Radio Helsinki</a> at irregular intervals.</p>
+<div class="ptitle"></div>
+<?php
     query_out($db,
      'SELECT * FROM activity
       WHERE day = 5
@@ -1425,15 +1426,28 @@ if (1) {
     $q.=' ORDER BY day, strftime(\'%H:%M\',starttime), typesort(type), location_id, serial;';
     query_out($db, $q, $details, false,  true, true, true);
 ?>
-<h3>Installation/Loops</h3>
-<!--
-<p>Art installations are .... TODO</p>
-<p>TODO where..</p>
-<p>TODO when open..</p>
-!-->
+<h3>Installations</h3>
+<p>
+Art installations are exhibited at the media art space
+<a href="http://esc.mur.at">ESC im LABOR</a>, which is in the center of the city
+(from the main conference venue it takes about 15 minutes by public transport and 25 minutes on foot).
+</p>
+<p>
+The exhibition will be open from 14:00 to 19:00 (and on demand).
+</p>
+<br>
 <?php
     $q='SELECT activity.* FROM activity WHERE type='.$db->quote('i');
-    $q.=' OR location_id=2'; ## XXX add radio shows here
+    $q.=' ORDER BY day, strftime(\'%H:%M\',starttime), typesort(type), location_id, serial;';
+    query_out($db, $q, $details, false,  true, true, true);
+?>
+<h3>Loops</h3>
+<p>
+During the LAC, the local independent radio station
+<a href="http://helsinki.mur.at">Radio Helsinki</a> 
+will broadcast the following pieces at irregular intervals.</p><br>
+<?php
+    $q='SELECT activity.* FROM activity WHERE location_id=2';
     $q.=' ORDER BY day, strftime(\'%H:%M\',starttime), typesort(type), location_id, serial;';
     query_out($db, $q, $details, false,  true, true, true);
     echo '</div>'."\n";
