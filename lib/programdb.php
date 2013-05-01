@@ -1414,6 +1414,7 @@ if (1) {
 ?>
 <h2 class="ptitle pb">Concerts &amp; Installations</h2>
 <h3>Concerts</h3>
+<p>
 <!--
 <p>There are concerts .... TODO </p>
 <p>Saturday night also features the Linux-Sound-Night; 10pm....</p>
@@ -1441,7 +1442,7 @@ The exhibition will be open from 14:00 to 19:00 (and on demand).
     $q.=' ORDER BY day, strftime(\'%H:%M\',starttime), typesort(type), location_id, serial;';
     query_out($db, $q, $details, false,  true, true, true);
 ?>
-<h3>Loops</h3>
+<h3>On-the-air Listening Room</h3>
 <p>
 During the LAC, the local independent radio station
 <a href="http://helsinki.mur.at">Radio Helsinki</a> 
