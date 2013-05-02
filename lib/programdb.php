@@ -1415,11 +1415,23 @@ if (1) {
 <h2 class="ptitle pb">Concerts &amp; Installations</h2>
 <h3>Concerts</h3>
 <p>
-<!--
-<p>There are concerts .... TODO </p>
-<p>Saturday night also features the Linux-Sound-Night; 10pm....</p>
-<p>TODO Links to locations, how to get there...</p>
-!-->
+There are two electro-acoustic concerts and two club-nights.
+For directions on how to get to the venues, check the map at the <a href="travel">Travel &amp; Stay</a> page (Concert venues are marked in green).
+<h4>IEM CUBE</h4>
+<p>The IEM's own concert room will host the first electro-acoustic concert on Thursday evening.
+It's in the building opposite of the main conference venue.</p>
+<h4>postgarage</h4>
+<p>One of the city's en-vogue clubs, the <a href="http://postgarage.at">postgarage</a> will host the
+first club night (on Thursday night) on it's second floor.</p>
+<h4>MUMUTH</h4>
+<p>The second electro-acoustic concert on Friday, will take place at the
+<a href="http://www.kug.ac.at/en/studies-further-education/studies/infrastructure/the-mumuth.html">MUMUTH</a>
+the newly build central concert venue of the University of Music and Performing Arts.</p>
+<h4>FORUM STADTPARK</h4>
+<p>
+The last concert, the <em>Linux Sound Night</em> will take place at the <a href="http://forum.mur.at">FORUM STADTPARK</a>,
+one of the central places of independent contemporary art in Graz.
+</p>
 <div style="padding:.5em 1em; 0em 1em">
 <?php
     $q='SELECT activity.* FROM activity WHERE type='.$db->quote('c');
