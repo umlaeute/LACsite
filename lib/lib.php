@@ -329,6 +329,7 @@ $adminfieldsetonce=false;
     $v=str_replace("\xc3\xbd",'\\\'{y}',$v);
     $v=str_replace("\xc3\xbf",'\\"{y}',$v);
     $v=str_replace("\xc3\xad",'\\\'{i}',$v);
+    $v=str_replace("\xc3\xb2",'\\\`{o}',$v);
     $v=str_replace("&",'\&',$v);
     $v=str_replace("#",'\#',$v);
     return $v;
