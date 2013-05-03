@@ -318,10 +318,25 @@ function mytimesort($a,$b) {
   return strcasecmp($a, $b);
 }
 
+function read_wifi_keys() {
+	$wlankeys = array();
+	$wk=fopen(TMPDIR.'LAC13-wlan.csv', 'r');
+	if (!$wk) return $wlankeys;
+
+  while (!feof($wk)) {
+		$line=fgets($wk);
+		list($wu,$wp) = explode(';',$line);
+		$wlankeys[] = array('user' => $wu, 'pass' => $wp);
+	}
+  fclose($wk);
+	return $wlankeys;
+}
 
 function gen_badges_source($f) {
-  usort($f, 'mytimesort');
+	usort($f, 'mytimesort');
+	$wifikeys=read_wifi_keys();
   $cnt=0;
+  $wkcnt=0;
   $rv=badge_tex_header();
   $rv.='%
 \begin{picture}(180,270)%
@@ -329,7 +344,10 @@ function gen_badges_source($f) {
   foreach ($f as $fn) {
     if (false) { // skip already printed registrations XXX
       $regtime=preg_replace('@-.*$@', '', $fn);
-      if (strcasecmp($regtime, '20120411_184843') <= 0) continue;
+			if (strcasecmp($regtime, '20120411_184843') <= 0) {
+				$wkcnt++;
+				continue;
+			}
     }
 
     $filename=$name = preg_replace('/[^a-zA-Z0-9_-]/','_', $fn).'.ini';
@@ -412,16 +430,19 @@ function gen_badges_source($f) {
 \begin{picture}(180,270)%
 
 %backside
-\put(0.0,280.1){\makebox(3.5,2.0){\bside}}
-\put(90,280.1){\makebox(3.5,2.0){\bside}}
-\put(0.0,226.1){\makebox(3.5,2.0){\bside}}
-\put(90,226.1){\makebox(3.5,2.0){\bside}}
-\put(0.0,172.1){\makebox(3.5,2.0){\bside}}
-\put(90,172.1){\makebox(3.5,2.0){\bside}}
-\put(0.0,118.1){\makebox(3.5,2.0){\bside}}
-\put(90,118.1){\makebox(3.5,2.0){\bside}}
-\put(0.0,64.1){\makebox(3.5,2.0){\bside}}
-\put(90,64.1){\makebox(3.5,2.0){\bside}}
+';
+      $rv.='\put(0.0,280.1){\makebox(3.5,2.0){\bside{'.$wifikeys[$wkcnt]['user'].'}{'.$wifikeys[$wkcnt]['pass'].'}}}'."\n"; $wkcnt++;
+      $rv.='\put(90,280.1){\makebox(3.5,2.0){\bside{'.$wifikeys[$wkcnt]['user'].'}{'.$wifikeys[$wkcnt]['pass'].'}}}'."\n"; $wkcnt++;
+      $rv.='\put(0.0,226.1){\makebox(3.5,2.0){\bside{'.$wifikeys[$wkcnt]['user'].'}{'.$wifikeys[$wkcnt]['pass'].'}}}'."\n"; $wkcnt++;
+      $rv.='\put(90,226.1){\makebox(3.5,2.0){\bside{'.$wifikeys[$wkcnt]['user'].'}{'.$wifikeys[$wkcnt]['pass'].'}}}'."\n"; $wkcnt++;
+      $rv.='\put(0.0,172.1){\makebox(3.5,2.0){\bside{'.$wifikeys[$wkcnt]['user'].'}{'.$wifikeys[$wkcnt]['pass'].'}}}'."\n"; $wkcnt++;
+      $rv.='\put(90,172.1){\makebox(3.5,2.0){\bside{'.$wifikeys[$wkcnt]['user'].'}{'.$wifikeys[$wkcnt]['pass'].'}}}'."\n"; $wkcnt++;
+      $rv.='\put(0.0,118.1){\makebox(3.5,2.0){\bside{'.$wifikeys[$wkcnt]['user'].'}{'.$wifikeys[$wkcnt]['pass'].'}}}'."\n"; $wkcnt++;
+      $rv.='\put(90,118.1){\makebox(3.5,2.0){\bside{'.$wifikeys[$wkcnt]['user'].'}{'.$wifikeys[$wkcnt]['pass'].'}}}'."\n"; $wkcnt++;
+      $rv.='\put(0.0,64.1){\makebox(3.5,2.0){\bside{'.$wifikeys[$wkcnt]['user'].'}{'.$wifikeys[$wkcnt]['pass'].'}}}'."\n"; $wkcnt++;
+			$rv.='\put(90,64.1){\makebox(3.5,2.0){\bside{'.$wifikeys[$wkcnt]['user'].'}{'.$wifikeys[$wkcnt]['pass'].'}}}'."\n"; $wkcnt++;
+
+      $rv.='%
 
 \end{picture}
 
@@ -439,17 +460,19 @@ $rv.='%
 \begin{picture}(180,270)%
 
 %backside
-\put(0.0,280.1){\makebox(3.5,2.0){\bside}}
-\put(90,280.1){\makebox(3.5,2.0){\bside}}
-\put(0.0,226.1){\makebox(3.5,2.0){\bside}}
-\put(90,226.1){\makebox(3.5,2.0){\bside}}
-\put(0.0,172.1){\makebox(3.5,2.0){\bside}}
-\put(90,172.1){\makebox(3.5,2.0){\bside}}
-\put(0.0,118.1){\makebox(3.5,2.0){\bside}}
-\put(90,118.1){\makebox(3.5,2.0){\bside}}
-\put(0.0,64.1){\makebox(3.5,2.0){\bside}}
-\put(90,64.1){\makebox(3.5,2.0){\bside}}
+';
+      $rv.='\put(0.0,280.1){\makebox(3.5,2.0){\bside{'.$wifikeys[$wkcnt]['user'].'}{'.$wifikeys[$wkcnt]['pass'].'}}}'."\n"; $wkcnt++;
+      $rv.='\put(90,280.1){\makebox(3.5,2.0){\bside{'.$wifikeys[$wkcnt]['user'].'}{'.$wifikeys[$wkcnt]['pass'].'}}}'."\n"; $wkcnt++;
+      $rv.='\put(0.0,226.1){\makebox(3.5,2.0){\bside{'.$wifikeys[$wkcnt]['user'].'}{'.$wifikeys[$wkcnt]['pass'].'}}}'."\n"; $wkcnt++;
+      $rv.='\put(90,226.1){\makebox(3.5,2.0){\bside{'.$wifikeys[$wkcnt]['user'].'}{'.$wifikeys[$wkcnt]['pass'].'}}}'."\n"; $wkcnt++;
+      $rv.='\put(0.0,172.1){\makebox(3.5,2.0){\bside{'.$wifikeys[$wkcnt]['user'].'}{'.$wifikeys[$wkcnt]['pass'].'}}}'."\n"; $wkcnt++;
+      $rv.='\put(90,172.1){\makebox(3.5,2.0){\bside{'.$wifikeys[$wkcnt]['user'].'}{'.$wifikeys[$wkcnt]['pass'].'}}}'."\n"; $wkcnt++;
+      $rv.='\put(0.0,118.1){\makebox(3.5,2.0){\bside{'.$wifikeys[$wkcnt]['user'].'}{'.$wifikeys[$wkcnt]['pass'].'}}}'."\n"; $wkcnt++;
+      $rv.='\put(90,118.1){\makebox(3.5,2.0){\bside{'.$wifikeys[$wkcnt]['user'].'}{'.$wifikeys[$wkcnt]['pass'].'}}}'."\n"; $wkcnt++;
+      $rv.='\put(0.0,64.1){\makebox(3.5,2.0){\bside{'.$wifikeys[$wkcnt]['user'].'}{'.$wifikeys[$wkcnt]['pass'].'}}}'."\n"; $wkcnt++;
+			$rv.='\put(90,64.1){\makebox(3.5,2.0){\bside{'.$wifikeys[$wkcnt]['user'].'}{'.$wifikeys[$wkcnt]['pass'].'}}}'."\n"; $wkcnt++;
 
+      $rv.='%
 \end{picture}
 
 \end{document}
@@ -523,20 +546,17 @@ function badge_tex_header() {
   }
 }
 
-\def\bside{
+\def\bside#1#2{
   \parbox[c][4.5cm]{9.8cm}{\small
   \vspace*{1.3cm}
   \hspace{.2cm}\begin{tabular*}{9cm}{rl}
    Wifi ESSID:& LAC\\_2013\\\\
-   Username:& XXXX\\\\
-   Password:& XXXX\\\\
+   Username:& #1\\\\
+   Password:& #2\\\\
    \\\\
    Site \& Agenda:&http://lac.linuxaudio.org/2013/\\\\
    Street Address:& Inffeldgasse 10/III\\\\
    & 8010 Graz\\\\
-   \\\\
-   Emergency Contact:&IO Zm\"{o}lnig\\\\
-   Telephone:&+43(0)650~5662345\\\\
   \end{tabular*}%
  }
 }
