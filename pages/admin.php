@@ -547,16 +547,12 @@ function badge_tex_header() {
 }
 
 \def\bside#1#2{
-  \parbox[c][4.5cm]{9.8cm}{\small
-  \vspace*{1.3cm}
-  \hspace{.2cm}\begin{tabular*}{9cm}{rl}
+  \parbox[c][4.5cm]{9.8cm}{\Large
+  \vspace*{3.3cm}
+  \hspace{1.5cm}\begin{tabular*}{9cm}{rl}
    Wifi ESSID:& LAC\\_2013\\\\
    Username:& #1\\\\
    Password:& #2\\\\
-   \\\\
-   Site \& Agenda:&http://lac.linuxaudio.org/2013/\\\\
-   Street Address:& Inffeldgasse 10/III\\\\
-   & 8010 Graz\\\\
   \end{tabular*}%
  }
 }
