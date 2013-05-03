@@ -565,9 +565,9 @@ function badge_tex_header() {
   \parbox[c][4.5cm]{9.8cm}{\Large
   \vspace*{3.3cm}
   \hspace{1.5cm}\begin{tabular*}{9cm}{rl}
-   Wifi ESSID:& tug\\\\
-   Username:& #1\\\\
-   Password:& #2\\\\
+   ESSID:& {\tt tug}\\\\
+   Username:& {\tt #1}\\\\
+   Password:& {\tt #2}\\\\
   \end{tabular*}%
  }
 }
