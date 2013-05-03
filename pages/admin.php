@@ -314,7 +314,21 @@ function mynamesort($a,$b) {
   return strcasecmp($a, $b);
 }
 
+function is_orga($fn) {
+	# not very efficient but WTH.
+	$filename=$name = preg_replace('/[^a-zA-Z0-9_-]/','_', $fn).'.ini';
+	$v=parse_ini_file(REGLOGDIR.$filename);
+	if (isset($v['reg_vip'])) {
+		if (strtolower($v['reg_vip']) == 'organizer') {
+			return true;
+		}
+	}
+	return false;
+}
+
 function mytimesort($a,$b) {
+	if (is_orga($a) && !is_orga($b)) return -1;
+	if (!is_orga($a) && is_orga($b)) return 1;
   return strcasecmp($a, $b);
 }
 
@@ -342,7 +356,8 @@ function gen_badges_source($f) {
 \begin{picture}(180,270)%
 ';
   foreach ($f as $fn) {
-    if (false) { // skip already printed registrations XXX
+		if (false) { // skip already printed registrations XXX
+			# XXX WON't work properly if new organizers are registered!
       $regtime=preg_replace('@-.*$@', '', $fn);
 			if (strcasecmp($regtime, '20120411_184843') <= 0) {
 				$wkcnt++;
