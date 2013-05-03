@@ -1281,7 +1281,9 @@
 <h3 class="ptitle">Installations &amp; Listening sessions</h3>
 <p>The following pieces are presented as installations or part of a loop-playlist in the on-the-air listening room.
 They are accessible on each day of the conference during opening hours (14:00 - 19:00 or by prior appointment);
-except for the "On-the-air Listening Room" which will be broadcast by <a href="http://helsinki.at">Radio Helsinki</a> at irregular intervals.</p>
+except for the "On-the-air Listening Room" which will be broadcast by
+<a target="_blank" href="http://helsinki.at/linux-audio-conference-2013-on-air">Radio Helsinki</a>
+at irregular intervals, starting on Tuesday 7th of May 10:00-12:00.</p>
 <div class="ptitle"></div>
 <?php
     query_out($db,
