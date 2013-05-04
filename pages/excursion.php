@@ -13,7 +13,7 @@ We'll start off with a musical excursion to the
 <a href="http://algo.mur.at/projects/klangdom" rel="external">Klangdom</a>
 - geodesic dome 3D soundsphere / powered by solar power and linux - and continue to
 "<a href="http://www.buschenschank-bernhart.at/" rel="external">Buschenschank Bernhart"</a>
-- a <a href="https://en.wikipedia.org/wiki/Heuriger" rel="external">East-Austrian wine tavern</a> (aka Heuriger, aka Buschenschank).
+- an <a href="https://en.wikipedia.org/wiki/Heuriger" rel="external">East-Austrian wine tavern</a> (aka Heuriger, aka Buschenschank).
 </p>
 <div class="ptitle">
 <a href="http://algo.mur.at/projects/klangdom" rel="external"><img src="img/klangdom.jpg" alt="Winfried Ritsch's Klangdom"/></a>
