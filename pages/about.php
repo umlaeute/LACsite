@@ -1,27 +1,23 @@
-<h1>Good News</h1>
+<h1>Countdown</h1>
 <p>
-The submission for papers, music, installations, workshops, etc. has been closed
-at the end of a long February 17th 2013.
-The review committees have reviewed and the juries have judged:
-notifications of acceptance have been sent to all submitters on Marth 8th 2013
-(only two days late).
+It's only a few more days to go until the LAC2013 is about to start.
 </p>
 <p>
-We are now waiting for the authors to polish the texts and deliver camera-ready papers,
-while artists remove the final (unwanted) glitches.
-</p>
-<!--
+The first few LACers have already been spotted in the streets of Graz...see you
+soon!
 <p>
-Due to popular demand, 
-the deadline for all Linux Audio Conference submissions
-has been extended! It is now <b>February 17th, 2013</b> (23:59 HAST).
-<br>
-So, if you were considering to submit a paper but couldn't make up your mind yet, here is your chance to become active! Never forget that this conference lives through the people participating in it.
-<br>
-FEBRUARY 17th is the new deadline for all submission types: papers, music, installations, workshop proposals.
-<br>
+<ul>
+<li><b>May 8 19:00</b> Vernissage of the LAC-exhibition » <em>ESC im Labor</em></li>
+<li><b>May 9 9:00-17:30</b> Welcome, Keynote, Paper/Workshops Sessions » <em>i7</em></li>
+<li><b>May 9 18:00</b> Electroacoustic Concert I » <em>IEM CUBE</em></li>
+<li><b>May 9 21:00</b> Linux Club Night » <em>postgarage</em></li>
+<li><b>May 10 10:00-17:30</b> Paper/Workshops Sessions » <em>i7</em></li>
+<li><b>May 10 20:00</b> Electroacoustic Concert II » <em>MUMUTH</em></li>
+<li><b>May 11 10:00-17:30</b> Paper/Workshops Sessions » <em>i7</em></li>
+<li><b>May 11 20:00</b> Linux Sound Night » <em>forum stadtpark</em></li>
+<li><b>May 12 11:00-18:00</b> Excursion » <em>East-Styria</em></li>
+</ul>
 </p>
-//-->
 
 <h1>About</h1>
 <p>
