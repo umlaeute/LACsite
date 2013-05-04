@@ -564,7 +564,7 @@ function badge_tex_header() {
 \def\bside#1#2{
   \parbox[c][4.5cm]{9.8cm}{\Large
   \vspace*{3.3cm}
-  \hspace{1.5cm}\begin{tabular*}{9cm}{rl}
+  \hspace{3.5cm}\begin{tabular*}{9cm}{rl}
    ESSID:& {\tt tug}\\\\
    Username:& {\tt #1}\\\\
    Password:& {\tt #2}\\\\
