@@ -21,6 +21,7 @@
     'files' => 'Download',
     'profile' => 'Profile',
     'excursion' => 'Excursion',
+    'stream' => 'Stream',
   );
 
 # don't list sponsors on these pages
