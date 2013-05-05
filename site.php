@@ -49,6 +49,7 @@
     'http://mur.at' => array('img' => 'img/logos/mur_at.png', 'title' => 'mur.at'),
     'http://auphonic.com' => array('img' => 'img/logos/auphonic.png', 'title' => 'auphonic'),
     'http://forum.mur.at' => array('img' => 'img/logos/forum_stadtpark.png', 'title' => 'Forum Stadtpark'),
+    'http://pd-graz.mur.at' => array('img' => 'img/logos/pd~graz.jpg', 'title' => 'Pd~graz'),
     'http://vif.tugraz.at' => array('img' => 'img/logos/VirtualVehicle.jpg', 'title' => 'VIRTUAL VEHICLE Research Center'),
     'http://www.dismarc.org' => array('img' => 'img/logos/dismarc.jpg', 'title' => 'DISMARC'),
   );
