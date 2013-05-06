@@ -355,7 +355,10 @@ function gen_badges_source($f) {
   $rv.='%
 \begin{picture}(180,270)%
 ';
-  foreach ($f as $fn) {
+	for ($i=0; $i < max(250, count($f)); $i++) {
+		if (isset($f[$i])) {
+			$fn = $f[$i];
+
 		if (false) { // skip already printed registrations XXX
 			# XXX WON't work properly if new organizers are registered!
       $regtime=preg_replace('@-.*$@', '', $fn);
@@ -419,6 +422,13 @@ function gen_badges_source($f) {
 		$prename='\Huge '.$prename;
 		$famname='\Huge '.$famname;
 	}
+
+		} else {
+			$what = '';
+			$prename='\Huge {~}';
+			$famname='\Huge {~}';
+			$md5name='blank';
+		}
 
 	if (strlen($what) > 56) $what='\scriptsize '.$what; 
 	elseif (strlen($what) > 40) $what='\footnotesize '.$what; 
