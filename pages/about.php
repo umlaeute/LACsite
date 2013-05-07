@@ -3,8 +3,10 @@
 It's only a few more days to go until the LAC2013 is about to start.
 </p>
 <p>
-The first few LACers have already been spotted in the streets of Graz...see you
-soon!
+The first few LACers have already been spotted in the streets of Graz...
+in case you are one of them and want to prepare yourself, you can grab yourself our
+<a target="_blank" href="download/lac2013_info.pdf">infobag</a>.
+</p>
 <p>
 <ul>
 <li><b>May 8 19:00</b> Vernissage of the LAC-exhibition » <em>ESC im Labor</em></li>
@@ -17,6 +19,9 @@ soon!
 <li><b>May 11 20:00</b> Linux Sound Night » <em>forum stadtpark</em></li>
 <li><b>May 12 11:00-18:00</b> Excursion » <em>East-Styria</em></li>
 </ul>
+</p>
+<p>
+See you soon!
 </p>
 
 <h1>About</h1>
