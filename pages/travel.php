@@ -1,6 +1,6 @@
 <h1>Location</h1>
 <p>
-<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps/ms?msa=0&amp;msid=209163945934931712388.0004db2ea8f9940756135&amp;ie=UTF8&amp;ll=47.065118,15.451693&amp;spn=0.019111,0.04629&amp;t=m&amp;output=embed"></iframe><br /><small><a href="https://maps.google.at/maps/ms?msa=0&amp;msid=209163945934931712388.0004db2ea8f9940756135&amp;ie=UTF8&amp;ll=47.065118,15.451693&amp;spn=0.019111,0.04629&amp;t=m&amp;source=embed" style="color:#0000FF;text-align:left">LAC2013</a> on a bigger map</small>
+<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps/ms?msa=0&amp;msid=209163945934931712388.0004db2ea8f9940756135&amp;ie=UTF8&amp;ll=47.065118,15.451693&amp;spn=0.019111,0.04629&amp;t=m&amp;output=embed"></iframe><br /><small><a href="https://maps.google.at/maps/ms?msa=0&amp;msid=209163945934931712388.0004db2ea8f9940756135&amp;ie=UTF8&amp;ll=47.065118,15.451693&amp;spn=0.019111,0.04629&amp;t=m&amp;source=embed" style="color:#0000FF;text-align:left" target="_blank">LAC2013</a> on a bigger map</small>
 </p>
 
 <h1>Getting around</h1>
