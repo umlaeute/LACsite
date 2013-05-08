@@ -359,7 +359,7 @@ function gen_badges_source($f) {
 		if (isset($f[$i])) {
 			$fn = $f[$i];
 
-		if (true) { // skip already printed registrations XXX
+		if (false) { // skip already printed registrations XXX
 			# XXX WON't work properly if new organizers are registered!
       $regtime=preg_replace('@-.*$@', '', $fn);
 			if (strcasecmp($regtime, '20130503_145204') <= 0) {
