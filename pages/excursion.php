@@ -23,8 +23,9 @@ We'll start off with a musical excursion to the
 
 <h3>When and how long?</h3>
 <p>
-We will leave in Graz after the last morning session and return back at around 16:00-18:00h.
-If there are enough people who need to catch an outbound flight or train on Sunday evening, one of the buses could return early.
+We will leave at 11am from the Inffeldgasse 10 outside the main venue on the IEM campus with two busses.<br/>
+The first bus returns early (after the Klangdom excursion) and arrives back in Graz at 14:30.
+A second bus - for persons who want to join the <em>Buschenschank</em> - will be back around 18:00.
 </p>
 
 <h3>How much is the trip?</h3>
