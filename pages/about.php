@@ -1,15 +1,12 @@
-<h1>Countdown</h1>
+<h1>Ready, steady...GO!</h1>
 <p>
-It's only a few more days to go until the LAC2013 is about to start.
+LAC 2013 has started!
 </p>
 <p>
-The first few LACers have already been spotted in the streets of Graz...
-in case you are one of them and want to prepare yourself, you can grab yourself our
-<a target="_blank" href="download/lac2013_info.pdf">infobag</a>.
+Watch the current presentation on our <a href="stream">Live Stream</a>.
 </p>
 <p>
 <ul>
-<li><b>May 8 19:00</b> Vernissage of the LAC-exhibition » <em>ESC im Labor</em></li>
 <li><b>May 9 9:00-17:30</b> Welcome, Keynote, Paper/Workshops Sessions » <em>i7</em></li>
 <li><b>May 9 18:00</b> Electroacoustic Concert I » <em>IEM CUBE</em></li>
 <li><b>May 9 21:00</b> Linux Club Night » <em>postgarage</em></li>
@@ -21,7 +18,8 @@ in case you are one of them and want to prepare yourself, you can grab yourself 
 </ul>
 </p>
 <p>
-See you soon!
+If you don't want to waste paper, grab your infobag as a
+<a target="_blank" href="download/lac2013_info.pdf">PDF</a>.
 </p>
 
 <h1>About</h1>
@@ -47,15 +45,6 @@ The Linux Audio Conference brings together musicians, composers, sound artists, 
  <li><a href="<?=local_url('excursion')?>">Excursion on Sunday</a></li>
 </ul>
 <p style="clear:both;"/>
-<h1>We need you! </h1>
-<p>
-Your contribution and ideas are needed to make the LAC a success!<br/>
-See the
-<a href="<?=local_url('participation')?>">participation page</a> for information on how
-to answer to the call for paper-presentations, workshops and music.
-Please <a href="<?=local_url('registration')?>">register</a> to attend. 
-</p>
-
 <h1>Where &amp; When</h1>
 <p>
 May 9-12 2013, <a href="http://iem.kug.ac.at/" rel="external">IEM</a> (Institute
