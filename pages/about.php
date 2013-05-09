@@ -1,6 +1,6 @@
 <h1>Ready, steady...GO!</h1>
 <p>
-LAC 2013 has started!
+LAC 2013 is up and running!
 </p>
 <p>
 Watch the current presentation on our <a href="stream">Live Stream</a>.
