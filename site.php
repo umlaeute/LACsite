@@ -29,6 +29,7 @@
     'upload',
     'sponsors',
     'admin',
+    'stream',
     'adminschedule',
   );
 
