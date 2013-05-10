@@ -7,9 +7,6 @@ Watch the current presentation on our <a href="stream">Live Stream</a>.
 </p>
 <p>
 <ul>
-<li><b>May 9 9:00-17:30</b> Welcome, Keynote, Paper/Workshops Sessions » <em>i7</em></li>
-<li><b>May 9 18:00</b> Electroacoustic Concert I » <em>IEM CUBE</em></li>
-<li><b>May 9 21:00</b> Linux Club Night » <em>postgarage</em></li>
 <li><b>May 10 10:00-17:30</b> Paper/Workshops Sessions » <em>i7</em></li>
 <li><b>May 10 20:00</b> Electroacoustic Concert II » <em>MUMUTH</em></li>
 <li><b>May 11 10:00-17:30</b> Paper/Workshops Sessions » <em>i7</em></li>
