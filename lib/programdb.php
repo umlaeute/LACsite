@@ -191,7 +191,7 @@
   }
 
   function conference_dayend($day) {
-    return strtotime((11+intval($day)).' April 2012 23:00:00 CEST'); # TODO -> config start-date and dates
+    return strtotime((8+intval($day)).' May 2013 23:00:00 CEST'); # TODO -> config start-date and dates
   }
 
   function fetch_selectlist($db, $table='user', $order='ORDER BY id') {
