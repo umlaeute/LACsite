@@ -7,8 +7,6 @@ Watch the current presentation on our <a href="stream">Live Stream</a>.
 </p>
 <p>
 <ul>
-<li><b>May 10 10:00-17:30</b> Paper/Workshops Sessions » <em>i7</em></li>
-<li><b>May 10 20:00</b> Electroacoustic Concert II » <em>MUMUTH</em></li>
 <li><b>May 11 10:00-17:30</b> Paper/Workshops Sessions » <em>i7</em></li>
 <li><b>May 11 20:00</b> Linux Sound Night » <em>forum stadtpark</em></li>
 <li><b>May 12 11:00-18:00</b> Excursion » <em>East-Styria</em></li>
