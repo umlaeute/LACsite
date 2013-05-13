@@ -1,28 +1,17 @@
-<h1>Ready, steady...GO!</h1>
-<p>
-LAC 2013 is up and running!
-</p>
-<p>
-Watch the current presentation on our <a href="stream">Live Stream</a>.
-</p>
-<p>
-<ul>
-<li><b>May 11 10:00-17:30</b> Paper/Workshops Sessions » <em>i7</em></li>
-<li><b>May 11 20:00</b> Linux Sound Night » <em>forum stadtpark</em></li>
-<li><b>May 12 11:00-18:00</b> Excursion » <em>East-Styria</em></li>
-</ul>
-</p>
-<p>
-If you don't want to waste paper, grab your infobag as a
-<a target="_blank" href="download/lac2013_info.pdf">PDF</a>.
-</p>
-
 <h1>About</h1>
 <p>
 The Linux Audio Conference is the international conference about
 Open Source Software for music, sound and other media with Linux as the main
 platform.
 </p>
+
+<h1>LAC 2013 is history!</h1>
+<p>
+The Linux Audio Conference 2013 in Graz is over.
+We'd like to thank all contributors and participants for the splendid time we had.
+Stay tuned while we are preparing the documentation (on-demand streams of the presentations, photos, slides,...)
+</p>
+
 
 <h1>Target audience</h1>
 <p>
