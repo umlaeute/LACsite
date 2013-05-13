@@ -6,7 +6,6 @@
 #pages listed as 'tabs' on the site
   $pages = array(
     'about' => 'About',
-    'stream' => 'Stream',
     'program'  => 'Schedule',
     'speakers'  => 'Delegates',
     'travel' => 'Travel &amp; Stay',
@@ -22,6 +21,7 @@
     'files' => 'Download',
     'profile' => 'Profile',
     'excursion' => 'Excursion',
+    'stream' => 'Stream',
   );
 
 # don't list sponsors on these pages
