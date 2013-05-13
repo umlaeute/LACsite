@@ -1439,7 +1439,7 @@ one of the central places of independent contemporary art in Graz.
     $q='SELECT activity.* FROM activity WHERE type='.$db->quote('c');
     $q.=' AND NOT location_id=2'; ## XXX skip radio shows here
     $q.=' ORDER BY day, strftime(\'%H:%M\',starttime), typesort(type), location_id, serial;';
-    query_out($db, $q, $details, false,  true, true, true);
+    query_out($db, $q, $details, false,  true, true, false);
 ?>
 <h3>Installations</h3>
 <p>
