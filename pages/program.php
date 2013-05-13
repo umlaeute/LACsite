@@ -38,9 +38,9 @@
     case 'table':
       $now=time(); $day=1;
       $days=count(array_keys(fetch_selectlist(0,'days')));
-      for($cday=1; $cday <= $days; $cday++) {
-        if ($now < conference_dayend($cday)) {$day=$cday; break;}
-      }
+      #for($cday=1; $cday <= $days; $cday++) {
+      #  if ($now < conference_dayend($cday)) {$day=$cday; break;}
+      #}
       if (isset($_REQUEST['day'])) $day=intval($_REQUEST['day']);
       if ($day<1 || $day>$days) {
         program_header('',$details);
