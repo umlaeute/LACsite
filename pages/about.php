@@ -12,6 +12,13 @@ We'd like to thank all contributors and participants for the splendid time we ha
 Stay tuned while we are preparing the documentation (on-demand streams of the presentations, photos, slides,...)
 </p>
 
+<h1>Proceedings</h1>
+<p>
+LAC 2013 published proceedings as <em>ISBN 978-3-902949-00-4</em>.
+You can either download the <a href="download/lac2013_proceedings.pdf">entire proceedings</a> (12MB),
+or get the individual papers as linked from the <a href="program">program</a>.
+</p>
+
 
 <h1>Target audience</h1>
 <p>
