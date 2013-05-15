@@ -8,7 +8,6 @@
     'about' => 'About',
     'program'  => 'Schedule',
     'speakers'  => 'Delegates',
-    'travel' => 'Travel &amp; Stay',
     'contact' => 'Contact',
     'sponsors' => 'Supporters',
   );
@@ -22,6 +21,7 @@
     'profile' => 'Profile',
     'excursion' => 'Excursion',
     'stream' => 'Stream',
+    'travel' => 'Travel &amp; Stay',
   );
 
 # don't list sponsors on these pages
