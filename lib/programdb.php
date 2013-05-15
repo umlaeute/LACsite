@@ -28,6 +28,10 @@
     $db->exec($q);
   }
 
+  function startsWith($haystack, $needle) {
+    return !strncmp($haystack, $needle, strlen($needle));
+  }
+
   function typesort($t) {
     switch ($t) {
       case 'p': return 0;
@@ -847,8 +851,13 @@
         echo '<a href="'.$r['url_paper'].'" rel="_blank">Paper (PDF)</a>&nbsp;&nbsp;';
       if (!empty($r['url_slides']))
         echo '<a href="'.$r['url_slides'].'" rel="_blank">Slides</a>&nbsp;&nbsp;';
-      if (!empty($r['url_stream']))
-        echo '<a href="video.php?id='.rawurlencode($r['id']).'" rel="_blank">Video</a>&nbsp;&nbsp;';
+      if (!empty($r['url_stream'])) {
+        if (startsWith($r['url_stream'], 'http://')) { // XX: this should really check for other URI-patterns as well
+          echo '<a href="'.$r['url_stream'].'" rel="_blank">Video</a>&nbsp;&nbsp;';
+        } else {
+          echo '<a href="video.php?id='.rawurlencode($r['id']).'" rel="_blank">Video</a>&nbsp;&nbsp;';
+        }
+      }
       if (!empty($r['url_audio']))
         echo '<a href="'.$r['url_audio'].'">Audio</a>&nbsp;&nbsp;';
       if (!empty($r['url_misc']))
