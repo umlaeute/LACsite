@@ -101,6 +101,13 @@ if (!empty($url)) {
 
 echo '<div class="links"><ul>';
 
+if (!empty($v['url_slides']))
+  echo '<li>Slides: <a href="'.$v['url_slides'].'" rel="external">'.$v['url_slides'].'</a></li>';
+if (!empty($v['url_paper']))
+  echo '<li>Paper: <a href="'.$v['url_paper'].'" rel="external">'.$v['url_paper'].'</a></li>';
+if (!empty($v['url_misc']))
+  echo '<li>Site: <a href="'.$v['url_misc'].'" rel="external">'.$v['url_misc'].'</a></li>';
+echo '</ul></div>';
 if (!empty($url)) {
   echo '<li>Video URL: ';
   foreach (array(240, 360, 480, 720) as $s) {
@@ -109,13 +116,6 @@ if (!empty($url)) {
   }
   echo '</li>';
 }
-if (!empty($v['url_slides']))
-  echo '<li>Slides: <a href="'.$v['url_slides'].'" rel="external">'.$v['url_slides'].'</a></li>';
-if (!empty($v['url_paper']))
-  echo '<li>Paper: <a href="'.$v['url_paper'].'" rel="external">'.$v['url_paper'].'</a></li>';
-if (!empty($v['url_misc']))
-  echo '<li>Site: <a href="'.$v['url_misc'].'" rel="external">'.$v['url_misc'].'</a></li>';
-echo '</ul></div>';
 
 if (!empty($v['abstract'])) {
   echo '<div class="abstract">';
@@ -125,7 +125,10 @@ if (!empty($v['abstract'])) {
 
 ?>
 <div class="license">
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />The video is licensed in terms of the <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>. Attribute to <a xmlns:cc="http://creativecommons.org/ns#" href="<?=CANONICALURL?>" property="cc:attributionName" rel="cc:attributionURL"><?=$config['organizaion']?></a>. All copyright(s) remain with the author/speaker/presenter.
+<!--
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />
+-->
+The video is licensed in terms of the <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>. Attribute to <a xmlns:cc="http://creativecommons.org/ns#" href="<?=CANONICALURL?>" property="cc:attributionName" rel="cc:attributionURL"><?=$config['organizaion']?></a>. All copyright(s) remain with the author/speaker/presenter.
 </div>
 <div class="footer">Back to <a href="<?=local_url('program')?>">conference site</a>.</div>
 </div>

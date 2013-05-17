@@ -32,16 +32,16 @@ div.title  {
 div.player  {
   margin: .25em auto 2em;
   text-align:center;
-	border: 2px solid gray;
+  border: 2px solid gray;
 }
 div.links  {
-	margin: .5em auto;
-  color:#AAA;
+  margin: .5em auto;
+  color:#CCC;
   text-align:left;
 }
 div.abstract  {
-	margin: .5em auto;
-  color:#AAA;
+  margin: 1em auto;
+  color:#CCC;
   text-align:justify;
 }
 div.links li {
@@ -59,10 +59,11 @@ div.footer  {
   padding-top:1em;
   border-top: 1px solid #888;
 }
-div.license  {
-	margin:3em auto 1em;
-	font-size:80%;
-	color:#ccc;
+
+div.license , div.license a {
+  margin:3em auto 1em;
+  font-size:80%;
+  color:#CCC;
 }
 
 #sizebar {
