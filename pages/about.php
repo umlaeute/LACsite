@@ -3,6 +3,7 @@
 The Linux Audio Conference is the international conference about
 Open Source Software for music, sound and other media with Linux as the main
 platform.
+The 2013 edition (the eleventh installment of the conference) took place at the <em>IEM</em>, Graz, Austria.
 </p>
 
 <h1>LAC 2013 is history!</h1>
