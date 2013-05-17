@@ -80,10 +80,10 @@ echo '</div>';
 if (!empty($url)) {
   echo '</div>'; # container
   echo '<div class="player" style="width:'.$width.'px;">';
-  echo '<video width="'.$width.'" height="'.$height.'" autoplay loop controls>
-    <source src="'.$url.'-'.$height.'p.webm"  type="video/webm" />
-    <source src="'.$url.'-'.$height.'p.mp4"  type="video/mp4" />
-  </video>';
+  echo '<video width="'.$width.'" height="'.$height.'" preload="none" autoplay="autoplay" controls="controls">'
+    .'<source src="'.$url.'-'.$height.'p.webm" type="video/webm">'
+    .'<source src="'.$url.'-'.$height.'p.mp4"  type="video/mp4">'
+  .'</video>';
   echo '</div>';
   echo '<div class="container">';
   echo '<div id="sizebar">';
