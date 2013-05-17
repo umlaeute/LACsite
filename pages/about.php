@@ -29,9 +29,11 @@ in the online version of the German <em>linux-magazin</em>
 
 <h1>Proceedings</h1>
 <p>
+<a href="download/lac2013_proceedings.pdf"><img src="img/proceedings.png" alt="LAC2013 Proceedings" width="100" align="right"/></a>
 LAC 2013 published proceedings as <em>ISBN 978-3-902949-00-4</em>.
 You can either download the <a href="download/lac2013_proceedings.pdf">entire proceedings</a> (12MB),
 or get the individual papers as linked from the <a href="program">program</a>.
+<br clear="all">
 </p>
 
 <h1>Target audience</h1>
