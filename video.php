@@ -15,8 +15,8 @@ function printerror($msg) {
 }
 
 $id=0;
-$height=720;
-$width=1280;
+$height=480;
+$width=854;
 
 if (!isset($_REQUEST['id'])) {
   printerror('invalid request - no id specified.');
@@ -89,7 +89,7 @@ if (!empty($url)) {
   echo '<div id="sizebar">';
   foreach (array(240, 360, 480, 720) as $s) {
     if ($s == $height)
-      echo '&nbsp;'.$s.'p&nbsp;';
+      echo '&nbsp;<b>'.$s.'p</b>&nbsp;';
     else
       echo '&nbsp;<a href="video.php?id='.$id.'&amp;h='.$s.'">'.$s.'p</a>&nbsp;';
 
