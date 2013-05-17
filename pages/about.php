@@ -12,13 +12,24 @@ We'd like to thank all contributors and participants for the splendid time we ha
 Stay tuned while we are preparing the documentation (on-demand streams of the presentations, photos, slides,...)
 </p>
 
+<h1>Galleries, Blogs, ...</h1>
+<p>
+<ul>
+<li>Rui's <a href="http://www.rncbc.org/lac2013/">Image Gallery</a> and <a href="http://www.rncbc.org/drupal/node/646">Blog</a></li>
+<li>Jeff's <a href="http://alg0rhythm.livejournal.com/">Blog</a></li>
+<li>J&ouml;rn's <a href="http://www.stackingdwarves.net/public_stuff/linux_audio/lac2013/photos/">Photos</a></li>
+<li>Mathias Huber from the German <a href="http://linux-magazin.de">linux-magazin</a> covered
+<a href="http://www.linux-magazin.de/NEWS/LAC-2013-Techniker-Kuenstler-Internet-Jams-und-die-Hagia-Sophia">Day-1</a> and
+<a href="http://www.linux-magazin.de/NEWS/LAC-2013-Raspberry-Pi-Arduino-Pure-Data">Day-2</a></li>
+</ul>
+</p>
+
 <h1>Proceedings</h1>
 <p>
 LAC 2013 published proceedings as <em>ISBN 978-3-902949-00-4</em>.
 You can either download the <a href="download/lac2013_proceedings.pdf">entire proceedings</a> (12MB),
 or get the individual papers as linked from the <a href="program">program</a>.
 </p>
-
 
 <h1>Target audience</h1>
 <p>
