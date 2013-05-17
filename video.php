@@ -80,7 +80,7 @@ echo '</div>';
 if (!empty($url)) {
   echo '</div>'; # container
   echo '<div class="player" style="width:'.$width.'px;">';
-  echo '<video width="'.$width.'" height="'.$height.'" preload="none" autoplay="autoplay" controls="controls" tabindex="0">'
+  echo '<video width="'.$width.'" height="'.$height.'" autoplay controls tabindex="0">'
     .'<source type="video/webm" src="'.$url.'-'.$height.'p.webm" />'
     .'<source type="video/mp4" src="'.$url.'-'.$height.'p.mp4" />'
   .'</video>';
