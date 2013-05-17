@@ -18,9 +18,12 @@ Stay tuned while we are preparing the documentation (on-demand streams of the pr
 <li>Rui's <a href="http://www.rncbc.org/lac2013/">Image Gallery</a> and <a href="http://www.rncbc.org/drupal/node/646">Blog</a></li>
 <li>Jeff's <a href="http://alg0rhythm.livejournal.com/">Blog</a></li>
 <li>J&ouml;rn's <a href="http://www.stackingdwarves.net/public_stuff/linux_audio/lac2013/photos/">Photos</a></li>
-<li>Mathias Huber from the German <a href="http://linux-magazin.de">linux-magazin</a> covered
+<li>Mathias Huber covered
 <a href="http://www.linux-magazin.de/NEWS/LAC-2013-Techniker-Kuenstler-Internet-Jams-und-die-Hagia-Sophia">Day-1</a> and
-<a href="http://www.linux-magazin.de/NEWS/LAC-2013-Raspberry-Pi-Arduino-Pure-Data">Day-2</a></li>
+<a href="http://www.linux-magazin.de/NEWS/LAC-2013-Raspberry-Pi-Arduino-Pure-Data">Day-2</a>
+in the online version of the German <em>linux-magazin</em>
+</li>
+<li>Nils' <a href="http://www.nilsgey.de/Blog/27_Linux_Audio_Conference_2013_is_over">Blog</a></li>
 </ul>
 </p>
 
