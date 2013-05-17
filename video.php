@@ -100,14 +100,12 @@ if (!empty($url)) {
 }
 
 echo '<div class="links"><ul>';
-
 if (!empty($v['url_slides']))
   echo '<li>Slides: <a href="'.$v['url_slides'].'" rel="external">'.$v['url_slides'].'</a></li>';
 if (!empty($v['url_paper']))
   echo '<li>Paper: <a href="'.$v['url_paper'].'" rel="external">'.$v['url_paper'].'</a></li>';
 if (!empty($v['url_misc']))
   echo '<li>Site: <a href="'.$v['url_misc'].'" rel="external">'.$v['url_misc'].'</a></li>';
-echo '</ul></div>';
 if (!empty($url)) {
   echo '<li>Video URL: ';
   foreach (array(240, 360, 480, 720) as $s) {
@@ -116,6 +114,7 @@ if (!empty($url)) {
   }
   echo '</li>';
 }
+echo '</ul></div>';
 
 if (!empty($v['abstract'])) {
   echo '<div class="abstract">';

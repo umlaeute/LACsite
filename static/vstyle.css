@@ -12,7 +12,8 @@ body {
 }
 
 div.container {
-  width:860px;
+  min-width:440px;
+  max-width:800px;
   margin:0px auto;
   text-align:center;
 }
