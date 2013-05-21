@@ -1,4 +1,5 @@
 <h1>Sponsors</h1>
+<?php /*
 <p>
 As admittance to the conference is free, several things need sponsoring.
 If you want to contribute to the conference and want to know what you
@@ -43,11 +44,10 @@ conference organisation: <?=$config['txtemail']?>
   In summary: LAC is the place for companies looking to interface with the non-proprietary pro-AV community,
   researchers, developers, artists and users.
 </p>
-<?php /*
+ */ ?>
 <p>
 As admittance to the conference was free, several things required sponsoring which was made possible by the following partners:
 </p>
- */ ?>
 <h2>Supporters</h2>
 <table border="0" width="100%" id="supporter">
 <tr>
