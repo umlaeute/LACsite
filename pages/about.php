@@ -25,7 +25,8 @@ Stay tuned while we are preparing the documentation (on-demand streams of the pr
 <li>Mathias Huber covered
 <a href="http://www.linux-magazin.de/NEWS/LAC-2013-Techniker-Kuenstler-Internet-Jams-und-die-Hagia-Sophia">Day-1</a> and
 <a href="http://www.linux-magazin.de/NEWS/LAC-2013-Raspberry-Pi-Arduino-Pure-Data">Day-2</a>
-in the online version of the German <em>linux-magazin</em>
+in the online version of the German <em>linux-magazin</em>.
+The printed version of the magazin also features a full <a href="http://www.linux-magazin.de/Ausgaben/2013/07/LAC-2013">article</a> on the LAC 2013.
 </li>
 <li>Nils' <a href="http://www.nilsgey.de/Blog/27_Linux_Audio_Conference_2013_is_over">Blog</a></li>
 </ul>
