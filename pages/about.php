@@ -12,6 +12,9 @@ The Linux Audio Conference 2013 in Graz is over.
 We'd like to thank all contributors and participants for the splendid time we had.
 Stay tuned while we are preparing the documentation (on-demand streams of the presentations, photos, slides,...)
 </p>
+<div class="center">
+<a href="http://lac.linuxaudio.org/2013/img/LAC2013_group_medium.jpg"><img src="img/LAC2013_group_small.jpg" alt="group picture"/></a>
+</div>
 
 <h1>Galleries, Blogs, ...</h1>
 <p>
