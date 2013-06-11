@@ -59,7 +59,7 @@ $pt=array(
 	'Charles Henry',
 	'Thomas Mayr', # 45
 	'Jeff Sandys',
-	'Larsa \'Muldjord\' Jensen',
+	'Lars \'Muldjord\' Jensen',
 	'',
 	'Victor Lazzarini',
 	'Steven Yi', # 50
