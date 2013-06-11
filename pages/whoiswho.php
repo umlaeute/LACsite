@@ -40,7 +40,7 @@ $pt=array(
 	'Yen Tzu Chang', # 25
 	'',
 	'Li Chi Hsiao',
-	'Funs Selen',
+	'Funs Seelen',
 	'',
 	'Henning Thielemann', # 30
 	'Luigi Verona',
