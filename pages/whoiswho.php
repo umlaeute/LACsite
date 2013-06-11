@@ -14,7 +14,7 @@ View <a href="img/LAC2013_group.jpg">full-size</a> version of above group pictur
 $pt=array(
 	'XXX', # 0
 	'Joachim Heintz', 
-	'',
+	'Jonas Christensen (?)',
 	'',
 	'Kim Ervik',
 	'Georg Holzmann',
@@ -45,7 +45,7 @@ $pt=array(
 	'Henning Thielemann', # 30
 	'Luigi Verona',
 	'',
-	'',
+	'Philipp Überbacher',
 	'Krzysztof Gawlas',
 	'',
 	'',
