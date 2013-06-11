@@ -41,7 +41,7 @@ $pt=array(
 	'',
 	'Li Chi Hsiao',
 	'Funs Seelen',
-	'',
+	'Jakob Leben',
 	'Henning Thielemann', # 30
 	'Luigi Verona',
 	'',
@@ -91,7 +91,7 @@ $pt=array(
 	'',
 	'Claude Heiland-Allen',
 	'Jeremy Jongepier',
-	'',
+	'Vincent Rateau',
 	'Olivia Suter', # 80
 	'',
 	'Birte Viermann',
