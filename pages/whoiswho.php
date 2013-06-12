@@ -1,10 +1,7 @@
 <h1>LAC 2013 Group Picture</h1>
 
 <div class="center">
-<img src="img/LAC2013_group_small.jpg" alt="group picture"/>
-</div>
-<div class="center">
-View <a href="img/LAC2013_group.jpg">full-size</a> version of above group picture.
+<a href="img/LAC2013_group.jpg"><img src="img/LAC2013_group_small.jpg" alt="group picture"/></a>
 </div>
 <h1>Who is..</h1>
 <div class="center">
