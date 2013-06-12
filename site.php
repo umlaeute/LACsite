@@ -14,6 +14,7 @@
 
 # other available pages - not shown as 'tabs'
   $hidden = array(
+    'whoiswho' => 'Who Is Who',
     'participation' => 'Participate',
     'registration' => 'Registration',
     'participants' => 'Attendees',
