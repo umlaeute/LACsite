@@ -97,7 +97,7 @@ $pt=array(
 	'Birte Viermann',
 	'',
 	'Roman Haefeli',
-	'Marwin', #85
+	'Marvin', #85
 	'',
 	'Adrian Knoth',
 	'Christina Clar',
