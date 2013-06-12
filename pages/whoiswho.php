@@ -8,7 +8,7 @@ View <a href="img/LAC2013_group.jpg">full-size</a> version of above group pictur
 </div>
 <h1>Who is..</h1>
 <div class="center">
-<img src="img/LAC2013_group_annotated.jpg" alt="annotated group picture"/>
+<a href="img/LAC2013_group_annotatedMEDIUM.jpg"><img src="img/LAC2013_group_annotated.jpg" alt="annotated group picture"/></a>
 </div>
 <?php
 $pt=array(
