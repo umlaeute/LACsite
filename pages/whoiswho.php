@@ -48,7 +48,7 @@ $pt=array(
 	'',
 	'Peter Bubestinger',
 	'',
-	'Peter Plessas',
+	'Peter P.',
 	'Björn Lindig', # 40
 	'Malte Steiner',
 	'Clara Hollomey',
