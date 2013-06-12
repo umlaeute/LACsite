@@ -11,7 +11,7 @@
 $pt=array(
 	'XXX', # 0
 	'Joachim Heintz', 
-	'Jonas Christensen (?)',
+	'Jonas Suhr Christensen',
 	'',
 	'Kim Ervik',
 	'Georg Holzmann',
