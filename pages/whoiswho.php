@@ -20,7 +20,7 @@ $pt=array(
 	'Bent Bisballe Nyeng',
 	'Dominik Schmidt-Philipp',
 	'Valentina Vuksic', # 10
-	'',
+	'Christoph Kuhr',
 	'Marian Weger',
 	'Florian Faber',
 	'Albert Gräf',
@@ -90,7 +90,7 @@ $pt=array(
 	'Jeremy Jongepier',
 	'Vincent Rateau',
 	'Olivia Suter', # 80
-	'',
+	'Markus Seeber',
 	'Birte Viermann',
 	'Hartmut Noack',
 	'Roman Haefeli',
