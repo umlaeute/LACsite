@@ -45,7 +45,7 @@ $pt=array(
 	'Philipp Überbacher',
 	'Krzysztof Gawlas',
 	'', #35
-	'',
+	'Guido Scholz',
 	'Peter Bubestinger',
 	'',
 	'Peter P.',
@@ -69,7 +69,7 @@ $pt=array(
 	'Michal Seta',
 	'Servando Barreiro',
 	'IOhannes m, zmölnig',
-	'', # 60
+	'Erik Scholz', # 60
 	'Harry van Haaren',
 	'Jan Jacob Hofmann',
 	'Kathi Vogt',
@@ -92,7 +92,7 @@ $pt=array(
 	'Olivia Suter', # 80
 	'',
 	'Birte Viermann',
-	'',
+	'Hartmut Noack',
 	'Roman Haefeli',
 	'Marvin', #85
 	'',
