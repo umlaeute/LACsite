@@ -12,7 +12,7 @@ $pt=array(
 	'XXX', # 0
 	'Joachim Heintz', 
 	'Jonas Suhr Christensen',
-	'',
+	'Wolfgang Leitner',
 	'Kim Ervik',
 	'Georg Holzmann',
 	'Manuela Meier',
@@ -63,7 +63,7 @@ $pt=array(
 	'Götz Dipper', 
 	'Martin Schitter',
 	'Flo Stöffelmayr',
-	'',
+	'Bernhard Bleier',
 	'Oscar Pablo di Liscia', # 55
 	'Jörn Nettingsmeier',
 	'Michal Seta',
@@ -84,7 +84,7 @@ $pt=array(
 	'',
 	'Marius Schebella',
 	'Christian Pointner',
-	'', # 75
+	'Gernot Lettner', # 75
 	'',
 	'Claude Heiland-Allen',
 	'Jeremy Jongepier',
