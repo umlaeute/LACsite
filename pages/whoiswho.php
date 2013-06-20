@@ -44,7 +44,7 @@ $pt=array(
 	'',
 	'Philipp Überbacher',
 	'Krzysztof Gawlas',
-	'', #35
+	'Bernhard Hampel-Waffenthal', #35
 	'Guido Scholz',
 	'Peter Bubestinger',
 	'',
