@@ -41,7 +41,7 @@ $pt=array(
 	'Jakob Leben',
 	'Henning Thielemann', # 30
 	'Luigi Verona',
-	'',
+	'Egor Sanin',
 	'Philipp Überbacher',
 	'Krzysztof Gawlas',
 	'Bernhard Hampel-Waffenthal', #35
