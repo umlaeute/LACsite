@@ -26,7 +26,7 @@ $pt=array(
 	'Albert Gräf',
 	'Fons Adriaensen', # 15
 	'Ping',
-	'Fernando Lopez Lezcano',
+	'Fernando Lopez-Lezcano',
 	'Rui Nuno Capela',
 	'Marc Groenewegen',
 	'Bruno Ruviaro', # 20
@@ -68,7 +68,7 @@ $pt=array(
 	'Jörn Nettingsmeier',
 	'Michal Seta',
 	'Servando Barreiro',
-	'IOhannes m, zmölnig',
+	'IOhannes m zmölnig',
 	'Erik Scholz', # 60
 	'Harry van Haaren',
 	'Jan Jacob Hofmann',
