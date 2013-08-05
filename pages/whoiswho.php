@@ -35,10 +35,10 @@ $pt=array(
 	'Max Neupert',
 	'',
 	'Yen Tzu Chang', # 25
-	'',
+	'Jakob Leben',
 	'Li Chi Hsiao',
 	'Funs Seelen',
-	'Jakob Leben',
+	'',
 	'Henning Thielemann', # 30
 	'Luigi Verona',
 	'Egor Sanin',
