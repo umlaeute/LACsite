@@ -55,6 +55,7 @@
     'http://pd-graz.mur.at' => array('img' => 'img/logos/pd~graz.png', 'title' => 'Pd~graz'),
     'http://vif.tugraz.at' => array('img' => 'img/logos/VirtualVehicle.jpg', 'title' => 'VIRTUAL VEHICLE Research Center'),
     'http://www.dismarc.org' => array('img' => 'img/logos/dismarc.jpg', 'title' => 'DISMARC'),
+    'http://www.wissenschaft.steiermark.at' => array('img' => 'img/logos/Stmk_A8.jpg', 'title' => 'Land Steiermark - Wissenschaft & Forschung'),
   );
 
   function clustermap() {
